@@ -1,0 +1,51 @@
+/*
+Theme Name: Urbanrest
+Theme URI: Urbanrest.com
+Author: Quantastical.com
+Author URI: Quantastical.com
+Description: A custom theme designed for the Urbanrest Brewing Company in Ferndale, Michigan.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: urbanrest, brewing
+Text Domain: urbanrest
+*/
+html, body {
+  height: 100%;
+  margin: 0;
+  width: 100%; }
+
+h1 {
+  margin: 0; }
+
+@media only screen {
+  .search-form, .skip-link, .site-coming-soon, .site-description, .site-footer, .site-main, .site-navigation {
+    display: none; }
+
+  .site-header {
+    background: black;
+    min-height: 100%;
+    width: 100%; }
+
+  .site-logo {
+    background-image: url(images/logo-text-inverted.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    box-sizing: border-box;
+    height: 100%;
+    left: 0;
+    padding-left: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%; } }
+@media only screen and (min-width: 500px), only screen and (min-width: 200px) and (-webkit-min-device-pixel-ratio: 2) {
+  .site-logo {
+    background-image: url(images/logo-text-inverted-2x.png);
+    background-size: 70%; } }
+@media only screen and (min-width: 1000px), only screen and (min-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+  .site-logo {
+    background-image: url(images/logo-text-inverted-4x.png);
+    background-size: 60%; } }
+
+/*# sourceMappingURL=style.css.map */

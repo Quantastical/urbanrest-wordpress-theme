@@ -1,0 +1,49 @@
+@media only screen
+{
+	.search-form,
+	.skip-link,
+	.site-coming-soon,
+	.site-description,
+	.site-footer,
+	.site-main,
+	.site-navigation
+	{
+		display: none;
+	}
+
+	.site-header
+	{
+		background: black;
+		min-height: 100%;
+		width: 100%;
+	}
+
+	.site-logo
+	{
+		background-image: url(images/logo-text-inverted.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 80%;
+		box-sizing: border-box;
+		height: 100%;
+		left: 0;
+		padding-left: 100%;
+		position: absolute;
+		top: 0;
+		width: 100%;
+
+		@media (min-width: 500px),
+		       (min-width: 200px) and (-webkit-min-device-pixel-ratio: 2)
+		{
+			background-image: url(images/logo-text-inverted-2x.png);
+			background-size: 70%;
+		}
+
+		@media (min-width: 1000px),
+		       (min-width: 600px) and (-webkit-min-device-pixel-ratio: 2)
+		{
+			background-image: url(images/logo-text-inverted-4x.png);
+			background-size: 60%;
+		}
+	}
+}
