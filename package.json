@@ -1,11 +1,17 @@
 {
-  "name": "urbanrest-wordpress-theme",
-  "version": "1.0.0",
-  "dependencies": {},
-  "devDependencies": {
-    "grunt": "~0.4.5",
-    "grunt-contrib-sass": "~0.8.1",
-    "grunt-contrib-watch": "~0.6.1",
-    "load-grunt-tasks": "~1.0.0"
-  }
+	"name": "urbanrest-wordpress-theme",
+	"version": "1.0.0",
+	"description": "A WordPress theme designed for the Urbanrest Brewing Company in Ferndale, Michigan",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Quantastical/urbanrest-wordpress-theme"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"grunt": "~0.4.5",
+		"grunt-contrib-sass": "~0.8.1",
+		"grunt-contrib-watch": "~0.6.1",
+		"load-grunt-tasks": "~1.0.0"
+	},
+	"private": true
 }
