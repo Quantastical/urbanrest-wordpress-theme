@@ -1,0 +1,46 @@
+.error404
+{
+	.site-main
+	{
+		background: rgba(0,0,0,0.5);
+		display: block;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
+	.not-found
+	{
+		background: white;
+		border-radius: 1em;
+		left: 25%;
+		position: absolute;
+		text-align: center;
+		top: 25%;
+		width: 50%;
+	}
+
+	.page-title
+	{
+		font-size: 2em;
+		margin-bottom: 1em;
+		margin-top: 1em;
+	}
+
+	.page-content
+	{
+		border-top: solid 1pt black;
+		margin-bottom: 3em;
+		margin-left: 10%;
+		padding-top: 1em;
+		width: 80%;
+	}
+
+	.search-form
+	{
+		display: block;
+		margin-top: 2em;
+	}
+}

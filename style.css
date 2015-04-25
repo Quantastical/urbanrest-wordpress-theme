@@ -22,7 +22,7 @@ h1 {
   .search-form, .skip-link, .site-coming-soon, .site-description, .site-footer, .site-main {
     display: none; }
 
-  body {
+  .home.page {
     background-attachment: fixed;
     background-color: black;
     background-image: url(images/coming-soon-background.jpg);
@@ -115,5 +115,34 @@ h1 {
     background-position: calc(100% / 6 * 2) 0; }
   .social-navigation .menu li.youtube a {
     background-position: calc(100% / 6 * 3) 0; } }
+.error404 .site-main {
+  background: rgba(0, 0, 0, 0.5);
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%; }
+.error404 .not-found {
+  background: white;
+  border-radius: 1em;
+  left: 25%;
+  position: absolute;
+  text-align: center;
+  top: 25%;
+  width: 50%; }
+.error404 .page-title {
+  font-size: 2em;
+  margin-bottom: 1em;
+  margin-top: 1em; }
+.error404 .page-content {
+  border-top: solid 1pt black;
+  margin-bottom: 3em;
+  margin-left: 10%;
+  padding-top: 1em;
+  width: 80%; }
+.error404 .search-form {
+  display: block;
+  margin-top: 2em; }
 
 /*# sourceMappingURL=style.css.map */
