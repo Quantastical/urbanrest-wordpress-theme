@@ -95,20 +95,6 @@
 				transition: height 1s, width 1s;
 				width: 3em;
 
-				@media (min-width: 500px),
-				       (min-width: 200px) and (-webkit-min-device-pixel-ratio: 2)
-				{
-					height: 4em;
-					width: 4em;
-				}
-
-				@media (min-width: 1000px),
-				       (min-width: 600px) and (-webkit-min-device-pixel-ratio: 2)
-				{
-					height: 5em;
-					width: 5em;
-				}
-
 				a
 				{
 					background-image: url(images/social-media-icons-min.png);
