@@ -5,7 +5,7 @@ if ( !function_exists( 'urbanrest_setup' ) ) :
 		add_theme_support( 'automatic-feed-links' );
 
 		// Let WordPress manage the document title.
-		add_theme_support( 'title-tag' );
+		//add_theme_support( 'title-tag' );
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
