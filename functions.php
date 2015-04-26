@@ -1,5 +1,5 @@
 <?php
-if ( !function_exists( 'urbanrest_setup' ) ) :
+if ( !function_exists('urbanrest_setup') ) :
 	function urbanrest_setup() {
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -21,9 +21,12 @@ if ( !function_exists( 'urbanrest_setup' ) ) :
 
 		// Add main stylesheet
 		wp_enqueue_style( 'main', get_stylesheet_uri() );
+
+		// Add scripts
+		wp_enqueue_script('ga', get_stylesheet_directory_uri() . '/scripts/ga.js', '1.0', true);
 	}
 endif;
-add_action( 'after_setup_theme', 'urbanrest_setup' );
+add_action('after_setup_theme', 'urbanrest_setup');
 
 if( !function_exists( 'urbanrest_widgets_init' ) ) :
 	function urbanrest_widgets_init() {
