@@ -136,4 +136,9 @@ h1 {
   display: block;
   margin-top: 2em; }
 
+.login h1 a {
+  background-image: url(images/logo-text.png);
+  background-size: contain;
+  width: auto; }
+
 /*# sourceMappingURL=style.css.map */
