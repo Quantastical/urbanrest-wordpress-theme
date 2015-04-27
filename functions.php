@@ -23,7 +23,7 @@ if ( !function_exists('urbanrest_setup') ) :
 		wp_enqueue_style( 'main', get_stylesheet_uri() );
 
 		// Add scripts
-		wp_enqueue_script('ga', get_stylesheet_directory_uri() . '/scripts/ga.js', '1.0', true);
+		wp_enqueue_script('ga', get_stylesheet_directory_uri() . '/scripts/analytics.js', '1.0', true);
 	}
 endif;
 add_action('after_setup_theme', 'urbanrest_setup');
