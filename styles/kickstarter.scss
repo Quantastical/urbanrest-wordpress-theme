@@ -1,0 +1,429 @@
+@media only screen
+{
+	h4
+	{
+		color: white;
+		font-family: 'Rock Salt';
+		font-size: 1.5em;
+		font-weight: 400;
+		margin-bottom: 0.5em;
+		text-align: center;
+
+		@media (min-width: 500px),
+		       (min-width: 200px) and (-webkit-min-device-pixel-ratio: 2)
+		{
+			font-size: 1.25em;
+		}
+	}
+
+	#kickstarter
+	{
+		align-content: center;
+		background: black;
+		display: flex;
+		flex-flow: row wrap;
+		min-height: 100vh;
+		padding: 1em 0;
+		text-align: center;
+		width: 100%;
+
+		.page
+		{
+			flex: 1 100%;
+
+			h1
+			{
+				line-height: 1.75em;
+				
+				a
+				{
+					display: inline-block;
+					font-family: 'RNS Baruta';
+					font-size: 2em;
+					margin-bottom: 1em;
+					padding-top: 1em;
+					text-decoration: none;
+					text-transform: uppercase;
+
+					@media (min-width: 500px),
+					       (min-width: 200px) and (-webkit-min-device-pixel-ratio: 2)
+					{
+						font-size: 1.75em;
+					}
+
+				}
+			}
+
+			iframe
+			{
+				max-width: 100%;
+			}
+		}
+
+		.entry-header
+		{
+			display: none;
+		}
+
+		.entry-content
+		{
+			margin: 0 auto;
+		}
+
+		p
+		{
+			margin: 0;
+		}
+	}
+
+	.kickstart
+	{
+		flex: 1 100%;
+
+		.rewards,
+		.donate
+		{
+			background-color: rgb( 43, 194, 83 );
+			border: 0;
+			border-radius: 0.25em;
+			box-sizing: border-box;
+			color: white;
+			cursor: pointer;
+			display: inline-block;
+			font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+			font-size: 1em;
+			font-weight: 500;
+			line-height: 1.5em;
+			padding: 0.5em;
+			text-align: center;
+			text-decoration: none;
+			@include transition( all 0.2s ease-in-out );
+			vertical-align: baseline;
+
+			&:first-child
+			{
+				margin-right: 0.5em;
+			}
+
+			@media (min-width: 500px),
+			       (min-width: 200px) and (-webkit-min-device-pixel-ratio: 2)
+			{
+				width: auto;
+
+				&:first-child
+				{
+					margin-bottom: 1em;
+				}
+			}
+
+			&:before,
+			{
+				display: inline-block;
+				font-family: FontAwesome;
+				font-size: 1.25em;
+				margin-right: 0.5em;
+				vertical-align: bottom;
+			}
+		}
+
+		.donate:before
+		{
+			content: '\f0d6';
+		}
+
+		.rewards:before
+		{
+			content: '\f06b';
+		}
+	}
+
+	.share
+	{
+		flex: 1 100%;
+
+		a
+		{
+			border-radius: 3pt;
+			box-shadow: 0 0 0 rgba( 0, 0, 0, 0.0 );
+			color: white;
+			display: inline-block;
+			font-family: 'Roboto';
+			font-size: 1em;
+			font-weight: 500;
+			line-height: 1.25em;
+			margin-right: 0.5em;
+			padding: 0.6em 0.8em;
+			text-decoration: none;
+			@include transform( scale( 1.0 ) );
+			@include transition( background-color 0.33s, box-shadow 0.33s, transform 0.33s );
+
+			&:before
+			{
+				display: inline-block;
+				font-family: FontAwesome;
+				font-size: 1.25em;
+				margin-right: 0.5em;
+				vertical-align: middle;
+
+				@media (max-width: 500px),
+				       (max-width: 200px) and (-webkit-min-device-pixel-ratio: 2)
+				{
+					margin-right: 0;
+				}
+			}
+
+			&:hover
+			{
+				box-shadow: 0 0 1.5em rgba( 0, 0, 0, 0.5 );
+				position: relative;
+				z-index: 5;
+				@include transform( scale( 1.1 ) );
+				@include transition( background-color 0.11s, box-shadow 0.11s, transform 0.11s );
+			}
+
+			&.facebook { background-color: $facebook-blue; }
+			&.twitter { background-color: $twitter-blue; }
+			&.google { background-color: $google-red; }
+			&.email { background-color: #666; }
+
+			&.facebook:before { content: '\f09a'; }
+			&.twitter:before { content: '\f099'; }
+			&.google:before { content: '\f0d5'; }
+			&.email:before { content: '\f003'; vertical-align: baseline; }
+
+			&.facebook:hover { background-color: lighten( $facebook-blue, 5% ); }
+			&.twitter:hover { background-color: lighten( $twitter-blue, 5% ); }
+			&.google:hover { background-color: lighten( $google-red, 5% ); }
+			&.email:hover { background-color: lighten( #666, 5% ); }
+
+			@media (max-width: 500px),
+			       (max-width: 200px) and (-webkit-min-device-pixel-ratio: 2)
+			{
+				width: 1.25em;
+
+				span
+				{
+					display: none;
+				}
+			}
+		}
+	}
+
+	.subscribe
+	{
+		color: white;
+		font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+		margin: 0 auto;
+		max-width: 500px;
+		width: 100%;
+
+		label
+		{
+			display: none;
+		}
+
+		.mc-field-group
+		{
+			display: inline;
+			width: 50%;
+		}
+
+		.help
+		{
+			box-sizing: border-box;
+		   color: red;
+		   display: block;
+		   height: 2em;
+    		line-height: 2em;
+    		overflow: hidden;
+    		padding: 0.5em;
+    		@include transition( height 0.33s ease-in-out );
+
+    		&.hidden
+    		{
+    			height: 0;
+    		}
+		}
+
+		button
+		{
+			background-color: rgb( 43, 194, 83 );
+			border: none;
+			border-radius: 3pt;
+			box-shadow: 0 0 0 rgba( 0, 0, 0, 0.0 );
+			color: white;
+			cursor: pointer;
+			display: inline-block;
+			font-family: 'Roboto';
+			font-size: 1em;
+			font-weight: 500;
+			line-height: 1.25em;
+			margin-right: 0.5em;
+			padding: 0.6em 0.8em;
+			text-decoration: none;
+			@include transform( scale( 1.0 ) );
+			@include transition( background-color 0.33s, box-shadow 0.33s, transform 0.33s );
+
+			&:before
+			{
+				content: '\f12a';
+				display: inline-block;
+				font-family: FontAwesome;
+				font-size: 1.25em;
+				margin-right: 0.5em;
+				vertical-align: middle;
+			}
+
+			&:hover
+			{
+				box-shadow: 0 0 1.5em rgba( 0, 0, 0, 0.5 );
+				position: relative;
+				z-index: 5;
+				@include transform( scale( 1.1 ) );
+				@include transition( background-color 0.11s, box-shadow 0.11s, transform 0.11s );
+			}
+		}
+
+		input
+		{
+			background-color: rgba( 255, 255, 255, 0.11 );
+			border: solid 1pt rgba( 255, 255, 255, 0.25 );
+			box-sizing: border-box;
+			color: white;
+			font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+			font-size: 1.25em;
+			padding: 0.5em;
+			text-align: center;
+			@include transition( background-color 0.33s ease-in-out, border-color 0.33s ease-in-out, color 0.33s ease-in-out );
+
+			&#mce-FNAME,
+			&#mce-LNAME
+			{
+				margin: 0 0.5em;
+				width: calc( 50% - 0.5em - 2pt );
+			}
+
+			&#mce-FNAME
+			{
+				margin-left: 0;
+			}
+
+			&#mce-LNAME
+			{
+				margin-right: 0;
+			}
+
+			&#mce-EMAIL
+			{
+				margin-top: 1em;
+				width: 100%;
+			}
+
+			&.error
+			{
+				@include animation( shake 0.25s linear 3 );
+				background-color: rgba( 255, 0, 0, 0.11 );
+				border-color: rgba( 255, 0, 0, 0.25 );
+				color: red;
+			}
+
+			&:focus
+			{
+				background: rgba( 255, 255, 255, 0.33 );
+				border-color: rgba( 255, 255, 255, 0.5 );
+
+				&.error
+				{
+					background-color: rgba( 255, 0, 0, 0.33 );
+					border-color: rgba( 255, 0, 0, 0.5 );
+					color: red;
+				}
+			}
+		}
+	}
+
+	.progress
+	{
+		flex: 1 100%;
+
+		#pledged
+		{
+			background-color: rgb( 43, 194, 83 );
+			background-image: linear-gradient(
+				center bottom,
+				rgb( 43, 194, 83 ) 37%,
+				rgb( 84, 240, 84 ) 69%
+			);
+			border-radius: 0.5em;
+			display: block;
+			height: 100%;
+			overflow: hidden;
+			position: relative;
+			@include transition( width 2s ease-in-out );
+
+			&.hidden
+			{
+				display: none;
+				width: 0 !important;
+			}
+
+			&:after
+			{
+				@include animation( move 1s linear infinite );
+				background-image: linear-gradient(
+					-45deg, 
+					rgba( 255, 255, 255, .2 ) 25%, 
+					transparent 25%, 
+					transparent 50%, 
+					rgba( 255, 255, 255, .2 ) 50%, 
+					rgba( 255, 255, 255, .2 ) 75%, 
+					transparent 75%, 
+					transparent
+				);
+				background-size: 1em 1em;
+				border-radius: 0.5em;
+				bottom: 0;
+				content: '';
+				left: 0;
+				overflow: hidden;
+				position: absolute;
+				right: 0;
+				top: 0;
+				z-index: 1;
+			}
+		}
+
+		#progress
+		{
+			background: #555;
+			border-radius: 1em;
+			height: 1em;
+			margin: 0 auto 1em;
+			max-width: 500px;
+			position: relative;
+			padding: 0.5em;
+			width: 80%;
+		}
+	}
+}
+
+@include keyframes( move )
+{
+	0% { background-position: 0 0; }
+	100% { background-position: 1em 1em; }
+}
+
+@include keyframes( shake )
+{
+	0%   { @include transform( translate(2pt, 1pt) rotate(0deg) ); }
+	10%  { @include transform( translate(-1pt, -2pt) rotate(-2deg) ); }
+	20%  { @include transform( translate(-2pt, 0pt) rotate(2deg) ); }
+	30%  { @include transform( translate(0pt, 2pt) rotate(0deg) ); }
+	40%  { @include transform( translate(1pt, -1pt) rotate(1deg) ); }
+	50%  { @include transform( translate(-1pt, 2pt) rotate(-1deg) ); }
+	60%  { @include transform( translate(-2pt, 1pt) rotate(0deg) ); }
+	70%  { @include transform( translate(2pt, 1pt) rotate(-2deg) ); }
+	80%  { @include transform( translate(-1pt, -1pt) rotate(2deg) ); }
+	90%  { @include transform( translate(2pt, 2pt) rotate(-1deg) ); }
+	100% { @include transform( translate(0pt, 0pt) rotate(0deg) ); }
+}

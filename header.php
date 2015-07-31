@@ -7,11 +7,11 @@
 	</head>
 
 	<body <?php body_class(); ?>>
-			<a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+			<a class="skip-link screen-reader-text hidden" href="#main"><span>Skip to content</span></a>
 
 			<header id="preliminaries" class="site-header" role="banner">
 				<h1 class="site-title">
-					<img alt="<?php bloginfo( 'name' ); ?>" class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-text.png" />
+					<img alt="<?php bloginfo( 'name' ); ?>" class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-3-color.png" />
 				</h1>
 <?php
 $description = get_bloginfo( 'description', 'display' );

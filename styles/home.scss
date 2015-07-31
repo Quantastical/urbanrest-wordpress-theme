@@ -1,0 +1,180 @@
+@media only screen
+{
+
+	.search-form,
+	.skip-link,
+	.site-coming-soon,
+	.site-description,
+	.site-footer,
+	.site-main
+	{
+		display: none;
+	}
+
+	.home
+	{
+		background-attachment: fixed;
+		background-color: black;
+		background-image: url(images/coming-soon-background.jpg);
+		background-position: center;
+		background-repeat: no-repeat;
+		@include background-size( cover );
+	}
+
+	.site-header
+	{
+		background-color: rgba(0,0,0,0.33);
+		background-image: url(images/tile-diagonal-lines.png);
+		background-repeat: repeat;
+		box-shadow: inset 0 0 15em black, inset 0 0 5em black;
+		min-height: 100%;
+		width: 100%;
+	}
+
+	.site-logo
+	{
+		background-image: url(images/logo-3-color-inverted-min.png);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 80%;
+		box-sizing: border-box;
+		height: 100%;
+		left: 0;
+		padding-left: 100%;
+		position: absolute;
+		top: 0;
+		@include transition( background-size 1s );
+		width: 100%;
+
+		@media (min-width: 500px),
+		       (min-width: 200px) and (-webkit-min-device-pixel-ratio: 2)
+		{
+			background-image: url(images/logo-3-color-inverted-2x-min.png);
+			background-size: 70%;
+		}
+
+		@media (min-width: 1000px),
+		       (min-width: 600px) and (-webkit-min-device-pixel-ratio: 2)
+		{
+			background-image: url(images/logo-3-color-inverted-4x-min.png);
+			background-size: 60%;
+		}
+
+		@media (min-aspect-ratio: 3/2)
+		{
+			background-size: 50%;
+		}
+	}
+
+	.social-navigation
+	{
+		bottom: 5%;
+		left: 0;
+		position: absolute;
+		text-align: center;
+		width: 100%;
+
+		h3
+		{
+			display: none;
+		}
+
+		.menu
+		{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			li
+			{
+				display: inline-block;
+				height: 3em;
+				@include transition( height 1s, width 1s );
+				width: 3em;
+
+				a
+				{
+					background-color: white;
+					border-radius: 100%;
+					color: transparent;
+					display: block;
+					height: 100%;
+					opacity: 0.5;
+					@include transition( opacity 0.6s );
+					width: 100%;
+
+					&:hover
+					{
+						opacity: 1;
+						@include transition( opacity 0.2s );
+					}
+				}
+
+				a:before
+				{
+					color: black;
+					display: inline-block;
+					font-family: FontAwesome;
+					font-size: 2em;
+					line-height: 1.5em;
+				}
+
+				&.facebook a:before  { content: '\f09a'; }
+				&.twitter a:before   { content: '\f099'; }
+				&.instagram a:before { content: '\f16d'; }
+				&.youtube a:before   { content: '\f16a'; }
+			}
+		}
+	}
+
+	.skip-link
+	{
+		@include animation( navigate 2s infinite );
+		color: white;
+		display: block;
+		font-size: 1.5em;
+		left: 50%;
+		margin-left: -0.6em;
+		margin-top: -1.5em;
+		opacity: 0.5;
+		position: absolute;
+		text-align: center;
+		text-decoration: none;
+		@include transition( opacity 1s );
+		top: 100%;
+		z-index: 666;
+
+		&:before
+		{
+			content: '\f078';
+			display: inline-block;
+			font-family: FontAwesome;
+			font-size: 1.25em;
+			vertical-align: middle;
+		}
+
+		&:hover
+		{
+			@include animation( none );
+			opacity: 0.75;
+		}
+
+		&.hidden
+		{
+			@include animation( none );
+			opacity: 0;
+		}
+
+		span
+		{
+			display: none;
+		}
+	}
+}
+
+@include keyframes( navigate )
+{
+	0% { opacity: 0.0; }
+	50% { opacity: 0.5; }
+	100% { opacity: 0.0; }
+}
