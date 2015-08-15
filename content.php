@@ -1,10 +1,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header" role="banner">
 		<?php
 			if ( is_single() ) :
-				the_title( '<h1 class="entry-title">', '</h1>' );
+				the_title( '<h2 class="entry-title">', '</h2>' );
 			else :
-				the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+				the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' );
 			endif;
 		?>
 	</header><!-- .entry-header -->
@@ -28,7 +28,7 @@
 		?>
 	</div>
 
-	<footer class="entry-footer">
+	<footer class="entry-footer" role="contentinfo">
 	<?php if( !is_home() && !is_front_page() ) : ?>
 		<?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?>
 	<?php endif; ?>

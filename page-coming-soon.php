@@ -9,11 +9,11 @@
  */
 ?>
 <?php get_header(); ?>
-	<main id="coming-soon" class="site-coming-soon" role="main">
+	<main id="coming-soon" class="site-coming-soon">
 		<?php if ( have_posts() ) : ?>
 			<?php if ( is_home() && !is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				<header role="banner">
+					<h2 class="page-title screen-reader-text"><?php single_post_title(); ?></h2>
 				</header>
 			<?php endif; ?>
 

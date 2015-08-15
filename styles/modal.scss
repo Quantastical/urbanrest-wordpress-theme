@@ -1,0 +1,84 @@
+.no-scroll
+{
+	height: 100%;
+	overflow: hidden;
+}
+
+.javascript
+{
+	.modal-shade
+	{
+		@include prefixer(align-items, center, webkit moz spec);
+		background-color: rgba( $urbanrest-black, 0.88 );
+		display: none;
+		height: 100%;
+		@include prefixer(justify-content, center, webkit moz spec);
+		left: 0;
+		opacity: 0;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: $layer-modal;
+		@include prefixer(animation-duration, 0.5s, webkit moz spec);
+
+		&.modal-closing
+		{
+			@include prefixer(display, flex, webkit moz spec, value);
+
+			.modal-content
+			{
+			}
+		}
+
+		&.modal-opened
+		{
+			@include prefixer(display, flex, webkit moz spec, value);
+			opacity: 1;
+
+			.modal-content
+			{
+			}
+		}
+
+		.modal-close
+		{
+			background: none;
+			border: none;
+			color: rgba( $urbanrest-white, 0.5 );
+			cursor: pointer;
+			font-size: 1.5em;
+			padding: 1em;
+			position: fixed;
+			right: 0;
+			top: 0;
+			@include transition( color 0.33s );
+
+			&:before
+			{
+				content: $fa-var-times;
+				font-family: FontAwesome;
+			}
+
+			&:hover
+			{
+				color: rgba( $urbanrest-white, 1.0 );
+				@include transition( color 0.666s );
+			}
+		}
+
+		.modal-content
+		{
+			@include media( '>=tablet' )
+			{
+				max-width: 50em;
+			}
+		}
+	}
+}
+
+.admin-bar
+{
+	@include media( '>600px' ) { .javascript .modal-shade .modal-close { top: 46px; } }
+	@include media( '>782px' ) { .javascript .modal-shade .modal-close { top: 32px; } }
+	
+}

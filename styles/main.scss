@@ -1,0 +1,265 @@
+.color-apple      { color: $apple-grey;            }
+.color-facebook   { color: $facebook-blue;         }
+.color-twitter    { color: $twitter-blue;          }
+.color-google     { color: $google-red;            }
+.color-youtube    { color: $youtube-red;           }
+.color-linkedin   { color: $linkedin-blue;         }
+.color-instagram  { color: $instagram-blue;        }
+.color-pinterest  { color: $pinterest-red;         }
+.color-vine       { color: $vine-green;            }
+.color-snapchat   { color: $snapchat-yellow;       }
+.color-quora      { color: $quora-burgundy;        }
+.color-flickr     { color: $flickr-pink;           }
+.color-tumbler    { color: $tumblr-dark-turquoise; }
+.color-foursquare { color: $foursquare-blue;       }
+
+.hidden { display: none; }
+
+
+.javascript
+{
+	[data-entered-viewport]:not(.animated)
+	{
+		opacity: 0;
+	}
+}
+
+#social-navigation
+{
+	left: 0;
+	position: fixed;
+	text-align: center;
+	top: 5%;
+	width: 100%;
+	z-index: $layer-social-navigation;
+
+	h3
+	{
+		display: none;
+	}
+}
+
+.social-menu
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li
+	{
+		display: inline;
+		margin: 0 0.25em;
+
+		a
+		{
+			display: inline-block;
+			opacity: 0.5;
+			@include transition( opacity 0.666s );
+
+			&:hover
+			{
+				opacity: 1;
+				@include transition( opacity 0.11s );
+			}
+
+			.label
+			{
+				display: none;
+			}
+
+			.fa
+			{
+				background-color: white;
+				border-radius: 0.15em;
+				display: inline-block;
+				font-size: 2.5em;
+				height: 0.8em;
+				line-height: 0.8em;
+				text-indent: -0.05em;
+				width: 0.75em;
+			}
+		}
+	}
+}
+
+@include media("screen")
+{
+	#preliminaries
+	{
+		position: relative;
+		z-index: 1;
+	}
+
+	#kickstarter
+	{
+		position: relative;
+		z-index: 2;
+	}
+
+	#navigation
+	{
+		position: relative;
+		z-index: 100;
+	}
+
+	#main-navigation
+	{
+		background: rgba(black, 0.8);
+		bottom: 0;
+		font-size: 1.125em;
+		padding: 1.125em 0;
+		position: fixed;
+		text-align: center;
+		width: 100%;
+		z-index: $layer-main-navigation;
+
+		@include media("<=tablet")
+		{
+			padding: 0;
+		}
+
+		&.stuck-top
+		{
+			bottom: auto !important;
+			top: 0 !important;
+		}
+
+		h3
+		{
+			display: none;
+		}
+
+		.menu
+		{
+			line-height: 1em;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			@include user-select( none );
+
+			li
+			{
+				display: inline-block;
+
+				@include media(">phone")
+				{
+					margin: 0 0.5em;
+
+					&:first-of-type { margin-left: 0; }
+					&:last-of-type { margin-right: 0; }
+				}
+
+				@include media('<=tablet')
+				{
+					height: 100%;
+
+					&:first-of-type { display: none; }
+					&:last-of-type { display: none; }
+				}
+
+				&.menu-item-logo
+				{
+					margin: 0;
+					vertical-align: middle;
+
+					a
+					{
+						border: none;
+						padding: 0;
+						@include transition( none );
+
+						&:hover
+						{
+							background-color: transparent;
+							border: none;
+						}
+					}
+
+					img
+					{
+						height: 0;
+						opacity: 0;
+						vertical-align: middle;
+					}
+				}
+
+				&:not(.menu-item-logo)
+				{
+					a
+					{
+						background-color: transparent;
+						border: none;
+						border-radius: 2pt;
+						color: white;
+						font-family: 'Roboto';
+						font-size: 1em;
+						font-weight: 100;
+						padding: 0.25em;
+						text-decoration: none;
+						text-transform: uppercase;
+						@include transition( background-color 0.33s ease-in-out, color 0.33s ease-in-out );
+						vertical-align: middle;
+
+						&:hover { border: none; }
+
+						&[href="#coming-soon"]
+						{
+							cursor: default;
+							opacity: 0.33;
+						}
+
+						&:not([href="#coming-soon"]):hover
+						{
+							background-color: gold;
+							color: black;
+							@include transition( background-color 0.11s ease-in-out, color 0.11s ease-in-out );
+						}
+					}
+				}
+
+				@include media("<=tablet")
+				{
+					&.menu-item-type-custom
+					{
+						a
+						{
+							border-radius: 0;
+							box-sizing: border-box;
+							display: block;
+							font-family: 'Roboto';
+							font-size: 9px;
+							font-weight: 400;
+							height: 45px;
+							padding: 5px;
+							text-overflow: ellipsis;
+							text-transform: capitalize;
+							white-space: nowrap;
+							width: 60px;
+
+							&:before
+							{
+								display: block;
+								font-family: FontAwesome;
+								font-size: 20px;
+								margin: 3px auto 0;
+								text-align: center;
+								width: auto;
+							}
+
+							&[href="#coming-soon"] { text-indent: 2em; }
+							&[href="#community"]:before { content: $fa-var-newspaper-o; }
+							&[href="#kickstarter"]:before { content: $fa-var-trophy; }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+.admin-bar
+{
+	@include media( '>600px' ) { #main-navigation.stuck-top { top: 46px !important; } }
+	@include media( '>782px' ) { #main-navigation.stuck-top { top: 32px !important; } }
+}

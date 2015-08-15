@@ -1,54 +1,171 @@
 @media only screen
 {
-	h4
+	html
 	{
-		color: white;
-		font-family: 'Rock Salt';
-		font-size: 1.5em;
-		font-weight: 400;
-		margin-bottom: 0.5em;
-		text-align: center;
+		opacity: 0;
 
-		@media (min-width: 500px),
-		       (min-width: 200px) and (-webkit-min-device-pixel-ratio: 2)
+		&.no-javascript
 		{
-			font-size: 1.25em;
+			opacity: 1;
+		}
+
+		&.ready
+		{
+			opacity: 1;
+			@include transition( opacity 0.22s );
+		}
+	}
+
+	.home
+	{
+		background-attachment: fixed;
+		@include media('<=phone') { background-attachment: scroll; }
+		background-color: black;
+		background-image: url(images/background-hops.jpg);
+		@include media( 'portrait' ) { background-image: url(images/background-hops-portrait.jpg); }
+		background-position: center 0;
+		@include media('<=phone') { background-position: center 0 !important; }
+		background-repeat: no-repeat;
+		@include background-size( cover );
+	}
+
+	.skip-link,
+	.site-coming-soon,
+	.site-description,
+	.site-footer,
+	.site-main
+	{
+		display: none;
+	}
+
+	.site-header
+	{
+		background-color: rgba(0,0,0,0.33);
+		background-image: url(images/tile-diagonal-lines.png);
+		background-repeat: repeat;
+		box-shadow: inset 0 0 15em black, inset 0 0 5em black;
+		min-height: 100%;
+		width: 100%;
+	}
+
+	.site-logo
+	{
+		background-image: url(images/logo-3-color-inverted-min.png);
+		background-position: 50% 44%;
+		background-repeat: no-repeat;
+		background-size: 80%;
+		box-sizing: border-box;
+		height: 100%;
+		left: 0;
+		padding-left: 100%;
+		position: absolute;
+		top: 0;
+		@include transition( background-size 0.1s );
+		width: 100%;
+
+		@include media( '<=phone' )
+		{
+			background-size: 80%;
+		}
+
+		@include media('>=tablet')
+		{
+			background-size: 65%;
+			background-image: url(images/logo-3-color-inverted-2x-min.png);
+		}
+
+		@include media('>=desktop')
+		{
+			background-size: 50%;
+			background-image: url(images/logo-3-color-inverted-4x-min.png);
 		}
 	}
 
 	#kickstarter
 	{
 		align-content: center;
-		background: black;
-		display: flex;
-		flex-flow: row wrap;
+		background-attachment: fixed;
+		@include media('<=phone') { background-attachment: scroll; }
+		background-color: black;
+		background-image: url(images/background-kickstarter.jpg);
+		@include media( 'portrait' ) { background-image: url(images/background-kickstarter-portrait.jpg); }
+		background-position: center 0;
+		@include media('<=phone') { background-position: center 0 !important; }
+		background-repeat: no-repeat;
+		@include background-size( cover );
+		box-sizing: border-box;
 		min-height: 100vh;
-		padding: 1em 0;
+		overflow-x: hidden;
+		padding: 5.75em 0;
 		text-align: center;
 		width: 100%;
 
+		&:before
+		{
+			background-image: url(images/tile-diagonal-lines.png);
+			background-position: center;
+			background-repeat: repeat;
+			content: '';
+			display: block;
+			height: 100%;
+			left: 0;
+			position: absolute;
+			width: 100%;
+			top: 0;
+		}
+
+		a[href="#coming-soon"]
+		{
+			display: none;
+		}
+
+		h3
+		{
+			display: none;
+		}
+		
+		h4
+		{
+			color: white;
+			font-family: 'Rock Salt';
+			font-size: 1.5em;
+			font-weight: 400;
+			margin-bottom: 0.5em;
+			text-align: center;
+
+			@media (min-width: 500px),
+			       (min-width: 200px) and (-webkit-min-device-pixel-ratio: 2)
+			{
+				font-size: 1.25em;
+			}
+		}
+
 		.page
 		{
-			flex: 1 100%;
+			position: relative;
 
-			h1
+			> header
+			{
+				display: none;
+			}
+
+			h2
 			{
 				line-height: 1.75em;
+				margin: 1.5em 0;
 				
 				a
 				{
 					display: inline-block;
 					font-family: 'RNS Baruta';
-					font-size: 2em;
-					margin-bottom: 1em;
-					padding-top: 1em;
+					font-size: 1.75em;
 					text-decoration: none;
 					text-transform: uppercase;
 
-					@media (min-width: 500px),
-					       (min-width: 200px) and (-webkit-min-device-pixel-ratio: 2)
+					@include media('>tablet')
 					{
-						font-size: 1.75em;
+						font-size: 2.75em;
+						line-height: 1em;
 					}
 
 				}
@@ -56,7 +173,9 @@
 
 			iframe
 			{
-				max-width: 100%;
+				border: none;
+				border-radius: 1em;
+				max-width: 90%;
 			}
 		}
 
@@ -78,8 +197,6 @@
 
 	.kickstart
 	{
-		flex: 1 100%;
-
 		.rewards,
 		.donate
 		{
@@ -105,14 +222,21 @@
 				margin-right: 0.5em;
 			}
 
-			@media (min-width: 500px),
-			       (min-width: 200px) and (-webkit-min-device-pixel-ratio: 2)
+			@include media('<tablet')
 			{
 				width: auto;
 
 				&:first-child
 				{
 					margin-bottom: 1em;
+				}
+			}
+
+			@include media('>=tablet')
+			{
+				&:first-child
+				{
+					margin-right: 1.5em;
 				}
 			}
 
@@ -123,6 +247,15 @@
 				font-size: 1.25em;
 				margin-right: 0.5em;
 				vertical-align: bottom;
+			}
+
+			&:hover
+			{
+				box-shadow: 0 0 1.5em rgba( 0, 0, 0, 0.5 );
+				background-color: lighten( rgb( 43, 194, 83 ), 5% );
+				position: relative;
+				z-index: 5;
+				@include transition( background-color 0.11s, box-shadow 0.11s );
 			}
 		}
 
@@ -137,14 +270,32 @@
 		}
 	}
 
+	.success
+	{
+		color: yellow;
+		font-family: 'Roboto';
+		font-size: 1.5em;
+		margin-top: 0.5em;
+
+		@include media('>tablet')
+		{
+			font-size: 2.5em;
+		}
+	}
+
 	.share
 	{
-		flex: 1 100%;
+		@include media('>=tablet')
+		{
+			display: inline-block;
+			float: left;
+			margin-left: 1%;
+			width: 49%;
+		}
 
 		a
 		{
 			border-radius: 3pt;
-			box-shadow: 0 0 0 rgba( 0, 0, 0, 0.0 );
 			color: white;
 			display: inline-block;
 			font-family: 'Roboto';
@@ -154,8 +305,7 @@
 			margin-right: 0.5em;
 			padding: 0.6em 0.8em;
 			text-decoration: none;
-			@include transform( scale( 1.0 ) );
-			@include transition( background-color 0.33s, box-shadow 0.33s, transform 0.33s );
+			@include transition( background-color 0.33s );
 
 			&:before
 			{
@@ -174,11 +324,9 @@
 
 			&:hover
 			{
-				box-shadow: 0 0 1.5em rgba( 0, 0, 0, 0.5 );
 				position: relative;
 				z-index: 5;
-				@include transform( scale( 1.1 ) );
-				@include transition( background-color 0.11s, box-shadow 0.11s, transform 0.11s );
+				@include transition( background-color 0.11s );
 			}
 
 			&.facebook { background-color: $facebook-blue; }
@@ -196,8 +344,17 @@
 			&.google:hover { background-color: lighten( $google-red, 5% ); }
 			&.email:hover { background-color: lighten( #666, 5% ); }
 
-			@media (max-width: 500px),
-			       (max-width: 200px) and (-webkit-min-device-pixel-ratio: 2)
+			@include media('<=phone')
+			{
+				width: 1.25em;
+
+				span
+				{
+					display: none;
+				}
+			}
+
+			@include media('<=desktop','>tablet')
 			{
 				width: 1.25em;
 
@@ -209,142 +366,13 @@
 		}
 	}
 
-	.subscribe
-	{
-		color: white;
-		font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
-		margin: 0 auto;
-		max-width: 500px;
-		width: 100%;
-
-		label
-		{
-			display: none;
-		}
-
-		.mc-field-group
-		{
-			display: inline;
-			width: 50%;
-		}
-
-		.help
-		{
-			box-sizing: border-box;
-		   color: red;
-		   display: block;
-		   height: 2em;
-    		line-height: 2em;
-    		overflow: hidden;
-    		padding: 0.5em;
-    		@include transition( height 0.33s ease-in-out );
-
-    		&.hidden
-    		{
-    			height: 0;
-    		}
-		}
-
-		button
-		{
-			background-color: rgb( 43, 194, 83 );
-			border: none;
-			border-radius: 3pt;
-			box-shadow: 0 0 0 rgba( 0, 0, 0, 0.0 );
-			color: white;
-			cursor: pointer;
-			display: inline-block;
-			font-family: 'Roboto';
-			font-size: 1em;
-			font-weight: 500;
-			line-height: 1.25em;
-			margin-right: 0.5em;
-			padding: 0.6em 0.8em;
-			text-decoration: none;
-			@include transform( scale( 1.0 ) );
-			@include transition( background-color 0.33s, box-shadow 0.33s, transform 0.33s );
-
-			&:before
-			{
-				content: '\f12a';
-				display: inline-block;
-				font-family: FontAwesome;
-				font-size: 1.25em;
-				margin-right: 0.5em;
-				vertical-align: middle;
-			}
-
-			&:hover
-			{
-				box-shadow: 0 0 1.5em rgba( 0, 0, 0, 0.5 );
-				position: relative;
-				z-index: 5;
-				@include transform( scale( 1.1 ) );
-				@include transition( background-color 0.11s, box-shadow 0.11s, transform 0.11s );
-			}
-		}
-
-		input
-		{
-			background-color: rgba( 255, 255, 255, 0.11 );
-			border: solid 1pt rgba( 255, 255, 255, 0.25 );
-			box-sizing: border-box;
-			color: white;
-			font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
-			font-size: 1.25em;
-			padding: 0.5em;
-			text-align: center;
-			@include transition( background-color 0.33s ease-in-out, border-color 0.33s ease-in-out, color 0.33s ease-in-out );
-
-			&#mce-FNAME,
-			&#mce-LNAME
-			{
-				margin: 0 0.5em;
-				width: calc( 50% - 0.5em - 2pt );
-			}
-
-			&#mce-FNAME
-			{
-				margin-left: 0;
-			}
-
-			&#mce-LNAME
-			{
-				margin-right: 0;
-			}
-
-			&#mce-EMAIL
-			{
-				margin-top: 1em;
-				width: 100%;
-			}
-
-			&.error
-			{
-				@include animation( shake 0.25s linear 3 );
-				background-color: rgba( 255, 0, 0, 0.11 );
-				border-color: rgba( 255, 0, 0, 0.25 );
-				color: red;
-			}
-
-			&:focus
-			{
-				background: rgba( 255, 255, 255, 0.33 );
-				border-color: rgba( 255, 255, 255, 0.5 );
-
-				&.error
-				{
-					background-color: rgba( 255, 0, 0, 0.33 );
-					border-color: rgba( 255, 0, 0, 0.5 );
-					color: red;
-				}
-			}
-		}
-	}
-
 	.progress
 	{
-		flex: 1 100%;
+		@include media('>=tablet')
+		{
+			display: inline-block;
+			width: 49%;
+		}
 
 		#pledged
 		{
@@ -369,7 +397,6 @@
 
 			&:after
 			{
-				@include animation( move 1s linear infinite );
 				background-image: linear-gradient(
 					-45deg, 
 					rgba( 255, 255, 255, .2 ) 25%, 
@@ -397,20 +424,49 @@
 		{
 			background: #555;
 			border-radius: 1em;
+			display: block;
 			height: 1em;
 			margin: 0 auto 1em;
 			max-width: 500px;
 			position: relative;
 			padding: 0.5em;
+			text-decoration: none;
+			@include transition( background-color 0.33s );
 			width: 80%;
+
+			&:hover
+			{
+				background: lighten( #555, 5% );
+				position: relative;
+				z-index: 5;
+				@include transition( background-color 0.11s );
+
+				#pledged:after
+				{
+					@include animation( move 1s linear infinite );
+				}
+			}
 		}
 	}
+}
+
+.admin-bar
+{
+	@include media( '<=782px' ) { .site-header { min-height: calc(100% - 46px) !important; } }
+	@include media( '>782px' ) { .site-header { min-height: calc(100% - 32px) !important; } }
 }
 
 @include keyframes( move )
 {
 	0% { background-position: 0 0; }
 	100% { background-position: 1em 1em; }
+}
+
+@include keyframes( navigate )
+{
+	0% { opacity: 0.0; }
+	50% { opacity: 0.5; }
+	100% { opacity: 0.0; }
 }
 
 @include keyframes( shake )

@@ -9,26 +9,26 @@
  */
 ?>
 <?php get_header(); ?>
-	<main id="home" class="site-home" role="main">
+	<main id="home" class="site-home">
 		<section id="menu">
-			<h1>Handcrafted Beer</h1>
+			<h2>Handcrafted Beer</h2>
 
 			<div id="taps">
-				<h2>Current Taps</h2>
+				<h3>Current Taps</h3>
 				<?php if( get_field('taps') ): ?>
 					<?php the_field('taps'); ?>
 				<?php endif; ?>
 			</div>
 
 			<div id="growlers">
-				<h2>Growler Fills</h2>
+				<h3>Growler Fills</h3>
 				<?php if( get_field('growlers') ): ?>
 					<?php the_field('growlers'); ?>
 				<?php endif; ?>
 			</div>
 
 			<div id="deck">
-				<h2>On-Deck</h2>
+				<h3>On-Deck</h3>
 				<?php if( get_field('deck') ): ?>
 					<?php the_field('deck'); ?>
 				<?php endif; ?>
