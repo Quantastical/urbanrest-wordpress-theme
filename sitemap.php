@@ -1,7 +1,10 @@
-<?php header('Content-Type: application/xml'); ?>
-<?xml version="1.0" encoding="UTF-8"?>
+<?php
+header("HTTP/1.1 200 OK");
+header('Content-Type: application/xml');
+echo '<?xml version="1.0" encoding="UTF-8"?>';
+?>
 <?php if( $sitemap_type === 'index' ) : ?>
-<?xml-stylesheet type="text/xsl" href="<?php echo get_stylesheet_directory_uri(); ?>/styles/xsl/xml-sitemap-index.xsl" ?>
+<?php 	echo '<?xml-stylesheet type="text/xsl" href="' . get_stylesheet_directory_uri() . '/styles/xsl/xml-sitemap-index.xsl" ?>'; ?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <?php
 $recent_pages = wp_get_recent_posts( array(
@@ -15,7 +18,7 @@ $recent_pages = wp_get_recent_posts( array(
 <?php if( count($recent_pages) === 1 ) : ?>
 	<sitemap>
 		<loc><?php echo get_site_url(); ?>/sitemap-pages.xml</loc>
-		<lastmod><?php echo $recent_pages[0]['post_modified_gmt']; ?></lastmod>
+		<lastmod><?php echo date( 'c', strtotime($recent_pages[0]['post_modified_gmt']) ); ?></lastmod>
 	</sitemap>
 <?php endif; ?>
 
@@ -31,12 +34,12 @@ $recent_posts = wp_get_recent_posts( array(
 <?php if( count($recent_posts) === 1 ) : ?>
 	<sitemap>
 		<loc><?php echo get_site_url(); ?>/sitemap-posts.xml</loc>
-		<lastmod><?php echo $recent_posts[0]['post_modified_gmt']; ?></lastmod>
+		<lastmod><?php echo date('c', strtotime($recent_posts[0]['post_modified_gmt']) ); ?></lastmod>
 	</sitemap>
 <?php endif; ?>
 </sitemapindex>
 <?php elseif( $sitemap_type === 'urlset' ) : ?>
-<?xml-stylesheet type="text/xsl" href="<?php echo get_stylesheet_directory_uri(); ?>/styles/xsl/xml-sitemap.xsl" ?>
+<?php 	echo '<?xml-stylesheet type="text/xsl" href="' . get_stylesheet_directory_uri() . '/styles/xsl/xml-sitemap.xsl" ?>'; ?>
 <?php 	if( $post_type === 'post' ) : ?>
 <?php
 				$posts = get_posts( array(
@@ -53,7 +56,7 @@ $recent_posts = wp_get_recent_posts( array(
 <?php 			foreach( $posts as $post ) : ?>
 	<url>
 		<loc><?php echo get_permalink( $post->ID ); ?></loc>
-		<lastmod><?php echo $post->post_modified_gmt; ?></lastmod>
+		<lastmod><?php echo date('c', strtotime($post->post_modified_gmt) ); ?></lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -76,7 +79,7 @@ $recent_posts = wp_get_recent_posts( array(
 <?php 			foreach( $pages as $page ) : ?>
 	<url>
 		<loc><?php echo get_permalink( $page->ID ); ?></loc>
-		<lastmod><?php echo $page->post_modified_gmt; ?></lastmod>
+		<lastmod><?php echo date('c', strtotime($page->post_modified_gmt) ); ?></lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>

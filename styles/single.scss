@@ -34,6 +34,15 @@
 			}
 		}
 
+		iframe
+		{
+			border: none;
+			border-radius: 1em;
+			display: block;
+			margin: 0 auto;
+			max-width: 90%;
+		}
+
 		.post-header
 		{
 			.post-title

@@ -5192,6 +5192,12 @@ h1 {
       .single .post a:hover, .single .post .hyperlink:hover {
         border-bottom-color: #149f4f;
         color: #149f4f; }
+    .single .post iframe {
+      border: none;
+      border-radius: 1em;
+      display: block;
+      margin: 0 auto;
+      max-width: 90%; }
     .single .post .post-header .post-title {
       font-size: 2em; }
     .single .post .post-header .post-meta {

@@ -49,6 +49,7 @@ if( !function_exists('urbanrest_send_headers') ) :
 			} else {
 				$sitemap_type = 'index';
 			}
+
 			include('sitemap.php');
 			die();
 		}
