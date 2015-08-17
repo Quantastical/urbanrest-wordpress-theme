@@ -187,6 +187,7 @@ $urbanrest['twitter_username']                = get_option('urbanrest_setting_tw
 		<meta name="twitter:image" content="<?php echo $urbanrest['twitter_card_image']; ?>" />
 <?php endif; ?>
 
+		<link type="text/plain" rel="author" href="<?php echo get_site_url(); ?>/humans.txt" />
 		<?php wp_head(); ?>
 	</head>
 
