@@ -1,0 +1,354 @@
+.site.single-post
+{
+	.post
+	{
+		background-color: #DCC1A7;
+		background-image: url('images/single-background.jpg');
+		background-position: center;
+		background-repeat: repeat;
+		background-size: 20em;
+		color: darken(#A88C76, 40%);
+		font-weight: 300;
+		overflow-x: hidden;
+		padding-bottom: 4em;
+		padding-top: 3em;
+		width: 100%;
+
+		a, .hyperlink
+		{
+			@extend .hyperlink;
+		}
+
+		iframe
+		{
+			border: none;
+			border-radius: 0.25em;
+			display: block;
+			margin: 0 auto;
+			max-width: 90%;
+		}
+
+		.post-header
+		{
+			.post-title
+			{
+				font-size: 2em;
+				margin-bottom: 0.5em;
+				margin-top: 1em;
+			}
+
+			.post-meta
+			{
+				line-height: 1.5em;
+				margin-bottom: 1em;
+
+				.post-author
+				{
+					font-style: normal;
+				}
+
+				img
+				{
+					border-color: lighten( $urbanrest-black, 33% );
+					border-radius: 50%;
+					border-style: solid;
+					border-width: 2pt;
+					box-sizing: border-box;
+					float: left;
+					height: 3em;
+					margin-right: 0.75em;
+					width: auto;
+				}
+			}
+		}
+
+		.post-image
+		{
+			align-items: center;
+			background-position: center;
+			@include background-size( cover );
+			border-radius: 0.25em;
+			display: flex;
+			height: 0;
+			justify-content: center;
+			margin: 0;
+			overflow: hidden;
+			padding-bottom: 25%;
+			padding-top: 25%;
+			position: relative;
+			width: 100%;
+
+			img
+			{
+				display: none;
+				height: auto;
+				width: 100%;
+			}
+
+			figcaption
+			{
+				background-color: rgba( black, 0.55 );
+				bottom: 0;
+				box-sizing: border-box;
+				color: white;
+				font-weight: 400;
+				left: 0;
+				max-height: 0;
+				opacity: 0;
+				padding: 0 1em;
+				position: absolute;
+				@include transition( max-height 0.5s, opacity 0.33s, padding-bottom 0.5s, padding-top 0.5s );
+				width: 100%;
+
+				.post-image-title
+				{
+					font-size: 1.5em;
+				}
+
+				.post-image-caption
+				{
+					font-size: 0.8em;
+					font-style: italic;
+					font-weight: 100;
+				}
+
+				.post-image-description
+				{
+					font-size: 1em;
+					margin-top: 0.5em;
+				}
+			}
+
+			&:hover 
+			{
+				figcaption
+				{
+					max-height: 100%;
+					opacity: 1;
+					padding: 1em 1em;
+				}
+			}
+		}
+
+		.post-content
+		{
+			font-size: 1.2em;
+			line-height: 1.5em;
+
+			h2
+			{
+				font-size: 1.3em;
+				margin-bottom: 0.25em;
+			}
+
+			p
+			{
+				margin-bottom: 1em;
+			}
+
+			section
+			{
+				margin-top: 1em;
+			}
+
+			.post-tags
+			{
+				list-style: none;
+				padding: 0;
+
+				.post-tag
+				{
+					display: inline;
+					font-size: 0.8em;
+
+					a
+					{
+						background-color: rgba( $urbanrest-black, 0.3 );
+						border: none;
+						border-radius: 0.25em;
+						color: inherit;
+						display: inline-block;
+						margin-bottom: 0.5em;
+						margin-right: 0.5em;
+						padding: 0.25em 0.75em;
+						@include transition( background-color 0.33s );
+
+						&:hover
+						{
+							background-color: rgba( $urbanrest-green, 0.3 );
+							color: $urbanrest-green;
+							border: none;
+							@include transition( background-color 0.11s );
+						}
+					}
+
+					&:last-child a
+					{
+						margin-right: 0;
+					}
+				}
+			}
+		}
+
+		.post-footer
+		{
+			margin-top: 3em;
+
+			.post-actions
+			{
+				text-align: center;
+
+				.post-comments,
+				.post-like,
+				.post-share
+				{
+					background: none;
+					border: none;
+					display: inline-block;
+					font-size: 1em;
+					font-weight: 400;
+					margin-right: 1em;
+					text-align: center;
+
+					&:before
+					{
+						font-family: FontAwesome;
+						margin-right: 0.5em;
+					}
+
+					&.post-comments:before { content: $fa-var-comments; }
+					&.post-like:before     { content: $fa-var-heart; }
+					&.post-share:before    { content: $fa-var-share; }
+
+					&:hover
+					{
+						border: none;
+					}
+
+					&:last-of-type
+					{
+						margin-right: 0;
+					}
+
+					.comment-count,
+					.like-count,
+					.share-count
+					{
+						margin-left: 0.5em;
+
+						&:before { content: '('; }
+						&:after { content: ')'; }
+					}
+				}
+
+				.post-commenting,
+				.post-liking,
+				.post-sharing
+				{
+					list-style: none;
+					padding: 0;
+					text-align: center;
+
+					a
+					{
+						background-color: lighten( $urbanrest-black, 50% );
+						border: none;
+						border-radius: 0.25em;
+						color: rgba( $urbanrest-white, 0.88 );
+						display: inline-block;
+						font-weight: 400;
+						margin-bottom: 0.5em;
+						margin-right: 0.5em;
+						padding: 0.5em;
+						text-shadow: 0px 1px 0 rgba( $urbanrest-black, 0.33 );
+						@include transition( background-color 0.33s, color 0.33s );
+						width: 15em;
+
+						&:before
+						{
+							font-family: FontAwesome;
+							margin-right: 0.5em;
+						}
+
+						&:hover
+						{
+							background-color: lighten( $urbanrest-black, 45% );
+							color: rgba( $urbanrest-white, 1.0 );
+							border: none;
+							@include transition( background-color 0.11s, color 0.11s );
+						}
+
+						&.facebook
+						{
+							background-color: $facebook-blue;
+							&:hover { background-color: darken( $facebook-blue, 5% ); }
+						}
+
+						&.google
+						{
+							background-color: $google-red;
+							&:hover { background-color: darken( $google-red, 5% ); }
+						}
+
+						&.twitter
+						{
+							background-color: $twitter-blue;
+							&:hover { background-color: darken( $twitter-blue, 5% ); }
+						}
+					}
+
+					&.post-liking a
+					{
+						&.facebook { &:before { content: $fa-var-facebook; } }
+						&.twitter  { &:before { content: $fa-var-twitter; } }
+					}
+
+					&.post-sharing a
+					{
+						&.email    { &:before { content: $fa-var-envelope; } }
+						&.facebook { &:before { content: $fa-var-facebook; } }
+						&.google   { &:before { content: $fa-var-google-plus; } }
+						&.twitter  { &:before { content: $fa-var-twitter; } }
+					}
+				}
+			}
+
+			.post-tags
+			{
+				list-style: none;
+				margin: 3em 0;
+				padding: 0;
+
+				li
+				{
+					display: inline;
+
+					a
+					{
+						background-color: rgba( $urbanrest-black, 0.3 );
+						border: none;
+						border-radius: 0.25em;
+						color: inherit;
+						display: inline-block;
+						margin-right: 0.5em;
+						padding: 0.5em;
+						@include transition( background-color 0.33s );
+
+						&:hover
+						{
+							background-color: rgba( $urbanrest-green, 0.3 );
+							color: $urbanrest-green;
+							border: none;
+							@include transition( background-color 0.11s );
+						}
+					}
+
+					&:last-child a
+					{
+						margin-right: 0;
+					}
+				}
+			}
+		}
+	}
+}

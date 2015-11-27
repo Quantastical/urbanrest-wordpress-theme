@@ -7,6 +7,7 @@
  * It is used to display a page when nothing more specific matches a query.
  * e.g., it puts together the home page when no home.php file exists.
  */
+die('index.php');
 ?>
 <?php get_header(); ?>
 	<main id="main" class="site-main" role="main">

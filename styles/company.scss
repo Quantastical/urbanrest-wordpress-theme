@@ -1,0 +1,610 @@
+@media only screen
+{
+	.site
+	{
+		.site-company
+		{
+			background-image: url(images/tile-oak-wood.png);
+			background-position: top center;
+			background-repeat: repeat;
+			color: $text-white;
+			padding-top: 5em;
+
+			header
+			{
+				h2 { display: none; }
+			}
+
+			[itemprop="streetAddress"] { display: block; }
+			[itemprop="addressLocality"]:after { content: ','; }
+			[itemprop="addressCountry"] { display: none; }
+
+
+			.site-team
+			{
+				header
+				{
+					padding-left: 2em;
+					padding-right: 2em;
+
+					h4
+					{
+						color: white;
+						font-family: 'Witka';
+						font-size: 3em;
+						font-weight: 400;
+						margin: 0;
+						text-align: center;
+						text-decoration: none;
+						text-shadow: 0 0 0.33em black;
+						text-transform: uppercase;
+					}
+				}
+
+				.people
+				{
+					margin: 3em 0;
+					text-align: center;
+
+					$circle-diameter: 11em;
+					$circle-border: 0.25em;
+					$circle-margin: 1em;
+
+					@include media('<=phone')
+					{
+						$circle-diameter: 13em;
+						height: $circle-diameter + $circle-border * 2 + $circle-margin * 2;
+						position: relative;
+
+						&:before, &:after
+						{
+							color: white;
+							content: $fa-var-angle-left;
+							font-family: 'FontAwesome';
+							font-size: 4em;
+							left: 1rem;
+							margin-top: -0.5em;
+							opacity: 0.33;
+							position: absolute;
+							text-shadow: 0 0 10pt black,
+							             0 0 5pt black,
+							             0 0 2pt black,
+							             0 0 1pt black;
+							top: 50%;
+							z-index: 1;
+						}
+
+						&:after
+						{
+							content: $fa-var-angle-right;
+							left: calc(100% - 2.5rem);
+						}
+					}
+
+					.menu-item
+					{
+						display: inline-block;
+
+						@include media('<phone')
+						{
+							left: 0;
+							position: absolute;
+							top: 0;
+							width: 100%;
+
+							&.active
+							{
+								z-index: 1;
+							}
+						}
+
+						.menu-link
+						{
+							border: solid $circle-border $urbanrest-tan;
+							border-radius: 50%;
+							box-shadow: 0.11em 0.11em 1em rgba(black,0.33);
+							color: inherit;
+							display: inline-block;
+							height: $circle-diameter;
+							margin: $circle-margin;
+							overflow: hidden;
+							text-decoration: none;
+							width: $circle-diameter;
+
+							.person
+							{
+								background: #CCAA88;
+								border-radius: 50%;
+								display: inline-block;
+								height: 100%;
+								margin: 0;
+								overflow: hidden;
+								position: relative;
+								text-align: center;
+								@include transform( scale(1) );
+								width: 100%;
+
+								.avatar
+								{
+									height: 100%;
+									@include filter( sepia(66.6%) );
+									left: 0;
+									position: absolute;
+									width: 100%;
+									@include transition( all 0.25s );
+									top: 0;
+								}
+
+								.name, .title
+								{
+									display: none;
+								}
+							}
+
+							&:hover .avatar
+							{
+								@include filter( sepia(11%) );
+							}
+						}
+					}
+				}
+			}
+
+			.site-location
+			{
+				padding-bottom: 2em;
+				padding-top: 2em;
+				text-align: center;
+
+				h3
+				{
+					display: none;
+				}
+
+				h4
+				{
+					font-weight: 400;
+					font-size: 1.5em;
+
+					img { height: 6em; }
+				}
+
+				.company-url
+				{
+					display: none;
+				}
+
+				.business-hours
+				{
+					display: inline-block;
+					font-size: 1.25em;
+					font-weight: 200;
+					margin-top: 1em;
+					text-align: left;
+
+					h5
+					{
+						font-size: 1em;
+						font-weight: 400;
+						margin-bottom: 1em;
+						text-align: center;
+					}
+
+					dl
+					{
+						line-height: 1.33em;
+						margin-bottom: 1em;
+						width: 15em;
+
+						dd, dt
+						{
+							background-color: rgba( black, 0.00); 
+							display: inline-block;
+							margin: 0;
+							opacity: 0.75;
+							@include transition( background-color 0.33s, opacity 0.22s );
+							width: 50%;
+
+							&.today { opacity: 0.88; font-weight: 300; }
+							&.hover { opacity: 1.00; background-color: rgba( black, 0.11); }
+						}
+
+						dt
+						{
+							text-align: left;
+						}
+
+						dd
+						{
+							text-align: right;
+						}
+					}
+
+					.status
+					{
+						color: rgba( white, 0.33 );
+						font-size: 0.7em;
+						margin-bottom: 1.75em;
+						text-transform: uppercase;
+
+						em
+						{
+							float: right;
+							font-style: normal;
+
+							&.closed {color: $google-red;}
+							&.open {color: $urbanrest-green;}
+						}
+					}
+				}
+			}
+
+			.site-contact
+			{
+				color: white;
+				font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+				margin: 0 auto;
+				padding-top: 2em;
+				padding-bottom: 2em;
+				width: 100%;
+
+				header
+				{
+					padding-left: 2em;
+					padding-right: 2em;
+
+					h4
+					{
+						display: none;
+					}
+
+					p
+					{
+						font-family: 'Roboto';
+						font-size: 1.25em;
+						font-weight: 100;
+						margin-bottom: 1.5em;
+						margin-top: 0.5em;
+
+						@include media('>=tablet')
+						{
+							text-align: left;
+						}
+					}
+				}
+
+				.social-menu
+				{
+					/* social.scss */
+					font-size: 1.5em;
+					height: 6em;
+					margin: 0 auto;
+					text-align: center;
+				}
+
+
+				.legal
+				{
+					font-size: 0.8em;
+					margin-top: 2em;
+					text-align: center;
+					width: 100%;
+
+					a
+					{
+						color: rgba($urbanrest-white, 0.5);
+						cursor: pointer;
+						display: inline-block;
+						font-weight: 200;
+						text-decoration: none;
+
+						&:hover
+						{
+							color: $urbanrest-green;
+						}
+					}
+				}
+
+				.contact-form
+				{
+					font-size: 1.25em;
+					margin-top: 1em;
+					padding-left: 2em;
+					padding-right: 2em;
+
+					h5
+					{
+						font-size: 1em;
+						font-weight: 400;
+						margin-bottom: 1em;
+						text-align: center;
+					}
+
+					.field
+					{
+						font-size: 0.8em;
+						overflow: hidden;
+						padding: 0;
+						position: relative;
+
+						label
+						{
+							display: none;
+						}
+
+						input,
+						textarea
+						{
+							background-color: rgba( $urbanrest-black, 0.11 );
+							border: solid 1px rgba( $urbanrest-white, 0 );
+							box-sizing: border-box;
+							color: white;
+							font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+							font-size: 1em;
+							font-weight: 200;
+							margin: 0;
+							outline: none;
+							padding: 0.5em;
+							@include transition( background-color 0.33s ease-in-out, border-color 0.33s ease-in-out, color 0.33s ease-in-out );
+							width: 100%;
+
+							&:hover
+							{
+								background-color: rgba( $urbanrest-black, 0.22 );
+								border-color: rgba( $urbanrest-white, 0.25 );
+							}
+
+							&:focus
+							{
+								background: rgba( $urbanrest-black, 0.33 );
+								border-color: rgba( $urbanrest-white, 0.5 );
+							}
+
+							&:-webkit-autofill
+							{
+								background-color: inherit;
+								background-image: inherit;
+								color: inherit;
+							}
+
+							&::-webkit-input-placeholder
+							{
+								color: rgba(white, 0.6);
+								@include transition( color 0.33s ease-in-out );
+							}
+
+							&#contact_message
+							{
+								height: 7.25em;
+								resize: none;
+							}
+						}
+
+						&.error
+						{
+							input,
+							textarea
+							{
+								background-color: rgba( red, 0.11 );
+								border-color: rgba( red, 0.25 );
+								color: red;
+
+								&:focus
+								{
+									background-color: rgba( red, 0.33 );
+									border-color: rgba( red, 0.5 );
+									color: red;
+								}
+
+								&::-webkit-input-placeholder { color: rgba(red, 0.6); }
+							}
+
+							&:after
+							{
+								@include animation( fadeInRight 0.25s linear 1 );
+								color: red;
+								content: $fa-var-exclamation-circle;
+								cursor: help;
+								display: block;
+								font-family: 'FontAwesome';
+								font-size: 1.5em;
+								padding: 0.2em 0.33em;
+								position: absolute;
+								right: 0;
+								top: 0;
+							}
+						}
+					}
+
+					.option
+					{
+						font-size: 0.8em;
+						margin-bottom: 1em;
+						margin-top: 1em;
+						text-align: center;
+
+						input
+						{
+							display: none;
+
+							+ label
+							{
+								color: rgba($urbanrest-white, 0.5);
+								cursor: pointer;
+								display: inline-block;
+								font-weight: 200;
+								text-decoration: line-through;
+
+								&:before
+								{
+									content: '\f05e';
+									float: left;
+									font-family: FontAwesome;
+									margin-right: 0.6em;
+									text-decoration: none;
+								}
+							}
+
+							&:checked + label
+							{
+								text-decoration: none;
+
+								&:before
+								{
+									content: $fa-var-check;
+								}
+							}
+						}
+					}
+
+					.submit
+					{
+						font-size: 0.8em;
+						text-align: center;
+						width: 100%;
+					}
+				}
+			}
+
+			.site-map
+			{
+				padding-left: 0;
+				padding-right: 0;
+
+				.map-link
+				{
+					background-color: rgba( $urbanrest-black, 0.00 );
+					box-sizing: border-box;
+					color: inherit;
+					cursor: pointer;
+					display: block;
+					font-size: 1.5em;
+					font-weight: 200;
+					margin: 0;
+					padding: 0.5em;
+					text-align: center;
+					text-decoration: none;
+					@include transition( background-color 0.33s );
+					width: 100%;
+
+					&:after
+					{
+						content: '\f138';
+						display: inline-block;
+						font-family: 'FontAwesome';
+						margin-left: 0.5em;
+						@include transform( rotate(0deg) );
+						@include transition( transform 0.33s );
+						width: 1em;
+					}
+
+					&:hover
+					{
+						background-color: rgba( $urbanrest-black, 0.33 );
+						@include transition( background-color 0.11s );
+					}
+				}
+
+				.map-container
+				{
+					color: $text-black;
+					height: 0px;
+					overflow: hidden;
+					position: relative;
+					@include transition( height 0.666s );
+					width: 100%;
+
+					.map-menu
+					{
+						bottom: 0.6em;
+						left: 0.6em;
+						opacity: 0;
+						position: absolute;
+						@include transition( opacity 0.33s 0s );
+						width: auto !important;
+						z-index: 1;
+
+						.menu-item
+						{
+							display: inline-block;
+							margin-right: 0.25em;
+
+							a
+							{
+								background-repeat: no-repeat;
+								background-size: contain;
+								color: transparent;
+								display: inline-block;
+								font-size: 0;
+								height: 0;
+								opacity: 0.75;
+								overflow: hidden;
+								padding-left: 2.5rem;
+								padding-top: 2.5rem;
+								width: 0;
+
+								&:hover { opacity: 1; }
+							}
+
+							&.google-maps a
+							{
+								margin-bottom: -0.25rem;
+								padding-left: 2.9rem;
+								padding-top: 2.9rem;
+							}
+							
+							&.apple-maps a   { background-image: url(images/icon-apple-maps.png);   }
+							&.foursquare a   { background-image: url(images/icon-foursquare.png);   }
+							&.google-maps a  { background-image: url(images/icon-google-maps.png);  }
+							&.mapquest a     { background-image: url(images/icon-mapquest.png);     }
+							&.yellow-pages a { background-image: url(images/icon-yellow-pages.png); }
+						}
+					}
+
+					.map-canvas
+					{
+						background: none !important;
+						height: 525px;
+						max-width: none !important;
+						width: 100%;
+
+						.gm-style-cc + .gmnoprint
+						{
+							margin-bottom: 20px !important;
+						}
+
+						> .gm-style > :first-child > :nth-child(2)
+						{
+							background-image: url(/wp-content/themes/urbanrest-wordpress-theme/images/map-texture.png);
+							background-size: 100% 100%;
+							background-repeat: no-repeat;
+							opacity: 0.666;
+
+							@include media( '>=tablet' ) { background-image: url(/wp-content/themes/urbanrest-wordpress-theme/images/map-texture-2x.png); }
+							@include media( '>=desktop' ) { background-image: url(/wp-content/themes/urbanrest-wordpress-theme/images/map-texture-4x.png); }
+						}
+					}
+				}
+
+				&.open
+				{
+					.map-link
+					{
+						&:after { @include transform( rotate(90deg) ); }
+					}
+
+					.map-container
+					{
+						height: 500px;
+
+						.map-menu
+						{
+							opacity: 1;
+							@include transition( opacity 0.33s 0.5s );
+						}
+					}
+				}
+			}
+		}
+	}
+}

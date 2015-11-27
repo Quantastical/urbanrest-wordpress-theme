@@ -1,27 +1,102 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400);
-@import url(http://fonts.googleapis.com/css?family=Rock+Salt);
+@font-face {
+	font-family: 'Bad Script';
+	font-style: normal;
+	font-weight: 400;
+	src: url(fonts/Bad_Script/BadScript-Regular.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Freckle Face';
+	font-style: normal;
+	font-weight: 400;
+	src: url(fonts/Freckle_Face/FreckleFace-Regular.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Griffy';
+	font-style: normal;
+	font-weight: 400;
+	src: url(fonts/Griffy/Griffy-Regular.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'KG Tangled Up In You';
+	font-style: normal;
+	font-weight: 400;
+	src: url(fonts/KG_TangledUpInYou/KGTangledUpInYou.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'KG Ten Thousand Reasons';
+	src: url(fonts/KG_TenThousandReasons/KGTenThousandReasonsAlt.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
 
 @font-face
 {
 	font-family: 'RNS Baruta';
-	src: url('fonts/RNS_Baruta/RNSBaruta-Black.eot');
-	src: url('fonts/RNS_Baruta/RNSBaruta-Black.eot?#iefix') format('embedded-opentype'),
-	     url('fonts/RNS_Baruta/RNSBaruta-Black.woff2') format('woff2'),
-	     url('fonts/RNS_Baruta/RNSBaruta-Black.woff') format('woff'),
-	     url('fonts/RNS_Baruta/RNSBaruta-Black.ttf') format('truetype'),
-	     url('fonts/RNS_Baruta/RNSBaruta-Black.svg#barutablack') format('svg');
+	src: url(fonts/RNS_Baruta/RNSBaruta-Black.ttf) format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
-	font-family: 'Witka';
-	src: url('fonts/Witka/Witka.eot');
-	src: url('fonts/Witka/Witka.eot?#iefix') format('embedded-opentype'),
-	     url('fonts/Witka/Witka.woff2') format('woff2'),
-	     url('fonts/Witka/Witka.woff') format('woff'),
-	     url('fonts/Witka/Witka.ttf') format('truetype'),
-	     url('fonts/Witka/Witka.svg#witkaregular') format('svg');
-	font-weight: normal;
+	font-family: 'Roboto';
 	font-style: normal;
+	font-weight: 100;
+	src: local('Roboto Thin'),
+	     local('Roboto-Thin'),
+	     url(fonts/Roboto/Roboto-Thin.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Roboto Light'),
+	     local('Roboto-Light'),
+	     url(fonts/Roboto/Roboto-Light.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Roboto'),
+	     local('Roboto-Regular'),
+	     url(fonts/Roboto/Roboto-Regular.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 600;
+	src: local('Roboto'),
+	     local('Roboto-Bold'),
+	     url(fonts/Roboto/Roboto-Bold.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 800;
+	src: local('Roboto'),
+	     local('Roboto-Black'),
+	     url(fonts/Roboto/Roboto-Black.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Satisfy';
+	font-style: normal;
+	font-weight: 400;
+	src: url(fonts/Satisfy/Satisfy-Regular.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Witka';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Witka'),
+	     url(fonts/Witka/Witka.ttf) format('truetype');
 }

@@ -1,0 +1,162 @@
+@media only screen
+{
+	.site
+	{
+		.site-shop
+		{
+			align-content: center;
+			background-attachment: fixed;
+			@include media('<=phone') { background-attachment: scroll; }
+			background-color: black;
+			background-image: url(images/background-wood.jpg);
+			@include media( 'portrait' ) { background-image: url(images/background-wood-portrait.jpg); }
+			background-position: center 0;
+			@include media('<=phone') { background-position: center 0 !important; }
+			background-repeat: no-repeat;
+			@include background-size( cover );
+			box-sizing: border-box;
+			min-height: 100vh;
+			overflow-x: hidden;
+			padding: 5em 0 0;
+			position: relative;
+			text-align: center;
+			width: 100%;
+
+			h2
+			{
+				color: white;
+				font-family: 'Witka';
+				font-size: 3em;
+				font-weight: 400;
+				margin: 0 0 1em 0;
+				text-decoration: none;
+				text-shadow: 0 0 0.33em black;
+				text-transform: uppercase;
+			}
+
+			.shop-category
+			{
+				background-position: center;
+				background-repeat: no-repeat;
+				@include background-size( cover );
+				height: 50vw; /* 1/2 screen-width in order to make a square from .col-6 */
+				position: relative;
+
+				&.shop-apparel { background-image: url(images/shop-apparel.png); }
+				&.shop-drinkware { background-image: url(images/shop-drinkware.png); }
+				&.shop-brewing { background-image: url(images/shop-brewing.png); }
+				&.shop-miscellaneous { background-image: url(images/shop-miscellaneous.png); }
+
+				&:before
+				{
+					background-image: url(images/shop-overlay.png);
+					background-position: center;
+					background-repeat: no-repeat;
+					@include background-size( cover );
+					content: '';
+					height: 100%;
+					left: 0;
+					position: absolute;
+					top: 0;
+					width: 100%;
+				}
+
+				.shop-category-title
+				{
+					color: white;
+					font-family: 'Witka';
+					font-size: 2.5em;
+					position: absolute;
+					text-shadow: 0 0 1em black,
+					             0 0 0.5em black,
+					             0 0 0.1em black,
+					             0 0 0.01em black;
+					text-transform: uppercase;
+					top: calc(50% - 1.25em);
+					width: calc(100% - 1rem);
+				}
+
+				.shop-category-subtitle
+				{
+					color: white;
+					font-size: 1.25em;
+					font-weight: 400;
+					position: absolute;
+					text-shadow: 0 0 2em black,
+					             0 0 1em black,
+					             0 0 0.25em black,
+					             0 0 0.02em black;
+					top: 50%;
+					width: calc(100% - 1rem);
+				}
+
+				.shop-category-description
+				{
+					display: none;
+					/*
+					background-color: rgba(black, 0.5);
+					bottom: 0;
+					box-shadow: 0 0 3em black;
+					box-sizing: border-box;
+					color: white;
+					font-size: 1.1em;
+					font-weight: 100;
+					margin-left: -0.5rem;
+					opacity: 0;
+					padding: 0 1rem;
+					position: absolute;
+					text-align: left;
+					@include transition( opacity 0.33s, padding-bottom 0.5s, padding-top 0.5s );
+					width: 100%;
+					*/
+				}
+
+				.shop-category-link
+				{
+					box-sizing: border-box;
+					color: white;
+					display: block;
+					font-size: 1.5em;
+					font-weight: 400;
+					height: 100%;
+					left: 0;
+					opacity: 0;
+					padding-top: calc(50% + 2em);
+					position: absolute;
+					text-decoration: none;
+					text-shadow: 0 0 2em black,
+					             0 0 1em black,
+					             0 0 0.25em black,
+					             0 0 0.02em black;
+					@include transition( opacity 0.33s, padding-top 0.5s );
+					top: 0;
+					width: 100%;
+
+					&:after
+					{
+						content: $fa-var-arrow-circle-right;
+						font-family: 'FontAwesome';
+						margin-left: 0.5em;
+					}
+				}
+
+				&:hover
+				{
+					/*
+					.shop-category-description
+					{
+						opacity: 1;
+						padding: 0 1rem 1rem;
+					}
+					*/
+
+					.shop-category-link
+					{
+						opacity: 1;
+						padding-top: calc(50% + 3em);
+					}
+				}
+			}
+		}
+	}
+}

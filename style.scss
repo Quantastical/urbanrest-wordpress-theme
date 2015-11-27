@@ -15,8 +15,8 @@ $layer-modal: 1000;
 $layer-main-navigation: 750;
 $layer-social-navigation: 500;
 
-@import 'styles/animate.scss';
-@import 'styles/font-awesome-4.4.0/scss/font-awesome.scss';
+@import 'node_modules/animate.css/animate.min.css';
+@import 'node_modules/font-awesome/scss/font-awesome.scss';
 @import 'styles/colors';
 @import 'styles/mixins';
 @import 'styles/fonts';
@@ -24,9 +24,27 @@ $layer-social-navigation: 500;
 @import 'styles/flexbox';
 
 @import 'styles/button';
+@import 'styles/hyperlink';
+@import 'styles/label';
 @import 'styles/modal';
+@import 'styles/navigation';
+@import 'styles/social';
+@import 'styles/tooltip';
 
+@import 'styles/header';
+@import 'styles/specials';
+@import 'styles/community';
+@import 'styles/company';
+@import 'styles/shop';
+@import 'styles/footer';
+
+@import 'styles/beer';
+@import 'styles/page';
+@import 'styles/post';
 @import 'styles/single';
+@import 'styles/user';
+
+/*
 
 @import 'styles/error';
 @import 'styles/main';
@@ -34,3 +52,5 @@ $layer-social-navigation: 500;
 @import 'styles/home';
 @import 'styles/kickstarter';
 @import 'styles/community';
+@import 'styles/company';
+*/

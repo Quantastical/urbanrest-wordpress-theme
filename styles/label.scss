@@ -1,0 +1,30 @@
+.label
+{
+	background: darkgrey;
+	border-radius: 0.5em;
+	color: white;
+	font-size: 0.6em;
+	font-weight: 400;
+	margin-left: 0.5em;
+	padding: 0.2em 0.6em;
+	position: relative;
+	text-transform: uppercase;
+	top: -0.2em;
+	vertical-align: middle;
+
+	&.label-danger  { background: $google-red; color: $urbanrest-white; }
+	&.label-warning { background: $snapchat-yellow; color: $urbanrest-black; }
+	&.label-safe    { background: $urbanrest-green; color: $urbanrest-white; }
+
+	&.label-light-yellow  { background-color: $beer-light-yellow;  color: $urbanrest-black; }
+	&.label-medium-yellow { background-color: $beer-medium-yellow; color: $urbanrest-black; }
+	&.label-gold          { background-color: $beer-gold;          color: $urbanrest-black; }
+	&.label-deep-gold     { background-color: $beer-deep-gold;     color: $urbanrest-black; }
+	&.label-light-amber   { background-color: $beer-light-amber;   color: $urbanrest-black; }
+	&.label-copper        { background-color: $beer-copper;        color: $urbanrest-white; }
+	&.label-red           { background-color: $beer-red;           color: $urbanrest-white; }
+	&.label-light-brown   { background-color: $beer-light-brown;   color: $urbanrest-white; }
+	&.label-medium-brown  { background-color: $beer-medium-brown;  color: $urbanrest-white; }
+	&.label-dark-brown    { background-color: $beer-dark-brown;    color: $urbanrest-white; }
+	&.label-black         { background-color: $beer-black;         color: $urbanrest-white; }
+}

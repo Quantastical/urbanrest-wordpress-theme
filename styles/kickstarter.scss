@@ -16,7 +16,7 @@
 		}
 	}
 
-	.home
+	.page-template-kickstarter
 	{
 		background-attachment: fixed;
 		@include media('<=phone') { background-attachment: scroll; }
@@ -27,58 +27,6 @@
 		@include media('<=phone') { background-position: center 0 !important; }
 		background-repeat: no-repeat;
 		@include background-size( cover );
-	}
-
-	.skip-link,
-	.site-coming-soon,
-	.site-description,
-	.site-footer,
-	.site-main
-	{
-		display: none;
-	}
-
-	.site-header
-	{
-		background-color: rgba(0,0,0,0.33);
-		background-image: url(images/tile-diagonal-lines.png);
-		background-repeat: repeat;
-		box-shadow: inset 0 0 15em black, inset 0 0 5em black;
-		min-height: 100%;
-		width: 100%;
-	}
-
-	.site-logo
-	{
-		background-image: url(images/logo-3-color-inverted-min.png);
-		background-position: 50% 44%;
-		background-repeat: no-repeat;
-		background-size: 80%;
-		box-sizing: border-box;
-		height: 100%;
-		left: 0;
-		padding-left: 100%;
-		position: absolute;
-		top: 0;
-		@include transition( background-size 0.1s );
-		width: 100%;
-
-		@include media( '<=phone' )
-		{
-			background-size: 80%;
-		}
-
-		@include media('>=tablet')
-		{
-			background-size: 65%;
-			background-image: url(images/logo-3-color-inverted-2x-min.png);
-		}
-
-		@include media('>=desktop')
-		{
-			background-size: 50%;
-			background-image: url(images/logo-3-color-inverted-4x-min.png);
-		}
 	}
 
 	#kickstarter

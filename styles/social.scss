@@ -1,0 +1,70 @@
+@media only screen
+{
+	.social-menu
+	{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		.menu-item
+		{
+			display: inline-block;
+
+			a
+			{
+				border: 3pt solid transparent;
+				border-radius: 0.5em;
+				display: inline-block;
+				height: 1.88em;
+				margin: 0.25em;
+				overflow: hidden;
+
+				&:before
+				{
+					background-color: rgba( white, 0.75 );
+					border-radius: 0.25em;
+					content: '';
+					display: inline-block;
+					font-family: 'FontAwesome';
+					font-size: 2.25em;
+					line-height: 0.83em;
+					padding-top: 0.04em;
+					@include transition( background-color 0.11s, color 0.11s );
+					width: 0.83em;
+				}
+
+				&:focus
+				{
+					border: 3pt solid rgba( white, 0.5 );
+					box-shadow: inset 0 0 1pt rgba( black, 0.5 );
+					outline: none;
+
+					-webkit-animation-duration: 1s;
+					animation-duration: 1s;
+					-webkit-animation-fill-mode: both;
+					animation-fill-mode: both;
+
+					-webkit-animation-iteration-count: infinite;
+					animation-iteration-count: infinite;
+
+					-webkit-animation-name: pulse;
+					animation-name: pulse;
+				}
+
+				&:hover:before
+				{
+					background-color: white;
+				}
+
+				.btn-label { display: none; }
+			}
+
+			&.facebook a    { color: darken( $facebook-blue, 11% );  &:before { content: $fa-var-facebook-square;    } &:hover:before { color: $facebook-blue;  } }
+			&.google-plus a { color: darken( $google-red, 11% );     &:before { content: $fa-var-google-plus-square; } &:hover:before { color: $google-red;     } }
+			&.instagram a   { color: darken( $instagram-blue, 11% ); &:before { content: $fa-var-instagram;          } &:hover:before { color: $instagram-blue; } }
+			&.pinterest a   { color: darken( $pinterest-red, 11% );  &:before { content: $fa-var-pinterest-square;   } &:hover:before { color: $pinterest-red;  } }
+			&.twitter a     { color: darken( $twitter-blue, 11% );   &:before { content: $fa-var-twitter-square;     } &:hover:before { color: $twitter-blue;   } }
+			&.youtube a     { color: darken( $youtube-red, 11% );    &:before { content: $fa-var-youtube-square;     } &:hover:before { color: $youtube-red;    } }
+		}
+	}
+}

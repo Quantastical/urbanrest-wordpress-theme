@@ -1,0 +1,517 @@
+.site.single-beer
+{
+	.beer-container
+	{
+		background-color: #DCC1A7;
+		background-image: url('images/single-background.jpg');
+		background-position: center;
+		background-repeat: repeat;
+		background-size: 20em;
+		color: darken(#A88C76, 40%);
+		font-weight: 300;
+		overflow-x: hidden;
+		padding-bottom: 4em;
+		padding-top: 4em;
+		width: 100%;
+
+		a, .hyperlink
+		{
+			@extend .hyperlink;
+		}
+
+		iframe
+		{
+			border: none;
+			border-radius: 0.25em;
+			display: block;
+			margin: 0 auto;
+			max-width: 90%;
+		}
+
+		.beer-header
+		{
+			.beer-title
+			{
+				font-size: 2em;
+				margin-bottom: 0.5em;
+				margin-top: 1em;
+			}
+
+			.beer-profile
+			{
+				.label
+				{
+					@include media('<=tablet')
+					{
+						float: right;
+					}
+				}
+			}
+
+			.beer-rating
+			{
+				float: right;
+				margin-top: -2.15em;
+				position: relative;
+				text-align: right;
+				top: -1.5em;
+
+				.annotation
+				{
+					font-size: 1.5em;
+					line-height: calc(1em / 1.5);
+					margin-left: -0.15em;
+					vertical-align: middle;
+				}
+
+				[itemprop="aggregateRating"]
+				{
+					overflow: hidden;
+					white-space: nowrap;
+					width: 0;
+
+					&:before
+					{
+						content: '\f006\f006\f006\f006\f006';
+						font-family: 'FontAwesome';
+						font-size: 1.4em;
+						position: absolute;
+						right: 0;
+					}
+
+					&[data-overall-rating^="0"]
+					{
+						&[data-overall-rating$="0"]:before,
+						&[data-overall-rating$="1"]:before,
+						&[data-overall-rating$="2"]:before,
+						&[data-overall-rating$="3"]:before,
+						&[data-overall-rating$="4"]:before { content: '\f006\f006\f006\f006\f006'; }
+
+						&[data-overall-rating$="5"]:before,
+						&[data-overall-rating$="6"]:before,
+						&[data-overall-rating$="7"]:before,
+						&[data-overall-rating$="8"]:before,
+						&[data-overall-rating$="9"]:before { content: '\f123\f006\f006\f006\f006'; }
+					}
+					
+					&[data-overall-rating^="1"]
+					{
+						&[data-overall-rating$="0"]:before,
+						&[data-overall-rating$="1"]:before,
+						&[data-overall-rating$="2"]:before,
+						&[data-overall-rating$="3"]:before,
+						&[data-overall-rating$="4"]:before { content: '\f005\f006\f006\f006\f006'; }
+
+						&[data-overall-rating$="5"]:before,
+						&[data-overall-rating$="6"]:before,
+						&[data-overall-rating$="7"]:before,
+						&[data-overall-rating$="8"]:before,
+						&[data-overall-rating$="9"]:before { content: '\f005\f123\f006\f006\f006'; }
+					}
+
+					&[data-overall-rating^="2"]
+					{
+						&[data-overall-rating$="0"]:before,
+						&[data-overall-rating$="1"]:before,
+						&[data-overall-rating$="2"]:before,
+						&[data-overall-rating$="3"]:before,
+						&[data-overall-rating$="4"]:before { content: '\f005\f005\f006\f006\f006'; }
+
+						&[data-overall-rating$="5"]:before,
+						&[data-overall-rating$="6"]:before,
+						&[data-overall-rating$="7"]:before,
+						&[data-overall-rating$="8"]:before,
+						&[data-overall-rating$="9"]:before { content: '\f005\f005\f123\f006\f006'; }
+					}
+
+					&[data-overall-rating^="3"]
+					{
+						&[data-overall-rating$="0"]:before,
+						&[data-overall-rating$="1"]:before,
+						&[data-overall-rating$="2"]:before,
+						&[data-overall-rating$="3"]:before,
+						&[data-overall-rating$="4"]:before { content: '\f005\f005\f005\f006\f006'; }
+
+						&[data-overall-rating$="5"]:before,
+						&[data-overall-rating$="6"]:before,
+						&[data-overall-rating$="7"]:before,
+						&[data-overall-rating$="8"]:before,
+						&[data-overall-rating$="9"]:before { content: '\f005\f005\f005\f123\f006'; }
+					}
+
+					&[data-overall-rating^="4"]
+					{
+						&[data-overall-rating$="0"]:before,
+						&[data-overall-rating$="1"]:before,
+						&[data-overall-rating$="2"]:before,
+						&[data-overall-rating$="3"]:before,
+						&[data-overall-rating$="4"]:before { content: '\f005\f005\f005\f005\f006'; }
+
+						&[data-overall-rating$="5"]:before,
+						&[data-overall-rating$="6"]:before,
+						&[data-overall-rating$="7"]:before,
+						&[data-overall-rating$="8"]:before,
+						&[data-overall-rating$="9"]:before { content: '\f005\f005\f005\f005\f123'; }
+					}
+
+					&[data-overall-rating^="5"]:before { content: '\f005\f005\f005\f005\f005'; }
+				}
+
+				.rating-actions
+				{
+					margin-bottom: -1em;
+					margin-top: -1.15em;
+					position: relative;
+
+					.rate-button
+					{
+						background: none;
+						border: none;
+						color: transparent;
+						cursor: pointer;
+						font-size: 0;
+						opacity: 0;
+						outline: none;
+						padding: 0;
+
+						&.rated
+						{
+							opacity: 1;
+						}
+
+						&:before
+						{
+							color: gold;
+							content: $fa-var-star;
+							font-family: 'FontAwesome';
+							font-size: 1.4rem;
+						}
+
+						&:after
+						{
+							color: $urbanrest-black;
+							content: $fa-var-star-o;
+							font-family: 'FontAwesome';
+							font-size: 1.4rem;
+							margin-left: -1.3rem;
+							position: relative;
+						}
+					}
+
+					&:hover
+					{
+						.rate-button
+						{
+							opacity: 1;
+
+							&:hover
+							{
+								~ .rate-button { opacity: 0; }
+							}
+						}
+					}
+				}
+			}
+
+			.beer-style
+			{
+				font-size: 1.25em;
+			}
+		}
+
+		.beer-image
+		{
+			margin: 0;
+			position: relative;
+			text-align: center;
+			width: 100%;
+
+			img
+			{
+				border-radius: 50%;
+				height: 22em;
+				width: 22em;
+			}
+
+			figcaption
+			{
+				background-color: rgba( black, 0.55 );
+				bottom: 0;
+				box-sizing: border-box;
+				color: white;
+				font-weight: 400;
+				left: 0;
+				padding: 1em;
+				position: absolute;
+				width: 100%;
+
+				.beer-image-title
+				{
+					font-size: 1.5em;
+				}
+
+				.beer-image-caption
+				{
+					font-size: 0.8em;
+					font-style: italic;
+					font-weight: 100;
+				}
+
+				.beer-image-description
+				{
+					font-size: 1em;
+					margin-top: 0.5em;
+				}
+			}
+		}
+
+		.beer-content
+		{
+			font-size: 1.2em;
+			line-height: 1.5em;
+
+			h2
+			{
+				font-size: 1.3em;
+				margin-bottom: 0.25em;
+			}
+
+			p
+			{
+				margin-bottom: 1em;
+			}
+
+			section
+			{
+				margin-top: 1em;
+			}
+
+			.beer-tags
+			{
+				list-style: none;
+				padding: 0;
+
+				.beer-tag
+				{
+					display: inline;
+					font-size: 0.8em;
+
+					a
+					{
+						background-color: rgba( $urbanrest-black, 0.3 );
+						border: none;
+						border-radius: 0.25em;
+						color: inherit;
+						display: inline-block;
+						margin-bottom: 0.5em;
+						margin-right: 0.5em;
+						padding: 0.25em 0.75em;
+						@include transition( background-color 0.33s );
+
+						&:hover
+						{
+							background-color: rgba( $urbanrest-green, 0.3 );
+							color: $urbanrest-green;
+							border: none;
+							@include transition( background-color 0.11s );
+						}
+					}
+
+					&:last-child a
+					{
+						margin-right: 0;
+					}
+				}
+			}
+		}
+
+		.beer-footer
+		{
+			margin-top: 3em;
+
+			.beer-actions
+			{
+				text-align: center;
+
+				.beer-comments,
+				.beer-like,
+				.beer-share
+				{
+					background: none;
+					border: none;
+					display: inline-block;
+					font-size: 1em;
+					font-weight: 400;
+					margin-right: 1em;
+					text-align: center;
+
+					&:before
+					{
+						font-family: FontAwesome;
+						margin-right: 0.5em;
+					}
+
+					&.beer-comments:before { content: $fa-var-comments; }
+					&.beer-like:before     { content: $fa-var-heart; }
+					&.beer-share:before    { content: $fa-var-share; }
+
+					&:hover
+					{
+						border: none;
+					}
+
+					&:last-of-type
+					{
+						margin-right: 0;
+					}
+
+					.comment-count,
+					.like-count,
+					.share-count
+					{
+						margin-left: 0.5em;
+
+						&:before { content: '('; }
+						&:after { content: ')'; }
+					}
+				}
+
+				.beer-commenting,
+				.beer-liking,
+				.beer-sharing
+				{
+					list-style: none;
+					padding: 0;
+					text-align: center;
+
+					a
+					{
+						background-color: lighten( $urbanrest-black, 50% );
+						border: none;
+						border-radius: 0.25em;
+						color: rgba( $urbanrest-white, 0.88 );
+						display: inline-block;
+						font-weight: 400;
+						margin-bottom: 0.5em;
+						margin-right: 0.5em;
+						padding: 0.5em;
+						text-shadow: 0px 1px 0 rgba( $urbanrest-black, 0.33 );
+						@include transition( background-color 0.33s, color 0.33s );
+						width: 15em;
+
+						&:before
+						{
+							font-family: FontAwesome;
+							margin-right: 0.5em;
+						}
+
+						&:hover
+						{
+							background-color: lighten( $urbanrest-black, 45% );
+							color: rgba( $urbanrest-white, 1.0 );
+							border: none;
+							@include transition( background-color 0.11s, color 0.11s );
+						}
+
+						&.facebook
+						{
+							background-color: $facebook-blue;
+							&:hover { background-color: darken( $facebook-blue, 5% ); }
+						}
+
+						&.google
+						{
+							background-color: $google-red;
+							&:hover { background-color: darken( $google-red, 5% ); }
+						}
+
+						&.twitter
+						{
+							background-color: $twitter-blue;
+							&:hover { background-color: darken( $twitter-blue, 5% ); }
+						}
+					}
+
+					&.beer-liking a
+					{
+						&.facebook { &:before { content: $fa-var-facebook; } }
+						&.twitter  { &:before { content: $fa-var-twitter; } }
+					}
+
+					&.beer-sharing a
+					{
+						&.email    { &:before { content: $fa-var-envelope; } }
+						&.facebook { &:before { content: $fa-var-facebook; } }
+						&.google   { &:before { content: $fa-var-google-plus; } }
+						&.twitter  { &:before { content: $fa-var-twitter; } }
+					}
+				}
+
+				.beer-checkin.untappd
+				{
+					background-image: url('images/logo-untappd.png');
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: contain;
+					color: transparent;
+					display: inline-block;
+					font-size: 0.75em;
+					height: 5em;
+					margin-bottom: 2em;
+					margin-left: 6em;
+					width: 11em;
+
+					&:before
+					{
+						background-image: url('images/icon-untappd.png');
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: contain;
+						border-radius: 1em;
+						content: '';
+						display: block;
+						height: 5em;
+						left: -6em;
+						position: absolute;
+						width: 5em;
+					}
+				}
+			}
+
+			.beer-citations
+			{
+				font-size: 0.8em;
+				margin-top: calc(3em / 0.8);
+
+				.citation
+				{
+					padding-left: 1.5em;
+
+					.citation-link
+					{
+						float: left;
+						font-size: 1.5em;
+						margin-left: -1em;
+						margin-top: -0.1em;
+					}
+				}
+
+				.rating-system + .rating-system:not(.rating-system-wordpress):before {
+					content: ', ';
+				}
+				.rating-system + .rating-system-wordpress:before {
+					content: ' and ';
+				}
+			}
+		}
+	}
+
+	#main-navigation
+	{
+		bottom: auto;
+		top: 0;
+	}
+
+	@include media( '>600px' ) { &.admin-bar #main-navigation { top: 46px; } }
+	@include media( '>782px' ) { &.admin-bar #main-navigation { top: 32px; } }
+}

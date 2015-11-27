@@ -117,6 +117,15 @@ $prefix-for-spec:      true !default;
 	background-size: $size;
 }
 
+@mixin filter( $filterList ) {
+  -webkit-filter: $filterList;
+  filter: $filterList;
+}
+
+@mixin font-smoothing( $smoothing ) {
+  @include prefixer(font-smoothing, $smoothing, webkit moz spec);
+}
+
 @mixin keyframes($name) {
   $original-prefix-for-webkit:    $prefix-for-webkit;
   $original-prefix-for-mozilla:   $prefix-for-mozilla;

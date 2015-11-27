@@ -1,277 +1,432 @@
 @media only screen
 {
-	#community
+	.site
 	{
-		align-content: center;
-		background-attachment: fixed;
-		@include media('<=phone') { background-attachment: scroll; }
-		background-color: black;
-		background-image: url(images/background-neighborhood.jpg);
-		@include media( 'portrait' ) { background-image: url(images/background-neighborhood-portrait.jpg); }
-		background-position: center 0;
-		@include media('<=phone') { background-position: center 0 !important; }
-		background-repeat: no-repeat;
-		@include background-size( cover );
-		box-sizing: border-box;
-		min-height: 100vh;
-		overflow-x: hidden;
-		padding: 5.75em 0 0;
-		position: relative;
-		text-align: center;
-		width: 100%;
-
-		h2
+		.site-community
 		{
-			color: white;
-			font-family: 'Witka';
-			font-size: 3em;
-			font-weight: 400;
-			margin: 0 0 1em 0;
-			text-decoration: none;
-			text-shadow: 0 0 0.33em black;
-			text-transform: uppercase;
-		}
-
-		#blog
-		{
-			h3
-			{
-				display: none;
-			}
-		}
-
-		.latest-posts 
-		{
-			list-style: none;
-			margin: 0;
-			padding: 0;
+			align-content: center;
+			background-attachment: fixed;
+			@include media('<=phone') { background-attachment: scroll; }
+			background-color: black;
+			background-image: url(images/background-neighborhood.jpg);
+			@include media( 'portrait' ) { background-image: url(images/background-neighborhood-portrait.jpg); }
+			background-position: center 0;
+			@include media('<=phone') { background-position: center 0 !important; }
+			background-repeat: no-repeat;
+			@include background-size( cover );
+			box-sizing: border-box;
+			min-height: 100vh;
+			overflow-x: hidden;
+			padding: 5em 0;
+			position: relative;
+			text-align: center;
 			width: 100%;
 
-			.blog-post
+			h2
 			{
 				color: white;
-				display: block;
-				font-family: 'Roboto';
-				padding-bottom: 2em;
-				padding-top: 1em;
+				font-family: 'Witka';
+				font-size: 3em;
+				font-weight: 400;
+				margin: 0 0 1em 0;
 				text-decoration: none;
+				text-shadow: 0 0 0.33em black;
+				text-transform: uppercase;
+			}
 
-				.blog-post-image
-				{
-					background-position: center;
-					@include background-size( cover );
-					border-radius: 0.5em;
-					display: inline-block;
-					height: 10em;
-					max-width: 25em;
-					overflow: hidden;
-					width: 90%;
+			.site-blog
+			{
+				position: relative;
 
-					img
-					{
-						border-radius: 0.5em;
-						display: none;
-						height: 100%;
-						object-fit: cover;
-						width: 100%;
-					}
-				}
-				
-				a
-				{
-					color: inherit;
-					text-decoration: none;
-				}
-
-				h4
-				{
-					color: inherit !important;
-					font-family: inherit !important;
-					font-weight: 300;
-					margin: 0 !important;
-					padding: 1em;
-					text-decoration: none;
-					text-shadow: 1pt 1pt   0 rgba( 0, 0, 0, 0.5 );
-					text-shadow:   0   0 2em black,
-					               0   0 2em black,
-					               0   0 3em black,
-					             1pt 1pt   0 rgba( 0, 0, 0, 0.5 );
-				}
-
-				.blog-post-intro
+				h3
 				{
 					display: none;
 				}
-			}
-		}
 
-		.subscribe
-		{
-			background-color: rgba(0,0,0,0.666);
-			color: white;
-			font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
-			margin: 0 auto;
-			padding-top: 2em;
-			padding-bottom: 2em;
-			width: 100%;
-
-			header
-			{
-				padding-left: 2em;
-				padding-right: 2em;
-
-				h4
+				@include media('<=phone')
 				{
-					font-family: 'Rock Salt';
-					font-size: 2em;
-					line-height: 1.5em;
-					margin: 0;
+					height: 15em;
+					overflow-x: scroll;
+					overflow-y: hidden;
+				}
 
-					@include media('>=tablet')
+				.latest-posts 
+				{
+					list-style: none;
+					margin: 0;
+					padding: 0;
+					width: 100%;
+
+					@include media('>phone')
 					{
+						width: 100% !important;
+					}
+
+					.blog-post
+					{
+						color: white;
+						display: block;
+						font-family: 'Roboto';
+						padding: 0.5rem;
+						position: relative;
 						text-align: left;
+						text-decoration: none;
+						white-space-collapse: discard;
+
+						@include media('<=phone')
+						{
+							padding: 0;
+
+							&:before, &:after
+							{
+								color: white;
+								content: $fa-var-angle-left;
+								font-family: 'FontAwesome';
+								font-size: 4em;
+								left: 1rem;
+								margin-top: -0.5em;
+								opacity: 0.33;
+								position: absolute;
+								text-shadow: 0 0 10pt black,
+								             0 0 5pt black,
+								             0 0 2pt black,
+								             0 0 1pt black;
+								top: 50%;
+								z-index: 1;
+							}
+
+							&:after
+							{
+								content: $fa-var-angle-right;
+								left: calc(100% - 2.5rem);
+							}
+						}
+
+						.blog-post-image
+						{
+							background-position: center;
+							@include background-size( cover );
+							border-radius: 0.25em;
+							display: inline-block;
+							height: 15em;
+							overflow: hidden;
+							width: 100%;
+
+							img
+							{
+								border-radius: 0.25em;
+								height: 100%;
+								object-fit: cover;
+								width: 100%;
+							}
+						}
+						
+						a
+						{
+							color: inherit;
+							display: flex;
+							position: relative;
+							text-decoration: none;
+
+							@include media('<=phone')
+							{
+								margin-right: 0.5rem;
+							}
+						}
+
+						h4
+						{
+							background: rgba(black, 0.8);
+							border-radius: 0 0 0.25em 0.25em;
+							bottom: 0;
+							box-sizing: border-box;
+							color: inherit !important;
+							font-family: inherit !important;
+							font-weight: 300;
+							left: 0;
+							margin: 0 !important;
+							padding: 0.75em;
+							position: absolute;
+							text-align: left;
+							text-decoration: none;
+							width: 100%;
+						}
+
+						.blog-post-intro
+						{
+							display: none;
+						}
+					}
+				}
+			}
+
+			.site-club
+			{
+				color: $urbanrest-white;
+				margin-bottom: 4em;
+				text-align: center;
+
+				h3
+				{
+					background: linear-gradient(lighten($urbanrest-green, 11%), $urbanrest-green);
+					border: dashed 1pt $urbanrest-tan;
+					border-radius: 3pt;
+					box-shadow: 0 0 0 3pt $urbanrest-green;
+					color: $urbanrest-white;
+					display: inline-block;
+					font-family: 'Freckle Face';
+					font-size: 3em;
+					margin-bottom: 0.5em;
+					padding: 0.11em 0.75em;
+					text-shadow: 1pt 1pt 3pt rgba(black, 0.5);
+
+					.hashtag
+					{
+						font-size: 1.2em;
+						line-height: 0.5em;
 					}
 				}
 
 				p
 				{
-					font-family: 'Roboto';
+					font-size: 1.25em;
+					font-weight: 300;
+					margin: 0 auto 1em;
+					max-width: 22em;
+				}
+
+				ul
+				{
 					font-size: 1.25em;
 					font-weight: 100;
+					margin: 0 auto 2em;
+					max-width: 20em;
 
-					@include media('>=tablet')
+					li
 					{
-						text-align: left;
-					}
-				}
-
-				.social-menu
-				{
-					font-size: 1.5em;
-				}
-			}
-
-			form
-			{
-				padding-left: 2em;
-				padding-right: 2em;
-				padding-top: 2em;
-			}
-
-			label
-			{
-				display: none;
-			}
-
-			#mc_embed_signup_scroll
-			{
-				display: flex;
-				flex-wrap: wrap;
-
-				.mc-field-group
-				{
-					display: inline-block;
-					float: left;
-					width: 50%;
-
-					&.mc-email-group
-					{
-						width: 100%;
-					}
-
-					input
-					{
-						background-color: rgba( 255, 255, 255, 0.11 );
-						border: solid 1pt rgba( 255, 255, 255, 0.25 );
-						box-sizing: border-box;
-						color: white;
-						font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
-						font-size: 1.25em;
-						margin: 0;
-						outline: none;
 						padding: 0.5em;
-						text-align: center;
-						@include transition( background-color 0.33s ease-in-out, border-color 0.33s ease-in-out, color 0.33s ease-in-out );
-						width: 100%;
-
-						&#mce-FNAME
-						{
-							border-right-color: rgba(255,255,255,0.125);
-							margin-right: 0.5em;
-							width: calc(100% - 0.5em);
-						}
-
-						&#mce-LNAME
-						{
-							border-left-color: rgba(255,255,255,0.125);
-							margin-left: 0.5em;
-							position: relative;
-							width: calc(100% - 0.5em);
-						}
-
-						&#mce-EMAIL
-						{
-							margin-top: 1em;
-						}
-
-						&.error
-						{
-							@include animation( shake 0.25s linear 3 );
-							background-color: rgba( 255, 0, 0, 0.11 );
-							border-color: rgba( 255, 0, 0, 0.25 );
-							color: red;
-						}
-
-						&:focus
-						{
-							background: rgba( 255, 255, 255, 0.33 );
-							border-color: rgba( 255, 255, 255, 0.5 );
-
-							&.error
-							{
-								background-color: rgba( 255, 0, 0, 0.33 );
-								border-color: rgba( 255, 0, 0, 0.5 );
-								color: red;
-							}
-						}
-					}
-				}
-
-				.help
-				{
-					box-sizing: border-box;
-					color: red;
-					display: block;
-					line-height: 2em;
-					overflow: hidden;
-					padding: 0.5em;
-					@include transition( height 0.33s ease-in-out );
-
-					&.hidden
-					{
-						height: 0;
-					}
-				}
-
-				.mc-submit
-				{
-					width: 100%;
-
-					button
-					{
 
 						&:before
 						{
-							content: '\f12a';
-							display: inline-block;
-							font-family: FontAwesome;
-							font-size: 1.25em;
-							margin-right: 0.5em;
-							vertical-align: middle;
+							content: $fa-var-star;
+							font-family: 'FontAwesome';
+							margin-right: 1em;
 						}
 					}
 				}
 			}
-		}	
+
+			.site-events
+			{
+				margin-bottom: 4em;
+
+				h3
+				{
+					color: $snapchat-yellow;
+					font-family: 'Satisfy';
+					font-size: 3em;
+					margin-bottom: 0.5em;
+					text-shadow: 0 0.03em 0 rgba(black ,0.5),
+					             0 0.1em 0.1em rgba(black ,0.33);
+
+					@include media('<=phone')
+					{
+						font-size: 2.5em;
+					}
+
+					.word
+					{
+						display: block;
+						line-height: 0.75em;
+						margin-right: 4em;
+						position: relative;
+						text-align: center;
+						@include transform( rotateZ(-4deg) );
+						z-index: 2;
+					}
+
+					.letter
+					{
+						background: linear-gradient(
+							to bottom,
+							#ff0000 0%,
+							#cc0000 52%,
+							#ff0000 54%,
+							#ff0000 80%,
+							#ff3333 100%
+						);
+						border-radius: 0.1em;
+						box-shadow: 0 0.1em #C00,
+						            0 0.2em 0.11em rgba(black ,0.5);
+						color: white;
+						display: inline-block;
+						font-family: 'Roboto';
+						font-weight: 500;
+						padding: 0.1em 0.3em;
+						position: relative;
+						text-shadow: 0 0.03em 0 rgba(black, 0.5);
+						text-transform: uppercase;
+						z-index: 1;
+
+						&:before
+						{
+							background: rgba(black, 0.33);
+							box-shadow: 0 0 0.25em black;
+							content: '';
+							left: 0;
+							height: 1pt;
+							position: absolute;
+							top: 50%;
+							width: 100%;
+						}
+
+						&:nth-child(2) { @include animation-delay( 0.50s ); }
+						&:nth-child(3) { @include animation-delay( 0.60s ); }
+						&:nth-child(4) { @include animation-delay( 0.70s ); }
+						&:nth-child(5) { @include animation-delay( 0.80s ); }
+						&:nth-child(6) { @include animation-delay( 0.90s ); }
+						&:nth-child(7) { @include animation-delay( 1.00s ); }
+					}
+				}
+
+				.events
+				{
+					list-style: none;
+					padding: 0;
+
+					.event
+					{
+						padding: 0.75em;
+						@include transition( background-color 0.25s );
+
+						.event-what
+						{
+							color: white;
+							display: block;
+							font-size: 1.25em;
+							height: 1.2em;
+							margin-bottom: 0.25em;
+							overflow: hidden;
+							padding-left: 0.8em;
+							text-align: left;
+							text-decoration: none;
+							text-overflow: ellipsis;
+							text-shadow: 1px 1px rgba(black, 0.5);
+						}
+
+						.event-when
+						{
+							float: left;
+
+							.event-start
+							{
+								background: lighten($urbanrest-tan, 18%);
+								box-shadow: 0 1px rgba(black, 0.2),
+								            0 2px lighten($urbanrest-tan, 18%),
+								            0 3px rgba(black, 0.2),
+								            0 4px lighten($urbanrest-tan, 18%),
+								            0 5px 0.5em rgba(black, 0.5);
+								border-radius: 0.3em;
+								display: inline-block;
+								height: 5.25em;
+								position: relative;
+								text-align: center;
+								width: 5em;
+
+								.date
+								{
+									color: #333;
+									font-size: 2.25em;
+									font-weight: 800;
+									left: 0;
+									line-height: 1.4em;
+									position: absolute;
+									top: 0.6em;
+									width: 100%;
+								}
+
+								.day
+								{
+									bottom: 0;
+									color: $urbanrest-green;
+									font-size: 0.8em;
+									font-weight: 500;
+									left: 0;
+									padding: 0.3em 0;
+									position: absolute;
+									width: 100%;
+								}
+
+								.month
+								{
+									color: lighten($urbanrest-tan, 18%);
+									background-color: $urbanrest-green;
+									border-bottom: dashed rgba(black, 0.22) 1pt;
+									border-radius: 0.3em 0.3em 0 0;
+									box-shadow: 0 0.1em 0 $urbanrest-green, 0 0.2em 0 rgba(black, 0.2);
+									font-size: 0.8em;
+									font-weight: 500;
+									left: 0;
+									line-height: 1.5em;
+									padding: 0.25em 0 0.05em;
+									position: absolute;
+									top: 0;
+									width: 100%;
+								}
+
+								.time, .year {display: none;}
+							}
+
+							.event-end {display: none;}
+						}
+
+						.event-why
+						{
+							color: white;
+							font-weight: 100;
+							height: 3.6em;
+							overflow: hidden;
+							padding-left: 1em;
+							text-align: left;
+							text-overflow: ellipsis;
+							text-shadow: 1px 1px rgba(black, 0.5);
+						}
+
+						&:hover
+						{
+							background-color: rgba(black, 0.5);
+							@include transition( background-color 0.666s );
+						}
+
+						&:nth-child(even)
+						{
+							.event-what { padding-left: 0; padding-right: 0.8em; }
+							.event-when { float: right; }
+							.event-why { padding-left: 0; padding-right: 1em; }
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.javascript
+	{
+		.site
+		{
+			.site-community
+			{
+				.site-events
+				{
+					.events
+					{
+						.event
+						{
+							cursor: pointer;
+						}
+					}
+				}
+			}
+		}
 	}
 }

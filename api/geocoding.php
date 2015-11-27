@@ -14,7 +14,11 @@ if( $api_key ) {
 
 	$address = urlencode($street_address . ', ' . $locality . ', ' . $region . ', ' . $country . ', ' . $postal_code);
 
-	echo file_get_contents("https://maps.googleapis.com/maps/api/geocode/json?address={$address}&key={$api_key}");
+	$ch = curl_init();
+   curl_setopt($ch, CURLOPT_URL, "https://maps.googleapis.com/maps/api/geocode/json?address={$address}&key={$api_key}");
+   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+   echo curl_exec($ch);
+   curl_close($ch);
 } else {
 	$message = array(
 		'error_message' => "No API Key has been provided.",

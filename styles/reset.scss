@@ -1,13 +1,46 @@
-html, body
+html.no-javascript,
+html.javascript
 {
-	cursor: default;
-	font-family: 'Roboto', Arial;
 	height: 100%;
 	margin: 0;
 	width: 100%;
 }
 
-h1
+.site
 {
+	background-attachment: fixed;
+	@include media('<=phone') { background-attachment: scroll; }
+	background-color: black;
+	background-image: url(images/background-hops.jpg);
+	@include media( 'portrait' ) { background-image: url(images/background-hops-portrait.jpg); }
+	background-position: center 0;
+	@include media('<=phone') { background-position: center 0 !important; }
+	background-repeat: no-repeat;
+	@include background-size( cover );
+	cursor: default;
+	font-family: 'Roboto', Arial;
+	height: 100%;
 	margin: 0;
+	width: 100%;
+
+	h1, h2, h3, h4, h5, h6, p, ol, ul, dt, dd
+	{
+		margin: 0;
+	}
+
+	ol, ul
+	{
+		list-style: none;
+		padding: 0;
+	}
+
+	em
+	{
+		font-style: normal;
+		font-weight: 400;
+	}
+
+	.hidden { display: none; }
+
+	> .row { margin: 0 !important; }
 }

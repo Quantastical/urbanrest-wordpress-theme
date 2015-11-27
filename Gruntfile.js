@@ -20,9 +20,17 @@ module.exports = function(grunt) {
 				files: {
 					'style.css': 'style.scss',
 					/*'editor-style.css': 'editor-style.scss'*/
+					'styles/admin/style.css': 'styles/admin/style.scss',
+					'styles/login/style.css': 'styles/login/style.scss'
 				}
 			}
 		},
+
+		uglify: {
+			dist: {
+				files: grunt.file.readJSON('script.json')
+			}
+		}
 	});
 
 	grunt.registerTask('default', ['sass', 'watch']);

@@ -1,0 +1,19 @@
+{
+	"script.js" : [
+		"scripts/plugins/jquery.urbModal.js",
+		"scripts/reset.js",
+
+		"scripts/modal.js",
+		"scripts/navigation.js",
+
+		"scripts/header.js",
+		"scripts/community.js",
+		"scripts/company.js",
+
+		"scripts/beer.js",
+		"scripts/page.js",
+		"scripts/post.js",
+		"scripts/single.js",
+		"scripts/user.js"
+	]
+}

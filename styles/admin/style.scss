@@ -1,0 +1,64 @@
+$apple-grey:            #979797;
+$facebook-blue:         #3B5998;
+$twitter-blue:          #00ACED;
+$google-red:            #DD4B39;
+$youtube-red:           #BB0000;
+$linkedin-blue:         #007BB6;
+$instagram-blue:        #517FA4;
+$pinterest-red:         #CB2027;
+$vine-green:            #00BF8F;
+$snapchat-yellow:       #FFFC00;
+$quora-burgundy:        #A82400;
+$flickr-pink:           #FF0084;
+$tumblr-dark-turquoise: #32506D;
+$foursquare-blue:       #0072B1;
+
+@import '../mixins';
+@import '../fonts';
+@import '../reset';
+
+.text-apple      { color: $apple-grey;            }
+.text-facebook   { color: $facebook-blue;         }
+.text-twitter    { color: $twitter-blue;          }
+.text-google     { color: $google-red;            }
+.text-youtube    { color: $youtube-red;           }
+.text-linkedin   { color: $linkedin-blue;         }
+.text-instagram  { color: $instagram-blue;        }
+.text-pinterest  { color: $pinterest-red;         }
+.text-vine       { color: $vine-green;            }
+.text-snapchat   { color: $snapchat-yellow;       }
+.text-quora      { color: $quora-burgundy;        }
+.text-flickr     { color: $flickr-pink;           }
+.text-tumbler    { color: $tumblr-dark-turquoise; }
+.text-foursquare { color: $foursquare-blue;       }
+
+.show-admin-bar {
+	display: none;
+}
+
+.dashicons-barcode:before {
+	content: '\f02a';
+	font-family: FontAwesome;
+}
+
+.dashicons-beer:before {
+	content: '\f0fc';
+	font-family: FontAwesome;
+}
+
+#beer_profile {
+	p {
+		display: inline-block;
+		width: 27em;
+	}
+
+	.slider {
+		margin-bottom: 2em;
+		margin-top: 0.5em;
+	}
+
+	input[type="number"] {
+		text-align: right;
+		width: 5em;
+	}
+}
