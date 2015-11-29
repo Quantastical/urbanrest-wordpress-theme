@@ -1,4 +1,5 @@
 <?php
+require_once('includes/redirects.php');
 require_once('includes/3rd-parties.php');
 require_once('includes/admin-menu.php');
 require_once('includes/beer.php');
@@ -206,7 +207,7 @@ if( !function_exists( 'urbanrest_enqueue_scripts' ) ) :
 
 		// Add scripts
 		wp_enqueue_script('jquery', '//code.jquery.com/jquery-1.11.3.min.js');
-		wp_enqueue_script('gmaps', 'http://maps.google.com/maps/api/js?sensor=false', false, '1.1', true);
+		wp_enqueue_script('gmaps', 'http://maps.google.com/maps/api/js', false, '1.1', true);
 		wp_enqueue_script('site', get_stylesheet_directory_uri() . '/script.js', false, '1.1', true);
 		/*
 		wp_enqueue_script('modal', get_stylesheet_directory_uri() . '/scripts/plugins/jquery.urbanrestModal.js', false, '1.1', true);
@@ -241,7 +242,6 @@ add_action('wp_enqueue_scripts', 'urbanrest_enqueue_scripts');
 
 //require_once('includes/admin/user-profile.php');
 
-require_once('includes/redirects.php');
 require_once('includes/content-editor.php');
 //require_once('includes/login.php');
 require_once('includes/footer.php');
