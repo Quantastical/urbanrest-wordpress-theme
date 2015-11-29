@@ -1,8 +1,17 @@
 			<footer class="beer-footer" role="contentinfo">
 				<section class="beer-actions">
-<?php if( $untappd_beer_url = get_post_meta($post->ID, 'untappd_beer_url') ) : ?>
-					<p><a class="beer-checkin untappd" href="<?php echo $untappd_beer_url[0]; ?>">Check-In on Untappd</a></p>
+					<ul class="beer-checkin">
+<?php if( $ratebeer_beer_url = get_post_meta($post->ID, 'ratebeer_beer_url') ) : ?>
+						<li class="beer-checkin-item">
+							<a class="ratebeer" href="<?php echo $ratebeer_beer_url[0]; ?>">Rate this on RateBeer</a>
+						</li>
 <?php endif; ?>
+<?php if( $untappd_beer_url = get_post_meta($post->ID, 'untappd_beer_url') ) : ?>
+						<li class="beer-checkin-item">
+							<a class="untappd" href="<?php echo $untappd_beer_url[0]; ?>">Check-In on Untappd</a>
+						</li>
+<?php endif; ?>
+					</ul>
 					<!--
 					<h3 class="beer-like hyperlink" data-action="modal" data-target=".beer-liking.modal">Like this beer</h3>
 					<ul class="beer-liking modal">
@@ -14,6 +23,14 @@
 						</li>
 					</ul>
 					-->
+<script type="text/javascript">
+jQuery(function($){
+//	$.get('http://localapi.urbanrest.com/ratebeer/beer/info/founders-kbs-kentucky-breakfast-stout/40544/', function(res) {
+//
+	//	console.log(res);
+	//});
+});
+</script>
 
 					<button class="beer-share hyperlink" data-action="modal" data-target=".beer-sharing.modal" type="button">Share this page</button>
 					<ul class="beer-sharing modal animated fadeIn">

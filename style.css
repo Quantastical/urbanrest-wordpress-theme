@@ -2853,7 +2853,7 @@ html.no-javascript, html.javascript {
 .btn .btn-content {
   display: none; }
 
-.hyperlink, .site.single-beer .beer-container a, .site.single-beer .beer-container .hyperlink, .site.single-page .page-container a, .site.single-page .page-container .hyperlink, .site.single-post .post a, .site.single-post .post .hyperlink, .site.author .user-container a, .site.author .user-container .hyperlink {
+.hyperlink, .site main.beer a, .site main.beer .hyperlink, .site main.event a, .site main.event .hyperlink, .site main.page a, .site main.page .hyperlink, .site main.post a, .site main.post .hyperlink, .site main.user a, .site main.user .hyperlink {
   border-bottom-width: 1pt;
   border-bottom-color: transparent;
   border-bottom-style: solid;
@@ -2865,10 +2865,10 @@ html.no-javascript, html.javascript {
   -webkit-transition: border-bottom 0.33s;
   -moz-transition: border-bottom 0.33s;
   transition: border-bottom 0.33s; }
-.hyperlink:hover, .site.single-beer .beer-container a:hover, .site.single-beer .beer-container .hyperlink:hover, .site.single-page .page-container a:hover, .site.single-page .page-container .hyperlink:hover, .site.single-post .post a:hover, .site.single-post .post .hyperlink:hover, .site.author .user-container a:hover, .site.author .user-container .hyperlink:hover {
+.hyperlink:hover, .site main.beer a:hover, .site main.beer .hyperlink:hover, .site main.event a:hover, .site main.event .hyperlink:hover, .site main.page a:hover, .site main.page .hyperlink:hover, .site main.post a:hover, .site main.post .hyperlink:hover, .site main.user a:hover, .site main.user .hyperlink:hover {
   /*border-bottom-color: lighten( $urbanrest-green, 5% );*/
   color: #149f4f; }
-.hyperlink [rel="external"]:after, .site.single-beer .beer-container a [rel="external"]:after, .site.single-beer .beer-container .hyperlink [rel="external"]:after, .site.single-page .page-container a [rel="external"]:after, .site.single-page .page-container .hyperlink [rel="external"]:after, .site.single-post .post a [rel="external"]:after, .site.single-post .post .hyperlink [rel="external"]:after, .site.author .user-container a [rel="external"]:after, .site.author .user-container .hyperlink [rel="external"]:after {
+.hyperlink [rel="external"]:after, .site main.beer a [rel="external"]:after, .site main.beer .hyperlink [rel="external"]:after, .site main.event a [rel="external"]:after, .site main.event .hyperlink [rel="external"]:after, .site main.page a [rel="external"]:after, .site main.page .hyperlink [rel="external"]:after, .site main.post a [rel="external"]:after, .site main.post .hyperlink [rel="external"]:after, .site main.user a [rel="external"]:after, .site main.user .hyperlink [rel="external"]:after {
   background-color: transparent;
   border: none;
   border-radius: 0.18em;
@@ -2887,7 +2887,7 @@ html.no-javascript, html.javascript {
   -moz-transition: all 0.5s;
   transition: all 0.5s;
   width: 0; }
-.hyperlink [rel="external"]:hover:after, .site.single-beer .beer-container a [rel="external"]:hover:after, .site.single-beer .beer-container .hyperlink [rel="external"]:hover:after, .site.single-page .page-container a [rel="external"]:hover:after, .site.single-page .page-container .hyperlink [rel="external"]:hover:after, .site.single-post .post a [rel="external"]:hover:after, .site.single-post .post .hyperlink [rel="external"]:hover:after, .site.author .user-container a [rel="external"]:hover:after, .site.author .user-container .hyperlink [rel="external"]:hover:after {
+.hyperlink [rel="external"]:hover:after, .site main.beer a [rel="external"]:hover:after, .site main.event a [rel="external"]:hover:after, .site main.page a [rel="external"]:hover:after, .site main.post a [rel="external"]:hover:after, .site main.user a [rel="external"]:hover:after {
   background-color: white;
   height: 0.84em;
   opacity: 1;
@@ -4402,9 +4402,9 @@ html.no-javascript, html.javascript {
     opacity: 1;
     padding-top: calc(50% + 3em); } }
 @media only screen {
-  .site-footer {
+  .site .site-footer {
     display: none; } }
-.site.single-beer .beer-container {
+.site main.beer {
   background-color: #DCC1A7;
   background-image: url("images/single-background.jpg");
   background-position: center;
@@ -4416,67 +4416,67 @@ html.no-javascript, html.javascript {
   padding-bottom: 4em;
   padding-top: 4em;
   width: 100%; }
-.site.single-beer .beer-container iframe {
+.site main.beer iframe {
   border: none;
   border-radius: 0.25em;
   display: block;
   margin: 0 auto;
   max-width: 90%; }
-.site.single-beer .beer-container .beer-header .beer-title {
+.site main.beer .beer-header .beer-title {
   font-size: 2em;
   margin-bottom: 0.5em;
   margin-top: 1em; }
 @media (max-width: 768px) {
-  .site.single-beer .beer-container .beer-header .beer-profile .label {
+  .site main.beer .beer-header .beer-profile .label {
     float: right; } }
-.site.single-beer .beer-container .beer-header .beer-rating {
+.site main.beer .beer-header .beer-rating {
   float: right;
   margin-top: -2.15em;
   position: relative;
   text-align: right;
   top: -1.5em; }
-.site.single-beer .beer-container .beer-header .beer-rating .annotation {
+.site main.beer .beer-header .beer-rating .annotation {
   font-size: 1.5em;
   line-height: calc(1em / 1.5);
   margin-left: -0.15em;
   vertical-align: middle; }
-.site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"] {
+.site main.beer .beer-header .beer-rating [itemprop="aggregateRating"] {
   overflow: hidden;
   white-space: nowrap;
   width: 0; }
-.site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"]:before {
+.site main.beer .beer-header .beer-rating [itemprop="aggregateRating"]:before {
   content: '\f006\f006\f006\f006\f006';
   font-family: 'FontAwesome';
   font-size: 1.4em;
   position: absolute;
   right: 0; }
-.site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="0"][data-overall-rating$="0"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="0"][data-overall-rating$="1"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="0"][data-overall-rating$="2"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="0"][data-overall-rating$="3"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="0"][data-overall-rating$="4"]:before {
+.site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="0"][data-overall-rating$="0"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="0"][data-overall-rating$="1"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="0"][data-overall-rating$="2"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="0"][data-overall-rating$="3"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="0"][data-overall-rating$="4"]:before {
   content: '\f006\f006\f006\f006\f006'; }
-.site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="0"][data-overall-rating$="5"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="0"][data-overall-rating$="6"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="0"][data-overall-rating$="7"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="0"][data-overall-rating$="8"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="0"][data-overall-rating$="9"]:before {
+.site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="0"][data-overall-rating$="5"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="0"][data-overall-rating$="6"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="0"][data-overall-rating$="7"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="0"][data-overall-rating$="8"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="0"][data-overall-rating$="9"]:before {
   content: '\f123\f006\f006\f006\f006'; }
-.site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="1"][data-overall-rating$="0"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="1"][data-overall-rating$="1"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="1"][data-overall-rating$="2"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="1"][data-overall-rating$="3"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="1"][data-overall-rating$="4"]:before {
+.site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="1"][data-overall-rating$="0"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="1"][data-overall-rating$="1"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="1"][data-overall-rating$="2"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="1"][data-overall-rating$="3"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="1"][data-overall-rating$="4"]:before {
   content: '\f005\f006\f006\f006\f006'; }
-.site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="1"][data-overall-rating$="5"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="1"][data-overall-rating$="6"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="1"][data-overall-rating$="7"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="1"][data-overall-rating$="8"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="1"][data-overall-rating$="9"]:before {
+.site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="1"][data-overall-rating$="5"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="1"][data-overall-rating$="6"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="1"][data-overall-rating$="7"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="1"][data-overall-rating$="8"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="1"][data-overall-rating$="9"]:before {
   content: '\f005\f123\f006\f006\f006'; }
-.site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="2"][data-overall-rating$="0"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="2"][data-overall-rating$="1"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="2"][data-overall-rating$="2"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="2"][data-overall-rating$="3"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="2"][data-overall-rating$="4"]:before {
+.site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="2"][data-overall-rating$="0"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="2"][data-overall-rating$="1"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="2"][data-overall-rating$="2"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="2"][data-overall-rating$="3"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="2"][data-overall-rating$="4"]:before {
   content: '\f005\f005\f006\f006\f006'; }
-.site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="2"][data-overall-rating$="5"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="2"][data-overall-rating$="6"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="2"][data-overall-rating$="7"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="2"][data-overall-rating$="8"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="2"][data-overall-rating$="9"]:before {
+.site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="2"][data-overall-rating$="5"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="2"][data-overall-rating$="6"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="2"][data-overall-rating$="7"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="2"][data-overall-rating$="8"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="2"][data-overall-rating$="9"]:before {
   content: '\f005\f005\f123\f006\f006'; }
-.site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="3"][data-overall-rating$="0"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="3"][data-overall-rating$="1"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="3"][data-overall-rating$="2"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="3"][data-overall-rating$="3"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="3"][data-overall-rating$="4"]:before {
+.site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="3"][data-overall-rating$="0"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="3"][data-overall-rating$="1"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="3"][data-overall-rating$="2"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="3"][data-overall-rating$="3"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="3"][data-overall-rating$="4"]:before {
   content: '\f005\f005\f005\f006\f006'; }
-.site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="3"][data-overall-rating$="5"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="3"][data-overall-rating$="6"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="3"][data-overall-rating$="7"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="3"][data-overall-rating$="8"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="3"][data-overall-rating$="9"]:before {
+.site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="3"][data-overall-rating$="5"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="3"][data-overall-rating$="6"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="3"][data-overall-rating$="7"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="3"][data-overall-rating$="8"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="3"][data-overall-rating$="9"]:before {
   content: '\f005\f005\f005\f123\f006'; }
-.site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="4"][data-overall-rating$="0"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="4"][data-overall-rating$="1"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="4"][data-overall-rating$="2"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="4"][data-overall-rating$="3"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="4"][data-overall-rating$="4"]:before {
+.site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="4"][data-overall-rating$="0"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="4"][data-overall-rating$="1"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="4"][data-overall-rating$="2"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="4"][data-overall-rating$="3"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="4"][data-overall-rating$="4"]:before {
   content: '\f005\f005\f005\f005\f006'; }
-.site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="4"][data-overall-rating$="5"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="4"][data-overall-rating$="6"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="4"][data-overall-rating$="7"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="4"][data-overall-rating$="8"]:before, .site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="4"][data-overall-rating$="9"]:before {
+.site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="4"][data-overall-rating$="5"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="4"][data-overall-rating$="6"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="4"][data-overall-rating$="7"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="4"][data-overall-rating$="8"]:before, .site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="4"][data-overall-rating$="9"]:before {
   content: '\f005\f005\f005\f005\f123'; }
-.site.single-beer .beer-container .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="5"]:before {
+.site main.beer .beer-header .beer-rating [itemprop="aggregateRating"][data-overall-rating^="5"]:before {
   content: '\f005\f005\f005\f005\f005'; }
-.site.single-beer .beer-container .beer-header .beer-rating .rating-actions {
+.site main.beer .beer-header .beer-rating .rating-actions {
   margin-bottom: -1em;
   margin-top: -1.15em;
   position: relative; }
-.site.single-beer .beer-container .beer-header .beer-rating .rating-actions .rate-button {
+.site main.beer .beer-header .beer-rating .rating-actions .rate-button {
   background: none;
   border: none;
   color: transparent;
@@ -4485,36 +4485,36 @@ html.no-javascript, html.javascript {
   opacity: 0;
   outline: none;
   padding: 0; }
-.site.single-beer .beer-container .beer-header .beer-rating .rating-actions .rate-button.rated {
+.site main.beer .beer-header .beer-rating .rating-actions .rate-button.rated {
   opacity: 1; }
-.site.single-beer .beer-container .beer-header .beer-rating .rating-actions .rate-button:before {
+.site main.beer .beer-header .beer-rating .rating-actions .rate-button:before {
   color: gold;
   content: "";
   font-family: 'FontAwesome';
   font-size: 1.4rem; }
-.site.single-beer .beer-container .beer-header .beer-rating .rating-actions .rate-button:after {
+.site main.beer .beer-header .beer-rating .rating-actions .rate-button:after {
   color: #000000;
   content: "";
   font-family: 'FontAwesome';
   font-size: 1.4rem;
   margin-left: -1.3rem;
   position: relative; }
-.site.single-beer .beer-container .beer-header .beer-rating .rating-actions:hover .rate-button {
+.site main.beer .beer-header .beer-rating .rating-actions:hover .rate-button {
   opacity: 1; }
-.site.single-beer .beer-container .beer-header .beer-rating .rating-actions:hover .rate-button:hover ~ .rate-button {
+.site main.beer .beer-header .beer-rating .rating-actions:hover .rate-button:hover ~ .rate-button {
   opacity: 0; }
-.site.single-beer .beer-container .beer-header .beer-style {
+.site main.beer .beer-header .beer-style {
   font-size: 1.25em; }
-.site.single-beer .beer-container .beer-image {
+.site main.beer .beer-image {
   margin: 0;
   position: relative;
   text-align: center;
   width: 100%; }
-.site.single-beer .beer-container .beer-image img {
+.site main.beer .beer-image img {
   border-radius: 50%;
   height: 22em;
   width: 22em; }
-.site.single-beer .beer-container .beer-image figcaption {
+.site main.beer .beer-image figcaption {
   background-color: rgba(0, 0, 0, 0.55);
   bottom: 0;
   box-sizing: border-box;
@@ -4524,32 +4524,32 @@ html.no-javascript, html.javascript {
   padding: 1em;
   position: absolute;
   width: 100%; }
-.site.single-beer .beer-container .beer-image figcaption .beer-image-title {
+.site main.beer .beer-image figcaption .beer-image-title {
   font-size: 1.5em; }
-.site.single-beer .beer-container .beer-image figcaption .beer-image-caption {
+.site main.beer .beer-image figcaption .beer-image-caption {
   font-size: 0.8em;
   font-style: italic;
   font-weight: 100; }
-.site.single-beer .beer-container .beer-image figcaption .beer-image-description {
+.site main.beer .beer-image figcaption .beer-image-description {
   font-size: 1em;
   margin-top: 0.5em; }
-.site.single-beer .beer-container .beer-content {
+.site main.beer .beer-content {
   font-size: 1.2em;
   line-height: 1.5em; }
-.site.single-beer .beer-container .beer-content h2 {
+.site main.beer .beer-content h2 {
   font-size: 1.3em;
   margin-bottom: 0.25em; }
-.site.single-beer .beer-container .beer-content p {
+.site main.beer .beer-content p {
   margin-bottom: 1em; }
-.site.single-beer .beer-container .beer-content section {
+.site main.beer .beer-content section {
   margin-top: 1em; }
-.site.single-beer .beer-container .beer-content .beer-tags {
+.site main.beer .beer-content .beer-tags {
   list-style: none;
   padding: 0; }
-.site.single-beer .beer-container .beer-content .beer-tags .beer-tag {
+.site main.beer .beer-content .beer-tags .beer-tag {
   display: inline;
   font-size: 0.8em; }
-.site.single-beer .beer-container .beer-content .beer-tags .beer-tag a {
+.site main.beer .beer-content .beer-tags .beer-tag a {
   background-color: rgba(0, 0, 0, 0.3);
   border: none;
   border-radius: 0.25em;
@@ -4561,20 +4561,20 @@ html.no-javascript, html.javascript {
   -webkit-transition: background-color 0.33s;
   -moz-transition: background-color 0.33s;
   transition: background-color 0.33s; }
-.site.single-beer .beer-container .beer-content .beer-tags .beer-tag a:hover {
+.site main.beer .beer-content .beer-tags .beer-tag a:hover {
   background-color: rgba(17, 136, 68, 0.3);
   color: #118844;
   border: none;
   -webkit-transition: background-color 0.11s;
   -moz-transition: background-color 0.11s;
   transition: background-color 0.11s; }
-.site.single-beer .beer-container .beer-content .beer-tags .beer-tag:last-child a {
+.site main.beer .beer-content .beer-tags .beer-tag:last-child a {
   margin-right: 0; }
-.site.single-beer .beer-container .beer-footer {
+.site main.beer .beer-footer {
   margin-top: 3em; }
-.site.single-beer .beer-container .beer-footer .beer-actions {
+.site main.beer .beer-footer .beer-actions {
   text-align: center; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-comments, .site.single-beer .beer-container .beer-footer .beer-actions .beer-like, .site.single-beer .beer-container .beer-footer .beer-actions .beer-share {
+.site main.beer .beer-footer .beer-actions .beer-comments, .site main.beer .beer-footer .beer-actions .beer-like, .site main.beer .beer-footer .beer-actions .beer-share {
   background: none;
   border: none;
   display: inline-block;
@@ -4582,30 +4582,30 @@ html.no-javascript, html.javascript {
   font-weight: 400;
   margin-right: 1em;
   text-align: center; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-comments:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-like:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-share:before {
+.site main.beer .beer-footer .beer-actions .beer-comments:before, .site main.beer .beer-footer .beer-actions .beer-like:before, .site main.beer .beer-footer .beer-actions .beer-share:before {
   font-family: FontAwesome;
   margin-right: 0.5em; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-comments.beer-comments:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-like.beer-comments:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-share.beer-comments:before {
+.site main.beer .beer-footer .beer-actions .beer-comments.beer-comments:before, .site main.beer .beer-footer .beer-actions .beer-like.beer-comments:before, .site main.beer .beer-footer .beer-actions .beer-share.beer-comments:before {
   content: ""; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-comments.beer-like:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-like.beer-like:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-share.beer-like:before {
+.site main.beer .beer-footer .beer-actions .beer-comments.beer-like:before, .site main.beer .beer-footer .beer-actions .beer-like.beer-like:before, .site main.beer .beer-footer .beer-actions .beer-share.beer-like:before {
   content: ""; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-comments.beer-share:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-like.beer-share:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-share.beer-share:before {
+.site main.beer .beer-footer .beer-actions .beer-comments.beer-share:before, .site main.beer .beer-footer .beer-actions .beer-like.beer-share:before, .site main.beer .beer-footer .beer-actions .beer-share.beer-share:before {
   content: ""; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-comments:hover, .site.single-beer .beer-container .beer-footer .beer-actions .beer-like:hover, .site.single-beer .beer-container .beer-footer .beer-actions .beer-share:hover {
+.site main.beer .beer-footer .beer-actions .beer-comments:hover, .site main.beer .beer-footer .beer-actions .beer-like:hover, .site main.beer .beer-footer .beer-actions .beer-share:hover {
   border: none; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-comments:last-of-type, .site.single-beer .beer-container .beer-footer .beer-actions .beer-like:last-of-type, .site.single-beer .beer-container .beer-footer .beer-actions .beer-share:last-of-type {
+.site main.beer .beer-footer .beer-actions .beer-comments:last-of-type, .site main.beer .beer-footer .beer-actions .beer-like:last-of-type, .site main.beer .beer-footer .beer-actions .beer-share:last-of-type {
   margin-right: 0; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-comments .comment-count, .site.single-beer .beer-container .beer-footer .beer-actions .beer-comments .like-count, .site.single-beer .beer-container .beer-footer .beer-actions .beer-comments .share-count, .site.single-beer .beer-container .beer-footer .beer-actions .beer-like .comment-count, .site.single-beer .beer-container .beer-footer .beer-actions .beer-like .like-count, .site.single-beer .beer-container .beer-footer .beer-actions .beer-like .share-count, .site.single-beer .beer-container .beer-footer .beer-actions .beer-share .comment-count, .site.single-beer .beer-container .beer-footer .beer-actions .beer-share .like-count, .site.single-beer .beer-container .beer-footer .beer-actions .beer-share .share-count {
+.site main.beer .beer-footer .beer-actions .beer-comments .comment-count, .site main.beer .beer-footer .beer-actions .beer-comments .like-count, .site main.beer .beer-footer .beer-actions .beer-comments .share-count, .site main.beer .beer-footer .beer-actions .beer-like .comment-count, .site main.beer .beer-footer .beer-actions .beer-like .like-count, .site main.beer .beer-footer .beer-actions .beer-like .share-count, .site main.beer .beer-footer .beer-actions .beer-share .comment-count, .site main.beer .beer-footer .beer-actions .beer-share .like-count, .site main.beer .beer-footer .beer-actions .beer-share .share-count {
   margin-left: 0.5em; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-comments .comment-count:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-comments .like-count:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-comments .share-count:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-like .comment-count:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-like .like-count:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-like .share-count:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-share .comment-count:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-share .like-count:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-share .share-count:before {
+.site main.beer .beer-footer .beer-actions .beer-comments .comment-count:before, .site main.beer .beer-footer .beer-actions .beer-comments .like-count:before, .site main.beer .beer-footer .beer-actions .beer-comments .share-count:before, .site main.beer .beer-footer .beer-actions .beer-like .comment-count:before, .site main.beer .beer-footer .beer-actions .beer-like .like-count:before, .site main.beer .beer-footer .beer-actions .beer-like .share-count:before, .site main.beer .beer-footer .beer-actions .beer-share .comment-count:before, .site main.beer .beer-footer .beer-actions .beer-share .like-count:before, .site main.beer .beer-footer .beer-actions .beer-share .share-count:before {
   content: '('; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-comments .comment-count:after, .site.single-beer .beer-container .beer-footer .beer-actions .beer-comments .like-count:after, .site.single-beer .beer-container .beer-footer .beer-actions .beer-comments .share-count:after, .site.single-beer .beer-container .beer-footer .beer-actions .beer-like .comment-count:after, .site.single-beer .beer-container .beer-footer .beer-actions .beer-like .like-count:after, .site.single-beer .beer-container .beer-footer .beer-actions .beer-like .share-count:after, .site.single-beer .beer-container .beer-footer .beer-actions .beer-share .comment-count:after, .site.single-beer .beer-container .beer-footer .beer-actions .beer-share .like-count:after, .site.single-beer .beer-container .beer-footer .beer-actions .beer-share .share-count:after {
+.site main.beer .beer-footer .beer-actions .beer-comments .comment-count:after, .site main.beer .beer-footer .beer-actions .beer-comments .like-count:after, .site main.beer .beer-footer .beer-actions .beer-comments .share-count:after, .site main.beer .beer-footer .beer-actions .beer-like .comment-count:after, .site main.beer .beer-footer .beer-actions .beer-like .like-count:after, .site main.beer .beer-footer .beer-actions .beer-like .share-count:after, .site main.beer .beer-footer .beer-actions .beer-share .comment-count:after, .site main.beer .beer-footer .beer-actions .beer-share .like-count:after, .site main.beer .beer-footer .beer-actions .beer-share .share-count:after {
   content: ')'; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-commenting, .site.single-beer .beer-container .beer-footer .beer-actions .beer-liking, .site.single-beer .beer-container .beer-footer .beer-actions .beer-sharing {
+.site main.beer .beer-footer .beer-actions .beer-commenting, .site main.beer .beer-footer .beer-actions .beer-liking, .site main.beer .beer-footer .beer-actions .beer-sharing {
   list-style: none;
   padding: 0;
   text-align: center; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-commenting a, .site.single-beer .beer-container .beer-footer .beer-actions .beer-liking a, .site.single-beer .beer-container .beer-footer .beer-actions .beer-sharing a {
+.site main.beer .beer-footer .beer-actions .beer-commenting a, .site main.beer .beer-footer .beer-actions .beer-liking a, .site main.beer .beer-footer .beer-actions .beer-sharing a {
   background-color: gray;
   border: none;
   border-radius: 0.25em;
@@ -4620,42 +4620,46 @@ html.no-javascript, html.javascript {
   -moz-transition: background-color 0.33s, color 0.33s;
   transition: background-color 0.33s, color 0.33s;
   width: 15em; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-commenting a:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-liking a:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-sharing a:before {
+.site main.beer .beer-footer .beer-actions .beer-commenting a:before, .site main.beer .beer-footer .beer-actions .beer-liking a:before, .site main.beer .beer-footer .beer-actions .beer-sharing a:before {
   font-family: FontAwesome;
   margin-right: 0.5em; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-commenting a:hover, .site.single-beer .beer-container .beer-footer .beer-actions .beer-liking a:hover, .site.single-beer .beer-container .beer-footer .beer-actions .beer-sharing a:hover {
+.site main.beer .beer-footer .beer-actions .beer-commenting a:hover, .site main.beer .beer-footer .beer-actions .beer-liking a:hover, .site main.beer .beer-footer .beer-actions .beer-sharing a:hover {
   background-color: #737373;
   color: white;
   border: none;
   -webkit-transition: background-color 0.11s, color 0.11s;
   -moz-transition: background-color 0.11s, color 0.11s;
   transition: background-color 0.11s, color 0.11s; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-commenting a.facebook, .site.single-beer .beer-container .beer-footer .beer-actions .beer-liking a.facebook, .site.single-beer .beer-container .beer-footer .beer-actions .beer-sharing a.facebook {
+.site main.beer .beer-footer .beer-actions .beer-commenting a.facebook, .site main.beer .beer-footer .beer-actions .beer-liking a.facebook, .site main.beer .beer-footer .beer-actions .beer-sharing a.facebook {
   background-color: #3B5998; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-commenting a.facebook:hover, .site.single-beer .beer-container .beer-footer .beer-actions .beer-liking a.facebook:hover, .site.single-beer .beer-container .beer-footer .beer-actions .beer-sharing a.facebook:hover {
+.site main.beer .beer-footer .beer-actions .beer-commenting a.facebook:hover, .site main.beer .beer-footer .beer-actions .beer-liking a.facebook:hover, .site main.beer .beer-footer .beer-actions .beer-sharing a.facebook:hover {
   background-color: #344e86; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-commenting a.google, .site.single-beer .beer-container .beer-footer .beer-actions .beer-liking a.google, .site.single-beer .beer-container .beer-footer .beer-actions .beer-sharing a.google {
+.site main.beer .beer-footer .beer-actions .beer-commenting a.google, .site main.beer .beer-footer .beer-actions .beer-liking a.google, .site main.beer .beer-footer .beer-actions .beer-sharing a.google {
   background-color: #DD4B39; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-commenting a.google:hover, .site.single-beer .beer-container .beer-footer .beer-actions .beer-liking a.google:hover, .site.single-beer .beer-container .beer-footer .beer-actions .beer-sharing a.google:hover {
+.site main.beer .beer-footer .beer-actions .beer-commenting a.google:hover, .site main.beer .beer-footer .beer-actions .beer-liking a.google:hover, .site main.beer .beer-footer .beer-actions .beer-sharing a.google:hover {
   background-color: #d73925; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-commenting a.twitter, .site.single-beer .beer-container .beer-footer .beer-actions .beer-liking a.twitter, .site.single-beer .beer-container .beer-footer .beer-actions .beer-sharing a.twitter {
+.site main.beer .beer-footer .beer-actions .beer-commenting a.twitter, .site main.beer .beer-footer .beer-actions .beer-liking a.twitter, .site main.beer .beer-footer .beer-actions .beer-sharing a.twitter {
   background-color: #00ACED; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-commenting a.twitter:hover, .site.single-beer .beer-container .beer-footer .beer-actions .beer-liking a.twitter:hover, .site.single-beer .beer-container .beer-footer .beer-actions .beer-sharing a.twitter:hover {
+.site main.beer .beer-footer .beer-actions .beer-commenting a.twitter:hover, .site main.beer .beer-footer .beer-actions .beer-liking a.twitter:hover, .site main.beer .beer-footer .beer-actions .beer-sharing a.twitter:hover {
   background-color: #0099d4; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-commenting.beer-liking a.facebook:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-liking.beer-liking a.facebook:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-sharing.beer-liking a.facebook:before {
+.site main.beer .beer-footer .beer-actions .beer-commenting.beer-liking a.facebook:before, .site main.beer .beer-footer .beer-actions .beer-liking.beer-liking a.facebook:before, .site main.beer .beer-footer .beer-actions .beer-sharing.beer-liking a.facebook:before {
   content: ""; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-commenting.beer-liking a.twitter:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-liking.beer-liking a.twitter:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-sharing.beer-liking a.twitter:before {
+.site main.beer .beer-footer .beer-actions .beer-commenting.beer-liking a.twitter:before, .site main.beer .beer-footer .beer-actions .beer-liking.beer-liking a.twitter:before, .site main.beer .beer-footer .beer-actions .beer-sharing.beer-liking a.twitter:before {
   content: ""; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-commenting.beer-sharing a.email:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-liking.beer-sharing a.email:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-sharing.beer-sharing a.email:before {
+.site main.beer .beer-footer .beer-actions .beer-commenting.beer-sharing a.email:before, .site main.beer .beer-footer .beer-actions .beer-liking.beer-sharing a.email:before, .site main.beer .beer-footer .beer-actions .beer-sharing.beer-sharing a.email:before {
   content: ""; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-commenting.beer-sharing a.facebook:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-liking.beer-sharing a.facebook:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-sharing.beer-sharing a.facebook:before {
+.site main.beer .beer-footer .beer-actions .beer-commenting.beer-sharing a.facebook:before, .site main.beer .beer-footer .beer-actions .beer-liking.beer-sharing a.facebook:before, .site main.beer .beer-footer .beer-actions .beer-sharing.beer-sharing a.facebook:before {
   content: ""; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-commenting.beer-sharing a.google:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-liking.beer-sharing a.google:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-sharing.beer-sharing a.google:before {
+.site main.beer .beer-footer .beer-actions .beer-commenting.beer-sharing a.google:before, .site main.beer .beer-footer .beer-actions .beer-liking.beer-sharing a.google:before, .site main.beer .beer-footer .beer-actions .beer-sharing.beer-sharing a.google:before {
   content: ""; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-commenting.beer-sharing a.twitter:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-liking.beer-sharing a.twitter:before, .site.single-beer .beer-container .beer-footer .beer-actions .beer-sharing.beer-sharing a.twitter:before {
+.site main.beer .beer-footer .beer-actions .beer-commenting.beer-sharing a.twitter:before, .site main.beer .beer-footer .beer-actions .beer-liking.beer-sharing a.twitter:before, .site main.beer .beer-footer .beer-actions .beer-sharing.beer-sharing a.twitter:before {
   content: ""; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-checkin.untappd {
-  background-image: url("images/logo-untappd.png");
+.site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item {
+  display: inline-block;
+  margin-bottom: 2em; }
+.site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item + .beer-checkin-item {
+  margin-left: 1em; }
+.site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -4663,11 +4667,9 @@ html.no-javascript, html.javascript {
   display: inline-block;
   font-size: 0.75em;
   height: 5em;
-  margin-bottom: 2em;
   margin-left: 6em;
   width: 11em; }
-.site.single-beer .beer-container .beer-footer .beer-actions .beer-checkin.untappd:before {
-  background-image: url("images/icon-untappd.png");
+.site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item a:before {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -4678,209 +4680,39 @@ html.no-javascript, html.javascript {
   left: -6em;
   position: absolute;
   width: 5em; }
-.site.single-beer .beer-container .beer-footer .beer-citations {
+.site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item .ratebeer {
+  background-image: url("images/logo-ratebeer.png"); }
+.site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item .ratebeer:before {
+  background-image: url("images/icon-ratebeer.png"); }
+.site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item .untappd {
+  background-image: url("images/logo-untappd.png"); }
+.site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item .untappd:before {
+  background-image: url("images/icon-untappd.png"); }
+.site main.beer .beer-footer .beer-citations {
   font-size: 0.8em;
   margin-top: calc(3em / 0.8); }
-.site.single-beer .beer-container .beer-footer .beer-citations .citation {
+.site main.beer .beer-footer .beer-citations .citation {
   padding-left: 1.5em; }
-.site.single-beer .beer-container .beer-footer .beer-citations .citation .citation-link {
+.site main.beer .beer-footer .beer-citations .citation .citation-link {
   float: left;
   font-size: 1.5em;
   margin-left: -1em;
   margin-top: -0.1em; }
-.site.single-beer .beer-container .beer-footer .beer-citations .rating-system + .rating-system:not(.rating-system-wordpress):before {
+.site main.beer .beer-footer .beer-citations .rating-system + .rating-system:not(.rating-system-wordpress):before {
   content: ', '; }
-.site.single-beer .beer-container .beer-footer .beer-citations .rating-system + .rating-system-wordpress:before {
+.site main.beer .beer-footer .beer-citations .rating-system + .rating-system-wordpress:before {
   content: ' and '; }
-.site.single-beer #main-navigation {
+.site #main-navigation {
   bottom: auto;
   top: 0; }
 @media (min-width: 601px) {
-  .site.single-beer.admin-bar #main-navigation {
+  .site.admin-bar #main-navigation {
     top: 46px; } }
 @media (min-width: 783px) {
-  .site.single-beer.admin-bar #main-navigation {
+  .site.admin-bar #main-navigation {
     top: 32px; } }
 
-.site.single-page .page-container {
-  background-color: #DCC1A7;
-  background-image: url("images/single-background.jpg");
-  background-position: center;
-  background-repeat: repeat;
-  background-size: 20em;
-  color: #322820;
-  font-weight: 300;
-  overflow-x: hidden;
-  padding-bottom: 4em;
-  padding-top: 4em;
-  width: 100%; }
-.site.single-page .page-container iframe {
-  border: none;
-  border-radius: 0.25em;
-  display: block;
-  margin: 0 auto;
-  max-width: 90%; }
-.site.single-page .page-container .page-header .page-title {
-  font-size: 2em;
-  margin-bottom: 0.5em;
-  margin-top: 1em; }
-.site.single-page .page-container .page-image {
-  margin: 0;
-  position: relative;
-  text-align: center;
-  width: 100%; }
-.site.single-page .page-container .page-image img {
-  border-radius: 50%;
-  height: 22em;
-  width: 22em; }
-.site.single-page .page-container .page-image figcaption {
-  background-color: rgba(0, 0, 0, 0.55);
-  bottom: 0;
-  box-sizing: border-box;
-  color: white;
-  font-weight: 400;
-  left: 0;
-  padding: 1em;
-  position: absolute;
-  width: 100%; }
-.site.single-page .page-container .page-image figcaption .page-image-title {
-  font-size: 1.5em; }
-.site.single-page .page-container .page-image figcaption .page-image-caption {
-  font-size: 0.8em;
-  font-style: italic;
-  font-weight: 100; }
-.site.single-page .page-container .page-image figcaption .page-image-description {
-  font-size: 1em;
-  margin-top: 0.5em; }
-.site.single-page .page-container .page-content {
-  font-size: 1.2em;
-  line-height: 1.5em; }
-.site.single-page .page-container .page-content h2 {
-  font-size: 1.3em;
-  margin-bottom: 0.25em; }
-.site.single-page .page-container .page-content p {
-  margin-bottom: 1em; }
-.site.single-page .page-container .page-footer {
-  margin-top: 3em; }
-.site.single-page .page-container .page-footer .page-actions {
-  text-align: center; }
-.site.single-page .page-container .page-footer .page-actions .page-comments, .site.single-page .page-container .page-footer .page-actions .page-like, .site.single-page .page-container .page-footer .page-actions .page-share {
-  background: none;
-  border: none;
-  display: inline-block;
-  font-size: 1em;
-  font-weight: 400;
-  margin-right: 1em;
-  text-align: center; }
-.site.single-page .page-container .page-footer .page-actions .page-comments:before, .site.single-page .page-container .page-footer .page-actions .page-like:before, .site.single-page .page-container .page-footer .page-actions .page-share:before {
-  font-family: FontAwesome;
-  margin-right: 0.5em; }
-.site.single-page .page-container .page-footer .page-actions .page-comments.page-comments:before, .site.single-page .page-container .page-footer .page-actions .page-like.page-comments:before, .site.single-page .page-container .page-footer .page-actions .page-share.page-comments:before {
-  content: ""; }
-.site.single-page .page-container .page-footer .page-actions .page-comments.page-like:before, .site.single-page .page-container .page-footer .page-actions .page-like.page-like:before, .site.single-page .page-container .page-footer .page-actions .page-share.page-like:before {
-  content: ""; }
-.site.single-page .page-container .page-footer .page-actions .page-comments.page-share:before, .site.single-page .page-container .page-footer .page-actions .page-like.page-share:before, .site.single-page .page-container .page-footer .page-actions .page-share.page-share:before {
-  content: ""; }
-.site.single-page .page-container .page-footer .page-actions .page-comments:hover, .site.single-page .page-container .page-footer .page-actions .page-like:hover, .site.single-page .page-container .page-footer .page-actions .page-share:hover {
-  border: none; }
-.site.single-page .page-container .page-footer .page-actions .page-comments:last-of-type, .site.single-page .page-container .page-footer .page-actions .page-like:last-of-type, .site.single-page .page-container .page-footer .page-actions .page-share:last-of-type {
-  margin-right: 0; }
-.site.single-page .page-container .page-footer .page-actions .page-comments .comment-count, .site.single-page .page-container .page-footer .page-actions .page-comments .like-count, .site.single-page .page-container .page-footer .page-actions .page-comments .share-count, .site.single-page .page-container .page-footer .page-actions .page-like .comment-count, .site.single-page .page-container .page-footer .page-actions .page-like .like-count, .site.single-page .page-container .page-footer .page-actions .page-like .share-count, .site.single-page .page-container .page-footer .page-actions .page-share .comment-count, .site.single-page .page-container .page-footer .page-actions .page-share .like-count, .site.single-page .page-container .page-footer .page-actions .page-share .share-count {
-  margin-left: 0.5em; }
-.site.single-page .page-container .page-footer .page-actions .page-comments .comment-count:before, .site.single-page .page-container .page-footer .page-actions .page-comments .like-count:before, .site.single-page .page-container .page-footer .page-actions .page-comments .share-count:before, .site.single-page .page-container .page-footer .page-actions .page-like .comment-count:before, .site.single-page .page-container .page-footer .page-actions .page-like .like-count:before, .site.single-page .page-container .page-footer .page-actions .page-like .share-count:before, .site.single-page .page-container .page-footer .page-actions .page-share .comment-count:before, .site.single-page .page-container .page-footer .page-actions .page-share .like-count:before, .site.single-page .page-container .page-footer .page-actions .page-share .share-count:before {
-  content: '('; }
-.site.single-page .page-container .page-footer .page-actions .page-comments .comment-count:after, .site.single-page .page-container .page-footer .page-actions .page-comments .like-count:after, .site.single-page .page-container .page-footer .page-actions .page-comments .share-count:after, .site.single-page .page-container .page-footer .page-actions .page-like .comment-count:after, .site.single-page .page-container .page-footer .page-actions .page-like .like-count:after, .site.single-page .page-container .page-footer .page-actions .page-like .share-count:after, .site.single-page .page-container .page-footer .page-actions .page-share .comment-count:after, .site.single-page .page-container .page-footer .page-actions .page-share .like-count:after, .site.single-page .page-container .page-footer .page-actions .page-share .share-count:after {
-  content: ')'; }
-.site.single-page .page-container .page-footer .page-actions .page-commenting, .site.single-page .page-container .page-footer .page-actions .page-liking, .site.single-page .page-container .page-footer .page-actions .page-sharing {
-  list-style: none;
-  padding: 0;
-  text-align: center; }
-.site.single-page .page-container .page-footer .page-actions .page-commenting a, .site.single-page .page-container .page-footer .page-actions .page-liking a, .site.single-page .page-container .page-footer .page-actions .page-sharing a {
-  background-color: gray;
-  border: none;
-  border-radius: 0.25em;
-  color: rgba(255, 255, 255, 0.88);
-  display: inline-block;
-  font-weight: 400;
-  margin-bottom: 0.5em;
-  margin-right: 0.5em;
-  padding: 0.5em;
-  text-shadow: 0px 1px 0 rgba(0, 0, 0, 0.33);
-  -webkit-transition: background-color 0.33s, color 0.33s;
-  -moz-transition: background-color 0.33s, color 0.33s;
-  transition: background-color 0.33s, color 0.33s;
-  width: 15em; }
-.site.single-page .page-container .page-footer .page-actions .page-commenting a:before, .site.single-page .page-container .page-footer .page-actions .page-liking a:before, .site.single-page .page-container .page-footer .page-actions .page-sharing a:before {
-  font-family: FontAwesome;
-  margin-right: 0.5em; }
-.site.single-page .page-container .page-footer .page-actions .page-commenting a:hover, .site.single-page .page-container .page-footer .page-actions .page-liking a:hover, .site.single-page .page-container .page-footer .page-actions .page-sharing a:hover {
-  background-color: #737373;
-  color: white;
-  border: none;
-  -webkit-transition: background-color 0.11s, color 0.11s;
-  -moz-transition: background-color 0.11s, color 0.11s;
-  transition: background-color 0.11s, color 0.11s; }
-.site.single-page .page-container .page-footer .page-actions .page-commenting a.facebook, .site.single-page .page-container .page-footer .page-actions .page-liking a.facebook, .site.single-page .page-container .page-footer .page-actions .page-sharing a.facebook {
-  background-color: #3B5998; }
-.site.single-page .page-container .page-footer .page-actions .page-commenting a.facebook:hover, .site.single-page .page-container .page-footer .page-actions .page-liking a.facebook:hover, .site.single-page .page-container .page-footer .page-actions .page-sharing a.facebook:hover {
-  background-color: #344e86; }
-.site.single-page .page-container .page-footer .page-actions .page-commenting a.google, .site.single-page .page-container .page-footer .page-actions .page-liking a.google, .site.single-page .page-container .page-footer .page-actions .page-sharing a.google {
-  background-color: #DD4B39; }
-.site.single-page .page-container .page-footer .page-actions .page-commenting a.google:hover, .site.single-page .page-container .page-footer .page-actions .page-liking a.google:hover, .site.single-page .page-container .page-footer .page-actions .page-sharing a.google:hover {
-  background-color: #d73925; }
-.site.single-page .page-container .page-footer .page-actions .page-commenting a.twitter, .site.single-page .page-container .page-footer .page-actions .page-liking a.twitter, .site.single-page .page-container .page-footer .page-actions .page-sharing a.twitter {
-  background-color: #00ACED; }
-.site.single-page .page-container .page-footer .page-actions .page-commenting a.twitter:hover, .site.single-page .page-container .page-footer .page-actions .page-liking a.twitter:hover, .site.single-page .page-container .page-footer .page-actions .page-sharing a.twitter:hover {
-  background-color: #0099d4; }
-.site.single-page .page-container .page-footer .page-actions .page-commenting.page-liking a.facebook:before, .site.single-page .page-container .page-footer .page-actions .page-liking.page-liking a.facebook:before, .site.single-page .page-container .page-footer .page-actions .page-sharing.page-liking a.facebook:before {
-  content: ""; }
-.site.single-page .page-container .page-footer .page-actions .page-commenting.page-liking a.twitter:before, .site.single-page .page-container .page-footer .page-actions .page-liking.page-liking a.twitter:before, .site.single-page .page-container .page-footer .page-actions .page-sharing.page-liking a.twitter:before {
-  content: ""; }
-.site.single-page .page-container .page-footer .page-actions .page-commenting.page-sharing a.email:before, .site.single-page .page-container .page-footer .page-actions .page-liking.page-sharing a.email:before, .site.single-page .page-container .page-footer .page-actions .page-sharing.page-sharing a.email:before {
-  content: ""; }
-.site.single-page .page-container .page-footer .page-actions .page-commenting.page-sharing a.facebook:before, .site.single-page .page-container .page-footer .page-actions .page-liking.page-sharing a.facebook:before, .site.single-page .page-container .page-footer .page-actions .page-sharing.page-sharing a.facebook:before {
-  content: ""; }
-.site.single-page .page-container .page-footer .page-actions .page-commenting.page-sharing a.google:before, .site.single-page .page-container .page-footer .page-actions .page-liking.page-sharing a.google:before, .site.single-page .page-container .page-footer .page-actions .page-sharing.page-sharing a.google:before {
-  content: ""; }
-.site.single-page .page-container .page-footer .page-actions .page-commenting.page-sharing a.twitter:before, .site.single-page .page-container .page-footer .page-actions .page-liking.page-sharing a.twitter:before, .site.single-page .page-container .page-footer .page-actions .page-sharing.page-sharing a.twitter:before {
-  content: ""; }
-.site.single-page .page-container .page-footer .page-tags {
-  list-style: none;
-  margin: 3em 0;
-  padding: 0; }
-.site.single-page .page-container .page-footer .page-tags .page-tag {
-  display: inline; }
-.site.single-page .page-container .page-footer .page-tags .page-tag a {
-  background-color: rgba(0, 0, 0, 0.3);
-  border: none;
-  border-radius: 0.25em;
-  color: inherit;
-  display: inline-block;
-  margin-right: 0.5em;
-  padding: 0.5em;
-  -webkit-transition: background-color 0.33s;
-  -moz-transition: background-color 0.33s;
-  transition: background-color 0.33s; }
-.site.single-page .page-container .page-footer .page-tags .page-tag a:hover {
-  background-color: rgba(17, 136, 68, 0.3);
-  color: #118844;
-  border: none;
-  -webkit-transition: background-color 0.11s;
-  -moz-transition: background-color 0.11s;
-  transition: background-color 0.11s; }
-.site.single-page .page-container .page-footer .page-tags .page-tag:last-child a {
-  margin-right: 0; }
-.site.single-page #main-navigation {
-  bottom: auto;
-  top: 0; }
-@media (min-width: 601px) {
-  .site.single-page.admin-bar #main-navigation {
-    top: 46px; } }
-@media (min-width: 783px) {
-  .site.single-page.admin-bar #main-navigation {
-    top: 32px; } }
-
-.site.single-post .post {
+.site main.event {
   background-color: #DCC1A7;
   background-image: url("images/single-background.jpg");
   background-position: center;
@@ -4892,22 +4724,22 @@ html.no-javascript, html.javascript {
   padding-bottom: 4em;
   padding-top: 3em;
   width: 100%; }
-.site.single-post .post iframe {
+.site main.event iframe {
   border: none;
   border-radius: 0.25em;
   display: block;
   margin: 0 auto;
   max-width: 90%; }
-.site.single-post .post .post-header .post-title {
+.site main.event .event-header .event-title {
   font-size: 2em;
   margin-bottom: 0.5em;
   margin-top: 1em; }
-.site.single-post .post .post-header .post-meta {
+.site main.event .event-header .event-meta {
   line-height: 1.5em;
   margin-bottom: 1em; }
-.site.single-post .post .post-header .post-meta .post-author {
+.site main.event .event-header .event-meta .event-author {
   font-style: normal; }
-.site.single-post .post .post-header .post-meta img {
+.site main.event .event-header .event-meta img {
   border-color: #545454;
   border-radius: 50%;
   border-style: solid;
@@ -4917,7 +4749,7 @@ html.no-javascript, html.javascript {
   height: 3em;
   margin-right: 0.75em;
   width: auto; }
-.site.single-post .post .post-image {
+.site main.event .event-image {
   align-items: center;
   background-position: center;
   -webkit-background-size: cover;
@@ -4935,11 +4767,11 @@ html.no-javascript, html.javascript {
   padding-top: 25%;
   position: relative;
   width: 100%; }
-.site.single-post .post .post-image img {
+.site main.event .event-image img {
   display: none;
   height: auto;
   width: 100%; }
-.site.single-post .post .post-image figcaption {
+.site main.event .event-image figcaption {
   background-color: rgba(0, 0, 0, 0.55);
   bottom: 0;
   box-sizing: border-box;
@@ -4954,36 +4786,36 @@ html.no-javascript, html.javascript {
   -moz-transition: max-height 0.5s, opacity 0.33s, padding-bottom 0.5s, padding-top 0.5s;
   transition: max-height 0.5s, opacity 0.33s, padding-bottom 0.5s, padding-top 0.5s;
   width: 100%; }
-.site.single-post .post .post-image figcaption .post-image-title {
+.site main.event .event-image figcaption .event-image-title {
   font-size: 1.5em; }
-.site.single-post .post .post-image figcaption .post-image-caption {
+.site main.event .event-image figcaption .event-image-caption {
   font-size: 0.8em;
   font-style: italic;
   font-weight: 100; }
-.site.single-post .post .post-image figcaption .post-image-description {
+.site main.event .event-image figcaption .event-image-description {
   font-size: 1em;
   margin-top: 0.5em; }
-.site.single-post .post .post-image:hover figcaption {
+.site main.event .event-image:hover figcaption {
   max-height: 100%;
   opacity: 1;
   padding: 1em 1em; }
-.site.single-post .post .post-content {
+.site main.event .event-content {
   font-size: 1.2em;
   line-height: 1.5em; }
-.site.single-post .post .post-content h2 {
+.site main.event .event-content h2 {
   font-size: 1.3em;
   margin-bottom: 0.25em; }
-.site.single-post .post .post-content p {
+.site main.event .event-content p {
   margin-bottom: 1em; }
-.site.single-post .post .post-content section {
+.site main.event .event-content section {
   margin-top: 1em; }
-.site.single-post .post .post-content .post-tags {
+.site main.event .event-content .event-tags {
   list-style: none;
   padding: 0; }
-.site.single-post .post .post-content .post-tags .post-tag {
+.site main.event .event-content .event-tags .event-tag {
   display: inline;
   font-size: 0.8em; }
-.site.single-post .post .post-content .post-tags .post-tag a {
+.site main.event .event-content .event-tags .event-tag a {
   background-color: rgba(0, 0, 0, 0.3);
   border: none;
   border-radius: 0.25em;
@@ -4995,20 +4827,20 @@ html.no-javascript, html.javascript {
   -webkit-transition: background-color 0.33s;
   -moz-transition: background-color 0.33s;
   transition: background-color 0.33s; }
-.site.single-post .post .post-content .post-tags .post-tag a:hover {
+.site main.event .event-content .event-tags .event-tag a:hover {
   background-color: rgba(17, 136, 68, 0.3);
   color: #118844;
   border: none;
   -webkit-transition: background-color 0.11s;
   -moz-transition: background-color 0.11s;
   transition: background-color 0.11s; }
-.site.single-post .post .post-content .post-tags .post-tag:last-child a {
+.site main.event .event-content .event-tags .event-tag:last-child a {
   margin-right: 0; }
-.site.single-post .post .post-footer {
+.site main.event .event-footer {
   margin-top: 3em; }
-.site.single-post .post .post-footer .post-actions {
+.site main.event .event-footer .event-actions {
   text-align: center; }
-.site.single-post .post .post-footer .post-actions .post-comments, .site.single-post .post .post-footer .post-actions .post-like, .site.single-post .post .post-footer .post-actions .post-share {
+.site main.event .event-footer .event-actions .event-comments, .site main.event .event-footer .event-actions .event-like, .site main.event .event-footer .event-actions .event-share {
   background: none;
   border: none;
   display: inline-block;
@@ -5016,30 +4848,30 @@ html.no-javascript, html.javascript {
   font-weight: 400;
   margin-right: 1em;
   text-align: center; }
-.site.single-post .post .post-footer .post-actions .post-comments:before, .site.single-post .post .post-footer .post-actions .post-like:before, .site.single-post .post .post-footer .post-actions .post-share:before {
+.site main.event .event-footer .event-actions .event-comments:before, .site main.event .event-footer .event-actions .event-like:before, .site main.event .event-footer .event-actions .event-share:before {
   font-family: FontAwesome;
   margin-right: 0.5em; }
-.site.single-post .post .post-footer .post-actions .post-comments.post-comments:before, .site.single-post .post .post-footer .post-actions .post-like.post-comments:before, .site.single-post .post .post-footer .post-actions .post-share.post-comments:before {
+.site main.event .event-footer .event-actions .event-comments.event-comments:before, .site main.event .event-footer .event-actions .event-like.event-comments:before, .site main.event .event-footer .event-actions .event-share.event-comments:before {
   content: ""; }
-.site.single-post .post .post-footer .post-actions .post-comments.post-like:before, .site.single-post .post .post-footer .post-actions .post-like.post-like:before, .site.single-post .post .post-footer .post-actions .post-share.post-like:before {
+.site main.event .event-footer .event-actions .event-comments.event-like:before, .site main.event .event-footer .event-actions .event-like.event-like:before, .site main.event .event-footer .event-actions .event-share.event-like:before {
   content: ""; }
-.site.single-post .post .post-footer .post-actions .post-comments.post-share:before, .site.single-post .post .post-footer .post-actions .post-like.post-share:before, .site.single-post .post .post-footer .post-actions .post-share.post-share:before {
+.site main.event .event-footer .event-actions .event-comments.event-share:before, .site main.event .event-footer .event-actions .event-like.event-share:before, .site main.event .event-footer .event-actions .event-share.event-share:before {
   content: ""; }
-.site.single-post .post .post-footer .post-actions .post-comments:hover, .site.single-post .post .post-footer .post-actions .post-like:hover, .site.single-post .post .post-footer .post-actions .post-share:hover {
+.site main.event .event-footer .event-actions .event-comments:hover, .site main.event .event-footer .event-actions .event-like:hover, .site main.event .event-footer .event-actions .event-share:hover {
   border: none; }
-.site.single-post .post .post-footer .post-actions .post-comments:last-of-type, .site.single-post .post .post-footer .post-actions .post-like:last-of-type, .site.single-post .post .post-footer .post-actions .post-share:last-of-type {
+.site main.event .event-footer .event-actions .event-comments:last-of-type, .site main.event .event-footer .event-actions .event-like:last-of-type, .site main.event .event-footer .event-actions .event-share:last-of-type {
   margin-right: 0; }
-.site.single-post .post .post-footer .post-actions .post-comments .comment-count, .site.single-post .post .post-footer .post-actions .post-comments .like-count, .site.single-post .post .post-footer .post-actions .post-comments .share-count, .site.single-post .post .post-footer .post-actions .post-like .comment-count, .site.single-post .post .post-footer .post-actions .post-like .like-count, .site.single-post .post .post-footer .post-actions .post-like .share-count, .site.single-post .post .post-footer .post-actions .post-share .comment-count, .site.single-post .post .post-footer .post-actions .post-share .like-count, .site.single-post .post .post-footer .post-actions .post-share .share-count {
+.site main.event .event-footer .event-actions .event-comments .comment-count, .site main.event .event-footer .event-actions .event-comments .like-count, .site main.event .event-footer .event-actions .event-comments .share-count, .site main.event .event-footer .event-actions .event-like .comment-count, .site main.event .event-footer .event-actions .event-like .like-count, .site main.event .event-footer .event-actions .event-like .share-count, .site main.event .event-footer .event-actions .event-share .comment-count, .site main.event .event-footer .event-actions .event-share .like-count, .site main.event .event-footer .event-actions .event-share .share-count {
   margin-left: 0.5em; }
-.site.single-post .post .post-footer .post-actions .post-comments .comment-count:before, .site.single-post .post .post-footer .post-actions .post-comments .like-count:before, .site.single-post .post .post-footer .post-actions .post-comments .share-count:before, .site.single-post .post .post-footer .post-actions .post-like .comment-count:before, .site.single-post .post .post-footer .post-actions .post-like .like-count:before, .site.single-post .post .post-footer .post-actions .post-like .share-count:before, .site.single-post .post .post-footer .post-actions .post-share .comment-count:before, .site.single-post .post .post-footer .post-actions .post-share .like-count:before, .site.single-post .post .post-footer .post-actions .post-share .share-count:before {
+.site main.event .event-footer .event-actions .event-comments .comment-count:before, .site main.event .event-footer .event-actions .event-comments .like-count:before, .site main.event .event-footer .event-actions .event-comments .share-count:before, .site main.event .event-footer .event-actions .event-like .comment-count:before, .site main.event .event-footer .event-actions .event-like .like-count:before, .site main.event .event-footer .event-actions .event-like .share-count:before, .site main.event .event-footer .event-actions .event-share .comment-count:before, .site main.event .event-footer .event-actions .event-share .like-count:before, .site main.event .event-footer .event-actions .event-share .share-count:before {
   content: '('; }
-.site.single-post .post .post-footer .post-actions .post-comments .comment-count:after, .site.single-post .post .post-footer .post-actions .post-comments .like-count:after, .site.single-post .post .post-footer .post-actions .post-comments .share-count:after, .site.single-post .post .post-footer .post-actions .post-like .comment-count:after, .site.single-post .post .post-footer .post-actions .post-like .like-count:after, .site.single-post .post .post-footer .post-actions .post-like .share-count:after, .site.single-post .post .post-footer .post-actions .post-share .comment-count:after, .site.single-post .post .post-footer .post-actions .post-share .like-count:after, .site.single-post .post .post-footer .post-actions .post-share .share-count:after {
+.site main.event .event-footer .event-actions .event-comments .comment-count:after, .site main.event .event-footer .event-actions .event-comments .like-count:after, .site main.event .event-footer .event-actions .event-comments .share-count:after, .site main.event .event-footer .event-actions .event-like .comment-count:after, .site main.event .event-footer .event-actions .event-like .like-count:after, .site main.event .event-footer .event-actions .event-like .share-count:after, .site main.event .event-footer .event-actions .event-share .comment-count:after, .site main.event .event-footer .event-actions .event-share .like-count:after, .site main.event .event-footer .event-actions .event-share .share-count:after {
   content: ')'; }
-.site.single-post .post .post-footer .post-actions .post-commenting, .site.single-post .post .post-footer .post-actions .post-liking, .site.single-post .post .post-footer .post-actions .post-sharing {
+.site main.event .event-footer .event-actions .event-commenting, .site main.event .event-footer .event-actions .event-liking, .site main.event .event-footer .event-actions .event-sharing {
   list-style: none;
   padding: 0;
   text-align: center; }
-.site.single-post .post .post-footer .post-actions .post-commenting a, .site.single-post .post .post-footer .post-actions .post-liking a, .site.single-post .post .post-footer .post-actions .post-sharing a {
+.site main.event .event-footer .event-actions .event-commenting a, .site main.event .event-footer .event-actions .event-liking a, .site main.event .event-footer .event-actions .event-sharing a {
   background-color: gray;
   border: none;
   border-radius: 0.25em;
@@ -5054,47 +4886,47 @@ html.no-javascript, html.javascript {
   -moz-transition: background-color 0.33s, color 0.33s;
   transition: background-color 0.33s, color 0.33s;
   width: 15em; }
-.site.single-post .post .post-footer .post-actions .post-commenting a:before, .site.single-post .post .post-footer .post-actions .post-liking a:before, .site.single-post .post .post-footer .post-actions .post-sharing a:before {
+.site main.event .event-footer .event-actions .event-commenting a:before, .site main.event .event-footer .event-actions .event-liking a:before, .site main.event .event-footer .event-actions .event-sharing a:before {
   font-family: FontAwesome;
   margin-right: 0.5em; }
-.site.single-post .post .post-footer .post-actions .post-commenting a:hover, .site.single-post .post .post-footer .post-actions .post-liking a:hover, .site.single-post .post .post-footer .post-actions .post-sharing a:hover {
+.site main.event .event-footer .event-actions .event-commenting a:hover, .site main.event .event-footer .event-actions .event-liking a:hover, .site main.event .event-footer .event-actions .event-sharing a:hover {
   background-color: #737373;
   color: white;
   border: none;
   -webkit-transition: background-color 0.11s, color 0.11s;
   -moz-transition: background-color 0.11s, color 0.11s;
   transition: background-color 0.11s, color 0.11s; }
-.site.single-post .post .post-footer .post-actions .post-commenting a.facebook, .site.single-post .post .post-footer .post-actions .post-liking a.facebook, .site.single-post .post .post-footer .post-actions .post-sharing a.facebook {
+.site main.event .event-footer .event-actions .event-commenting a.facebook, .site main.event .event-footer .event-actions .event-liking a.facebook, .site main.event .event-footer .event-actions .event-sharing a.facebook {
   background-color: #3B5998; }
-.site.single-post .post .post-footer .post-actions .post-commenting a.facebook:hover, .site.single-post .post .post-footer .post-actions .post-liking a.facebook:hover, .site.single-post .post .post-footer .post-actions .post-sharing a.facebook:hover {
+.site main.event .event-footer .event-actions .event-commenting a.facebook:hover, .site main.event .event-footer .event-actions .event-liking a.facebook:hover, .site main.event .event-footer .event-actions .event-sharing a.facebook:hover {
   background-color: #344e86; }
-.site.single-post .post .post-footer .post-actions .post-commenting a.google, .site.single-post .post .post-footer .post-actions .post-liking a.google, .site.single-post .post .post-footer .post-actions .post-sharing a.google {
+.site main.event .event-footer .event-actions .event-commenting a.google, .site main.event .event-footer .event-actions .event-liking a.google, .site main.event .event-footer .event-actions .event-sharing a.google {
   background-color: #DD4B39; }
-.site.single-post .post .post-footer .post-actions .post-commenting a.google:hover, .site.single-post .post .post-footer .post-actions .post-liking a.google:hover, .site.single-post .post .post-footer .post-actions .post-sharing a.google:hover {
+.site main.event .event-footer .event-actions .event-commenting a.google:hover, .site main.event .event-footer .event-actions .event-liking a.google:hover, .site main.event .event-footer .event-actions .event-sharing a.google:hover {
   background-color: #d73925; }
-.site.single-post .post .post-footer .post-actions .post-commenting a.twitter, .site.single-post .post .post-footer .post-actions .post-liking a.twitter, .site.single-post .post .post-footer .post-actions .post-sharing a.twitter {
+.site main.event .event-footer .event-actions .event-commenting a.twitter, .site main.event .event-footer .event-actions .event-liking a.twitter, .site main.event .event-footer .event-actions .event-sharing a.twitter {
   background-color: #00ACED; }
-.site.single-post .post .post-footer .post-actions .post-commenting a.twitter:hover, .site.single-post .post .post-footer .post-actions .post-liking a.twitter:hover, .site.single-post .post .post-footer .post-actions .post-sharing a.twitter:hover {
+.site main.event .event-footer .event-actions .event-commenting a.twitter:hover, .site main.event .event-footer .event-actions .event-liking a.twitter:hover, .site main.event .event-footer .event-actions .event-sharing a.twitter:hover {
   background-color: #0099d4; }
-.site.single-post .post .post-footer .post-actions .post-commenting.post-liking a.facebook:before, .site.single-post .post .post-footer .post-actions .post-liking.post-liking a.facebook:before, .site.single-post .post .post-footer .post-actions .post-sharing.post-liking a.facebook:before {
+.site main.event .event-footer .event-actions .event-commenting.event-liking a.facebook:before, .site main.event .event-footer .event-actions .event-liking.event-liking a.facebook:before, .site main.event .event-footer .event-actions .event-sharing.event-liking a.facebook:before {
   content: ""; }
-.site.single-post .post .post-footer .post-actions .post-commenting.post-liking a.twitter:before, .site.single-post .post .post-footer .post-actions .post-liking.post-liking a.twitter:before, .site.single-post .post .post-footer .post-actions .post-sharing.post-liking a.twitter:before {
+.site main.event .event-footer .event-actions .event-commenting.event-liking a.twitter:before, .site main.event .event-footer .event-actions .event-liking.event-liking a.twitter:before, .site main.event .event-footer .event-actions .event-sharing.event-liking a.twitter:before {
   content: ""; }
-.site.single-post .post .post-footer .post-actions .post-commenting.post-sharing a.email:before, .site.single-post .post .post-footer .post-actions .post-liking.post-sharing a.email:before, .site.single-post .post .post-footer .post-actions .post-sharing.post-sharing a.email:before {
+.site main.event .event-footer .event-actions .event-commenting.event-sharing a.email:before, .site main.event .event-footer .event-actions .event-liking.event-sharing a.email:before, .site main.event .event-footer .event-actions .event-sharing.event-sharing a.email:before {
   content: ""; }
-.site.single-post .post .post-footer .post-actions .post-commenting.post-sharing a.facebook:before, .site.single-post .post .post-footer .post-actions .post-liking.post-sharing a.facebook:before, .site.single-post .post .post-footer .post-actions .post-sharing.post-sharing a.facebook:before {
+.site main.event .event-footer .event-actions .event-commenting.event-sharing a.facebook:before, .site main.event .event-footer .event-actions .event-liking.event-sharing a.facebook:before, .site main.event .event-footer .event-actions .event-sharing.event-sharing a.facebook:before {
   content: ""; }
-.site.single-post .post .post-footer .post-actions .post-commenting.post-sharing a.google:before, .site.single-post .post .post-footer .post-actions .post-liking.post-sharing a.google:before, .site.single-post .post .post-footer .post-actions .post-sharing.post-sharing a.google:before {
+.site main.event .event-footer .event-actions .event-commenting.event-sharing a.google:before, .site main.event .event-footer .event-actions .event-liking.event-sharing a.google:before, .site main.event .event-footer .event-actions .event-sharing.event-sharing a.google:before {
   content: ""; }
-.site.single-post .post .post-footer .post-actions .post-commenting.post-sharing a.twitter:before, .site.single-post .post .post-footer .post-actions .post-liking.post-sharing a.twitter:before, .site.single-post .post .post-footer .post-actions .post-sharing.post-sharing a.twitter:before {
+.site main.event .event-footer .event-actions .event-commenting.event-sharing a.twitter:before, .site main.event .event-footer .event-actions .event-liking.event-sharing a.twitter:before, .site main.event .event-footer .event-actions .event-sharing.event-sharing a.twitter:before {
   content: ""; }
-.site.single-post .post .post-footer .post-tags {
+.site main.event .event-footer .event-tags {
   list-style: none;
   margin: 3em 0;
   padding: 0; }
-.site.single-post .post .post-footer .post-tags li {
+.site main.event .event-footer .event-tags li {
   display: inline; }
-.site.single-post .post .post-footer .post-tags li a {
+.site main.event .event-footer .event-tags li a {
   background-color: rgba(0, 0, 0, 0.3);
   border: none;
   border-radius: 0.25em;
@@ -5105,14 +4937,427 @@ html.no-javascript, html.javascript {
   -webkit-transition: background-color 0.33s;
   -moz-transition: background-color 0.33s;
   transition: background-color 0.33s; }
-.site.single-post .post .post-footer .post-tags li a:hover {
+.site main.event .event-footer .event-tags li a:hover {
   background-color: rgba(17, 136, 68, 0.3);
   color: #118844;
   border: none;
   -webkit-transition: background-color 0.11s;
   -moz-transition: background-color 0.11s;
   transition: background-color 0.11s; }
-.site.single-post .post .post-footer .post-tags li:last-child a {
+.site main.event .event-footer .event-tags li:last-child a {
+  margin-right: 0; }
+
+.site main.page {
+  background-color: #DCC1A7;
+  background-image: url("images/single-background.jpg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 20em;
+  color: #322820;
+  font-weight: 300;
+  overflow-x: hidden;
+  padding-bottom: 4em;
+  padding-top: 4em;
+  width: 100%; }
+.site main.page iframe {
+  border: none;
+  border-radius: 0.25em;
+  display: block;
+  margin: 0 auto;
+  max-width: 90%; }
+.site main.page .page-header .page-title {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  margin-top: 1em; }
+.site main.page .page-image {
+  margin: 0;
+  position: relative;
+  text-align: center;
+  width: 100%; }
+.site main.page .page-image img {
+  border-radius: 50%;
+  height: 22em;
+  width: 22em; }
+.site main.page .page-image figcaption {
+  background-color: rgba(0, 0, 0, 0.55);
+  bottom: 0;
+  box-sizing: border-box;
+  color: white;
+  font-weight: 400;
+  left: 0;
+  padding: 1em;
+  position: absolute;
+  width: 100%; }
+.site main.page .page-image figcaption .page-image-title {
+  font-size: 1.5em; }
+.site main.page .page-image figcaption .page-image-caption {
+  font-size: 0.8em;
+  font-style: italic;
+  font-weight: 100; }
+.site main.page .page-image figcaption .page-image-description {
+  font-size: 1em;
+  margin-top: 0.5em; }
+.site main.page .page-content {
+  font-size: 1.2em;
+  line-height: 1.5em; }
+.site main.page .page-content h2 {
+  font-size: 1.3em;
+  margin-bottom: 0.25em; }
+.site main.page .page-content p {
+  margin-bottom: 1em; }
+.site main.page .page-footer {
+  margin-top: 3em; }
+.site main.page .page-footer .page-actions {
+  text-align: center; }
+.site main.page .page-footer .page-actions .page-comments, .site main.page .page-footer .page-actions .page-like, .site main.page .page-footer .page-actions .page-share {
+  background: none;
+  border: none;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 400;
+  margin-right: 1em;
+  text-align: center; }
+.site main.page .page-footer .page-actions .page-comments:before, .site main.page .page-footer .page-actions .page-like:before, .site main.page .page-footer .page-actions .page-share:before {
+  font-family: FontAwesome;
+  margin-right: 0.5em; }
+.site main.page .page-footer .page-actions .page-comments.page-comments:before, .site main.page .page-footer .page-actions .page-like.page-comments:before, .site main.page .page-footer .page-actions .page-share.page-comments:before {
+  content: ""; }
+.site main.page .page-footer .page-actions .page-comments.page-like:before, .site main.page .page-footer .page-actions .page-like.page-like:before, .site main.page .page-footer .page-actions .page-share.page-like:before {
+  content: ""; }
+.site main.page .page-footer .page-actions .page-comments.page-share:before, .site main.page .page-footer .page-actions .page-like.page-share:before, .site main.page .page-footer .page-actions .page-share.page-share:before {
+  content: ""; }
+.site main.page .page-footer .page-actions .page-comments:hover, .site main.page .page-footer .page-actions .page-like:hover, .site main.page .page-footer .page-actions .page-share:hover {
+  border: none; }
+.site main.page .page-footer .page-actions .page-comments:last-of-type, .site main.page .page-footer .page-actions .page-like:last-of-type, .site main.page .page-footer .page-actions .page-share:last-of-type {
+  margin-right: 0; }
+.site main.page .page-footer .page-actions .page-comments .comment-count, .site main.page .page-footer .page-actions .page-comments .like-count, .site main.page .page-footer .page-actions .page-comments .share-count, .site main.page .page-footer .page-actions .page-like .comment-count, .site main.page .page-footer .page-actions .page-like .like-count, .site main.page .page-footer .page-actions .page-like .share-count, .site main.page .page-footer .page-actions .page-share .comment-count, .site main.page .page-footer .page-actions .page-share .like-count, .site main.page .page-footer .page-actions .page-share .share-count {
+  margin-left: 0.5em; }
+.site main.page .page-footer .page-actions .page-comments .comment-count:before, .site main.page .page-footer .page-actions .page-comments .like-count:before, .site main.page .page-footer .page-actions .page-comments .share-count:before, .site main.page .page-footer .page-actions .page-like .comment-count:before, .site main.page .page-footer .page-actions .page-like .like-count:before, .site main.page .page-footer .page-actions .page-like .share-count:before, .site main.page .page-footer .page-actions .page-share .comment-count:before, .site main.page .page-footer .page-actions .page-share .like-count:before, .site main.page .page-footer .page-actions .page-share .share-count:before {
+  content: '('; }
+.site main.page .page-footer .page-actions .page-comments .comment-count:after, .site main.page .page-footer .page-actions .page-comments .like-count:after, .site main.page .page-footer .page-actions .page-comments .share-count:after, .site main.page .page-footer .page-actions .page-like .comment-count:after, .site main.page .page-footer .page-actions .page-like .like-count:after, .site main.page .page-footer .page-actions .page-like .share-count:after, .site main.page .page-footer .page-actions .page-share .comment-count:after, .site main.page .page-footer .page-actions .page-share .like-count:after, .site main.page .page-footer .page-actions .page-share .share-count:after {
+  content: ')'; }
+.site main.page .page-footer .page-actions .page-commenting, .site main.page .page-footer .page-actions .page-liking, .site main.page .page-footer .page-actions .page-sharing {
+  list-style: none;
+  padding: 0;
+  text-align: center; }
+.site main.page .page-footer .page-actions .page-commenting a, .site main.page .page-footer .page-actions .page-liking a, .site main.page .page-footer .page-actions .page-sharing a {
+  background-color: gray;
+  border: none;
+  border-radius: 0.25em;
+  color: rgba(255, 255, 255, 0.88);
+  display: inline-block;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+  margin-right: 0.5em;
+  padding: 0.5em;
+  text-shadow: 0px 1px 0 rgba(0, 0, 0, 0.33);
+  -webkit-transition: background-color 0.33s, color 0.33s;
+  -moz-transition: background-color 0.33s, color 0.33s;
+  transition: background-color 0.33s, color 0.33s;
+  width: 15em; }
+.site main.page .page-footer .page-actions .page-commenting a:before, .site main.page .page-footer .page-actions .page-liking a:before, .site main.page .page-footer .page-actions .page-sharing a:before {
+  font-family: FontAwesome;
+  margin-right: 0.5em; }
+.site main.page .page-footer .page-actions .page-commenting a:hover, .site main.page .page-footer .page-actions .page-liking a:hover, .site main.page .page-footer .page-actions .page-sharing a:hover {
+  background-color: #737373;
+  color: white;
+  border: none;
+  -webkit-transition: background-color 0.11s, color 0.11s;
+  -moz-transition: background-color 0.11s, color 0.11s;
+  transition: background-color 0.11s, color 0.11s; }
+.site main.page .page-footer .page-actions .page-commenting a.facebook, .site main.page .page-footer .page-actions .page-liking a.facebook, .site main.page .page-footer .page-actions .page-sharing a.facebook {
+  background-color: #3B5998; }
+.site main.page .page-footer .page-actions .page-commenting a.facebook:hover, .site main.page .page-footer .page-actions .page-liking a.facebook:hover, .site main.page .page-footer .page-actions .page-sharing a.facebook:hover {
+  background-color: #344e86; }
+.site main.page .page-footer .page-actions .page-commenting a.google, .site main.page .page-footer .page-actions .page-liking a.google, .site main.page .page-footer .page-actions .page-sharing a.google {
+  background-color: #DD4B39; }
+.site main.page .page-footer .page-actions .page-commenting a.google:hover, .site main.page .page-footer .page-actions .page-liking a.google:hover, .site main.page .page-footer .page-actions .page-sharing a.google:hover {
+  background-color: #d73925; }
+.site main.page .page-footer .page-actions .page-commenting a.twitter, .site main.page .page-footer .page-actions .page-liking a.twitter, .site main.page .page-footer .page-actions .page-sharing a.twitter {
+  background-color: #00ACED; }
+.site main.page .page-footer .page-actions .page-commenting a.twitter:hover, .site main.page .page-footer .page-actions .page-liking a.twitter:hover, .site main.page .page-footer .page-actions .page-sharing a.twitter:hover {
+  background-color: #0099d4; }
+.site main.page .page-footer .page-actions .page-commenting.page-liking a.facebook:before, .site main.page .page-footer .page-actions .page-liking.page-liking a.facebook:before, .site main.page .page-footer .page-actions .page-sharing.page-liking a.facebook:before {
+  content: ""; }
+.site main.page .page-footer .page-actions .page-commenting.page-liking a.twitter:before, .site main.page .page-footer .page-actions .page-liking.page-liking a.twitter:before, .site main.page .page-footer .page-actions .page-sharing.page-liking a.twitter:before {
+  content: ""; }
+.site main.page .page-footer .page-actions .page-commenting.page-sharing a.email:before, .site main.page .page-footer .page-actions .page-liking.page-sharing a.email:before, .site main.page .page-footer .page-actions .page-sharing.page-sharing a.email:before {
+  content: ""; }
+.site main.page .page-footer .page-actions .page-commenting.page-sharing a.facebook:before, .site main.page .page-footer .page-actions .page-liking.page-sharing a.facebook:before, .site main.page .page-footer .page-actions .page-sharing.page-sharing a.facebook:before {
+  content: ""; }
+.site main.page .page-footer .page-actions .page-commenting.page-sharing a.google:before, .site main.page .page-footer .page-actions .page-liking.page-sharing a.google:before, .site main.page .page-footer .page-actions .page-sharing.page-sharing a.google:before {
+  content: ""; }
+.site main.page .page-footer .page-actions .page-commenting.page-sharing a.twitter:before, .site main.page .page-footer .page-actions .page-liking.page-sharing a.twitter:before, .site main.page .page-footer .page-actions .page-sharing.page-sharing a.twitter:before {
+  content: ""; }
+.site main.page .page-footer .page-tags {
+  list-style: none;
+  margin: 3em 0;
+  padding: 0; }
+.site main.page .page-footer .page-tags .page-tag {
+  display: inline; }
+.site main.page .page-footer .page-tags .page-tag a {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 0.25em;
+  color: inherit;
+  display: inline-block;
+  margin-right: 0.5em;
+  padding: 0.5em;
+  -webkit-transition: background-color 0.33s;
+  -moz-transition: background-color 0.33s;
+  transition: background-color 0.33s; }
+.site main.page .page-footer .page-tags .page-tag a:hover {
+  background-color: rgba(17, 136, 68, 0.3);
+  color: #118844;
+  border: none;
+  -webkit-transition: background-color 0.11s;
+  -moz-transition: background-color 0.11s;
+  transition: background-color 0.11s; }
+.site main.page .page-footer .page-tags .page-tag:last-child a {
+  margin-right: 0; }
+.site #main-navigation {
+  bottom: auto;
+  top: 0; }
+@media (min-width: 601px) {
+  .site.admin-bar #main-navigation {
+    top: 46px; } }
+@media (min-width: 783px) {
+  .site.admin-bar #main-navigation {
+    top: 32px; } }
+
+.site main.post {
+  background-color: #DCC1A7;
+  background-image: url("images/single-background.jpg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 20em;
+  color: #322820;
+  font-weight: 300;
+  overflow-x: hidden;
+  padding-bottom: 4em;
+  padding-top: 3em;
+  width: 100%; }
+.site main.post iframe {
+  border: none;
+  border-radius: 0.25em;
+  display: block;
+  margin: 0 auto;
+  max-width: 90%; }
+.site main.post .post-header .post-title {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  margin-top: 1em; }
+.site main.post .post-header .post-meta {
+  line-height: 1.5em;
+  margin-bottom: 1em; }
+.site main.post .post-header .post-meta .post-author {
+  font-style: normal; }
+.site main.post .post-header .post-meta img {
+  border-color: #545454;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 2pt;
+  box-sizing: border-box;
+  float: left;
+  height: 3em;
+  margin-right: 0.75em;
+  width: auto; }
+.site main.post .post-image {
+  align-items: center;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border-radius: 0.25em;
+  display: flex;
+  height: 0;
+  justify-content: center;
+  margin: 0;
+  overflow: hidden;
+  padding-bottom: 25%;
+  padding-top: 25%;
+  position: relative;
+  width: 100%; }
+.site main.post .post-image img {
+  display: none;
+  height: auto;
+  width: 100%; }
+.site main.post .post-image figcaption {
+  background-color: rgba(0, 0, 0, 0.55);
+  bottom: 0;
+  box-sizing: border-box;
+  color: white;
+  font-weight: 400;
+  left: 0;
+  max-height: 0;
+  opacity: 0;
+  padding: 0 1em;
+  position: absolute;
+  -webkit-transition: max-height 0.5s, opacity 0.33s, padding-bottom 0.5s, padding-top 0.5s;
+  -moz-transition: max-height 0.5s, opacity 0.33s, padding-bottom 0.5s, padding-top 0.5s;
+  transition: max-height 0.5s, opacity 0.33s, padding-bottom 0.5s, padding-top 0.5s;
+  width: 100%; }
+.site main.post .post-image figcaption .post-image-title {
+  font-size: 1.5em; }
+.site main.post .post-image figcaption .post-image-caption {
+  font-size: 0.8em;
+  font-style: italic;
+  font-weight: 100; }
+.site main.post .post-image figcaption .post-image-description {
+  font-size: 1em;
+  margin-top: 0.5em; }
+.site main.post .post-image:hover figcaption {
+  max-height: 100%;
+  opacity: 1;
+  padding: 1em 1em; }
+.site main.post .post-content {
+  font-size: 1.2em;
+  line-height: 1.5em; }
+.site main.post .post-content h2 {
+  font-size: 1.3em;
+  margin-bottom: 0.25em; }
+.site main.post .post-content p {
+  margin-bottom: 1em; }
+.site main.post .post-content section {
+  margin-top: 1em; }
+.site main.post .post-content .post-tags {
+  list-style: none;
+  padding: 0; }
+.site main.post .post-content .post-tags .post-tag {
+  display: inline;
+  font-size: 0.8em; }
+.site main.post .post-content .post-tags .post-tag a {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 0.25em;
+  color: inherit;
+  display: inline-block;
+  margin-bottom: 0.5em;
+  margin-right: 0.5em;
+  padding: 0.25em 0.75em;
+  -webkit-transition: background-color 0.33s;
+  -moz-transition: background-color 0.33s;
+  transition: background-color 0.33s; }
+.site main.post .post-content .post-tags .post-tag a:hover {
+  background-color: rgba(17, 136, 68, 0.3);
+  color: #118844;
+  border: none;
+  -webkit-transition: background-color 0.11s;
+  -moz-transition: background-color 0.11s;
+  transition: background-color 0.11s; }
+.site main.post .post-content .post-tags .post-tag:last-child a {
+  margin-right: 0; }
+.site main.post .post-footer {
+  margin-top: 3em; }
+.site main.post .post-footer .post-actions {
+  text-align: center; }
+.site main.post .post-footer .post-actions .post-comments, .site main.post .post-footer .post-actions .post-like, .site main.post .post-footer .post-actions .post-share {
+  background: none;
+  border: none;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 400;
+  margin-right: 1em;
+  text-align: center; }
+.site main.post .post-footer .post-actions .post-comments:before, .site main.post .post-footer .post-actions .post-like:before, .site main.post .post-footer .post-actions .post-share:before {
+  font-family: FontAwesome;
+  margin-right: 0.5em; }
+.site main.post .post-footer .post-actions .post-comments.post-comments:before, .site main.post .post-footer .post-actions .post-like.post-comments:before, .site main.post .post-footer .post-actions .post-share.post-comments:before {
+  content: ""; }
+.site main.post .post-footer .post-actions .post-comments.post-like:before, .site main.post .post-footer .post-actions .post-like.post-like:before, .site main.post .post-footer .post-actions .post-share.post-like:before {
+  content: ""; }
+.site main.post .post-footer .post-actions .post-comments.post-share:before, .site main.post .post-footer .post-actions .post-like.post-share:before, .site main.post .post-footer .post-actions .post-share.post-share:before {
+  content: ""; }
+.site main.post .post-footer .post-actions .post-comments:hover, .site main.post .post-footer .post-actions .post-like:hover, .site main.post .post-footer .post-actions .post-share:hover {
+  border: none; }
+.site main.post .post-footer .post-actions .post-comments:last-of-type, .site main.post .post-footer .post-actions .post-like:last-of-type, .site main.post .post-footer .post-actions .post-share:last-of-type {
+  margin-right: 0; }
+.site main.post .post-footer .post-actions .post-comments .comment-count, .site main.post .post-footer .post-actions .post-comments .like-count, .site main.post .post-footer .post-actions .post-comments .share-count, .site main.post .post-footer .post-actions .post-like .comment-count, .site main.post .post-footer .post-actions .post-like .like-count, .site main.post .post-footer .post-actions .post-like .share-count, .site main.post .post-footer .post-actions .post-share .comment-count, .site main.post .post-footer .post-actions .post-share .like-count, .site main.post .post-footer .post-actions .post-share .share-count {
+  margin-left: 0.5em; }
+.site main.post .post-footer .post-actions .post-comments .comment-count:before, .site main.post .post-footer .post-actions .post-comments .like-count:before, .site main.post .post-footer .post-actions .post-comments .share-count:before, .site main.post .post-footer .post-actions .post-like .comment-count:before, .site main.post .post-footer .post-actions .post-like .like-count:before, .site main.post .post-footer .post-actions .post-like .share-count:before, .site main.post .post-footer .post-actions .post-share .comment-count:before, .site main.post .post-footer .post-actions .post-share .like-count:before, .site main.post .post-footer .post-actions .post-share .share-count:before {
+  content: '('; }
+.site main.post .post-footer .post-actions .post-comments .comment-count:after, .site main.post .post-footer .post-actions .post-comments .like-count:after, .site main.post .post-footer .post-actions .post-comments .share-count:after, .site main.post .post-footer .post-actions .post-like .comment-count:after, .site main.post .post-footer .post-actions .post-like .like-count:after, .site main.post .post-footer .post-actions .post-like .share-count:after, .site main.post .post-footer .post-actions .post-share .comment-count:after, .site main.post .post-footer .post-actions .post-share .like-count:after, .site main.post .post-footer .post-actions .post-share .share-count:after {
+  content: ')'; }
+.site main.post .post-footer .post-actions .post-commenting, .site main.post .post-footer .post-actions .post-liking, .site main.post .post-footer .post-actions .post-sharing {
+  list-style: none;
+  padding: 0;
+  text-align: center; }
+.site main.post .post-footer .post-actions .post-commenting a, .site main.post .post-footer .post-actions .post-liking a, .site main.post .post-footer .post-actions .post-sharing a {
+  background-color: gray;
+  border: none;
+  border-radius: 0.25em;
+  color: rgba(255, 255, 255, 0.88);
+  display: inline-block;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+  margin-right: 0.5em;
+  padding: 0.5em;
+  text-shadow: 0px 1px 0 rgba(0, 0, 0, 0.33);
+  -webkit-transition: background-color 0.33s, color 0.33s;
+  -moz-transition: background-color 0.33s, color 0.33s;
+  transition: background-color 0.33s, color 0.33s;
+  width: 15em; }
+.site main.post .post-footer .post-actions .post-commenting a:before, .site main.post .post-footer .post-actions .post-liking a:before, .site main.post .post-footer .post-actions .post-sharing a:before {
+  font-family: FontAwesome;
+  margin-right: 0.5em; }
+.site main.post .post-footer .post-actions .post-commenting a:hover, .site main.post .post-footer .post-actions .post-liking a:hover, .site main.post .post-footer .post-actions .post-sharing a:hover {
+  background-color: #737373;
+  color: white;
+  border: none;
+  -webkit-transition: background-color 0.11s, color 0.11s;
+  -moz-transition: background-color 0.11s, color 0.11s;
+  transition: background-color 0.11s, color 0.11s; }
+.site main.post .post-footer .post-actions .post-commenting a.facebook, .site main.post .post-footer .post-actions .post-liking a.facebook, .site main.post .post-footer .post-actions .post-sharing a.facebook {
+  background-color: #3B5998; }
+.site main.post .post-footer .post-actions .post-commenting a.facebook:hover, .site main.post .post-footer .post-actions .post-liking a.facebook:hover, .site main.post .post-footer .post-actions .post-sharing a.facebook:hover {
+  background-color: #344e86; }
+.site main.post .post-footer .post-actions .post-commenting a.google, .site main.post .post-footer .post-actions .post-liking a.google, .site main.post .post-footer .post-actions .post-sharing a.google {
+  background-color: #DD4B39; }
+.site main.post .post-footer .post-actions .post-commenting a.google:hover, .site main.post .post-footer .post-actions .post-liking a.google:hover, .site main.post .post-footer .post-actions .post-sharing a.google:hover {
+  background-color: #d73925; }
+.site main.post .post-footer .post-actions .post-commenting a.twitter, .site main.post .post-footer .post-actions .post-liking a.twitter, .site main.post .post-footer .post-actions .post-sharing a.twitter {
+  background-color: #00ACED; }
+.site main.post .post-footer .post-actions .post-commenting a.twitter:hover, .site main.post .post-footer .post-actions .post-liking a.twitter:hover, .site main.post .post-footer .post-actions .post-sharing a.twitter:hover {
+  background-color: #0099d4; }
+.site main.post .post-footer .post-actions .post-commenting.post-liking a.facebook:before, .site main.post .post-footer .post-actions .post-liking.post-liking a.facebook:before, .site main.post .post-footer .post-actions .post-sharing.post-liking a.facebook:before {
+  content: ""; }
+.site main.post .post-footer .post-actions .post-commenting.post-liking a.twitter:before, .site main.post .post-footer .post-actions .post-liking.post-liking a.twitter:before, .site main.post .post-footer .post-actions .post-sharing.post-liking a.twitter:before {
+  content: ""; }
+.site main.post .post-footer .post-actions .post-commenting.post-sharing a.email:before, .site main.post .post-footer .post-actions .post-liking.post-sharing a.email:before, .site main.post .post-footer .post-actions .post-sharing.post-sharing a.email:before {
+  content: ""; }
+.site main.post .post-footer .post-actions .post-commenting.post-sharing a.facebook:before, .site main.post .post-footer .post-actions .post-liking.post-sharing a.facebook:before, .site main.post .post-footer .post-actions .post-sharing.post-sharing a.facebook:before {
+  content: ""; }
+.site main.post .post-footer .post-actions .post-commenting.post-sharing a.google:before, .site main.post .post-footer .post-actions .post-liking.post-sharing a.google:before, .site main.post .post-footer .post-actions .post-sharing.post-sharing a.google:before {
+  content: ""; }
+.site main.post .post-footer .post-actions .post-commenting.post-sharing a.twitter:before, .site main.post .post-footer .post-actions .post-liking.post-sharing a.twitter:before, .site main.post .post-footer .post-actions .post-sharing.post-sharing a.twitter:before {
+  content: ""; }
+.site main.post .post-footer .post-tags {
+  list-style: none;
+  margin: 3em 0;
+  padding: 0; }
+.site main.post .post-footer .post-tags li {
+  display: inline; }
+.site main.post .post-footer .post-tags li a {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 0.25em;
+  color: inherit;
+  display: inline-block;
+  margin-right: 0.5em;
+  padding: 0.5em;
+  -webkit-transition: background-color 0.33s;
+  -moz-transition: background-color 0.33s;
+  transition: background-color 0.33s; }
+.site main.post .post-footer .post-tags li a:hover {
+  background-color: rgba(17, 136, 68, 0.3);
+  color: #118844;
+  border: none;
+  -webkit-transition: background-color 0.11s;
+  -moz-transition: background-color 0.11s;
+  transition: background-color 0.11s; }
+.site main.post .post-footer .post-tags li:last-child a {
   margin-right: 0; }
 
 .single #main-navigation {
@@ -5125,7 +5370,7 @@ html.no-javascript, html.javascript {
   .single.admin-bar #main-navigation {
     top: 32px; } }
 
-.site.author .user-container {
+.site main.user {
   background-color: #DCC1A7;
   background-image: url("images/single-background.jpg");
   background-position: center;
@@ -5137,26 +5382,26 @@ html.no-javascript, html.javascript {
   padding-bottom: 4em;
   padding-top: 4em;
   width: 100%; }
-.site.author .user-container iframe {
+.site main.user iframe {
   border: none;
   border-radius: 0.25em;
   display: block;
   margin: 0 auto;
   max-width: 90%; }
-.site.author .user-container .user-header .user-title {
+.site main.user .user-header .user-title {
   font-size: 2em;
   margin-bottom: 0.5em;
   margin-top: 1em; }
-.site.author .user-container .user-image {
+.site main.user .user-image {
   margin: 0;
   position: relative;
   text-align: center;
   width: 100%; }
-.site.author .user-container .user-image img {
+.site main.user .user-image img {
   border-radius: 50%;
   height: 22em;
   width: 22em; }
-.site.author .user-container .user-image figcaption {
+.site main.user .user-image figcaption {
   background-color: rgba(0, 0, 0, 0.55);
   bottom: 0;
   box-sizing: border-box;
@@ -5166,28 +5411,28 @@ html.no-javascript, html.javascript {
   padding: 1em;
   position: absolute;
   width: 100%; }
-.site.author .user-container .user-image figcaption .user-image-title {
+.site main.user .user-image figcaption .user-image-title {
   font-size: 1.5em; }
-.site.author .user-container .user-image figcaption .user-image-caption {
+.site main.user .user-image figcaption .user-image-caption {
   font-size: 0.8em;
   font-style: italic;
   font-weight: 100; }
-.site.author .user-container .user-image figcaption .user-image-description {
+.site main.user .user-image figcaption .user-image-description {
   font-size: 1em;
   margin-top: 0.5em; }
-.site.author .user-container .user-content {
+.site main.user .user-content {
   font-size: 1.2em;
   line-height: 1.5em; }
-.site.author .user-container .user-content h2 {
+.site main.user .user-content h2 {
   font-size: 1.3em;
   margin-bottom: 0.25em; }
-.site.author .user-container .user-content p {
+.site main.user .user-content p {
   margin-bottom: 1em; }
-.site.author .user-container .user-footer {
+.site main.user .user-footer {
   margin-top: 3em; }
-.site.author .user-container .user-footer .user-actions {
+.site main.user .user-footer .user-actions {
   text-align: center; }
-.site.author .user-container .user-footer .user-actions .user-comments, .site.author .user-container .user-footer .user-actions .user-like, .site.author .user-container .user-footer .user-actions .user-share {
+.site main.user .user-footer .user-actions .user-comments, .site main.user .user-footer .user-actions .user-like, .site main.user .user-footer .user-actions .user-share {
   background: none;
   border: none;
   display: inline-block;
@@ -5195,30 +5440,30 @@ html.no-javascript, html.javascript {
   font-weight: 400;
   margin-right: 1em;
   text-align: center; }
-.site.author .user-container .user-footer .user-actions .user-comments:before, .site.author .user-container .user-footer .user-actions .user-like:before, .site.author .user-container .user-footer .user-actions .user-share:before {
+.site main.user .user-footer .user-actions .user-comments:before, .site main.user .user-footer .user-actions .user-like:before, .site main.user .user-footer .user-actions .user-share:before {
   font-family: FontAwesome;
   margin-right: 0.5em; }
-.site.author .user-container .user-footer .user-actions .user-comments.user-comments:before, .site.author .user-container .user-footer .user-actions .user-like.user-comments:before, .site.author .user-container .user-footer .user-actions .user-share.user-comments:before {
+.site main.user .user-footer .user-actions .user-comments.user-comments:before, .site main.user .user-footer .user-actions .user-like.user-comments:before, .site main.user .user-footer .user-actions .user-share.user-comments:before {
   content: ""; }
-.site.author .user-container .user-footer .user-actions .user-comments.user-like:before, .site.author .user-container .user-footer .user-actions .user-like.user-like:before, .site.author .user-container .user-footer .user-actions .user-share.user-like:before {
+.site main.user .user-footer .user-actions .user-comments.user-like:before, .site main.user .user-footer .user-actions .user-like.user-like:before, .site main.user .user-footer .user-actions .user-share.user-like:before {
   content: ""; }
-.site.author .user-container .user-footer .user-actions .user-comments.user-share:before, .site.author .user-container .user-footer .user-actions .user-like.user-share:before, .site.author .user-container .user-footer .user-actions .user-share.user-share:before {
+.site main.user .user-footer .user-actions .user-comments.user-share:before, .site main.user .user-footer .user-actions .user-like.user-share:before, .site main.user .user-footer .user-actions .user-share.user-share:before {
   content: ""; }
-.site.author .user-container .user-footer .user-actions .user-comments:hover, .site.author .user-container .user-footer .user-actions .user-like:hover, .site.author .user-container .user-footer .user-actions .user-share:hover {
+.site main.user .user-footer .user-actions .user-comments:hover, .site main.user .user-footer .user-actions .user-like:hover, .site main.user .user-footer .user-actions .user-share:hover {
   border: none; }
-.site.author .user-container .user-footer .user-actions .user-comments:last-of-type, .site.author .user-container .user-footer .user-actions .user-like:last-of-type, .site.author .user-container .user-footer .user-actions .user-share:last-of-type {
+.site main.user .user-footer .user-actions .user-comments:last-of-type, .site main.user .user-footer .user-actions .user-like:last-of-type, .site main.user .user-footer .user-actions .user-share:last-of-type {
   margin-right: 0; }
-.site.author .user-container .user-footer .user-actions .user-comments .comment-count, .site.author .user-container .user-footer .user-actions .user-comments .like-count, .site.author .user-container .user-footer .user-actions .user-comments .share-count, .site.author .user-container .user-footer .user-actions .user-like .comment-count, .site.author .user-container .user-footer .user-actions .user-like .like-count, .site.author .user-container .user-footer .user-actions .user-like .share-count, .site.author .user-container .user-footer .user-actions .user-share .comment-count, .site.author .user-container .user-footer .user-actions .user-share .like-count, .site.author .user-container .user-footer .user-actions .user-share .share-count {
+.site main.user .user-footer .user-actions .user-comments .comment-count, .site main.user .user-footer .user-actions .user-comments .like-count, .site main.user .user-footer .user-actions .user-comments .share-count, .site main.user .user-footer .user-actions .user-like .comment-count, .site main.user .user-footer .user-actions .user-like .like-count, .site main.user .user-footer .user-actions .user-like .share-count, .site main.user .user-footer .user-actions .user-share .comment-count, .site main.user .user-footer .user-actions .user-share .like-count, .site main.user .user-footer .user-actions .user-share .share-count {
   margin-left: 0.5em; }
-.site.author .user-container .user-footer .user-actions .user-comments .comment-count:before, .site.author .user-container .user-footer .user-actions .user-comments .like-count:before, .site.author .user-container .user-footer .user-actions .user-comments .share-count:before, .site.author .user-container .user-footer .user-actions .user-like .comment-count:before, .site.author .user-container .user-footer .user-actions .user-like .like-count:before, .site.author .user-container .user-footer .user-actions .user-like .share-count:before, .site.author .user-container .user-footer .user-actions .user-share .comment-count:before, .site.author .user-container .user-footer .user-actions .user-share .like-count:before, .site.author .user-container .user-footer .user-actions .user-share .share-count:before {
+.site main.user .user-footer .user-actions .user-comments .comment-count:before, .site main.user .user-footer .user-actions .user-comments .like-count:before, .site main.user .user-footer .user-actions .user-comments .share-count:before, .site main.user .user-footer .user-actions .user-like .comment-count:before, .site main.user .user-footer .user-actions .user-like .like-count:before, .site main.user .user-footer .user-actions .user-like .share-count:before, .site main.user .user-footer .user-actions .user-share .comment-count:before, .site main.user .user-footer .user-actions .user-share .like-count:before, .site main.user .user-footer .user-actions .user-share .share-count:before {
   content: '('; }
-.site.author .user-container .user-footer .user-actions .user-comments .comment-count:after, .site.author .user-container .user-footer .user-actions .user-comments .like-count:after, .site.author .user-container .user-footer .user-actions .user-comments .share-count:after, .site.author .user-container .user-footer .user-actions .user-like .comment-count:after, .site.author .user-container .user-footer .user-actions .user-like .like-count:after, .site.author .user-container .user-footer .user-actions .user-like .share-count:after, .site.author .user-container .user-footer .user-actions .user-share .comment-count:after, .site.author .user-container .user-footer .user-actions .user-share .like-count:after, .site.author .user-container .user-footer .user-actions .user-share .share-count:after {
+.site main.user .user-footer .user-actions .user-comments .comment-count:after, .site main.user .user-footer .user-actions .user-comments .like-count:after, .site main.user .user-footer .user-actions .user-comments .share-count:after, .site main.user .user-footer .user-actions .user-like .comment-count:after, .site main.user .user-footer .user-actions .user-like .like-count:after, .site main.user .user-footer .user-actions .user-like .share-count:after, .site main.user .user-footer .user-actions .user-share .comment-count:after, .site main.user .user-footer .user-actions .user-share .like-count:after, .site main.user .user-footer .user-actions .user-share .share-count:after {
   content: ')'; }
-.site.author .user-container .user-footer .user-actions .user-commenting, .site.author .user-container .user-footer .user-actions .user-liking, .site.author .user-container .user-footer .user-actions .user-sharing {
+.site main.user .user-footer .user-actions .user-commenting, .site main.user .user-footer .user-actions .user-liking, .site main.user .user-footer .user-actions .user-sharing {
   list-style: none;
   padding: 0;
   text-align: center; }
-.site.author .user-container .user-footer .user-actions .user-commenting a, .site.author .user-container .user-footer .user-actions .user-liking a, .site.author .user-container .user-footer .user-actions .user-sharing a {
+.site main.user .user-footer .user-actions .user-commenting a, .site main.user .user-footer .user-actions .user-liking a, .site main.user .user-footer .user-actions .user-sharing a {
   background-color: gray;
   border: none;
   border-radius: 0.25em;
@@ -5233,47 +5478,47 @@ html.no-javascript, html.javascript {
   -moz-transition: background-color 0.33s, color 0.33s;
   transition: background-color 0.33s, color 0.33s;
   width: 15em; }
-.site.author .user-container .user-footer .user-actions .user-commenting a:before, .site.author .user-container .user-footer .user-actions .user-liking a:before, .site.author .user-container .user-footer .user-actions .user-sharing a:before {
+.site main.user .user-footer .user-actions .user-commenting a:before, .site main.user .user-footer .user-actions .user-liking a:before, .site main.user .user-footer .user-actions .user-sharing a:before {
   font-family: FontAwesome;
   margin-right: 0.5em; }
-.site.author .user-container .user-footer .user-actions .user-commenting a:hover, .site.author .user-container .user-footer .user-actions .user-liking a:hover, .site.author .user-container .user-footer .user-actions .user-sharing a:hover {
+.site main.user .user-footer .user-actions .user-commenting a:hover, .site main.user .user-footer .user-actions .user-liking a:hover, .site main.user .user-footer .user-actions .user-sharing a:hover {
   background-color: #737373;
   color: white;
   border: none;
   -webkit-transition: background-color 0.11s, color 0.11s;
   -moz-transition: background-color 0.11s, color 0.11s;
   transition: background-color 0.11s, color 0.11s; }
-.site.author .user-container .user-footer .user-actions .user-commenting a.facebook, .site.author .user-container .user-footer .user-actions .user-liking a.facebook, .site.author .user-container .user-footer .user-actions .user-sharing a.facebook {
+.site main.user .user-footer .user-actions .user-commenting a.facebook, .site main.user .user-footer .user-actions .user-liking a.facebook, .site main.user .user-footer .user-actions .user-sharing a.facebook {
   background-color: #3B5998; }
-.site.author .user-container .user-footer .user-actions .user-commenting a.facebook:hover, .site.author .user-container .user-footer .user-actions .user-liking a.facebook:hover, .site.author .user-container .user-footer .user-actions .user-sharing a.facebook:hover {
+.site main.user .user-footer .user-actions .user-commenting a.facebook:hover, .site main.user .user-footer .user-actions .user-liking a.facebook:hover, .site main.user .user-footer .user-actions .user-sharing a.facebook:hover {
   background-color: #344e86; }
-.site.author .user-container .user-footer .user-actions .user-commenting a.google, .site.author .user-container .user-footer .user-actions .user-liking a.google, .site.author .user-container .user-footer .user-actions .user-sharing a.google {
+.site main.user .user-footer .user-actions .user-commenting a.google, .site main.user .user-footer .user-actions .user-liking a.google, .site main.user .user-footer .user-actions .user-sharing a.google {
   background-color: #DD4B39; }
-.site.author .user-container .user-footer .user-actions .user-commenting a.google:hover, .site.author .user-container .user-footer .user-actions .user-liking a.google:hover, .site.author .user-container .user-footer .user-actions .user-sharing a.google:hover {
+.site main.user .user-footer .user-actions .user-commenting a.google:hover, .site main.user .user-footer .user-actions .user-liking a.google:hover, .site main.user .user-footer .user-actions .user-sharing a.google:hover {
   background-color: #d73925; }
-.site.author .user-container .user-footer .user-actions .user-commenting a.twitter, .site.author .user-container .user-footer .user-actions .user-liking a.twitter, .site.author .user-container .user-footer .user-actions .user-sharing a.twitter {
+.site main.user .user-footer .user-actions .user-commenting a.twitter, .site main.user .user-footer .user-actions .user-liking a.twitter, .site main.user .user-footer .user-actions .user-sharing a.twitter {
   background-color: #00ACED; }
-.site.author .user-container .user-footer .user-actions .user-commenting a.twitter:hover, .site.author .user-container .user-footer .user-actions .user-liking a.twitter:hover, .site.author .user-container .user-footer .user-actions .user-sharing a.twitter:hover {
+.site main.user .user-footer .user-actions .user-commenting a.twitter:hover, .site main.user .user-footer .user-actions .user-liking a.twitter:hover, .site main.user .user-footer .user-actions .user-sharing a.twitter:hover {
   background-color: #0099d4; }
-.site.author .user-container .user-footer .user-actions .user-commenting.user-liking a.facebook:before, .site.author .user-container .user-footer .user-actions .user-liking.user-liking a.facebook:before, .site.author .user-container .user-footer .user-actions .user-sharing.user-liking a.facebook:before {
+.site main.user .user-footer .user-actions .user-commenting.user-liking a.facebook:before, .site main.user .user-footer .user-actions .user-liking.user-liking a.facebook:before, .site main.user .user-footer .user-actions .user-sharing.user-liking a.facebook:before {
   content: ""; }
-.site.author .user-container .user-footer .user-actions .user-commenting.user-liking a.twitter:before, .site.author .user-container .user-footer .user-actions .user-liking.user-liking a.twitter:before, .site.author .user-container .user-footer .user-actions .user-sharing.user-liking a.twitter:before {
+.site main.user .user-footer .user-actions .user-commenting.user-liking a.twitter:before, .site main.user .user-footer .user-actions .user-liking.user-liking a.twitter:before, .site main.user .user-footer .user-actions .user-sharing.user-liking a.twitter:before {
   content: ""; }
-.site.author .user-container .user-footer .user-actions .user-commenting.user-sharing a.email:before, .site.author .user-container .user-footer .user-actions .user-liking.user-sharing a.email:before, .site.author .user-container .user-footer .user-actions .user-sharing.user-sharing a.email:before {
+.site main.user .user-footer .user-actions .user-commenting.user-sharing a.email:before, .site main.user .user-footer .user-actions .user-liking.user-sharing a.email:before, .site main.user .user-footer .user-actions .user-sharing.user-sharing a.email:before {
   content: ""; }
-.site.author .user-container .user-footer .user-actions .user-commenting.user-sharing a.facebook:before, .site.author .user-container .user-footer .user-actions .user-liking.user-sharing a.facebook:before, .site.author .user-container .user-footer .user-actions .user-sharing.user-sharing a.facebook:before {
+.site main.user .user-footer .user-actions .user-commenting.user-sharing a.facebook:before, .site main.user .user-footer .user-actions .user-liking.user-sharing a.facebook:before, .site main.user .user-footer .user-actions .user-sharing.user-sharing a.facebook:before {
   content: ""; }
-.site.author .user-container .user-footer .user-actions .user-commenting.user-sharing a.google:before, .site.author .user-container .user-footer .user-actions .user-liking.user-sharing a.google:before, .site.author .user-container .user-footer .user-actions .user-sharing.user-sharing a.google:before {
+.site main.user .user-footer .user-actions .user-commenting.user-sharing a.google:before, .site main.user .user-footer .user-actions .user-liking.user-sharing a.google:before, .site main.user .user-footer .user-actions .user-sharing.user-sharing a.google:before {
   content: ""; }
-.site.author .user-container .user-footer .user-actions .user-commenting.user-sharing a.twitter:before, .site.author .user-container .user-footer .user-actions .user-liking.user-sharing a.twitter:before, .site.author .user-container .user-footer .user-actions .user-sharing.user-sharing a.twitter:before {
+.site main.user .user-footer .user-actions .user-commenting.user-sharing a.twitter:before, .site main.user .user-footer .user-actions .user-liking.user-sharing a.twitter:before, .site main.user .user-footer .user-actions .user-sharing.user-sharing a.twitter:before {
   content: ""; }
-.site.author .user-container .user-footer .user-tags {
+.site main.user .user-footer .user-tags {
   list-style: none;
   margin: 3em 0;
   padding: 0; }
-.site.author .user-container .user-footer .user-tags .user-tag {
+.site main.user .user-footer .user-tags .user-tag {
   display: inline; }
-.site.author .user-container .user-footer .user-tags .user-tag a {
+.site main.user .user-footer .user-tags .user-tag a {
   background-color: rgba(0, 0, 0, 0.3);
   border: none;
   border-radius: 0.25em;
@@ -5284,23 +5529,23 @@ html.no-javascript, html.javascript {
   -webkit-transition: background-color 0.33s;
   -moz-transition: background-color 0.33s;
   transition: background-color 0.33s; }
-.site.author .user-container .user-footer .user-tags .user-tag a:hover {
+.site main.user .user-footer .user-tags .user-tag a:hover {
   background-color: rgba(17, 136, 68, 0.3);
   color: #118844;
   border: none;
   -webkit-transition: background-color 0.11s;
   -moz-transition: background-color 0.11s;
   transition: background-color 0.11s; }
-.site.author .user-container .user-footer .user-tags .user-tag:last-child a {
+.site main.user .user-footer .user-tags .user-tag:last-child a {
   margin-right: 0; }
-.site.author #main-navigation {
+.site #main-navigation {
   bottom: auto;
   top: 0; }
 @media (min-width: 601px) {
-  .site.author.admin-bar #main-navigation {
+  .site.admin-bar #main-navigation {
     top: 46px; } }
 @media (min-width: 783px) {
-  .site.author.admin-bar #main-navigation {
+  .site.admin-bar #main-navigation {
     top: 32px; } }
 
 /*

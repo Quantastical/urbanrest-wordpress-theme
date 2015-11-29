@@ -38,7 +38,7 @@ $decks = get_posts($deck_args);
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</td>
 						<td class="abv"><?php echo get_post_meta( get_the_ID(), 'alcohol_by_volume', true ); ?></td>
-						<td class="style"><?php the_terms(0, 'style'); ?></td>
+						<td class="style"><?php the_terms(0, 'beer_style'); ?></td>
 					</tr>
 <?php endforeach; ?>
 <?php wp_reset_postdata(' / '); ?>
@@ -62,7 +62,7 @@ $decks = get_posts($deck_args);
 						<td class="title">
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</td>
-						<td class="style"><?php the_terms(0, 'style'); ?></td>
+						<td class="style"><?php the_terms(0, 'beer_style'); ?></td>
 					</tr>
 <?php endforeach; ?>
 <?php wp_reset_postdata(' / '); ?>

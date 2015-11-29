@@ -1,6 +1,6 @@
 .site
 {
-	main.page
+	main.event
 	{
 		background-color: #DCC1A7;
 		background-image: url('images/single-background.jpg');
@@ -11,7 +11,7 @@
 		font-weight: 300;
 		overflow-x: hidden;
 		padding-bottom: 4em;
-		padding-top: 4em;
+		padding-top: 3em;
 		width: 100%;
 
 		a, .hyperlink
@@ -28,28 +28,61 @@
 			max-width: 90%;
 		}
 
-		.page-header
+		.event-header
 		{
-			.page-title
+			.event-title
 			{
 				font-size: 2em;
 				margin-bottom: 0.5em;
 				margin-top: 1em;
 			}
+
+			.event-meta
+			{
+				line-height: 1.5em;
+				margin-bottom: 1em;
+
+				.event-author
+				{
+					font-style: normal;
+				}
+
+				img
+				{
+					border-color: lighten( $urbanrest-black, 33% );
+					border-radius: 50%;
+					border-style: solid;
+					border-width: 2pt;
+					box-sizing: border-box;
+					float: left;
+					height: 3em;
+					margin-right: 0.75em;
+					width: auto;
+				}
+			}
 		}
 
-		.page-image
+		.event-image
 		{
+			align-items: center;
+			background-position: center;
+			@include background-size( cover );
+			border-radius: 0.25em;
+			display: flex;
+			height: 0;
+			justify-content: center;
 			margin: 0;
+			overflow: hidden;
+			padding-bottom: 25%;
+			padding-top: 25%;
 			position: relative;
-			text-align: center;
 			width: 100%;
 
 			img
 			{
-				border-radius: 50%;
-				height: 22em;
-				width: 22em;
+				display: none;
+				height: auto;
+				width: 100%;
 			}
 
 			figcaption
@@ -60,31 +93,44 @@
 				color: white;
 				font-weight: 400;
 				left: 0;
-				padding: 1em;
+				max-height: 0;
+				opacity: 0;
+				padding: 0 1em;
 				position: absolute;
+				@include transition( max-height 0.5s, opacity 0.33s, padding-bottom 0.5s, padding-top 0.5s );
 				width: 100%;
 
-				.page-image-title
+				.event-image-title
 				{
 					font-size: 1.5em;
 				}
 
-				.page-image-caption
+				.event-image-caption
 				{
 					font-size: 0.8em;
 					font-style: italic;
 					font-weight: 100;
 				}
 
-				.page-image-description
+				.event-image-description
 				{
 					font-size: 1em;
 					margin-top: 0.5em;
 				}
 			}
+
+			&:hover 
+			{
+				figcaption
+				{
+					max-height: 100%;
+					opacity: 1;
+					padding: 1em 1em;
+				}
+			}
 		}
 
-		.page-content
+		.event-content
 		{
 			font-size: 1.2em;
 			line-height: 1.5em;
@@ -99,19 +145,62 @@
 			{
 				margin-bottom: 1em;
 			}
+
+			section
+			{
+				margin-top: 1em;
+			}
+
+			.event-tags
+			{
+				list-style: none;
+				padding: 0;
+
+				.event-tag
+				{
+					display: inline;
+					font-size: 0.8em;
+
+					a
+					{
+						background-color: rgba( $urbanrest-black, 0.3 );
+						border: none;
+						border-radius: 0.25em;
+						color: inherit;
+						display: inline-block;
+						margin-bottom: 0.5em;
+						margin-right: 0.5em;
+						padding: 0.25em 0.75em;
+						@include transition( background-color 0.33s );
+
+						&:hover
+						{
+							background-color: rgba( $urbanrest-green, 0.3 );
+							color: $urbanrest-green;
+							border: none;
+							@include transition( background-color 0.11s );
+						}
+					}
+
+					&:last-child a
+					{
+						margin-right: 0;
+					}
+				}
+			}
 		}
 
-		.page-footer
+		.event-footer
 		{
 			margin-top: 3em;
 
-			.page-actions
+			.event-actions
 			{
 				text-align: center;
 
-				.page-comments,
-				.page-like,
-				.page-share
+				.event-comments,
+				.event-like,
+				.event-share
 				{
 					background: none;
 					border: none;
@@ -127,9 +216,9 @@
 						margin-right: 0.5em;
 					}
 
-					&.page-comments:before { content: $fa-var-comments; }
-					&.page-like:before     { content: $fa-var-heart; }
-					&.page-share:before    { content: $fa-var-share; }
+					&.event-comments:before { content: $fa-var-comments; }
+					&.event-like:before     { content: $fa-var-heart; }
+					&.event-share:before    { content: $fa-var-share; }
 
 					&:hover
 					{
@@ -152,9 +241,9 @@
 					}
 				}
 
-				.page-commenting,
-				.page-liking,
-				.page-sharing
+				.event-commenting,
+				.event-liking,
+				.event-sharing
 				{
 					list-style: none;
 					padding: 0;
@@ -208,13 +297,13 @@
 						}
 					}
 
-					&.page-liking a
+					&.event-liking a
 					{
 						&.facebook { &:before { content: $fa-var-facebook; } }
 						&.twitter  { &:before { content: $fa-var-twitter; } }
 					}
 
-					&.page-sharing a
+					&.event-sharing a
 					{
 						&.email    { &:before { content: $fa-var-envelope; } }
 						&.facebook { &:before { content: $fa-var-facebook; } }
@@ -224,13 +313,13 @@
 				}
 			}
 
-			.page-tags
+			.event-tags
 			{
 				list-style: none;
 				margin: 3em 0;
 				padding: 0;
 
-				.page-tag
+				li
 				{
 					display: inline;
 
@@ -262,13 +351,4 @@
 			}
 		}
 	}
-
-	#main-navigation
-	{
-		bottom: auto;
-		top: 0;
-	}
-
-	@include media( '>600px' ) { &.admin-bar #main-navigation { top: 46px; } }
-	@include media( '>782px' ) { &.admin-bar #main-navigation { top: 32px; } }
 }

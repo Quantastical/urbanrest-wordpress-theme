@@ -257,7 +257,9 @@ function urb_beer_init() {
 		//'post-formats'
 	);
 
-	$taxonomies = array();
+	$taxonomies = array(
+		'beer_style'
+	);
 
 	$rewrite = array(
 		'slug'       => $post_type,
@@ -300,7 +302,7 @@ function urb_food_pairings_meta_box( $post ) {
 	/*
 	// Add a nonce field so we can check for it later.
 	wp_nonce_field( 'urb_beer_save_food_pairings', 'urb_beer_save_food_pairings' );
-*/
+	*/
 	$food_pairings = get_post_meta( $post->ID, 'food_pairings', true );
 	$settings = array(
 		'wpautop'          => true,
@@ -347,6 +349,7 @@ function urb_glassware_meta_box( $post ) {
 
 function urb_third_parties_meta_box( $post ) {
 	$options = array(
+		'ratebeer_beer_url' => 'RateBeer Beer URL',
 		'untappd_beer_url' => 'Untappd Beer URL'
 	);
 
@@ -377,7 +380,7 @@ function urb_beer_init_styles() {
 	$description = "Styles are labels given to beer that describe its overall character and origin.";
 	$taxonomy    = sanitize_key($single_name);
 
-	$object_type = array( 'beer' );
+	$object_type = 'beer';
 	
 	$labels = array(
 		'name'                       => $plural_name,
@@ -400,7 +403,7 @@ function urb_beer_init_styles() {
 	);
 	
 	$rewrite = array(
-		'slug'         => "beer/{$taxonomy}",
+		'slug'         => "style",
 		'with_front'   => false,
 		'hierarchical' => false,
 		'ep_mask'      => EP_NONE
@@ -426,13 +429,13 @@ function urb_beer_init_styles() {
 		'description'           => $description,
 		'hierarchical'          => true,
 		'update_count_callback' => '',
-		'query_var'             => $taxonomy,
+		'query_var'             => "{$object_type}_{$taxonomy}",
 		'rewrite'               => $rewrite,
 		'capabilities'          => $capabilities,
 		'sort'                  => null
 	);
 
-	register_taxonomy( $taxonomy, $object_type, $args );
+	register_taxonomy( "{$object_type}_{$taxonomy}", $object_type, $args );
 }
 
 function urb_beer_init_statuses() {
@@ -650,7 +653,7 @@ function urb_beer_save_food_pairings( $post_id ) {
 			return;
 		}
 	}
-*/
+	*/
 	if( isset($_POST['food_pairings']) ) {
 		$food_pairings = sanitize_text_field( $_POST['food_pairings'] );
 		update_post_meta( $post_id, 'food_pairings', $food_pairings );
@@ -725,6 +728,11 @@ function urb_beer_save_third_parties( $post_id ) {
 		}
 	}
 	*/
+
+	if( isset($_POST['ratebeer_beer_url']) ) {
+		$ratebeer_beer_url = sanitize_text_field( $_POST['ratebeer_beer_url'] );
+		update_post_meta( $post_id, 'ratebeer_beer_url', $ratebeer_beer_url );
+	}
 
 	if( isset($_POST['untappd_beer_url']) ) {
 		$untappd_beer_url = sanitize_text_field( $_POST['untappd_beer_url'] );

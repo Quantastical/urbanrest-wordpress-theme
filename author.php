@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <?php get_sidebar(); ?>
 <?php $profile = get_userdata(intval($author)); ?>
-	<main class="user-container row around-xs">
+	<main class="user row around-xs">
 		<article id="user-<?php the_ID(); ?>" <?php post_class('col-xs-11 col-sm-9 col-md-7'); ?>>
 <?php include('user-header.php'); ?>
 <?php include('user-content.php'); ?>

@@ -1,6 +1,6 @@
-.site.single-beer
+.site
 {
-	.beer-container
+	main.beer
 	{
 		background-color: #DCC1A7;
 		background-image: url('images/single-background.jpg');
@@ -447,33 +447,53 @@
 					}
 				}
 
-				.beer-checkin.untappd
+				.beer-checkin
 				{
-					background-image: url('images/logo-untappd.png');
-					background-position: center;
-					background-repeat: no-repeat;
-					background-size: contain;
-					color: transparent;
-					display: inline-block;
-					font-size: 0.75em;
-					height: 5em;
-					margin-bottom: 2em;
-					margin-left: 6em;
-					width: 11em;
-
-					&:before
+					.beer-checkin-item
 					{
-						background-image: url('images/icon-untappd.png');
-						background-position: center;
-						background-repeat: no-repeat;
-						background-size: contain;
-						border-radius: 1em;
-						content: '';
-						display: block;
-						height: 5em;
-						left: -6em;
-						position: absolute;
-						width: 5em;
+						display: inline-block;
+						margin-bottom: 2em;
+
+						+.beer-checkin-item { margin-left: 1em; }
+
+						a
+						{
+							background-position: center;
+							background-repeat: no-repeat;
+							background-size: contain;
+							color: transparent;
+							display: inline-block;
+							font-size: 0.75em;
+							height: 5em;
+							margin-left: 6em;
+							width: 11em;
+
+							&:before
+							{
+								background-position: center;
+								background-repeat: no-repeat;
+								background-size: contain;
+								border-radius: 1em;
+								content: '';
+								display: block;
+								height: 5em;
+								left: -6em;
+								position: absolute;
+								width: 5em;
+							}
+						}
+
+						.ratebeer
+						{
+							background-image: url('images/logo-ratebeer.png');
+							&:before { background-image: url('images/icon-ratebeer.png'); }
+						}
+
+						.untappd
+						{
+							background-image: url('images/logo-untappd.png');
+							&:before { background-image: url('images/icon-untappd.png'); }
+						}
 					}
 				}
 			}

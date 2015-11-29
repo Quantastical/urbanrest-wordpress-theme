@@ -34,7 +34,7 @@
 							based on <span itemprop="reviewCount"><?php echo count( urb_get_ratings($post->ID) ); ?></span> customer reviews
 						</div>
 					</div>
-<?php $styles = get_the_terms( $post->ID, 'style' ); ?>
+<?php $styles = get_the_terms( $post->ID, 'beer_style' ); ?>
 <?php if( $styles ): ?>
 					<div class="beer-style row">
 						<p class="col-xs-4 col-sm-2">Style</p>

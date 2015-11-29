@@ -1,7 +1,10 @@
 @media only screen
 {
-	.site-footer
+	.site
 	{
-		display: none;
+		.site-footer
+		{
+			display: none;
+		}
 	}
 }
