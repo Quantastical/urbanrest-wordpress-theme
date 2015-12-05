@@ -465,7 +465,7 @@
 							display: inline-block;
 							font-size: 0.75em;
 							height: 5em;
-							margin-left: 6em;
+							margin-top: 6em;
 							width: 11em;
 
 							&:before
@@ -474,13 +474,21 @@
 								background-repeat: no-repeat;
 								background-size: contain;
 								border-radius: 1em;
+								bottom: calc(100% + 0.5em);
 								content: '';
 								display: block;
 								height: 5em;
-								left: -6em;
+								left: calc(50% - 2.5em);
 								position: absolute;
 								width: 5em;
 							}
+						}
+
+						.beeradvocate
+						{
+							background-image: url('images/logo-beeradvocate.png');
+							width: 15em;
+							&:before { background-image: url('images/icon-beeradvocate.png'); }
 						}
 
 						.ratebeer

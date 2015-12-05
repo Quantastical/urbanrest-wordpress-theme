@@ -49,8 +49,8 @@ function urb_beer_admin_footer_post() {
 
 	//global $post;
 
-	$on_deck_selected = false;
-	$on_tap_selected = false;
+	$on_deck_selected    = false;
+	$on_tap_selected     = false;
 	$post_status_display = '';
 	$post_publish_action = '';
 	$post_publish_button = '';
@@ -193,12 +193,12 @@ function urb_beer_after_setup_theme() {
 	$capabilities = array(
 		'edit_post'          => "edit_{$capability_type[0]}",
 		'read_post'          => "read_{$capability_type[0]}",
-		'delete_posts'       => "delete_{$capability_type[1]}s",
-		'edit_posts'         => "edit_{$capability_type[1]}s",
-		'edit_others_posts'  => "edit_others_{$capability_type[1]}s",
-		'publish_posts'      => "publish_{$capability_type[1]}s",
-		'read_private_posts' => "read_private_{$capability_type[1]}s",
-		'create_posts'       => "edit_{$capability_type[1]}s"
+		'delete_posts'       => "delete_{$capability_type[1]}",
+		'edit_posts'         => "edit_{$capability_type[1]}",
+		'edit_others_posts'  => "edit_others_{$capability_type[1]}",
+		'publish_posts'      => "publish_{$capability_type[1]}",
+		'read_private_posts' => "read_private_{$capability_type[1]}",
+		'create_posts'       => "edit_{$capability_type[1]}"
 	);
 
 	$administrator_role = get_role( 'administrator' );
@@ -349,8 +349,9 @@ function urb_glassware_meta_box( $post ) {
 
 function urb_third_parties_meta_box( $post ) {
 	$options = array(
-		'ratebeer_beer_url' => 'RateBeer Beer URL',
-		'untappd_beer_url' => 'Untappd Beer URL'
+		'beeradvocate_beer_url' => 'BeerAdvocate Beer URL',
+		'ratebeer_beer_url'     => 'RateBeer Beer URL',
+		'untappd_beer_url'      => 'Untappd Beer URL'
 	);
 
 	foreach( $options as $option => $label ) {
@@ -464,7 +465,7 @@ function urb_beer_init_tags() {
 	$description = "Tags provide a useful way to group related beer that provide more granularity than its style.";
 	$taxonomy    = sanitize_key($single_name);
 
-	$object_type = array( 'beer' );
+	$object_type = 'beer';
 	
 	$labels = array(
 		'name'                       => $plural_name,
@@ -519,7 +520,7 @@ function urb_beer_init_tags() {
 		'sort'                  => null
 	);
 
-	register_taxonomy( $taxonomy, $object_type, $args );
+	register_taxonomy( "{$object_type}_{$taxonomy}", $object_type, $args );
 }
 
 function urb_beer_post_updated_messages() {
@@ -728,6 +729,11 @@ function urb_beer_save_third_parties( $post_id ) {
 		}
 	}
 	*/
+
+	if( isset($_POST['beeradvocate_beer_url']) ) {
+		$beeradvocate_beer_url = sanitize_text_field( $_POST['beeradvocate_beer_url'] );
+		update_post_meta( $post_id, 'beeradvocate_beer_url', $beeradvocate_beer_url );
+	}
 
 	if( isset($_POST['ratebeer_beer_url']) ) {
 		$ratebeer_beer_url = sanitize_text_field( $_POST['ratebeer_beer_url'] );

@@ -116,7 +116,7 @@ function urb_event_init() {
 	$capabilities = array(
 		'edit_post'          => "edit_{$capability_type[0]}",
 		'read_post'          => "read_{$capability_type[0]}",
-		'delete_post'        => "delete_{$capability_type[0]}",
+		'delete_posts'       => "delete_{$capability_type[1]}",
 		'edit_posts'         => "edit_{$capability_type[1]}",
 		'edit_others_posts'  => "edit_others_{$capability_type[1]}",
 		'publish_posts'      => "publish_{$capability_type[1]}",
@@ -142,7 +142,7 @@ function urb_event_init() {
 
 	$rewrite = array(
 		'slug'       => $post_type,
-		'with_front' => true,
+		'with_front' => false,
 		'feeds'      => true,
 		'pages'      => true,
 		'ep_mask'    => EP_PERMALINK

@@ -1,27 +1,27 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].'/wp-load.php' );
 
-class ratebeer_beer {
-	private $url_base = 'http://www.ratebeer.com';
+class beeradvocate_beer {
+	private $url_base = 'http://www.beeradvocate.com';
 
 	public function __construct() {
 	}
 
-	public function info( $ratebeer_beer_id = false ) {
-		if( !is_numeric($ratebeer_beer_id) ) {
-			if( $ratebeer_beer_url = get_post_meta($_GET['postId'], 'ratebeer_beer_url') ) {
-				$ratebeer_beer_url = $ratebeer_beer_url[0];
+	public function info( $beeradvocate_beer_id = false ) {
+		if( !is_numeric($beeradvocate_beer_id) ) {
+			if( $beeradvocate_beer_url = get_post_meta($_GET['postId'], 'beeradvocate_beer_url') ) {
+				$beeradvocate_beer_url = $beeradvocate_beer_url[0];
 			}
 		}
 
-		if( !$ratebeer_beer_url ) {
+		if( !$beeradvocate_beer_url ) {
 			return;
 		}
 
 		//$ratebeer_beer_id = 'founders-kbs-kentucky-breakfast-stout/40544/';
 		$endpoint = '/beer/';
 
-		$remote_html = file_get_contents($ratebeer_beer_url);
+		$remote_html = file_get_contents($beeradvocate_beer_url);
 
 		if( $remote_html ) {
 			$response = array(
@@ -36,7 +36,7 @@ class ratebeer_beer {
 				@$dom->loadHTML($remote_html);
 				$x = new DOMXPath($dom);
 
-				foreach($x->query("//*[@itemprop='reviewCount']") as $node) 
+				foreach($x->query("//*[@itemprop='ratingCount']") as $node) 
 				{
 					$response['review_count'] = str_replace(',', '', $node->nodeValue);
 					break;

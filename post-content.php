@@ -22,7 +22,7 @@
 				<ul class="post-tags">
 <?php 	foreach( $tags as $tag ) : ?>
 					<li class="post-tag">
-						<a href="/tags/<?php echo $tag->slug; ?>"><?php echo $tag->name; ?></a>
+						<a href="<?php echo get_term_link( $tag ); ?>"><?php echo $tag->name; ?></a>
 					</li>
 <?php 	endforeach; ?>
 				</ul>

@@ -2853,7 +2853,7 @@ html.no-javascript, html.javascript {
 .btn .btn-content {
   display: none; }
 
-.hyperlink, .site main.beer a, .site main.beer .hyperlink, .site main.event a, .site main.event .hyperlink, .site main.page a, .site main.page .hyperlink, .site main.post a, .site main.post .hyperlink, .site main.user a, .site main.user .hyperlink {
+.hyperlink, .site main.beer a, .site main.beer .hyperlink, .site main.event a, .site main.event .hyperlink, .site main.page a, .site main.page .hyperlink, .site main.post a, .site main.post .hyperlink, .site main.taxonomy a, .site main.taxonomy .hyperlink, .site main.user a, .site main.user .hyperlink {
   border-bottom-width: 1pt;
   border-bottom-color: transparent;
   border-bottom-style: solid;
@@ -2865,10 +2865,10 @@ html.no-javascript, html.javascript {
   -webkit-transition: border-bottom 0.33s;
   -moz-transition: border-bottom 0.33s;
   transition: border-bottom 0.33s; }
-.hyperlink:hover, .site main.beer a:hover, .site main.beer .hyperlink:hover, .site main.event a:hover, .site main.event .hyperlink:hover, .site main.page a:hover, .site main.page .hyperlink:hover, .site main.post a:hover, .site main.post .hyperlink:hover, .site main.user a:hover, .site main.user .hyperlink:hover {
+.hyperlink:hover, .site main.beer a:hover, .site main.beer .hyperlink:hover, .site main.event a:hover, .site main.event .hyperlink:hover, .site main.page a:hover, .site main.page .hyperlink:hover, .site main.post a:hover, .site main.post .hyperlink:hover, .site main.taxonomy a:hover, .site main.taxonomy .hyperlink:hover, .site main.user a:hover, .site main.user .hyperlink:hover {
   /*border-bottom-color: lighten( $urbanrest-green, 5% );*/
   color: #149f4f; }
-.hyperlink [rel="external"]:after, .site main.beer a [rel="external"]:after, .site main.beer .hyperlink [rel="external"]:after, .site main.event a [rel="external"]:after, .site main.event .hyperlink [rel="external"]:after, .site main.page a [rel="external"]:after, .site main.page .hyperlink [rel="external"]:after, .site main.post a [rel="external"]:after, .site main.post .hyperlink [rel="external"]:after, .site main.user a [rel="external"]:after, .site main.user .hyperlink [rel="external"]:after {
+.hyperlink [rel="external"]:after, .site main.beer a [rel="external"]:after, .site main.beer .hyperlink [rel="external"]:after, .site main.event a [rel="external"]:after, .site main.event .hyperlink [rel="external"]:after, .site main.page a [rel="external"]:after, .site main.page .hyperlink [rel="external"]:after, .site main.post a [rel="external"]:after, .site main.post .hyperlink [rel="external"]:after, .site main.taxonomy a [rel="external"]:after, .site main.taxonomy .hyperlink [rel="external"]:after, .site main.user a [rel="external"]:after, .site main.user .hyperlink [rel="external"]:after {
   background-color: transparent;
   border: none;
   border-radius: 0.18em;
@@ -2887,7 +2887,7 @@ html.no-javascript, html.javascript {
   -moz-transition: all 0.5s;
   transition: all 0.5s;
   width: 0; }
-.hyperlink [rel="external"]:hover:after, .site main.beer a [rel="external"]:hover:after, .site main.event a [rel="external"]:hover:after, .site main.page a [rel="external"]:hover:after, .site main.post a [rel="external"]:hover:after, .site main.user a [rel="external"]:hover:after {
+.hyperlink [rel="external"]:hover:after, .site main.beer a [rel="external"]:hover:after, .site main.event a [rel="external"]:hover:after, .site main.page a [rel="external"]:hover:after, .site main.post a [rel="external"]:hover:after, .site main.taxonomy a [rel="external"]:hover:after, .site main.user a [rel="external"]:hover:after {
   background-color: white;
   height: 0.84em;
   opacity: 1;
@@ -4667,19 +4667,25 @@ html.no-javascript, html.javascript {
   display: inline-block;
   font-size: 0.75em;
   height: 5em;
-  margin-left: 6em;
+  margin-top: 6em;
   width: 11em; }
 .site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item a:before {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   border-radius: 1em;
+  bottom: calc(100% + 0.5em);
   content: '';
   display: block;
   height: 5em;
-  left: -6em;
+  left: calc(50% - 2.5em);
   position: absolute;
   width: 5em; }
+.site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item .beeradvocate {
+  background-image: url("images/logo-beeradvocate.png");
+  width: 15em; }
+.site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item .beeradvocate:before {
+  background-image: url("images/icon-beeradvocate.png"); }
 .site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item .ratebeer {
   background-image: url("images/logo-ratebeer.png"); }
 .site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item .ratebeer:before {
@@ -5368,6 +5374,42 @@ html.no-javascript, html.javascript {
     top: 46px; } }
 @media (min-width: 783px) {
   .single.admin-bar #main-navigation {
+    top: 32px; } }
+
+.site main.taxonomy {
+  background-color: #DCC1A7;
+  background-image: url("images/single-background.jpg");
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 20em;
+  color: #322820;
+  font-weight: 300;
+  overflow-x: hidden;
+  padding-bottom: 4em;
+  padding-top: 4em;
+  width: 100%; }
+.site main.taxonomy .taxonomy-header .taxonomy-title {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  margin-top: 1em; }
+.site main.taxonomy .beer-content {
+  font-size: 1.2em;
+  line-height: 1.5em; }
+.site main.taxonomy .beer-content h2 {
+  font-size: 1.3em;
+  margin-bottom: 0.25em; }
+.site main.taxonomy .beer-content p {
+  margin-bottom: 1em; }
+.site main.taxonomy .beer-content section {
+  margin-top: 1em; }
+.site #main-navigation {
+  bottom: auto;
+  top: 0; }
+@media (min-width: 601px) {
+  .site.admin-bar #main-navigation {
+    top: 46px; } }
+@media (min-width: 783px) {
+  .site.admin-bar #main-navigation {
     top: 32px; } }
 
 .site main.user {

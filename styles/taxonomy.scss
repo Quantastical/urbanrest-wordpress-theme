@@ -1,0 +1,67 @@
+.site
+{
+	main.taxonomy
+	{
+		background-color: #DCC1A7;
+		background-image: url('images/single-background.jpg');
+		background-position: center;
+		background-repeat: repeat;
+		background-size: 20em;
+		color: darken(#A88C76, 40%);
+		font-weight: 300;
+		overflow-x: hidden;
+		padding-bottom: 4em;
+		padding-top: 4em;
+		width: 100%;
+
+		a, .hyperlink
+		{
+			@extend .hyperlink;
+		}
+
+		.taxonomy-header
+		{
+			.taxonomy-title
+			{
+				font-size: 2em;
+				margin-bottom: 0.5em;
+				margin-top: 1em;
+			}
+		}
+
+		.beer-content
+		{
+			font-size: 1.2em;
+			line-height: 1.5em;
+
+			h2
+			{
+				font-size: 1.3em;
+				margin-bottom: 0.25em;
+			}
+
+			p
+			{
+				margin-bottom: 1em;
+			}
+
+			section
+			{
+				margin-top: 1em;
+			}
+		}
+
+		.beer-footer
+		{
+		}
+	}
+
+	#main-navigation
+	{
+		bottom: auto;
+		top: 0;
+	}
+
+	@include media( '>600px' ) { &.admin-bar #main-navigation { top: 46px; } }
+	@include media( '>782px' ) { &.admin-bar #main-navigation { top: 32px; } }
+}

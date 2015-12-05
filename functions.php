@@ -177,25 +177,25 @@ endif;
 
 if( !function_exists('urb_get_community') ) :
 	function urb_get_community() {
-		include_once('community.php');
+		include_once('aside-community.php');
 	}
 endif;
 
 if( !function_exists('urb_get_company') ) :
 	function urb_get_company() {
-		include_once('company.php');
+		include_once('aside-company.php');
 	}
 endif;
 
 if( !function_exists('urb_get_shop') ) :
 	function urb_get_shop() {
-		include_once('shop.php');
+		include_once('aside-shop.php');
 	}
 endif;
 
 if( !function_exists('urb_get_specials') ) :
 	function urb_get_specials() {
-		include_once('specials.php');
+		include_once('aside-specials.php');
 	}
 endif;
 

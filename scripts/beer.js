@@ -45,6 +45,7 @@ jQuery(function($){
 	};
 
 	Urb.setupRatingsFrom3rdParties = function() {
+		// Untappd
 		$.ajax({
 			type: 'get',
 			url: Urb.API + 'untappd/beer/info/',
@@ -69,7 +70,62 @@ jQuery(function($){
 					$('[itemprop="reviewCount"]', Urb.$aggregateRating).text( overallReviewCount.toFixed(0) );
 				}
 			}
-		})
+		});
+
+		// RateBeer
+		$.ajax({
+			type: 'get',
+			url: Urb.API + 'ratebeer/beer/info/',
+			data: { postId: $('[itemprop="aggregateRating"]').data('beer-id') },
+			dataType: 'json',
+			success: function(data) {
+				var ratingValue = Number($('[itemprop="ratingValue"]', Urb.$aggregateRating).text());
+				var reviewCount = Number($('[itemprop="reviewCount"]', Urb.$aggregateRating).text());
+				var totalRatings = ratingValue * reviewCount;
+
+				if(data) {
+					var rateBeerRatingValue = Number(data.rating_value) / Number(data.best_rating) * 5;
+					var rateBeerReviewCount = Number(data.review_count);
+					var rateBeerTotalRatings = rateBeerRatingValue * rateBeerReviewCount;
+
+					var overallTotalRatings = totalRatings + rateBeerTotalRatings;
+					var overallReviewCount = reviewCount + rateBeerReviewCount;
+					var overallRatingValue = overallTotalRatings / overallReviewCount;
+
+					Urb.$aggregateRating.attr( 'data-overall-rating', overallRatingValue.toFixed(1) );
+					$('[itemprop="ratingValue"]', Urb.$aggregateRating).text( overallRatingValue.toFixed(1) );
+					$('[itemprop="reviewCount"]', Urb.$aggregateRating).text( overallReviewCount.toFixed(0) );
+				}
+			}
+		});
+
+
+		// BeerAdvocate
+		$.ajax({
+			type: 'get',
+			url: Urb.API + 'beeradvocate/beer/info/',
+			data: { postId: $('[itemprop="aggregateRating"]').data('beer-id') },
+			dataType: 'json',
+			success: function(data) {
+				var ratingValue = Number($('[itemprop="ratingValue"]', Urb.$aggregateRating).text());
+				var reviewCount = Number($('[itemprop="reviewCount"]', Urb.$aggregateRating).text());
+				var totalRatings = ratingValue * reviewCount;
+
+				if(data) {
+					var rateBeerRatingValue = Number(data.rating_value) / Number(data.best_rating) * 5;
+					var rateBeerReviewCount = Number(data.review_count);
+					var rateBeerTotalRatings = rateBeerRatingValue * rateBeerReviewCount;
+
+					var overallTotalRatings = totalRatings + rateBeerTotalRatings;
+					var overallReviewCount = reviewCount + rateBeerReviewCount;
+					var overallRatingValue = overallTotalRatings / overallReviewCount;
+
+					Urb.$aggregateRating.attr( 'data-overall-rating', overallRatingValue.toFixed(1) );
+					$('[itemprop="ratingValue"]', Urb.$aggregateRating).text( overallRatingValue.toFixed(1) );
+					$('[itemprop="reviewCount"]', Urb.$aggregateRating).text( overallReviewCount.toFixed(0) );
+				}
+			}
+		});
 	};
 
 	if( Urb.$body.is('.single-beer') ) {
