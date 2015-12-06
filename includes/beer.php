@@ -258,7 +258,8 @@ function urb_beer_init() {
 	);
 
 	$taxonomies = array(
-		'beer_style'
+		'beer_style',
+		'beer_tag'
 	);
 
 	$rewrite = array(

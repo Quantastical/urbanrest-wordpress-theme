@@ -1,12 +1,30 @@
 <?php
 
-function urb_event_admin_init() {
-	add_meta_box( 'event_information', 'Event Information', 'urb_event_admin_init_event_information', 'event', 'normal', 'low');
+function urb_event_add_meta_boxes() {
+	$screen = 'event`';
+	$meta_boxes = array(
+		'datetime_meta_box' => array(
+				'title'   => 'Dates & Times',
+				'context' => 'advanced'
+			),
+		'location_meta_box' => array(
+				'title'   => 'Location',
+				'context' => 'advanced'
+			)
+	);
+
+	foreach( $meta_boxes as $id => $meta_box ) {
+		$callback      = 'urb_' . $id;
+		$title         = $meta_box['title'];
+		$context       = $meta_box['context'];
+		$priority      = 'default';
+		$callback_args = null;
+
+		add_meta_box($id, $title, $callback, $screen, $context, $priority, $callback_args);
+	}
 }
 
-function urb_event_admin_init_event_information() {
-	global $post;
-		
+function urb_datetime_meta_box( $post ) {
 	// Add a nonce field so we can check for it later.
 	wp_nonce_field( 'urb_event_save_post', 'urb_event_save_post' );
 
@@ -33,7 +51,7 @@ function urb_event_admin_init_event_information() {
 	echo "\t" . '<span class="start_datetime_date">' . "\n";
 	echo "\t\t" . '<select id="start_datetime_month" name="start_datetime_month">' . "\n";
 	for( $month = 1; $month <= 12; $month++ ) {
-		echo "\t\t\t" . '<option value="' . str_pad($month, 2, '0') . '"' . ($start_datetime->format('m') == $month ? ' selected="selected"' : '') . '>' . date('m-M', mktime(0, 0, 0, $month, 10)) . '</option>' . "\n";
+		echo "\t\t\t" . '<option value="' . str_pad($month, 2, '0', STR_PAD_LEFT) . '"' . ($start_datetime->format('m') == $month ? ' selected="selected"' : '') . '>' . date('m-M', mktime(0, 0, 0, $month, 10)) . '</option>' . "\n";
 	}
 	echo "\t\t" . '</select>';
 	echo "\t\t" . '<input id="start_datetime_day" name="start_datetime_day" type="number" min="1" max="31" step="1" maxlength="2" value="' . $start_datetime->format('d') . '" />' . "\n";
@@ -52,7 +70,7 @@ function urb_event_admin_init_event_information() {
 	echo "\t" . '<span class="end_datetime_date">' . "\n";
 	echo "\t\t" . '<select id="end_datetime_month" name="end_datetime_month">' . "\n";
 	for( $month = 1; $month <= 12; $month++ ) {
-		echo "\t\t\t" . '<option value="' . str_pad($month, 2, '0') . '"' . ($end_datetime->format('m') == $month ? ' selected="selected"' : '') . '>' . date('m-M', mktime(0, 0, 0, $month, 10)) . '</option>' . "\n";
+		echo "\t\t\t" . '<option value="' . str_pad($month, 2, '0', STR_PAD_LEFT) . '"' . ($end_datetime->format('m') == $month ? ' selected="selected"' : '') . '>' . date('m-M', mktime(0, 0, 0, $month, 10)) . '</option>' . "\n";
 	}
 	echo "\t\t" . '</select>' . "\n";
 	echo "\t\t" . '<input id="end_datetime_day" name="end_datetime_day" type="number" min="1" max="31" step="1" maxlength="2" value="' . $end_datetime->format('d') . '" />' . "\n";
@@ -65,6 +83,27 @@ function urb_event_admin_init_event_information() {
 	echo "\t\t" . ':' . "\n";
 	echo "\t\t" . '<input id="end_datetime_minute" name="end_datetime_minute" type="number" min="0" max="59" step="1" maxlength="2" value="' . $end_datetime->format('i') . '" />' . "\n";
 	echo "\t" . '</span>' . "\n";
+	echo '</p>' . "\n";
+}
+
+function urb_location_meta_box( $post ) {
+	$event = get_post_custom($post->ID);
+
+	$location = ( array_key_exists('location', $event) ? $event['location'][0] : '' );
+	$venue_website = ( array_key_exists('venue_website', $event) ? $event['venue_website'][0] : '' );
+	$address = ( array_key_exists('address', $event) ? $event['address'][0] : '' );
+	
+	echo '<p>' . "\n";
+	echo "\t" . '<label for="location">Name:</label>' . "\n";
+	echo "\t" . '<input id="location" name="location" type="text" value="' . $location . '" />' . "\n";
+	echo '</p>' . "\n";
+	echo '<p>' . "\n";
+	echo "\t" . '<label for="venue_website">URL:</label>' . "\n";
+	echo "\t" . '<input id="venue_website" name="venue_website" type="url" value="' . $venue_website . '" />' . "\n";
+	echo '</p>' . "\n";
+	echo '<p>' . "\n";
+	echo "\t" . '<label for="address">Address:</label>' . "\n";
+	echo "\t" . '<textarea id="address" name="address">' . $address . '</textarea>' . "\n";
 	echo '</p>' . "\n";
 }
 
@@ -222,7 +261,71 @@ function urb_event_post_updated_messages() {
 	return $messages;
 }
 
-function urb_event_save_post() {
+function urb_event_save_datetime( $post_id ) {
+	$fields = array('all_day');
+	foreach( $fields as $field ) {
+		if( isset( $_POST[$field] ) ) {
+			$value = sanitize_text_field( $_POST[$field] );
+			update_post_meta( $post_id, $field, $value );
+		}
+	}
+
+	$start_datetime = new DateTime();
+	$start_datetime->setTimeZone( new DateTimeZone('America/Detroit') );
+	if( isset($_POST['start_datetime_month']) && isset($_POST['start_datetime_day']) && isset($_POST['start_datetime_year']) )
+	{
+		$start_datetime->setDate(
+			(int)$_POST['start_datetime_year'],
+			(int)$_POST['start_datetime_month'],
+			(int)$_POST['start_datetime_day']
+		);
+	}
+	if( isset($_POST['start_datetime_hour']) && isset($_POST['start_datetime_minute']) )
+	{
+		$start_datetime->setTime(
+			(int)$_POST['start_datetime_hour'],
+			(int)$_POST['start_datetime_minute']
+		);
+	}
+	//var_dump($start_datetime);die();
+	update_post_meta( $post_id, 'start_datetime', $start_datetime->format(DATE_W3C) );
+
+	$end_datetime = new DateTime();
+	$end_datetime->setTimeZone( new DateTimeZone('America/Detroit') );
+	if( isset($_POST['end_datetime_month']) && isset($_POST['end_datetime_day']) && isset($_POST['end_datetime_year']) )
+	{
+		$end_datetime->setDate(
+			(int)$_POST['end_datetime_year'],
+			(int)$_POST['end_datetime_month'],
+			(int)$_POST['end_datetime_day']
+		);
+	}
+	if( isset($_POST['end_datetime_hour']) && isset($_POST['end_datetime_minute']) )
+	{
+		$end_datetime->setTime(
+			(int)$_POST['end_datetime_hour'],
+			(int)$_POST['end_datetime_minute']
+		);
+	}
+	update_post_meta( $post_id, 'end_datetime', $end_datetime->format(DATE_W3C) );
+}
+
+function urb_event_save_location( $post_id ) {
+	$fields = array(
+		'location',
+		'venue_website',
+		'address'
+	);
+
+	foreach( $fields as $field ) {
+		if( isset($_POST[$field]) ) {
+			$value = sanitize_text_field( $_POST[$field] );
+			update_post_meta( $post_id, $field, $value );
+		}
+	}
+}
+
+function urb_event_save_post( $post_id ) {
 	// Check if our nonce is set.
 	if( !isset( $_POST['urb_event_save_post'] ) ) {
 		return;
@@ -250,54 +353,13 @@ function urb_event_save_post() {
 	}
 
 	/* OK, it's safe for us to save the data now. */
-	$fields = array('all_day');
-	foreach( $fields as $field ) {
-		if( isset( $_POST[$field] ) ) {
-			$value = sanitize_text_field( $_POST[$field] );
-			update_post_meta( $post_id, $field, $value );
-		}
-	}
-
-	$start_datetime = new DateTime();
-	$start_datetime->setTimeZone( new DateTimeZone('America/Detroit') );
-	if( isset($_POST['start_datetime_month']) && isset($_POST['start_datetime_day']) && isset($_POST['start_datetime_year']) )
-	{
-		$start_datetime->setDate(
-			$_POST['start_datetime_year'],
-			$_POST['start_datetime_month'],
-			$_POST['start_datetime_day']
-		);
-	}
-	if( isset($_POST['start_datetime_hour']) && isset($_POST['start_datetime_minute']) )
-	{
-		$start_datetime->setTime(
-			$_POST['start_datetime_hour'],
-			$_POST['start_datetime_minute']
-		);
-	}
-	update_post_meta( $post_id, 'start_datetime', $start_datetime->format(DATE_W3C) );
-
-	$end_datetime = new DateTime();
-	$end_datetime->setTimeZone( new DateTimeZone('America/Detroit') );
-	if( isset($_POST['end_datetime_month']) && isset($_POST['end_datetime_day']) && isset($_POST['end_datetime_year']) )
-	{
-		$end_datetime->setDate(
-			$_POST['end_datetime_year'],
-			$_POST['end_datetime_month'],
-			$_POST['end_datetime_day']
-		);
-	}
-	if( isset($_POST['end_datetime_hour']) && isset($_POST['end_datetime_minute']) )
-	{
-		$end_datetime->setTime(
-			$_POST['end_datetime_hour'],
-			$_POST['end_datetime_minute']
-		);
-	}
-	update_post_meta( $post_id, 'end_datetime', $end_datetime->format(DATE_W3C) );
+	urb_event_save_datetime($post_id);
+	urb_event_save_location($post_id);
 }
 
-add_action( 'admin_init', 'urb_event_admin_init' );
+add_action( 'add_meta_boxes', 'urb_event_add_meta_boxes' );
+
+//add_action( 'admin_init', 'urb_event_admin_init' );
 add_action( 'after_setup_theme', 'urb_event_after_setup_theme' );
 add_action( 'init', 'urb_event_init' );
 add_action( 'save_post', 'urb_event_save_post' );

@@ -103,7 +103,9 @@ function urb_product_init() {
 		//'post-formats'
 	);
 
-	$taxonomies = array();
+	$taxonomies = array(
+		'product_category'
+	);
 
 	$rewrite = array(
 		'slug'       => $post_type,
@@ -148,7 +150,7 @@ function urb_product_init_categories() {
 	$description = "Categorize products into groups and sub-groups of similar items.";
 	$taxonomy    = sanitize_key($single_name);
 
-	$object_type = array( 'product' );
+	$object_type = 'product';
 	
 	$labels = array(
 		'name'                       => $plural_name,
@@ -171,7 +173,7 @@ function urb_product_init_categories() {
 	);
 	
 	$rewrite = array(
-		'slug'         => "product/{$taxonomy}",
+		'slug'         => $taxonomy,
 		'with_front'   => false,
 		'hierarchical' => false,
 		'ep_mask'      => EP_NONE

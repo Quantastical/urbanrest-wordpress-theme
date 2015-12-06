@@ -4,16 +4,15 @@
 	<main class="taxonomy row around-xs">
 		<article id="taxonomy-<?php echo $term->term_id; ?>" <?php post_class('col-xs-11 col-sm-9 col-md-7'); ?>>
 			<header class="taxonomy-header" role="banner">
-				<h2 class="beer-title">Posts tagged with &ldquo;<?php echo $term->name; ?>&rdquo;</h2>
+				<h2 class="taxonomy-title">Posts tagged with &ldquo;<?php echo $term->name; ?>&rdquo;</h2>
 			</header>
 			<div class="taxonomy-content">
 <?php var_dump( $term ); ?>
 				<ol>
 <?php
 $args = array(
-	'post_type'      => 'post',
-	'post_tag'       => 'local-news',
-	'post_status'    => 'publish',
+	'post_type'      => 'beer',
+	'beer_style'       => 'belgian-quadrupel',
 	'posts_per_page' => -1
 );
 $query = new WP_Query($args);

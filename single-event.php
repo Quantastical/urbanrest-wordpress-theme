@@ -2,7 +2,7 @@
 <?php get_sidebar(); ?>
 <?php the_post(); ?>
 	<main class="event row around-xs">
-		<article id="event-<?php the_ID(); ?>" <?php post_class('col-xs-11 col-sm-9 col-md-7'); ?>>
+		<article id="event-<?php the_ID(); ?>" <?php post_class('col-xs-11 col-sm-9 col-md-7'); ?> itemscope itemtype="http://schema.org/Event">
 <?php get_template_part( 'event', 'header' ); ?>
 <?php get_template_part( 'event', 'content' ); ?>
 <?php get_template_part( 'event', 'footer' ); ?>

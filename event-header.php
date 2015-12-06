@@ -19,17 +19,37 @@
 				</figure>
 <?php endif; ?>
 
-				<?php the_title( '<h2 class="post-title">', '</h2>' ); ?>
+				<?php the_title( '<h2 class="post-title" itemprop="name">', '</h2>' ); ?>
 
 				<div class="event-meta">
-					<div class="byline">
-						<?php echo get_avatar( get_the_author_meta('ID'), '96', 'http://www.urbanrestbrewing.com/wp-content/themes/urbanrest-wordpress-theme/images/default-avatar.png' ); ?>
-						<address class="event-author">
-							<?php the_author_posts_link(); ?>
-						</address>
-						<time class="event-date" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
-							<?php echo esc_html( get_the_date() ); ?>
-						</time>
+<?php $event = get_metadata('post', $post->ID); ?>
+<?php if( $event['start_datetime'] ) : ?>
+					<time>
+						<meta itemprop="startDate" content="<?php echo $event['start_datetime'][0]; ?>" />
+						<?php echo date('l, F jS, Y g:i A', strtotime($event['start_datetime'][0]) ); ?>
+<?php 	if( $event['end_datetime'] ) : ?>
+						<meta itemprop="endDate" content="<?php echo $event['end_datetime'][0]; ?>" />
+						&ndash; <?php echo date('g:i A', strtotime($event['end_datetime'][0]) ); ?>
+<?php 	endif; ?>
+					</time>
+<?php endif; ?>
+<?php if( $event['location'] ) : ?>
+					<div itemprop="location" itemscope itemtype="http://schema.org/Place">
+<?php 	if( $event['venue_website'] ) : ?>
+						<a itemprop="url" href="<?php echo $event['venue_website'][0]; ?>"><?php echo $event['location'][0]; ?></a>
+<?php 	else : ?>
+						<?php echo $event['location'][0]; ?>
+<?php 	endif; ?>
+<?php 	if( $event['address'] ) : ?>
+						<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+							<!-- TODO: user proper address props
+							<span itemprop="addressLocality">Warren</span>,
+							<span itemprop="addressRegion">MI</span>
+							-->
+							<?php echo $event['address'][0]; ?>
+						</div>
+<?php 	endif; ?>
 					</div>
+<?php endif; ?>
 				</div>
 			</header>

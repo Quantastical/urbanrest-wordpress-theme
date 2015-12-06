@@ -42,6 +42,11 @@
 				height: 50vw; /* 1/2 screen-width in order to make a square from .col-6 */
 				position: relative;
 
+				@include media('<=phone')
+				{
+					width: 100vw;
+				}
+
 				&.shop-apparel { background-image: url(images/shop-apparel.png); }
 				&.shop-drinkware { background-image: url(images/shop-drinkware.png); }
 				&.shop-brewing { background-image: url(images/shop-brewing.png); }
@@ -131,6 +136,11 @@
 					@include transition( opacity 0.33s, padding-top 0.5s );
 					top: 0;
 					width: 100%;
+
+					@include media('<=phone')
+					{
+						display: none;
+					}
 
 					&:after
 					{

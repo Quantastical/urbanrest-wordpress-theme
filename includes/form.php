@@ -169,7 +169,7 @@ function urb_form_init() {
 
 	$rewrite = array(
 		'slug'       => $post_type,
-		'with_front' => true,
+		'with_front' => false,
 		'feeds'      => true,
 		'pages'      => true,
 		'ep_mask'    => EP_PERMALINK

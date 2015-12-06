@@ -1,4 +1,4 @@
-			<div class="event-content">
+			<div class="event-content" itemprop="description">
 				<?php
 					/* translators: %s: Name of current post */
 					the_content( sprintf(

@@ -4309,7 +4309,11 @@ html.no-javascript, html.javascript {
     background-size: cover;
     height: 50vw;
     /* 1/2 screen-width in order to make a square from .col-6 */
-    position: relative; }
+    position: relative; } }
+@media only screen and (max-width: 500px) {
+  .site .site-shop .shop-category {
+    width: 100vw; } }
+@media only screen {
   .site .site-shop .shop-category.shop-apparel {
     background-image: url(images/shop-apparel.png); }
   .site .site-shop .shop-category.shop-drinkware {
@@ -4385,7 +4389,11 @@ html.no-javascript, html.javascript {
     -moz-transition: opacity 0.33s, padding-top 0.5s;
     transition: opacity 0.33s, padding-top 0.5s;
     top: 0;
-    width: 100%; }
+    width: 100%; } }
+@media only screen and (max-width: 500px) {
+  .site .site-shop .shop-category .shop-category-link {
+    display: none; } }
+@media only screen {
   .site .site-shop .shop-category .shop-category-link:after {
     content: "";
     font-family: 'FontAwesome';

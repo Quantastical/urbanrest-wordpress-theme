@@ -5,6 +5,7 @@
 
 	<section class="site-events col-sm-6">
 		<h3>
+			<!-- TODO: make this source less 'neut' -->
 			<span class="word">Upcoming</span>
 			<span class="letter">E</span>
 			<span class="letter">v</span>
@@ -63,7 +64,7 @@ $events = get_posts($event_args);
 			<li>Exclusive #URBcrew shirt</li>
 			<li>Early access to limited releases</li>
 		</ul>
-		<a class="btn btn-primary" href="#">
+		<a class="btn btn-primary" href="/URBclub">
 			<span class="btn-label">Join Now</span>
 			<span class="btn-content">$100</span>
 		</a>
