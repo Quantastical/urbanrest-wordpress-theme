@@ -12,7 +12,8 @@
 				<div id="content">
 					<h1>XML Sitemap</h1>
 					<p class="expl">
-						This is an XML Sitemap, meant for consumption by search engines.
+						This is an XML Sitemap that is designed for search engines.
+						If you are looking for the main website, visit <a href="http://Urbanrest.com">Urbanrest.com</a>.
 					</p>
 					<p class="expl">
 						You can find more information about XML sitemaps on <a href="http://sitemaps.org">sitemaps.org</a>.
