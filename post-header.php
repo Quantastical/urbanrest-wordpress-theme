@@ -31,5 +31,16 @@
 							<?php echo esc_html( get_the_date() ); ?>
 						</time>
 					</div>
+					<div class="category">
+						<p>Categorized as:</p>
+						<p>
+<?php
+$separator = ', ';
+$parents = null;
+$post_id = $post->ID;
+echo get_the_category_list( $separator, $parents, $post_id );
+?>
+						</p>
+					</div>
 				</div>
 			</header>

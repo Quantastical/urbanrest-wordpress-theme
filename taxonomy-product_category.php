@@ -9,22 +9,32 @@
 			<div class="taxonomy-content">
 				<ol>
 <?php
-	$post_args = array(
-		'post_type'      => 'product',
-		'product_category'     => $category->slug,
-		'posts_per_page' => -1
-	);
-	$query = new WP_Query($post_args);
+$post_args = array(
+	'post_type'      => 'product',
+	//'product_category'     => $category->slug,
+	'posts_per_page' => -1,
+	'tax_query' => array(
+		'relation' => 'AND',
+		array(
+			'taxonomy' => 'product_category',
+			'field' => 'slug',
+			'terms' => array($category->slug),
+			'include_children' => true,
+			'operator' => 'IN'
+		)
+	)
+);
+$query = new WP_Query($post_args);
 
-	query_posts( $post_args );
-	while ( have_posts() ) : the_post();
+query_posts( $post_args );
+while ( have_posts() ) : the_post();
 ?>
 					<li>
 						<a href="<?php echo the_permalink(); ?>"><?php echo the_title(); ?></a>
 					</li>
 <?php
-	endwhile;
-	wp_reset_query();
+endwhile;
+wp_reset_query();
 ?>
 				</ol>
 			</div>

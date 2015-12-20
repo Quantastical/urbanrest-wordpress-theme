@@ -5176,6 +5176,10 @@ html.no-javascript, html.javascript {
   height: 3em;
   margin-right: 0.75em;
   width: auto; }
+.site main.post .post-header .post-meta .category {
+  float: right;
+  margin-top: -3em;
+  text-align: right; }
 .site main.post .post-image {
   align-items: center;
   background-position: center;

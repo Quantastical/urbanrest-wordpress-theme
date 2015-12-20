@@ -10,13 +10,23 @@
 				</p>
 			</header>
 			<div class="taxonomy-content">
-				<p>Posts tagged with the <em><?php echo $current_term->name; ?></em> keyword:</p>
+				<p>Beers tagged with the <em><?php echo $current_term->name; ?></em> keyword:</p>
 				<ol>
 <?php
 $post_args = array(
-	'post_type'      => 'post',
+	'post_type'      => 'beer',
+	//'beer_style'     => $current_term->slug,
 	'posts_per_page' => -1,
-	'tag' => array($current_term->slug)
+	'tax_query' => array(
+		'relation' => 'AND',
+		array(
+			'taxonomy' => 'beer_keyword',
+			'field' => 'slug',
+			'terms' => array($current_term->slug),
+			'include_children' => true,
+			'operator' => 'IN'
+		)
+	)
 );
 $query = new WP_Query($post_args);
 
