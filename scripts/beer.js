@@ -45,6 +45,12 @@ jQuery(function($){
 	};
 
 	Urb.setupRatingsFrom3rdParties = function() {
+		$.ajaxSetup({
+			beforeSend: function(xhr) {
+				xhr.setRequestHeader('Authorization', 'Basic ' + btoa('urbanrest:Greensleeves'));
+			}
+		});
+
 		// Untappd
 		$.ajax({
 			type: 'get',

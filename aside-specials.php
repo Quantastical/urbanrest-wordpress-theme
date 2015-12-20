@@ -33,11 +33,12 @@ $decks = get_posts($deck_args);
 				<tbody>
 <?php foreach( $taps as $beer ) : ?>
 <?php 	setup_postdata( $GLOBALS['post'] =& $beer ); ?>
+<?php 	$alcohol = get_post_meta( get_the_ID(), 'alcohol', true ); ?>
 					<tr class="beer">
 						<td class="title">
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</td>
-						<td class="abv"><?php echo get_post_meta( get_the_ID(), 'alcohol_by_volume', true ); ?></td>
+						<td class="abv"><?php echo ($alcohol > 0) ? $alcohol : ''; ?></td>
 						<td class="style"><?php the_terms(0, 'beer_style'); ?></td>
 					</tr>
 <?php endforeach; ?>
@@ -52,6 +53,7 @@ $decks = get_posts($deck_args);
 				<thead>
 					<tr>
 						<th class="title">Title</th>
+						<th class="abv">ABV</th>
 						<th class="style">Style</th>
 					</tr>
 				</thead>
@@ -62,6 +64,7 @@ $decks = get_posts($deck_args);
 						<td class="title">
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</td>
+						<th class="abv">&nbsp;</th>
 						<td class="style"><?php the_terms(0, 'beer_style'); ?></td>
 					</tr>
 <?php endforeach; ?>

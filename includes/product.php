@@ -173,7 +173,7 @@ function urb_product_init_categories() {
 	);
 	
 	$rewrite = array(
-		'slug'         => $taxonomy,
+		'slug'         => "{$object_type}/{$taxonomy}",
 		'with_front'   => false,
 		'hierarchical' => false,
 		'ep_mask'      => EP_NONE
@@ -205,7 +205,7 @@ function urb_product_init_categories() {
 		'sort'                  => null
 	);
 
-	register_taxonomy( "product_{$taxonomy}", $object_type, $args );
+	register_taxonomy( "{$object_type}_{$taxonomy}", $object_type, $args );
 }
 
 function urb_product_post_updated_messages() {
@@ -254,8 +254,8 @@ function urb_product_post_updated_messages() {
 }
 
 add_action( 'after_setup_theme', 'urb_product_after_setup_theme' );
+add_action( 'init', 'urb_product_init_categories' ); /* must be before urb_product_init (see: http://wordpress.stackexchange.com/a/60899/85316) */
 add_action( 'init', 'urb_product_init' );
-add_action( 'init', 'urb_product_init_categories' );
 add_action( 'edit_tag_form_fields', 'urb_product_edit_tag_form_fields' );
 add_action( 'edited_terms', 'urb_product_edited_terms' );
 //add_action( 'init', 'urb_product_add_taxonomy_meta' );

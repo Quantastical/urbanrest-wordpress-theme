@@ -109,7 +109,11 @@ function urb_get_average_rating( $post_id )
 	}
 
 	$ratings_count = count( $ratings );
-	$average_rating = $total_ratings / $ratings_count;
+	if( $ratings_count > 0 ) {
+		$average_rating = $total_ratings / $ratings_count;
+	} else {
+		$average_rating = 0;
+	}
 
 	return sprintf( '%0.1f', $average_rating );
 }

@@ -77,7 +77,7 @@ wp_nav_menu(array(
 	'items_wrap'     => '<ul id="%1$s" class="%2$s" style="width:' . ( 3 * ceil(count($menu_items) / 2) ) . 'em">%3$s</ul>',
 ));
 ?>
-<?php echo do_shortcode('[form post_id="324" class="row contact-form" title="Stay Connected"]'); ?>
+<?php echo do_shortcode('[form post_id="11" class="row contact-form" title="Stay Connected"]'); ?>
 		<section class="legal">
 			<a href="<?php echo get_permalink( get_page_by_path( 'privacy' ) ); ?>">Learn about how we protect your privacy</a>
 		</section>

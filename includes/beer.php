@@ -259,7 +259,7 @@ function urb_beer_init() {
 
 	$taxonomies = array(
 		'beer_style',
-		'beer_tag'
+		'beer_keyword'
 	);
 
 	$rewrite = array(
@@ -405,7 +405,7 @@ function urb_beer_init_styles() {
 	);
 	
 	$rewrite = array(
-		'slug'         => "style",
+		'slug'         => "beer/style",
 		'with_front'   => false,
 		'hierarchical' => false,
 		'ep_mask'      => EP_NONE
@@ -431,7 +431,7 @@ function urb_beer_init_styles() {
 		'description'           => $description,
 		'hierarchical'          => true,
 		'update_count_callback' => '',
-		'query_var'             => "{$object_type}_{$taxonomy}",
+		'query_var'             => $taxonomy,
 		'rewrite'               => $rewrite,
 		'capabilities'          => $capabilities,
 		'sort'                  => null
@@ -460,10 +460,10 @@ function urb_beer_init_statuses() {
 	) );
 }
 
-function urb_beer_init_tags() {
-	$single_name = 'Tag';
-	$plural_name = 'Tags';
-	$description = "Tags provide a useful way to group related beer that provide more granularity than its style.";
+function urb_beer_init_keywords() {
+	$single_name = 'Keyword';
+	$plural_name = 'Keywords';
+	$description = "Keywords provide a useful way to group related beer that provide more granularity than its style.";
 	$taxonomy    = sanitize_key($single_name);
 
 	$object_type = 'beer';
@@ -489,7 +489,7 @@ function urb_beer_init_tags() {
 	);
 	
 	$rewrite = array(
-		'slug'         => "beer/{$taxonomy}",
+		'slug'         => "beer/keyword",
 		'with_front'   => false,
 		'hierarchical' => false,
 		'ep_mask'      => EP_NONE
@@ -753,10 +753,10 @@ add_action( 'admin_footer-post.php', 'urb_beer_admin_footer_post' );
 add_action( 'admin_footer-post-new.php', 'urb_Beer_admin_footer_post_new' );
 add_action( 'admin_footer-edit.php', 'urb_beer_admin_footer_edit' );
 add_action( 'after_setup_theme', 'urb_beer_after_setup_theme' );
+add_action( 'init', 'urb_beer_init_styles' ); /* must be before urb_beer_init (see: http://wordpress.stackexchange.com/a/60899/85316) */
+add_action( 'init', 'urb_beer_init_keywords' ); /* must be before urb_beer_init (see: http://wordpress.stackexchange.com/a/60899/85316) */
 add_action( 'init', 'urb_beer_init' );
-add_action( 'init', 'urb_beer_init_styles' );
 add_action( 'init', 'urb_beer_init_statuses' );
-add_action( 'init', 'urb_beer_init_tags' );
 add_action( 'save_post', 'urb_beer_save_post' );
 
 add_filter( 'post_updated_messages', 'urb_beer_post_updated_messages' );

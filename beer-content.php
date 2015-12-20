@@ -29,7 +29,7 @@
 <?php 	echo $glassware[0]; ?>
 				</section>
 <?php endif; ?>
-<?php $tags = get_the_terms( $post->ID, 'beer_tag' ); ?>
+<?php $tags = get_the_terms( $post->ID, 'beer_keyword' ); ?>
 <?php if( $tags ): ?>
 				<section class="beer-tags">
 					<h5>Tags related to this beer</h5>

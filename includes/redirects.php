@@ -1,14 +1,22 @@
 <?php
 function urb_load_textdomain() {
+	/*
 	// TODO: replace hard-coded domain with configurable option
-	if($_SERVER['HTTP_HOST'] === 'localapi.urbanrest.com') {
+	if(in_array($_SERVER['HTTP_HOST'], array('api.urbanrest.com', 'testapi.urbanrest.com', 'localapi.urbanrest.com', 'devapi.urbanrest.com'))) {
 		include(TEMPLATEPATH . '/api/index.php');
 		die();
 	}
+	*/
 }
 
 function urb_send_headers( )
 {
+	// TODO: replace hard-coded domain with configurable option
+	if(in_array($_SERVER['HTTP_HOST'], array('api.urbanrest.com', 'testapi.urbanrest.com', 'localapi.urbanrest.com', 'devapi.urbanrest.com'))) {
+		include(TEMPLATEPATH . '/api/index.php');
+		die();
+	}
+
 	global $route, $wp_query, $window_title;
 	$bits = explode( "/", $_SERVER['REQUEST_URI'] );
 

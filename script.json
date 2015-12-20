@@ -1,5 +1,6 @@
 {
 	"script.js" : [
+		"scripts/plugins/jQuery.fn.sortElements.js",
 		"scripts/plugins/jquery.urbModal.js",
 		"scripts/reset.js",
 
@@ -7,6 +8,7 @@
 		"scripts/navigation.js",
 
 		"scripts/header.js",
+		"scripts/specials.js",
 		"scripts/community.js",
 		"scripts/company.js",
 
