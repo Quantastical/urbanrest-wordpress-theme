@@ -1,8 +1,12 @@
 <?php
 
-	function urb_product_edit_tag_form_fields( $tag ) {
-		global $wpdb;
-		$meta_type = substr($wpdb->termmeta, strlen($wpdb->prefix), strlen('meta'));
+function urb_product_admin_init() {
+	add_meta_box( 'product_pricing', 'Pricing', 'urb_product_admin_init_pricing', 'product', 'normal', 'low');
+}
+
+function urb_product_edit_tag_form_fields( $tag ) {
+	global $wpdb;
+	$meta_type = substr($wpdb->termmeta, strlen($wpdb->prefix), strlen('meta'));
 	$object_id = $tag->term_id;
 	$meta_key = 'subtitle';
 	$single = true;
@@ -208,6 +212,21 @@ function urb_product_init_categories() {
 	register_taxonomy( "{$object_type}_{$taxonomy}", $object_type, $args );
 }
 
+function urb_product_admin_init_pricing() {
+	global $post;
+	
+	// Add a nonce field so we can check for it later.
+	wp_nonce_field( 'urb_product_save_post', 'urb_product_save_post' );
+
+	$product = get_post_custom($post->ID);
+
+	$base_price = ( array_key_exists('base_price', $product) ? $product['base_price'][0] : '' );
+	echo '<p>' . "\n";
+	echo "\t" . '<label for="base_price">Base Price:</label>' . "\n";
+	echo "\t" . '$ <input id="base_price" name="base_price" type="number" value="' . $base_price . '" min="0" step="0.01" />' . "\n";
+	echo '</p>' . "\n";
+}
+
 function urb_product_post_updated_messages() {
 	$post             = get_post();
 	$post_type        = get_post_type( $post );
@@ -253,12 +272,52 @@ function urb_product_post_updated_messages() {
 	return $messages;
 }
 
+function urb_product_save_post( $post_id ) {
+	// Check if our nonce is set.
+	if( !isset( $_POST['urb_product_save_post'] ) ) {
+		return;
+	}
+
+	// Verify that the nonce is valid.
+	if( !wp_verify_nonce( $_POST['urb_product_save_post'], 'urb_product_save_post' ) ) {
+		return;
+	}
+
+	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
+	if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+
+	// Check the user's permissions.
+	if( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
+		if( !current_user_can( 'edit_page', $post_id ) ) {
+			return;
+		}
+	} else {
+		if( !current_user_can( 'edit_post', $post_id ) ) {
+			return;
+		}
+	}
+
+	/* OK, it's safe for us to save the data now. */
+	urb_product_save_pricing($post_id);
+}
+
+function urb_product_save_pricing( $post_id ) {
+	if( isset( $_POST['base_price'] ) ) {
+		$base_price = sanitize_text_field( $_POST['base_price'] );
+		update_post_meta( $post_id, 'base_price', $base_price );
+	}
+}
+
+add_action( 'admin_init', 'urb_product_admin_init' );
 add_action( 'after_setup_theme', 'urb_product_after_setup_theme' );
 add_action( 'init', 'urb_product_init_categories' ); /* must be before urb_product_init (see: http://wordpress.stackexchange.com/a/60899/85316) */
 add_action( 'init', 'urb_product_init' );
 add_action( 'edit_tag_form_fields', 'urb_product_edit_tag_form_fields' );
 add_action( 'edited_terms', 'urb_product_edited_terms' );
 //add_action( 'init', 'urb_product_add_taxonomy_meta' );
+add_action( 'save_post', 'urb_product_save_post' );
 
 add_filter( 'post_updated_messages', 'urb_product_post_updated_messages' );
 
