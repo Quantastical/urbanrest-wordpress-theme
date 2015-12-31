@@ -196,7 +196,7 @@
 					left: 0;
 					position: fixed;
 					text-align: center;
-					top: 5%;
+					top: 0;
 					width: 100%;
 					z-index: $layer-social-navigation;
 
@@ -208,6 +208,22 @@
 					.social-menu
 					{
 						/* social.scss */
+					}
+				}
+			}
+		}
+
+		&.admin-bar
+		{
+			.site-navigation
+			{
+				.social-navigation
+				{
+					top: 32px;
+
+					@include media( '<784px' )
+					{
+						top: 46px;
 					}
 				}
 			}

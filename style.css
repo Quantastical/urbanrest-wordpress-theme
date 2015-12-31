@@ -3048,7 +3048,7 @@ html.no-javascript, html.javascript {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     width: 100%;
-    z-index: 750; } }
+    z-index: 500; } }
 @media only screen and (max-width: 768px) {
   .site .site-header .site-navigation .main-navigation {
     padding: 0; } }
@@ -3170,13 +3170,88 @@ html.no-javascript, html.javascript {
     left: 0;
     position: fixed;
     text-align: center;
-    top: 5%;
+    top: 0;
     width: 100%;
-    z-index: 500; }
+    z-index: 250; }
   .site .site-header .site-navigation .social-navigation h3 {
     display: none; }
   .site .site-header .site-navigation .social-navigation .social-menu {
-    /* social.scss */ } }
+    /* social.scss */ }
+  .site.admin-bar .site-navigation .social-navigation {
+    top: 32px; } }
+@media only screen and (max-width: 783px) {
+  .site.admin-bar .site-navigation .social-navigation {
+    top: 46px; } }
+
+@media only screen {
+  .site .site-header .site-search {
+    display: none;
+    opacity: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+    width: 100%;
+    z-index: 750; }
+  .site .site-header .site-search.searching {
+    display: block;
+    opacity: 1; }
+  .site .site-header .site-search.searching + .site-navigation .social-navigation {
+    display: none; }
+  .site .site-header .site-search .search-label {
+    display: none;
+    font-size: 1em;
+    left: 0;
+    margin: 0.5em;
+    padding: 0.5em 0.75em;
+    position: absolute;
+    top: 0;
+    z-index: 5; }
+  .site .site-header .site-search .search-label.visible {
+    display: block; }
+  .site .site-header .site-search .search-input {
+    background-color: rgba(255, 255, 255, 0.33);
+    border: none;
+    border-radius: 0.5em;
+    box-sizing: border-box;
+    color: black;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 600;
+    left: 0;
+    margin: 0.5em;
+    outline: none;
+    padding: 0.5em 0.25em;
+    position: absolute;
+    top: 0;
+    width: calc(100% - 5.25em);
+    z-index: 1; }
+  .site .site-header .site-search .search-input:valid ~ .search-submit:before {
+    content: 'Search'; }
+  .site .site-header .site-search .search-input:invalid ~ .search-submit:before {
+    content: 'Cancel'; }
+  .site .site-header .site-search .search-submit {
+    background: none;
+    border: none;
+    color: #118844;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1em;
+    margin: 0.5em;
+    outline: none;
+    padding: 0.5em 0.25em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 3; }
+  .site .site-header .site-search .search-submit:hover {
+    color: #17ba5d; }
+  .site .site-header .site-search .search-submit:before {
+    content: 'Search'; }
+  .site .site-header .site-search .search-submit .btn-label {
+    display: none; } }
 @media only screen {
   .social-menu {
     list-style: none;
@@ -3223,7 +3298,8 @@ html.no-javascript, html.javascript {
   .social-menu .menu-item.facebook a {
     color: #2b4170; }
   .social-menu .menu-item.facebook a:before {
-    content: ""; }
+    content: "";
+    width: 0.819em; }
   .social-menu .menu-item.facebook a:hover:before {
     color: #3B5998; }
   .social-menu .menu-item.google-plus a {
@@ -3244,6 +3320,29 @@ html.no-javascript, html.javascript {
     content: ""; }
   .social-menu .menu-item.pinterest a:hover:before {
     color: #CB2027; }
+  .social-menu .menu-item.search a {
+    border-color: transparent;
+    border-radius: 50%;
+    color: #0b562b;
+    margin-left: 0;
+    outline: none; }
+  .social-menu .menu-item.search a:before {
+    background-color: transparent; }
+  .social-menu .menu-item.search a:after {
+    color: rgba(255, 255, 255, 0.75);
+    content: "";
+    display: inline-block;
+    font-family: 'FontAwesome';
+    height: 1.9em;
+    line-height: 1.9em;
+    margin-left: -1.9em;
+    -webkit-transition: background-color 0.11s, color 0.11s;
+    -moz-transition: background-color 0.11s, color 0.11s;
+    transition: background-color 0.11s, color 0.11s;
+    vertical-align: top;
+    width: 1.9em; }
+  .social-menu .menu-item.search a:hover:after {
+    color: white; }
   .social-menu .menu-item.twitter a {
     color: #0083b5; }
   .social-menu .menu-item.twitter a:before {
@@ -3311,7 +3410,7 @@ html.no-javascript, html.javascript {
     width: 100%; }
   .site .site-header .site-title .site-logo {
     background-image: url(images/logo-3-color-inverted-min.png);
-    background-position: 50% 44%;
+    background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: 80%;
     box-sizing: border-box;

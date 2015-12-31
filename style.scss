@@ -12,8 +12,9 @@ Text Domain: urbanrest
 */
 
 $layer-modal: 1000;
-$layer-main-navigation: 750;
-$layer-social-navigation: 500;
+$layer-search: 750;
+$layer-main-navigation: 500;
+$layer-social-navigation: 250;
 
 @import 'node_modules/animate.css/animate.min.css';
 @import 'node_modules/font-awesome/scss/font-awesome.scss';
@@ -28,6 +29,7 @@ $layer-social-navigation: 500;
 @import 'styles/label';
 @import 'styles/modal';
 @import 'styles/navigation';
+@import 'styles/search';
 @import 'styles/social';
 @import 'styles/tooltip';
 

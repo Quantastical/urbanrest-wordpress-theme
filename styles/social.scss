@@ -59,12 +59,61 @@
 				.btn-label { display: none; }
 			}
 
-			&.facebook a    { color: darken( $facebook-blue, 11% );  &:before { content: $fa-var-facebook-square;    } &:hover:before { color: $facebook-blue;  } }
-			&.google-plus a { color: darken( $google-red, 11% );     &:before { content: $fa-var-google-plus-square; } &:hover:before { color: $google-red;     } }
-			&.instagram a   { color: darken( $instagram-blue, 11% ); &:before { content: $fa-var-instagram;          } &:hover:before { color: $instagram-blue; } }
-			&.pinterest a   { color: darken( $pinterest-red, 11% );  &:before { content: $fa-var-pinterest-square;   } &:hover:before { color: $pinterest-red;  } }
-			&.twitter a     { color: darken( $twitter-blue, 11% );   &:before { content: $fa-var-twitter-square;     } &:hover:before { color: $twitter-blue;   } }
-			&.youtube a     { color: darken( $youtube-red, 11% );    &:before { content: $fa-var-youtube-square;     } &:hover:before { color: $youtube-red;    } }
+			&.facebook a
+			{
+				color: darken( $facebook-blue, 11% );
+
+				&:before
+				{
+					content: $fa-var-facebook-square;
+					width: 0.819em;
+				}
+
+				&:hover:before
+				{
+					color: $facebook-blue;
+				}
+			}
+
+			&.google-plus a { color: darken( $google-red, 11% );     &:before { content: $fa-var-google-plus-square; } &:hover:before { color: $google-red;      } }
+			&.instagram a   { color: darken( $instagram-blue, 11% ); &:before { content: $fa-var-instagram;          } &:hover:before { color: $instagram-blue;  } }
+			&.pinterest a   { color: darken( $pinterest-red, 11% );  &:before { content: $fa-var-pinterest-square;   } &:hover:before { color: $pinterest-red;   } }
+			
+			&.search a 
+			{
+				border-color: transparent;
+				border-radius: 50%;
+				color: darken( $urbanrest-green, 11%);
+				margin-left: 0;
+				outline: none;
+
+				&:before
+				{
+					background-color: transparent;
+				}
+
+				&:after
+				{
+					color: rgba( white, 0.75 );
+					content: $fa-var-search;
+					display: inline-block;
+					font-family: 'FontAwesome';
+					height: 1.9em;
+					line-height: 1.9em;
+					margin-left: -1.9em;
+					@include transition( background-color 0.11s, color 0.11s );
+					vertical-align: top;
+					width: 1.9em;
+				}
+
+				&:hover:after
+				{
+					color: white;
+				}
+			}
+			
+			&.twitter a     { color: darken( $twitter-blue, 11% );   &:before { content: $fa-var-twitter-square;     } &:hover:before { color: $twitter-blue;    } }
+			&.youtube a     { color: darken( $youtube-red, 11% );    &:before { content: $fa-var-youtube-square;     } &:hover:before { color: $youtube-red;     } }
 		}
 	}
 }
