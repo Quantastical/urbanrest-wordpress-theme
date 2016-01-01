@@ -6,7 +6,10 @@ jQuery( function( $ ) {
 	Urb.$searchSubmit = $('button', Urb.$searchForm);
 
 	Urb.cancelSearching = function() {
-		Urb.$searchForm.toggleClass('searching', false);
+		// Using setTimeout to allow button click handler to trigger before blur event
+		setTimeout(function() {
+			Urb.$searchForm.toggleClass('searching', false);
+		}, 250);
 	};
 
 	Urb.changeSearch = function() {
