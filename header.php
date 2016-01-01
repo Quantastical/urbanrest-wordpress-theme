@@ -147,7 +147,7 @@
 <?php endif; ?>
 			<p><a class="skip-link screen-reader-text hidden" href="#main"><span>Skip to content</span></a>
 
-			<form action="/search" class="site-search" id="search" method="get">
+			<form action="/search" autocomplete="off" class="site-search" id="search" method="get">
 				<label class="search-label" for="q">Search Urbanrest.com for&hellip;</label>
 				<input class="search-input" id="q" name="q" required="required" type="search" />
 				<button class="search-submit" type="submit"><span class="btn-label">Find Results</span></button>

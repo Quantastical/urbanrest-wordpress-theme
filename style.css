@@ -2016,6 +2016,7 @@ html.no-javascript, html.javascript {
   background-size: cover;
   cursor: default;
   font-family: 'Roboto', Arial;
+  font-size: 16px;
   height: 100%;
   margin: 0;
   width: 100%; }
@@ -3201,11 +3202,12 @@ html.no-javascript, html.javascript {
   .site .site-header .site-search.searching + .site-navigation .social-navigation {
     display: none; }
   .site .site-header .site-search .search-label {
+    color: rgba(0, 0, 0, 0.5);
     display: none;
     font-size: 1em;
     left: 0;
     margin: 0.5em;
-    padding: 0.5em 1em;
+    padding: 0.5em;
     position: absolute;
     top: 0;
     z-index: 5; }
@@ -3225,7 +3227,7 @@ html.no-javascript, html.javascript {
     left: 0;
     margin: 0.5em;
     outline: none;
-    padding: 0.5em 0.25em;
+    padding: 0.5em;
     position: absolute;
     top: 0;
     width: calc(100% - 5.25em);
@@ -3253,6 +3255,43 @@ html.no-javascript, html.javascript {
   .site .site-header .site-search .search-submit:before {
     content: 'Search'; }
   .site .site-header .site-search .search-submit .btn-label {
+    display: none; }
+
+  .page .search-input {
+    -webkit-appearance: none;
+    /* Safari */
+    background-color: rgba(0, 0, 0, 0.11);
+    border: none;
+    border-radius: 0.5em;
+    box-sizing: border-box;
+    color: black;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 600;
+    margin: 0;
+    outline: none;
+    padding: 0.25em 0.5em;
+    z-index: 1; }
+  .page .search-input:valid ~ .search-submit:before {
+    content: 'Search'; }
+  .page .search-input:invalid ~ .search-submit:before {
+    content: 'Cancel'; }
+  .page .search-submit {
+    background: none;
+    border: none;
+    color: #118844;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1em;
+    margin: 0 0.25em;
+    outline: none;
+    padding: 0.5em 0.25em;
+    z-index: 3; }
+  .page .search-submit:hover {
+    color: #17ba5d; }
+  .page .search-submit:before {
+    content: 'Search'; }
+  .page .search-submit .btn-label {
     display: none; } }
 @media only screen {
   .social-menu {
