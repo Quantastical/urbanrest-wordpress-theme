@@ -1934,6 +1934,57 @@ Text Domain: urbanrest
   content: ""; }
 
 @font-face {
+  font-family: "Colored Crayons";
+  src: url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.eot");
+  src: url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.eot?#iefix") format("embedded-opentype"), url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.woff") format("woff"), url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.ttf") format("truetype"), url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.svg#") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Chalk It Up";
+  src: url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.eot");
+  src: url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.eot?#iefix") format("embedded-opentype"), url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.woff") format("woff"), url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.ttf") format("truetype"), url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.svg#") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Eraser";
+  src: url("fonts/David-Rakowski_Eraser/EraserRegular.eot");
+  src: url("fonts/David-Rakowski_Eraser/EraserRegular.eot?#iefix") format("embedded-opentype"), url("fonts/David-Rakowski_Eraser/EraserRegular.woff") format("woff"), url("fonts/David-Rakowski_Eraser/EraserRegular.ttf") format("truetype"), url("fonts/David-Rakowski_Eraser/EraserRegular.svg#") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "EraserDust";
+  src: url("fonts/David-Rakowski_Eraser/EraserDust.eot");
+  src: url("fonts/David-Rakowski_Eraser/EraserDust.eot?#iefix") format("embedded-opentype"), url("fonts/David-Rakowski_Eraser/EraserDust.woff") format("woff"), url("fonts/David-Rakowski_Eraser/EraserDust.ttf") format("truetype"), url("fonts/David-Rakowski_Eraser/EraserDust.svg#") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "PW Chalk";
+  src: url("fonts/PW_Chalk/PWChalk.eot");
+  src: url("fonts/PW_Chalk/PWChalk.eot?#iefix") format("embedded-opentype"), url("fonts/PW_Chalk/PWChalk.woff") format("woff"), url("fonts/PW_Chalk/PWChalk.ttf") format("truetype"), url("fonts/PW_Chalk/PWChalk.svg#") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Right Chalk";
+  src: url("fonts/Right_Chalk/Right Chalk.eot");
+  src: url("fonts/Right_Chalk/Right Chalk.eot?#iefix") format("embedded-opentype"), url("fonts/Right_Chalk/Right Chalk.woff") format("woff"), url("fonts/Right_Chalk/Right Chalk.ttf") format("truetype"), url("fonts/Right_Chalk/Right Chalk.svg#") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Urbanrest';
+  src: url(fonts/Urbanrest/Urbanrest.eot?9t6i3b);
+  src: url(fonts/Urbanrest/Urbanrest.eot?9t6i3b#iefix) format("embedded-opentype"), url(fonts/Urbanrest/Urbanrest.ttf?9t6i3b) format("truetype"), url(fonts/Urbanrest/Urbanrest.woff?9t6i3b) format("woff"), url(fonts/Urbanrest/Urbanrest.svg?9t6i3b#Urbanrest) format("svg");
+  font-weight: normal;
+  font-style: normal; }
+.fa-untappd-square, .fa-untappd {
+  font-family: 'Urbanrest' !important; }
+
+.fa-untappd-square:before {
+  content: "\e900"; }
+
+.fa-untappd:before {
+  content: "\e901"; }
+
+@font-face {
   font-family: 'Bad Script';
   font-style: normal;
   font-weight: 400;
@@ -3373,6 +3424,16 @@ html.no-javascript, html.javascript {
     content: ""; }
   .social-menu .menu-item.youtube a:hover:before {
     color: #BB0000; }
+  .social-menu .menu-item.untappd a {
+    color: #f1ba05; }
+  .social-menu .menu-item.untappd a:before {
+    background-color: #7E471C;
+    content: "\e900";
+    font-family: 'Urbanrest';
+    font-size: 2.0em;
+    width: 0.96em; }
+  .social-menu .menu-item.untappd a:hover:before {
+    color: #FBCC33; }
   .social-menu .menu-item.search {
     vertical-align: top; }
   .social-menu .menu-item.search a {
@@ -3452,7 +3513,7 @@ html.no-javascript, html.javascript {
     position: relative;
     width: 100%; }
   .site .site-header .site-title .site-logo {
-    background-image: url(images/logo-3-color-inverted-min.png);
+    background-image: url(images/logo-1-color-inverted.png);
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: 80%;
@@ -3473,11 +3534,11 @@ html.no-javascript, html.javascript {
 @media only screen and (min-width: 768px) {
   .site .site-header .site-title .site-logo {
     background-size: 65%;
-    background-image: url(images/logo-3-color-inverted-2x-min.png); } }
+    background-image: url(images/logo-1-color-inverted.png); } }
 @media only screen and (min-width: 1024px) {
   .site .site-header .site-title .site-logo {
     background-size: 50%;
-    background-image: url(images/logo-3-color-inverted-4x-min.png); } }
+    background-image: url(images/logo-1-color-inverted.png); } }
 @media only screen {
   .site .site-header .site-description {
     display: none; }
@@ -3505,10 +3566,68 @@ html.no-javascript, html.javascript {
     -ms-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    color: #EF99FF;
-    font-family: 'KG Ten Thousand Reasons';
+    color: #E0DBD1;
+    font-family: 'Colored Crayons';
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
     padding: 5em 0;
-    position: relative; } }
+    position: relative;
+    /*
+    			.upcoming-beer
+    			{
+    				h3
+    				{
+    					background-image: url(images/chalk-circle.png);
+    					background-position: center;
+    					background-repeat: no-repeat;
+    					background-size: 100%;
+    					box-sizing: border-box;
+    					color: $chalk-green;
+    					float: left;
+    					font-size: 2.25em;
+    					height: 2.5em;
+    					line-height: 0.75em;
+    					margin-left: -0.1em;
+    					margin-right: 0.3em;
+    					margin-top: 0.1em;
+    					padding: 0.6em 0.4em 0.4em;
+    					text-align: center;
+    					width: 2.5em;
+    
+    					@include media('<=phone')
+    					{
+    						margin-bottom: -2.25em;
+    						margin-left: 0.25em;
+    					}
+    				}
+    
+    				.decks
+    				{
+    					@include media('<=phone')
+    					{
+    						width: 100%;
+    					}
+    
+    					thead
+    					{
+    						display: none;
+    					}
+    
+    					.beer
+    					{
+    						.title, .style
+    						{
+    							@include media('<=phone')
+    							{
+    								padding-left: calc(0.25em + 33%);
+    								width: 100% !important;
+    							}
+    						}
+    					}
+    				}
+    			}
+    */ } }
 @media only screen and (orientation: portrait) {
   .site .site-specials {
     background-image: url(images/background-chalkboard-portrait.jpg); } }
@@ -3520,6 +3639,8 @@ html.no-javascript, html.javascript {
     color: inherit;
     text-decoration: none; }
   .site .site-specials h2 {
+    display: none;
+    /*
     color: white;
     font-family: 'Witka';
     font-size: 3em;
@@ -3528,141 +3649,115 @@ html.no-javascript, html.javascript {
     text-align: center;
     text-decoration: none;
     text-shadow: 0 0 0.33em black;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    */ }
   .site .site-specials h3, .site .site-specials .current-beer .taps th {
-    color: #99FF99;
+    color: #E0DBD1;
     font-family: 'KG Tangled Up In You';
-    font-size: 2.5em;
+    font-size: 1.75em;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     font-smoothing: antialiased;
     font-weight: 400;
     line-height: 1em;
     text-transform: uppercase; }
-  .site .site-specials .current-beer, .site .site-specials .upcoming-beer {
-    font-size: 1.25em; } }
-@media only screen and (min-width: 1025px) {
-  .site .site-specials .current-beer, .site .site-specials .upcoming-beer {
-    margin-left: 33%;
-    width: 67%; } }
-@media only screen and (max-width: 500px) {
-  .site .site-specials .current-beer, .site .site-specials .upcoming-beer {
+  .site .site-specials .current-beer {
+    font-size: 2.5em;
     margin-left: 5%;
     margin-right: 5%;
-    width: 90%; } }
-@media only screen {
-  .site .site-specials .current-beer .taps th.abv, .site .site-specials .current-beer .decks th.abv, .site .site-specials .upcoming-beer .taps th.abv, .site .site-specials .upcoming-beer .decks th.abv {
+    width: 90%;
+    /*
+    @include media( '>desktop' )
+    {
+    	margin-left: 33%;
+    	width: 67%;
+    }
+    */ }
+  .site .site-specials .current-beer .taps {
+    /*
+    tr:nth-child( 2 ) td { color: $chalk-yellow; }
+    tr:nth-child( 3 ) td { color: $chalk-red; }
+    tr:nth-child( 4 ) td { color: $chalk-purple; }
+    tr:nth-child( 5 ) td { color: $chalk-blue; }
+    tr:nth-child( 6 ) td { color: $chalk-orange; }
+    tr:nth-child( 7 ) td { color: $chalk-red; }
+    tr:nth-child( 8 ) td { color: $chalk-red; }
+    */ }
+  .site .site-specials .current-beer .taps th.abv {
     text-align: center; } }
 @media only screen and (max-width: 500px) {
-  .site .site-specials .current-beer .taps th, .site .site-specials .current-beer .decks th, .site .site-specials .upcoming-beer .taps th, .site .site-specials .upcoming-beer .decks th {
+  .site .site-specials .current-beer .taps th {
     box-sizing: border-box;
     display: inline-block; }
-  .site .site-specials .current-beer .taps th.abv, .site .site-specials .current-beer .decks th.abv, .site .site-specials .upcoming-beer .taps th.abv, .site .site-specials .upcoming-beer .decks th.abv {
+  .site .site-specials .current-beer .taps th.abv {
     text-align: right;
     width: 33%; }
-  .site .site-specials .current-beer .taps th.title, .site .site-specials .current-beer .decks th.title, .site .site-specials .upcoming-beer .taps th.title, .site .site-specials .upcoming-beer .decks th.title {
+  .site .site-specials .current-beer .taps th.title {
     width: 67%; }
-  .site .site-specials .current-beer .taps th.style, .site .site-specials .current-beer .decks th.style, .site .site-specials .upcoming-beer .taps th.style, .site .site-specials .upcoming-beer .decks th.style {
+  .site .site-specials .current-beer .taps th.style {
     display: none; } }
 @media only screen {
-  .site .site-specials .current-beer .taps td, .site .site-specials .current-beer .decks td, .site .site-specials .upcoming-beer .taps td, .site .site-specials .upcoming-beer .decks td {
+  .site .site-specials .current-beer .taps td {
     box-sizing: border-box;
+    color: #E0DBD1;
     letter-spacing: 1px;
     padding: 0.25em; }
-  .site .site-specials .current-beer .taps td.abv, .site .site-specials .current-beer .decks td.abv, .site .site-specials .upcoming-beer .taps td.abv, .site .site-specials .upcoming-beer .decks td.abv {
+  .site .site-specials .current-beer .taps td.abv {
+    font-family: 'Chalk It Up';
+    font-size: 0.8em;
     text-align: center;
     width: 6em; }
-  .site .site-specials .current-beer .taps td.style, .site .site-specials .current-beer .decks td.style, .site .site-specials .upcoming-beer .taps td.style, .site .site-specials .upcoming-beer .decks td.style {
+  .site .site-specials .current-beer .taps td.style {
     font-size: 0.6em;
     text-transform: uppercase;
     width: calc(13em / 0.6); }
-  .site .site-specials .current-beer .taps td.title, .site .site-specials .current-beer .decks td.title, .site .site-specials .upcoming-beer .taps td.title, .site .site-specials .upcoming-beer .decks td.title {
-    width: 14em; } }
+  .site .site-specials .current-beer .taps td.title {
+    font-size: 1.5em;
+    width: 11em; } }
 @media only screen and (max-width: 500px) {
-  .site .site-specials .current-beer .taps td, .site .site-specials .current-beer .decks td, .site .site-specials .upcoming-beer .taps td, .site .site-specials .upcoming-beer .decks td {
+  .site .site-specials .current-beer .taps td {
     box-sizing: border-box;
     display: inline-block;
     padding: 0 0.25em; }
-  .site .site-specials .current-beer .taps td.abv, .site .site-specials .current-beer .decks td.abv, .site .site-specials .upcoming-beer .taps td.abv, .site .site-specials .upcoming-beer .decks td.abv {
+  .site .site-specials .current-beer .taps td.abv {
     text-align: right;
     width: 33%; }
-  .site .site-specials .current-beer .taps td.title, .site .site-specials .current-beer .decks td.title, .site .site-specials .upcoming-beer .taps td.title, .site .site-specials .upcoming-beer .decks td.title {
+  .site .site-specials .current-beer .taps td.title {
     width: 67%; }
-  .site .site-specials .current-beer .taps td.style, .site .site-specials .current-beer .decks td.style, .site .site-specials .upcoming-beer .taps td.style, .site .site-specials .upcoming-beer .decks td.style {
+  .site .site-specials .current-beer .taps td.style {
     display: block;
     padding-bottom: 1em;
     padding-left: 0.25em;
     width: 100%; } }
 @media only screen {
-  .site .site-specials .current-beer .taps tr:nth-child(2) td, .site .site-specials .current-beer .decks tr:nth-child(2) td, .site .site-specials .upcoming-beer .taps tr:nth-child(2) td, .site .site-specials .upcoming-beer .decks tr:nth-child(2) td {
-    color: #F9FF99; }
-  .site .site-specials .current-beer .taps tr:nth-child(3) td, .site .site-specials .current-beer .decks tr:nth-child(3) td, .site .site-specials .upcoming-beer .taps tr:nth-child(3) td, .site .site-specials .upcoming-beer .decks tr:nth-child(3) td {
-    color: #FF9999; }
-  .site .site-specials .current-beer .taps tr:nth-child(4) td, .site .site-specials .current-beer .decks tr:nth-child(4) td, .site .site-specials .upcoming-beer .taps tr:nth-child(4) td, .site .site-specials .upcoming-beer .decks tr:nth-child(4) td {
-    color: #EF99FF; }
-  .site .site-specials .current-beer .taps tr:nth-child(5) td, .site .site-specials .current-beer .decks tr:nth-child(5) td, .site .site-specials .upcoming-beer .taps tr:nth-child(5) td, .site .site-specials .upcoming-beer .decks tr:nth-child(5) td {
-    color: #99D3FF; }
-  .site .site-specials .current-beer .taps tr:nth-child(6) td, .site .site-specials .current-beer .decks tr:nth-child(6) td, .site .site-specials .upcoming-beer .taps tr:nth-child(6) td, .site .site-specials .upcoming-beer .decks tr:nth-child(6) td {
-    color: #FFBF99; }
-  .site .site-specials .current-beer .taps tr:nth-child(7) td, .site .site-specials .current-beer .decks tr:nth-child(7) td, .site .site-specials .upcoming-beer .taps tr:nth-child(7) td, .site .site-specials .upcoming-beer .decks tr:nth-child(7) td {
-    color: #FF9999; }
-  .site .site-specials .current-beer .taps tr:nth-child(8) td, .site .site-specials .current-beer .decks tr:nth-child(8) td, .site .site-specials .upcoming-beer .taps tr:nth-child(8) td, .site .site-specials .upcoming-beer .decks tr:nth-child(8) td {
-    color: #FF9999; }
   .site .site-specials .current-beer {
-    padding-bottom: 1em; } }
-@media only screen and (min-width: 1025px) {
-  .site .site-specials .current-beer:before {
-    background-image: url(images/chalk-beer.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 10em;
-    content: '';
-    display: block;
-    left: 0;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    width: 33%; } }
-@media only screen {
+    padding-bottom: 1em;
+    /*
+    @include media( '>desktop' )
+    {
+    	&:before
+    	{
+    		background-image: url(images/chalk-beer.png);
+    		background-position: center;
+    		background-repeat: no-repeat;
+    		background-size: 10em;
+    		content: '';
+    		display: block;
+    		left: 0;
+    		height: 100%;
+    		position: absolute;
+    		top: 0;
+    		width: 33%;
+    	}
+    }
+    */ }
   .site .site-specials .current-beer h3 {
     display: none; }
   .site .site-specials .current-beer .taps {
     width: 100%; }
   .site .site-specials .current-beer .taps th {
     padding: 0.1em;
-    text-align: left; }
-  .site .site-specials .upcoming-beer h3 {
-    background-image: url(images/chalk-circle.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    box-sizing: border-box;
-    color: #99FF99;
-    float: left;
-    font-size: 2.25em;
-    height: 2.5em;
-    line-height: 0.75em;
-    margin-left: -0.1em;
-    margin-right: 0.3em;
-    margin-top: 0.1em;
-    padding: 0.6em 0.4em 0.4em;
-    text-align: center;
-    width: 2.5em; } }
-@media only screen and (max-width: 500px) {
-  .site .site-specials .upcoming-beer h3 {
-    margin-bottom: -2.25em;
-    margin-left: 0.25em; } }
-@media only screen and (max-width: 500px) {
-  .site .site-specials .upcoming-beer .decks {
-    width: 100%; } }
-@media only screen {
-  .site .site-specials .upcoming-beer .decks thead {
-    display: none; } }
-@media only screen and (max-width: 500px) {
-  .site .site-specials .upcoming-beer .decks .beer .title, .site .site-specials .upcoming-beer .decks .beer .style {
-    padding-left: calc(0.25em + 33%);
-    width: 100% !important; } }
-
+    text-align: left; } }
 @media only screen {
   .site .site-community {
     align-content: center;
@@ -3694,6 +3789,8 @@ html.no-javascript, html.javascript {
     background-position: center 0 !important; } }
 @media only screen {
   .site .site-community h2 {
+    display: none;
+    /*
     color: white;
     font-family: 'Witka';
     font-size: 3em;
@@ -3701,7 +3798,8 @@ html.no-javascript, html.javascript {
     margin: 0 0 1em 0;
     text-decoration: none;
     text-shadow: 0 0 0.33em black;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    */ }
   .site .site-community .site-blog {
     position: relative; }
   .site .site-community .site-blog h3 {
@@ -4001,92 +4099,135 @@ html.no-javascript, html.javascript {
     content: ','; }
   .site .site-company [itemprop="addressCountry"] {
     display: none; }
+  .site .site-company .site-team {
+    				/*
+    				.people
+    				{
+    					margin: 3em 0;
+    					text-align: center;
+    
+    					$circle-diameter: 11em;
+    					$circle-border: 0.25em;
+    					$circle-margin: 1em;
+    
+    					@include media('<=phone')
+    					{
+    						$circle-diameter: 13em;
+    						height: $circle-diameter + $circle-border * 2 + $circle-margin * 2;
+    						position: relative;
+    
+    						&:before, &:after
+    						{
+    							color: white;
+    							content: $fa-var-angle-left;
+    							font-family: 'FontAwesome';
+    							font-size: 4em;
+    							left: 1rem;
+    							margin-top: -0.5em;
+    							opacity: 0.33;
+    							position: absolute;
+    							text-shadow: 0 0 10pt black,
+    							             0 0 5pt black,
+    							             0 0 2pt black,
+    							             0 0 1pt black;
+    							top: 50%;
+    							z-index: 1;
+    						}
+    
+    						&:after
+    						{
+    							content: $fa-var-angle-right;
+    							left: calc(100% - 2.5rem);
+    						}
+    					}
+    
+    					.menu-item
+    					{
+    						display: inline-block;
+    
+    						@include media('<phone')
+    						{
+    							left: 0;
+    							position: absolute;
+    							top: 0;
+    							width: 100%;
+    
+    							&.active
+    							{
+    								z-index: 1;
+    							}
+    						}
+    
+    						.menu-link
+    						{
+    							border: solid $circle-border $urbanrest-tan;
+    							border-radius: 50%;
+    							box-shadow: 0.11em 0.11em 1em rgba(black,0.33);
+    							color: inherit;
+    							display: inline-block;
+    							height: $circle-diameter;
+    							margin: $circle-margin;
+    							overflow: hidden;
+    							text-decoration: none;
+    							width: $circle-diameter;
+    
+    							.person
+    							{
+    								background: #CCAA88;
+    								border-radius: 50%;
+    								display: inline-block;
+    								height: 100%;
+    								margin: 0;
+    								overflow: hidden;
+    								position: relative;
+    								text-align: center;
+    								@include transform( scale(1) );
+    								width: 100%;
+    
+    								.avatar
+    								{
+    									height: 100%;
+    									@include filter( sepia(66.6%) );
+    									left: 0;
+    									position: absolute;
+    									width: 100%;
+    									@include transition( all 0.25s );
+    									top: 0;
+    								}
+    
+    								.name, .title
+    								{
+    									display: none;
+    								}
+    							}
+    
+    							&:hover .avatar
+    							{
+    								@include filter( sepia(11%) );
+    							}
+    						}
+    					}
+    				}
+    				*/ }
   .site .site-company .site-team header {
-    padding-left: 2em;
-    padding-right: 2em; }
-  .site .site-company .site-team header h4 {
-    color: white;
-    font-family: 'Witka';
-    font-size: 3em;
-    font-weight: 400;
-    margin: 0;
-    text-align: center;
-    text-decoration: none;
-    text-shadow: 0 0 0.33em black;
-    text-transform: uppercase; }
-  .site .site-company .site-team .people {
-    margin: 3em 0;
-    text-align: center; } }
-@media only screen and (max-width: 500px) {
-  .site .site-company .site-team .people {
-    height: 15.5em;
-    position: relative; }
-  .site .site-company .site-team .people:before, .site .site-company .site-team .people:after {
-    color: white;
-    content: "";
-    font-family: 'FontAwesome';
-    font-size: 4em;
-    left: 1rem;
-    margin-top: -0.5em;
-    opacity: 0.33;
-    position: absolute;
-    text-shadow: 0 0 10pt black, 0 0 5pt black, 0 0 2pt black, 0 0 1pt black;
-    top: 50%;
-    z-index: 1; }
-  .site .site-company .site-team .people:after {
-    content: "";
-    left: calc(100% - 2.5rem); } }
-@media only screen {
-  .site .site-company .site-team .people .menu-item {
-    display: inline-block; } }
-@media only screen and (max-width: 499px) {
-  .site .site-company .site-team .people .menu-item {
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%; }
-  .site .site-company .site-team .people .menu-item.active {
-    z-index: 1; } }
-@media only screen {
-  .site .site-company .site-team .people .menu-item .menu-link {
-    border: solid 0.25em #CCAA88;
-    border-radius: 50%;
-    box-shadow: 0.11em 0.11em 1em rgba(0, 0, 0, 0.33);
-    color: inherit;
-    display: inline-block;
-    height: 13em;
-    margin: 1em;
-    overflow: hidden;
-    text-decoration: none;
-    width: 13em; }
-  .site .site-company .site-team .people .menu-item .menu-link .person {
-    background: #CCAA88;
-    border-radius: 50%;
-    display: inline-block;
-    height: 100%;
-    margin: 0;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    width: 100%; }
-  .site .site-company .site-team .people .menu-item .menu-link .person .avatar {
-    height: 100%;
-    -webkit-filter: sepia(66.6%);
-    filter: sepia(66.6%);
-    left: 0;
-    position: absolute;
-    width: 100%;
-    -webkit-transition: all 0.25s;
-    -moz-transition: all 0.25s;
-    transition: all 0.25s;
-    top: 0; }
-  .site .site-company .site-team .people .menu-item .menu-link .person .name, .site .site-company .site-team .people .menu-item .menu-link .person .title {
-    display: none; }
-  .site .site-company .site-team .people .menu-item .menu-link:hover .avatar {
-    -webkit-filter: sepia(11%);
-    filter: sepia(11%); }
+    display: none;
+    					/*
+    					padding-left: 2em;
+    					padding-right: 2em;
+    
+    					h4
+    					{
+    						color: white;
+    						font-family: 'Witka';
+    						font-size: 3em;
+    						font-weight: 400;
+    						margin: 0;
+    						text-align: center;
+    						text-decoration: none;
+    						text-shadow: 0 0 0.33em black;
+    						text-transform: uppercase;
+    					}
+    					*/ }
   .site .site-company .site-location {
     padding-bottom: 2em;
     padding-top: 2em;
@@ -4418,7 +4559,8 @@ html.no-javascript, html.javascript {
     box-sizing: border-box;
     min-height: 100vh;
     overflow-x: hidden;
-    padding: 5em 0 0;
+    padding: 0;
+    /*5em 0 0;*/
     position: relative;
     text-align: center;
     width: 100%; } }
@@ -4433,6 +4575,8 @@ html.no-javascript, html.javascript {
     background-position: center 0 !important; } }
 @media only screen {
   .site .site-shop h2 {
+    display: none;
+    /*
     color: white;
     font-family: 'Witka';
     font-size: 3em;
@@ -4440,7 +4584,8 @@ html.no-javascript, html.javascript {
     margin: 0 0 1em 0;
     text-decoration: none;
     text-shadow: 0 0 0.33em black;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    */ }
   .site .site-shop .shop-category {
     background-position: center;
     background-repeat: no-repeat;

@@ -26,7 +26,7 @@
 			{
 				.site-logo
 				{
-					background-image: url(images/logo-3-color-inverted-min.png);
+					background-image: url(images/logo-1-color-inverted.png);
 					background-position: 50% 50%;
 					background-repeat: no-repeat;
 					background-size: 80%;
@@ -48,13 +48,15 @@
 					@include media('>=tablet')
 					{
 						background-size: 65%;
-						background-image: url(images/logo-3-color-inverted-2x-min.png);
+						background-image: url(images/logo-1-color-inverted.png);
+						//background-image: url(images/logo-1-color-inverted-2x-min.png);
 					}
 
 					@include media('>=desktop')
 					{
 						background-size: 50%;
-						background-image: url(images/logo-3-color-inverted-4x-min.png);
+						background-image: url(images/logo-1-color-inverted.png);
+						//background-image: url(images/logo-1-color-inverted-4x-min.png);
 					}
 				}
 			}

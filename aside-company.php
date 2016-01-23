@@ -1,26 +1,47 @@
 <aside class="site-company row" id="company" itemscope itemtype="http://schema.org/Brewery">
 	<header class="col-xs-12">
-		<h2>About Us</h2>
+		<h2>About Urbanrest Brewing Company</h2>
 	</header>
 
 	<section class="site-team col-xs-12">
-		<header>
-			<h4>Meet the <abbr title="Urbanrest Brewing">URB</abbr>&nbsp;Team</h4>
-		</header>
 <?php
+/*
 wp_nav_menu(array(
 	'theme_location' => 'team',
 	'menu_class' => 'people',
 	'walker' => new Urbanrest_Team_Menu_Walker_Nav_Menu
 ));
+*/
+$menu_name = 'team';
+$locations = get_nav_menu_locations();
+$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+$menu_items = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
 ?>
+		<ul>
+<?php
+foreach( $menu_items as $menu_item ):
+	$page = get_post(url_to_postid($menu_item->url));
+	$content_arr = get_extended($page->post_content);
+?>
+			<li class="page">
+				<h4>
+					<a href="<?php echo get_permalink($page); ?>" class="title"><?php echo $page->post_title; ?></a>
+				</h4>
+				<p>
+					<?php echo apply_filters('the_content', $content_arr['main']); ?></pre>
+				</p>
+			</li>
+<?php
+endforeach;
+?>
+		</ul>
 	</section>
 
 	<section class="site-location col-xs-12 col-sm-6">
 		<header>
 			<h3>Come By Our Brewery</h3>
 			<h4 itemprop="name">
-				<img itemprop="logo" alt="<?php echo bloginfo('name'); ?>" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-3-color-inverted.png" />
+				<img itemprop="logo" alt="<?php echo bloginfo('name'); ?>" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-1-color-inverted.png" />
 			</h4>
 		</header>
 

@@ -1,4 +1,55 @@
 @font-face {
+  font-family: "Colored Crayons";
+  src: url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.eot");
+  src: url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.eot?#iefix") format("embedded-opentype"), url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.woff") format("woff"), url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.ttf") format("truetype"), url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.svg#") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Chalk It Up";
+  src: url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.eot");
+  src: url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.eot?#iefix") format("embedded-opentype"), url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.woff") format("woff"), url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.ttf") format("truetype"), url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.svg#") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Eraser";
+  src: url("fonts/David-Rakowski_Eraser/EraserRegular.eot");
+  src: url("fonts/David-Rakowski_Eraser/EraserRegular.eot?#iefix") format("embedded-opentype"), url("fonts/David-Rakowski_Eraser/EraserRegular.woff") format("woff"), url("fonts/David-Rakowski_Eraser/EraserRegular.ttf") format("truetype"), url("fonts/David-Rakowski_Eraser/EraserRegular.svg#") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "EraserDust";
+  src: url("fonts/David-Rakowski_Eraser/EraserDust.eot");
+  src: url("fonts/David-Rakowski_Eraser/EraserDust.eot?#iefix") format("embedded-opentype"), url("fonts/David-Rakowski_Eraser/EraserDust.woff") format("woff"), url("fonts/David-Rakowski_Eraser/EraserDust.ttf") format("truetype"), url("fonts/David-Rakowski_Eraser/EraserDust.svg#") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "PW Chalk";
+  src: url("fonts/PW_Chalk/PWChalk.eot");
+  src: url("fonts/PW_Chalk/PWChalk.eot?#iefix") format("embedded-opentype"), url("fonts/PW_Chalk/PWChalk.woff") format("woff"), url("fonts/PW_Chalk/PWChalk.ttf") format("truetype"), url("fonts/PW_Chalk/PWChalk.svg#") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: "Right Chalk";
+  src: url("fonts/Right_Chalk/Right Chalk.eot");
+  src: url("fonts/Right_Chalk/Right Chalk.eot?#iefix") format("embedded-opentype"), url("fonts/Right_Chalk/Right Chalk.woff") format("woff"), url("fonts/Right_Chalk/Right Chalk.ttf") format("truetype"), url("fonts/Right_Chalk/Right Chalk.svg#") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Urbanrest';
+  src: url(fonts/Urbanrest/Urbanrest.eot?9t6i3b);
+  src: url(fonts/Urbanrest/Urbanrest.eot?9t6i3b#iefix) format("embedded-opentype"), url(fonts/Urbanrest/Urbanrest.ttf?9t6i3b) format("truetype"), url(fonts/Urbanrest/Urbanrest.woff?9t6i3b) format("woff"), url(fonts/Urbanrest/Urbanrest.svg?9t6i3b#Urbanrest) format("svg");
+  font-weight: normal;
+  font-style: normal; }
+.fa-untappd-square, .fa-untappd {
+  font-family: 'Urbanrest' !important; }
+
+.fa-untappd-square:before {
+  content: "\e900"; }
+
+.fa-untappd:before {
+  content: "\e901"; }
+
+@font-face {
   font-family: 'Bad Script';
   font-style: normal;
   font-weight: 400;

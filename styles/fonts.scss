@@ -1,3 +1,42 @@
+@mixin font($family, $path, $svg, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $family;
+    src: url('#{$path}.eot');
+    src: url('#{$path}.eot?#iefix') format('embedded-opentype'), url('#{$path}.woff') format('woff'), url('#{$path}.ttf') format('truetype'), url('#{$path}.svg##{$svg}') format('svg');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@include font('Colored Crayons', 'fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons', '');
+@include font('Chalk It Up', 'fonts/DJB_Chalk_It_Up/DJB Chalk It Up', '');
+@include font('Eraser', 'fonts/David-Rakowski_Eraser/EraserRegular', '');
+@include font('EraserDust', 'fonts/David-Rakowski_Eraser/EraserDust', '');
+@include font('PW Chalk', 'fonts/PW_Chalk/PWChalk', '');
+@include font('Right Chalk', 'fonts/Right_Chalk/Right Chalk', '');
+
+@font-face {
+    font-family: 'Urbanrest';
+    src:    url(fonts/Urbanrest/Urbanrest.eot?9t6i3b);
+    src:    url(fonts/Urbanrest/Urbanrest.eot?9t6i3b#iefix) format('embedded-opentype'),
+        url(fonts/Urbanrest/Urbanrest.ttf?9t6i3b) format('truetype'),
+        url(fonts/Urbanrest/Urbanrest.woff?9t6i3b) format('woff'),
+        url(fonts/Urbanrest/Urbanrest.svg?9t6i3b#Urbanrest) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.fa-untappd-square,
+.fa-untappd {
+	font-family: 'Urbanrest' !important;
+}
+.fa-untappd-square:before {
+    content: "\e900";
+}
+.fa-untappd:before {
+    content: "\e901";
+}
+
 @font-face {
 	font-family: 'Bad Script';
 	font-style: normal;

@@ -81,6 +81,22 @@
 			&.twitter a     { color: darken( $twitter-blue, 11% );   &:before { content: $fa-var-twitter-square;     } &:hover:before { color: $twitter-blue;    } }
 			&.youtube a     { color: darken( $youtube-red, 11% );    &:before { content: $fa-var-youtube-square;     } &:hover:before { color: $youtube-red;     } }
 
+			&.untappd a {
+				color: darken( $untappd-yellow, 11% );
+
+				&:before {
+					background-color: $untappd-brown;
+					content: "\e900";
+					font-family: 'Urbanrest';
+					font-size: 2.0em;
+					width: 0.96em;
+				}
+
+				&:hover:before {
+					color: $untappd-yellow;
+				}
+			}
+			
 			&.search
 			{
 				vertical-align: top;

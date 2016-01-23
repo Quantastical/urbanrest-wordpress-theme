@@ -17,7 +17,7 @@ $decks = get_posts($deck_args);
 ?>
 	<aside class="site-specials row" id="specials">
 		<header class="col-xs-12">
-			<h2>Try Our Handcrafted Beer</h2>
+			<h2>Urbanrest Beer List</h2>
 		</header>
 
 		<section class="current-beer">
@@ -25,7 +25,7 @@ $decks = get_posts($deck_args);
 			<table class="taps">
 				<thead>
 					<tr>
-						<th class="title">Title</th>
+						<th class="title">Beer</th>
 						<th class="abv"><abbr title="Alcohol By Volume">ABV</abbr></th>
 						<th class="style">Style</th>
 					</tr>
@@ -38,7 +38,7 @@ $decks = get_posts($deck_args);
 						<td class="title">
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</td>
-						<td class="abv"><?php echo ($alcohol > 0) ? $alcohol : ''; ?></td>
+						<td class="abv"><?php echo ($alcohol > 0) ? $alcohol . '%' : '--'; ?></td>
 						<td class="style"><?php the_terms(0, 'beer_style'); ?></td>
 					</tr>
 <?php endforeach; ?>
@@ -47,6 +47,8 @@ $decks = get_posts($deck_args);
 			</table>
 		</section>
 
+<?php
+/*
 		<section class="upcoming-beer">
 			<h3>On Deck</h3>
 			<table class="decks">
@@ -72,4 +74,6 @@ $decks = get_posts($deck_args);
 				</tbody>
 			</table>
 		</section>
+*/
+?>
 	</aside>

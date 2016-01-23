@@ -38,7 +38,7 @@ jQuery( function( $ ) {
 	};
 
 	Urb.$searchButton.on('click', Urb.showSearchBox);
-	Urb.$searchSubmit.on('click', function() { console.log('test');Urb.$searchForm.submit(); } );
+	Urb.$searchSubmit.on('click', function() { Urb.$searchForm.submit(); } );
 	Urb.$searchForm.on('submit', Urb.search);
 	//Urb.$search.on('focus', Urb.startSearching);
 	Urb.$search.on('blur', Urb.cancelSearching);

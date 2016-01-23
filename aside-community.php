@@ -1,6 +1,6 @@
 <aside class="site-community row" id="community">
 	<header class="col-xs-12">
-		<h2>Come See What's New</h2>
+		<h2>Latest News &amp; Events</h2>
 	</header>
 
 	<section class="site-events col-sm-6">

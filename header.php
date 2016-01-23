@@ -139,7 +139,7 @@
 
 		<header class="site-header row" id="preliminaries">
 			<h1 class="site-title">
-				<img alt="<?php bloginfo('name'); ?>" class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-3-color.png" />
+				<img alt="<?php bloginfo('name'); ?>" class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-1-color.png" />
 			</h1>
 
 <?php if( get_bloginfo( 'description', 'display' ) || is_customize_preview() ) : ?>
