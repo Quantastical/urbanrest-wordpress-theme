@@ -20,7 +20,7 @@
 			[itemprop="addressCountry"] { display: none; }
 
 
-			.site-team
+			.site-pages
 			{
 				header
 				{
@@ -42,6 +42,49 @@
 						text-transform: uppercase;
 					}
 					*/
+				}
+
+				.page
+				{
+					box-sizing: border-box;
+					display: inline-block;
+					font-size: 1em;
+					line-height: 1.5em;
+					margin-bottom: 2em;
+					padding: 0 2em;
+					vertical-align: top;
+					width: 33%;
+
+					h4
+					{
+						color: $urbanrest-white;
+						font-family: 'Legend M54';
+						font-size: 2em;
+						font-weight: 400;
+						letter-spacing: 0.1em;
+						margin-bottom: 1em;
+						margin-top: 0.25em;
+						text-align: center;
+						text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+						text-transform: uppercase;
+						
+						a
+						{
+							color: $urbanrest-white;
+							text-decoration: none;
+						}
+					}
+
+					figure
+					{
+						margin: 0;
+
+						img
+						{
+							height: auto;
+							width: 100%;
+						}
+					}
 				}
 
 				/*
@@ -585,8 +628,10 @@
 							background-repeat: no-repeat;
 							opacity: 0.666;
 
+							/*
 							@include media( '>=tablet' ) { background-image: url(/wp-content/themes/urbanrest-wordpress-theme/images/map-texture-2x.png); }
 							@include media( '>=desktop' ) { background-image: url(/wp-content/themes/urbanrest-wordpress-theme/images/map-texture-4x.png); }
+							*/
 						}
 					}
 				}

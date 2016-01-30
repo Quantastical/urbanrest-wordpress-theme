@@ -4,7 +4,7 @@
 	{
 		.site-specials
 		{
-			background-attachment: fixed;
+			/*background-attachment: fixed;*/
 			background-image: url(images/background-chalkboard.jpg);
 			@include media( 'portrait' ) { background-image: url(images/background-chalkboard-portrait.jpg); }
 			background-position: center 0;

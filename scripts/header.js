@@ -1,4 +1,28 @@
 jQuery( function( $ ) {
+	Urb.setupHeaderNavigation = function() {
+		var $nextButton = $('<button class="next"><span class="fa fa-angle-right"></span></button>');
+		var $previousButton = $('<button class="previous"><span class="fa fa-angle-left"></span></button>');
+
+		$nextButton.on('click', function() {
+			console.log('next');
+			if($('.site-posts .latest-posts .blog-post.active').length) {
+				$('.site-posts .latest-posts .blog-post.active').removeClass('active').next('.blog-post').addClass('active');
+			} else {
+				$('.site-posts .latest-posts .blog-post:first-child').addClass('active');
+			}
+		});
+
+		$previousButton.on('click', function() {
+			if($('.site-posts .latest-posts .blog-post.active').length) {
+				$('.site-posts .latest-posts .blog-post.active').removeClass('active').prev('.blog-post').addClass('active');
+			} else {
+				$('.site-posts .latest-posts .blog-post:last-child').addClass('active');
+			}
+		});
+
+		$('.site-posts .latest-posts').after($nextButton).after($previousButton);
+	};
+	/*
 	var wpAdminBarHeight = (Urb.$wpadminbar) ? Urb.$wpadminbar.outerHeight() : 0;
 	var viewportHeight = Urb.$window.height() - wpAdminBarHeight - Urb.$mainNavigation.outerHeight();
 	var viewportHeightPercent = 0;
@@ -35,4 +59,6 @@ jQuery( function( $ ) {
 	};
 
 	Urb.$window.on('load orientationchange resize scroll', Urb.scrollLogos);
+	*/
+	Urb.$window.on('load', Urb.setupHeaderNavigation);
 } );

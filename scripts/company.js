@@ -101,23 +101,6 @@ jQuery(function($){
 
 					google.maps.event.addListener(marker, 'click', function(){ infoWindow.open( map, marker ); });
 					infoWindow.open( map, marker );
-
-					Urb.$mapLink.on('click', function(e){
-						e.preventDefault();
-						
-						Urb.$map.toggleClass('open');
-						
-						if( Urb.$map.hasClass('open') ) {
-							Urb.$map.addClass('animating');
-							Urb.$body.animate(
-								{ scrollTop: Urb.$body.scrollTop() + 500 },
-								666,
-								function() {
-									Urb.$map.removeClass('animating');
-								}
-							);
-						}
-					});
 				}
 			);
 		}
@@ -147,6 +130,27 @@ jQuery(function($){
 		}
 	};
 
+	Urb.toggleMap = function(event) {
+		event.preventDefault();
+
+		if(!Urb.$map.data('map')) {
+			Urb.setupMap();
+		}
+
+		Urb.$map.toggleClass('open');
+		
+		if( Urb.$map.hasClass('open') ) {
+			Urb.$map.addClass('animating');
+			Urb.$body.animate(
+				{ scrollTop: Urb.$body.scrollTop() + 500 },
+				666,
+				function() {
+					Urb.$map.removeClass('animating');
+				}
+			);
+		}
+	};
+
 	Urb.validateContactForm = function() {
 		var $emailAddress = Urb.$contactForm.data('email_address');
 
@@ -161,7 +165,8 @@ jQuery(function($){
 
 	Urb.$window.on('scroll', Urb.scrollMap);
 	Urb.$window.on('load', Urb.setupBusinessHours);
-	Urb.$window.on('load', Urb.setupMap);
+	//Urb.$window.on('load', Urb.setupMap);
+	Urb.$mapLink.on('click', Urb.toggleMap);
 	Urb.$window.on('load', Urb.setupContactForm);
 	Urb.$window.on('resize', Urb.centerMap);
 });

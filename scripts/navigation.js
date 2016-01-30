@@ -31,8 +31,15 @@ jQuery( function( $ ) {
 		});
 	};
 
+	var windowHeightMinusWPHeaderHeight = Urb.$window.height() - Urb.$mainNavigation.outerHeight() - wpAdminBarHeight;
 	Urb.scrollMainNavigation = function() {
-		if(Urb.scrollPosition < Urb.$window.height() - Urb.$mainNavigation.outerHeight() - wpAdminBarHeight) {
+		if(Urb.scrollPosition >= windowHeightMinusWPHeaderHeight) {
+			Urb.$mainNavigation.addClass('stuck-top');
+		} else {
+			Urb.$mainNavigation.removeClass('stuck-top');
+		}
+		/*
+		if(Urb.scrollPosition < windowHeightMinusWPHeaderHeight) {
 			Urb.$mainNavigation.removeClass('stuck-top').css({
 				'bottom': 'auto',
 				'top': (Urb.$window.height() - Urb.$mainNavigation.outerHeight() - Urb.scrollPosition).toFixed(2) + 'px',
@@ -40,6 +47,7 @@ jQuery( function( $ ) {
 		} else {
 			Urb.$mainNavigation.addClass('stuck-top');
 		}
+		*/
 	};
 
 	Urb.scrollSocialNavigation = function() {

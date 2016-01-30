@@ -8,6 +8,8 @@ html.javascript
 
 .site
 {
+	background-color: #000;
+	/*
 	background-attachment: fixed;
 	@include media('<=phone') { background-attachment: scroll; }
 	background-color: black;
@@ -17,6 +19,7 @@ html.javascript
 	@include media('<=phone') { background-position: center 0 !important; }
 	background-repeat: no-repeat;
 	@include background-size( cover );
+	*/
 	cursor: default;
 	font-family: 'Roboto', Arial;
 	font-size: 16px;

@@ -3,7 +3,7 @@
 		<h2>About Urbanrest Brewing Company</h2>
 	</header>
 
-	<section class="site-team col-xs-12">
+	<section class="site-pages col-xs-12">
 <?php
 /*
 wp_nav_menu(array(
@@ -24,12 +24,31 @@ foreach( $menu_items as $menu_item ):
 	$content_arr = get_extended($page->post_content);
 ?>
 			<li class="page">
+<?php if ( has_post_thumbnail($page->ID) ) : ?>
+<?php 	$post_thumbnail_url = wp_get_attachment_image_src( get_post_thumbnail_id($page->ID), array( 420, 420 ), false, '' )[0];?>
+				<figure>
+<?php 	echo get_the_post_thumbnail($page); $post_thumbnail = get_post(get_post_thumbnail_id($page->ID)); ?>
+<?php 	if( $post_thumbnail->post_title || $post_thumbnail->post_excerpt || $post_thumbnail->post_content ) : ?>
+					<figcaption class="hidden">
+<?php 		if( $post_thumbnail->post_title ) : ?>
+						<div class="beer-image-title"><?php echo $post_thumbnail->post_title; ?></div>
+<?php 		endif; ?>
+<?php 		if( $post_thumbnail->post_excerpt ) : ?>
+						<div class="beer-image-caption"><?php echo $post_thumbnail->post_excerpt; ?></div>
+<?php 		endif; ?>
+<?php 		if( $post_thumbnail->post_content ) : ?>
+						<div class="beer-image-description"><?php echo $post_thumbnail->post_content; ?></div>
+<?php 		endif; ?>
+					</figcaption>
+<?php 	endif; ?>
+				</figure>
+<?php endif; ?>
 				<h4>
 					<a href="<?php echo get_permalink($page); ?>" class="title"><?php echo $page->post_title; ?></a>
 				</h4>
-				<p>
-					<?php echo apply_filters('the_content', $content_arr['main']); ?></pre>
-				</p>
+				<div class="description hidden">
+					<?php echo apply_filters('the_content', $content_arr['main']); ?>
+				</div>
 			</li>
 <?php
 endforeach;

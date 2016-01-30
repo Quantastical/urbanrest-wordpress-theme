@@ -38,7 +38,7 @@
 		</footer>
 
 		<div class="font-preload">
-<? echo urb_get_fonts_for_preloading(); ?>
+<?php echo urb_get_fonts_for_preloading(); ?>
 		</div>
 
 		<?php wp_footer(); ?>

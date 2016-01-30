@@ -29,7 +29,7 @@
 					font-size: 1.125em;
 					height: 2.5em;
 					padding: 0;
-					position: fixed;
+					position: absolute;
 					text-align: center;
 					@include transform( translateZ(0) );
 					width: 100%;
@@ -43,6 +43,7 @@
 					&.stuck-top
 					{
 						bottom: auto !important;
+						position: fixed;
 						top: 0 !important;
 					}
 
