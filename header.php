@@ -137,7 +137,7 @@
 		<p class="browser-upgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
 
-		<header class="site-header row" id="preliminaries">
+		<header class="site-header row active" id="preliminaries">
 			<h1 class="site-title">
 				<img alt="<?php bloginfo('name'); ?>" class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-1-color.png" />
 			</h1>

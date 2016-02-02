@@ -26,6 +26,26 @@
 			position: relative;
 			width: 100%;
 
+			&:before
+			{
+				background-attachment: fixed;
+				@include media('<=phone') { background-attachment: scroll; }
+				background-color: black;
+				background-image: url(images/background-hops.jpg);
+				@include media( 'portrait' ) { background-image: url(images/background-hops-portrait.jpg); }
+				background-position: center 0;
+				@include media('<=phone') { background-position: center 0 !important; }
+				background-repeat: no-repeat;
+				@include background-size( cover );
+				content: '';
+				height: 100%;
+				left: 0;
+				position: absolute;
+				opacity: 0.5;
+				top: 0;
+				width: 100%;
+			}
+
 			.site-title
 			{
 				.site-logo
@@ -33,7 +53,7 @@
 					background-image: url(images/logo-1-color-inverted.png);
 					background-position: 50% 50%;
 					background-repeat: no-repeat;
-					background-size: 80%;
+					background-size: 60%;
 					box-sizing: border-box;
 					height: 100%;
 					left: 0;
@@ -46,19 +66,19 @@
 
 					@include media( '<=phone' )
 					{
-						background-size: 80%;
+						background-size: 60%;
 					}
 
 					@include media('>=tablet')
 					{
-						background-size: 65%;
+						background-size: 45%;
 						background-image: url(images/logo-1-color-inverted.png);
 						//background-image: url(images/logo-1-color-inverted-2x-min.png);
 					}
 
 					@include media('>=desktop')
 					{
-						background-size: 50%;
+						background-size: 35%;
 						background-image: url(images/logo-1-color-inverted.png);
 						//background-image: url(images/logo-1-color-inverted-4x-min.png);
 					}

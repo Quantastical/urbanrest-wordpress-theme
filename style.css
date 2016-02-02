@@ -3505,11 +3505,39 @@ html.no-javascript, html.javascript {
     min-height: 100%;
     position: relative;
     width: 100%; }
+  .site .site-header:before {
+    background-attachment: fixed;
+    background-color: black;
+    background-image: url(images/background-hops.jpg);
+    background-position: center 0;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    opacity: 0.5;
+    top: 0;
+    width: 100%; } }
+@media only screen and (max-width: 500px) {
+  .site .site-header:before {
+    background-attachment: scroll; } }
+@media only screen and (orientation: portrait) {
+  .site .site-header:before {
+    background-image: url(images/background-hops-portrait.jpg); } }
+@media only screen and (max-width: 500px) {
+  .site .site-header:before {
+    background-position: center 0 !important; } }
+@media only screen {
   .site .site-header .site-title .site-logo {
     background-image: url(images/logo-1-color-inverted.png);
     background-position: 50% 50%;
     background-repeat: no-repeat;
-    background-size: 80%;
+    background-size: 60%;
     box-sizing: border-box;
     height: 100%;
     left: 0;
@@ -3523,14 +3551,14 @@ html.no-javascript, html.javascript {
     width: 100%; } }
 @media only screen and (max-width: 500px) {
   .site .site-header .site-title .site-logo {
-    background-size: 80%; } }
+    background-size: 60%; } }
 @media only screen and (min-width: 768px) {
   .site .site-header .site-title .site-logo {
-    background-size: 65%;
+    background-size: 45%;
     background-image: url(images/logo-1-color-inverted.png); } }
 @media only screen and (min-width: 1024px) {
   .site .site-header .site-title .site-logo {
-    background-size: 50%;
+    background-size: 35%;
     background-image: url(images/logo-1-color-inverted.png); } }
 @media only screen {
   .site .site-header .site-description {

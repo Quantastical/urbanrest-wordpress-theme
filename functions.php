@@ -180,7 +180,7 @@ endif;
 
 if( !function_exists('urb_get_community') ) :
 	function urb_get_community() {
-		include_once('aside-community.php');
+		//include_once('aside-community.php');
 	}
 endif;
 
