@@ -3484,6 +3484,7 @@ html.no-javascript, html.javascript {
     width: 0; } }
 @media only screen {
   .site {
+    background-color: black;
     /*
     background-attachment: fixed;
     @include media('<=phone') { background-attachment: scroll; }
@@ -3504,35 +3505,47 @@ html.no-javascript, html.javascript {
     */
     min-height: 100%;
     position: relative;
-    width: 100%; }
-  .site .site-header:before {
-    background-attachment: fixed;
-    background-color: black;
-    background-image: url(images/background-hops.jpg);
-    background-position: center 0;
+    width: 100%;
+    /*
+    &:before
+    {
+    	background-attachment: fixed;
+    	@include media('<=phone') { background-attachment: scroll; }
+    	background-color: black;
+    	background-image: url(images/background-hops.jpg);
+    	@include media( 'portrait' ) { background-image: url(images/background-hops-portrait.jpg); }
+    	background-position: center 0;
+    	@include media('<=phone') { background-position: center 0 !important; }
+    	background-repeat: no-repeat;
+    	@include background-size( cover );
+    	content: '';
+    	height: 100%;
+    	left: 0;
+    	position: absolute;
+    	opacity: 0.5;
+    	top: 0;
+    	width: 100%;
+    }
+    */ }
+  .site .site-header .featured-image {
+    display: block;
+    background-position: center;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -ms-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    content: '';
     height: 100%;
     left: 0;
-    position: absolute;
+    margin: 0;
     opacity: 0.5;
+    position: absolute;
     top: 0;
-    width: 100%; } }
-@media only screen and (max-width: 500px) {
-  .site .site-header:before {
-    background-attachment: scroll; } }
-@media only screen and (orientation: portrait) {
-  .site .site-header:before {
-    background-image: url(images/background-hops-portrait.jpg); } }
-@media only screen and (max-width: 500px) {
-  .site .site-header:before {
-    background-position: center 0 !important; } }
-@media only screen {
+    width: 100%;
+    z-index: 1; }
+  .site .site-header .featured-image img {
+    display: none; }
   .site .site-header .site-title .site-logo {
     background-image: url(images/logo-1-color-inverted.png);
     background-position: 50% 50%;
@@ -3548,7 +3561,8 @@ html.no-javascript, html.javascript {
     -webkit-transition: background-size 0.1s;
     -moz-transition: background-size 0.1s;
     transition: background-size 0.1s;
-    width: 100%; } }
+    width: 100%;
+    z-index: 2; } }
 @media only screen and (max-width: 500px) {
   .site .site-header .site-title .site-logo {
     background-size: 60%; } }
@@ -3569,9 +3583,11 @@ html.no-javascript, html.javascript {
     height: 100vh;
     left: 0;
     overflow: hidden;
+    padding: 0;
     position: absolute;
     top: 0;
-    width: 100vw; }
+    width: 100vw;
+    z-index: 3; }
   .site .site-posts h3 {
     display: none; }
   .site .site-posts .latest-posts {

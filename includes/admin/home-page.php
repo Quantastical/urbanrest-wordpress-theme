@@ -1,5 +1,5 @@
 <?php
-
+/*
 if( !function_exists( 'urbanrest_save_beer_on_tap' ) ) :
 	function urbanrest_save_beer_on_tap( $post_id ) {
 		// Check if our nonce is set.
@@ -28,7 +28,7 @@ if( !function_exists( 'urbanrest_save_beer_on_tap' ) ) :
 			}
 		}
 
-		/* OK, it's safe for us to save the data now. */
+		// OK, it's safe for us to save the data now. 
 		if( isset( $_POST['alcohol_by_volume'] ) ) {
 			$alcohol_by_volume = sanitize_text_field( $_POST['alcohol_by_volume'] );
 			update_post_meta( $post_id, 'alcohol_by_volume', $alcohol_by_volume );
@@ -51,7 +51,9 @@ if( !function_exists( 'urbanrest_save_beer_on_tap' ) ) :
 	}
 endif;
 add_action( 'save_post', 'urbanrest_save_beer_on_tap' );
+*/
 
+/*
 if( !function_exists( 'urbanrest_beer_on_tap' ) ) :
 	function urbanrest_beer_on_tap( ) {
 		// Add a nonce field so we can check for it later.
@@ -72,6 +74,7 @@ if( !function_exists( 'urbanrest_beer_on_tap' ) ) :
 
 	}
 endif;
+*/
 
 if( !function_exists( 'change_home_page_editor_template' ) ) :
 function change_home_page_editor_template() {
@@ -83,6 +86,7 @@ function change_home_page_editor_template() {
 		remove_post_type_support('page', 'editor');
 	}
 
+	/*
 	// Hide the editor on a page with a specific page template
 	// Get the name of the Page Template file.
 	$template_file = get_post_meta($post_id, '_wp_page_template', true);
@@ -90,6 +94,7 @@ function change_home_page_editor_template() {
 		remove_post_type_support('page', 'editor');
 		add_meta_box( 'beer_on_tap', 'On Tap', 'urbanrest_beer_on_tap', 'page', 'normal', 'low');
 	}
+	*/
 }
 endif;
 add_action( 'admin_init', 'change_home_page_editor_template' );

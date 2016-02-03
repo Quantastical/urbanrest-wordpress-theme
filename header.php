@@ -141,6 +141,26 @@
 			<h1 class="site-title">
 				<img alt="<?php bloginfo('name'); ?>" class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-1-color.png" />
 			</h1>
+<?php $front_page = get_post(get_option('page_on_front')); ?>
+<?php if ( has_post_thumbnail($front_page->ID) ) : ?>
+<?php 	$post_thumbnail_url = wp_get_attachment_image_src( get_post_thumbnail_id($front_page->ID), array( 420, 420 ), false, '' )[0];?>
+			<figure class="featured-image" style="background-image:url(<?php echo $post_thumbnail_url; ?>);">
+<?php 	echo get_the_post_thumbnail($front_page); $post_thumbnail = get_post(get_post_thumbnail_id($front_page->ID)); ?>
+<?php 	if( $post_thumbnail->post_title || $post_thumbnail->post_excerpt || $post_thumbnail->post_content ) : ?>
+				<figcaption class="hidden">
+<?php 		if( $post_thumbnail->post_title ) : ?>
+					<div class="featured-image-title"><?php echo $post_thumbnail->post_title; ?></div>
+<?php 				endif; ?>
+<?php 		if( $post_thumbnail->post_excerpt ) : ?>
+					<div class="featured-image-caption"><?php echo $post_thumbnail->post_excerpt; ?></div>
+<?php 				endif; ?>
+<?php 		if( $post_thumbnail->post_content ) : ?>
+					<div class="featured-image-description"><?php echo $post_thumbnail->post_content; ?></div>
+<?php 				endif; ?>
+				</figcaption>
+<?php 	endif; ?>
+			</figure>
+<?php endif; ?>
 
 <?php if( get_bloginfo( 'description', 'display' ) || is_customize_preview() ) : ?>
 			<p class="site-description"><?php echo get_bloginfo( 'description', 'display' ); ?></p>

@@ -2,6 +2,7 @@
 {
 	.site
 	{
+		background-color: black;
 		/*
 		background-attachment: fixed;
 		@include media('<=phone') { background-attachment: scroll; }
@@ -26,6 +27,7 @@
 			position: relative;
 			width: 100%;
 
+			/*
 			&:before
 			{
 				background-attachment: fixed;
@@ -45,6 +47,27 @@
 				top: 0;
 				width: 100%;
 			}
+			*/
+			.featured-image
+			{
+				display: block;
+				background-position: center;
+				background-repeat: no-repeat;
+				@include background-size( cover );
+				height: 100%;
+				left: 0;
+				margin: 0;
+				opacity: 0.5;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				z-index: 1;
+				
+				img
+				{
+					display: none;
+				}
+			}
 
 			.site-title
 			{
@@ -63,6 +86,7 @@
 					top: 0;
 					@include transition( background-size 0.1s );
 					width: 100%;
+					z-index: 2;
 
 					@include media( '<=phone' )
 					{
@@ -101,9 +125,11 @@
 			height: 100vh;
 			left: 0;
 			overflow: hidden;
+			padding: 0;
 			position: absolute;
 			top: 0;
 			width: 100vw;
+			z-index: 3;
 
 			h3
 			{
