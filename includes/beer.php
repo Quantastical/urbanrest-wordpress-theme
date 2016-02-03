@@ -27,7 +27,7 @@ function urb_beer_add_meta_boxes() {
 		add_meta_box($id, $title, $callback, $screen, $context, $priority, $callback_args);
 	}
 }
-
+/*
 function urb_beer_admin_footer_edit() {
 	echo '<script>' . "\n"
 	   . "\t" . 'jQuery(function($) {' . "\n"
@@ -37,7 +37,8 @@ function urb_beer_admin_footer_edit() {
 	   . "\t" . '});' . "\n"
 	   . '</script>';
 }
-
+*/
+/*
 function urb_beer_admin_footer_post() {
 	$post             = get_post();
 	$post_type        = get_post_type( $post );
@@ -94,7 +95,8 @@ function urb_beer_admin_footer_post() {
 	   . "\t" . '});' . "\n"
 	   . '</script>';
 }
-
+*/
+/*
 function urb_beer_admin_footer_post_new() {
 	$post             = get_post();
 	$post_type        = get_post_type( $post );
@@ -140,6 +142,7 @@ function urb_beer_admin_footer_post_new() {
 	   . "\t" . '});' . "\n"
 	   . '</script>';
 }
+*/
 
 function urb_beer_admin_init() {
 	add_meta_box( 'beer_profile', 'Beer Profile', 'urb_beer_admin_init_profile', 'beer', 'normal', 'low');
@@ -439,7 +442,7 @@ function urb_beer_init_styles() {
 
 	register_taxonomy( "{$object_type}_{$taxonomy}", $object_type, $args );
 }
-
+/*
 function urb_beer_init_statuses() {
 	register_post_status( 'on_tap', array(
 		'label'                     => "On Tap",
@@ -459,7 +462,7 @@ function urb_beer_init_statuses() {
 		'label_count'               => _n_noop( 'On Deck <span class="count">(%s)</span>', 'On Deck <span class="count">(%s)</span>' )
 	) );
 }
-
+*/
 function urb_beer_init_keywords() {
 	$single_name = 'Keyword';
 	$plural_name = 'Keywords';
@@ -749,14 +752,14 @@ function urb_beer_save_third_parties( $post_id ) {
 
 add_action( 'add_meta_boxes', 'urb_beer_add_meta_boxes' );
 add_action( 'admin_init', 'urb_beer_admin_init' );
-add_action( 'admin_footer-post.php', 'urb_beer_admin_footer_post' );
-add_action( 'admin_footer-post-new.php', 'urb_Beer_admin_footer_post_new' );
-add_action( 'admin_footer-edit.php', 'urb_beer_admin_footer_edit' );
+//add_action( 'admin_footer-post.php', 'urb_beer_admin_footer_post' );
+//add_action( 'admin_footer-post-new.php', 'urb_Beer_admin_footer_post_new' );
+//add_action( 'admin_footer-edit.php', 'urb_beer_admin_footer_edit' );
 add_action( 'after_setup_theme', 'urb_beer_after_setup_theme' );
 add_action( 'init', 'urb_beer_init_styles' ); /* must be before urb_beer_init (see: http://wordpress.stackexchange.com/a/60899/85316) */
 add_action( 'init', 'urb_beer_init_keywords' ); /* must be before urb_beer_init (see: http://wordpress.stackexchange.com/a/60899/85316) */
 add_action( 'init', 'urb_beer_init' );
-add_action( 'init', 'urb_beer_init_statuses' );
+//add_action( 'init', 'urb_beer_init_statuses' );
 add_action( 'save_post', 'urb_beer_save_post' );
 
 add_filter( 'post_updated_messages', 'urb_beer_post_updated_messages' );

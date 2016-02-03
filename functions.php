@@ -3,10 +3,10 @@ require_once('includes/redirects.php');
 require_once('includes/3rd-parties.php');
 require_once('includes/admin-menu.php');
 require_once('includes/beer.php');
-require_once('includes/event.php');
+//require_once('includes/event.php');
 require_once('includes/form.php');
 require_once('includes/login.php');
-require_once('includes/product.php');
+//require_once('includes/product.php');
 require_once('includes/profile.php');
 require_once('includes/rating.php');
 require_once('includes/response.php');
@@ -29,12 +29,13 @@ if ( !function_exists('urbanrest_setup') ) :
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
-			'main'        => 'Main Menu',
-			'footer'      => 'Footer Menu',
-			'kickstarter' => 'Kickstarter Menu',
-			'map'         => 'Map Menu',
-			'social'      => 'Social Menu',
-			'team'        => 'Team Menu'
+			//'footer'      => 'Footer Menu',
+			'main-menu'   => 'main-menu',
+			//'kickstarter' => 'Kickstarter Menu',
+			'map'         => 'map',
+			'social'      => 'social',
+			'about-us'    => 'about-us',
+			'beer-list'   => 'beer-list'
 		) );
 
 		// Use default core markup for search form, comment form, and comments

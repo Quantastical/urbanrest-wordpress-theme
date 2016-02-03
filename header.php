@@ -154,12 +154,12 @@
 			</form>
 		
 			<nav class="site-navigation">
-<?php if( has_nav_menu('main') ) : ?>
+<?php if( has_nav_menu('main-menu') ) : ?>
 				<section class="main-navigation">
 					<h3>Site Links</h3>
 <?php
 wp_nav_menu( array(
-	'theme_location' => 'main',
+	'theme_location' => 'main-menu',
 	'container'      => '',
 	'menu_class'     => 'main-menu',
 ) );

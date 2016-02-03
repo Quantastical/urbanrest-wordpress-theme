@@ -17,13 +17,33 @@ function urb_admin_menu() {
 	$menu[250] = $menu[25]; unset($menu[25]); // Comments
 	$menu[100] = $menu[20]; unset($menu[20]); // Pages
 	$menu[150] = $menu[15]; unset($menu[15]); // Links
-	$menu[202] = $menu_separator;             // Separator
+	//$menu[202] = $menu_separator;             // Separator
+	$menu[201]  = $menu_separator;             // Separator
 	$menu[200] = $menu[10]; unset($menu[10]); // Media
 	$menu[50]  = $menu[5];  unset($menu[5]);  // Posts
-	$menu[49]  = $menu_separator;             // Separator
+	//$menu[49]  = $menu_separator;             // Separator
 	$menu[40]  = $menu[4];  unset($menu[4]);  // Separator
 	$menu[20]  = $menu[2];  unset($menu[2]);  // Dashboard
+
+	$page_title = 'Menus';
+	$menu_title = 'Menus';
+	$capability = 'manage_options';
+	$menu_slug = 'menus';
+	$function = 'urb_custom_menu_page';
+	$icon_url = 'dashicons-list-view';
+	$position = 202;
+	add_menu_page($page_title, $menu_title, $capability, $menu_slug, $function, $icon_url, $position);
 }
+
+function urb_custom_menu_page(){
+    echo 'Redirecting...<script>window.location="/wp-admin/nav-menus.php";</script>';
+    //include(ABSPATH . 'wp-admin/nav-menus.php');
+    //$location = '/wp-admin/nav-menus.php';
+    //$status = null;
+    //wp_redirect( $location, $status );
+	//exit;
+}
+
 add_action('admin_menu', 'urb_admin_menu');
 
 ?>

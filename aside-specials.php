@@ -1,4 +1,42 @@
+	<aside class="site-specials row" id="specials">
+		<header class="col-xs-12">
+			<h2>Urbanrest Beer List</h2>
+		</header>
+
+		<section class="current-beer">
+			<table class="taps">
+				<thead>
+					<tr>
+						<th class="title">Beer</th>
+						<th class="abv"><abbr title="Alcohol By Volume">ABV</abbr></th>
+						<th class="style">Style</th>
+					</tr>
+				</thead>
+				<tbody>
 <?php
+	$menu_name = 'beer-list';
+	$locations = get_nav_menu_locations();
+	$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+	$menu_items = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
+?>
+<?php
+		foreach( $menu_items as $menu_item ):
+			$beer = get_post(url_to_postid($menu_item->url));
+			$alcohol = get_post_meta( $beer->ID, 'alcohol', true );
+?>
+					<tr class="beer">
+						<td class="title">
+							<a href="<?php the_permalink($beer->ID); ?>"><?php echo $beer->post_title; ?></a>
+						</td>
+						<td class="abv"><?php echo ($alcohol > 0) ? $alcohol . '%' : '--'; ?></td>
+						<td class="style"><?php the_terms($beer->ID, 'beer_style'); ?></td>
+					</tr>
+<?php 	endforeach; ?>
+				</tbody>
+			</table>
+		</section>
+<?php
+/*
 $tap_args = array(
 	'order'          => 'ASC',
 	'orderby'        => 'menu_order',
