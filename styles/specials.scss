@@ -39,158 +39,62 @@
 				*/
 			}
 
-			%heading
+			.beer-list
 			{
-				color: $chalk-white;
-				font-family: 'KG Tangled Up In You';
-				font-size: 1.75em;
-				@include font-smoothing( antialiased );
-				font-weight: 400;
-				line-height: 1em;
-				text-transform: uppercase;
-			}
+				font-size: 4em;
+				margin-bottom: 0.75em;
 
-			h3
-			{
-				@extend %heading;
-			}
+				h3 { display: none; }
 
-			.current-beer/*, .upcoming-beer*/
-			{
-				font-size: 2.5em;
-				margin-left: 5%;
-				margin-right: 5%;
-				width: 90%;
-
-				/*
-				@include media( '>desktop' )
+				.beer
 				{
-					margin-left: 33%;
-					width: 67%;
-				}
-				*/
-
-				@include media( '<=phone' )
-				{
-				}
-
-				.taps/*, .decks*/
-				{
-					th
+					.abv
 					{
-						&.abv
-						{
-							text-align: center;
-						}
-
-						@include media('<=phone')
-						{
-							box-sizing: border-box;
-							display: inline-block;
-
-							&.abv { text-align: right; width: 33%; }
-							&.title { width: 67%; }
-							&.style { display: none; }
-						}
+						font-family: 'Chalk It Up';
+						float: left;
+						font-size: 0.75em;
+						margin-right: 0.5em;
+						text-align: right;
+						vertical-align: top;
+						width: 3em;
 					}
 
-					td
+					p
 					{
-						box-sizing: border-box;
-						color: $chalk-white;
-						letter-spacing: 1px;
-						padding: 0.25em;
-
-						&.abv
-						{
-							font-family: 'Chalk It Up';
-							font-size: 0.8em;
-							text-align: center;
-							width: 6em;
-						}
-
-						&.style
-						{
-							font-size: 0.6em;
-							text-transform: uppercase;
-							width: calc(13em / 0.6);
-						}
-
-						&.title
-						{
-							font-size: 1.5em;
-							width: 11em;
-						}
-
-						@include media('<=phone')
-						{
-							box-sizing: border-box;
-							display: inline-block;
-							padding: 0 0.25em;
-
-							&.abv { text-align: right; width: 33%; }
-							&.title { width: 67%; }
-							&.style
-							{
-								display: block;
-								padding-bottom: 1em;
-								padding-left: 0.25em;
-								width: 100%;
-							}
-						}
+						font-size: 0.5em;
+						padding-left: 10rem;
 					}
 
-					/*
-					tr:nth-child( 2 ) td { color: $chalk-yellow; }
-					tr:nth-child( 3 ) td { color: $chalk-red; }
-					tr:nth-child( 4 ) td { color: $chalk-purple; }
-					tr:nth-child( 5 ) td { color: $chalk-blue; }
-					tr:nth-child( 6 ) td { color: $chalk-orange; }
-					tr:nth-child( 7 ) td { color: $chalk-red; }
-					tr:nth-child( 8 ) td { color: $chalk-red; }
-					*/
+					+ .beer
+					{
+						margin-top: 0.33em;
+					}
 				}
 			}
 
-			.current-beer
+			.growler-list
 			{
-				padding-bottom: 1em;
-
-				/*
-				@include media( '>desktop' )
-				{
-					&:before
-					{
-						background-image: url(images/chalk-beer.png);
-						background-position: center;
-						background-repeat: no-repeat;
-						background-size: 10em;
-						content: '';
-						display: block;
-						left: 0;
-						height: 100%;
-						position: absolute;
-						top: 0;
-						width: 33%;
-					}
-				}
-				*/
+				font-size: 2em;
+				text-align: center;
 
 				h3
 				{
-					display: none;
+					display: inline-block;
+					font-weight: normal;
+					margin-right: 1em;
+					max-width: 6em;
+					text-align: center;
+					vertical-align: top;
+
+					&:after {
+						content: ':';
+					}
 				}
 
-				.taps
+				ol
 				{
-					width: 100%;
-
-					th
-					{
-						@extend %heading;
-						padding: 0.1em;
-						text-align: left;
-					}
+					display: inline-block;
+					text-align: left;
 				}
 			}
 

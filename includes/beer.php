@@ -3,6 +3,7 @@
 function urb_beer_add_meta_boxes() {
 	$screen = 'beer';
 	$meta_boxes = array(
+		/*
 		'food_pairings_meta_box' => array(
 				'title'   => 'Food Pairings',
 				'context' => 'advanced'
@@ -11,9 +12,14 @@ function urb_beer_add_meta_boxes() {
 				'title'   => 'Glassware',
 				'context' => 'advanced'
 			),
+		*/
+		'beer_profile' => array(
+			'title' => 'Beer Profile',
+			'context' => 'side'
+			),
 		'third_parties_meta_box' => array(
 				'title'   => '3rd Parties',
-				'context' => 'side'
+				'context' => 'normal'
 			)
 	);
 
@@ -143,12 +149,13 @@ function urb_beer_admin_footer_post_new() {
 	   . '</script>';
 }
 */
-
+/*
 function urb_beer_admin_init() {
 	add_meta_box( 'beer_profile', 'Beer Profile', 'urb_beer_admin_init_profile', 'beer', 'normal', 'low');
 }
-
 function urb_beer_admin_init_profile() {
+*/
+function urb_beer_profile() {
 	global $post;
 	
 	// Add a nonce field so we can check for it later.
@@ -161,7 +168,7 @@ function urb_beer_admin_init_profile() {
 	echo "\t" . '<label for="alcohol">Alcohol:</label>' . "\n";
 	echo "\t" . '<input id="alcohol" name="alcohol" type="number" value="' . $alcohol . '" min="0" max="33" step="0.1" />' . "\n";
 	echo "\t" . '% <abbr title="Alcohol By Volume">ABV</abbr>' . "\n";
-	echo "\t" . '<input data-slider="true" data-slider-target="alcohol" type="hidden" value="' . $alcohol . '" data-slider-range="0,33" data-slider-step="0.1" />';
+	//echo "\t" . '<input data-slider="true" data-slider-target="alcohol" type="hidden" value="' . $alcohol . '" data-slider-range="0,33" data-slider-step="0.1" />';
 	echo '</p>' . "\n";
 
 	$gravity = ( array_key_exists('gravity', $beer) ? $beer['gravity'][0] : '' );
@@ -169,7 +176,7 @@ function urb_beer_admin_init_profile() {
 	echo "\t" . '<label for="gravity">Gravity:</label>' . "\n";
 	echo "\t" . '<input id="gravity" name="gravity" type="number" max="1.100" min="1.000" step="0.001" value="' . $gravity  . '" />' . "\n";
 	echo "\t" . '<abbr title="Original Gravity">OG</abbr>/<abbr title="Starting Gravity">SG</abbr>' . "\n";
-	echo "\t" . '<input data-slider="true" data-slider-target="gravity" type="hidden" value="' . $gravity . '" data-slider-range="1.000,1.100" data-slider-step="0.001" />';
+	//echo "\t" . '<input data-slider="true" data-slider-target="gravity" type="hidden" value="' . $gravity . '" data-slider-range="1.000,1.100" data-slider-step="0.001" />';
 	echo '</p>' . "\n";
 
 	$bitterness = ( array_key_exists('bitterness', $beer) ? $beer['bitterness'][0] : '' );
@@ -177,7 +184,7 @@ function urb_beer_admin_init_profile() {
 	echo "\t" . '<label for="bitterness">Bitterness:</label>' . "\n";
 	echo "\t" . '<input id="bitterness" name="bitterness" type="number" value="' . $bitterness . '" min="0" max="100" step="1" />' . "\n";
 	echo "\t" . '<abbr title="International Bittering Units">IBUs</abbr>' . "\n";
-	echo "\t" . '<input data-slider="true" data-slider-target="bitterness" type="hidden" value="' . $bitterness . '" data-slider-range="0,100" data-slider-step="1" />';
+	//echo "\t" . '<input data-slider="true" data-slider-target="bitterness" type="hidden" value="' . $bitterness . '" data-slider-range="0,100" data-slider-step="1" />';
 	echo '</p>' . "\n";
 
 	$color = ( array_key_exists('color', $beer) ? $beer['color'][0] : '' );
@@ -185,7 +192,7 @@ function urb_beer_admin_init_profile() {
 	echo "\t" . '<label for="color">Color:</label>' . "\n";
 	echo "\t" . '<input id="color" name="color" type="number" value="' . $color . '" min="0" max="100" step="1" />' . "\n";
 	echo "\t" . '<abbr title="Standard Reference Method">SRM</abbr>/&deg;<abbr title="Lovibond">L</abbr>' . "\n";
-	echo "\t" . '<input data-slider="true" data-slider-target="color" type="hidden" value="' . $color . '" data-slider-range="0,100" data-slider-step="1" />';
+	//echo "\t" . '<input data-slider="true" data-slider-target="color" type="hidden" value="' . $color . '" data-slider-range="0,100" data-slider-step="1" />';
 	echo '</p>' . "\n";
 }
 
@@ -256,7 +263,7 @@ function urb_beer_init() {
 		//'custom-fields',
 		//'comments',
 		'revisions',
-		'page-attributes'
+		//'page-attributes'
 		//'post-formats'
 	);
 
@@ -299,14 +306,27 @@ function urb_beer_init() {
 		'can_export'           => true
 	);
 
-	register_post_type( $post_type, $args );
-}
+	$supports = array(
+		'title',
+		'editor',
+		//'author',
+		'thumbnail',
+		'excerpt',
+		//'trackbacks',
+		//'custom-fields',
+		//'comments',
+		'revisions',
+		//'page-attributes',
+		//'post-formats'
+	);
 
+	register_post_type( $post_type, $args );
+	add_post_type_support( $post_type, $supports );
+}
+/*
 function urb_food_pairings_meta_box( $post ) {
-	/*
 	// Add a nonce field so we can check for it later.
-	wp_nonce_field( 'urb_beer_save_food_pairings', 'urb_beer_save_food_pairings' );
-	*/
+	//wp_nonce_field( 'urb_beer_save_food_pairings', 'urb_beer_save_food_pairings' );
 	$food_pairings = get_post_meta( $post->ID, 'food_pairings', true );
 	$settings = array(
 		'wpautop'          => true,
@@ -325,13 +345,11 @@ function urb_food_pairings_meta_box( $post ) {
 	);
 	wp_editor($food_pairings, 'food_pairings', $settings);
 }
-
+*/
+/*
 function urb_glassware_meta_box( $post ) {
-	/*
 	// Add a nonce field so we can check for it later.
-	wp_nonce_field( 'urb_beer_save_glassware', 'urb_beer_save_glassware' );
-	*/
-
+	//wp_nonce_field( 'urb_beer_save_glassware', 'urb_beer_save_glassware' );
 	$glassware = get_post_meta( $post->ID, 'glassware', true );
 	$settings = array(
 		'wpautop'          => true,
@@ -350,7 +368,7 @@ function urb_glassware_meta_box( $post ) {
 	);
 	wp_editor($glassware, 'glassware', $settings);
 }
-
+*/
 function urb_third_parties_meta_box( $post ) {
 	$options = array(
 		'beeradvocate_beer_url' => 'BeerAdvocate Beer URL',
@@ -371,17 +389,16 @@ function urb_third_parties_meta_box( $post ) {
 			$value = '';
 		}
 
-		echo '<p><strong>' . $label . '</strong></p>';
 		echo '<p>';
-		echo '<label class="screen-reader-text" for="menu_order">' . $label . '</label>';
+		echo '<label for="menu_order">' . $label . ':</label> ';
 		echo '<input type="text" name="' . $option . '" id="' . $option . '" value="' . $value . '" class="ltr" size="16" />';
 		echo '</p>';
 	}
 }
 
 function urb_beer_init_styles() {
-	$single_name = 'Style';
-	$plural_name = 'Styles';
+	$single_name = 'Beer Style';
+	$plural_name = 'Beer Styles';
 	$description = "Styles are labels given to beer that describe its overall character and origin.";
 	$taxonomy    = sanitize_key($single_name);
 
@@ -440,7 +457,7 @@ function urb_beer_init_styles() {
 		'sort'                  => null
 	);
 
-	register_taxonomy( "{$object_type}_{$taxonomy}", $object_type, $args );
+	register_taxonomy( "beer_style", $object_type, $args );
 }
 /*
 function urb_beer_init_statuses() {
@@ -463,6 +480,7 @@ function urb_beer_init_statuses() {
 	) );
 }
 */
+/*
 function urb_beer_init_keywords() {
 	$single_name = 'Keyword';
 	$plural_name = 'Keywords';
@@ -526,6 +544,7 @@ function urb_beer_init_keywords() {
 
 	register_taxonomy( "{$object_type}_{$taxonomy}", $object_type, $args );
 }
+*/
 
 function urb_beer_post_updated_messages() {
 	$post             = get_post();
@@ -601,8 +620,8 @@ function urb_beer_save_post( $post_id ) {
 
 	/* OK, it's safe for us to save the data now. */
 	urb_beer_save_beer_profile($post_id);
-	urb_beer_save_food_pairings($post_id);
-	urb_beer_save_glassware($post_id);
+	//urb_beer_save_food_pairings($post_id);
+	//urb_beer_save_glassware($post_id);
 	urb_beer_save_third_parties($post_id);
 }
 
@@ -628,79 +647,79 @@ function urb_beer_save_beer_profile( $post_id ) {
 	}
 }
 
-function urb_beer_save_food_pairings( $post_id ) {
-	/*
-	// Check if our nonce is set.
-	if( !isset( $_POST['urb_beer_save_food_pairings'] ) ) {
-		return;
-	}
+//function urb_beer_save_food_pairings( $post_id ) {
+//	/*
+//	// Check if our nonce is set.
+//	if( !isset( $_POST['urb_beer_save_food_pairings'] ) ) {
+//		return;
+//	}
+//
+//	// Verify that the nonce is valid.
+//	if ( ! wp_verify_nonce( $_POST['urb_beer_save_food_pairings'], 'urb_beer_save_food_pairings' ) ) {
+//		return;
+//	}
+//
+//	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
+//	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+//		return;
+//	}
+//
+//	// Check the user's permissions.
+//	if ( isset( $_POST['post_type'] ) && 'beer' == $_POST['post_type'] ) {
+//
+//		if ( !current_user_can('edit_beer', $post_id) ) {
+//			return;
+//		}
+//
+//	} else {
+//
+//		if ( !current_user_can('edit_post', $post_id) ) {
+//			return;
+//		}
+//	}
+//	*/
+//	if( isset($_POST['food_pairings']) ) {
+//		$food_pairings = sanitize_text_field( $_POST['food_pairings'] );
+//		update_post_meta( $post_id, 'food_pairings', $food_pairings );
+//	}
+//}
 
-	// Verify that the nonce is valid.
-	if ( ! wp_verify_nonce( $_POST['urb_beer_save_food_pairings'], 'urb_beer_save_food_pairings' ) ) {
-		return;
-	}
-
-	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;
-	}
-
-	// Check the user's permissions.
-	if ( isset( $_POST['post_type'] ) && 'beer' == $_POST['post_type'] ) {
-
-		if ( !current_user_can('edit_beer', $post_id) ) {
-			return;
-		}
-
-	} else {
-
-		if ( !current_user_can('edit_post', $post_id) ) {
-			return;
-		}
-	}
-	*/
-	if( isset($_POST['food_pairings']) ) {
-		$food_pairings = sanitize_text_field( $_POST['food_pairings'] );
-		update_post_meta( $post_id, 'food_pairings', $food_pairings );
-	}
-}
-
-function urb_beer_save_glassware( $post_id ) {
-	/*
-	// Check if our nonce is set.
-	if( !isset( $_POST['urb_beer_save_glassware'] ) ) {
-		return;
-	}
-
-	// Verify that the nonce is valid.
-	if ( ! wp_verify_nonce( $_POST['urb_beer_save_glassware'], 'urb_beer_save_glassware' ) ) {
-		return;
-	}
-
-	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;
-	}
-
-	// Check the user's permissions.
-	if ( isset( $_POST['post_type'] ) && 'beer' == $_POST['post_type'] ) {
-
-		if ( !current_user_can('edit_beer', $post_id) ) {
-			return;
-		}
-
-	} else {
-
-		if ( !current_user_can('edit_post', $post_id) ) {
-			return;
-		}
-	}
-	*/
-	if( isset($_POST['glassware']) ) {
-		$glassware = sanitize_text_field( $_POST['glassware'] );
-		update_post_meta( $post_id, 'glassware', $glassware );
-	}
-}
+//function urb_beer_save_glassware( $post_id ) {
+//	/*
+//	// Check if our nonce is set.
+//	if( !isset( $_POST['urb_beer_save_glassware'] ) ) {
+//		return;
+//	}
+//
+//	// Verify that the nonce is valid.
+//	if ( ! wp_verify_nonce( $_POST['urb_beer_save_glassware'], 'urb_beer_save_glassware' ) ) {
+//		return;
+//	}
+//
+//	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
+//	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+//		return;
+//	}
+//
+//	// Check the user's permissions.
+//	if ( isset( $_POST['post_type'] ) && 'beer' == $_POST['post_type'] ) {
+//
+//		if ( !current_user_can('edit_beer', $post_id) ) {
+//			return;
+//		}
+//
+//	} else {
+//
+//		if ( !current_user_can('edit_post', $post_id) ) {
+//			return;
+//		}
+//	}
+//	*/
+//	if( isset($_POST['glassware']) ) {
+//		$glassware = sanitize_text_field( $_POST['glassware'] );
+//		update_post_meta( $post_id, 'glassware', $glassware );
+//	}
+//}
 
 function urb_beer_save_third_parties( $post_id ) {
 	/*
@@ -751,13 +770,13 @@ function urb_beer_save_third_parties( $post_id ) {
 }
 
 add_action( 'add_meta_boxes', 'urb_beer_add_meta_boxes' );
-add_action( 'admin_init', 'urb_beer_admin_init' );
+//add_action( 'admin_init', 'urb_beer_admin_init' );
 //add_action( 'admin_footer-post.php', 'urb_beer_admin_footer_post' );
 //add_action( 'admin_footer-post-new.php', 'urb_Beer_admin_footer_post_new' );
 //add_action( 'admin_footer-edit.php', 'urb_beer_admin_footer_edit' );
 add_action( 'after_setup_theme', 'urb_beer_after_setup_theme' );
 add_action( 'init', 'urb_beer_init_styles' ); /* must be before urb_beer_init (see: http://wordpress.stackexchange.com/a/60899/85316) */
-add_action( 'init', 'urb_beer_init_keywords' ); /* must be before urb_beer_init (see: http://wordpress.stackexchange.com/a/60899/85316) */
+//add_action( 'init', 'urb_beer_init_keywords' ); /* must be before urb_beer_init (see: http://wordpress.stackexchange.com/a/60899/85316) */
 add_action( 'init', 'urb_beer_init' );
 //add_action( 'init', 'urb_beer_init_statuses' );
 add_action( 'save_post', 'urb_beer_save_post' );

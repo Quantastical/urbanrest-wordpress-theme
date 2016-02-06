@@ -1,4 +1,5 @@
 jQuery( function( $ ) {
+	/*
 	var wpAdminBarHeight = (Urb.$wpadminbar) ? Urb.$wpadminbar.outerHeight() : 0;
 	var viewportHeight = Urb.$window.height() - wpAdminBarHeight - Urb.$mainNavigation.outerHeight();
 	var viewportHeightPercent = 0;
@@ -60,4 +61,5 @@ jQuery( function( $ ) {
 	
 	Urb.$window.on('load orientationchange resize scroll', Urb.scrollLogos);
 	Urb.$window.on('load', Urb.setupHeaderNavigation);
+	*/
 } );

@@ -34,8 +34,9 @@ if ( !function_exists('urbanrest_setup') ) :
 			//'kickstarter' => 'Kickstarter Menu',
 			'map'         => 'map',
 			'social'      => 'social',
-			'about-us'    => 'about-us',
-			'beer-list'   => 'beer-list'
+			//'about-us'    => 'about-us',
+			'beer-list'   => 'beer-list',
+			'growler-list' => 'growler-list'
 		) );
 
 		// Use default core markup for search form, comment form, and comments

@@ -15,6 +15,8 @@
 						'separator'   => '<span class="screen-reader-text">, </span>',
 					) );
 				?>
+<?php
+/*
 <?php $food_pairings = get_post_meta($post->ID, 'food_pairings'); ?>
 <?php if( $food_pairings ) : ?>
 				<section class="beer-food-pairings">
@@ -42,4 +44,6 @@
 					</ul>
 				</section>
 <?php endif; ?>
+*/
+?>
 			</div>

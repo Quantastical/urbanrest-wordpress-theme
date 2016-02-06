@@ -3,38 +3,55 @@
 			<h2>Urbanrest Beer List</h2>
 		</header>
 
-		<section class="current-beer">
-			<table class="taps">
-				<thead>
-					<tr>
-						<th class="title">Beer</th>
-						<th class="abv"><abbr title="Alcohol By Volume">ABV</abbr></th>
-						<th class="style">Style</th>
-					</tr>
-				</thead>
-				<tbody>
+		<section class="col-xs-12 beer-list">
+			<h3>Currently On Tap</h3>
+
+			<ol>
 <?php
-	$menu_name = 'beer-list';
-	$locations = get_nav_menu_locations();
-	$menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
-	$menu_items = wp_get_nav_menu_items( $menu->term_id, array( 'order' => 'DESC' ) );
+$menu_name = 'beer-list';
+$locations = get_nav_menu_locations();
+$tap_menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+$tap_menu_items = wp_get_nav_menu_items( $tap_menu->term_id, array( 'order' => 'ASC' ) );
 ?>
 <?php
-		foreach( $menu_items as $menu_item ):
-			$beer = get_post(url_to_postid($menu_item->url));
-			$alcohol = get_post_meta( $beer->ID, 'alcohol', true );
+foreach( $tap_menu_items as $tap_menu_item ):
+	$beer = get_post(url_to_postid($tap_menu_item->url));
+	$alcohol = get_post_meta( $beer->ID, 'alcohol', true );
 ?>
-					<tr class="beer">
-						<td class="title">
-							<a href="<?php the_permalink($beer->ID); ?>"><?php echo $beer->post_title; ?></a>
-						</td>
-						<td class="abv"><?php echo ($alcohol > 0) ? $alcohol . '%' : '--'; ?></td>
-						<td class="style"><?php the_terms($beer->ID, 'beer_style'); ?></td>
-					</tr>
-<?php 	endforeach; ?>
-				</tbody>
-			</table>
+				<li class="beer">
+					<a class="title" href="<?php the_permalink($beer->ID); ?>"><?php echo $beer->post_title; ?></a>
+					<span class="abv"><?php echo ($alcohol > 0) ? $alcohol . '%' : '--'; ?></span>
+					<p><?php echo $beer->post_excerpt; ?></p>
+				</li>
+<?php
+endforeach;
+?>
+			</ol>
 		</section>
+<?php
+$menu_name = 'growler-list';
+$locations = get_nav_menu_locations();
+$growler_menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
+$growler_menu_items = wp_get_nav_menu_items( $growler_menu->term_id, array( 'order' => 'ASC' ) );
+?>
+<?php if( count($growler_menu_items) > 0 ) : ?>
+		<section class="col-xs-12 growler-list">
+			<h3>Available in Growlers</h3>
+
+			<ol>
+<?php
+foreach( $growler_menu_items as $growler_menu_item ):
+	$beer = get_post(url_to_postid($growler_menu_item->url));
+?>
+				<li class="beer">
+					<a class="title" href="<?php the_permalink($beer->ID); ?>"><?php echo $beer->post_title; ?></a>
+				</li>
+<?php
+endforeach;
+?>
+			</ol>
+		</section>
+<?php endif; ?>
 <?php
 /*
 $tap_args = array(

@@ -55,6 +55,11 @@
 					vertical-align: top;
 					width: 33%;
 
+					@include media('<=phone')
+					{
+						width: 100%;
+					}
+
 					h4
 					{
 						color: $urbanrest-white;
