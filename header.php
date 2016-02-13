@@ -141,6 +141,7 @@
 			<h1 class="site-title">
 				<img alt="<?php bloginfo('name'); ?>" class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-1-color.png" />
 			</h1>
+<?php /*
 <?php $front_page = get_post(get_option('page_on_front')); ?>
 <?php if ( has_post_thumbnail($front_page->ID) ) : ?>
 <?php 	$post_thumbnail_url = wp_get_attachment_image_src( get_post_thumbnail_id($front_page->ID), array( 420, 420 ), false, '' )[0];?>
@@ -161,6 +162,7 @@
 <?php 	endif; ?>
 			</figure>
 <?php endif; ?>
+*/ ?>
 
 <?php if( get_bloginfo( 'description', 'display' ) || is_customize_preview() ) : ?>
 			<p class="site-description"><?php echo get_bloginfo( 'description', 'display' ); ?></p>
@@ -177,6 +179,7 @@
 <?php if( has_nav_menu('main-menu') ) : ?>
 				<section class="main-navigation">
 					<h3>Site Links</h3>
+
 <?php
 wp_nav_menu( array(
 	'theme_location' => 'main-menu',
@@ -227,11 +230,12 @@ $latest_args = array(
 	'order', 'DESC'
 );
 $latest = get_posts( $latest_args );
+$first = true;
 ?>
 			<ul class="latest-posts">
 <?php foreach ( $latest as $post ) : ?>
 <?php 	setup_postdata( $GLOBALS['post'] =& $post ); ?>
-				<li class="blog-post">
+				<li class="blog-post<?php echo ($first) ? ' active' : ' next'; $first = false; ?>">
 					<a href="<?php the_permalink(); ?>">
 <?php 	if ( has_post_thumbnail() ) : ?>
 						<span class="blog-post-image" style="background-image:url('<?php echo wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' )[0]; ?>');">

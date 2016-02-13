@@ -27,7 +27,7 @@
 					background: rgba(black, 0.8);
 					bottom: 0;
 					font-size: 1.125em;
-					height: 2.5em;
+					height: 5em;
 					padding: 0;
 					position: absolute;
 					text-align: center;
@@ -86,7 +86,7 @@
 								box-shadow: 0 0 0 3pt rgba(white, 0.5);
 								outline: none;
 							}
-
+							/*
 							&.menu-item-logo
 							{
 								margin: 0;
@@ -113,8 +113,41 @@
 									width: 0;
 								}
 							}
+							*/
+							&.home
+							{
+								float: left;
+								left: 0;
+								position: absolute;
+								top: 0;
 
-							&:not(.menu-item-logo)
+								a
+								{
+									background-image: url(images/logo-stacked-white.png);
+									background-position: center;
+									background-repeat: no-repeat;
+									background-size: contain;
+									color: transparent;
+									display: inline-block;
+									font-size: 1em;
+									height: 5rem;
+									left: 0;
+									margin: 0.25em 1em;
+									padding: 0;
+									position: absolute;
+									top: 0;
+									width: 10em;
+								}
+							}
+
+							&.divider
+							{
+								display: block;
+								font-size: 0;
+								opacity: 0;
+							}
+
+							&:not(.home)
 							{
 								a
 								{

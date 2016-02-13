@@ -1,4 +1,71 @@
 jQuery( function( $ ) {
+	var $nextButton = $('<button class="next"><span class="fa fa-angle-right"></span></button>');
+	var $previousButton = $('<button class="previous"><span class="fa fa-angle-left"></span></button>');
+	var automaticInterval; // seconds
+
+	Urb.automaticNavigation = function() {
+		$nextButton.trigger('click');
+	};
+
+	Urb.setupHeaderNavigation = function() {
+		$nextButton.on('click', function(e) {
+			var $currentPost = $('.site-posts .latest-posts .blog-post.active');
+			var $nextPost = $currentPost.next('.next.blog-post');
+			var $firstPost = $('.site-posts .latest-posts .blog-post:first-child');
+
+			if($currentPost.length) {
+				$previousButton.addClass('active');
+				$currentPost.removeClass('active').addClass('previous');
+				if($nextPost.length) {
+					$nextPost.removeClass('previous next').addClass('active');
+				}
+				if(!$nextPost.next('.next.blog-post').length) {
+					$nextButton.removeClass('active');
+				}
+			} else {
+				$firstPost.removeClass('previous next').addClass('active');
+			}
+
+			if(e.which != undefined && automaticInterval) {
+				clearInterval(automaticInterval);
+			}
+		});
+
+		$previousButton.on('click', function(e) {
+			var $currentPost = $('.site-posts .latest-posts .blog-post.active');
+			var $previousPost = $currentPost.prev('.previous.blog-post');
+			var $lastPost = $('.site-posts .latest-posts .blog-post:last-child');
+
+			if($currentPost.length) {
+				$nextButton.addClass('active');
+				$currentPost.removeClass('active').addClass('next');
+				if($previousPost.length) {
+					$previousPost.removeClass('previous next').addClass('active');
+				}
+				if(!$previousPost.prev('.previous.blog-post').length) {
+					$previousButton.removeClass('active');
+				}
+			} else {
+				$lastPost.removeClass('previous next').addClass('active');
+			}
+
+			if(e.which != undefined && automaticInterval) {
+				clearInterval(automaticInterval);
+			}
+		});
+
+		$('.site-posts .latest-posts').after($nextButton).after($previousButton);
+
+		automaticInterval = setInterval(Urb.automaticNavigation, 5 * 1000); // milliseconds
+
+		setTimeout(Urb.showNavigation, 1500);
+	};
+
+	Urb.showNavigation = function() {
+		$nextButton.addClass('active');
+		//$previousButton.addClass('active');
+	};
+
 	/*
 	var wpAdminBarHeight = (Urb.$wpadminbar) ? Urb.$wpadminbar.outerHeight() : 0;
 	var viewportHeight = Urb.$window.height() - wpAdminBarHeight - Urb.$mainNavigation.outerHeight();
@@ -34,32 +101,9 @@ jQuery( function( $ ) {
 			}
 		}
 	};
-
-	Urb.setupHeaderNavigation = function() {
-		var $nextButton = $('<button class="next"><span class="fa fa-angle-right"></span></button>');
-		var $previousButton = $('<button class="previous"><span class="fa fa-angle-left"></span></button>');
-
-		$nextButton.on('click', function() {
-			console.log('next');
-			if($('.site-posts .latest-posts .blog-post.active').length) {
-				$('.site-posts .latest-posts .blog-post.active').removeClass('active').next('.blog-post').addClass('active');
-			} else {
-				$('.site-posts .latest-posts .blog-post:first-child').addClass('active');
-			}
-		});
-
-		$previousButton.on('click', function() {
-			if($('.site-posts .latest-posts .blog-post.active').length) {
-				$('.site-posts .latest-posts .blog-post.active').removeClass('active').prev('.blog-post').addClass('active');
-			} else {
-				$('.site-posts .latest-posts .blog-post:last-child').addClass('active');
-			}
-		});
-
-		$('.site-posts .latest-posts').after($nextButton).after($previousButton);
-	};
 	
 	Urb.$window.on('load orientationchange resize scroll', Urb.scrollLogos);
-	Urb.$window.on('load', Urb.setupHeaderNavigation);
 	*/
+
+	Urb.$window.on('load', Urb.setupHeaderNavigation);
 } );

@@ -3092,7 +3092,7 @@ html.no-javascript, html.javascript {
     background: rgba(0, 0, 0, 0.8);
     bottom: 0;
     font-size: 1.125em;
-    height: 2.5em;
+    height: 5em;
     padding: 0;
     position: absolute;
     text-align: center;
@@ -3122,7 +3122,35 @@ html.no-javascript, html.javascript {
   .site .site-header .site-navigation .main-navigation .main-menu .menu-item {
     display: inline-block;
     line-height: 2.3em;
-    vertical-align: middle; } }
+    vertical-align: middle;
+    							/*
+    							&.menu-item-logo
+    							{
+    								margin: 0;
+    
+    								a
+    								{
+    									border: none;
+    									display: inline-block;
+    									padding: 0;
+    									@include transition( none );
+    
+    									&:hover
+    									{
+    										background-color: transparent;
+    										border: none;
+    									}
+    								}
+    
+    								img
+    								{
+    									height: auto;
+    									opacity: 0;
+    									vertical-align: middle;
+    									width: 0;
+    								}
+    							}
+    							*/ } }
 @media only screen and (min-width: 501px) {
   .site .site-header .site-navigation .main-navigation .main-menu .menu-item {
     margin: 0 0.5em; }
@@ -3140,24 +3168,31 @@ html.no-javascript, html.javascript {
     animation: mainMenuItemFocus 3s infinite;
     box-shadow: 0 0 0 3pt rgba(255, 255, 255, 0.5);
     outline: none; }
-  .site .site-header .site-navigation .main-navigation .main-menu .menu-item.menu-item-logo {
-    margin: 0; }
-  .site .site-header .site-navigation .main-navigation .main-menu .menu-item.menu-item-logo a {
-    border: none;
+  .site .site-header .site-navigation .main-navigation .main-menu .menu-item.home {
+    float: left;
+    left: 0;
+    position: absolute;
+    top: 0; }
+  .site .site-header .site-navigation .main-navigation .main-menu .menu-item.home a {
+    background-image: url(images/logo-stacked-white.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: transparent;
     display: inline-block;
+    font-size: 1em;
+    height: 5rem;
+    left: 0;
+    margin: 0.25em 1em;
     padding: 0;
-    -webkit-transition: none;
-    -moz-transition: none;
-    transition: none; }
-  .site .site-header .site-navigation .main-navigation .main-menu .menu-item.menu-item-logo a:hover {
-    background-color: transparent;
-    border: none; }
-  .site .site-header .site-navigation .main-navigation .main-menu .menu-item.menu-item-logo img {
-    height: auto;
-    opacity: 0;
-    vertical-align: middle;
-    width: 0; }
-  .site .site-header .site-navigation .main-navigation .main-menu .menu-item:not(.menu-item-logo) a {
+    position: absolute;
+    top: 0;
+    width: 10em; }
+  .site .site-header .site-navigation .main-navigation .main-menu .menu-item.divider {
+    display: block;
+    font-size: 0;
+    opacity: 0; }
+  .site .site-header .site-navigation .main-navigation .main-menu .menu-item:not(.home) a {
     background-color: transparent;
     border: none;
     border-radius: 2pt;
@@ -3172,12 +3207,12 @@ html.no-javascript, html.javascript {
     -moz-transition: background-color 0.33s ease-in-out, color 0.33s ease-in-out;
     transition: background-color 0.33s ease-in-out, color 0.33s ease-in-out;
     vertical-align: middle; }
-  .site .site-header .site-navigation .main-navigation .main-menu .menu-item:not(.menu-item-logo) a:hover {
+  .site .site-header .site-navigation .main-navigation .main-menu .menu-item:not(.home) a:hover {
     border: none; }
-  .site .site-header .site-navigation .main-navigation .main-menu .menu-item:not(.menu-item-logo) a[href="#coming-soon"] {
+  .site .site-header .site-navigation .main-navigation .main-menu .menu-item:not(.home) a[href="#coming-soon"] {
     cursor: default;
     opacity: 0.33; }
-  .site .site-header .site-navigation .main-navigation .main-menu .menu-item:not(.menu-item-logo) a:not([href="#coming-soon"]):focus, .site .site-header .site-navigation .main-navigation .main-menu .menu-item:not(.menu-item-logo) a:not([href="#coming-soon"]):hover {
+  .site .site-header .site-navigation .main-navigation .main-menu .menu-item:not(.home) a:not([href="#coming-soon"]):focus, .site .site-header .site-navigation .main-navigation .main-menu .menu-item:not(.home) a:not([href="#coming-soon"]):hover {
     background-color: gold;
     color: black;
     -webkit-transition: background-color 0.11s ease-in-out, color 0.11s ease-in-out;
@@ -3547,34 +3582,42 @@ html.no-javascript, html.javascript {
   .site .site-header .featured-image img {
     display: none; }
   .site .site-header .site-title .site-logo {
-    background-image: url(images/logo-1-color-inverted.png);
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: 60%;
-    box-sizing: border-box;
-    height: 100%;
-    left: 0;
-    padding-left: 100%;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    -webkit-transition: background-size 0.1s;
-    -moz-transition: background-size 0.1s;
-    transition: background-size 0.1s;
-    width: 100%;
-    z-index: 2; } }
-@media only screen and (max-width: 500px) {
-  .site .site-header .site-title .site-logo {
-    background-size: 60%; } }
-@media only screen and (min-width: 768px) {
-  .site .site-header .site-title .site-logo {
-    background-size: 45%;
-    background-image: url(images/logo-1-color-inverted.png); } }
-@media only screen and (min-width: 1024px) {
-  .site .site-header .site-title .site-logo {
-    background-size: 35%;
-    background-image: url(images/logo-1-color-inverted.png); } }
-@media only screen {
+    display: none;
+    					/*
+    					background-image: url(images/logo-1-color-inverted.png);
+    					background-position: 50% 50%;
+    					background-repeat: no-repeat;
+    					background-size: 60%;
+    					box-sizing: border-box;
+    					height: 100%;
+    					left: 0;
+    					padding-left: 100%;
+    					pointer-events: none;
+    					position: absolute;
+    					top: 0;
+    					@include transition( background-size 0.1s );
+    					width: 100%;
+    					z-index: 2;
+    
+    					@include media( '<=phone' )
+    					{
+    						background-size: 60%;
+    					}
+    
+    					@include media('>=tablet')
+    					{
+    						background-size: 45%;
+    						background-image: url(images/logo-1-color-inverted.png);
+    						//background-image: url(images/logo-1-color-inverted-2x-min.png);
+    					}
+    
+    					@include media('>=desktop')
+    					{
+    						background-size: 35%;
+    						background-image: url(images/logo-1-color-inverted.png);
+    						//background-image: url(images/logo-1-color-inverted-4x-min.png);
+    					}
+    					*/ }
   .site .site-header .site-description {
     display: none; }
   .site .site-header .skip-link {
@@ -3594,18 +3637,27 @@ html.no-javascript, html.javascript {
     height: 100%;
     width: 100%; }
   .site .site-posts .latest-posts .blog-post {
+    left: auto;
     height: 100%;
-    left: 100%;
     padding: 0;
     position: absolute;
+    right: auto;
     top: 0;
-    -webkit-transition: left 1s;
-    -moz-transition: left 1s;
-    transition: left 1s;
+    -webkit-transition: left 1s, right 1s;
+    -moz-transition: left 1s, right 1s;
+    transition: left 1s, right 1s;
     width: 100%; }
   .site .site-posts .latest-posts .blog-post.active {
-    left: 0; }
+    left: 0;
+    right: 0; }
+  .site .site-posts .latest-posts .blog-post.next {
+    left: 100%;
+    right: -100%; }
+  .site .site-posts .latest-posts .blog-post.previous {
+    left: -100%;
+    right: 100%; }
   .site .site-posts .latest-posts .blog-post a {
+    background-color: black;
     height: 100%;
     left: 0;
     position: absolute;
@@ -3617,7 +3669,10 @@ html.no-javascript, html.javascript {
     background-size: cover;
     display: inline-block;
     height: 100%;
+    opacity: 0.5;
     width: 100%; }
+  .site .site-posts .latest-posts .blog-post a .blog-post-image img {
+    display: none; }
   .site .site-posts .latest-posts .blog-post a h4 {
     color: white;
     font-size: 3em;
@@ -3646,14 +3701,22 @@ html.no-javascript, html.javascript {
     border: none;
     color: white;
     cursor: pointer;
-    font-size: 11vh;
+    font-size: 0;
     height: 100vh;
+    opacity: 0;
     outline: none;
     position: absolute;
     text-align: center;
+    -webkit-transition: font-size 0.5s, opacity 0.5s, width 0.5s;
+    -moz-transition: font-size 0.5s, opacity 0.5s, width 0.5s;
+    transition: font-size 0.5s, opacity 0.5s, width 0.5s;
     top: 0;
-    width: 11vw;
+    width: 0;
     z-index: 5; }
+  .site .site-posts button.previous.active, .site .site-posts button.next.active {
+    font-size: 11vh;
+    opacity: 1;
+    width: 11vw; }
   .site .site-posts button.previous {
     background: -webkit-gradient(linear, right top, left top, from(black), to(transparent));
     background: -webkit-linear-gradient(right, transparent, black);
@@ -3695,7 +3758,8 @@ html.no-javascript, html.javascript {
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     font-smoothing: antialiased;
-    padding: 5em 0;
+    min-height: 100vh;
+    padding: 7em 0;
     position: relative;
     /*
     			.upcoming-beer
@@ -4140,7 +4204,8 @@ html.no-javascript, html.javascript {
     background-position: top center;
     background-repeat: repeat;
     color: #EEEEEE;
-    padding-top: 5em; }
+    min-height: 100vh;
+    padding-top: 7em; }
   .site .site-company header h2 {
     display: none; }
   .site .site-company [itemprop="streetAddress"] {

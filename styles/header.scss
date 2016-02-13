@@ -73,6 +73,8 @@
 			{
 				.site-logo
 				{
+					display: none;
+					/*
 					background-image: url(images/logo-1-color-inverted.png);
 					background-position: 50% 50%;
 					background-repeat: no-repeat;
@@ -106,6 +108,7 @@
 						background-image: url(images/logo-1-color-inverted.png);
 						//background-image: url(images/logo-1-color-inverted-4x-min.png);
 					}
+					*/
 				}
 			}
 
@@ -143,21 +146,36 @@
 
 				.blog-post
 				{
+					left: auto;
 					height: 100%;
-					left: 100%;
 					padding: 0;
 					position: absolute;
+					right: auto;
 					top: 0;
-					@include transition(left 1s);
+					@include transition(left 1s, right 1s);
 					width: 100%;
 
 					&.active
 					{
 						left: 0;
+						right: 0;
+					}
+
+					&.next
+					{
+						left: 100%;
+						right: -100%;
+					}
+
+					&.previous
+					{
+						left: -100%;
+						right: 100%;
 					}
 
 					a
 					{
+						background-color: black;
 						height: 100%;
 						left: 0;
 						position: absolute;
@@ -171,7 +189,13 @@
 							background-size: cover;
 							display: inline-block;
 							height: 100%;
+							opacity: 0.5;
 							width: 100%;
+
+							img
+							{
+								display: none;
+							}
 						}
 
 						h4
@@ -216,14 +240,23 @@
 				border: none;
 				color: white;
 				cursor: pointer;
-				font-size: 11vh;
+				font-size: 0;
 				height: 100vh;
+				opacity: 0;
 				outline: none;
 				position: absolute;
 				text-align: center;
+				@include transition( font-size 0.5s, opacity 0.5s, width 0.5s );
 				top: 0;
-				width: 11vw;
+				width: 0;
 				z-index: 5;
+
+				&.active
+				{
+					font-size: 11vh;
+					opacity: 1;
+					width: 11vw;
+				}
 			}
 
 			button.previous

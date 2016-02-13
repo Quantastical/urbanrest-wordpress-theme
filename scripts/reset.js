@@ -37,11 +37,13 @@ jQuery( function( $ ) {
 		}
 	};
 
+	/*
 	Urb.setupMenuLogo = function() {
 		var $menuLogoItem = $('<li class="menu-item menu-item-logo"></li>');
 		$('<a href="#"></a>').append(Urb.$menuLogo).appendTo($menuLogoItem);
 		$('.main-menu li:nth-child(1)', Urb.$mainNavigation).after($menuLogoItem);
 	};
+	*/
 
 	Urb.setScrollPosition = function() {
 		Urb.scrollPosition = Urb.$document.scrollTop();
@@ -59,7 +61,7 @@ jQuery( function( $ ) {
 		Urb.updateViewport();
 	};
 	
-	Urb.$window.on('load', Urb.setupMenuLogo);
+	//Urb.$window.on('load', Urb.setupMenuLogo);
 	Urb.$window.on('load', Urb.setupViewport);
 	Urb.$window.on('resize orientationchange', Urb.updateViewport);
 	Urb.$window.on('scroll', Urb.setScrollPosition);

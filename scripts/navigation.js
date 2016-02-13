@@ -16,7 +16,7 @@ jQuery( function( $ ) {
 			}
 
 			Urb.$body.animate(
-				{ scrollTop: Math.ceil(targetOffset - navBarWithAdminBarHeight) },
+				{ scrollTop: Math.ceil(targetOffset/* - navBarWithAdminBarHeight*/) },
 				Math.round( 500 * (Math.abs(Urb.$window.scrollTop() - targetOffset) / Urb.$window.height()) )
 			);
 
