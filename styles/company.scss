@@ -304,6 +304,11 @@
 						}
 					}
 				}
+
+				@include media('<=tablet')
+				{
+					padding-bottom: 6rem;
+				}
 			}
 
 			.site-contact
@@ -349,6 +354,12 @@
 					/*height: 6em;*/
 					margin: 0 auto;
 					text-align: center;
+
+					@include media('<=tablet')
+					{
+						font-size: 1em;
+						margin-bottom: 2em;
+					}
 				}
 
 
@@ -543,6 +554,11 @@
 				padding-left: 0;
 				padding-right: 0;
 				/*position: relative;*/
+
+				@include media('<=tablet')
+				{
+					margin-top: 2em;
+				}
 
 				.map-link
 				{

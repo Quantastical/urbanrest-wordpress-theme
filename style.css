@@ -3910,6 +3910,24 @@ html.no-javascript, html.javascript {
   .site .site-specials .growler-list ol {
     display: inline-block;
     text-align: left; } }
+@media only screen and (max-width: 768px) {
+  .site .site-specials .beer-list {
+    font-size: 3em; }
+  .site .site-specials .beer-list .beer .abv {
+    float: right;
+    font-size: 0.5em;
+    line-height: 1.8em;
+    text-align: center; }
+  .site .site-specials .beer-list .beer p {
+    font-size: 0.4em;
+    padding: 0; }
+  .site .site-specials .growler-list h3 {
+    font-size: 0.8em;
+    margin: 0;
+    max-width: 100%; }
+  .site .site-specials .growler-list ol {
+    text-align: center; } }
+
 @media only screen {
   .site .site-community {
     align-content: center;
@@ -4483,7 +4501,11 @@ html.no-javascript, html.javascript {
   .site .site-company .site-location .business-hours .status em.closed {
     color: #DD4B39; }
   .site .site-company .site-location .business-hours .status em.open {
-    color: #118844; }
+    color: #118844; } }
+@media only screen and (max-width: 768px) {
+  .site .site-company .site-location {
+    padding-bottom: 6rem; } }
+@media only screen {
   .site .site-company .site-contact {
     color: white;
     font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
@@ -4513,7 +4535,12 @@ html.no-javascript, html.javascript {
     font-size: 1.5em;
     /*height: 6em;*/
     margin: 0 auto;
-    text-align: center; }
+    text-align: center; } }
+@media only screen and (max-width: 768px) {
+  .site .site-company .site-contact .social-menu {
+    font-size: 1em;
+    margin-bottom: 2em; } }
+@media only screen {
   .site .site-company .site-contact .legal {
     font-size: 0.8em;
     margin-top: 2em;
@@ -4634,7 +4661,11 @@ html.no-javascript, html.javascript {
   .site .site-company .site-map {
     padding-left: 0;
     padding-right: 0;
-    /*position: relative;*/ }
+    /*position: relative;*/ } }
+@media only screen and (max-width: 768px) {
+  .site .site-company .site-map {
+    margin-top: 2em; } }
+@media only screen {
   .site .site-company .site-map .map-link {
     background-color: transparent;
     /*bottom: 0;*/

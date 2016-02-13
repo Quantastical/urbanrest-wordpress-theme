@@ -99,6 +99,45 @@
 				}
 			}
 
+			@include media( '<=tablet' )
+			{
+				.beer-list
+				{
+					font-size: 3em;
+
+					.beer
+					{
+						.abv
+						{
+							float: right;
+							font-size: 0.5em;
+							line-height: 1.8em;
+							text-align: center;
+						}
+
+						p
+						{
+							font-size: 0.4em;
+							padding: 0;
+						}
+					}
+				}
+
+				.growler-list
+				{
+					h3
+					{
+						font-size: 0.8em;
+						margin: 0;
+						max-width: 100%;
+					}
+
+					ol
+					{
+						text-align: center;
+					}
+				}
+			}
 /*
 			.upcoming-beer
 			{
