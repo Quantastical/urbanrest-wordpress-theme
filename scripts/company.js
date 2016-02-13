@@ -15,6 +15,10 @@ jQuery(function($){
 				Urb.$map.removeClass('open');
 			}
 		}
+
+		if(!Urb.$map.data('map') && Urb.$window.scrollTop() > $('#company').offset().top) {
+			Urb.setupMap();
+		}
 	};
 
 	Urb.setupBusinessHours = function() {
@@ -45,6 +49,7 @@ jQuery(function($){
 	};
 
 	Urb.setupMap = function() {
+		Urb.$map.data( 'map', true );
 		Urb.$mapCanvas.appendTo(Urb.$mapContainer);
 
 		var mapOptions = {

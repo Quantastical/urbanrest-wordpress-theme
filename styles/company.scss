@@ -13,7 +13,9 @@
 
 			header
 			{
-				h2 { display: none; }
+				display: none;
+
+				/*h2 { display: none; }*/
 			}
 
 			[itemprop="streetAddress"] { display: block; }
@@ -206,8 +208,10 @@
 
 			.site-location
 			{
+				/*
 				padding-bottom: 2em;
 				padding-top: 2em;
+				*/
 				text-align: center;
 
 				h3
@@ -217,10 +221,13 @@
 
 				h4
 				{
+					display: none;
+					/*
 					font-weight: 400;
 					font-size: 1.5em;
 
 					img { height: 6em; }
+					*/
 				}
 
 				.company-url
@@ -233,14 +240,17 @@
 					display: inline-block;
 					font-size: 1.25em;
 					font-weight: 200;
-					margin-top: 1em;
+					/*margin-top: 1em;*/
+					position: relative;
 					text-align: left;
 
 					h5
 					{
-						font-size: 1em;
+						font-family: 'Legend M54';
+						font-size: 2em;
 						font-weight: 400;
-						margin-bottom: 1em;
+						line-height: 1.5em;
+						margin-bottom: 0;
 						text-align: center;
 					}
 
@@ -276,10 +286,13 @@
 
 					.status
 					{
+						bottom: -6.5em;
 						color: rgba( white, 0.33 );
 						font-size: 0.7em;
-						margin-bottom: 1.75em;
+						margin-bottom: 0;
+						position: absolute;
 						text-transform: uppercase;
+						width: 100%;
 
 						em
 						{
@@ -298,8 +311,10 @@
 				color: white;
 				font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
 				margin: 0 auto;
+				/*
 				padding-top: 2em;
 				padding-bottom: 2em;
+				*/
 				width: 100%;
 
 				header
@@ -331,7 +346,7 @@
 				{
 					/* social.scss */
 					font-size: 1.5em;
-					height: 6em;
+					/*height: 6em;*/
 					margin: 0 auto;
 					text-align: center;
 				}
@@ -362,16 +377,19 @@
 				.contact-form
 				{
 					font-size: 1.25em;
-					margin-top: 1em;
+					/*margin-top: 1em;*/
 					padding-left: 2em;
 					padding-right: 2em;
 
 					h5
 					{
+						display: none;
+						/*
 						font-size: 1em;
 						font-weight: 400;
 						margin-bottom: 1em;
 						text-align: center;
+						*/
 					}
 
 					.field
@@ -429,7 +447,7 @@
 
 							&#contact_message
 							{
-								height: 7.25em;
+								height: 5.65em;
 								resize: none;
 							}
 						}
@@ -524,10 +542,12 @@
 			{
 				padding-left: 0;
 				padding-right: 0;
+				/*position: relative;*/
 
 				.map-link
 				{
 					background-color: rgba( $urbanrest-black, 0.00 );
+					/*bottom: 0;*/
 					box-sizing: border-box;
 					color: inherit;
 					cursor: pointer;
@@ -536,6 +556,7 @@
 					font-weight: 200;
 					margin: 0;
 					padding: 0.5em;
+					/*position: absolute;*/
 					text-align: center;
 					text-decoration: none;
 					@include transition( background-color 0.33s );

@@ -3102,7 +3102,8 @@ html.no-javascript, html.javascript {
     z-index: 500; } }
 @media only screen and (max-width: 768px) {
   .site .site-header .site-navigation .main-navigation {
-    padding: 0; } }
+    padding: 0;
+    text-align: right; } }
 @media only screen {
   .site .site-header .site-navigation .main-navigation.stuck-top {
     bottom: auto !important;
@@ -3219,39 +3220,50 @@ html.no-javascript, html.javascript {
     -moz-transition: background-color 0.11s ease-in-out, color 0.11s ease-in-out;
     transition: background-color 0.11s ease-in-out, color 0.11s ease-in-out; } }
 @media only screen and (max-width: 768px) {
-  .site .site-header .site-navigation .main-navigation .main-menu .menu-item.menu-item-type-custom a {
+  .site .site-header .site-navigation .main-navigation .main-menu .menu-item {
+    /*&.menu-item-type-custom*/ }
+  .site .site-header .site-navigation .main-navigation .main-menu .menu-item.home a {
+    width: 7em; }
+  .site .site-header .site-navigation .main-navigation .main-menu .menu-item:not(.home) {
+    height: 50%; }
+  .site .site-header .site-navigation .main-navigation .main-menu .menu-item:not(.home) a {
     border-radius: 0;
     box-sizing: border-box;
     display: block;
     font-family: 'Roboto';
-    font-size: 9px;
+    font-size: 12px;
     font-weight: 400;
     height: 45px;
-    line-height: 2em;
+    line-height: 35px;
     padding: 5px;
+    text-align: center;
     text-overflow: ellipsis;
     text-transform: capitalize;
     white-space: nowrap;
-    width: 60px; }
-  .site .site-header .site-navigation .main-navigation .main-menu .menu-item.menu-item-type-custom a:before {
-    display: block;
-    font-family: FontAwesome;
-    font-size: 20px;
-    margin: 3px auto 0;
-    text-align: center;
-    width: auto; }
-  .site .site-header .site-navigation .main-navigation .main-menu .menu-item.menu-item-type-custom a[href="#coming-soon"] {
-    text-indent: 2em; }
-  .site .site-header .site-navigation .main-navigation .main-menu .menu-item.menu-item-type-custom a[href="#community"]:before {
-    content: ""; }
-  .site .site-header .site-navigation .main-navigation .main-menu .menu-item.menu-item-type-custom a[href="#company"]:before {
-    content: ""; }
-  .site .site-header .site-navigation .main-navigation .main-menu .menu-item.menu-item-type-custom a[href="#kickstarter"]:before {
-    content: ""; }
-  .site .site-header .site-navigation .main-navigation .main-menu .menu-item.menu-item-type-custom a[href="#specials"]:before {
-    content: ""; }
-  .site .site-header .site-navigation .main-navigation .main-menu .menu-item.menu-item-type-custom a[href="#shop"]:before {
-    content: ""; } }
+    width: 60px;
+    										/*
+    										&:before
+    										{
+    											display: block;
+    											font-family: FontAwesome;
+    											font-size: 20px;
+    											margin: 3px auto 0;
+    											text-align: center;
+    											width: auto;
+    										}
+    
+    										&[href="#coming-soon"]        { text-indent: 2em; }
+    										&[href="#community"]:before   { content: $fa-var-newspaper-o; }
+    										&[href="#company"]:before     { content: $fa-var-info-circle; }
+    										&[href="#kickstarter"]:before { content: $fa-var-trophy; }
+    										&[href="#specials"]:before    { content: $fa-var-beer; }
+    										&[href="#shop"]:before        { content: $fa-var-shopping-cart; }
+    										&[href~="/story/"]:before     { content: $fa-var-shopping-cart; }
+    										&[href~="/taproom/"]:before   { content: $fa-var-shopping-cart; }
+    										&[href~="/brewery/"]:before   { content: $fa-var-shopping-cart; }
+    										*/ }
+  .site .site-header .site-navigation .main-navigation .main-menu .menu-item.divider {
+    height: 0; } }
 @media only screen {
   .site .site-header .site-navigation .social-navigation {
     left: 0;
@@ -3647,9 +3659,6 @@ html.no-javascript, html.javascript {
     -moz-transition: left 1s, right 1s;
     transition: left 1s, right 1s;
     width: 100%; }
-  .site .site-posts .latest-posts .blog-post.active {
-    left: 0;
-    right: 0; }
   .site .site-posts .latest-posts .blog-post.next {
     left: 100%;
     right: -100%; }
@@ -3674,27 +3683,53 @@ html.no-javascript, html.javascript {
   .site .site-posts .latest-posts .blog-post a .blog-post-image img {
     display: none; }
   .site .site-posts .latest-posts .blog-post a h4 {
+    align-items: center;
+    box-sizing: border-box;
     color: white;
+    display: flex;
+    font-family: 'Legend M54';
     font-size: 3em;
     font-weight: 300;
+    height: 100%;
+    justify-content: center;
     left: 0;
+    line-height: 1.05em;
+    opacity: 0;
+    padding: 0 11vw;
     position: absolute;
     text-align: center;
     text-shadow: 1px 1px 5px black;
-    top: calc(50vh - 0.5em);
+    /*top: calc(50vh - 0.21em);*/
+    top: 0;
+    -webkit-transition: opacity 0.5s linear 0s;
+    -moz-transition: opacity 0.5s linear 0s;
+    transition: opacity 0.5s linear 0s;
     width: 100%;
-    z-index: 1; }
-  .site .site-posts .latest-posts .blog-post a h4:after {
-    color: white;
-    content: 'Read More...';
-    font-size: 0.8em;
-    font-weight: 200;
+    z-index: 1;
+    /*
+    &:after
+    {
+    	color: white;
+    	content: 'Read More...';
+    	font-family: '';
+    	font-size: 0.8em;
+    	font-weight: 200;
+    	left: 0;
+    	position: absolute;
+    	text-align: center;
+    	text-shadow: 1px 1px 5px black;
+    	top: 4em;
+    	width: 100%;
+    }
+    */ }
+  .site .site-posts .latest-posts .blog-post.active {
     left: 0;
-    position: absolute;
-    text-align: center;
-    text-shadow: 1px 1px 5px black;
-    top: 4em;
-    width: 100%; }
+    right: 0; }
+  .site .site-posts .latest-posts .blog-post.active a h4 {
+    opacity: 1;
+    -webkit-transition: opacity 1s linear 0.5s;
+    -moz-transition: opacity 1s linear 0.5s;
+    transition: opacity 1s linear 0.5s; }
   .site .site-posts .latest-posts .blog-post .blog-post-intro {
     display: none; }
   .site .site-posts button.previous, .site .site-posts button.next {
@@ -3705,6 +3740,7 @@ html.no-javascript, html.javascript {
     height: 100vh;
     opacity: 0;
     outline: none;
+    padding: 0;
     position: absolute;
     text-align: center;
     -webkit-transition: font-size 0.5s, opacity 0.5s, width 0.5s;
@@ -3717,6 +3753,8 @@ html.no-javascript, html.javascript {
     font-size: 11vh;
     opacity: 1;
     width: 11vw; }
+  .site .site-posts button.previous .fa, .site .site-posts button.next .fa {
+    vertical-align: middle; }
   .site .site-posts button.previous {
     background: -webkit-gradient(linear, right top, left top, from(black), to(transparent));
     background: -webkit-linear-gradient(right, transparent, black);
@@ -4206,8 +4244,9 @@ html.no-javascript, html.javascript {
     color: #EEEEEE;
     min-height: 100vh;
     padding-top: 7em; }
-  .site .site-company header h2 {
-    display: none; }
+  .site .site-company header {
+    display: none;
+    /*h2 { display: none; }*/ }
   .site .site-company [itemprop="streetAddress"] {
     display: block; }
   .site .site-company [itemprop="addressLocality"]:after {
@@ -4376,28 +4415,36 @@ html.no-javascript, html.javascript {
     height: auto;
     width: 100%; }
   .site .site-company .site-location {
+    /*
     padding-bottom: 2em;
     padding-top: 2em;
+    */
     text-align: center; }
   .site .site-company .site-location h3 {
     display: none; }
   .site .site-company .site-location h4 {
-    font-weight: 400;
-    font-size: 1.5em; }
-  .site .site-company .site-location h4 img {
-    height: 6em; }
+    display: none;
+    					/*
+    					font-weight: 400;
+    					font-size: 1.5em;
+    
+    					img { height: 6em; }
+    					*/ }
   .site .site-company .site-location .company-url {
     display: none; }
   .site .site-company .site-location .business-hours {
     display: inline-block;
     font-size: 1.25em;
     font-weight: 200;
-    margin-top: 1em;
+    /*margin-top: 1em;*/
+    position: relative;
     text-align: left; }
   .site .site-company .site-location .business-hours h5 {
-    font-size: 1em;
+    font-family: 'Legend M54';
+    font-size: 2em;
     font-weight: 400;
-    margin-bottom: 1em;
+    line-height: 1.5em;
+    margin-bottom: 0;
     text-align: center; }
   .site .site-company .site-location .business-hours dl {
     line-height: 1.33em;
@@ -4423,10 +4470,13 @@ html.no-javascript, html.javascript {
   .site .site-company .site-location .business-hours dl dd {
     text-align: right; }
   .site .site-company .site-location .business-hours .status {
+    bottom: -6.5em;
     color: rgba(255, 255, 255, 0.33);
     font-size: 0.7em;
-    margin-bottom: 1.75em;
-    text-transform: uppercase; }
+    margin-bottom: 0;
+    position: absolute;
+    text-transform: uppercase;
+    width: 100%; }
   .site .site-company .site-location .business-hours .status em {
     float: right;
     font-style: normal; }
@@ -4438,8 +4488,10 @@ html.no-javascript, html.javascript {
     color: white;
     font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
     margin: 0 auto;
+    /*
     padding-top: 2em;
     padding-bottom: 2em;
+    */
     width: 100%; }
   .site .site-company .site-contact header {
     padding-left: 2em;
@@ -4459,7 +4511,7 @@ html.no-javascript, html.javascript {
   .site .site-company .site-contact .social-menu {
     /* social.scss */
     font-size: 1.5em;
-    height: 6em;
+    /*height: 6em;*/
     margin: 0 auto;
     text-align: center; }
   .site .site-company .site-contact .legal {
@@ -4477,14 +4529,17 @@ html.no-javascript, html.javascript {
     color: #118844; }
   .site .site-company .site-contact .contact-form {
     font-size: 1.25em;
-    margin-top: 1em;
+    /*margin-top: 1em;*/
     padding-left: 2em;
     padding-right: 2em; }
   .site .site-company .site-contact .contact-form h5 {
+    display: none;
+    /*
     font-size: 1em;
     font-weight: 400;
     margin-bottom: 1em;
-    text-align: center; }
+    text-align: center;
+    */ }
   .site .site-company .site-contact .contact-form .field {
     font-size: 0.8em;
     overflow: hidden;
@@ -4523,7 +4578,7 @@ html.no-javascript, html.javascript {
     -moz-transition: color 0.33s ease-in-out;
     transition: color 0.33s ease-in-out; }
   .site .site-company .site-contact .contact-form .field input#contact_message, .site .site-company .site-contact .contact-form .field textarea#contact_message {
-    height: 7.25em;
+    height: 5.65em;
     resize: none; }
   .site .site-company .site-contact .contact-form .field.error input, .site .site-company .site-contact .contact-form .field.error textarea {
     background-color: rgba(255, 0, 0, 0.11);
@@ -4578,9 +4633,11 @@ html.no-javascript, html.javascript {
     width: 100%; }
   .site .site-company .site-map {
     padding-left: 0;
-    padding-right: 0; }
+    padding-right: 0;
+    /*position: relative;*/ }
   .site .site-company .site-map .map-link {
     background-color: transparent;
+    /*bottom: 0;*/
     box-sizing: border-box;
     color: inherit;
     cursor: pointer;
@@ -4589,6 +4646,7 @@ html.no-javascript, html.javascript {
     font-weight: 200;
     margin: 0;
     padding: 0.5em;
+    /*position: absolute;*/
     text-align: center;
     text-decoration: none;
     -webkit-transition: background-color 0.33s;

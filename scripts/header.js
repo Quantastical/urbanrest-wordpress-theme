@@ -4,7 +4,12 @@ jQuery( function( $ ) {
 	var automaticInterval; // seconds
 
 	Urb.automaticNavigation = function() {
-		$nextButton.trigger('click');
+		var $currentPost = $('.site-posts .latest-posts .blog-post.active');
+		var $nextPost = $currentPost.next('.next.blog-post');
+
+		if( $nextPost.length ) {
+			$nextButton.trigger('click');
+		}
 	};
 
 	Urb.setupHeaderNavigation = function() {
@@ -58,7 +63,7 @@ jQuery( function( $ ) {
 
 		automaticInterval = setInterval(Urb.automaticNavigation, 5 * 1000); // milliseconds
 
-		setTimeout(Urb.showNavigation, 1500);
+		setTimeout(Urb.showNavigation, 500);
 	};
 
 	Urb.showNavigation = function() {

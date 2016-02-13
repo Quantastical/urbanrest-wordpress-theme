@@ -38,6 +38,7 @@
 					@include media("<=tablet")
 					{
 						padding: 0;
+						text-align: right;
 					}
 
 					&.stuck-top
@@ -184,24 +185,38 @@
 
 							@include media("<=tablet")
 							{
-								&.menu-item-type-custom
+
+								&.home
 								{
+									a
+									{
+										width: 7em;
+									}
+								}
+								
+								/*&.menu-item-type-custom*/
+								&:not(.home)
+								{
+									height: 50%;
+
 									a
 									{
 										border-radius: 0;
 										box-sizing: border-box;
 										display: block;
 										font-family: 'Roboto';
-										font-size: 9px;
+										font-size: 12px;
 										font-weight: 400;
 										height: 45px;
-										line-height: 2em;
+										line-height: 35px;
 										padding: 5px;
+										text-align: center;
 										text-overflow: ellipsis;
 										text-transform: capitalize;
 										white-space: nowrap;
 										width: 60px;
 
+										/*
 										&:before
 										{
 											display: block;
@@ -218,7 +233,16 @@
 										&[href="#kickstarter"]:before { content: $fa-var-trophy; }
 										&[href="#specials"]:before    { content: $fa-var-beer; }
 										&[href="#shop"]:before        { content: $fa-var-shopping-cart; }
+										&[href~="/story/"]:before     { content: $fa-var-shopping-cart; }
+										&[href~="/taproom/"]:before   { content: $fa-var-shopping-cart; }
+										&[href~="/brewery/"]:before   { content: $fa-var-shopping-cart; }
+										*/
 									}
+								}
+
+								&.divider
+								{
+									height: 0;
 								}
 							}
 						}

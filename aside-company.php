@@ -12,7 +12,7 @@
 		</header>
 
 		<div class="business-hours">
-			<h5>Business Hours</h5>
+			<h5>Taproom</h5>
 			<dl class="row">
 <?php foreach( array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') as $day ) : ?>
 <?php 	if( urb_get_business_hours($day) ) : ?>
@@ -61,7 +61,8 @@ wp_nav_menu(array(
 	'menu_class'     => 'social-menu',
 	'link_before'    => '<span class="btn-label">',
 	'link_after'     => '</span>',
-	'items_wrap'     => '<ul id="%1$s" class="%2$s" style="width:' . ( 3 * ceil(count($menu_items) / 2) ) . 'em">%3$s</ul>',
+	//'items_wrap'     => '<ul id="%1$s" class="%2$s" style="width:' . ( 3 * ceil(count($menu_items) / 2) ) . 'em">%3$s</ul>',
+	'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 ));
 ?>
 <?php echo do_shortcode('[form post_id="11" class="row contact-form" title="Stay Connected"]'); ?>
@@ -156,6 +157,7 @@ wp_nav_menu(array(
 	'menu_class'     => 'map-menu',
 	'link_before'    => '<span class="btn-label">',
 	'link_after'     => '</span>',
+	//'items_wrap'     => '<ul id="%1$s" class="%2$s" style="width:' . ( 3 * ceil(count($menu_items) / 2) ) . 'em">%3$s</ul>',
 	'items_wrap'     => '<ul id="%1$s" class="%2$s" style="width:' . ( 3 * ceil(count($menu_items) / 2) ) . 'em">%3$s</ul>',
 ));
 ?>
