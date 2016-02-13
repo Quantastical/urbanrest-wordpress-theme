@@ -3635,7 +3635,7 @@ html.no-javascript, html.javascript {
   .site .site-header .skip-link {
     display: none; }
   .site .site-posts {
-    height: 100vh;
+    height: 100%;
     left: 0;
     overflow: hidden;
     padding: 0;
@@ -3918,6 +3918,8 @@ html.no-javascript, html.javascript {
     font-size: 0.5em;
     line-height: 1.8em;
     text-align: center; }
+  .site .site-specials .beer-list .beer .title {
+    font-size: 0.8em; }
   .site .site-specials .beer-list .beer p {
     font-size: 0.4em;
     padding: 0; }

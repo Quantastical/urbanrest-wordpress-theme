@@ -10,7 +10,7 @@
 		<meta name="robots" content="NOODP,NOYDIR" />
 		<meta name="format-detection" content="telephone=no" />
 		<meta name="theme-color" content="#ff69b4" />
-		<meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+		<meta name="viewport" content="width=400, maximum-scale=1.0" />
 
 <?php if( get_option('urbanrest_setting_favicon') ) : ?>
 		<link rel="icon" type="image/png" href="<?php echo get_option('urbanrest_setting_favicon'); ?>" />
