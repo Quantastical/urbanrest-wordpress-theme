@@ -26,7 +26,7 @@
 <?php 	endif; ?>
 <?php endforeach; ?>
 			</dl>
-			<p class="status">Taproom is currently <em class="closed">Closed</em></p>
+			<p class="status">Taproom is currently <em class="open">Open</em></p>
 		</div>
 
 <?php if( get_option('urbanrest_setting_phone_number') ) : ?>

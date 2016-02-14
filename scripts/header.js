@@ -1,7 +1,7 @@
 jQuery( function( $ ) {
 	var $nextButton = $('<button class="next"><span class="fa fa-angle-right"></span></button>');
 	var $previousButton = $('<button class="previous"><span class="fa fa-angle-left"></span></button>');
-	var automaticInterval; // seconds
+	var automaticInterval = setInterval(function() { Urb.automaticNavigation(); }, 5 * 1000); // milliseconds
 
 	Urb.automaticNavigation = function() {
 		var $currentPost = $('.site-posts .latest-posts .blog-post.active');
@@ -61,9 +61,14 @@ jQuery( function( $ ) {
 
 		$('.site-posts .latest-posts').after($nextButton).after($previousButton);
 
-		automaticInterval = setInterval(Urb.automaticNavigation, 5 * 1000); // milliseconds
-
 		setTimeout(Urb.showNavigation, 500);
+	};
+
+	Urb.stopAutomaticNavigation = function() {
+		if( automaticInterval ) {
+			clearInterval(automaticInterval);
+		}
+		Urb.$window.off('scroll', Urb.stopAutomaticNavigation);
 	};
 
 	Urb.showNavigation = function() {
@@ -110,5 +115,6 @@ jQuery( function( $ ) {
 	Urb.$window.on('load orientationchange resize scroll', Urb.scrollLogos);
 	*/
 
+	Urb.$window.on('scroll', Urb.stopAutomaticNavigation);
 	Urb.$window.on('load', Urb.setupHeaderNavigation);
 } );

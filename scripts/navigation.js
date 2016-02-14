@@ -3,8 +3,11 @@ jQuery( function( $ ) {
 	var navBarWithAdminBarHeight = Urb.$mainNavigation.outerHeight() + wpAdminBarHeight;
 
 	Urb.setupFragmentAnchors = function() {
+		console.log('setup');
 		Urb.$document.on('click', 'a[href^="#"]', function(e) {
 			e.preventDefault();
+
+			console.log('clicked');
 
 			var fragmentIdentifier = $.attr(this, 'href');
 			var targetOffset = 0;
@@ -15,10 +18,15 @@ jQuery( function( $ ) {
 				fragmentIdentifier = '/';
 			}
 
-			Urb.$body.animate(
+			console.log(targetOffset);
+
+			//Urb.$body.animate(
+			$('html,body').animate(
 				{ scrollTop: Math.ceil(targetOffset/* - navBarWithAdminBarHeight*/) },
 				Math.round( 500 * (Math.abs(Urb.$window.scrollTop() - targetOffset) / Urb.$window.height()) )
 			);
+
+			console.log('animated');
 
 			return false;
 		});

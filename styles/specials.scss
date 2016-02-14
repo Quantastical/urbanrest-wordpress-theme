@@ -14,6 +14,7 @@
 			color: $chalk-white;
 			font-family: 'Colored Crayons';
 			@include font-smoothing( antialiased );
+			-moz-osx-font-smoothing: grayscale;
 			min-height: 100vh;
 			padding: 7em 0;
 			position: relative;
@@ -135,6 +136,7 @@
 						font-size: 0.8em;
 						margin: 0;
 						max-width: 100%;
+						width: 100%;
 					}
 
 					ol
