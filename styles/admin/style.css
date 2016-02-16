@@ -143,15 +143,25 @@ html.no-javascript, html.javascript {
   font-size: 16px;
   height: 100%;
   margin: 0;
-  width: 100%; }
+  width: 100%;
+  /*
+  ol, ul
+  {
+  	list-style: none;
+  	padding: 0;
+  }
+  */ }
 .site h1, .site h2, .site h3, .site h4, .site h5, .site h6, .site p, .site ol, .site ul, .site dt, .site dd {
   margin: 0; }
-.site ol, .site ul {
-  list-style: none;
-  padding: 0; }
 .site em {
-  font-style: normal;
+  font-style: italic;
   font-weight: 400; }
+.site hr {
+  border-style: dashed;
+  border-width: 1px 0 0 0;
+  border-color: black;
+  padding: 0;
+  margin: 2em 1em; }
 .site .hidden {
   display: none; }
 .site > .row {

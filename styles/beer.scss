@@ -11,12 +11,21 @@
 		font-weight: 300;
 		overflow-x: hidden;
 		padding-bottom: 4em;
-		padding-top: 4em;
+		padding-top: 5.5em;
 		width: 100%;
 
 		a, .hyperlink
 		{
 			@extend .hyperlink;
+		}
+
+		hr
+		{
+			border-style: dashed;
+			border-width: 1px 0 0 0;
+			border-color: black;
+			padding: 0;
+			margin: 2em 1em;
 		}
 
 		iframe
@@ -170,9 +179,13 @@
 						color: transparent;
 						cursor: pointer;
 						font-size: 0;
+						height: 1.5rem;
 						opacity: 0;
 						outline: none;
 						padding: 0;
+						position: relative;
+						top: -0.2rem;
+						width: 1.29rem;
 
 						&.rated
 						{
@@ -185,6 +198,9 @@
 							content: $fa-var-star;
 							font-family: 'FontAwesome';
 							font-size: 1.4rem;
+							position: absolute;
+							right: 0;
+							top: 0;
 						}
 
 						&:after
@@ -194,7 +210,9 @@
 							font-family: 'FontAwesome';
 							font-size: 1.4rem;
 							margin-left: -1.3rem;
-							position: relative;
+							position: absolute;
+							right: 0;
+							top: 0;
 						}
 					}
 
@@ -510,6 +528,11 @@
 			{
 				font-size: 0.8em;
 				margin-top: calc(3em / 0.8);
+
+				ol
+				{
+					list-style: none;
+				}
 
 				.citation
 				{

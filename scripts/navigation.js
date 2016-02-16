@@ -3,11 +3,8 @@ jQuery( function( $ ) {
 	var navBarWithAdminBarHeight = Urb.$mainNavigation.outerHeight() + wpAdminBarHeight;
 
 	Urb.setupFragmentAnchors = function() {
-		console.log('setup');
 		Urb.$document.on('click', 'a[href^="#"]', function(e) {
 			e.preventDefault();
-
-			console.log('clicked');
 
 			var fragmentIdentifier = $.attr(this, 'href');
 			var targetOffset = 0;
@@ -18,15 +15,13 @@ jQuery( function( $ ) {
 				fragmentIdentifier = '/';
 			}
 
-			console.log(targetOffset);
+			var targetHasPadding = ($fragment.innerHeight() - $fragment.height()) > navBarWithAdminBarHeight;
 
 			//Urb.$body.animate(
 			$('html,body').animate(
-				{ scrollTop: Math.ceil(targetOffset/* - navBarWithAdminBarHeight*/) },
+				{ scrollTop: Math.ceil(targetOffset - (targetHasPadding ? 0 : navBarWithAdminBarHeight * 1.5) ) },
 				Math.round( 500 * (Math.abs(Urb.$window.scrollTop() - targetOffset) / Urb.$window.height()) )
 			);
-
-			console.log('animated');
 
 			return false;
 		});
@@ -76,7 +71,7 @@ jQuery( function( $ ) {
 
 	Urb.scrollToContent = function() {
 		if( !Urb.$body.hasClass('home') && Urb.$window.scrollTop() == 0 ) {
-			Urb.$window.scrollTop( $('main').offset().top );
+			Urb.$window.scrollTop( $('main').offset().top - wpAdminBarHeight );
 		} else if( location.hash ) {
 			var $anchor = $(location.hash);
 			var anchorProximityThreshold = 5; // pixels

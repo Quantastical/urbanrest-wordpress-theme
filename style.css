@@ -2078,15 +2078,25 @@ html.no-javascript, html.javascript {
   font-size: 16px;
   height: 100%;
   margin: 0;
-  width: 100%; }
+  width: 100%;
+  /*
+  ol, ul
+  {
+  	list-style: none;
+  	padding: 0;
+  }
+  */ }
 .site h1, .site h2, .site h3, .site h4, .site h5, .site h6, .site p, .site ol, .site ul, .site dt, .site dd {
   margin: 0; }
-.site ol, .site ul {
-  list-style: none;
-  padding: 0; }
 .site em {
-  font-style: normal;
+  font-style: italic;
   font-weight: 400; }
+.site hr {
+  border-style: dashed;
+  border-width: 1px 0 0 0;
+  border-color: black;
+  padding: 0;
+  margin: 2em 1em; }
 .site .hidden {
   display: none; }
 .site > .row {
@@ -3881,6 +3891,8 @@ html.no-javascript, html.javascript {
   .site .site-specials .beer-list {
     font-size: 4em;
     margin-bottom: 0.75em; }
+  .site .site-specials .beer-list ol {
+    list-style: none; }
   .site .site-specials .beer-list h3 {
     display: none; }
   .site .site-specials .beer-list .beer .abv {
@@ -3910,6 +3922,7 @@ html.no-javascript, html.javascript {
     content: ':'; }
   .site .site-specials .growler-list ol {
     display: inline-block;
+    list-style: none;
     text-align: left; } }
 @media only screen and (max-width: 768px) {
   .site .site-specials .beer-list {
@@ -3927,7 +3940,8 @@ html.no-javascript, html.javascript {
   .site .site-specials .growler-list h3 {
     font-size: 0.8em;
     margin: 0;
-    max-width: 100%; }
+    max-width: 100%;
+    width: 100%; }
   .site .site-specials .growler-list ol {
     text-align: center; } }
 
@@ -4723,6 +4737,7 @@ html.no-javascript, html.javascript {
     bottom: 0.6em;
     left: 0.6em;
     opacity: 0;
+    padding: 0;
     position: absolute;
     -webkit-transition: opacity 0.33s 0s;
     -moz-transition: opacity 0.33s 0s;
@@ -4952,8 +4967,14 @@ html.no-javascript, html.javascript {
   font-weight: 300;
   overflow-x: hidden;
   padding-bottom: 4em;
-  padding-top: 4em;
+  padding-top: 5.5em;
   width: 100%; }
+.site main.beer hr {
+  border-style: dashed;
+  border-width: 1px 0 0 0;
+  border-color: black;
+  padding: 0;
+  margin: 2em 1em; }
 .site main.beer iframe {
   border: none;
   border-radius: 0.25em;
@@ -5020,23 +5041,32 @@ html.no-javascript, html.javascript {
   color: transparent;
   cursor: pointer;
   font-size: 0;
+  height: 1.5rem;
   opacity: 0;
   outline: none;
-  padding: 0; }
+  padding: 0;
+  position: relative;
+  top: -0.2rem;
+  width: 1.29rem; }
 .site main.beer .beer-header .beer-rating .rating-actions .rate-button.rated {
   opacity: 1; }
 .site main.beer .beer-header .beer-rating .rating-actions .rate-button:before {
   color: gold;
   content: "";
   font-family: 'FontAwesome';
-  font-size: 1.4rem; }
+  font-size: 1.4rem;
+  position: absolute;
+  right: 0;
+  top: 0; }
 .site main.beer .beer-header .beer-rating .rating-actions .rate-button:after {
   color: #000000;
   content: "";
   font-family: 'FontAwesome';
   font-size: 1.4rem;
   margin-left: -1.3rem;
-  position: relative; }
+  position: absolute;
+  right: 0;
+  top: 0; }
 .site main.beer .beer-header .beer-rating .rating-actions:hover .rate-button {
   opacity: 1; }
 .site main.beer .beer-header .beer-rating .rating-actions:hover .rate-button:hover ~ .rate-button {
@@ -5235,6 +5265,8 @@ html.no-javascript, html.javascript {
 .site main.beer .beer-footer .beer-citations {
   font-size: 0.8em;
   margin-top: calc(3em / 0.8); }
+.site main.beer .beer-footer .beer-citations ol {
+  list-style: none; }
 .site main.beer .beer-footer .beer-citations .citation {
   padding-left: 1.5em; }
 .site main.beer .beer-footer .beer-citations .citation .citation-link {
@@ -5266,8 +5298,14 @@ html.no-javascript, html.javascript {
   font-weight: 300;
   overflow-x: hidden;
   padding-bottom: 4em;
-  padding-top: 3em;
+  padding-top: 5.5em;
   width: 100%; }
+.site main.event hr {
+  border-style: dashed;
+  border-width: 1px 0 0 0;
+  border-color: black;
+  padding: 0;
+  margin: 2em 1em; }
 .site main.event iframe {
   border: none;
   border-radius: 0.25em;
@@ -5501,8 +5539,14 @@ html.no-javascript, html.javascript {
   font-weight: 300;
   overflow-x: hidden;
   padding-bottom: 4em;
-  padding-top: 4em;
+  padding-top: 5.5em;
   width: 100%; }
+.site main.page hr {
+  border-style: dashed;
+  border-width: 1px 0 0 0;
+  border-color: black;
+  padding: 0;
+  margin: 2em 1em; }
 .site main.page iframe {
   border: none;
   border-radius: 0.25em;
@@ -5679,8 +5723,14 @@ html.no-javascript, html.javascript {
   font-weight: 300;
   overflow-x: hidden;
   padding-bottom: 4em;
-  padding-top: 3em;
+  padding-top: 5.5em;
   width: 100%; }
+.site main.post hr {
+  border-style: dashed;
+  border-width: 1px 0 0 0;
+  border-color: black;
+  padding: 0;
+  margin: 2em 1em; }
 .site main.post iframe {
   border: none;
   border-radius: 0.25em;
@@ -5933,6 +5983,12 @@ html.no-javascript, html.javascript {
   padding-bottom: 4em;
   padding-top: 4em;
   width: 100%; }
+.site main.taxonomy hr {
+  border-style: dashed;
+  border-width: 1px 0 0 0;
+  border-color: black;
+  padding: 0;
+  margin: 2em 1em; }
 .site main.taxonomy .taxonomy-header .taxonomy-title {
   font-size: 2em;
   margin-bottom: 0.5em;
@@ -5967,8 +6023,14 @@ html.no-javascript, html.javascript {
   font-weight: 300;
   overflow-x: hidden;
   padding-bottom: 4em;
-  padding-top: 4em;
+  padding-top: 5.5em;
   width: 100%; }
+.site main.user hr {
+  border-style: dashed;
+  border-width: 1px 0 0 0;
+  border-color: black;
+  padding: 0;
+  margin: 2em 1em; }
 .site main.user iframe {
   border: none;
   border-radius: 0.25em;

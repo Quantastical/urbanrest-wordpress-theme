@@ -46,6 +46,11 @@
 				font-size: 4em;
 				margin-bottom: 0.75em;
 
+				ol
+				{
+					list-style: none;
+				}
+
 				h3 { display: none; }
 
 				.beer
@@ -96,6 +101,7 @@
 				ol
 				{
 					display: inline-block;
+					list-style: none;
 					text-align: left;
 				}
 			}

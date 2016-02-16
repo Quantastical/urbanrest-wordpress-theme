@@ -617,6 +617,7 @@
 						bottom: 0.6em;
 						left: 0.6em;
 						opacity: 0;
+						padding: 0;
 						position: absolute;
 						@include transition( opacity 0.33s 0s );
 						width: auto !important;

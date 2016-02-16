@@ -32,16 +32,27 @@ html.javascript
 		margin: 0;
 	}
 
+	/*
 	ol, ul
 	{
 		list-style: none;
 		padding: 0;
 	}
+	*/
 
 	em
 	{
-		font-style: normal;
+		font-style: italic;
 		font-weight: 400;
+	}
+
+	hr
+	{
+		border-style: dashed;
+		border-width: 1px 0 0 0;
+		border-color: black;
+		padding: 0;
+		margin: 2em 1em;
 	}
 
 	.hidden { display: none; }
