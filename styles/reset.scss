@@ -55,6 +55,11 @@ html.javascript
 		margin: 2em 1em;
 	}
 
+	abbr
+	{
+		text-decoration: none;
+	}
+
 	.hidden { display: none; }
 
 	> .row { margin: 0 !important; }

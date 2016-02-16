@@ -162,6 +162,8 @@ html.no-javascript, html.javascript {
   border-color: black;
   padding: 0;
   margin: 2em 1em; }
+.site abbr {
+  text-decoration: none; }
 .site .hidden {
   display: none; }
 .site > .row {
