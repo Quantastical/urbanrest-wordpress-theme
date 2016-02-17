@@ -152,8 +152,9 @@ jQuery(function($){
 			Urb.$map.addClass('animating');
 			var canvasSize = (Urb.$window.outerHeight() - navBarWithAdminBarHeight - $('h3', Urb.$map).outerHeight()).toFixed(0);
 			$('.map-container, .map-canvas', Urb.$map).css('height', canvasSize + 'px');
-			Urb.$body.animate(
-				{ scrollTop: Urb.$body.scrollTop() + canvasSize },
+			//Urb.$body.animate(
+			$('html,body').animate(
+				{ scrollTop: Urb.$window.scrollTop() + canvasSize },
 				666,
 				function() {
 					Urb.$map.removeClass('animating');
