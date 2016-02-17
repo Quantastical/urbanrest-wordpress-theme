@@ -16,6 +16,15 @@
 		color: lighten( $urbanrest-green, 5% );
 	}
 
+	&:focus
+	{
+		animation-duration: 3s;
+		animation-name: flash;
+		animation-fill-mode: both;
+		animation-iteration-count: infinite;
+		outline: none;
+	}
+
 	[rel="external"]
 	{
 		&:after

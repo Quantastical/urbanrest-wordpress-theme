@@ -1,4 +1,7 @@
 jQuery(function($){
+	var wpAdminBarHeight = (Urb.$wpadminbar) ? Urb.$wpadminbar.outerHeight() : 0;
+	var navBarWithAdminBarHeight = Urb.$mainNavigation.outerHeight() + wpAdminBarHeight;
+
 	Urb.centerMap = function() {
 		if( Urb.$map.data('map') ) {
 			// TODO: figure out why this needs a setTimeout
@@ -13,6 +16,7 @@ jQuery(function($){
 		if( Urb.$map.hasClass('open') && !Urb.$map.hasClass('animating') ) {
 			if( Urb.$mapCanvas.offset().top > Urb.scrollPosition + Urb.$window.height() ) {
 				Urb.$map.removeClass('open');
+				$('.map-container, .map-canvas', Urb.$map).removeAttr('style');
 			}
 		}
 
@@ -146,13 +150,17 @@ jQuery(function($){
 		
 		if( Urb.$map.hasClass('open') ) {
 			Urb.$map.addClass('animating');
+			var canvasSize = (Urb.$window.outerHeight() - navBarWithAdminBarHeight - $('h3', Urb.$map).outerHeight()).toFixed(0);
+			$('.map-container, .map-canvas', Urb.$map).css('height', canvasSize + 'px');
 			Urb.$body.animate(
-				{ scrollTop: Urb.$body.scrollTop() + 500 },
+				{ scrollTop: Urb.$body.scrollTop() + canvasSize },
 				666,
 				function() {
 					Urb.$map.removeClass('animating');
 				}
 			);
+		} else {
+			$('.map-container, .map-canvas', Urb.$map).removeAttr('style');
 		}
 	};
 

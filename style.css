@@ -2931,6 +2931,12 @@ html.no-javascript, html.javascript {
 .hyperlink:hover, .site main.beer a:hover, .site main.beer .hyperlink:hover, .site main.event a:hover, .site main.event .hyperlink:hover, .site main.page a:hover, .site main.page .hyperlink:hover, .site main.post a:hover, .site main.post .hyperlink:hover, .site main.taxonomy a:hover, .site main.taxonomy .hyperlink:hover, .site main.user a:hover, .site main.user .hyperlink:hover {
   /*border-bottom-color: lighten( $urbanrest-green, 5% );*/
   color: #149f4f; }
+.hyperlink:focus, .site main.beer a:focus, .site main.beer .hyperlink:focus, .site main.event a:focus, .site main.event .hyperlink:focus, .site main.page a:focus, .site main.page .hyperlink:focus, .site main.post a:focus, .site main.post .hyperlink:focus, .site main.taxonomy a:focus, .site main.taxonomy .hyperlink:focus, .site main.user a:focus, .site main.user .hyperlink:focus {
+  animation-duration: 3s;
+  animation-name: flash;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  outline: none; }
 .hyperlink [rel="external"]:after, .site main.beer a [rel="external"]:after, .site main.beer .hyperlink [rel="external"]:after, .site main.event a [rel="external"]:after, .site main.event .hyperlink [rel="external"]:after, .site main.page a [rel="external"]:after, .site main.page .hyperlink [rel="external"]:after, .site main.post a [rel="external"]:after, .site main.post .hyperlink [rel="external"]:after, .site main.taxonomy a [rel="external"]:after, .site main.taxonomy .hyperlink [rel="external"]:after, .site main.user a [rel="external"]:after, .site main.user .hyperlink [rel="external"]:after {
   background-color: transparent;
   border: none;
@@ -4281,7 +4287,7 @@ html.no-javascript, html.javascript {
     background-position: top center;
     background-repeat: repeat;
     color: #EEEEEE;
-    min-height: 100vh;
+    /*min-height: 100vh;*/
     padding-top: 7em; }
   .site .site-company header {
     display: none;
@@ -4458,7 +4464,11 @@ html.no-javascript, html.javascript {
     padding-bottom: 2em;
     padding-top: 2em;
     */
-    text-align: center; }
+    text-align: center; } }
+@media only screen and (min-width: 769px) {
+  .site .site-company .site-location {
+    min-height: calc(100vh - 13.5em); } }
+@media only screen {
   .site .site-company .site-location h3 {
     display: none; }
   .site .site-company .site-location h4 {
@@ -4687,12 +4697,13 @@ html.no-javascript, html.javascript {
     text-align: center;
     width: 100%; }
   .site .site-company .site-map {
+    margin-top: 3em;
     padding-left: 0;
     padding-right: 0;
     /*position: relative;*/ } }
 @media only screen and (max-width: 768px) {
   .site .site-company .site-map {
-    margin-top: 2em; } }
+    margin-top: 0; } }
 @media only screen {
   .site .site-company .site-map .map-link {
     background-color: transparent;
