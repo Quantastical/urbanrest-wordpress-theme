@@ -212,7 +212,7 @@
 							text-shadow: 1px 1px 5px black;
 							/*top: calc(50vh - 0.21em);*/
 							top: 0;
-							@include transition( opacity 0.5s linear 0s );
+							@include transition( opacity 0.1s linear 0s );
 							width: 100%;
 							z-index: 1;
 

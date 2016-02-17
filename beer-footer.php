@@ -2,19 +2,19 @@
 				<section class="beer-actions">
 					<ul class="beer-checkin">
 <?php $beeradvocate_beer_url = get_post_meta($post->ID, 'beeradvocate_beer_url'); ?>
-<?php if( filter_var($beeradvocate_beer_url, FILTER_VALIDATE_URL) ) : ?>
+<?php if( filter_var($beeradvocate_beer_url[0], FILTER_VALIDATE_URL) ) : ?>
 						<li class="beer-checkin-item">
 							<a class="beeradvocate" href="<?php echo $beeradvocate_beer_url[0]; ?>">Rate this on BeerAdvocate</a>
 						</li>
 <?php endif; ?>
 <?php $ratebeer_beer_url = get_post_meta($post->ID, 'ratebeer_beer_url'); ?>
-<?php if( filter_var($ratebeer_beer_url, FILTER_VALIDATE_URL) ) : ?>
+<?php if( filter_var($ratebeer_beer_url[0], FILTER_VALIDATE_URL) ) : ?>
 						<li class="beer-checkin-item">
 							<a class="ratebeer" href="<?php echo $ratebeer_beer_url[0]; ?>">Rate this on RateBeer</a>
 						</li>
 <?php endif; ?>
 <?php $untappd_beer_url = get_post_meta($post->ID, 'untappd_beer_url'); ?>
-<?php if( filter_var($untappd_beer_url, FILTER_VALIDATE_URL) && get_option('untappd_api_client_id') ) : ?>
+<?php if( filter_var($untappd_beer_url[0], FILTER_VALIDATE_URL) && get_option('untappd_api_client_id') ) : ?>
 						<li class="beer-checkin-item">
 							<a class="untappd" href="<?php echo $untappd_beer_url[0]; ?>">Check-In on Untappd</a>
 						</li>

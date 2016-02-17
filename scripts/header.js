@@ -1,7 +1,12 @@
 jQuery( function( $ ) {
+	var wpAdminBarHeight = (Urb.$wpadminbar) ? Urb.$wpadminbar.outerHeight() : 0;
+	var navBarWithAdminBarHeight = Urb.$mainNavigation.outerHeight() + wpAdminBarHeight;
+
 	var $nextButton = $('<button class="next"><span class="fa fa-angle-right"></span></button>');
 	var $previousButton = $('<button class="previous"><span class="fa fa-angle-left"></span></button>');
 	var automaticInterval = setInterval(function() { Urb.automaticNavigation(); }, 5 * 1000); // milliseconds
+
+	var $postHeadings = $('.site-posts .latest-posts .blog-post h4');
 
 	Urb.automaticNavigation = function() {
 		var $currentPost = $('.site-posts .latest-posts .blog-post.active');
@@ -10,6 +15,24 @@ jQuery( function( $ ) {
 		if( $nextPost.length ) {
 			$nextButton.trigger('click');
 		}
+	};
+
+	Urb.scrollHeader = function() {
+		$postHeadings.each(function() {
+			var $postHeading = $(this);
+
+			if($postHeading.parents('.blog-post').is('.active')) {
+				if( Urb.scrollPosition > 0 && Urb.scrollPosition < Urb.$window.height() ) {
+					$postHeading.css({
+						//'opacity'    : Math.max(0, (1 - Urb.scrollPosition / Urb.$window.height() * 4)).toFixed(2),
+						'height' : (100 - 25 * Urb.scrollPosition / Urb.$window.height()).toFixed(2) + '%',
+						'transform'  : 'scale(' + (1 - 0.15 * Urb.scrollPosition / Urb.$window.height()).toFixed(3) + ')'
+					});
+				} else {
+					$postHeading.removeAttr('style');
+				}
+			}
+		});
 	};
 
 	Urb.setupHeaderNavigation = function() {
@@ -116,5 +139,6 @@ jQuery( function( $ ) {
 	*/
 
 	Urb.$window.on('scroll', Urb.stopAutomaticNavigation);
+	Urb.$window.on('load scroll', Urb.scrollHeader);
 	Urb.$window.on('load', Urb.setupHeaderNavigation);
 } );

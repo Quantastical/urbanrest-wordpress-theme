@@ -1,4 +1,6 @@
 			<header class="page-header" role="banner">
+<?php
+/*
 <?php if ( has_post_thumbnail() ) : ?>
 <?php 	$post_thumbnail_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 420, 420 ), false, '' )[0];?>
 				<figure class="page-image animated fadeIn" data-entered-viewport="animated fadeIn">
@@ -18,6 +20,8 @@
 <?php 	endif; ?>
 				</figure>
 <?php endif; ?>
+*/
+?>
 
 				<?php the_title( '<h2 class="page-title">', '</h2>' ); ?>
 			</header>

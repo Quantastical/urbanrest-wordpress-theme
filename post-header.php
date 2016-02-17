@@ -1,4 +1,6 @@
 			<header class="post-header" role="banner">
+<?php
+/*
 <?php if ( has_post_thumbnail() ) : ?>
 <?php 	$post_thumbnail_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' )[0];?>
 				<figure class="post-image animated fadeIn" data-entered-viewport="animated fadeIn" style="background-image:url('<?php echo $post_thumbnail_url; ?>');">
@@ -18,9 +20,13 @@
 <?php 	endif; ?>
 				</figure>
 <?php endif; ?>
+*/
+?>
 
 				<?php the_title( '<h2 class="post-title">', '</h2>' ); ?>
 
+<?php
+/*
 				<div class="post-meta">
 					<div class="byline">
 						<?php echo get_avatar( get_the_author_meta('ID'), '96', 'http://www.urbanrestbrewing.com/wp-content/themes/urbanrest-wordpress-theme/images/default-avatar.png' ); ?>
@@ -43,4 +49,6 @@ echo get_the_category_list( $separator, $parents, $post_id );
 						</p>
 					</div>
 				</div>
+*/
+?>
 			</header>

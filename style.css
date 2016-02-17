@@ -3713,9 +3713,9 @@ html.no-javascript, html.javascript {
     text-shadow: 1px 1px 5px black;
     /*top: calc(50vh - 0.21em);*/
     top: 0;
-    -webkit-transition: opacity 0.5s linear 0s;
-    -moz-transition: opacity 0.5s linear 0s;
-    transition: opacity 0.5s linear 0s;
+    -webkit-transition: opacity 0.1s linear 0s;
+    -moz-transition: opacity 0.1s linear 0s;
+    transition: opacity 0.1s linear 0s;
     width: 100%;
     z-index: 1;
     /*
@@ -3894,7 +3894,8 @@ html.no-javascript, html.javascript {
     font-size: 4em;
     margin-bottom: 0.75em; }
   .site .site-specials .beer-list ol {
-    list-style: none; }
+    list-style: none;
+    padding: 0; }
   .site .site-specials .beer-list h3 {
     display: none; }
   .site .site-specials .beer-list .beer .abv {
@@ -3925,6 +3926,7 @@ html.no-javascript, html.javascript {
   .site .site-specials .growler-list ol {
     display: inline-block;
     list-style: none;
+    padding: 0;
     text-align: left; } }
 @media only screen and (max-width: 768px) {
   .site .site-specials .beer-list {
@@ -5774,7 +5776,7 @@ html.no-javascript, html.javascript {
   display: flex;
   height: 0;
   justify-content: center;
-  margin: 0;
+  margin: 2em 0 0;
   overflow: hidden;
   padding-bottom: 25%;
   padding-top: 25%;
@@ -5825,13 +5827,17 @@ html.no-javascript, html.javascript {
   padding-left: 1.5em; }
 .site main.post .post-content section {
   margin-top: 1em; }
-.site main.post .post-content .post-tags {
+.site main.post .post-tags {
+  font-size: 1.2em;
+  line-height: 1.5em;
+  margin-top: 2em; }
+.site main.post .post-tags ul {
   list-style: none;
   padding: 0; }
-.site main.post .post-content .post-tags .post-tag {
+.site main.post .post-tags .post-tag {
   display: inline;
   font-size: 0.8em; }
-.site main.post .post-content .post-tags .post-tag a {
+.site main.post .post-tags .post-tag a {
   background-color: rgba(0, 0, 0, 0.3);
   border: none;
   border-radius: 0.25em;
@@ -5843,14 +5849,14 @@ html.no-javascript, html.javascript {
   -webkit-transition: background-color 0.33s;
   -moz-transition: background-color 0.33s;
   transition: background-color 0.33s; }
-.site main.post .post-content .post-tags .post-tag a:hover {
+.site main.post .post-tags .post-tag a:hover {
   background-color: rgba(17, 136, 68, 0.3);
   color: #118844;
   border: none;
   -webkit-transition: background-color 0.11s;
   -moz-transition: background-color 0.11s;
   transition: background-color 0.11s; }
-.site main.post .post-content .post-tags .post-tag:last-child a {
+.site main.post .post-tags .post-tag:last-child a {
   margin-right: 0; }
 .site main.post .post-footer {
   margin-top: 3em; }
