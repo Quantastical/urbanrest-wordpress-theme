@@ -169,11 +169,15 @@
 <?php endif; ?>
 			<p><a class="skip-link screen-reader-text hidden" href="#main"><span>Skip to content</span></a>
 
+<?php
+/*
 			<form action="/search" autocomplete="off" class="site-search" id="search" method="get">
 				<label class="search-label" for="q">Search Urbanrest.com for&hellip;</label>
 				<input class="search-input" id="q" name="q" required="required" type="search" />
 				<button class="search-submit" type="submit"><span class="btn-label">Find Results</span></button>
 			</form>
+*/
+?>
 		
 			<nav class="site-navigation">
 <?php if( has_nav_menu('main-menu') ) : ?>
@@ -210,7 +214,7 @@ wp_nav_menu(array(
 	'link_after'      => '</span>',
 	'items_wrap'      => '<ul id="%1$s" class="%2$s">'
 	                   . '%3$s'
-	                   . '<li class="search menu-item menu-item-type-custom menu-item-object-custom"><a title="Search Urbanrest.com" href="#search"><span class="btn-label">Search</span></a></li>'
+//	                   . '<li class="search menu-item menu-item-type-custom menu-item-object-custom"><a title="Search Urbanrest.com" href="#search"><span class="btn-label">Search</span></a></li>'
 	                   . '</ul>',
 	'depth'           => 0,
 	'walker'          => ''
