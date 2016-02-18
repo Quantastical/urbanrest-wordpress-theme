@@ -26,7 +26,29 @@
 <?php 	endif; ?>
 <?php endforeach; ?>
 			</dl>
-			<p class="status">Taproom is currently <em class="open">Open</em></p>
+			<p class="status">
+				Taproom is currently
+<?php
+$default_timezone = date_default_timezone_get();
+date_default_timezone_set('America/Detroit');
+$today = date('l');
+$start = get_option("urbanrest_setting_{$today}_start_time");
+$end = get_option("urbanrest_setting_{$today}_end_time");
+?>
+<?php if( urb_get_business_hours($today) ) : ?>
+<?php
+$currentTime = DateTime::createFromFormat('H:i', date('H:i'));
+$startTime = DateTime::createFromFormat('H:i', $start ? $start : '00:00');
+$endTime = DateTime::createFromFormat('H:i', $end ? $end : '23:59');
+?>
+<?php 	if( $currentTime > $startTime  && $currentTime < $endTime ) : ?>
+				<em class="open">Open</em>
+<?php 	else : ?>
+				<em class="closed">Closed</em>
+<?php 	endif; ?>
+<?php endif; ?>
+<?php date_default_timezone_set($default_timezone); ?>
+			</p>
 		</div>
 
 <?php if( get_option('urbanrest_setting_phone_number') ) : ?>

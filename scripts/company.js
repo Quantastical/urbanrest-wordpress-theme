@@ -58,6 +58,7 @@ jQuery(function($){
 
 		var mapOptions = {
 			disableDefaultUI   : true,
+			draggable          : false,
 			mapTypeId          : google.maps.MapTypeId.ROADMAP,
 			mapTypeControl     : false,
 			//mapTypeControlOptions: {

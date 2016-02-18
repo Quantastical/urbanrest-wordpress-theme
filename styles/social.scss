@@ -75,6 +75,14 @@
 				}
 			}
 
+			&.pinterest a
+			{
+				&:before
+				{
+					width: 0.82em;
+				}
+			}
+
 			&.google-plus a { color: darken( $google-red, 11% );     &:before { content: $fa-var-google-plus-square; } &:hover:before { color: $google-red;      } }
 			&.instagram a   { color: darken( $instagram-blue, 11% ); &:before { content: $fa-var-instagram;          } &:hover:before { color: $instagram-blue;  } }
 			&.pinterest a   { color: darken( $pinterest-red, 11% );  &:before { content: $fa-var-pinterest-square;   } &:hover:before { color: $pinterest-red;   } }

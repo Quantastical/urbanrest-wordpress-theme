@@ -3459,6 +3459,8 @@ html.no-javascript, html.javascript {
     width: 0.819em; }
   .social-menu .menu-item.facebook a:hover:before {
     color: #3B5998; }
+  .social-menu .menu-item.pinterest a:before {
+    width: 0.82em; }
   .social-menu .menu-item.google-plus a {
     color: #bd3221; }
   .social-menu .menu-item.google-plus a:before {
@@ -3810,7 +3812,8 @@ html.no-javascript, html.javascript {
     -o-background-size: cover;
     background-size: cover;
     color: #E0DBD1;
-    font-family: 'Colored Crayons';
+    /*font-family: 'Colored Crayons';*/
+    font-family: 'Chalk It Up';
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
     font-smoothing: antialiased;
@@ -3882,7 +3885,8 @@ html.no-javascript, html.javascript {
 @media only screen {
   .site .site-specials a {
     color: inherit;
-    text-decoration: none; }
+    text-decoration: none;
+    text-transform: uppercase; }
   .site .site-specials h2 {
     display: none;
     /*
@@ -3904,16 +3908,20 @@ html.no-javascript, html.javascript {
     padding: 0; }
   .site .site-specials .beer-list h3 {
     display: none; }
+  .site .site-specials .beer-list .beer {
+    line-height: 0.8em; }
   .site .site-specials .beer-list .beer .abv {
     font-family: 'Chalk It Up';
     float: left;
     font-size: 0.75em;
+    line-height: 1.25em;
     margin-right: 0.5em;
     text-align: right;
     vertical-align: top;
     width: 3em; }
   .site .site-specials .beer-list .beer p {
     font-size: 0.5em;
+    line-height: 1.5em;
     padding-left: 10rem; }
   .site .site-specials .beer-list .beer + .beer {
     margin-top: 0.33em; }
