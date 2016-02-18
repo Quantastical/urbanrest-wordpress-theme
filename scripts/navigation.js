@@ -2,6 +2,12 @@ jQuery( function( $ ) {
 	var wpAdminBarHeight = (Urb.$wpadminbar) ? Urb.$wpadminbar.outerHeight() : 0;
 	var navBarWithAdminBarHeight = Urb.$mainNavigation.outerHeight() + wpAdminBarHeight;
 
+	Urb.setupExternalLinks = function() {
+		$('a[href^="http"]:not([href*="' + window.location.host + '"])').each( function() {
+			$(this).attr('target', '_blank');
+		} );
+	};
+
 	Urb.setupFragmentAnchors = function() {
 		Urb.$document.on('click', 'a[href^="#"]', function(e) {
 			e.preventDefault();
@@ -84,6 +90,7 @@ jQuery( function( $ ) {
 		}
 	};
 
+	Urb.$window.on('load', Urb.setupExternalLinks);
 	Urb.$window.on('load', Urb.setupFragmentAnchors);
 	Urb.$window.on('load', Urb.setupMainNavigation);
 	Urb.$window.on('load scroll', Urb.scrollMainNavigation);

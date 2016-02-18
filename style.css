@@ -3909,12 +3909,13 @@ html.no-javascript, html.javascript {
   .site .site-specials .beer-list h3 {
     display: none; }
   .site .site-specials .beer-list .beer {
-    line-height: 0.8em; }
+    line-height: 0.8em;
+    margin-bottom: 0.5em; }
   .site .site-specials .beer-list .beer .abv {
     font-family: 'Chalk It Up';
     float: left;
     font-size: 0.75em;
-    line-height: 1.25em;
+    line-height: 1em;
     margin-right: 0.5em;
     text-align: right;
     vertical-align: top;
@@ -4652,7 +4653,16 @@ html.no-javascript, html.javascript {
     transition: color 0.33s ease-in-out; }
   .site .site-company .site-contact .contact-form .field input#contact_message, .site .site-company .site-contact .contact-form .field textarea#contact_message {
     height: 5.65em;
-    resize: none; }
+    resize: none;
+    -webkit-transition: height 0.25s;
+    -moz-transition: height 0.25s;
+    transition: height 0.25s; } }
+@media only screen and (max-width: 768px) {
+  .site .site-company .site-contact .contact-form .field input#contact_message, .site .site-company .site-contact .contact-form .field textarea#contact_message {
+    height: 2.25em; }
+  .site .site-company .site-contact .contact-form .field input#contact_message:focus, .site .site-company .site-contact .contact-form .field textarea#contact_message:focus {
+    height: 5.65em; } }
+@media only screen {
   .site .site-company .site-contact .contact-form .field.error input, .site .site-company .site-contact .contact-form .field.error textarea {
     background-color: rgba(255, 0, 0, 0.11);
     border-color: rgba(255, 0, 0, 0.25);
@@ -4696,10 +4706,14 @@ html.no-javascript, html.javascript {
     font-family: FontAwesome;
     margin-right: 0.6em;
     text-decoration: none; }
+  .site .site-company .site-contact .contact-form .option input + label:hover {
+    color: #DD4B39; }
   .site .site-company .site-contact .contact-form .option input:checked + label {
     text-decoration: none; }
   .site .site-company .site-contact .contact-form .option input:checked + label:before {
     content: ""; }
+  .site .site-company .site-contact .contact-form .option input:checked + label:hover {
+    color: #118844; }
   .site .site-company .site-contact .contact-form .submit {
     font-size: 0.8em;
     text-align: center;
@@ -4803,8 +4817,13 @@ html.no-javascript, html.javascript {
     height: 525px;
     max-width: none !important;
     width: 100%; }
-  .site .site-company .site-map .map-container .map-canvas .gm-style-cc + .gmnoprint {
-    margin-bottom: 20px !important; }
+  .site .site-company .site-map .map-container .map-canvas > .gm-style {
+    /*
+    > .gm-style-cc:not([controlwidth]),
+    > .gmnoprint,
+    */ }
+  .site .site-company .site-map .map-container .map-canvas > .gm-style > :last-child {
+    margin-bottom: -25px !important; }
   .site .site-company .site-map .map-container .map-canvas > .gm-style > :first-child > :nth-child(2) {
     background-image: url(/wp-content/themes/urbanrest-wordpress-theme/images/map-texture.png);
     background-size: 100% 100%;

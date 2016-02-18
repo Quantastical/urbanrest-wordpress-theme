@@ -472,6 +472,17 @@
 							{
 								height: 5.65em;
 								resize: none;
+								@include transition( height 0.25s );
+
+								@include media('<=tablet')
+								{
+									height: 2.25em;
+
+									&:focus
+									{
+										height: 5.65em;
+									}
+								}
 							}
 						}
 
@@ -538,6 +549,11 @@
 									margin-right: 0.6em;
 									text-decoration: none;
 								}
+
+								&:hover
+								{
+									color: $google-red;
+								}
 							}
 
 							&:checked + label
@@ -547,6 +563,11 @@
 								&:before
 								{
 									content: $fa-var-check;
+								}
+
+								&:hover
+								{
+									color: $urbanrest-green;
 								}
 							}
 						}
@@ -673,9 +694,16 @@
 						max-width: none !important;
 						width: 100%;
 
-						.gm-style-cc + .gmnoprint
+						> .gm-style
 						{
-							margin-bottom: 20px !important;
+							/*
+							> .gm-style-cc:not([controlwidth]),
+							> .gmnoprint,
+							*/
+							> :last-child
+							{
+								margin-bottom: -25px !important;
+							}
 						}
 
 						> .gm-style > :first-child > :nth-child(2)
