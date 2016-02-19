@@ -28,7 +28,7 @@ foreach( $sitemaps as $sitemap ) :
 		'orderby' => 'modified',
 		'order' => 'DESC',
 		'post_type' => $sitemap['post_type'],
-		'post_status' => 'any'
+		'post_status' => 'publish'
 	) );
 
 	if( count($recent_posts) === 1 ) :
@@ -82,7 +82,7 @@ $recent_posts = wp_get_recent_posts( array(
 			'orderby' => 'date',
 			'order' => 'DESC',
 			'post_type' => $post_type,
-			'post_status' => 'any'
+			'post_status' => 'publish'
 		) );
 ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

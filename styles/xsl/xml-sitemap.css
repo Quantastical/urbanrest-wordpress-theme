@@ -1,5 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:100,300,400);
 body {
+  box-sizing: border-box;
   color: #000000;
   font-family: 'Roboto';
   font-size: 16px;
@@ -13,21 +14,21 @@ table {
   border-collapse: collapse;
   overflow: scroll;
   width: 100%; }
-  table thead tr th {
-    font-weight: 400;
-    padding: 0.5em;
-    text-align: center;
-    white-space: nowrap; }
-    table thead tr th:first-child {
-      text-align: left; }
-  table tbody tr:nth-child(odd) {
-    background-color: #f2f2f2; }
-  table tbody tr td {
-    font-weight: 300;
-    padding: 0.5em;
-    text-align: center;
-    white-space: nowrap; }
-    table tbody tr td:first-child {
-      text-align: left; }
+table thead tr th {
+  font-weight: 400;
+  padding: 0.5em;
+  text-align: center;
+  white-space: nowrap; }
+table thead tr th:first-child {
+  text-align: left; }
+table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2; }
+table tbody tr td {
+  font-weight: 300;
+  padding: 0.5em;
+  text-align: center;
+  white-space: nowrap; }
+table tbody tr td:first-child {
+  text-align: left; }
 
 /*# sourceMappingURL=xml-sitemap.css.map */

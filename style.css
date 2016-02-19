@@ -3218,7 +3218,7 @@ html.no-javascript, html.javascript {
     color: white;
     font-family: 'Roboto';
     font-size: 1em;
-    font-weight: 100;
+    font-weight: 300;
     padding: 0.25em;
     text-decoration: none;
     text-transform: uppercase;
@@ -4501,7 +4501,7 @@ html.no-javascript, html.javascript {
   .site .site-company .site-location .business-hours {
     display: inline-block;
     font-size: 1.25em;
-    font-weight: 200;
+    font-weight: 300;
     /*margin-top: 1em;*/
     position: relative;
     text-align: left; }
@@ -4527,7 +4527,7 @@ html.no-javascript, html.javascript {
     width: 50%; }
   .site .site-company .site-location .business-hours dl dd.today, .site .site-company .site-location .business-hours dl dt.today {
     opacity: 0.88;
-    font-weight: 300; }
+    font-weight: 400; }
   .site .site-company .site-location .business-hours dl dd.hover, .site .site-company .site-location .business-hours dl dt.hover {
     opacity: 1.00;
     background-color: rgba(0, 0, 0, 0.11); }
