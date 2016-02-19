@@ -3958,7 +3958,8 @@ html.no-javascript, html.javascript {
     float: right;
     font-size: 0.5em;
     line-height: 1.8em;
-    text-align: center; }
+    margin-right: 0;
+    text-align: right; }
   .site .site-specials .beer-list .beer .title {
     font-size: 0.8em; }
   .site .site-specials .beer-list .beer p {

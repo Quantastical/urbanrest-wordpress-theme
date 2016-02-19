@@ -18,6 +18,7 @@
 		"scripts/page.js",
 		"scripts/post.js",
 		"scripts/single.js",
-		"scripts/user.js"
+		"scripts/user.js",
+		"scripts/analytics.js"
 	]
 }
