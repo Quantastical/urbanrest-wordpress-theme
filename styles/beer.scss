@@ -347,6 +347,8 @@
 		{
 			margin-top: 3em;
 
+			.beer-sharing.modal:not(.modal-opened):not(.modal-closing) { display: none; }
+
 			.beer-actions
 			{
 				text-align: center;

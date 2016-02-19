@@ -203,6 +203,8 @@
 		{
 			margin-top: 3em;
 
+			.event-sharing.modal:not(.modal-opened):not(.modal-closing) { display: none; }
+
 			.event-actions
 			{
 				text-align: center;

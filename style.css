@@ -5189,6 +5189,8 @@ html.no-javascript, html.javascript {
   margin-right: 0; }
 .site main.beer .beer-footer {
   margin-top: 3em; }
+.site main.beer .beer-footer .beer-sharing.modal:not(.modal-opened):not(.modal-closing) {
+  display: none; }
 .site main.beer .beer-footer .beer-actions {
   text-align: center; }
 .site main.beer .beer-footer .beer-actions .beer-comments, .site main.beer .beer-footer .beer-actions .beer-like, .site main.beer .beer-footer .beer-actions .beer-share {
@@ -5469,6 +5471,8 @@ html.no-javascript, html.javascript {
   margin-right: 0; }
 .site main.event .event-footer {
   margin-top: 3em; }
+.site main.event .event-footer .event-sharing.modal:not(.modal-opened):not(.modal-closing) {
+  display: none; }
 .site main.event .event-footer .event-actions {
   text-align: center; }
 .site main.event .event-footer .event-actions .event-comments, .site main.event .event-footer .event-actions .event-like, .site main.event .event-footer .event-actions .event-share {
@@ -5644,6 +5648,8 @@ html.no-javascript, html.javascript {
   margin-bottom: 1em; }
 .site main.page .page-footer {
   margin-top: 3em; }
+.site main.page .page-footer .page-sharing.modal:not(.modal-opened):not(.modal-closing) {
+  display: none; }
 .site main.page .page-footer .page-actions {
   text-align: center; }
 .site main.page .page-footer .page-actions .page-comments, .site main.page .page-footer .page-actions .page-like, .site main.page .page-footer .page-actions .page-share {
@@ -5905,6 +5911,8 @@ html.no-javascript, html.javascript {
   margin-right: 0; }
 .site main.post .post-footer {
   margin-top: 3em; }
+.site main.post .post-footer .post-sharing.modal:not(.modal-opened):not(.modal-closing) {
+  display: none; }
 .site main.post .post-footer .post-actions {
   text-align: center; }
 .site main.post .post-footer .post-actions .post-comments, .site main.post .post-footer .post-actions .post-like, .site main.post .post-footer .post-actions .post-share {
@@ -6132,6 +6140,8 @@ html.no-javascript, html.javascript {
   margin-bottom: 1em; }
 .site main.user .user-footer {
   margin-top: 3em; }
+.site main.user .user-footer .user-sharing.modal:not(.modal-opened):not(.modal-closing) {
+  display: none; }
 .site main.user .user-footer .user-actions {
   text-align: center; }
 .site main.user .user-footer .user-actions .user-comments, .site main.user .user-footer .user-actions .user-like, .site main.user .user-footer .user-actions .user-share {

@@ -114,6 +114,8 @@
 		{
 			margin-top: 3em;
 
+			.page-sharing.modal:not(.modal-opened):not(.modal-closing) { display: none; }
+
 			.page-actions
 			{
 				text-align: center;

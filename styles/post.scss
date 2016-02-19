@@ -223,6 +223,8 @@
 		{
 			margin-top: 3em;
 
+			.post-sharing.modal:not(.modal-opened):not(.modal-closing) { display: none; }
+
 			.post-actions
 			{
 				text-align: center;
