@@ -3285,6 +3285,7 @@ html.no-javascript, html.javascript {
 @media only screen {
   .site .site-header .site-navigation .social-navigation {
     left: 0;
+    opacity: 0;
     position: fixed;
     text-align: center;
     top: 0;
