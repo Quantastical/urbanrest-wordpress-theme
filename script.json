@@ -7,6 +7,7 @@
 		"scripts/modal.js",
 		"scripts/navigation.js",
 		"scripts/search.js",
+		"scripts/tooltip.js",
 
 		"scripts/header.js",
 		"scripts/specials.js",

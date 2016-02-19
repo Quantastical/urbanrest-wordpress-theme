@@ -3536,10 +3536,17 @@ html.no-javascript, html.javascript {
     font-size: 0.8rem;
     height: auto;
     max-width: 15em;
+    opacity: 0;
     padding: 0.75em;
+    pointer-events: none;
     position: absolute;
     text-align: left;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1); }
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    transition: opacity 0.5s; }
+  .tooltip.active {
+    opacity: 1; }
   .tooltip:after {
     border: solid transparent 10px;
     border-top-color: rgba(0, 0, 0, 0.88);
