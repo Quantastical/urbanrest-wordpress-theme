@@ -109,10 +109,16 @@
 */
 ?>
 		<meta property="og:title" content="<?php echo urb_pre_get_document_title(); ?>" />
-<?php if( get_bloginfo('description') ) : ?>
+<?php $excerpt = get_the_excerpt() ?> 
+<?php if( $excerpt ) : ?>
+		<meta property="og:description" content="<?php echo $excerpt; ?>" />
+<?php elseif( get_bloginfo('description') ) : ?>
 		<meta property="og:description" content="<?php echo get_bloginfo('description'); ?>" />
 <?php endif; ?>
-<?php if( get_option('urbanrest_setting_facebook_opengraph_image') ) : ?>
+<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array(1200,630) ); ?>
+<?php if($image) : ?>
+	<meta property="og:image" content="<?php echo $image[0]; ?>" />
+<?php elseif( get_option('urbanrest_setting_facebook_opengraph_image') ) : ?>
 		<meta property="og:image" content="<?php echo get_option('urbanrest_setting_facebook_opengraph_image'); ?>" />
 		<meta property="og:image:type" content="<?php echo get_option('urbanrest_setting_facebook_opengraph_image_mime'); ?>" />
 		<meta property="og:image:width" content="<?php echo get_option('urbanrest_setting_facebook_opengraph_image_width'); ?>" />

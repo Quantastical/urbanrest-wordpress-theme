@@ -24,6 +24,8 @@ if ( !function_exists('urbanrest_setup') ) :
 		// Add featured images to posts
 		add_theme_support( 'post-thumbnails', array('beer', 'page', 'post', 'product') );
 
+		add_post_type_support( 'page', 'excerpt' );
+
 		// Let WordPress manage the document title.
 		//add_theme_support( 'title-tag' );
 

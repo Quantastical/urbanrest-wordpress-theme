@@ -7,7 +7,7 @@ function urb_pre_get_document_title() {
 	} else if( is_single() ) {
 		return single_post_title('', false);
 	} else if( is_page() ) {
-		return get_bloginfo('name') . ': ' . single_post_title('', false);
+		return single_post_title('', false);
 	} else {
 		return wp_title('', false);
 	}
