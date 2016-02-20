@@ -33,6 +33,7 @@
 <?php if( get_option('facebook_app_id') ) : ?>
 		<meta property="fb:app_id" content="<?php echo get_option('facebook_app_id'); ?>" /> 
 <?php endif; ?>
+		<meta property="og:url" content="<?php echo get_permalink(); ?>" />
 <?php if( get_option('urbanrest_setting_street_address') ) : ?>
 		<meta property="og:type" content="business.business" />
 		<meta property="business:contact_data:street_address" content="<?php echo get_option('urbanrest_setting_street_address'); ?>" /> 
@@ -63,22 +64,29 @@
 		<meta property="place:location:latitude" content="<?php echo get_option('urbanrest_setting_latitude'); ?>" /> 
 		<meta property="place:location:longitude" content="<?php echo get_option('urbanrest_setting_longitude'); ?>" />
 <?php endif; ?>
-<?php if( get_option('urbanrest_setting_monday_start_time') && get_option('urbanrest_setting_monday_end_time') ) : ?>
-		<meta property="business:hours:day" content="monday" />
-		<meta property="business:hours:start" content="<?php echo get_option('urbanrest_setting_monday_start_time'); ?>" />
-		<meta property="business:hours:end" content="<?php echo get_option('urbanrest_setting_monday_end_time'); ?>" />
-<?php endif; ?>
-<?php if( get_option('urbanrest_setting_tuesday_start_time') && get_option('urbanrest_setting_tuesdat_end_time') ) : ?>
+<?php $daysofweek = array('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'); ?>
+<?php for( $i = 0; $i < 7; $i++ ) : ?>
+<?php 	$startTime = get_option('urbanrest_setting_' . $daysofweek[$i] . '_start_time'); ?>
+<?php 	$endTime = get_option('urbanrest_setting_' . $daysofweek[$i] . '_end_time'); ?>
+<?php 	if( $startTime || $endTime ) : ?>
+		<meta property="business:hours:day" content="<?php echo $daysofweek[$i]; ?>" />
+		<meta property="business:hours:start" content="<?php echo $startTime ? $startTime : '00:00'; ?>" />
+		<meta property="business:hours:end" content="<?php echo $endTime ? $endTime : '23:59'; ?>" />
+<?php 	endif; ?>
+<?php endfor;?>
+<?php
+/*
+<?php if( get_option('urbanrest_setting_tuesday_start_time') || get_option('urbanrest_setting_tuesday_end_time') ) : ?>
 		<meta property="business:hours:day" content="tuesday" />
 		<meta property="business:hours:start" content="<?php echo get_option('urbanrest_setting_tuesday_start_time'); ?>" />
 		<meta property="business:hours:end" content="<?php echo get_option('urbanrest_setting_tuesday_end_time'); ?>" />
 <?php endif; ?>
-<?php if( get_option('urbanrest_setting_wednesday_start_time') && get_option('urbanrest_setting_wednesday_end_time') ) : ?>
+<?php if( get_option('urbanrest_setting_wednesday_start_time') || get_option('urbanrest_setting_wednesday_end_time') ) : ?>
 		<meta property="business:hours:day" content="wednesday" />
 		<meta property="business:hours:start" content="<?php echo get_option('urbanrest_setting_wednesday_start_time'); ?>" />
 		<meta property="business:hours:end" content="<?php echo get_option('urbanrest_setting_wednesday_end_time'); ?>" />
 <?php endif; ?>
-<?php if( get_option('urbanrest_setting_thursday_start_time') && get_option('urbanrest_setting_thursday_end_time') ) : ?>
+<?php if( get_option('urbanrest_setting_thursday_start_time') || get_option('urbanrest_setting_thursday_end_time') ) : ?>
 		<meta property="business:hours:day" content="thursday" />
 		<meta property="business:hours:start" content="<?php echo get_option('urbanrest_setting_thursday_start_time'); ?>" />
 		<meta property="business:hours:end" content="<?php echo get_option('urbanrest_setting_thursday_end_time'); ?>" />
@@ -98,6 +106,8 @@
 		<meta property="business:hours:start" content="<?php echo get_option('urbanrest_setting_sunday_start_time'); ?>" />
 		<meta property="business:hours:end" content="<?php echo get_option('urbanrest_setting_sunday_end_time'); ?>" />
 <?php endif; ?>
+*/
+?>
 		<meta property="og:title" content="<?php echo urb_pre_get_document_title(); ?>" />
 <?php if( get_bloginfo('description') ) : ?>
 		<meta property="og:description" content="<?php echo get_bloginfo('description'); ?>" />
