@@ -9,6 +9,27 @@ jQuery( function( $ ) {
 	var $postHeadings = $('.site-posts .latest-posts .blog-post h4');
 
 	Urb.automaticNavigation = function() {
+		Urb.showNextPost();
+		/*
+		var $currentPost = $('.site-posts .latest-posts .blog-post.active');
+		var $nextPost = $currentPost.next('.next.blog-post');
+
+		if( Urb.scrollPosition === 0 && $nextPost.length ) {
+			$nextButton.trigger('click');
+		}
+		*/
+	};
+
+	Urb.showPreviousPost = function() {
+		var $currentPost = $('.site-posts .latest-posts .blog-post.active');
+		var $previousPost = $currentPost.prev('.previous.blog-post');
+
+		if( Urb.scrollPosition === 0 && $previousPost.length ) {
+			$previousButton.trigger('click');
+		}
+	};
+
+	Urb.showNextPost = function() {
 		var $currentPost = $('.site-posts .latest-posts .blog-post.active');
 		var $nextPost = $currentPost.next('.next.blog-post');
 
@@ -84,6 +105,18 @@ jQuery( function( $ ) {
 		});
 
 		$('.site-posts .latest-posts').after($nextButton).after($previousButton);
+		$('.site-posts .latest-posts .blog-post > a').on('dragstart', function() { return false; });
+
+		var element = document.getElementById('latest-posts');
+		var mc = new Hammer(element);
+		mc.on('swiperight', function() {
+			Urb.showPreviousPost();
+			Urb.stopAutomaticNavigation();
+		});
+		mc.on('swipeleft', function() {
+			Urb.showNextPost();
+			Urb.stopAutomaticNavigation();
+		});
 
 		setTimeout(Urb.getNextPost, 500);
 	};
@@ -121,6 +154,7 @@ jQuery( function( $ ) {
 
 					var $nextPostLink = $('<a />');
 					$nextPostLink.attr('href', response.data.permalink);
+					$nextPostLink.on('dragstart', function() { return false; });
 					$nextPost.append($nextPostLink);
 
 					if(response.data.thumbnail) {

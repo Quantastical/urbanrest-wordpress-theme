@@ -214,6 +214,7 @@ if( !function_exists( 'urbanrest_enqueue_scripts' ) ) :
 
 		// Add scripts
 		wp_enqueue_script('jquery', '//code.jquery.com/jquery-1.11.3.min.js');
+		wp_enqueue_script('hammer', 'http://hammerjs.github.io/dist/hammer.min.js');
 		//wp_enqueue_script('gmaps', 'http://maps.google.com/maps/api/js', false, '1.1', true);
 		wp_enqueue_script('site', get_stylesheet_directory_uri() . '/script.js', false, '1.1', true);
 		/*

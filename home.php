@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 <?php get_sidebar(); ?>
+<?php
+/*
 	<main class="posts row around-xs">
 <?php if ( have_posts() ) : ?>
 <?php 	while ( have_posts() ) : ?>
@@ -24,6 +26,8 @@
 			<div class="pull-right"><?php next_posts_link( 'Older posts' ); ?></div>
 		</footer>
 	</main>
+*/
+?>
 <?php urb_get_specials(); ?>
 <?php urb_get_community(); ?>
 <?php urb_get_shop(); ?>

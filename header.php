@@ -252,7 +252,7 @@ $latest_args = array(
 $latest = get_posts( $latest_args );
 $first = true;
 ?>
-			<ul class="latest-posts">
+			<ul class="latest-posts" id="latest-posts">
 <?php foreach ( $latest as $post ) : ?>
 <?php 	setup_postdata( $GLOBALS['post'] =& $post ); ?>
 				<li class="blog-post<?php echo ($first) ? ' active' : ' next'; $first = false; ?>" data-post-id="<?php echo $post->ID; ?>">
