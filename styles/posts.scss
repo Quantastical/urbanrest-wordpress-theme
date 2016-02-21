@@ -1,0 +1,29 @@
+.site
+{
+	main.posts
+	{
+		background-color: #DCC1A7;
+		background-image: url('images/single-background.jpg');
+		background-position: center;
+		background-repeat: repeat;
+		background-size: 20em;
+		color: darken(#A88C76, 40%);
+		font-weight: 300;
+		overflow-x: hidden;
+		padding-bottom: 4em;
+		padding-top: 5.5em;
+		width: 100%;
+
+		a, .hyperlink
+		{
+			@extend .hyperlink;
+		}
+
+		.blog-post-image {display: none;}
+
+		article
+		{
+			margin-bottom: 2em;
+		}
+	}
+}

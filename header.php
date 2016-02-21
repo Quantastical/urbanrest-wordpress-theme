@@ -245,7 +245,7 @@ wp_nav_menu(array(
 			<h3>Latest News &amp; Events</h3>
 <?php
 $latest_args = array(
-	'posts_per_page' => 5,
+	'posts_per_page' => 1,
 	'orderby' => 'date',
 	'order', 'DESC'
 );
@@ -255,7 +255,7 @@ $first = true;
 			<ul class="latest-posts">
 <?php foreach ( $latest as $post ) : ?>
 <?php 	setup_postdata( $GLOBALS['post'] =& $post ); ?>
-				<li class="blog-post<?php echo ($first) ? ' active' : ' next'; $first = false; ?>">
+				<li class="blog-post<?php echo ($first) ? ' active' : ' next'; $first = false; ?>" data-post-id="<?php echo $post->ID; ?>">
 					<a href="<?php the_permalink(); ?>">
 <?php 	if ( has_post_thumbnail() ) : ?>
 						<span class="blog-post-image" style="background-image:url('<?php echo wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' )[0]; ?>');">
@@ -265,10 +265,27 @@ $first = true;
 						<h4><?php the_title(); ?></h4>
 					</a>
 					<div class="blog-post-intro">
-						<?php the_content(); ?>
+						<?php the_excerpt(); ?>
 					</div>
 				</li>
 <?php endforeach; ?>
 <?php wp_reset_postdata(); ?>
 			</ul>
+<?php
+/*
+			<script id="next-blog-post-template" type="text/html">
+				<li class="blog-post next" data-post-id="{ID}">
+					<a href="{permalink}">
+						<span class="blog-post-image" style="background-image:url('{image_src}');">
+							{thumbnail}
+						</span>
+						<h4>{title}</h4>
+					</a>
+					<div class="blog-post-intro">
+						{excerpt}
+					</div>
+				</li>
+			</script>
+*/
+?>
 		</section>

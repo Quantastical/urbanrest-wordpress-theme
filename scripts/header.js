@@ -4,7 +4,7 @@ jQuery( function( $ ) {
 
 	var $nextButton = $('<button class="next"><span class="fa fa-angle-right"></span></button>');
 	var $previousButton = $('<button class="previous"><span class="fa fa-angle-left"></span></button>');
-	var automaticInterval = setInterval(function() { Urb.automaticNavigation(); }, 5 * 1000); // milliseconds
+	var automaticInterval;
 
 	var $postHeadings = $('.site-posts .latest-posts .blog-post h4');
 
@@ -12,7 +12,7 @@ jQuery( function( $ ) {
 		var $currentPost = $('.site-posts .latest-posts .blog-post.active');
 		var $nextPost = $currentPost.next('.next.blog-post');
 
-		if( $nextPost.length ) {
+		if( Urb.scrollPosition === 0 && $nextPost.length ) {
 			$nextButton.trigger('click');
 		}
 	};
@@ -46,6 +46,7 @@ jQuery( function( $ ) {
 				$currentPost.removeClass('active').addClass('previous');
 				if($nextPost.length) {
 					$nextPost.removeClass('previous next').addClass('active');
+					Urb.getNextPost();
 				}
 				if(!$nextPost.next('.next.blog-post').length) {
 					$nextButton.removeClass('active');
@@ -84,7 +85,14 @@ jQuery( function( $ ) {
 
 		$('.site-posts .latest-posts').after($nextButton).after($previousButton);
 
-		setTimeout(Urb.showNavigation, 500);
+		setTimeout(Urb.getNextPost, 500);
+	};
+
+	Urb.startAutomaticNavigation = function() {
+		if(automaticInterval) {
+			clearInterval(automaticInterval);
+		}
+ 		automaticInterval = setTimeout(function() { Urb.automaticNavigation(); }, 5 * 1000); // milliseconds
 	};
 
 	Urb.stopAutomaticNavigation = function() {
@@ -94,9 +102,56 @@ jQuery( function( $ ) {
 		Urb.$window.off('scroll', Urb.stopAutomaticNavigation);
 	};
 
-	Urb.showNavigation = function() {
-		$nextButton.addClass('active');
+	Urb.getNextPost = function() {
+		//$nextButton.addClass('active');
 		//$previousButton.addClass('active');
+		$.ajax({
+			'type': 'POST',
+			'url': _URB.url,
+			'data': {
+				'action': 'getnext',
+				'id': $('.site-posts .latest-posts .blog-post:last-child').data('post-id')
+			},
+			'success': function(response){
+				if(response.success) {
+					// TODO: get HTML code out of here! use a template or something
+					var $nextPost = $('<li />');
+					$nextPost.addClass('blog-post next');
+					$nextPost.attr('data-post-id', response.data.ID);
+
+					var $nextPostLink = $('<a />');
+					$nextPostLink.attr('href', response.data.permalink);
+					$nextPost.append($nextPostLink);
+
+					if(response.data.thumbnail) {
+						var $nextPostImage = $('<span />');
+						$nextPostImage.addClass('blog-post-image');
+						if(response.data.image_src) {
+							$nextPostImage.css({'background-image': 'url(' + response.data.image_src + ')'});
+						}
+						$nextPostImage.append(response.data.thumbnail);
+						$nextPostLink.append($nextPostImage);
+					}
+
+					if(response.data.post_title){
+						var $nextPostTitle = $('<h4 />');
+						$nextPostTitle.text(response.data.post_title);
+						$nextPostLink.append($nextPostTitle);
+					}
+
+					if(response.data.excerpt){
+						var $nextPostIntro = $('<div />');
+						$nextPostIntro.addClass('blog-post-intro');
+						$nextPostIntro.html(response.data.excerpt);
+						$nextPost.append($nextPostIntro);
+					}
+
+					$('.site-posts .latest-posts').append($nextPost);
+					$nextButton.addClass('active');
+					Urb.startAutomaticNavigation();
+				}
+			}
+		});
 	};
 
 	/*

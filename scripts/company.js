@@ -21,7 +21,12 @@ jQuery(function($){
 		}
 
 		if(!Urb.$map.data('map') && Urb.$window.scrollTop() > $('#company').offset().top) {
-			Urb.setupMap();
+			var $mapScript = $('<script />');
+			$mapScript.attr('type', 'text/javascript');
+			$mapScript.attr('async', true);
+			$mapScript.attr('src', "http://maps.google.com/maps/api/js?sensor=false&callback=Urb.setupMap");
+			Urb.$body.append($mapScript);
+			//Urb.setupMap();
 		}
 	};
 
