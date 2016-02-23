@@ -152,7 +152,7 @@
 					position: absolute;
 					right: auto;
 					top: 0;
-					@include transition(left 1s, right 1s);
+					@include transition(left 0.666s, right 0.666s);
 					width: 100%;
 
 					&.next
@@ -245,7 +245,7 @@
 							h4
 							{
 								opacity: 1;
-								@include transition( opacity 1s linear 0.5s );
+								@include transition( opacity 0.666s linear 0.666s );
 							}
 						}
 					}

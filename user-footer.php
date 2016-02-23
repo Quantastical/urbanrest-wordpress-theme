@@ -14,16 +14,16 @@
 					<button class="user-share hyperlink" data-action="modal" data-target=".user-sharing.modal" type="button">Share this page</button>
 					<ul class="user-sharing modal animated fadeIn">
 						<li>
-							<a class="facebook" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(); ?>" onclick="javacript:share(this);" title="Share this on Facebook" data-event-action="Share" data-event-label="Facebook"><span>Share this on Facebook</span></a>
+							<a class="facebook" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(); ?>" onclick="javacript:share(this);" data-event-action="Share" data-event-label="Facebook"><span>Share this on Facebook</span></a>
 						</li>
 						<li>
-							<a class="twitter" href="https://twitter.com/intent/tweet?text=<?php echo get_permalink(); ?>" onclick="javascript:share(this);" title="Share this on Twitter" data-event-action="Share" data-event-label="Twitter"><span>Share this on Twitter</span></a>
+							<a class="twitter" href="https://twitter.com/intent/tweet?text=<?php echo get_permalink(); ?>" onclick="javascript:share(this);" data-event-action="Share" data-event-label="Twitter"><span>Share this on Twitter</span></a>
 						</li>
 						<li>
-							<a class="google" href="https://plus.google.com/share?url=<?php echo get_permalink(); ?>" onclick="javascript:share(this);" title="Share this on Google+" data-event-action="Share" data-event-label="Google+"><span>Share this on Google+</span></a>
+							<a class="google" href="https://plus.google.com/share?url=<?php echo get_permalink(); ?>" onclick="javascript:share(this);" data-event-action="Share" data-event-label="Google+"><span>Share this on Google+</span></a>
 						</li>
 						<li>
-							<a class="email" href="mailto:?body=<?php echo get_permalink(); ?>" title="Share this via Email" data-event-action="Share" data-event-label="Email"><span>Share this via Email</span></a>
+							<a class="email" href="mailto:?body=<?php echo get_permalink(); ?>" data-event-action="Share" data-event-label="Email"><span>Share this via Email</span></a>
 						</li>
 					</ul>
 				</section>

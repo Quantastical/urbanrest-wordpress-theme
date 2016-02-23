@@ -3545,10 +3545,11 @@ html.no-javascript, html.javascript {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
     -webkit-transition: opacity 0.5s;
     -moz-transition: opacity 0.5s;
-    transition: opacity 0.5s; }
+    transition: opacity 0.5s;
+    z-index: 1001; }
   .tooltip.active {
     opacity: 1; }
-  .tooltip:after {
+  .tooltip.above:after {
     border: solid transparent 10px;
     border-top-color: rgba(0, 0, 0, 0.88);
     content: '';
@@ -3556,6 +3557,15 @@ html.no-javascript, html.javascript {
     left: calc(50% - 5px);
     position: absolute;
     top: 100%;
+    width: 0; }
+  .tooltip.below:after {
+    border: solid transparent 10px;
+    border-bottom-color: rgba(0, 0, 0, 0.88);
+    content: '';
+    height: 0;
+    left: calc(50% - 5px);
+    position: absolute;
+    top: -20px;
     width: 0; } }
 @media only screen {
   .site {
@@ -3683,9 +3693,9 @@ html.no-javascript, html.javascript {
     position: absolute;
     right: auto;
     top: 0;
-    -webkit-transition: left 1s, right 1s;
-    -moz-transition: left 1s, right 1s;
-    transition: left 1s, right 1s;
+    -webkit-transition: left 0.666s, right 0.666s;
+    -moz-transition: left 0.666s, right 0.666s;
+    transition: left 0.666s, right 0.666s;
     width: 100%; }
   .site .site-posts .latest-posts .blog-post.next {
     left: 100%;
@@ -3755,9 +3765,9 @@ html.no-javascript, html.javascript {
     right: 0; }
   .site .site-posts .latest-posts .blog-post.active a h4 {
     opacity: 1;
-    -webkit-transition: opacity 1s linear 0.5s;
-    -moz-transition: opacity 1s linear 0.5s;
-    transition: opacity 1s linear 0.5s; }
+    -webkit-transition: opacity 0.666s linear 0.666s;
+    -moz-transition: opacity 0.666s linear 0.666s;
+    transition: opacity 0.666s linear 0.666s; }
   .site .site-posts .latest-posts .blog-post .blog-post-intro {
     display: none; }
   .site .site-posts button.previous, .site .site-posts button.next {
@@ -3934,6 +3944,8 @@ html.no-javascript, html.javascript {
     padding-left: 10rem; }
   .site .site-specials .beer-list .beer + .beer {
     margin-top: 0.33em; }
+  .site .site-specials .beer-list .beer a:hover, .site .site-specials .beer-list .beer a:hover + .abv {
+    color: #99FF99; }
   .site .site-specials .growler-list {
     font-size: 2em;
     text-align: center; }
@@ -3950,7 +3962,9 @@ html.no-javascript, html.javascript {
     display: inline-block;
     list-style: none;
     padding: 0;
-    text-align: left; } }
+    text-align: left; }
+  .site .site-specials .growler-list ol li a:hover {
+    color: #99FF99; } }
 @media only screen and (max-width: 768px) {
   .site .site-specials .beer-list {
     font-size: 3em; }
@@ -4627,12 +4641,25 @@ html.no-javascript, html.javascript {
     font-size: 0.8em;
     overflow: hidden;
     padding: 0;
-    position: relative; }
+    position: relative;
+    border: solid rgba(220, 223, 222, 0.25); }
   .site .site-company .site-contact .contact-form .field label {
     display: none; }
+  .site .site-company .site-contact .contact-form .field:nth-child(2) {
+    border-width: 1px 0 0 1px; }
+  .site .site-company .site-contact .contact-form .field:nth-child(3) {
+    border-width: 1px 1px 0 0; }
+  .site .site-company .site-contact .contact-form .field:nth-child(4) {
+    border-width: 0 1px 0 1px; }
+  .site .site-company .site-contact .contact-form .field:nth-child(5) {
+    border-width: 0 1px 1px 1px; }
   .site .site-company .site-contact .contact-form .field input, .site .site-company .site-contact .contact-form .field textarea {
-    background-color: rgba(0, 0, 0, 0.11);
-    border: solid 1px rgba(220, 223, 222, 0);
+    /*
+    background-color: rgba( $urbanrest-black, 0.11 );
+    border: solid 1px rgba( $urbanrest-white, 0 );
+    */
+    background-color: rgba(0, 0, 0, 0.22);
+    border: solid 1px rgba(220, 223, 222, 0.25);
     box-sizing: border-box;
     color: white;
     font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
@@ -4644,10 +4671,14 @@ html.no-javascript, html.javascript {
     -webkit-transition: background-color 0.33s ease-in-out, border-color 0.33s ease-in-out, color 0.33s ease-in-out;
     -moz-transition: background-color 0.33s ease-in-out, border-color 0.33s ease-in-out, color 0.33s ease-in-out;
     transition: background-color 0.33s ease-in-out, border-color 0.33s ease-in-out, color 0.33s ease-in-out;
-    width: 100%; }
-  .site .site-company .site-contact .contact-form .field input:hover, .site .site-company .site-contact .contact-form .field textarea:hover {
-    background-color: rgba(0, 0, 0, 0.22);
-    border-color: rgba(220, 223, 222, 0.25); }
+    width: 100%;
+    /*
+    &:hover
+    {
+    	background-color: rgba( $urbanrest-black, 0.22 );
+    	border-color: rgba( $urbanrest-white, 0.25 );
+    }
+    */ }
   .site .site-company .site-contact .contact-form .field input:focus, .site .site-company .site-contact .contact-form .field textarea:focus {
     background: rgba(0, 0, 0, 0.33);
     border-color: rgba(220, 223, 222, 0.5); }
@@ -4661,6 +4692,7 @@ html.no-javascript, html.javascript {
     -moz-transition: color 0.33s ease-in-out;
     transition: color 0.33s ease-in-out; }
   .site .site-company .site-contact .contact-form .field input#contact_message, .site .site-company .site-contact .contact-form .field textarea#contact_message {
+    display: block;
     height: 5.65em;
     resize: none;
     -webkit-transition: height 0.25s;
@@ -5230,7 +5262,7 @@ html.no-javascript, html.javascript {
   background-color: gray;
   border: none;
   border-radius: 0.25em;
-  color: rgba(220, 223, 222, 0.88);
+  color: rgba(220, 223, 222, 0.98);
   display: inline-block;
   font-weight: 400;
   margin-bottom: 0.5em;
@@ -5512,7 +5544,7 @@ html.no-javascript, html.javascript {
   background-color: gray;
   border: none;
   border-radius: 0.25em;
-  color: rgba(220, 223, 222, 0.88);
+  color: rgba(220, 223, 222, 0.98);
   display: inline-block;
   font-weight: 400;
   margin-bottom: 0.5em;
@@ -5689,7 +5721,7 @@ html.no-javascript, html.javascript {
   background-color: gray;
   border: none;
   border-radius: 0.25em;
-  color: rgba(220, 223, 222, 0.88);
+  color: rgba(220, 223, 222, 0.98);
   display: inline-block;
   font-weight: 400;
   margin-bottom: 0.5em;
@@ -5952,7 +5984,7 @@ html.no-javascript, html.javascript {
   background-color: gray;
   border: none;
   border-radius: 0.25em;
-  color: rgba(220, 223, 222, 0.88);
+  color: rgba(220, 223, 222, 0.98);
   display: inline-block;
   font-weight: 400;
   margin-bottom: 0.5em;
@@ -6198,7 +6230,7 @@ html.no-javascript, html.javascript {
   background-color: gray;
   border: none;
   border-radius: 0.25em;
-  color: rgba(220, 223, 222, 0.88);
+  color: rgba(220, 223, 222, 0.98);
   display: inline-block;
   font-weight: 400;
   margin-bottom: 0.5em;
