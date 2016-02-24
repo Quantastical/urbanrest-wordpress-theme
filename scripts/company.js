@@ -58,6 +58,10 @@ jQuery(function($){
 	};
 
 	Urb.setupMap = function() {
+		if( !google ) {
+			$('.site-map').remove();
+		}
+
 		Urb.$map.data( 'map', true );
 		Urb.$mapCanvas.appendTo(Urb.$mapContainer);
 

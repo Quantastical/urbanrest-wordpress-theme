@@ -3,18 +3,19 @@ jQuery(function($){
 		var $element = $(this);
 		var $tooltip = $element.data('tooltip');
 		
+
 		if($tooltip){
 			$tooltip.removeClass('active');
-			/*
+			
 			setTimeout(function() {
 				if(!$tooltip.hasClass('active')) {
-					$tooltip.data('tooltip', false);
-					$element.attr('title', $element.attr('tooltip'));
-					$element.removeAttr('tooltip');
+					$element.data('tooltip', false);
+					$element.attr('title', $element.attr('data-title'));
+					$element.removeAttr('data-title');
 					$tooltip.remove();
 				}
 			}, 1000);
-			*/
+			
 		}
 	};
 
@@ -56,7 +57,7 @@ jQuery(function($){
 			Urb.positionTooltip($tooltip, $element);
 			$element.data('tooltip', $tooltip);
 			$tooltip.addClass('active');
-			$element.attr('tooltip', $tip);
+			$element.attr('data-title', $tip);
 			$element.removeAttr('title');
 		} else {
 			Urb.positionTooltip($tooltip, $element);
@@ -65,9 +66,20 @@ jQuery(function($){
 	};
 
 	Urb.setupTooltips = function() {
-		$('[title]').hover(Urb.showTooltip, Urb.hideTooltip);
-		//Urb.$body.on('mouseover', '[title]', Urb.showTooltip);
-		//Urb.$body.on('mouseleave', '[title]', Urb.hideTooltip);
+		//$('[title]').hover(Urb.showTooltip, Urb.hideTooltip);
+		Urb.$body.on('mouseleave', '[title], [data-title]', Urb.hideTooltip);
+		Urb.$body.on('mouseenter', '[title], [data-title]', Urb.showTooltip);
+		/*
+		Urb.$body.on('mouseenter mouseleave', '[title], [data-title]', function(e) {
+			if(e.type === 'mouseenter'){
+				console.log('mouseenter');
+				Urb.showTooltip.call(this);
+			} else if(e.type === 'mouseleave') {
+				console.log('mouseleave');
+				Urb.hideTooltip.call(this);
+			}
+		});
+		*/
 	};
 
 	Urb.$window.on('load', Urb.setupTooltips);

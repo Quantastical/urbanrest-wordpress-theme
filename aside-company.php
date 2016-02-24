@@ -168,7 +168,6 @@ wp_nav_menu(array(
 		</div>
 		<h3><a class="map-link" href="http://www.google.com/maps">Locate On Map</a></h3>
 		<div class="map-container" itemprop="mapType" href="http://schema.org/VenueMap">
-			<link href="" itemprop="url" />
 <?php
 $menu_locations = get_nav_menu_locations();
 $menu = wp_get_nav_menu_object( $menu_locations['map'] );

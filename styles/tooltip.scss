@@ -28,9 +28,10 @@
 		{
 			border: solid transparent 10px;
 			border-top-color: rgba(black, 0.88);
+			box-sizing: border-box;
 			content: '';
 			height: 0;
-			left: calc(50% - 5px);
+			left: calc(50% - 10px);
 			position: absolute;
 			top: 100%;
 			width: 0;
@@ -40,9 +41,10 @@
 		{
 			border: solid transparent 10px;
 			border-bottom-color: rgba(black, 0.88);
+			box-sizing: border-box;
 			content: '';
 			height: 0;
-			left: calc(50% - 5px);
+			left: calc(50% - 10px);
 			position: absolute;
 			top: -20px;
 			width: 0;

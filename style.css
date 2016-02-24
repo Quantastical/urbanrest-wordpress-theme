@@ -3552,18 +3552,20 @@ html.no-javascript, html.javascript {
   .tooltip.above:after {
     border: solid transparent 10px;
     border-top-color: rgba(0, 0, 0, 0.88);
+    box-sizing: border-box;
     content: '';
     height: 0;
-    left: calc(50% - 5px);
+    left: calc(50% - 10px);
     position: absolute;
     top: 100%;
     width: 0; }
   .tooltip.below:after {
     border: solid transparent 10px;
     border-bottom-color: rgba(0, 0, 0, 0.88);
+    box-sizing: border-box;
     content: '';
     height: 0;
-    left: calc(50% - 5px);
+    left: calc(50% - 10px);
     position: absolute;
     top: -20px;
     width: 0; } }
@@ -4831,18 +4833,20 @@ html.no-javascript, html.javascript {
     color: transparent;
     display: inline-block;
     font-size: 0;
-    height: 0;
+    height: 2.5rem;
     opacity: 0.75;
     overflow: hidden;
+    /*
     padding-left: 2.5rem;
     padding-top: 2.5rem;
-    width: 0; }
+    */
+    width: 2.5rem; }
   .site .site-company .site-map .map-container .map-menu .menu-item a:hover {
     opacity: 1; }
   .site .site-company .site-map .map-container .map-menu .menu-item.google-maps a {
+    height: 2.9rem;
     margin-bottom: -0.25rem;
-    padding-left: 2.9rem;
-    padding-top: 2.9rem; }
+    width: 2.9rem; }
   .site .site-company .site-map .map-container .map-menu .menu-item.apple-maps a {
     background-image: url(images/icon-apple-maps.png); }
   .site .site-company .site-map .map-container .map-menu .menu-item.foursquare a {
