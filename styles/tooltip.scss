@@ -49,5 +49,15 @@
 			top: -20px;
 			width: 0;
 		}
+
+		&.left:after
+		{
+			left: 10px;
+		}
+
+		&.right:after
+		{
+			right: 10px;
+		}
 	}
 }

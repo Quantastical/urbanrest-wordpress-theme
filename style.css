@@ -3568,7 +3568,11 @@ html.no-javascript, html.javascript {
     left: calc(50% - 10px);
     position: absolute;
     top: -20px;
-    width: 0; } }
+    width: 0; }
+  .tooltip.left:after {
+    left: 10px; }
+  .tooltip.right:after {
+    right: 10px; } }
 @media only screen {
   .site {
     background-color: black;

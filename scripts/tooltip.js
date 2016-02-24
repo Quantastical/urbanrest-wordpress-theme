@@ -15,25 +15,40 @@ jQuery(function($){
 					$tooltip.remove();
 				}
 			}, 1000);
-			
 		}
 	};
 
 	Urb.positionTooltip = function($tooltip, $element) {
 		var tooltipAboveViewportTop = $element.offset().top - $tooltip.outerHeight() * 1.25 < Urb.scrollPosition;
-
+		
 		$tooltip.toggleClass('above', !tooltipAboveViewportTop);
 		$tooltip.toggleClass('below', tooltipAboveViewportTop);
 
 		if(tooltipAboveViewportTop) {
 			$tooltip.css({
 				left: $element.offset().left + $element.width() / 2 - $tooltip.outerWidth() / 2,
-				top: $element.offset().top + + $element.outerHeight() + $tooltip.outerHeight() * 0.25,
+				top: $element.offset().top + $element.outerHeight() + $tooltip.outerHeight() * 0.25,
 			});
 		} else {
 			$tooltip.css({
 				left: $element.offset().left + $element.width() / 2 - $tooltip.outerWidth() / 2,
 				top: $element.offset().top - $tooltip.outerHeight() * 1.25,
+			});
+		}
+
+		var tooltipOffLeftEdge = $tooltip.offset().left < 0;
+		var tooltipOffRightEdge = $tooltip.offset().left + $tooltip.outerWidth() > Urb.$window.width();
+
+		$tooltip.toggleClass('left', tooltipOffLeftEdge);
+		$tooltip.toggleClass('right', tooltipOffRightEdge);
+
+		if(tooltipOffLeftEdge) {
+			$tooltip.css({
+				left: $element.offset().left + $element.width() / 2 - $tooltip.outerWidth() / 2 + $tooltip.offset().left * -1
+			});
+		} else if(tooltipOffRightEdge) {
+			$tooltip.css({
+				left: $element.offset().left + $element.width() / 2 - $tooltip.outerWidth() / 2 - ($tooltip.offset().left + $tooltip.outerWidth() - Urb.$window.width())
 			});
 		}
 	};
