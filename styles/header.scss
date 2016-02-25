@@ -278,12 +278,18 @@
 				&.active
 				{
 					font-size: 11vh;
-					opacity: 1;
+					opacity: 0.5;
 					width: 11vw;
+
+					&:hover
+					{
+						opacity: 1;
+					}
 				}
 
 				.fa
 				{
+					@include animation(flash 8.8s infinite);
 					vertical-align: middle;
 				}
 			}
