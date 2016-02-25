@@ -21,6 +21,7 @@ module.exports = function(grunt) {
 					'style.css': 'style.scss',
 					/*'editor-style.css': 'editor-style.scss'*/
 					'styles/admin/style.css': 'styles/admin/style.scss',
+					'styles/editor/style.css': 'styles/editor/style.scss',
 					'styles/login/style.css': 'styles/login/style.scss',
 					'styles/xsl/xml-sitemap.css': 'styles/xsl/xml-sitemap.scss'
 				}

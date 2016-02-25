@@ -45,6 +45,9 @@ if ( !function_exists('urbanrest_setup') ) :
 		add_theme_support( 'html5', array(
 			'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 		) );
+
+		// Add custom editor stylesheet appearance
+		add_editor_style( 'styles/editor/style.css' );
 	}
 endif;
 add_action('after_setup_theme', 'urbanrest_setup');
