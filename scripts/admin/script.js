@@ -32,5 +32,13 @@ jQuery(function($){
 		} );
 	};
 
+	Urb.setupInputMasks = function() {
+		$('[data-input-mask]').each(function() {
+			var $this = $(this);
+			$this.mask( $this.data('input-mask') );
+		});
+	};
+
 	Urb.$window.on('load', Urb.setupSliders);
+	Urb.$window.on('load', Urb.setupInputMasks);
 });

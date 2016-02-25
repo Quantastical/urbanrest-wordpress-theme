@@ -33,7 +33,7 @@
 <?php if( get_option('facebook_app_id') ) : ?>
 		<meta property="fb:app_id" content="<?php echo get_option('facebook_app_id'); ?>" /> 
 <?php endif; ?>
-		<meta property="og:url" content="<?php echo get_permalink(); ?>" />
+		<meta property="og:url" content="<?php echo is_home() ? get_site_url() : get_permalink(); ?>" />
 <?php if( get_option('urbanrest_setting_street_address') ) : ?>
 		<meta property="og:type" content="business.business" />
 		<meta property="business:contact_data:street_address" content="<?php echo get_option('urbanrest_setting_street_address'); ?>" /> 
@@ -116,7 +116,7 @@
 		<meta property="og:description" content="<?php echo get_bloginfo('description'); ?>" />
 <?php endif; ?>
 <?php $image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array(1200,630) ); ?>
-<?php if($image) : ?>
+<?php if( $image & !is_home() ) : ?>
 	<meta property="og:image" content="<?php echo $image[0]; ?>" />
 <?php elseif( get_option('urbanrest_setting_facebook_opengraph_image') ) : ?>
 		<meta property="og:image" content="<?php echo get_option('urbanrest_setting_facebook_opengraph_image'); ?>" />

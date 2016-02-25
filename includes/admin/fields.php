@@ -66,54 +66,63 @@ function urbanrest_setting_facebook_app_id() {
 
 function urbanrest_setting_hours_of_operation() {
 	// Company -> Contact -> Hours of Operation
+	echo '<div class="hours_of_operation">';
 	echo '<div>';
 	echo '	<label>Monday</label>';
-	echo '	<label>Start</label>';
+	//echo '	<label>Start</label>';
 	echo '	<input type="time" name="urbanrest_setting_monday_start_time" id="urbanrest_setting_monday_start_time" value="' . get_option( 'urbanrest_setting_monday_start_time' ) . '" class="ltr" />';
-	echo '	<label>End</label>';
+	//echo '	<label>End</label>';
+	echo '	<span>to</span>';
 	echo '	<input type="time" name="urbanrest_setting_monday_end_time" id="urbanrest_setting_monday_end_time" value="' . get_option( 'urbanrest_setting_monday_end_time' ) . '" class="ltr" />';
 	echo '</div>';
 	echo '<div>';
 	echo '	<label>Tuesday</label>';
-	echo '	<label>Start</label>';
+	//echo '	<label>Start</label>';
 	echo '	<input type="time" name="urbanrest_setting_tuesday_start_time" id="urbanrest_setting_tuesday_start_time" value="' . get_option( 'urbanrest_setting_tuesday_start_time' ) . '" class="ltr" />';
-	echo '	<label>End</label>';
+	//echo '	<label>End</label>';
+	echo '	<span>to</span>';
 	echo '	<input type="time" name="urbanrest_setting_tuesday_end_time" id="urbanrest_setting_tuesday_end_time" value="' . get_option( 'urbanrest_setting_tuesday_end_time' ) . '" class="ltr" />';
 	echo '</div>';
 	echo '<div>';
 	echo '	<label>Wednesday</label>';
-	echo '	<label>Start</label>';
+	//echo '	<label>Start</label>';
 	echo '	<input type="time" name="urbanrest_setting_wednesday_start_time" id="urbanrest_setting_wednesday_start_time" value="' . get_option( 'urbanrest_setting_wednesday_start_time' ) . '" class="ltr" />';
-	echo '	<label>End</label>';
+	//echo '	<label>End</label>';
+	echo '	<span>to</span>';
 	echo '	<input type="time" name="urbanrest_setting_wednesday_end_time" id="urbanrest_setting_wednesday_end_time" value="' . get_option( 'urbanrest_setting_wednesday_end_time' ) . '" class="ltr" />';
 	echo '</div>';
 	echo '<div>';
 	echo '	<label>Thursday</label>';
-	echo '	<label>Start</label>';
+	//echo '	<label>Start</label>';
 	echo '	<input type="time" name="urbanrest_setting_thursday_start_time" id="urbanrest_setting_thursday_start_time" value="' . get_option( 'urbanrest_setting_thursday_start_time' ) . '" class="ltr" />';
-	echo '	<label>End</label>';
+	//echo '	<label>End</label>';
+	echo '	<span>to</span>';
 	echo '	<input type="time" name="urbanrest_setting_thursday_end_time" id="urbanrest_setting_thursday_end_time" value="' . get_option( 'urbanrest_setting_thursday_end_time' ) . '" class="ltr" />';
 	echo '</div>';
 	echo '<div>';
 	echo '	<label>Friday</label>';
-	echo '	<label>Start</label>';
+	//echo '	<label>Start</label>';
 	echo '	<input type="time" name="urbanrest_setting_friday_start_time" id="urbanrest_setting_friday_start_time" value="' . get_option( 'urbanrest_setting_friday_start_time' ) . '" class="ltr" />';
-	echo '	<label>End</label>';
+	//echo '	<label>End</label>';
+	echo '	<span>to</span>';
 	echo '	<input type="time" name="urbanrest_setting_friday_end_time" id="urbanrest_setting_friday_end_time" value="' . get_option( 'urbanrest_setting_friday_end_time' ) . '" class="ltr" />';
 	echo '</div>';
 	echo '<div>';
 	echo '	<label>Saturday</label>';
-	echo '	<label>Start</label>';
+	//echo '	<label>Start</label>';
 	echo '	<input type="time" name="urbanrest_setting_saturday_start_time" id="urbanrest_setting_saturday_start_time" value="' . get_option( 'urbanrest_setting_saturday_start_time' ) . '" class="ltr" />';
-	echo '	<label>End</label>';
+	//echo '	<label>End</label>';
+	echo '	<span>to</span>';
 	echo '	<input type="time" name="urbanrest_setting_saturday_end_time" id="urbanrest_setting_saturday_end_time" value="' . get_option( 'urbanrest_setting_saturday_end_time' ) . '" class="ltr" />';
 	echo '</div>';
 	echo '<div>';
 	echo '	<label>Sunday</label>';
-	echo '	<label>Start</label>';
+	//echo '	<label>Start</label>';
 	echo '	<input type="time" name="urbanrest_setting_sunday_start_time" id="urbanrest_setting_sunday_start_time" value="' . get_option( 'urbanrest_setting_sunday_start_time' ) . '" class="ltr" />';
-	echo '	<label>End</label>';
+	//echo '	<label>End</label>';
+	echo '	<span>to</span>';
 	echo '	<input type="time" name="urbanrest_setting_sunday_end_time" id="urbanrest_setting_sunday_end_time" value="' . get_option( 'urbanrest_setting_sunday_end_time' ) . '" class="ltr" />';
+	echo '</div>';
 	echo '</div>';
 }
 
@@ -160,7 +169,7 @@ function urbanrest_setting_facebook_username() {
 
 function urbanrest_setting_fax_number() {
 	// Company -> Contact -> Fax Number
-	echo '<input type="text" name="urbanrest_setting_fax_number" id="urbanrest_setting_phone_number" value="' . get_option( 'urbanrest_setting_fax_number' ) . '" class="regular-text ltr" />';
+	echo '<input type="text" name="urbanrest_setting_fax_number" id="urbanrest_setting_fax_number" value="' . get_option( 'urbanrest_setting_fax_number' ) . '" class="regular-text ltr" data-input-mask="(999) 999-9999" />';
 }
 
 /*
@@ -194,7 +203,7 @@ function urbanrest_setting_mailchimp_api_key() {
 
 function urbanrest_setting_phone_number() {
 	// Company -> Contact -> Phone Number
-	echo '<input type="text" name="urbanrest_setting_phone_number" id="urbanrest_setting_phone_number" value="' . get_option( 'urbanrest_setting_phone_number' ) . '" class="regular-text ltr" />';
+	echo '<input type="text" name="urbanrest_setting_phone_number" id="urbanrest_setting_phone_number" value="' . get_option( 'urbanrest_setting_phone_number' ) . '" class="regular-text ltr" data-input-mask="(999) 999-9999" />';
 }
 /*
 function urbanrest_setting_pinterest_username() {

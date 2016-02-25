@@ -11,6 +11,7 @@ if( !function_exists('urbanrest_admin_enqueue_scripts') ) :
 		wp_enqueue_style( 'admin', get_stylesheet_directory_uri() . '/styles/admin/style.css' );
 
 		wp_enqueue_script( 'simple-slider', get_stylesheet_directory_uri() . '/node_modules/simple-slider/js/simple-slider.js' );
+		wp_enqueue_script( 'masked-input', get_stylesheet_directory_uri() . '/scripts/plugins/jquery.maskedinput.min.js' );
 		wp_enqueue_script( 'reset', get_stylesheet_directory_uri() . '/scripts/reset.js' );
 		wp_enqueue_script( 'admin', get_stylesheet_directory_uri() . '/scripts/admin/script.js' );
 
