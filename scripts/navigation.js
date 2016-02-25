@@ -1,6 +1,27 @@
 jQuery( function( $ ) {
 	var wpAdminBarHeight = (Urb.$wpadminbar) ? Urb.$wpadminbar.outerHeight() : 0;
 	var navBarWithAdminBarHeight = Urb.$mainNavigation.outerHeight() + wpAdminBarHeight;
+	var $main = $('main');
+	var contentAreas = {
+		'#company' : $('#company'),
+		'#specials' : $('#specials')
+	};
+	contentAreas[$main.attr('id')] = $main;
+
+	Urb.highlightCurrentSection = function() {
+		$('a.active', Urb.$mainNavigation).removeClass('active');
+
+		for(var i in contentAreas) {
+			var $contentArea = contentAreas[i];
+			//if(Urb.contentAreas[i] > Urb.scrollPosition && Urb.contentAreas[i] < Urb.scrollPosition + Urb.$window.height()) {
+			if(
+				Urb.scrollPosition > $contentArea.offset().top - Urb.$window.height() * 0.5 && 
+				Urb.scrollPosition < $contentArea.offset().top + $contentArea.outerHeight() - Urb.$window.height() * 0.5
+			) {
+				$('a[href*="' + i + '"]', Urb.$mainNavigation).addClass('active');
+			}
+		}
+	};
 
 	Urb.setupExternalLinks = function() {
 		$('a[href^="http"]:not([href*="' + window.location.host + '"])').each( function() {
@@ -57,6 +78,7 @@ jQuery( function( $ ) {
 			Urb.$mainNavigation.addClass('stuck-top');
 		}
 		*/
+		Urb.highlightCurrentSection();
 	};
 
 	Urb.scrollSocialNavigation = function() {

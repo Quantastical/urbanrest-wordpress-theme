@@ -24,8 +24,9 @@ jQuery(function($){
 			var $mapScript = $('<script />');
 			$mapScript.attr('type', 'text/javascript');
 			$mapScript.attr('async', true);
-			$mapScript.attr('src', "http://maps.google.com/maps/api/js?sensor=false&callback=Urb.setupMap");
+			$mapScript.attr('src', "http://maps.google.com/maps/api/js?callback=Urb.setupMap");
 			Urb.$body.append($mapScript);
+			Urb.$map.data( 'map', true );
 			//Urb.setupMap();
 		}
 	};
@@ -62,7 +63,6 @@ jQuery(function($){
 			$('.site-map').remove();
 		}
 
-		Urb.$map.data( 'map', true );
 		Urb.$mapCanvas.appendTo(Urb.$mapContainer);
 
 		var mapOptions = {

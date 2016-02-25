@@ -3137,7 +3137,11 @@ html.no-javascript, html.javascript {
     padding: 0;
     -webkit--webkit-user-select: none;
     -moz--webkit-user-select: none;
-    -webkit-user-select: none; }
+    -webkit-user-select: none; } }
+@media only screen and (min-width: 769px) {
+  .site .site-header .site-navigation .main-navigation .main-menu {
+    text-align: right; } }
+@media only screen {
   .site .site-header .site-navigation .main-navigation .main-menu .menu-item {
     display: inline-block;
     line-height: 2.3em;
@@ -3172,11 +3176,11 @@ html.no-javascript, html.javascript {
     							*/ } }
 @media only screen and (min-width: 501px) {
   .site .site-header .site-navigation .main-navigation .main-menu .menu-item {
-    margin: 0 0.5em; }
-  .site .site-header .site-navigation .main-navigation .main-menu .menu-item:first-of-type {
-    margin-left: 0; }
-  .site .site-header .site-navigation .main-navigation .main-menu .menu-item:last-of-type {
-    margin-right: 0; } }
+    margin: 0 0.5em;
+    /*
+    &:first-of-type { margin-left: 0; }
+    &:last-of-type { margin-right: 0; }
+    */ } }
 @media only screen and (max-width: 768px) {
   .site .site-header .site-navigation .main-navigation .main-menu .menu-item {
     height: 100%; } }
@@ -3231,7 +3235,7 @@ html.no-javascript, html.javascript {
   .site .site-header .site-navigation .main-navigation .main-menu .menu-item:not(.home) a[href="#coming-soon"] {
     cursor: default;
     opacity: 0.33; }
-  .site .site-header .site-navigation .main-navigation .main-menu .menu-item:not(.home) a:not([href="#coming-soon"]):focus, .site .site-header .site-navigation .main-navigation .main-menu .menu-item:not(.home) a:not([href="#coming-soon"]):hover {
+  .site .site-header .site-navigation .main-navigation .main-menu .menu-item:not(.home) a:not([href="#coming-soon"]):focus, .site .site-header .site-navigation .main-navigation .main-menu .menu-item:not(.home) a:not([href="#coming-soon"]):hover, .site .site-header .site-navigation .main-navigation .main-menu .menu-item:not(.home) a:not([href="#coming-soon"]).active {
     background-color: gold;
     color: black;
     -webkit-transition: background-color 0.11s ease-in-out, color 0.11s ease-in-out;
@@ -3282,6 +3286,13 @@ html.no-javascript, html.javascript {
     										*/ }
   .site .site-header .site-navigation .main-navigation .main-menu .menu-item.divider {
     height: 0; } }
+@media only screen and (min-width: 769px) {
+  .site .site-header .site-navigation .main-navigation .main-menu .menu-item:not(.home) {
+    line-height: 5em; }
+  .site .site-header .site-navigation .main-navigation .main-menu .menu-item:not(.home) a {
+    font-size: 1.5em; }
+  .site .site-header .site-navigation .main-navigation .main-menu .menu-item.divider {
+    display: none; } }
 @media only screen {
   .site .site-header .site-navigation .social-navigation {
     left: 0;

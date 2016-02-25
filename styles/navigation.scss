@@ -62,6 +62,11 @@
 						padding: 0;
 						@include user-select( none );
 
+						@include media('>tablet')
+						{
+							text-align: right;
+						}
+
 						.menu-item
 						{
 							display: inline-block;
@@ -72,8 +77,10 @@
 							{
 								margin: 0 0.5em;
 
+								/*
 								&:first-of-type { margin-left: 0; }
 								&:last-of-type { margin-right: 0; }
+								*/
 							}
 
 							@include media('<=tablet')
@@ -174,7 +181,8 @@
 									}
 
 									&:not([href="#coming-soon"]):focus,
-									&:not([href="#coming-soon"]):hover
+									&:not([href="#coming-soon"]):hover,
+									&:not([href="#coming-soon"]).active
 									{
 										background-color: gold;
 										color: black;
@@ -243,6 +251,24 @@
 								&.divider
 								{
 									height: 0;
+								}
+							}
+
+							@include media(">tablet")
+							{
+								&:not(.home)
+								{
+									line-height: 5em;
+
+									a
+									{
+										font-size: 1.5em;
+									}
+								}
+
+								&.divider
+								{
+									display: none;
 								}
 							}
 						}
