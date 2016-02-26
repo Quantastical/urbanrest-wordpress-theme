@@ -6,7 +6,9 @@ jQuery( function( $ ) {
 		'#company' : $('#company'),
 		'#specials' : $('#specials')
 	};
-	contentAreas[$main.attr('id')] = $main;
+	if($main.length){
+		contentAreas[$main.attr('id')] = $main;
+	}
 
 	Urb.highlightCurrentSection = function() {
 		$('a.active', Urb.$mainNavigation).removeClass('active');

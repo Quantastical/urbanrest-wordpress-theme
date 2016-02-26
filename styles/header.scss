@@ -268,7 +268,7 @@
 				height: calc(100% - 5.6rem);
 				opacity: 0;
 				outline: none;
-				padding: 50px 0 0;
+				padding: 45px 0 0;
 				position: absolute;
 				text-align: center;
 				@include transition( font-size 0.5s, opacity 0.5s, width 0.5s );
@@ -276,11 +276,21 @@
 				width: 0;
 				z-index: 5;
 
+				@include media('<tablet')
+				{
+					padding-top: 32px;
+				}
+
 				&.active
 				{
-					font-size: 11vh;
+					font-size: 3em;
 					opacity: 0.5;
-					width: 11vw;
+					width: 1em;
+
+					@include media('>=tablet')
+					{
+						font-size: 5em;
+					}
 
 					&:hover
 					{

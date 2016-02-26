@@ -128,7 +128,7 @@ jQuery(function($){
 		// Janky solution, but I don't have time to figure out a better way right now
 		// TODO: get this into PHP using a Walker
 		$('#menu-map-icons a').each(function() {
-			$(this).attr('title', this.textContent.replace('Get Directions with ', ''));
+			$(this).attr('title', this.textContent);
 		});
 	};
 

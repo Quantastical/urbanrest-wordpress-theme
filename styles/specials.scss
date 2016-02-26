@@ -16,7 +16,7 @@
 			font-family: 'Chalk It Up';
 			@include font-smoothing( antialiased );
 			-moz-osx-font-smoothing: grayscale;
-			min-height: 100vh;
+			/*min-height: 100vh;*/
 			padding: 7em 0;
 			position: relative;
 

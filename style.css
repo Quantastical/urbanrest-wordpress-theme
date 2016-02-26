@@ -3804,7 +3804,7 @@ html.no-javascript, html.javascript {
     height: calc(100% - 5.6rem);
     opacity: 0;
     outline: none;
-    padding: 50px 0 0;
+    padding: 45px 0 0;
     position: absolute;
     text-align: center;
     -webkit-transition: font-size 0.5s, opacity 0.5s, width 0.5s;
@@ -3812,11 +3812,19 @@ html.no-javascript, html.javascript {
     transition: font-size 0.5s, opacity 0.5s, width 0.5s;
     top: 0;
     width: 0;
-    z-index: 5; }
+    z-index: 5; } }
+@media only screen and (max-width: 767px) {
+  .site .site-posts button.previous, .site .site-posts button.next {
+    padding-top: 32px; } }
+@media only screen {
   .site .site-posts button.previous.active, .site .site-posts button.next.active {
-    font-size: 11vh;
+    font-size: 3em;
     opacity: 0.5;
-    width: 11vw; }
+    width: 1em; } }
+@media only screen and (min-width: 768px) {
+  .site .site-posts button.previous.active, .site .site-posts button.next.active {
+    font-size: 5em; } }
+@media only screen {
   .site .site-posts button.previous.active:hover, .site .site-posts button.next.active:hover {
     opacity: 1; }
   .site .site-posts button.previous .fa, .site .site-posts button.next .fa {
@@ -3867,7 +3875,7 @@ html.no-javascript, html.javascript {
     -moz-font-smoothing: antialiased;
     font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    min-height: 100vh;
+    /*min-height: 100vh;*/
     padding: 7em 0;
     position: relative;
     /*
