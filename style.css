@@ -3702,6 +3702,7 @@ html.no-javascript, html.javascript {
     display: none; }
   .site .site-posts .latest-posts {
     height: 100%;
+    padding: 0;
     width: 100%; }
   .site .site-posts .latest-posts .blog-post {
     left: auto;
@@ -3738,14 +3739,22 @@ html.no-javascript, html.javascript {
   .site .site-posts .latest-posts .blog-post a .blog-post-image img {
     display: none; }
   .site .site-posts .latest-posts .blog-post a h4 {
+    -webkit-align-items: center;
+    -moz-align-items: center;
     align-items: center;
     box-sizing: border-box;
     color: white;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
     display: flex;
     font-family: 'Legend M54';
     font-size: 3em;
     font-weight: 300;
     height: 100%;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
     justify-content: center;
     left: 0;
     line-height: 1.05em;

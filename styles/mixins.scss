@@ -68,6 +68,10 @@ $prefix-for-spec:      true !default;
   $prefix-for-spec:      false !global;
 }
 
+@mixin align-items($align-items) {
+  @include prefixer(align-items, $align-items, webkit moz spec);
+}
+
 @mixin animation($animations...) {
   @include prefixer(animation, $animations, webkit moz spec);
 }
@@ -117,6 +121,18 @@ $prefix-for-spec:      true !default;
 	background-size: $size;
 }
 
+@mixin display( $display ) {
+  @if $display == 'flex' {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+  } @else {
+    display: $display;
+  }
+}
+
 @mixin filter( $filterList ) {
   -webkit-filter: $filterList;
   filter: $filterList;
@@ -124,6 +140,10 @@ $prefix-for-spec:      true !default;
 
 @mixin font-smoothing( $smoothing ) {
   @include prefixer(font-smoothing, $smoothing, webkit moz spec);
+}
+
+@mixin justify-content($justify-content) {
+  @include prefixer(justify-content, $justify-content, webkit moz spec);
 }
 
 @mixin keyframes($name) {
