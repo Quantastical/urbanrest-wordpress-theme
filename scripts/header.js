@@ -1,6 +1,6 @@
 jQuery( function( $ ) {
 	var wpAdminBarHeight = (Urb.$wpadminbar) ? Urb.$wpadminbar.outerHeight() : 0;
-	var navBarWithAdminBarHeight = Urb.$mainNavigation.outerHeight() + wpAdminBarHeight;
+	var navBarWithAdminBarHeight = Urb.$pageNavigation.outerHeight() + wpAdminBarHeight;
 
 	var $nextButton = $('<button class="next"><span class="fa fa-angle-right"></span></button>');
 	var $previousButton = $('<button class="previous"><span class="fa fa-angle-left"></span></button>');

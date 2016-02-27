@@ -10,6 +10,7 @@ jQuery( function( $ ) {
 		$logo             : $('.site .site-header .site-title .site-logo'),
 		$menuLogo         : $('<img src="/wp-content/themes/urbanrest-wordpress-theme/images/logo-urbanrest-text-inverted-min.png" />'),
 		$mainNavigation   : $('.site .site-header .site-navigation .main-navigation'),
+		$pageNavigation   : $('.site .site-header .site-navigation .page-navigation'),
 		$socialNavigation : $('.site .site-header .site-navigation .social-navigation'),
 		$communityEvents  : $('.site .site-community .site-events .events'),
 		$businessHours    : $('.site .site-company .site-location .business-hours'),

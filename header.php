@@ -199,7 +199,6 @@
 <?php if( has_nav_menu('main-menu') ) : ?>
 				<section class="main-navigation">
 					<h3>Site Links</h3>
-
 <?php
 wp_nav_menu( array(
 	'theme_location' => 'main-menu',
@@ -209,6 +208,19 @@ wp_nav_menu( array(
 ?>
 				</section>
 <?php endif; ?>
+
+				<section class="page-navigation">
+					<h3>Page Links</h3>
+<?php if( has_nav_menu('navbar') ) : ?>
+<?php
+wp_nav_menu( array(
+	'theme_location' => 'navbar',
+	'container'      => '',
+	'menu_class'     => 'navbar',
+) );
+?>
+<?php endif; ?>
+				</section>
 
 <?php if( has_nav_menu('social') ) : ?>
 				<section class="social-navigation">

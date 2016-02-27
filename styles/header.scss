@@ -300,7 +300,7 @@
 
 				.fa
 				{
-					@include animation(flash 8.8s infinite);
+					@include animation(flash 8.8s 3);
 					vertical-align: middle;
 				}
 			}

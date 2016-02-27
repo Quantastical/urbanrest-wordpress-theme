@@ -1,6 +1,6 @@
 jQuery( function( $ ) {
 	var wpAdminBarHeight = (Urb.$wpadminbar) ? Urb.$wpadminbar.outerHeight() : 0;
-	var navBarWithAdminBarHeight = Urb.$mainNavigation.outerHeight() + wpAdminBarHeight;
+	var navBarWithAdminBarHeight = Urb.$pageNavigation.outerHeight() + wpAdminBarHeight;
 	var $main = $('main');
 	var contentAreas = {
 		'#company' : $('#company'),
@@ -11,7 +11,7 @@ jQuery( function( $ ) {
 	}
 
 	Urb.highlightCurrentSection = function() {
-		$('a.active', Urb.$mainNavigation).removeClass('active');
+		$('a.active', Urb.$pageNavigation).removeClass('active');
 
 		for(var i in contentAreas) {
 			var $contentArea = contentAreas[i];
@@ -20,7 +20,7 @@ jQuery( function( $ ) {
 				Urb.scrollPosition > $contentArea.offset().top - Urb.$window.height() * 0.5 && 
 				Urb.scrollPosition < $contentArea.offset().top + $contentArea.outerHeight() - Urb.$window.height() * 0.5
 			) {
-				$('a[href*="' + i + '"]', Urb.$mainNavigation).addClass('active');
+				$('a[href*="' + i + '"]', Urb.$pageNavigation).addClass('active');
 			}
 		}
 	};
@@ -56,19 +56,26 @@ jQuery( function( $ ) {
 		});
 	};
 
-	Urb.setupMainNavigation = function() {
-		// After clicking a menu item, automatically lose focus to prevent applying :focus styles
-		Urb.$mainNavigation.find('.menu-item a').click(function() {
+	Urb.setupPageNavigation = function() {
+		// After clicking a menu item, automatically lose :focus styles
+		Urb.$pageNavigation.find('.menu-item a').click(function() {
 			$(this).blur();
 		});
+
+		// TODO: Get HTML outta here!
+		Urb.$menuToggle = $('<div id="menu-toggle"><div id="hamburger"><span></span><span></span><span></span></div><div id="cross"><span></span><span></span></div></div>');
+		Urb.$menuToggle.on('click', function() {
+			$(this).toggleClass('open');
+		});
+		Urb.$pageNavigation.find('.main-menu [href="#main-menu"]').replaceWith(Urb.$menuToggle);
 	};
 
-	var windowHeightMinusWPHeaderHeight = Urb.$window.height() - Urb.$mainNavigation.outerHeight() - wpAdminBarHeight;
-	Urb.scrollMainNavigation = function() {
+	var windowHeightMinusWPHeaderHeight = Urb.$window.height() - Urb.$pageNavigation.outerHeight() - wpAdminBarHeight;
+	Urb.scrollPageNavigation = function() {
 		if(Urb.scrollPosition >= windowHeightMinusWPHeaderHeight) {
-			Urb.$mainNavigation.addClass('stuck-top');
+			Urb.$pageNavigation.addClass('stuck-top');
 		} else {
-			Urb.$mainNavigation.removeClass('stuck-top');
+			Urb.$pageNavigation.removeClass('stuck-top');
 		}
 		/*
 		if(Urb.scrollPosition < windowHeightMinusWPHeaderHeight) {
@@ -116,8 +123,8 @@ jQuery( function( $ ) {
 
 	Urb.$window.on('load', Urb.setupExternalLinks);
 	Urb.$window.on('load', Urb.setupFragmentAnchors);
-	Urb.$window.on('load', Urb.setupMainNavigation);
-	Urb.$window.on('load scroll', Urb.scrollMainNavigation);
+	Urb.$window.on('load', Urb.setupPageNavigation);
+	Urb.$window.on('load scroll', Urb.scrollPageNavigation);
 	Urb.$window.on('load scroll', Urb.scrollSocialNavigation);
 	Urb.$window.on('load', function() { setTimeout(Urb.scrollToContent, 1); }); // TODO: figure out why setTimeout has to be used here
 } );

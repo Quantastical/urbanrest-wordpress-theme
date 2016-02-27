@@ -33,6 +33,7 @@ if ( !function_exists('urbanrest_setup') ) :
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
 			//'footer'      => 'Footer Menu',
+			'navbar' => 'navbar',
 			'main-menu'   => 'main-menu',
 			//'kickstarter' => 'Kickstarter Menu',
 			'map'         => 'map',
