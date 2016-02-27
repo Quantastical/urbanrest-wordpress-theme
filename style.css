@@ -5805,6 +5805,18 @@ html.no-javascript, html.javascript {
   content: ""; }
 .site main.page .page-footer .page-actions .page-commenting.page-sharing a.twitter:before, .site main.page .page-footer .page-actions .page-liking.page-sharing a.twitter:before, .site main.page .page-footer .page-actions .page-sharing.page-sharing a.twitter:before {
   content: ""; }
+.site main.page .page-footer .page-actions .page-sharing .shortlink {
+  background: black;
+  border: dotted 1px white;
+  border-radius: 0.25em;
+  color: white;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.5em;
+  text-align: center;
+  width: 15em; }
+.site main.page .page-footer .page-actions .page-sharing .shortlink:focus {
+  outline: none; }
 .site main.page .page-footer .page-tags {
   list-style: none;
   margin: 3em 0;

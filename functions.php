@@ -5,6 +5,7 @@ require_once('includes/admin-menu.php');
 require_once('includes/beer.php');
 //require_once('includes/event.php');
 require_once('includes/form.php');
+require_once('includes/shortlink.php');
 require_once('includes/login.php');
 //require_once('includes/product.php');
 require_once('includes/profile.php');
