@@ -24,9 +24,41 @@
 
 				.main-navigation
 				{
+					display: none;
+
 					.main-menu
 					{
-						display: none;
+						background-color: rgba(black, 0.8);
+						bottom: 3.75em;
+						color: white;
+						font-family: 'Roboto';
+						font-size: 1.5em;
+						font-weight: 300;
+						list-style: none;
+						padding: 0;
+						position: absolute;
+						text-align: center;
+						right: 0;
+						width: 15em;
+						z-index: $layer-main-navigation;
+
+						.menu-item
+						{
+							margin: 0.5em;
+
+							a
+							{
+								display: inline-block;
+								color: inherit;
+								padding: 0.25em;
+								text-decoration: none;
+							}
+						}
+					}
+
+					&.open
+					{
+						display: block;
 					}
 				}
 
@@ -47,13 +79,6 @@
 					{
 						padding: 0;
 						text-align: right;
-					}
-
-					&.stuck-top
-					{
-						bottom: auto !important;
-						position: fixed;
-						top: 0 !important;
 					}
 
 					h3
@@ -428,6 +453,26 @@
 						/* social.scss */
 					}
 				}
+
+				&.stuck-top
+				{
+					.main-navigation
+					{
+						.main-menu
+						{
+							bottom: auto;
+							position: fixed;
+							top: 3.75em;
+						}
+					}
+
+					.page-navigation
+					{
+						bottom: auto !important;
+						position: fixed;
+						top: 0 !important;
+					}
+				}
 			}
 		}
 
@@ -435,19 +480,6 @@
 		{
 			.site-navigation
 			{
-				.page-navigation
-				{
-					&.stuck-top
-					{
-						top: 32px !important;
-
-						@include media( '<784px' )
-						{
-							top: 46px !important;
-						}
-					}
-				}
-
 				.social-navigation
 				{
 					top: 32px;
@@ -455,6 +487,32 @@
 					@include media( '<784px' )
 					{
 						top: 46px;
+					}
+				}
+
+				&.stuck-top
+				{
+					.main-navigation
+					{
+						.main-menu
+						{
+							top: calc(32px + 3.75em) !important;
+
+							@include media('<784px')
+							{
+								top: calc(46px + 3.75em) !important;
+							}
+						}
+					}
+
+					.page-navigation
+					{
+						top: 32px !important;
+
+						@include media( '<784px' )
+						{
+							top: 46px !important;
+						}
 					}
 				}
 			}

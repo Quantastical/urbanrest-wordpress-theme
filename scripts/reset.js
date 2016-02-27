@@ -9,6 +9,7 @@ jQuery( function( $ ) {
 		$wpadminbar       : $('#wpadminbar'),
 		$logo             : $('.site .site-header .site-title .site-logo'),
 		$menuLogo         : $('<img src="/wp-content/themes/urbanrest-wordpress-theme/images/logo-urbanrest-text-inverted-min.png" />'),
+		$siteNavigation   : $('.site .site-header .site-navigation'),
 		$mainNavigation   : $('.site .site-header .site-navigation .main-navigation'),
 		$pageNavigation   : $('.site .site-header .site-navigation .page-navigation'),
 		$socialNavigation : $('.site .site-header .site-navigation .social-navigation'),

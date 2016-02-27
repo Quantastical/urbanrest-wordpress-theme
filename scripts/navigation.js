@@ -66,6 +66,7 @@ jQuery( function( $ ) {
 		Urb.$menuToggle = $('<div id="menu-toggle"><div id="hamburger"><span></span><span></span><span></span></div><div id="cross"><span></span><span></span></div></div>');
 		Urb.$menuToggle.on('click', function() {
 			$(this).toggleClass('open');
+			Urb.$mainNavigation.toggleClass('open');
 		});
 		Urb.$pageNavigation.find('.main-menu [href="#main-menu"]').replaceWith(Urb.$menuToggle);
 	};
@@ -73,9 +74,9 @@ jQuery( function( $ ) {
 	var windowHeightMinusWPHeaderHeight = Urb.$window.height() - Urb.$pageNavigation.outerHeight() - wpAdminBarHeight;
 	Urb.scrollPageNavigation = function() {
 		if(Urb.scrollPosition >= windowHeightMinusWPHeaderHeight) {
-			Urb.$pageNavigation.addClass('stuck-top');
+			Urb.$siteNavigation.addClass('stuck-top');
 		} else {
-			Urb.$pageNavigation.removeClass('stuck-top');
+			Urb.$siteNavigation.removeClass('stuck-top');
 		}
 		/*
 		if(Urb.scrollPosition < windowHeightMinusWPHeaderHeight) {
