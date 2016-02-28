@@ -3539,6 +3539,92 @@ html.no-javascript, html.javascript {
     content: 'Search'; }
   .page .search-submit .btn-label {
     display: none; } }
+.share, .site main.beer .beer-footer .beer-actions .beer-share {
+  background: none;
+  border: none;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 400;
+  margin-right: 1em;
+  text-align: center; }
+.share:before, .site main.beer .beer-footer .beer-actions .beer-share:before {
+  font-family: FontAwesome;
+  margin-right: 0.5em; }
+.share.share:before, .site main.beer .beer-footer .beer-actions .beer-share:before {
+  content: ""; }
+.share:hover, .site main.beer .beer-footer .beer-actions .beer-share:hover {
+  border: none; }
+.share:last-of-type, .site main.beer .beer-footer .beer-actions .beer-share:last-of-type {
+  margin-right: 0; }
+.share .share-count, .site main.beer .beer-footer .beer-actions .beer-share .share-count {
+  margin-left: 0.5em; }
+.share .share-count:before, .site main.beer .beer-footer .beer-actions .beer-share .share-count:before {
+  content: '('; }
+.share .share-count:after, .site main.beer .beer-footer .beer-actions .beer-share .share-count:after {
+  content: ')'; }
+
+.sharing, .site main.beer .beer-footer .beer-actions .beer-sharing {
+  list-style: none;
+  padding: 0;
+  text-align: center; }
+.sharing a, .site main.beer .beer-footer .beer-actions .beer-sharing a {
+  background-color: gray;
+  border: none;
+  border-radius: 0.25em;
+  color: rgba(220, 223, 222, 0.98);
+  display: inline-block;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+  margin-right: 0.5em;
+  padding: 0.5em;
+  text-shadow: 0px 1px 0 rgba(0, 0, 0, 0.33);
+  -webkit-transition: background-color 0.33s, color 0.33s;
+  -moz-transition: background-color 0.33s, color 0.33s;
+  transition: background-color 0.33s, color 0.33s;
+  width: 15em; }
+.sharing a:before, .site main.beer .beer-footer .beer-actions .beer-sharing a:before {
+  font-family: FontAwesome;
+  margin-right: 0.5em; }
+.sharing a:hover, .site main.beer .beer-footer .beer-actions .beer-sharing a:hover {
+  background-color: #737373;
+  color: #dcdfde;
+  border: none;
+  -webkit-transition: background-color 0.11s, color 0.11s;
+  -moz-transition: background-color 0.11s, color 0.11s;
+  transition: background-color 0.11s, color 0.11s; }
+.sharing a.facebook, .site main.beer .beer-footer .beer-actions .beer-sharing a.facebook {
+  background-color: #3B5998; }
+.sharing a.facebook:hover, .site main.beer .beer-footer .beer-actions .beer-sharing a.facebook:hover {
+  background-color: #344e86; }
+.sharing a.google, .site main.beer .beer-footer .beer-actions .beer-sharing a.google {
+  background-color: #DD4B39; }
+.sharing a.google:hover, .site main.beer .beer-footer .beer-actions .beer-sharing a.google:hover {
+  background-color: #d73925; }
+.sharing a.twitter, .site main.beer .beer-footer .beer-actions .beer-sharing a.twitter {
+  background-color: #00ACED; }
+.sharing a.twitter:hover, .site main.beer .beer-footer .beer-actions .beer-sharing a.twitter:hover {
+  background-color: #0099d4; }
+.sharing .email:before, .site main.beer .beer-footer .beer-actions .beer-sharing .email:before {
+  content: ""; }
+.sharing .facebook:before, .site main.beer .beer-footer .beer-actions .beer-sharing .facebook:before {
+  content: ""; }
+.sharing .google:before, .site main.beer .beer-footer .beer-actions .beer-sharing .google:before {
+  content: ""; }
+.sharing .twitter:before, .site main.beer .beer-footer .beer-actions .beer-sharing .twitter:before {
+  content: ""; }
+.sharing .shortlink, .site main.beer .beer-footer .beer-actions .beer-sharing .shortlink {
+  background: black;
+  border: dotted 1px white;
+  border-radius: 0.25em;
+  color: white;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.5em;
+  text-align: center;
+  width: 15em; }
+.sharing .shortlink:focus, .site main.beer .beer-footer .beer-actions .beer-sharing .shortlink:focus {
+  outline: none; }
+
 @media only screen {
   .social-menu {
     list-style: none;
@@ -5392,86 +5478,6 @@ html.no-javascript, html.javascript {
   					}
   				}
   				*/ }
-.site main.beer .beer-footer .beer-actions .beer-comments, .site main.beer .beer-footer .beer-actions .beer-like, .site main.beer .beer-footer .beer-actions .beer-share {
-  background: none;
-  border: none;
-  display: inline-block;
-  font-size: 1em;
-  font-weight: 400;
-  margin-right: 1em;
-  text-align: center; }
-.site main.beer .beer-footer .beer-actions .beer-comments:before, .site main.beer .beer-footer .beer-actions .beer-like:before, .site main.beer .beer-footer .beer-actions .beer-share:before {
-  font-family: FontAwesome;
-  margin-right: 0.5em; }
-.site main.beer .beer-footer .beer-actions .beer-comments.beer-comments:before, .site main.beer .beer-footer .beer-actions .beer-like.beer-comments:before, .site main.beer .beer-footer .beer-actions .beer-share.beer-comments:before {
-  content: ""; }
-.site main.beer .beer-footer .beer-actions .beer-comments.beer-like:before, .site main.beer .beer-footer .beer-actions .beer-like.beer-like:before, .site main.beer .beer-footer .beer-actions .beer-share.beer-like:before {
-  content: ""; }
-.site main.beer .beer-footer .beer-actions .beer-comments.beer-share:before, .site main.beer .beer-footer .beer-actions .beer-like.beer-share:before, .site main.beer .beer-footer .beer-actions .beer-share.beer-share:before {
-  content: ""; }
-.site main.beer .beer-footer .beer-actions .beer-comments:hover, .site main.beer .beer-footer .beer-actions .beer-like:hover, .site main.beer .beer-footer .beer-actions .beer-share:hover {
-  border: none; }
-.site main.beer .beer-footer .beer-actions .beer-comments:last-of-type, .site main.beer .beer-footer .beer-actions .beer-like:last-of-type, .site main.beer .beer-footer .beer-actions .beer-share:last-of-type {
-  margin-right: 0; }
-.site main.beer .beer-footer .beer-actions .beer-comments .comment-count, .site main.beer .beer-footer .beer-actions .beer-comments .like-count, .site main.beer .beer-footer .beer-actions .beer-comments .share-count, .site main.beer .beer-footer .beer-actions .beer-like .comment-count, .site main.beer .beer-footer .beer-actions .beer-like .like-count, .site main.beer .beer-footer .beer-actions .beer-like .share-count, .site main.beer .beer-footer .beer-actions .beer-share .comment-count, .site main.beer .beer-footer .beer-actions .beer-share .like-count, .site main.beer .beer-footer .beer-actions .beer-share .share-count {
-  margin-left: 0.5em; }
-.site main.beer .beer-footer .beer-actions .beer-comments .comment-count:before, .site main.beer .beer-footer .beer-actions .beer-comments .like-count:before, .site main.beer .beer-footer .beer-actions .beer-comments .share-count:before, .site main.beer .beer-footer .beer-actions .beer-like .comment-count:before, .site main.beer .beer-footer .beer-actions .beer-like .like-count:before, .site main.beer .beer-footer .beer-actions .beer-like .share-count:before, .site main.beer .beer-footer .beer-actions .beer-share .comment-count:before, .site main.beer .beer-footer .beer-actions .beer-share .like-count:before, .site main.beer .beer-footer .beer-actions .beer-share .share-count:before {
-  content: '('; }
-.site main.beer .beer-footer .beer-actions .beer-comments .comment-count:after, .site main.beer .beer-footer .beer-actions .beer-comments .like-count:after, .site main.beer .beer-footer .beer-actions .beer-comments .share-count:after, .site main.beer .beer-footer .beer-actions .beer-like .comment-count:after, .site main.beer .beer-footer .beer-actions .beer-like .like-count:after, .site main.beer .beer-footer .beer-actions .beer-like .share-count:after, .site main.beer .beer-footer .beer-actions .beer-share .comment-count:after, .site main.beer .beer-footer .beer-actions .beer-share .like-count:after, .site main.beer .beer-footer .beer-actions .beer-share .share-count:after {
-  content: ')'; }
-.site main.beer .beer-footer .beer-actions .beer-commenting, .site main.beer .beer-footer .beer-actions .beer-liking, .site main.beer .beer-footer .beer-actions .beer-sharing {
-  list-style: none;
-  padding: 0;
-  text-align: center; }
-.site main.beer .beer-footer .beer-actions .beer-commenting a, .site main.beer .beer-footer .beer-actions .beer-liking a, .site main.beer .beer-footer .beer-actions .beer-sharing a {
-  background-color: gray;
-  border: none;
-  border-radius: 0.25em;
-  color: rgba(220, 223, 222, 0.98);
-  display: inline-block;
-  font-weight: 400;
-  margin-bottom: 0.5em;
-  margin-right: 0.5em;
-  padding: 0.5em;
-  text-shadow: 0px 1px 0 rgba(0, 0, 0, 0.33);
-  -webkit-transition: background-color 0.33s, color 0.33s;
-  -moz-transition: background-color 0.33s, color 0.33s;
-  transition: background-color 0.33s, color 0.33s;
-  width: 15em; }
-.site main.beer .beer-footer .beer-actions .beer-commenting a:before, .site main.beer .beer-footer .beer-actions .beer-liking a:before, .site main.beer .beer-footer .beer-actions .beer-sharing a:before {
-  font-family: FontAwesome;
-  margin-right: 0.5em; }
-.site main.beer .beer-footer .beer-actions .beer-commenting a:hover, .site main.beer .beer-footer .beer-actions .beer-liking a:hover, .site main.beer .beer-footer .beer-actions .beer-sharing a:hover {
-  background-color: #737373;
-  color: #dcdfde;
-  border: none;
-  -webkit-transition: background-color 0.11s, color 0.11s;
-  -moz-transition: background-color 0.11s, color 0.11s;
-  transition: background-color 0.11s, color 0.11s; }
-.site main.beer .beer-footer .beer-actions .beer-commenting a.facebook, .site main.beer .beer-footer .beer-actions .beer-liking a.facebook, .site main.beer .beer-footer .beer-actions .beer-sharing a.facebook {
-  background-color: #3B5998; }
-.site main.beer .beer-footer .beer-actions .beer-commenting a.facebook:hover, .site main.beer .beer-footer .beer-actions .beer-liking a.facebook:hover, .site main.beer .beer-footer .beer-actions .beer-sharing a.facebook:hover {
-  background-color: #344e86; }
-.site main.beer .beer-footer .beer-actions .beer-commenting a.google, .site main.beer .beer-footer .beer-actions .beer-liking a.google, .site main.beer .beer-footer .beer-actions .beer-sharing a.google {
-  background-color: #DD4B39; }
-.site main.beer .beer-footer .beer-actions .beer-commenting a.google:hover, .site main.beer .beer-footer .beer-actions .beer-liking a.google:hover, .site main.beer .beer-footer .beer-actions .beer-sharing a.google:hover {
-  background-color: #d73925; }
-.site main.beer .beer-footer .beer-actions .beer-commenting a.twitter, .site main.beer .beer-footer .beer-actions .beer-liking a.twitter, .site main.beer .beer-footer .beer-actions .beer-sharing a.twitter {
-  background-color: #00ACED; }
-.site main.beer .beer-footer .beer-actions .beer-commenting a.twitter:hover, .site main.beer .beer-footer .beer-actions .beer-liking a.twitter:hover, .site main.beer .beer-footer .beer-actions .beer-sharing a.twitter:hover {
-  background-color: #0099d4; }
-.site main.beer .beer-footer .beer-actions .beer-commenting.beer-liking a.facebook:before, .site main.beer .beer-footer .beer-actions .beer-liking.beer-liking a.facebook:before, .site main.beer .beer-footer .beer-actions .beer-sharing.beer-liking a.facebook:before {
-  content: ""; }
-.site main.beer .beer-footer .beer-actions .beer-commenting.beer-liking a.twitter:before, .site main.beer .beer-footer .beer-actions .beer-liking.beer-liking a.twitter:before, .site main.beer .beer-footer .beer-actions .beer-sharing.beer-liking a.twitter:before {
-  content: ""; }
-.site main.beer .beer-footer .beer-actions .beer-commenting.beer-sharing a.email:before, .site main.beer .beer-footer .beer-actions .beer-liking.beer-sharing a.email:before, .site main.beer .beer-footer .beer-actions .beer-sharing.beer-sharing a.email:before {
-  content: ""; }
-.site main.beer .beer-footer .beer-actions .beer-commenting.beer-sharing a.facebook:before, .site main.beer .beer-footer .beer-actions .beer-liking.beer-sharing a.facebook:before, .site main.beer .beer-footer .beer-actions .beer-sharing.beer-sharing a.facebook:before {
-  content: ""; }
-.site main.beer .beer-footer .beer-actions .beer-commenting.beer-sharing a.google:before, .site main.beer .beer-footer .beer-actions .beer-liking.beer-sharing a.google:before, .site main.beer .beer-footer .beer-actions .beer-sharing.beer-sharing a.google:before {
-  content: ""; }
-.site main.beer .beer-footer .beer-actions .beer-commenting.beer-sharing a.twitter:before, .site main.beer .beer-footer .beer-actions .beer-liking.beer-sharing a.twitter:before, .site main.beer .beer-footer .beer-actions .beer-sharing.beer-sharing a.twitter:before {
-  content: ""; }
 .site main.beer .beer-footer .beer-actions .beer-rating {
   /*
   float: right;
@@ -5628,6 +5634,7 @@ html.no-javascript, html.javascript {
   color: gold;
   opacity: 1; }
 .site main.beer .beer-footer .beer-actions .beer-rating .rating-actions:hover .rate-button:hover ~ .rate-button:before {
+  color: rgba(0, 0, 0, 0.8);
   opacity: 0.5; }
 .site #main-navigation {
   bottom: auto;
