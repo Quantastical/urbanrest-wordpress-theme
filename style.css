@@ -4195,19 +4195,26 @@ html.no-javascript, html.javascript {
   .site .site-specials .growler-list h3 {
     display: inline-block;
     font-weight: normal;
-    margin-right: 1em;
-    max-width: 6em;
+    margin: 0;
+    max-width: 100%;
     text-align: center;
-    vertical-align: top; }
+    vertical-align: top;
+    width: 100%; }
   .site .site-specials .growler-list h3:after {
     content: ':'; }
   .site .site-specials .growler-list ol {
     display: inline-block;
     list-style: none;
     padding: 0;
-    text-align: left; }
+    text-align: center; }
   .site .site-specials .growler-list ol li a:hover {
     color: #99FF99; } }
+@media only screen and (min-width: 769px) {
+  .site .site-specials .growler-list {
+    background-image: url(images/chalk-growler.png), url(images/chalk-growler-2.png), url(images/chalk-growler-2.png);
+    background-repeat: no-repeat;
+    background-position: 10% 50%, 84% 50%, 90% 0%;
+    background-size: auto 100%, auto 100%, auto 94%; } }
 @media only screen and (max-width: 768px) {
   .site .site-specials .beer-list {
     font-size: 3em; }
@@ -4223,12 +4230,7 @@ html.no-javascript, html.javascript {
     font-size: 0.4em;
     padding: 0; }
   .site .site-specials .growler-list h3 {
-    font-size: 0.8em;
-    margin: 0;
-    max-width: 100%;
-    width: 100%; }
-  .site .site-specials .growler-list ol {
-    text-align: center; } }
+    font-size: 0.8em; } }
 
 @media only screen {
   .site .site-community {
@@ -5592,6 +5594,7 @@ html.no-javascript, html.javascript {
   right: 0;
   */ }
 .site main.beer .beer-footer .beer-actions .beer-rating .rating-actions {
+  display: inline-block;
   margin-bottom: 3em;
   /*
   margin-bottom: -1em;
@@ -5605,7 +5608,6 @@ html.no-javascript, html.javascript {
   cursor: pointer;
   font-size: 3.3em;
   height: 1em;
-  margin: 0.1em;
   outline: none;
   padding: 0;
   position: relative;
