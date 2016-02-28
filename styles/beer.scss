@@ -57,180 +57,6 @@
 				}
 			}
 
-			.beer-rating
-			{
-				float: right;
-				margin-top: -2.15em;
-				position: relative;
-				text-align: right;
-				top: -1.5em;
-
-				.annotation
-				{
-					font-size: 1.5em;
-					line-height: calc(1em / 1.5);
-					margin-left: -0.15em;
-					vertical-align: middle;
-				}
-
-				[itemprop="aggregateRating"]
-				{
-					overflow: hidden;
-					white-space: nowrap;
-					width: 0;
-
-					&:before
-					{
-						content: '\f006\f006\f006\f006\f006';
-						font-family: 'FontAwesome';
-						font-size: 1.4em;
-						position: absolute;
-						right: 0;
-					}
-
-					&[data-overall-rating^="0"]
-					{
-						&[data-overall-rating$="0"]:before,
-						&[data-overall-rating$="1"]:before,
-						&[data-overall-rating$="2"]:before,
-						&[data-overall-rating$="3"]:before,
-						&[data-overall-rating$="4"]:before { content: '\f006\f006\f006\f006\f006'; }
-
-						&[data-overall-rating$="5"]:before,
-						&[data-overall-rating$="6"]:before,
-						&[data-overall-rating$="7"]:before,
-						&[data-overall-rating$="8"]:before,
-						&[data-overall-rating$="9"]:before { content: '\f123\f006\f006\f006\f006'; }
-					}
-					
-					&[data-overall-rating^="1"]
-					{
-						&[data-overall-rating$="0"]:before,
-						&[data-overall-rating$="1"]:before,
-						&[data-overall-rating$="2"]:before,
-						&[data-overall-rating$="3"]:before,
-						&[data-overall-rating$="4"]:before { content: '\f005\f006\f006\f006\f006'; }
-
-						&[data-overall-rating$="5"]:before,
-						&[data-overall-rating$="6"]:before,
-						&[data-overall-rating$="7"]:before,
-						&[data-overall-rating$="8"]:before,
-						&[data-overall-rating$="9"]:before { content: '\f005\f123\f006\f006\f006'; }
-					}
-
-					&[data-overall-rating^="2"]
-					{
-						&[data-overall-rating$="0"]:before,
-						&[data-overall-rating$="1"]:before,
-						&[data-overall-rating$="2"]:before,
-						&[data-overall-rating$="3"]:before,
-						&[data-overall-rating$="4"]:before { content: '\f005\f005\f006\f006\f006'; }
-
-						&[data-overall-rating$="5"]:before,
-						&[data-overall-rating$="6"]:before,
-						&[data-overall-rating$="7"]:before,
-						&[data-overall-rating$="8"]:before,
-						&[data-overall-rating$="9"]:before { content: '\f005\f005\f123\f006\f006'; }
-					}
-
-					&[data-overall-rating^="3"]
-					{
-						&[data-overall-rating$="0"]:before,
-						&[data-overall-rating$="1"]:before,
-						&[data-overall-rating$="2"]:before,
-						&[data-overall-rating$="3"]:before,
-						&[data-overall-rating$="4"]:before { content: '\f005\f005\f005\f006\f006'; }
-
-						&[data-overall-rating$="5"]:before,
-						&[data-overall-rating$="6"]:before,
-						&[data-overall-rating$="7"]:before,
-						&[data-overall-rating$="8"]:before,
-						&[data-overall-rating$="9"]:before { content: '\f005\f005\f005\f123\f006'; }
-					}
-
-					&[data-overall-rating^="4"]
-					{
-						&[data-overall-rating$="0"]:before,
-						&[data-overall-rating$="1"]:before,
-						&[data-overall-rating$="2"]:before,
-						&[data-overall-rating$="3"]:before,
-						&[data-overall-rating$="4"]:before { content: '\f005\f005\f005\f005\f006'; }
-
-						&[data-overall-rating$="5"]:before,
-						&[data-overall-rating$="6"]:before,
-						&[data-overall-rating$="7"]:before,
-						&[data-overall-rating$="8"]:before,
-						&[data-overall-rating$="9"]:before { content: '\f005\f005\f005\f005\f123'; }
-					}
-
-					&[data-overall-rating^="5"]:before { content: '\f005\f005\f005\f005\f005'; }
-				}
-
-				.rating-actions
-				{
-					margin-bottom: -1em;
-					margin-top: -1.15em;
-					position: relative;
-
-					.rate-button
-					{
-						background: none;
-						border: none;
-						color: transparent;
-						cursor: pointer;
-						font-size: 0;
-						height: 1.5rem;
-						opacity: 0;
-						outline: none;
-						padding: 0;
-						position: relative;
-						top: -0.2rem;
-						width: 1.29rem;
-
-						&.rated
-						{
-							opacity: 1;
-						}
-
-						&:before
-						{
-							color: gold;
-							content: $fa-var-star;
-							font-family: 'FontAwesome';
-							font-size: 1.4rem;
-							position: absolute;
-							right: 0;
-							top: 0;
-						}
-
-						&:after
-						{
-							color: $urbanrest-black;
-							content: $fa-var-star-o;
-							font-family: 'FontAwesome';
-							font-size: 1.4rem;
-							margin-left: -1.3rem;
-							position: absolute;
-							right: 0;
-							top: 0;
-						}
-					}
-
-					&:hover
-					{
-						.rate-button
-						{
-							opacity: 1;
-
-							&:hover
-							{
-								~ .rate-button { opacity: 0; }
-							}
-						}
-					}
-				}
-			}
-
 			.beer-style
 			{
 				font-size: 1.25em;
@@ -467,6 +293,7 @@
 					}
 				}
 
+				/*
 				.beer-checkin
 				{
 					.beer-checkin-item
@@ -524,8 +351,208 @@
 						}
 					}
 				}
+				*/
+
+				.beer-rating
+				{
+					/*
+					float: right;
+					margin-top: -2.15em;
+					position: relative;
+					text-align: right;
+					top: -1.5em;
+					*/
+
+					h5
+					{
+						display: none;						
+					}
+					/*
+					.annotation
+					{
+						font-size: 1.5em;
+						line-height: calc(1em / 1.5);
+						margin-left: -0.15em;
+						vertical-align: middle;
+					}
+					*/
+
+					[itemprop="aggregateRating"]
+					{
+						display: none;
+						/*
+						overflow: hidden;
+						white-space: nowrap;
+						width: 0;
+						*/
+
+						&:before
+						{
+							/*content: '\f006\f006\f006\f006\f006';*/
+							/*
+							content: '\f005\f005\f005\f005\f005';
+							font-family: 'FontAwesome';
+							font-size: 1.4em;
+							position: absolute;
+							right: 0;
+							*/
+						}
+
+						/*
+						&[data-overall-rating^="0"]
+						{
+							&[data-overall-rating$="0"]:before,
+							&[data-overall-rating$="1"]:before,
+							&[data-overall-rating$="2"]:before,
+							&[data-overall-rating$="3"]:before,
+							&[data-overall-rating$="4"]:before { content: '\f006\f006\f006\f006\f006'; }
+
+							&[data-overall-rating$="5"]:before,
+							&[data-overall-rating$="6"]:before,
+							&[data-overall-rating$="7"]:before,
+							&[data-overall-rating$="8"]:before,
+							&[data-overall-rating$="9"]:before { content: '\f123\f006\f006\f006\f006'; }
+						}
+						
+						&[data-overall-rating^="1"]
+						{
+							&[data-overall-rating$="0"]:before,
+							&[data-overall-rating$="1"]:before,
+							&[data-overall-rating$="2"]:before,
+							&[data-overall-rating$="3"]:before,
+							&[data-overall-rating$="4"]:before { content: '\f005\f006\f006\f006\f006'; }
+
+							&[data-overall-rating$="5"]:before,
+							&[data-overall-rating$="6"]:before,
+							&[data-overall-rating$="7"]:before,
+							&[data-overall-rating$="8"]:before,
+							&[data-overall-rating$="9"]:before { content: '\f005\f123\f006\f006\f006'; }
+						}
+
+						&[data-overall-rating^="2"]
+						{
+							&[data-overall-rating$="0"]:before,
+							&[data-overall-rating$="1"]:before,
+							&[data-overall-rating$="2"]:before,
+							&[data-overall-rating$="3"]:before,
+							&[data-overall-rating$="4"]:before { content: '\f005\f005\f006\f006\f006'; }
+
+							&[data-overall-rating$="5"]:before,
+							&[data-overall-rating$="6"]:before,
+							&[data-overall-rating$="7"]:before,
+							&[data-overall-rating$="8"]:before,
+							&[data-overall-rating$="9"]:before { content: '\f005\f005\f123\f006\f006'; }
+						}
+
+						&[data-overall-rating^="3"]
+						{
+							&[data-overall-rating$="0"]:before,
+							&[data-overall-rating$="1"]:before,
+							&[data-overall-rating$="2"]:before,
+							&[data-overall-rating$="3"]:before,
+							&[data-overall-rating$="4"]:before { content: '\f005\f005\f005\f006\f006'; }
+
+							&[data-overall-rating$="5"]:before,
+							&[data-overall-rating$="6"]:before,
+							&[data-overall-rating$="7"]:before,
+							&[data-overall-rating$="8"]:before,
+							&[data-overall-rating$="9"]:before { content: '\f005\f005\f005\f123\f006'; }
+						}
+
+						&[data-overall-rating^="4"]
+						{
+							&[data-overall-rating$="0"]:before,
+							&[data-overall-rating$="1"]:before,
+							&[data-overall-rating$="2"]:before,
+							&[data-overall-rating$="3"]:before,
+							&[data-overall-rating$="4"]:before { content: '\f005\f005\f005\f005\f006'; }
+
+							&[data-overall-rating$="5"]:before,
+							&[data-overall-rating$="6"]:before,
+							&[data-overall-rating$="7"]:before,
+							&[data-overall-rating$="8"]:before,
+							&[data-overall-rating$="9"]:before { content: '\f005\f005\f005\f005\f123'; }
+						}
+
+						&[data-overall-rating^="5"]:before { content: '\f005\f005\f005\f005\f005'; }
+						*/
+					}
+
+					.rating-actions
+					{
+						margin-bottom: 3em;
+						/*
+						margin-bottom: -1em;
+						margin-top: -1.15em;
+						position: relative;
+						*/
+
+						.rate-button
+						{
+							background: none;
+							border: none;
+							color: transparent;
+							cursor: pointer;
+							font-size: 3.3em;
+							height: 1em;
+							margin: 0.1em;
+							outline: none;
+							padding: 0;
+							position: relative;
+							width: 1em;
+
+							&:before
+							{
+								color: rgba($urbanrest-black, 0.8);
+								content: $fa-var-star;
+								font-family: 'FontAwesome';
+								font-size: 1em;
+								opacity: 0.5;
+								position: absolute;
+								right: 0;
+								top: 0;
+
+								&.rated
+								{
+									color: gold;
+									opacity: 1;
+								}
+							}
+
+							&:after
+							{
+								color: $urbanrest-black;
+								content: $fa-var-star-o;
+								font-family: 'FontAwesome';
+								font-size: 1em;
+								position: absolute;
+								right: 0;
+								top: 0;
+							}
+						}
+
+						&:hover
+						{
+							.rate-button
+							{
+								&:before
+								{
+									color: gold;
+									opacity: 1;
+								}
+
+								&:hover ~ .rate-button:before
+								{
+									color: rgba($urbanrest-black, 0.8);
+									opacity: 0.5;
+								}
+							}
+						}
+					}
+				}
 			}
 
+			/*
 			.beer-citations
 			{
 				font-size: 0.8em;
@@ -556,6 +583,7 @@
 					content: ' and ';
 				}
 			}
+			*/
 		}
 	}
 

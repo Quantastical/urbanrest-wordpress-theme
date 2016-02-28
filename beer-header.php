@@ -25,18 +25,6 @@
 				<?php the_title( '<h2 class="beer-title">', '</h2>' ); ?>
 
 				<div class="beer-meta">
-					<div class="beer-rating">
-						<h5>
-							Overall Rating
-							<sup class="annotation" id="annotation-rating">
-								<a class="annotation-link" href="#citation-rating">*</a>
-							</sup>
-						</h5>
-						<div data-beer-id="<?php echo $post->ID; ?>" data-overall-rating="<?php echo urb_get_average_rating( $post->ID ); ?>" data-user-rating="<?php echo urb_get_user_rating( $post->ID ); ?>" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-							Rated <span itemprop="ratingValue"><?php echo urb_get_average_rating( $post->ID ); ?></span>/5
-							based on <span itemprop="reviewCount"><?php echo count( urb_get_ratings($post->ID) ); ?></span> customer reviews
-						</div>
-					</div>
 <?php $styles = get_the_terms( $post->ID, 'beer_style' ); ?>
 <?php if( $styles ): ?>
 					<div class="beer-style row">

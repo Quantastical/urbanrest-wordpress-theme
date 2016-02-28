@@ -1,5 +1,20 @@
 			<footer class="beer-footer" role="contentinfo">
 				<section class="beer-actions">
+					<div class="beer-rating">
+						<h5>
+							Overall Rating
+							<sup class="annotation" id="annotation-rating">
+								<a class="annotation-link" href="#citation-rating">*</a>
+							</sup>
+						</h5>
+						<div data-beer-id="<?php echo $post->ID; ?>" data-overall-rating="<?php echo urb_get_average_rating( $post->ID ); ?>" data-user-rating="<?php echo urb_get_user_rating( $post->ID ); ?>" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+							Rated <span itemprop="ratingValue"><?php echo urb_get_average_rating( $post->ID ); ?></span>/5
+							based on <span itemprop="reviewCount"><?php echo count( urb_get_ratings($post->ID) ); ?></span> customer reviews
+						</div>
+					</div>
+
+<?php
+/*
 					<ul class="beer-checkin">
 <?php $beeradvocate_beer_url = get_post_meta($post->ID, 'beeradvocate_beer_url'); ?>
 <?php if( filter_var($beeradvocate_beer_url[0], FILTER_VALIDATE_URL) ) : ?>
@@ -39,7 +54,8 @@ jQuery(function($){
 	//});
 });
 </script>
-
+*/
+?>
 					<button class="beer-share hyperlink" data-action="modal" data-target=".beer-sharing.modal" type="button">Share this page</button>
 					<ul class="beer-sharing modal animated fadeIn">
 						<li>
@@ -55,12 +71,17 @@ jQuery(function($){
 							<a class="email" href="mailto:?body=<?php echo get_permalink(); ?>" data-event-action="Share" data-event-label="Email"><span>Share this via Email</span></a>
 						</li>
 					</ul>
-
+<?php
+/*
 					<!--
 					<h3 class="beer-comments hyperlink" data-action="modal" data-target=".beer-commenting.modal">View Comments</h3>
 					<div class="beer-commenting modal"></div>
 					-->
+*/
+?>
 				</section>
+<?php
+/*
 				<section class="beer-citations">
 					<ol>
 						<li class="citation" id="citation-rating">
@@ -79,4 +100,6 @@ jQuery(function($){
 						</li>
 					</ol>
 				</section>
+*/
+?>
 			</footer>
