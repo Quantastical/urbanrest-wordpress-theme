@@ -3206,12 +3206,6 @@ html.no-javascript, html.javascript {
   .site .site-header .site-navigation .page-navigation .navbar .menu-item {
     height: 100%; } }
 @media only screen {
-  .site .site-header .site-navigation .page-navigation .navbar .menu-item a:focus {
-    -webkit-animation: mainMenuItemFocus 3s infinite;
-    -moz-animation: mainMenuItemFocus 3s infinite;
-    animation: mainMenuItemFocus 3s infinite;
-    box-shadow: 0 0 0 3pt rgba(255, 255, 255, 0.5);
-    outline: none; }
   .site .site-header .site-navigation .page-navigation .navbar .menu-item.home {
     float: left;
     left: 0;
@@ -3253,6 +3247,12 @@ html.no-javascript, html.javascript {
     vertical-align: middle; }
   .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a:hover {
     border: none; }
+  .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a:focus {
+    -webkit-animation: mainMenuItemFocus 3s infinite;
+    -moz-animation: mainMenuItemFocus 3s infinite;
+    animation: mainMenuItemFocus 3s infinite;
+    box-shadow: 0 0 0 3pt rgba(255, 255, 255, 0.5);
+    outline: none; }
   .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a[href="#coming-soon"] {
     cursor: default;
     opacity: 0.33; }
@@ -3347,22 +3347,23 @@ html.no-javascript, html.javascript {
   .site .site-header .site-navigation .page-navigation .navbar .menu-item.home a {
     width: 7em; }
   .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) {
-    height: 50%; }
+    /*height: 50%;*/ }
   .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a {
-    border-radius: 0;
+    border-radius: 2px;
     box-sizing: border-box;
     display: block;
     font-family: 'Roboto';
-    font-size: 12px;
-    font-weight: 400;
-    height: 45px;
-    line-height: 35px;
+    font-size: 16px;
+    font-weight: 300;
+    height: 50px;
+    line-height: 42px;
+    margin: 20px auto;
     padding: 5px;
     text-align: center;
     text-overflow: ellipsis;
-    text-transform: capitalize;
+    text-transform: uppercase;
     white-space: nowrap;
-    width: 60px;
+    /*width: 60px;*/
     										/*
     										&:before
     										{
@@ -3384,6 +3385,8 @@ html.no-javascript, html.javascript {
     										&[href~="/taproom/"]:before   { content: $fa-var-shopping-cart; }
     										&[href~="/brewery/"]:before   { content: $fa-var-shopping-cart; }
     										*/ }
+  .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home).main-menu #menu-toggle {
+    margin: 20px auto; }
   .site .site-header .site-navigation .page-navigation .navbar .menu-item.divider {
     height: 0; } }
 @media only screen and (min-width: 769px) {

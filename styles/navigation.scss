@@ -120,13 +120,6 @@
 							{
 								height: 100%;
 							}
-
-							a:focus
-							{
-								@include animation( mainMenuItemFocus 3s infinite );
-								box-shadow: 0 0 0 3pt rgba(white, 0.5);
-								outline: none;
-							}
 							/*
 							&.menu-item-logo
 							{
@@ -206,6 +199,13 @@
 									vertical-align: middle;
 
 									&:hover { border: none; }
+
+									&:focus
+									{
+										@include animation( mainMenuItemFocus 3s infinite );
+										box-shadow: 0 0 0 3pt rgba(white, 0.5);
+										outline: none;
+									}
 
 									&[href="#coming-soon"]
 									{
@@ -368,24 +368,25 @@
 								/*&.menu-item-type-custom*/
 								&:not(.home)
 								{
-									height: 50%;
+									/*height: 50%;*/
 
 									a
 									{
-										border-radius: 0;
+										border-radius: 2px;
 										box-sizing: border-box;
 										display: block;
 										font-family: 'Roboto';
-										font-size: 12px;
-										font-weight: 400;
-										height: 45px;
-										line-height: 35px;
+										font-size: 16px;
+										font-weight: 300;
+										height: 50px;
+										line-height: 42px;
+										margin: 20px auto;
 										padding: 5px;
 										text-align: center;
 										text-overflow: ellipsis;
-										text-transform: capitalize;
+										text-transform: uppercase;
 										white-space: nowrap;
-										width: 60px;
+										/*width: 60px;*/
 
 										/*
 										&:before
@@ -408,6 +409,11 @@
 										&[href~="/taproom/"]:before   { content: $fa-var-shopping-cart; }
 										&[href~="/brewery/"]:before   { content: $fa-var-shopping-cart; }
 										*/
+									}
+
+									&.main-menu #menu-toggle
+									{
+										margin: 20px auto;
 									}
 								}
 
