@@ -4,8 +4,12 @@ jQuery(function($){
 		$('[data-action="modal"]').on('click', Urb.showModal);
 	};
 
-	Urb.showModal = function() {
-		$( $(this).data('target') ).data('urbModal').show();
+	Urb.showModal = function( target ) {
+		if(!target) {
+			target = $(this).data('target');
+		}
+		
+		$( target ).data('urbModal').show();
 	};
 
 	Urb.$window.on('load', Urb.setupModal);

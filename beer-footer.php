@@ -13,28 +13,29 @@
 						</div>
 					</div>
 
-<?php
-/*
-					<ul class="beer-checkin">
+					<div class="beer-checkin modal animated fadeIn">
+						<h5>Share your rating with your favorite online community.</h5>
+						<ul>
 <?php $beeradvocate_beer_url = get_post_meta($post->ID, 'beeradvocate_beer_url'); ?>
 <?php if( filter_var($beeradvocate_beer_url[0], FILTER_VALIDATE_URL) ) : ?>
-						<li class="beer-checkin-item">
-							<a class="beeradvocate" href="<?php echo $beeradvocate_beer_url[0]; ?>">Rate this on BeerAdvocate</a>
-						</li>
+							<li class="beer-checkin-item">
+								<a class="beeradvocate" href="<?php echo $beeradvocate_beer_url[0]; ?>"><span>Rate this on BeerAdvocate</span></a>
+							</li>
 <?php endif; ?>
 <?php $ratebeer_beer_url = get_post_meta($post->ID, 'ratebeer_beer_url'); ?>
 <?php if( filter_var($ratebeer_beer_url[0], FILTER_VALIDATE_URL) ) : ?>
-						<li class="beer-checkin-item">
-							<a class="ratebeer" href="<?php echo $ratebeer_beer_url[0]; ?>">Rate this on RateBeer</a>
-						</li>
+							<li class="beer-checkin-item">
+								<a class="ratebeer" href="<?php echo $ratebeer_beer_url[0]; ?>"><span>Rate this on RateBeer</span></a>
+							</li>
 <?php endif; ?>
 <?php $untappd_beer_url = get_post_meta($post->ID, 'untappd_beer_url'); ?>
 <?php if( filter_var($untappd_beer_url[0], FILTER_VALIDATE_URL) && get_option('untappd_api_client_id') ) : ?>
-						<li class="beer-checkin-item">
-							<a class="untappd" href="<?php echo $untappd_beer_url[0]; ?>">Check-In on Untappd</a>
-						</li>
+							<li class="beer-checkin-item">
+								<a class="untappd" href="<?php echo $untappd_beer_url[0]; ?>"><span>Check-In on Untappd</span></a>
+							</li>
 <?php endif; ?>
-					</ul>
+						</ul>
+					</div>
 					<!--
 					<h3 class="beer-like hyperlink" data-action="modal" data-target=".beer-liking.modal">Like this beer</h3>
 					<ul class="beer-liking modal">
@@ -54,8 +55,6 @@ jQuery(function($){
 	//});
 });
 </script>
-*/
-?>
 					<button class="beer-share hyperlink" data-action="modal" data-target=".beer-sharing.modal" type="button">Share this page</button>
 					<ul class="beer-sharing modal animated fadeIn">
 						<li>

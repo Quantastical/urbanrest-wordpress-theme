@@ -4163,7 +4163,11 @@ html.no-javascript, html.javascript {
     */ }
   .site .site-specials .beer-list {
     font-size: 4em;
-    margin-bottom: 0.75em; }
+    margin-bottom: 0.75em; } }
+@media only screen and (min-width: 769px) {
+  .site .site-specials .beer-list {
+    margin-bottom: 0; } }
+@media only screen {
   .site .site-specials .beer-list ol {
     list-style: none;
     padding: 0; }
@@ -4214,7 +4218,10 @@ html.no-javascript, html.javascript {
     background-image: url(images/chalk-growler.png), url(images/chalk-growler-2.png), url(images/chalk-growler-2.png);
     background-repeat: no-repeat;
     background-position: 10% 50%, 84% 50%, 90% 0%;
-    background-size: auto 100%, auto 100%, auto 94%; } }
+    background-size: auto 100%, auto 100%, auto 94%;
+    margin-top: 1em;
+    padding-bottom: 2em;
+    padding-top: 1em; } }
 @media only screen and (max-width: 768px) {
   .site .site-specials .beer-list {
     font-size: 3em; }
@@ -5420,66 +5427,79 @@ html.no-javascript, html.javascript {
 .site main.beer .beer-footer .beer-sharing.modal:not(.modal-opened):not(.modal-closing) {
   display: none; }
 .site main.beer .beer-footer .beer-actions {
-  text-align: center;
-  				/*
-  				.beer-checkin
-  				{
-  					.beer-checkin-item
-  					{
-  						display: inline-block;
-  						margin-bottom: 2em;
-  
-  						+.beer-checkin-item { margin-left: 1em; }
-  
-  						a
-  						{
-  							background-position: center;
-  							background-repeat: no-repeat;
-  							background-size: contain;
-  							color: transparent;
-  							display: inline-block;
-  							font-size: 0.75em;
-  							height: 5em;
-  							margin-top: 6em;
-  							width: 11em;
-  
-  							&:before
-  							{
-  								background-position: center;
-  								background-repeat: no-repeat;
-  								background-size: contain;
-  								border-radius: 1em;
-  								bottom: calc(100% + 0.5em);
-  								content: '';
-  								display: block;
-  								height: 5em;
-  								left: calc(50% - 2.5em);
-  								position: absolute;
-  								width: 5em;
-  							}
-  						}
-  
-  						.beeradvocate
-  						{
-  							background-image: url('images/logo-beeradvocate.png');
-  							width: 15em;
-  							&:before { background-image: url('images/icon-beeradvocate.png'); }
-  						}
-  
-  						.ratebeer
-  						{
-  							background-image: url('images/logo-ratebeer.png');
-  							&:before { background-image: url('images/icon-ratebeer.png'); }
-  						}
-  
-  						.untappd
-  						{
-  							background-image: url('images/logo-untappd.png');
-  							&:before { background-image: url('images/icon-untappd.png'); }
-  						}
-  					}
-  				}
-  				*/ }
+  text-align: center; }
+.site main.beer .beer-footer .beer-actions .beer-checkin {
+  display: none; }
+.site main.beer .beer-footer .beer-actions .beer-checkin.modal-opened, .site main.beer .beer-footer .beer-actions .beer-checkin.modal-closing {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: flex; }
+.site main.beer .beer-footer .beer-actions .beer-checkin h5 {
+  color: white;
+  font-weight: 400;
+  font-size: 1em;
+  margin-bottom: 1em; }
+.site main.beer .beer-footer .beer-actions .beer-checkin .message {
+  color: white;
+  font-size: 3em;
+  font-family: 'Satisfy';
+  margin-bottom: 0.5em; }
+.site main.beer .beer-footer .beer-actions .beer-checkin ul {
+  list-style: none;
+  padding: 0; }
+.site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item {
+  display: inline-block;
+  margin-bottom: 2em; }
+.site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item + .beer-checkin-item {
+  margin-left: 1em; }
+.site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item a {
+  /*
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: transparent;
+  display: inline-block;
+  font-size: 0.75em;
+  height: 5em;
+  margin-top: 6em;
+  width: 11em;
+  */
+  display: inline-block;
+  height: 5em;
+  width: 5em; }
+.site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item a:before {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 1em;
+  /*bottom: calc(100% + 0.5em);*/
+  content: '';
+  display: block;
+  height: 5em;
+  /*left: calc(50% - 2.5em);*/
+  /*position: absolute;*/
+  width: 5em; }
+.site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item a span {
+  display: none; }
+.site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item .beeradvocate {
+  /*
+  background-image: url('images/logo-beeradvocate.png');
+  width: 15em;
+  */ }
+.site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item .beeradvocate:before {
+  background-image: url("images/icon-beeradvocate.png"); }
+.site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item .ratebeer {
+  /*
+  background-image: url('images/logo-ratebeer.png');
+  */ }
+.site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item .ratebeer:before {
+  background-image: url("images/icon-ratebeer.png"); }
+.site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item .untappd {
+  /*
+  background-image: url('images/logo-untappd.png');
+  */ }
+.site main.beer .beer-footer .beer-actions .beer-checkin .beer-checkin-item .untappd:before {
+  background-image: url("images/icon-untappd.png"); }
 .site main.beer .beer-footer .beer-actions .beer-rating {
   /*
   float: right;
@@ -5621,7 +5641,7 @@ html.no-javascript, html.javascript {
   position: absolute;
   right: 0;
   top: 0; }
-.site main.beer .beer-footer .beer-actions .beer-rating .rating-actions .rate-button:before.rated {
+.site main.beer .beer-footer .beer-actions .beer-rating .rating-actions .rate-button.rated:before {
   color: gold;
   opacity: 1; }
 .site main.beer .beer-footer .beer-actions .beer-rating .rating-actions .rate-button:after {

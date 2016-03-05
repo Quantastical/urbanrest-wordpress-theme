@@ -189,18 +189,48 @@
 					@extend .sharing;
 				}
 
-				/*
 				.beer-checkin
 				{
+					display: none;
+
+					&.modal-opened,
+					&.modal-closing
+					{
+						@include prefixer(display, flex, webkit moz spec, value);
+					}
+
+					h5
+					{
+						color: white;
+						font-weight: 400;
+						font-size: 1em;
+						margin-bottom: 1em;
+					}
+
+					.message
+					{
+						color: white;
+						font-size: 3em;
+						font-family: 'Satisfy';
+						margin-bottom: 0.5em;
+					}
+
+					ul
+					{
+						list-style: none;
+						padding: 0;
+					}
+
 					.beer-checkin-item
 					{
 						display: inline-block;
 						margin-bottom: 2em;
 
-						+.beer-checkin-item { margin-left: 1em; }
+						+ .beer-checkin-item { margin-left: 1em; }
 
 						a
 						{
+							/*
 							background-position: center;
 							background-repeat: no-repeat;
 							background-size: contain;
@@ -210,6 +240,10 @@
 							height: 5em;
 							margin-top: 6em;
 							width: 11em;
+							*/
+							display: inline-block;
+							height: 5em;
+							width: 5em;
 
 							&:before
 							{
@@ -217,37 +251,47 @@
 								background-repeat: no-repeat;
 								background-size: contain;
 								border-radius: 1em;
-								bottom: calc(100% + 0.5em);
+								/*bottom: calc(100% + 0.5em);*/
 								content: '';
 								display: block;
 								height: 5em;
-								left: calc(50% - 2.5em);
-								position: absolute;
+								/*left: calc(50% - 2.5em);*/
+								/*position: absolute;*/
 								width: 5em;
+							}
+
+							span
+							{
+								display: none;
 							}
 						}
 
 						.beeradvocate
 						{
+							/*
 							background-image: url('images/logo-beeradvocate.png');
 							width: 15em;
+							*/
 							&:before { background-image: url('images/icon-beeradvocate.png'); }
 						}
 
 						.ratebeer
 						{
+							/*
 							background-image: url('images/logo-ratebeer.png');
+							*/
 							&:before { background-image: url('images/icon-ratebeer.png'); }
 						}
 
 						.untappd
 						{
+							/*
 							background-image: url('images/logo-untappd.png');
+							*/
 							&:before { background-image: url('images/icon-untappd.png'); }
 						}
 					}
 				}
-				*/
 
 				.beer-rating
 				{
@@ -407,12 +451,12 @@
 								position: absolute;
 								right: 0;
 								top: 0;
+							}
 
-								&.rated
-								{
-									color: gold;
-									opacity: 1;
-								}
+							&.rated:before
+							{
+								color: gold;
+								opacity: 1;
 							}
 
 							&:after

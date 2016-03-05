@@ -1,25 +1,34 @@
 jQuery(function($){
 	Urb.$aggregateRating = $('[itemprop="aggregateRating"]');
+	Urb.$beerCheckinModal = $('.beer-checkin.modal');
 
 	Urb.rateBeer = function() {
-		var $ratingActions = $('<div class="rating-actions" />');
+		var $ratingActions = $('.rating-actions');
 		var $rateButton = $(this);
+		
+		$ratingActions.addClass('rated');
+		$rateButton.addClass('rated');
+		$rateButton.prevAll('.rate-button').addClass('rated');
+		$rateButton.nextAll('.rate-button').removeClass('rated');
 
 		$.ajax({
-			type: "post",
+			type: 'POST',
 			url: _URB.url,
-			data: "action=post-rate&nonce=" + _URB.nonce + "&post_rating=" + $rateButton.val() + "&post_id=" + $rateButton.data('id'),
+			data: {
+				'action': 'post-rate',
+				'nonce': _URB.nonce,
+				'post_rating': $rateButton.val(),
+				'post_id': $rateButton.data('id')
+			},
 			dataType: 'json',
 			success: function(response){
 				if(response.success) {
-					$ratingActions.addClass('rated');
-					$rateButton.addClass('rated');
-					$rateButton.prevAll('.rate-button').addClass('rated');
 					Urb.$aggregateRating.attr('data-user-rating', $rateButton.val() );
 				} else {
 					console.log(response);
-					alert(response.message);
 				}
+				
+				Urb.shareRating( $rateButton.val() );
 			}
 		});
 
@@ -134,9 +143,29 @@ jQuery(function($){
 		});
 	};
 
+	Urb.shareRating = function(ratedValue) {
+		var $message = $('.message', Urb.$beerCheckinModal);
+		if($message.length == 0) {
+			$message = $('<div class="message" />');
+			$('.modal-content', Urb.$beerCheckinModal).prepend($message);
+		}
+
+		var message = 'Thanks.';
+		switch(Number(ratedValue)) {
+			case 5: message = "Wow, Thank You!"; break;
+			case 4: message = "Glad You Enjoyed It!"; break;
+			case 3: message = "Thanks!"; break;
+			case 2: message = "Thank you."; break;
+			case 1: message = "We can do better."; break;
+		}
+
+		$message.text(message);
+		Urb.showModal( '.beer-checkin.modal' );
+	};
+
 	if( Urb.$body.is('.single-beer') ) {
 		Urb.$window.on('load', Urb.setupRatingPoll);
-		Urb.$window.on('load', Urb.setupRatingsFrom3rdParties);
+		//Urb.$window.on('load', Urb.setupRatingsFrom3rdParties);
 	}
 	/*
 	Urb.scrollToBeerContent = function() {

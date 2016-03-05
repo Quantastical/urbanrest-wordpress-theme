@@ -5,17 +5,21 @@ function urb_ajax_post_rate( ) {
 	$nonce = $_POST['nonce'];
 
 	if( !wp_verify_nonce( $nonce, 'admin-ajax' ) )
-		die();
+		die('');
 
 	if(isset($_POST['post_rating']))
 	{
 		$post_id = $_POST['post_id'];
+		$post_rating = $_POST['post_rating'];
+		$user_id = get_current_user_id();
+		$user_ip = $_SERVER['REMOTE_ADDR'];
+		$time = time();
 
 		$rating = array(
-			'ip'      => $_SERVER['REMOTE_ADDR'],
-			'user_id' => get_current_user_id(),
-			'time'    => time(),
-			'rating'  => $_POST['post_rating']
+			'ip'      => $user_ip,
+			'user_id' => $user_id,
+			'time'    => $time,
+			'rating'  => $post_rating
 		);
 		
 		// Get ratings for the current post
@@ -27,6 +31,18 @@ function urb_ajax_post_rate( ) {
 		if( !is_array($ratings) )
 			$ratings = array();
 
+		$ratings[] = $rating;
+
+		// Save IP and increase votes count
+		update_post_meta($post_id, 'ratings', $ratings);;
+		
+		// Display count (ie jQuery return value)
+		echo json_encode( array(
+			'success' => true,
+			'ratings_count' => count($ratings)
+		) );
+
+		/*
 		// Check if user can rate
 		if( urb_can_rate($post_id) )
 		{
@@ -46,6 +62,7 @@ function urb_ajax_post_rate( ) {
 				'success' => false,
 				'message' => "We currently only allow one vote per user."
 			) );
+		*/
 	}
 
 	exit;
