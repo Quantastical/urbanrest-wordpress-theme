@@ -24,7 +24,7 @@
 
 				.main-navigation
 				{
-					display: none;
+					display: block;
 
 					.main-menu
 					{
@@ -35,9 +35,12 @@
 						font-size: 1.5em;
 						font-weight: 300;
 						list-style: none;
+						max-height: 0;
+						overflow: hidden;
 						padding: 0;
 						position: absolute;
 						text-align: center;
+						@include transition( max-height 0.5s );
 						right: 0;
 						width: 15em;
 						z-index: $layer-main-navigation;
@@ -48,17 +51,31 @@
 
 							a
 							{
+								border-radius: 2pt;
 								display: inline-block;
 								color: inherit;
 								padding: 0.25em;
 								text-decoration: none;
+
+								&:focus,
+								&:hover
+								{
+									background-color: gold;
+									color: black;
+									@include transition( background-color 0.11s ease-in-out, color 0.11s ease-in-out );
+								}
 							}
 						}
 					}
 
 					&.open
 					{
-						display: block;
+						/*display: block;*/
+						
+						.main-menu
+						{
+							max-height: calc( 100% - 3.75em );
+						}
 					}
 				}
 

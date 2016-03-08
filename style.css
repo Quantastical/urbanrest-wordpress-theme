@@ -3107,7 +3107,7 @@ html.no-javascript, html.javascript {
   .site .site-header .site-navigation h3 {
     display: none; }
   .site .site-header .site-navigation .main-navigation {
-    display: none; }
+    display: block; }
   .site .site-header .site-navigation .main-navigation .main-menu {
     background-color: rgba(0, 0, 0, 0.8);
     bottom: 3.75em;
@@ -3116,21 +3116,35 @@ html.no-javascript, html.javascript {
     font-size: 1.5em;
     font-weight: 300;
     list-style: none;
+    max-height: 0;
+    overflow: hidden;
     padding: 0;
     position: absolute;
     text-align: center;
+    -webkit-transition: max-height 0.5s;
+    -moz-transition: max-height 0.5s;
+    transition: max-height 0.5s;
     right: 0;
     width: 15em;
     z-index: 500; }
   .site .site-header .site-navigation .main-navigation .main-menu .menu-item {
     margin: 0.5em; }
   .site .site-header .site-navigation .main-navigation .main-menu .menu-item a {
+    border-radius: 2pt;
     display: inline-block;
     color: inherit;
     padding: 0.25em;
     text-decoration: none; }
+  .site .site-header .site-navigation .main-navigation .main-menu .menu-item a:focus, .site .site-header .site-navigation .main-navigation .main-menu .menu-item a:hover {
+    background-color: gold;
+    color: black;
+    -webkit-transition: background-color 0.11s ease-in-out, color 0.11s ease-in-out;
+    -moz-transition: background-color 0.11s ease-in-out, color 0.11s ease-in-out;
+    transition: background-color 0.11s ease-in-out, color 0.11s ease-in-out; }
   .site .site-header .site-navigation .main-navigation.open {
-    display: block; }
+    /*display: block;*/ }
+  .site .site-header .site-navigation .main-navigation.open .main-menu {
+    max-height: calc( 100% - 3.75em ); }
   .site .site-header .site-navigation .page-navigation {
     background: rgba(0, 0, 0, 0.8);
     bottom: 0;

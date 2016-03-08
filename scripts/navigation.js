@@ -65,8 +65,34 @@ jQuery( function( $ ) {
 		// TODO: Get HTML outta here!
 		Urb.$menuToggle = $('<div id="menu-toggle"><div id="hamburger"><span></span><span></span><span></span></div><div id="cross"><span></span><span></span></div></div>');
 		Urb.$menuToggle.on('click', function() {
-			$(this).toggleClass('open');
-			Urb.$mainNavigation.toggleClass('open');
+			var targetPosition = false;
+
+			if(Urb.scrollPosition > 0 ) {
+				if( Urb.scrollPosition < Urb.$window.height() / 2 ) {
+					targetPosition = 0;
+				} else if( Urb.scrollPosition < Urb.$window.height() ) {
+					targetPosition = Urb.$window.height();
+				}
+			}
+
+			if( targetPosition !== false ) {
+				$('html,body').animate(
+					{
+						scrollTop: targetPosition
+					},
+					{
+						duration: 250,
+						easing: 'swing'
+					}
+				).promise()
+				.done( function () {
+					Urb.$menuToggle.toggleClass('open');
+					Urb.$mainNavigation.toggleClass('open');
+				});
+			} else {
+				Urb.$menuToggle.toggleClass('open');
+				Urb.$mainNavigation.toggleClass('open');
+			}
 		});
 		Urb.$pageNavigation.find('.main-menu [href="#main-menu"]').replaceWith(Urb.$menuToggle);
 	};
