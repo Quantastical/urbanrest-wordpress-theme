@@ -3065,6 +3065,8 @@ html.no-javascript, html.javascript {
 .javascript .modal-shade .modal-close:before {
   content: "";
   font-family: FontAwesome; }
+.javascript .modal-shade .modal-close:focus {
+  outline: none; }
 .javascript .modal-shade .modal-close:hover {
   color: #dcdfde;
   -webkit-transition: color 0.666s;
@@ -3923,6 +3925,7 @@ html.no-javascript, html.javascript {
     display: none; }
   .site .site-posts .latest-posts {
     height: 100%;
+    list-style: none;
     padding: 0;
     width: 100%; }
   .site .site-posts .latest-posts .blog-post {

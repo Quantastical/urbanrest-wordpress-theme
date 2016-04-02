@@ -216,6 +216,7 @@ wp_nav_menu( array(
 wp_nav_menu( array(
 	'theme_location' => 'navbar',
 	'container'      => '',
+	'items_wrap'     => '<ul class="navbar" id="menu-navbar">%3$s<li class="main-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-294"><div id="menu-toggle"><div id="hamburger"><span></span><span></span><span></span></div><div id="cross"><span></span><span></span></div></div></li></ul>',
 	'menu_class'     => 'navbar',
 ) );
 ?>

@@ -62,8 +62,7 @@ jQuery( function( $ ) {
 			$(this).blur();
 		});
 
-		// TODO: Get HTML outta here!
-		Urb.$menuToggle = $('<div id="menu-toggle"><div id="hamburger"><span></span><span></span><span></span></div><div id="cross"><span></span><span></span></div></div>');
+		Urb.$menuToggle = $('#menu-toggle');//$('<div id="menu-toggle"><div id="hamburger"><span></span><span></span><span></span></div><div id="cross"><span></span><span></span></div></div>');
 		Urb.$menuToggle.on('click', function() {
 			var targetPosition = false;
 
@@ -94,7 +93,7 @@ jQuery( function( $ ) {
 				Urb.$mainNavigation.toggleClass('open');
 			}
 		});
-		Urb.$pageNavigation.find('.main-menu [href="#main-menu"]').replaceWith(Urb.$menuToggle);
+		//Urb.$pageNavigation.find('.main-menu [href="#main-menu"]').replaceWith(Urb.$menuToggle);
 	};
 
 	var windowHeightMinusWPHeaderHeight = Urb.$window.height() - Urb.$pageNavigation.outerHeight() - wpAdminBarHeight;
