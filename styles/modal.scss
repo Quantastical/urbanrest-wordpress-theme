@@ -59,6 +59,11 @@
 				font-family: FontAwesome;
 			}
 
+			&:focus
+			{
+				outline: none;
+			}
+
 			&:hover
 			{
 				color: rgba( $urbanrest-white, 1.0 );

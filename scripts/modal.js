@@ -5,10 +5,10 @@ jQuery(function($){
 	};
 
 	Urb.showModal = function( target ) {
-		if(!target) {
+		//if(!target) {
 			target = $(this).data('target');
-		}
-		
+		//}
+		//console.log(target);
 		$( target ).data('urbModal').show();
 	};
 
