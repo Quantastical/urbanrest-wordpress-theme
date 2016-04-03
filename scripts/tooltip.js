@@ -58,6 +58,10 @@ jQuery(function($){
 		var $tooltip = $element.data('tooltip');
 		var $tip = $element.attr('title');
 
+		if($element.parents('.map-canvas')) {
+			return;
+		}
+
 		if(!$tooltip) {
 			$tooltip = $('<div />');
 			$tooltip.addClass('tooltip');

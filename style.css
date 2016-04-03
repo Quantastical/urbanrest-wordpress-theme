@@ -5082,7 +5082,7 @@ html.no-javascript, html.javascript {
     transition: height 0.666s;
     width: 100%; }
   .site .site-company .site-map .map-container .map-menu {
-    bottom: 0.6em;
+    bottom: 1.6em;
     left: 0.6em;
     opacity: 0;
     padding: 0;
@@ -5129,23 +5129,29 @@ html.no-javascript, html.javascript {
     background: none !important;
     height: 525px;
     max-width: none !important;
-    width: 100%; }
-  .site .site-company .site-map .map-container .map-canvas > .gm-style {
-    /*
-    > .gm-style-cc:not([controlwidth]),
-    > .gmnoprint,
-    */ }
-  .site .site-company .site-map .map-container .map-canvas > .gm-style > :last-child {
-    margin-bottom: -25px !important; }
-  .site .site-company .site-map .map-container .map-canvas > .gm-style > :first-child > :nth-child(2) {
-    background-image: url(/wp-content/themes/urbanrest-wordpress-theme/images/map-texture.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    opacity: 0.666;
-    /*
-    @include media( '>=tablet' ) { background-image: url(/wp-content/themes/urbanrest-wordpress-theme/images/map-texture-2x.png); }
-    @include media( '>=desktop' ) { background-image: url(/wp-content/themes/urbanrest-wordpress-theme/images/map-texture-4x.png); }
-    */ }
+    width: 100%;
+    						/*
+    						> .gm-style
+    						{
+    							//> .gm-style-cc:not([controlwidth]),
+    							//> .gmnoprint,
+    							> :last-child
+    							{
+    								margin-bottom: -25px !important;
+    							}
+    						}
+    
+    						> .gm-style > :first-child > :nth-child(2)
+    						{
+    							background-image: url(/wp-content/themes/urbanrest-wordpress-theme/images/map-texture.png);
+    							background-size: 100% 100%;
+    							background-repeat: no-repeat;
+    							opacity: 0.666;
+    
+    							//@include media( '>=tablet' ) { background-image: url(/wp-content/themes/urbanrest-wordpress-theme/images/map-texture-2x.png); }
+    							//@include media( '>=desktop' ) { background-image: url(/wp-content/themes/urbanrest-wordpress-theme/images/map-texture-4x.png); }
+    						}
+    						*/ }
   .site .site-company .site-map.open .map-link:after {
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg); }

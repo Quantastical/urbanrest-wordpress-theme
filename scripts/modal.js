@@ -5,11 +5,11 @@ jQuery(function($){
 	};
 
 	Urb.showModal = function( target ) {
-		//if(!target) {
+		if('string' !== typeof target) {
 			target = $(this).data('target');
-		//}
+		}
 		//console.log(target);
-		$( target ).data('urbModal').show();
+		$( target ).data 	('urbModal').show();
 	};
 
 	Urb.$window.on('load', Urb.setupModal);

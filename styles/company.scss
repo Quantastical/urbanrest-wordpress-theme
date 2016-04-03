@@ -655,7 +655,7 @@
 
 					.map-menu
 					{
-						bottom: 0.6em;
+						bottom: 1.6em;
 						left: 0.6em;
 						opacity: 0;
 						padding: 0;
@@ -710,12 +710,11 @@
 						max-width: none !important;
 						width: 100%;
 
+						/*
 						> .gm-style
 						{
-							/*
-							> .gm-style-cc:not([controlwidth]),
-							> .gmnoprint,
-							*/
+							//> .gm-style-cc:not([controlwidth]),
+							//> .gmnoprint,
 							> :last-child
 							{
 								margin-bottom: -25px !important;
@@ -729,11 +728,10 @@
 							background-repeat: no-repeat;
 							opacity: 0.666;
 
-							/*
-							@include media( '>=tablet' ) { background-image: url(/wp-content/themes/urbanrest-wordpress-theme/images/map-texture-2x.png); }
-							@include media( '>=desktop' ) { background-image: url(/wp-content/themes/urbanrest-wordpress-theme/images/map-texture-4x.png); }
-							*/
+							//@include media( '>=tablet' ) { background-image: url(/wp-content/themes/urbanrest-wordpress-theme/images/map-texture-2x.png); }
+							//@include media( '>=desktop' ) { background-image: url(/wp-content/themes/urbanrest-wordpress-theme/images/map-texture-4x.png); }
 						}
+						*/
 					}
 				}
 

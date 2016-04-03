@@ -1,6 +1,6 @@
 jQuery(function($){
 	var wpAdminBarHeight = (Urb.$wpadminbar) ? Urb.$wpadminbar.outerHeight() : 0;
-	var navBarWithAdminBarHeight = Urb.$mainNavigation.outerHeight() + wpAdminBarHeight;
+	var navBarWithAdminBarHeight = Urb.$pageNavigation.outerHeight() + wpAdminBarHeight;
 
 	Urb.centerMap = function() {
 		if( Urb.$map.data('map') ) {
