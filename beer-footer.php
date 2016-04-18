@@ -14,27 +14,37 @@
 					</div>
 
 					<div class="beer-checkin modal animated fadeIn">
+<?php
+$beeradvocate_beer_url = get_post_meta($post->ID, 'beeradvocate_beer_url');
+$ratebeer_beer_url = get_post_meta($post->ID, 'ratebeer_beer_url');
+$untappd_beer_url = get_post_meta($post->ID, 'untappd_beer_url');
+
+$has_beeradvocate = filter_var($beeradvocate_beer_url[0], FILTER_VALIDATE_URL);
+$has_ratebeer = filter_var($ratebeer_beer_url[0], FILTER_VALIDATE_URL);
+$has_untappd = filter_var($untappd_beer_url[0], FILTER_VALIDATE_URL);
+if( $has_beeradvocate || $has_ratebeer || $has_untappd ) :
+?>
 						<h5>Share your rating with your favorite online community.</h5>
 						<ul>
-<?php $beeradvocate_beer_url = get_post_meta($post->ID, 'beeradvocate_beer_url'); ?>
-<?php if( filter_var($beeradvocate_beer_url[0], FILTER_VALIDATE_URL) ) : ?>
+<?php if( $has_beeradvocate ) : ?>
 							<li class="beer-checkin-item">
 								<a class="beeradvocate" href="<?php echo $beeradvocate_beer_url[0]; ?>"><span>Rate this on BeerAdvocate</span></a>
 							</li>
 <?php endif; ?>
-<?php $ratebeer_beer_url = get_post_meta($post->ID, 'ratebeer_beer_url'); ?>
-<?php if( filter_var($ratebeer_beer_url[0], FILTER_VALIDATE_URL) ) : ?>
+<?php if( $has_ratebeer ) : ?>
 							<li class="beer-checkin-item">
 								<a class="ratebeer" href="<?php echo $ratebeer_beer_url[0]; ?>"><span>Rate this on RateBeer</span></a>
 							</li>
 <?php endif; ?>
-<?php $untappd_beer_url = get_post_meta($post->ID, 'untappd_beer_url'); ?>
-<?php if( filter_var($untappd_beer_url[0], FILTER_VALIDATE_URL) && get_option('untappd_api_client_id') ) : ?>
+<?php if( $has_untappd && get_option('untappd_api_client_id') ) : ?>
 							<li class="beer-checkin-item">
 								<a class="untappd" href="<?php echo $untappd_beer_url[0]; ?>"><span>Check-In on Untappd</span></a>
 							</li>
 <?php endif; ?>
 						</ul>
+<?php
+endif;
+?>
 					</div>
 					<!--
 					<h3 class="beer-like hyperlink" data-action="modal" data-target=".beer-liking.modal">Like this beer</h3>
