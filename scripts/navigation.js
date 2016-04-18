@@ -80,8 +80,18 @@ jQuery( function( $ ) {
 			dataType: 'json',
 			success: function(response){
 				if(response.success) {
-					$nextPage.replaceWith(response.data);
+					var $content = $(response.data);
+					$nextPage.replaceWith($content);
 					Urb.$window.trigger('ajaxload');
+					var timeout = 0;
+					$('.page-header > *, .page-content > *, .page-footer > *', $content).each(function() {
+						var $this = $(this);
+						$this.hide();
+						setTimeout(function(){
+							$this.fadeIn(250);
+						}, timeout);
+						timeout += 213;
+					});
 				} else {
 					console.log(response.data);
 				}

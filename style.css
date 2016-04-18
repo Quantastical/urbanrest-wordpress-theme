@@ -5356,7 +5356,7 @@ html.no-javascript, html.javascript {
 .site main.beer {
   background-color: #DCC1A7;
   background-image: url("images/single-background.jpg");
-  background-position: center;
+  background-position: top center;
   background-repeat: repeat;
   background-size: 20em;
   color: #322820;
@@ -5733,7 +5733,7 @@ html.no-javascript, html.javascript {
 .site main.event {
   background-color: #DCC1A7;
   background-image: url("images/single-background.jpg");
-  background-position: center;
+  background-position: top center;
   background-repeat: repeat;
   background-size: 20em;
   color: #322820;
@@ -5976,7 +5976,7 @@ html.no-javascript, html.javascript {
 .site main.page {
   background-color: #DCC1A7;
   background-image: url("images/single-background.jpg");
-  background-position: center;
+  background-position: top center;
   background-repeat: repeat;
   background-size: 20em;
   color: #322820;
@@ -6175,7 +6175,7 @@ html.no-javascript, html.javascript {
 .site main.post {
   background-color: #DCC1A7;
   background-image: url("images/single-background.jpg");
-  background-position: center;
+  background-position: top center;
   background-repeat: repeat;
   background-size: 20em;
   color: #322820;
@@ -6457,7 +6457,7 @@ html.no-javascript, html.javascript {
 .site main.taxonomy {
   background-color: #DCC1A7;
   background-image: url("images/single-background.jpg");
-  background-position: center;
+  background-position: top center;
   background-repeat: repeat;
   background-size: 20em;
   color: #322820;
@@ -6499,7 +6499,7 @@ html.no-javascript, html.javascript {
 .site main.user {
   background-color: #DCC1A7;
   background-image: url("images/single-background.jpg");
-  background-position: center;
+  background-position: top center;
   background-repeat: repeat;
   background-size: 20em;
   color: #322820;

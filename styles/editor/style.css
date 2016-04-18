@@ -2100,6 +2100,9 @@ body {
   font-weight: 300;
   line-height: 1.5em; }
 
+h1, h2, h3, h4, h5, h6, p, ol, ul, dt, dd {
+  margin: 0; }
+
 hr {
   border-style: dashed;
   border-width: 1px 0 0 0;
@@ -2116,9 +2119,6 @@ iframe {
 
 p {
   margin-bottom: 1em; }
-
-h1, h2, h3, h4, h5, h6, p, ol, ul, dt, dd {
-  margin: 0; }
 
 h2 {
   font-size: 1.3em;

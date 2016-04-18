@@ -1,4 +1,4 @@
-			<header class="beer-header" role="banner">
+			<header class="page-header beer-header" role="banner">
 <?php
 /*
 <?php if ( has_post_thumbnail() ) : ?>

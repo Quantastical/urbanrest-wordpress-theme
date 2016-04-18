@@ -1,4 +1,4 @@
-			<footer class="beer-footer" role="contentinfo">
+			<footer class="page-footer beer-footer" role="contentinfo">
 				<section class="beer-actions">
 					<div class="beer-rating">
 						<h5>
@@ -22,6 +22,7 @@ $untappd_beer_url = get_post_meta($post->ID, 'untappd_beer_url');
 $has_beeradvocate = filter_var($beeradvocate_beer_url[0], FILTER_VALIDATE_URL);
 $has_ratebeer = filter_var($ratebeer_beer_url[0], FILTER_VALIDATE_URL);
 $has_untappd = filter_var($untappd_beer_url[0], FILTER_VALIDATE_URL);
+
 if( $has_beeradvocate || $has_ratebeer || $has_untappd ) :
 ?>
 						<h5>Share your rating with your favorite online community.</h5>

@@ -1,4 +1,4 @@
-			<div class="beer-content">
+			<div class="page-content beer-content">
 				<?php
 					/* translators: %s: Name of current page */
 					the_content( sprintf(
