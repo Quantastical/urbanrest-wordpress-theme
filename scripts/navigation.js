@@ -25,6 +25,79 @@ jQuery( function( $ ) {
 		}
 	};
 
+	Urb.loadPage = function(slug) {
+		var $currentPage = $('main');
+		var $nextPage = $('<main class="page loading row around-xs"><span class="loading text">Loading<span class="dot"></span><span class="dot"></span><span class="dot"></span></span></main>');
+		
+		// Homepage
+		if(slug === '/' || slug === '') {
+			//Urb.$body.animate(
+			$('html,body').animate(
+				{ scrollTop: 0 },
+				duration
+			);
+			setTimeout(function(){
+				$currentPage.remove();
+			}, duration + 250);
+			return;
+		}
+		
+		if($currentPage.length > 0) {
+			$currentPage.before($nextPage);
+		} else {
+			//$nextPage.insertAfter($('section'));
+			$('.site-posts').after($nextPage);
+		}
+
+		var targetOffset = $('.site-posts').offset().top + $('.site-posts').outerHeight();
+		//var targetHasPadding = ($currentPage.innerHeight() - $currentPage.height()) > navBarWithAdminBarHeight;
+		var duration = Math.round( 500 * (Math.abs(Urb.$window.scrollTop() - targetOffset) / Urb.$window.height()) );
+
+		//$('> *', $currentPage).fadeOut(duration, function() {
+			//$currentPage.prepend('<span class="loading">Loading</span>');
+		//});
+		//$nextPage.slideDown(duration);
+
+		//$currentPage.slideUp(duration, function() {
+			$currentPage.remove();
+		//});
+
+		//Urb.$window.scrollTop( $currentPage.offset().top );
+		//Urb.$body.animate(
+		$('html,body').animate(
+			{ scrollTop: targetOffset },
+			duration
+		);
+
+		$.ajax({
+			type: 'POST',
+			url: _URB.url,
+			data: {
+				'action': 'getmaincontent',
+				'nonce': _URB.nonce,
+				'slug': slug
+			},
+			dataType: 'json',
+			success: function(response){
+				if(response.success) {
+					$nextPage.replaceWith(response.data);
+					Urb.$window.trigger('ajaxload');
+				} else {
+					console.log(response.data);
+				}
+			}
+		});
+	};
+
+	Urb.performHistoryNavigation = function(e) {
+		e.preventDefault();
+		
+		var state = e.state;
+		var slug = document.location.pathname;
+
+		Urb.loadPage(slug);
+	};
+
 	Urb.setupInternalLinks = function() {
 		$('a').not('[href^="#"]')
 			.not(':not([href^="http://' + window.location.host + '"]):not([href^="https://' + window.location.host + '"])')
@@ -46,58 +119,10 @@ jQuery( function( $ ) {
 
 					var $this = $(this);
 					var slug = $this.attr('href').replace(window.location.protocol + '//' + window.location.host, '');
-					var $nextPage = $('<main class="page loading row around-xs"><span class="loading text">Loading<span class="dot"></span><span class="dot"></span><span class="dot"></span></span></main>');
-					var $currentPage = $('main');
-					
-					if($currentPage.length > 0) {
-						console.log('main');
-						$currentPage.before($nextPage);
-					} else {
-						console.log('notmain');
-						//$nextPage.insertAfter($('section'));
-						$('.site-posts').after($nextPage);
-					}
 
 					window.history.pushState({}, $this.text(), slug);
-
-					var targetOffset = $('.site-posts').offset().top + $('.site-posts').outerHeight();
-					//var targetHasPadding = ($currentPage.innerHeight() - $currentPage.height()) > navBarWithAdminBarHeight;
-					var duration = Math.round( 500 * (Math.abs(Urb.$window.scrollTop() - targetOffset) / Urb.$window.height()) );
-
-					//$('> *', $currentPage).fadeOut(duration, function() {
-						//$currentPage.prepend('<span class="loading">Loading</span>');
-					//});
-					//$nextPage.slideDown(duration);
-
-					//$currentPage.slideUp(duration, function() {
-						$currentPage.remove();
-					//});
-
-					//Urb.$window.scrollTop( $currentPage.offset().top );
-					//Urb.$body.animate(
-					$('html,body').animate(
-						{ scrollTop: targetOffset },
-						duration
-					);
-
-					$.ajax({
-						type: 'POST',
-						url: _URB.url,
-						data: {
-							'action': 'getmaincontent',
-							'nonce': _URB.nonce,
-							'slug': slug
-						},
-						dataType: 'json',
-						success: function(response){
-							if(response.success) {
-								$nextPage.replaceWith(response.data);
-								Urb.$window.trigger('ajaxload');
-							} else {
-								console.log(response.data);
-							}
-						}
-					});
+		
+					Urb.loadPage(slug);
 				});
 			});
 	};
@@ -229,4 +254,5 @@ jQuery( function( $ ) {
 	Urb.$window.on('load scroll', Urb.scrollPageNavigation);
 	Urb.$window.on('load scroll', Urb.scrollSocialNavigation);
 	Urb.$window.on('load', function() { setTimeout(Urb.scrollToContent, 1); }); // TODO: figure out why setTimeout has to be used here
+	Urb.$window.on('popstate', Urb.performHistoryNavigation);
 } );
