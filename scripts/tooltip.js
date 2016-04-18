@@ -101,5 +101,5 @@ jQuery(function($){
 		*/
 	};
 
-	Urb.$window.on('load', Urb.setupTooltips);
+	Urb.$window.on('ajaxload load', Urb.setupTooltips);
 });

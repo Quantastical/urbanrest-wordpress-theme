@@ -1,7 +1,4 @@
 jQuery(function($){
-	Urb.$aggregateRating = $('[itemprop="aggregateRating"]');
-	Urb.$beerCheckinModal = $('.beer-checkin.modal');
-
 	Urb.rateBeer = function() {
 		var $ratingActions = $('.rating-actions');
 		var $rateButton = $(this);
@@ -36,6 +33,9 @@ jQuery(function($){
 	};
 
 	Urb.setupRatingPoll = function() {
+		Urb.$aggregateRating = $('[itemprop="aggregateRating"]');
+		Urb.$beerCheckinModal = $('.beer-checkin.modal');
+
 		var $ratingActions = $('<div class="rating-actions" />');
 		if( Number(Urb.$aggregateRating.data('user-rating')) > 0 ) {
 			$ratingActions.addClass('rated');
@@ -163,10 +163,10 @@ jQuery(function($){
 		Urb.showModal( '.beer-checkin.modal' );
 	};
 
-	if( Urb.$body.is('.single-beer') ) {
-		Urb.$window.on('load', Urb.setupRatingPoll);
+	//if( Urb.$body.is('.single-beer') ) {
+		Urb.$window.on('ajaxload load', Urb.setupRatingPoll);
 		//Urb.$window.on('load', Urb.setupRatingsFrom3rdParties);
-	}
+	//}
 	/*
 	Urb.scrollToBeerContent = function() {
 		if(!Urb.$body.hasClass('home') && Urb.$window.scrollTop() == 0 && Urb.$body.hasClass('single-beer')) {

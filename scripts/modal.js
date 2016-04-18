@@ -9,10 +9,10 @@ jQuery(function($){
 			target = $(this).data('target');
 		}
 		//console.log(target);
-		$( target ).data 	('urbModal').show();
+		$( target ).data('urbModal').show();
 	};
 
-	Urb.$window.on('load', Urb.setupModal);
+	Urb.$window.on('ajaxload load', Urb.setupModal);
 
 
 //	var $body = $('body');
