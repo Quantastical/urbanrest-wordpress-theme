@@ -343,6 +343,27 @@
 						&.twitter  { &:before { content: $fa-var-twitter; } }
 					}
 				}
+
+				.post-sharing
+				{
+					.shortlink
+					{
+						background: black;
+						border: dotted 1px white;
+						border-radius: 0.25em;
+						color: white;
+						font-size: 1em;
+						margin: 1em;
+						padding: 0.5em;
+						text-align: center;
+						width: 15em;
+
+						&:focus
+						{
+							outline: none;
+						}
+					}
+				}
 			}
 
 			.post-tags

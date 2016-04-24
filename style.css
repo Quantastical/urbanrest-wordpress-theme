@@ -6400,6 +6400,18 @@ html.no-javascript, html.javascript {
   content: ""; }
 .site main.post .post-footer .post-actions .post-commenting.post-sharing a.twitter:before, .site main.post .post-footer .post-actions .post-liking.post-sharing a.twitter:before, .site main.post .post-footer .post-actions .post-sharing.post-sharing a.twitter:before {
   content: ""; }
+.site main.post .post-footer .post-actions .post-sharing .shortlink {
+  background: black;
+  border: dotted 1px white;
+  border-radius: 0.25em;
+  color: white;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.5em;
+  text-align: center;
+  width: 15em; }
+.site main.post .post-footer .post-actions .post-sharing .shortlink:focus {
+  outline: none; }
 .site main.post .post-footer .post-tags {
   list-style: none;
   margin: 3em 0;
