@@ -26,7 +26,7 @@
 					<button class="page-share hyperlink" data-action="modal" data-target=".page-sharing.modal" type="button">Share this page</button>
 					<ul class="page-sharing modal animated fadeIn">
 						<li>
-							<input class="shortlink" type="text" value="http://URB.beer<?php echo wp_get_shortlink(); ?>" onfocus="this.select();" />
+							<input class="shortlink" type="text" value="<?php echo wp_get_shortlink(); ?>" onfocus="this.select();" />
 						</li>
 						<li>
 							<a class="facebook" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(); ?>" onclick="javacript:share(this);" data-event-action="Share" data-event-label="Facebook"><span>Share this on Facebook</span></a>
