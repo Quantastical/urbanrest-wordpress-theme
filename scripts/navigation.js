@@ -154,11 +154,11 @@ jQuery( function( $ ) {
 				fragmentIdentifier = '/';
 			}
 
-			var targetHasPadding = ($fragment.innerHeight() - $fragment.height()) > navBarWithAdminBarHeight;
+			//var targetHasPadding = ($fragment.innerHeight() - $fragment.height()) > navBarWithAdminBarHeight;
 
 			//Urb.$body.animate(
 			$('html,body').animate(
-				{ scrollTop: Math.ceil(targetOffset - (targetHasPadding ? 0 : navBarWithAdminBarHeight * 1.5) ) },
+				{ scrollTop: Math.ceil(targetOffset - wpAdminBarHeight/*(targetHasPadding ? 0 : navBarWithAdminBarHeight * 1.5)*/ ) },
 				Math.round( 500 * (Math.abs(Urb.$window.scrollTop() - targetOffset) / Urb.$window.height()) )
 			);
 
@@ -187,7 +187,7 @@ jQuery( function( $ ) {
 			if( targetPosition !== false ) {
 				$('html,body').animate(
 					{
-						scrollTop: targetPosition
+						scrollTop: targetPosition - wpAdminBarHeight
 					},
 					{
 						duration: 250,

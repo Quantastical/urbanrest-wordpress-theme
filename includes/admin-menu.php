@@ -2,8 +2,8 @@
 
 function urb_admin_bar() { ?>
 <style type="text/css">
-	html { height: calc(100% - 32px) !important; margin-top: 28px !important; }
-	* html body { height: calc(100% - 32px) !important; margin-top: 28px !important; }
+	html { height: calc(100% - 32px) !important; margin-top: 32px !important; }
+	* html body { height: calc(100% - 32px) !important; margin-top: 32px !important; }
 	@media screen and ( max-width: 782px ) {
 		html { height: calc(100% - 46px) !important; margin-top: 46px !important; }
 		* html body { height: calc(100% - 46px) !important; margin-top: 46px !important; }
