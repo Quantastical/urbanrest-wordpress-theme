@@ -69,6 +69,7 @@ endif;
 function urb_get_fonts_for_preloading() {
 	$fonts = array(
 		//'Bad Script'              => array(400),
+		'Chalk It Up'             => array(400),
 		'Colored Crayons'         => array(400),
 		//'Freckle Face'            => array(400),
 		'Gotham'                  => array(600, 800),
@@ -79,6 +80,7 @@ function urb_get_fonts_for_preloading() {
 		//'RNS Baruta'              => array(400),
 		'Roboto'                  => array(100, 300, 400, 600, 800),
 		//'Satisfy'                 => array(400),
+		'Urbanrest'               => array(400)
 		//'Witka'                   => array(400)
 	);
 

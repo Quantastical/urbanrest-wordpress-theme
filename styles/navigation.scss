@@ -519,22 +519,28 @@
 					{
 						.main-menu
 						{
-							top: calc(32px + 3.75em) !important;
-
-							@include media('<784px')
+							@include media('>600px')
 							{
 								top: calc(46px + 3.75em) !important;
+							}
+
+							@include media('>782px')
+							{
+								top: calc(32px + 3.75em) !important;
 							}
 						}
 					}
 
 					.page-navigation
 					{
-						top: 32px !important;
-
-						@include media( '<784px' )
+						@include media( '>600px' )
 						{
 							top: 46px !important;
+						}
+
+						@include media('>782px')
+						{
+							top: 32px !important;
 						}
 					}
 				}

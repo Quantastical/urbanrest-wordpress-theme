@@ -1,5 +1,28 @@
 <?php
 
+function urb_admin_bar() { ?>
+<style type="text/css">
+	html { height: calc(100% - 32px) !important; margin-top: 28px !important; }
+	* html body { height: calc(100% - 32px) !important; margin-top: 28px !important; }
+	@media screen and ( max-width: 782px ) {
+		html { height: calc(100% - 46px) !important; margin-top: 46px !important; }
+		* html body { height: calc(100% - 46px) !important; margin-top: 46px !important; }
+	}
+</style>
+<?php
+}
+//add_action( 'admin_head', 'urb_admin_bar' );
+//add_action( 'show_admin_bar', 'urb_admin_bar' );
+function urb_after_setup_theme_admin_bar() {
+	$feature = 'admin-bar';
+	$arguments = array(
+		'callback' => 'urb_admin_bar'
+	);
+	add_theme_support( $feature, $arguments );
+}
+add_action( 'after_setup_theme', 'urb_after_setup_theme_admin_bar' );
+
+
 function urb_admin_menu() {
 	global $menu;
 	$menu_separator = array('', 'read', 'separator200', '', 'wp-menu-separator');

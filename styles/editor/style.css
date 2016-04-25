@@ -1922,52 +1922,82 @@
 
 @font-face {
   font-family: "Colored Crayons";
-  src: url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.eot");
-  src: url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.eot?#iefix") format("embedded-opentype"), url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.woff") format("woff"), url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.ttf") format("truetype"), url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.svg#") format("svg");
+  src: url("../../fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.eot");
+  src: url("../../fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.eot?#iefix") format("embedded-opentype"), url("../../fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.woff") format("woff"), url("../../fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.ttf") format("truetype"), url("../../fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.svg#") format("svg");
   font-weight: normal;
   font-style: normal; }
 @font-face {
   font-family: "Chalk It Up";
-  src: url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.eot");
-  src: url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.eot?#iefix") format("embedded-opentype"), url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.woff") format("woff"), url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.ttf") format("truetype"), url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.svg#") format("svg");
+  src: url("../../fonts/DJB_Chalk_It_Up/DJB Chalk It Up.eot");
+  src: url("../../fonts/DJB_Chalk_It_Up/DJB Chalk It Up.eot?#iefix") format("embedded-opentype"), url("../../fonts/DJB_Chalk_It_Up/DJB Chalk It Up.woff") format("woff"), url("../../fonts/DJB_Chalk_It_Up/DJB Chalk It Up.ttf") format("truetype"), url("../../fonts/DJB_Chalk_It_Up/DJB Chalk It Up.svg#") format("svg");
   font-weight: normal;
   font-style: normal; }
 @font-face {
-  font-family: "Eraser";
-  src: url("fonts/David-Rakowski_Eraser/EraserRegular.eot");
-  src: url("fonts/David-Rakowski_Eraser/EraserRegular.eot?#iefix") format("embedded-opentype"), url("fonts/David-Rakowski_Eraser/EraserRegular.woff") format("woff"), url("fonts/David-Rakowski_Eraser/EraserRegular.ttf") format("truetype"), url("fonts/David-Rakowski_Eraser/EraserRegular.svg#") format("svg");
-  font-weight: normal;
+  font-family: "Gotham";
+  src: url("../../fonts/Gotham_Bold/ufonts.com_gotham-bold-webfont.eot");
+  src: url("../../fonts/Gotham_Bold/ufonts.com_gotham-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/Gotham_Bold/ufonts.com_gotham-bold-webfont.woff") format("woff"), url("../../fonts/Gotham_Bold/ufonts.com_gotham-bold-webfont.ttf") format("truetype"), url("../../fonts/Gotham_Bold/ufonts.com_gotham-bold-webfont.svg#") format("svg");
+  font-weight: 600;
   font-style: normal; }
 @font-face {
-  font-family: "EraserDust";
-  src: url("fonts/David-Rakowski_Eraser/EraserDust.eot");
-  src: url("fonts/David-Rakowski_Eraser/EraserDust.eot?#iefix") format("embedded-opentype"), url("fonts/David-Rakowski_Eraser/EraserDust.woff") format("woff"), url("fonts/David-Rakowski_Eraser/EraserDust.ttf") format("truetype"), url("fonts/David-Rakowski_Eraser/EraserDust.svg#") format("svg");
-  font-weight: normal;
+  font-family: "Gotham";
+  src: url("../../fonts/Gotham_Black/ufonts.com_gotham-black-webfont.eot");
+  src: url("../../fonts/Gotham_Black/ufonts.com_gotham-black-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/Gotham_Black/ufonts.com_gotham-black-webfont.woff") format("woff"), url("../../fonts/Gotham_Black/ufonts.com_gotham-black-webfont.ttf") format("truetype"), url("../../fonts/Gotham_Black/ufonts.com_gotham-black-webfont.svg#") format("svg");
+  font-weight: 800;
   font-style: normal; }
 @font-face {
   font-family: "Legend M54";
-  src: url("fonts/Legend_M54/legend_m54-webfont.eot");
-  src: url("fonts/Legend_M54/legend_m54-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/Legend_M54/legend_m54-webfont.woff") format("woff"), url("fonts/Legend_M54/legend_m54-webfont.ttf") format("truetype"), url("fonts/Legend_M54/legend_m54-webfont.svg#") format("svg");
+  src: url("../../fonts/Legend_M54/legend_m54-webfont.eot");
+  src: url("../../fonts/Legend_M54/legend_m54-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/Legend_M54/legend_m54-webfont.woff") format("woff"), url("../../fonts/Legend_M54/legend_m54-webfont.ttf") format("truetype"), url("../../fonts/Legend_M54/legend_m54-webfont.svg#") format("svg");
   font-weight: normal;
   font-style: normal; }
 @font-face {
-  font-family: "PW Chalk";
-  src: url("fonts/PW_Chalk/PWChalk.eot");
-  src: url("fonts/PW_Chalk/PWChalk.eot?#iefix") format("embedded-opentype"), url("fonts/PW_Chalk/PWChalk.woff") format("woff"), url("fonts/PW_Chalk/PWChalk.ttf") format("truetype"), url("fonts/PW_Chalk/PWChalk.svg#") format("svg");
-  font-weight: normal;
+  font-family: "Roboto";
+  src: url("../../fonts/Roboto/Roboto-Thin.eot");
+  src: url("../../fonts/Roboto/Roboto-Thin.eot?#iefix") format("embedded-opentype"), url("../../fonts/Roboto/Roboto-Thin.woff") format("woff"), url("../../fonts/Roboto/Roboto-Thin.ttf") format("truetype"), url("../../fonts/Roboto/Roboto-Thin.svg#") format("svg");
+  font-weight: 100;
   font-style: normal; }
 @font-face {
-  font-family: "Right Chalk";
-  src: url("fonts/Right_Chalk/Right Chalk.eot");
-  src: url("fonts/Right_Chalk/Right Chalk.eot?#iefix") format("embedded-opentype"), url("fonts/Right_Chalk/Right Chalk.woff") format("woff"), url("fonts/Right_Chalk/Right Chalk.ttf") format("truetype"), url("fonts/Right_Chalk/Right Chalk.svg#") format("svg");
-  font-weight: normal;
+  font-family: "Roboto";
+  src: url("../../fonts/Roboto/Roboto-Light.eot");
+  src: url("../../fonts/Roboto/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("../../fonts/Roboto/Roboto-Light.woff") format("woff"), url("../../fonts/Roboto/Roboto-Light.ttf") format("truetype"), url("../../fonts/Roboto/Roboto-Light.svg#") format("svg");
+  font-weight: 300;
   font-style: normal; }
 @font-face {
-  font-family: 'Urbanrest';
-  src: url(fonts/Urbanrest/Urbanrest.eot?9t6i3b);
-  src: url(fonts/Urbanrest/Urbanrest.eot?9t6i3b#iefix) format("embedded-opentype"), url(fonts/Urbanrest/Urbanrest.ttf?9t6i3b) format("truetype"), url(fonts/Urbanrest/Urbanrest.woff?9t6i3b) format("woff"), url(fonts/Urbanrest/Urbanrest.svg?9t6i3b#Urbanrest) format("svg");
+  font-family: "Roboto";
+  src: url("../../fonts/Roboto/Roboto-Regular.eot");
+  src: url("../../fonts/Roboto/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/Roboto/Roboto-Regular.woff") format("woff"), url("../../fonts/Roboto/Roboto-Regular.ttf") format("truetype"), url("../../fonts/Roboto/Roboto-Regular.svg#") format("svg");
+  font-weight: 400;
+  font-style: normal; }
+@font-face {
+  font-family: "Roboto";
+  src: url("../../fonts/Roboto/Roboto-Bold.eot");
+  src: url("../../fonts/Roboto/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("../../fonts/Roboto/Roboto-Bold.woff") format("woff"), url("../../fonts/Roboto/Roboto-Bold.ttf") format("truetype"), url("../../fonts/Roboto/Roboto-Bold.svg#") format("svg");
+  font-weight: 600;
+  font-style: normal; }
+@font-face {
+  font-family: "Roboto";
+  src: url("../../fonts/Roboto/Roboto-Black.eot");
+  src: url("../../fonts/Roboto/Roboto-Black.eot?#iefix") format("embedded-opentype"), url("../../fonts/Roboto/Roboto-Black.woff") format("woff"), url("../../fonts/Roboto/Roboto-Black.ttf") format("truetype"), url("../../fonts/Roboto/Roboto-Black.svg#") format("svg");
+  font-weight: 800;
+  font-style: normal; }
+@font-face {
+  font-family: "Urbanrest";
+  src: url("../../fonts/Urbanrest/Urbanrest.eot");
+  src: url("../../fonts/Urbanrest/Urbanrest.eot?#iefix") format("embedded-opentype"), url("../../fonts/Urbanrest/Urbanrest.woff") format("woff"), url("../../fonts/Urbanrest/Urbanrest.ttf") format("truetype"), url("../../fonts/Urbanrest/Urbanrest.svg#") format("svg");
   font-weight: normal;
   font-style: normal; }
+/*
+@font-face {
+    font-family: 'Urbanrest';
+    src:    url(fonts/Urbanrest/Urbanrest.eot?9t6i3b);
+    src:    url(fonts/Urbanrest/Urbanrest.eot?9t6i3b#iefix) format('embedded-opentype'),
+        url(fonts/Urbanrest/Urbanrest.ttf?9t6i3b) format('truetype'),
+        url(fonts/Urbanrest/Urbanrest.woff?9t6i3b) format('woff'),
+        url(fonts/Urbanrest/Urbanrest.svg?9t6i3b#Urbanrest) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+*/
 .fa-untappd-square, .fa-untappd {
   font-family: 'Urbanrest' !important; }
 
@@ -1977,71 +2007,109 @@
 .fa-untappd:before {
   content: "\e901"; }
 
+/*
 @font-face {
-  font-family: 'Bad Script';
-  font-style: normal;
-  font-weight: 400;
-  src: url(fonts/Bad_Script/BadScript-Regular.ttf) format("truetype"); }
+	font-family: 'Bad Script';
+	font-style: normal;
+	font-weight: 400;
+	src: url(fonts/Bad_Script/BadScript-Regular.ttf) format('truetype');
+}
+
 @font-face {
-  font-family: 'Freckle Face';
-  font-style: normal;
-  font-weight: 400;
-  src: url(fonts/Freckle_Face/FreckleFace-Regular.ttf) format("truetype"); }
+	font-family: 'Freckle Face';
+	font-style: normal;
+	font-weight: 400;
+	src: url(fonts/Freckle_Face/FreckleFace-Regular.ttf) format('truetype');
+}
+
 @font-face {
-  font-family: 'Griffy';
-  font-style: normal;
-  font-weight: 400;
-  src: url(fonts/Griffy/Griffy-Regular.ttf) format("truetype"); }
+	font-family: 'Griffy';
+	font-style: normal;
+	font-weight: 400;
+	src: url(fonts/Griffy/Griffy-Regular.ttf) format('truetype');
+}
+
 @font-face {
-  font-family: 'KG Tangled Up In You';
-  font-style: normal;
-  font-weight: 400;
-  src: url(fonts/KG_TangledUpInYou/KGTangledUpInYou.ttf) format("truetype"); }
+	font-family: 'KG Tangled Up In You';
+	font-style: normal;
+	font-weight: 400;
+	src: url(fonts/KG_TangledUpInYou/KGTangledUpInYou.ttf) format('truetype');
+}
 @font-face {
-  font-family: 'KG Ten Thousand Reasons';
-  src: url(fonts/KG_TenThousandReasons/KGTenThousandReasonsAlt.ttf) format("truetype");
-  font-weight: normal;
-  font-style: normal; }
+	font-family: 'KG Ten Thousand Reasons';
+	src: url(fonts/KG_TenThousandReasons/KGTenThousandReasonsAlt.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face
+{
+	font-family: 'RNS Baruta';
+	src: url(fonts/RNS_Baruta/RNSBaruta-Black.ttf) format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
 @font-face {
-  font-family: 'RNS Baruta';
-  src: url(fonts/RNS_Baruta/RNSBaruta-Black.ttf) format("truetype");
-  font-weight: normal;
-  font-style: normal; }
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 100;
+	src: local('Roboto Thin'),
+	     local('Roboto-Thin'),
+	     url(fonts/Roboto/Roboto-Thin.ttf) format('truetype');
+}
+
 @font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 100;
-  src: local("Roboto Thin"), local("Roboto-Thin"), url(fonts/Roboto/Roboto-Thin.ttf) format("truetype"); }
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Roboto Light'),
+	     local('Roboto-Light'),
+	     url(fonts/Roboto/Roboto-Light.ttf) format('truetype');
+}
+
 @font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 300;
-  src: local("Roboto Light"), local("Roboto-Light"), url(fonts/Roboto/Roboto-Light.ttf) format("truetype"); }
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Roboto'),
+	     local('Roboto-Regular'),
+	     url(fonts/Roboto/Roboto-Regular.ttf) format('truetype');
+}
+
 @font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Roboto"), local("Roboto-Regular"), url(fonts/Roboto/Roboto-Regular.ttf) format("truetype"); }
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 600;
+	src: local('Roboto'),
+	     local('Roboto-Bold'),
+	     url(fonts/Roboto/Roboto-Bold.ttf) format('truetype');
+}
+
 @font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 600;
-  src: local("Roboto"), local("Roboto-Bold"), url(fonts/Roboto/Roboto-Bold.ttf) format("truetype"); }
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 800;
+	src: local('Roboto'),
+	     local('Roboto-Black'),
+	     url(fonts/Roboto/Roboto-Black.ttf) format('truetype');
+}
+
 @font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 800;
-  src: local("Roboto"), local("Roboto-Black"), url(fonts/Roboto/Roboto-Black.ttf) format("truetype"); }
+	font-family: 'Satisfy';
+	font-style: normal;
+	font-weight: 400;
+	src: url(fonts/Satisfy/Satisfy-Regular.ttf) format('truetype');
+}
+
 @font-face {
-  font-family: 'Satisfy';
-  font-style: normal;
-  font-weight: 400;
-  src: url(fonts/Satisfy/Satisfy-Regular.ttf) format("truetype"); }
-@font-face {
-  font-family: 'Witka';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Witka"), url(fonts/Witka/Witka.ttf) format("truetype"); }
+	font-family: 'Witka';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Witka'),
+	     url(fonts/Witka/Witka.ttf) format('truetype');
+}
+*/
 .hyperlink, a {
   border-bottom-width: 1pt;
   border-bottom-color: transparent;
