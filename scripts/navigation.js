@@ -117,6 +117,11 @@ jQuery( function( $ ) {
 				//	return;
 				//}
 
+				// Ignore WordPress navbar links
+				if($anchor.closest($('#wpadminbar')).length > 0) {
+					return;
+				}
+
 				$anchor.unbind('click').click(function(e) {
 					if(window.history) {
 						e.preventDefault();
