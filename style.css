@@ -5392,40 +5392,76 @@ html.no-javascript, html.javascript {
   .site .site-footer {
     display: none; } }
 .site main.loading {
-  min-height: 100%; }
-.site main.loading .loading.text {
+  min-height: 100%;
+  overflow: hidden;
+  position: relative; }
+.site main.loading > * {
+  opacity: 0;
+  transition: opacity 0.5s; }
+.site main.loading:before {
   background: rgba(0, 0, 0, 0.22);
   border-radius: 2rem;
-  display: inline-block;
+  content: '';
+  display: block;
   font-size: 0;
   height: 1rem;
-  margin-top: calc(50% + 50px + 0.5rem);
-  padding: 0.5rem; }
-.site main.loading .loading.text .dot {
-  animation-duration: 1.5s;
+  left: calc(50% - 2rem);
+  padding: 0.5rem;
+  position: absolute;
+  top: calc(50% - 0.5rem - 0.5rem);
+  width: 3rem; }
+.site main.loading:after {
+  animation-duration: 2.13s;
   animation-iteration-count: infinite;
   animation-name: loading;
   background: black;
   border-radius: 50%;
-  display: inline-block;
+  content: '';
+  display: block;
   font-size: 1rem;
   height: 1em;
-  width: 1em; }
-.site main.loading .loading.text .dot + .dot {
-  animation-delay: 0.25s;
-  margin-left: 0.5em; }
-.site main.loading .loading.text .dot + .dot + .dot {
-  animation-delay: 0.5s; }
+  left: calc(50% - 0.0rem);
+  position: absolute;
+  top: calc(50% - 0.5rem);
+  width: 1em;
+  			/*
+  			+ .dot
+  			{
+  				animation-delay: 0.25s;
+  				margin-left: 0.5em;
+  
+  				+ .dot { animation-delay: 0.5s; }
+  			}
+  			*/ }
 
 @keyframes loading {
   0% {
-    opacity: 0.5; }
-  50% {
-    opacity: 0; }
-  75% {
-    opacity: 0; }
+    opacity: 0.0;
+    left: calc(50% - 1.5rem); }
+  10% {
+    opacity: 0.5;
+    left: calc(50% - 1.5rem); }
+  29% {
+    opacity: 0.0;
+    left: calc(50% - 1.5rem); }
+  30% {
+    opacity: 0.0;
+    left: calc(50% - 0.5rem); }
+  40% {
+    opacity: 0.5;
+    left: calc(50% - 0.5rem); }
+  59% {
+    opacity: 0.0;
+    left: calc(50% - 0.5rem); }
+  60% {
+    opacity: 0.0;
+    left: calc(50% + 0.5rem); }
+  70% {
+    opacity: 0.5;
+    left: calc(50% + 0.5rem); }
   100% {
-    opacity: 0.5; } }
+    opacity: 0.0;
+    left: calc(50% + 0.5rem); } }
 .site main.beer {
   background-color: #DCC1A7;
   background-image: url("images/single-background.jpg");

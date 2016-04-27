@@ -27,7 +27,7 @@ jQuery( function( $ ) {
 
 	Urb.loadPage = function(slug) {
 		var $currentPage = $('main');
-		var $nextPage = $('<main class="page loading row around-xs"><span class="loading text">Loading<span class="dot"></span><span class="dot"></span><span class="dot"></span></span></main>');
+		//var $nextPage = $('<main class="page loading row around-xs"><span class="loading text">Loading<span class="dot"></span><span class="dot"></span><span class="dot"></span></span></main>');
 		
 		// Homepage
 		if(slug === '/' || slug === '') {
@@ -43,10 +43,12 @@ jQuery( function( $ ) {
 		}
 		
 		if($currentPage.length > 0) {
-			$currentPage.before($nextPage);
+			//$currentPage.before($nextPage);
 		} else {
 			//$nextPage.insertAfter($('section'));
-			$('.site-posts').after($nextPage);
+			//$('.site-posts').after($nextPage);
+			$currentPage = $('<main class="page row around-xs />"');
+			$('.site-posts').after($currentPage);
 		}
 
 		var targetOffset = $('.site-posts').offset().top + $('.site-posts').outerHeight();
@@ -59,13 +61,14 @@ jQuery( function( $ ) {
 		//$nextPage.slideDown(duration);
 
 		//$currentPage.slideUp(duration, function() {
-			$currentPage.remove();
+		//	$currentPage.remove();
+			$currentPage.addClass('loading').animate({height:0},500);
 		//});
 
 		//Urb.$window.scrollTop( $currentPage.offset().top );
 		//Urb.$body.animate(
 		$('html,body').animate(
-			{ scrollTop: targetOffset },
+			{ scrollTop: targetOffset - wpAdminBarHeight },
 			duration
 		);
 
@@ -81,7 +84,8 @@ jQuery( function( $ ) {
 			success: function(response){
 				if(response.success) {
 					var $content = $(response.data);
-					$nextPage.replaceWith($content);
+					//$nextPage.replaceWith($content);
+					$currentPage.replaceWith($content);
 					Urb.$window.trigger('ajaxload');
 					var timeout = 0;
 					$('.page-header > *, .page-content > *, .page-footer > *', $content).each(function() {
@@ -138,6 +142,8 @@ jQuery( function( $ ) {
 					window.history.pushState({}, $this.text(), slug);
 		
 					Urb.loadPage(slug);
+
+					$('body').trigger('click');
 				});
 			});
 	};
