@@ -62,7 +62,10 @@ jQuery( function( $ ) {
 
 		//$currentPage.slideUp(duration, function() {
 		//	$currentPage.remove();
-			$currentPage.addClass('loading').animate({height:0},500);
+			$currentPage.addClass('loading');
+			setTimeout(function(){
+				$currentPage.animate({height:0},500);
+			},duration);
 		//});
 
 		//Urb.$window.scrollTop( $currentPage.offset().top );
@@ -88,7 +91,7 @@ jQuery( function( $ ) {
 					$currentPage.replaceWith($content);
 					Urb.$window.trigger('ajaxload');
 					var timeout = 0;
-					$('.page-header > *, .page-content > *, .page-footer > *', $content).each(function() {
+					$('.page-header > *, .page-content > *, .page-footer > *, .post-header > *, .post-content > *, .post-footer > *', $content).each(function() {
 						var $this = $(this);
 						$this.hide();
 						setTimeout(function(){
