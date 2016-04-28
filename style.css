@@ -3355,6 +3355,7 @@ html.no-javascript, html.javascript {
     cursor: pointer;
     height: 50px;
     margin: 25px auto;
+    overflow: hidden;
     position: relative;
     -webkit-transition: background-color 0.33s ease-in-out;
     -moz-transition: background-color 0.33s ease-in-out;

@@ -253,6 +253,7 @@
 									cursor: pointer;
 									height: 50px;
 									margin: 25px auto;
+									overflow: hidden;
 									position: relative;
 									@include transition( background-color 0.33s ease-in-out );
 									width: 50px;
