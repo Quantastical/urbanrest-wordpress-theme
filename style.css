@@ -5392,14 +5392,15 @@ html.no-javascript, html.javascript {
   .site .site-footer {
     display: none; } }
 .site main.loading {
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: 1;
-  animation-name: slideOpen;
   min-height: 0%;
   overflow: hidden;
   padding-bottom: 0;
   padding-top: 0; }
+.site main.loading.new {
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-name: slideOpen; }
 .site main.loading > * {
   opacity: 0;
   transition: opacity 0.5s; }

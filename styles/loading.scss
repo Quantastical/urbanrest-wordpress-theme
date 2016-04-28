@@ -2,14 +2,18 @@
 {
 	main.loading
 	{
-		animation-duration: 0.5s;
-		animation-fill-mode: forwards;
-		animation-iteration-count: 1;
-		animation-name: slideOpen;
 		min-height: 0%;
 		overflow: hidden;
 		padding-bottom: 0;
 		padding-top: 0;
+
+		&.new
+		{
+			animation-duration: 0.5s;
+			animation-fill-mode: forwards;
+			animation-iteration-count: 1;
+			animation-name: slideOpen;
+		}
 
 		> *
 		{

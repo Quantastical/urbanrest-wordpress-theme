@@ -79,7 +79,7 @@ jQuery( function( $ ) {
 		} else {
 			//$nextPage.insertAfter($('section'));
 			//$('.site-posts').after($nextPage);
-			$currentPage = $('<main class="page row around-xs" />');
+			$currentPage = $('<main class="new page row around-xs" />');
 			$('.site-posts').after($currentPage);
 		}
 
