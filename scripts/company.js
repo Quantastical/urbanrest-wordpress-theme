@@ -20,7 +20,7 @@ jQuery(function($){
 			}
 		}
 
-		if(!Urb.$map.data('map') && Urb.$window.scrollTop() > $('#company').offset().top) {
+		if(!Urb.$map.data('map') && Urb.$window.scrollTop() > $('#contact').offset().top) {
 			var $mapScript = $('<script />');
 			$mapScript.attr('type', 'text/javascript');
 			$mapScript.attr('async', true);

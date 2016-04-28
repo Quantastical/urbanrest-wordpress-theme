@@ -3,8 +3,8 @@ jQuery( function( $ ) {
 	var navBarWithAdminBarHeight = Urb.$pageNavigation.outerHeight() + wpAdminBarHeight;
 	var $main = $('main');
 	var contentAreas = {
-		'#company' : $('#company'),
-		'#specials' : $('#specials')
+		'#contact' : $('#contact'),
+		'#beer' : $('#beer')
 	};
 	if($main.length){
 		contentAreas[$main.attr('id')] = $main;
@@ -31,30 +31,59 @@ jQuery( function( $ ) {
 		
 		// Homepage
 		if(slug === '/' || slug === '') {
+			var targetOffset = 0;
+			var duration = Math.round( 500 * (Math.abs(Urb.$window.scrollTop() - targetOffset) / Urb.$window.height()) );
+			
 			//Urb.$body.animate(
 			$('html,body').animate(
-				{ scrollTop: 0 },
+				{ scrollTop: targetOffset },
 				duration
 			);
+			$currentPage.animate({height:0}, duration);
+			setTimeout(function(){
+				$currentPage.remove();
+			}, duration + 250);
+			return;
+		}
+
+		// Fragment Anchors
+		var fragmentAnchors = [];
+		$('a[href^="#"]').each(function() {
+			var anchor = this.href.substring( this.href.indexOf('#') );
+			fragmentAnchors.push(anchor);
+		});
+		
+		var fragmented = slug.replace('/','#');
+		if($.inArray(fragmented, fragmentAnchors) !== -1){
+			var targetOffset = $( slug.replace('/','#') ).offset().top - wpAdminBarHeight;
+			var duration = Math.round( 500 * (Math.abs(Urb.$window.scrollTop() - targetOffset) / Urb.$window.height()) );
+			
+			//Urb.$body.animate(
+			$('html,body').animate(
+				{ scrollTop: targetOffset },
+				duration
+			);
+			$currentPage.animate({height:0}, duration);
 			setTimeout(function(){
 				$currentPage.remove();
 			}, duration + 250);
 			return;
 		}
 		
+		var targetOffset = $('.site-posts').offset().top + $('.site-posts').outerHeight();
+		//var targetHasPadding = ($currentPage.innerHeight() - $currentPage.height()) > navBarWithAdminBarHeight;
+		var duration = Math.round( 500 * (Math.abs(Urb.$window.scrollTop() - targetOffset) / Urb.$window.height()) );
+		
 		if($currentPage.length > 0) {
 			//$currentPage.before($nextPage);
 		} else {
 			//$nextPage.insertAfter($('section'));
 			//$('.site-posts').after($nextPage);
-			$currentPage = $('<main class="page row around-xs />"');
+			$currentPage = $('<main class="page row around-xs" />');
 			$('.site-posts').after($currentPage);
 		}
 
-		var targetOffset = $('.site-posts').offset().top + $('.site-posts').outerHeight();
-		//var targetHasPadding = ($currentPage.innerHeight() - $currentPage.height()) > navBarWithAdminBarHeight;
-		var duration = Math.round( 500 * (Math.abs(Urb.$window.scrollTop() - targetOffset) / Urb.$window.height()) );
-
+		
 		//$('> *', $currentPage).fadeOut(duration, function() {
 			//$currentPage.prepend('<span class="loading">Loading</span>');
 		//});
@@ -62,7 +91,7 @@ jQuery( function( $ ) {
 
 		//$currentPage.slideUp(duration, function() {
 		//	$currentPage.remove();
-			$currentPage.addClass('loading');
+			$currentPage.append('<span class="loading-text"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span>').addClass('loading');
 			setTimeout(function(){
 				$currentPage.animate({height:0},500);
 			},duration);
@@ -168,6 +197,10 @@ jQuery( function( $ ) {
 				fragmentIdentifier = '/';
 			}
 
+			if(window.history){
+				window.history.pushState({}, $(this).text(), fragmentIdentifier.replace('#','/'));
+			}
+
 			//var targetHasPadding = ($fragment.innerHeight() - $fragment.height()) > navBarWithAdminBarHeight;
 
 			//Urb.$body.animate(
@@ -183,7 +216,15 @@ jQuery( function( $ ) {
 	Urb.setupPageNavigation = function() {
 		// After clicking a menu item, automatically lose :focus styles
 		Urb.$pageNavigation.find('.menu-item a').click(function() {
-			$(this).blur();
+			var $this = $(this);
+			$this.blur();
+			/*
+			if(window.history){
+				var slug = $this.attr('href').replace('#', '');
+				
+				window.history.pushState({}, $this.text(), slug);
+			}
+			*/
 		});
 
 		Urb.$menuToggle = $('#menu-toggle');//$('<div id="menu-toggle"><div id="hamburger"><span></span><span></span><span></span></div><div id="cross"><span></span><span></span></div></div>');
@@ -270,6 +311,11 @@ jQuery( function( $ ) {
 			}
 		}
 	};
+
+	// Fix for scroll flicker on history navigation [http://stackoverflow.com/a/33004917/1028949]
+	if ('scrollRestoration' in history) {
+		history.scrollRestoration = 'manual';
+	}
 
 	Urb.$window.on('ajaxload load', Urb.setupExternalLinks);
 	Urb.$window.on('load', Urb.setupFragmentAnchors);

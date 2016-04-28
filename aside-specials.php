@@ -1,4 +1,4 @@
-	<aside class="site-specials row" id="specials">
+	<aside class="site-specials row" id="beer">
 		<header class="col-xs-12">
 			<h2>Urbanrest Beer List</h2>
 		</header>

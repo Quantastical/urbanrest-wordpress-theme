@@ -12,7 +12,7 @@ jQuery( function( $ )
 	var $iframe = $('iframe');
 	var $community = $('#community');
 	var $subscribe = $('.subscribe', $community);
-	var $company = $('#company');
+	var $company = $('#contact');
 	var $footer = $('#colophon');
 	var $map = $('#map');
 	var $mapCanvas = $( '#canvas', $map);

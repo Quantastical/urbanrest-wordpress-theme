@@ -1,4 +1,4 @@
-<aside class="site-company row" id="company" itemscope itemtype="http://schema.org/Brewery">
+<aside class="site-company row" id="contact" itemscope itemtype="http://schema.org/Brewery">
 	<header class="col-xs-12">
 		<h2>About Urbanrest Brewing Company</h2>
 	</header>
