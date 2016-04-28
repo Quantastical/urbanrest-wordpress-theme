@@ -197,9 +197,9 @@ jQuery( function( $ ) {
 				fragmentIdentifier = '/';
 			}
 
-			if(window.history){
-				window.history.pushState({}, $(this).text(), fragmentIdentifier.replace('#','/'));
-			}
+//			if(window.history){
+//				window.history.pushState({}, $(this).text(), fragmentIdentifier.replace('#','/'));
+//			}
 
 			//var targetHasPadding = ($fragment.innerHeight() - $fragment.height()) > navBarWithAdminBarHeight;
 

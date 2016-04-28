@@ -5392,8 +5392,14 @@ html.no-javascript, html.javascript {
   .site .site-footer {
     display: none; } }
 .site main.loading {
-  min-height: 100%;
-  overflow: hidden; }
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-name: slideOpen;
+  min-height: 0%;
+  overflow: hidden;
+  padding-bottom: 0;
+  padding-top: 0; }
 .site main.loading > * {
   opacity: 0;
   transition: opacity 0.5s; }
@@ -5438,6 +5444,15 @@ html.no-javascript, html.javascript {
   animation-delay: 1.0s;
   left: calc(50% + 0.75rem); }
 
+@keyframes slideOpen {
+  0% {
+    min-height: 0%;
+    padding-bottom: 0;
+    padding-top: 0; }
+  100% {
+    min-height: 100%;
+    padding-bottom: 4em;
+    padding-top: 5.5em; } }
 @keyframes loading {
   0% {
     opacity: 0.0; }
