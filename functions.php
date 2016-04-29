@@ -79,7 +79,7 @@ function urb_get_fonts_for_preloading() {
 		'Legend M54'              => array(400),
 		//'RNS Baruta'              => array(400),
 		'Roboto'                  => array(100, 300, 400, 600, 800),
-		//'Satisfy'                 => array(400),
+		'Satisfy'                 => array(400),
 		'Urbanrest'               => array(400)
 		//'Witka'                   => array(400)
 	);
@@ -222,7 +222,8 @@ if( !function_exists( 'urbanrest_enqueue_scripts' ) ) :
 
 		// Add scripts
 		wp_enqueue_script('jquery', '//code.jquery.com/jquery-1.11.3.min.js');
-		wp_enqueue_script('hammer', 'http://hammerjs.github.io/dist/hammer.min.js');
+		wp_enqueue_script('hammer', get_stylesheet_directory_uri() . '/node_modules/hammerjs//hammer.min.js');
+		//wp_enqueue_script('hammer', 'http://hammerjs.github.io/dist/hammer.min.js');
 		//wp_enqueue_script('gmaps', 'http://maps.google.com/maps/api/js', false, '1.1', true);
 		wp_enqueue_script('site', get_stylesheet_directory_uri() . '/script.js', false, '1.1', true);
 		/*
@@ -255,6 +256,14 @@ if( !function_exists( 'urbanrest_enqueue_scripts' ) ) :
 	}
 endif;
 add_action('wp_enqueue_scripts', 'urbanrest_enqueue_scripts');
+
+// remove JQMIGRATE console log. could break old plugins relying on old jQuery
+add_action( 'wp_default_scripts', function( $scripts ) {
+    if ( ! empty( $scripts->registered['jquery'] ) ) {
+        $jquery_dependencies = $scripts->registered['jquery']->deps;
+        $scripts->registered['jquery']->deps = array_diff( $jquery_dependencies, array( 'jquery-migrate' ) );
+    }
+} );
 
 //require_once('includes/admin/user-profile.php');
 

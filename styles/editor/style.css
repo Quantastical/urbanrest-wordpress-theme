@@ -1981,6 +1981,12 @@
   font-weight: 800;
   font-style: normal; }
 @font-face {
+  font-family: "Satisfy";
+  src: url("../../fonts/Satisfy/Satisfy-Regular.eot");
+  src: url("../../fonts/Satisfy/Satisfy-Regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/Satisfy/Satisfy-Regular.woff") format("woff"), url("../../fonts/Satisfy/Satisfy-Regular.ttf") format("truetype"), url("../../fonts/Satisfy/Satisfy-Regular.svg#") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
   font-family: "Urbanrest";
   src: url("../../fonts/Urbanrest/Urbanrest.eot");
   src: url("../../fonts/Urbanrest/Urbanrest.eot?#iefix") format("embedded-opentype"), url("../../fonts/Urbanrest/Urbanrest.woff") format("woff"), url("../../fonts/Urbanrest/Urbanrest.ttf") format("truetype"), url("../../fonts/Urbanrest/Urbanrest.svg#") format("svg");
