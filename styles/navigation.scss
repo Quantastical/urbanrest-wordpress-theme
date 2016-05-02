@@ -224,6 +224,10 @@
 										outline: none;
 									}
 
+									&[href="#beer"] {
+										padding: 0.25em 1em;
+									}
+
 									&[href="#coming-soon"]
 									{
 										cursor: default;

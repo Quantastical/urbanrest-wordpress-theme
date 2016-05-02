@@ -1,4 +1,4 @@
-		<footer class="site-footer" id="colophon">
+		<footer class="site-footer" id="colophon" itemscope itemtype="http://schema.org/Brewery">
 			<h2><?php bloginfo('name'); ?></h2>
 <?php if( has_nav_menu( 'footer' ) ) : ?>
 			<nav id="footer-navigation" class="footer-navigation" role="navigation">
@@ -16,6 +16,7 @@
 			<p>
 				Copyright &copy;
 				<time datetime="2015" itemprop="foundingDate"><?php echo (date('Y') > 2015) ? '2015 &ndash; ' . date('Y') : date('Y'); ?></time>
+			</p>
 				<address class="site-address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 					<strong itemprop="legalName"><?php bloginfo('name'); ?></strong>
 <?php if( get_option('urbanrest_setting_street_address') ) : ?>
@@ -34,7 +35,6 @@
 					<span itemprop="addressCountry"><?php echo get_option('urbanrest_setting_country'); ?></span>
 <?php endif; ?>
 				</address>
-			</p>
 		</footer>
 
 		<div class="font-preload">

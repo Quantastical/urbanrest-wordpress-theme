@@ -3343,6 +3343,8 @@ html.no-javascript, html.javascript {
     animation: mainMenuItemFocus 3s infinite;
     box-shadow: 0 0 0 3pt rgba(255, 255, 255, 0.5);
     outline: none; }
+  .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a[href="#beer"] {
+    padding: 0.25em 1em; }
   .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a[href="#coming-soon"] {
     cursor: default;
     opacity: 0.33; }
@@ -3725,27 +3727,120 @@ html.no-javascript, html.javascript {
     margin: 0;
     padding: 0; }
   .social-menu .menu-item {
-    display: inline-block; }
+    display: inline-block;
+    			/*
+    			&.facebook a
+    			{
+    				color: darken( $facebook-blue, 11% );
+    
+    				&:before
+    				{
+    					content: $fa-var-facebook-square;
+    					width: 0.819em;
+    				}
+    
+    				&:hover:before
+    				{
+    					color: $facebook-blue;
+    				}
+    			}
+    
+    			&.pinterest a
+    			{
+    				&:before
+    				{
+    					width: 0.82em;
+    				}
+    			}
+    
+    			&.google-plus a { color: darken( $google-red, 11% );     &:before { content: $fa-var-google-plus-square; } &:hover:before { color: $google-red;      } }
+    			&.instagram a   { color: darken( $instagram-blue, 11% ); &:before { content: $fa-var-instagram;          } &:hover:before { color: $instagram-blue;  } }
+    			&.pinterest a   { color: darken( $pinterest-red, 11% );  &:before { content: $fa-var-pinterest-square;   } &:hover:before { color: $pinterest-red;   } }
+    			&.twitter a     { color: darken( $twitter-blue, 11% );   &:before { content: $fa-var-twitter-square;     } &:hover:before { color: $twitter-blue;    } }
+    			&.youtube a     { color: darken( $youtube-red, 11% );    &:before { content: $fa-var-youtube-square;     } &:hover:before { color: $youtube-red;     } }
+    
+    			&.untappd a {
+    				color: darken( $untappd-yellow, 11% );
+    
+    				&:before {
+    					background-color: $untappd-brown;
+    					content: "\e900";
+    					font-family: 'Urbanrest';
+    					font-size: 2.0em;
+    					width: 0.96em;
+    				}
+    
+    				&:hover:before {
+    					color: $untappd-yellow;
+    				}
+    			}
+    			
+    			&.search
+    			{
+    				vertical-align: top;
+    
+    				a
+    				{
+    					border-color: transparent;
+    					border-radius: 50%;
+    					color: darken( $urbanrest-green, 11%);
+    					margin-left: 0;
+    					outline: none;
+    
+    					&:before
+    					{
+    						background-color: transparent;
+    					}
+    
+    					&:after
+    					{
+    						color: rgba( white, 0.75 );
+    						content: $fa-var-search;
+    						display: inline-block;
+    						font-family: 'FontAwesome';
+    						height: 1.9em;
+    						line-height: 1.9em;
+    						margin-left: -1.9em;
+    						@include transition( background-color 0.11s, color 0.11s );
+    						vertical-align: top;
+    						width: 1.9em;
+    					}
+    
+    					&:hover:after
+    					{
+    						color: white;
+    					}
+    				}
+    			}
+    			*/ }
   .social-menu .menu-item a {
-    border: 3pt solid transparent;
-    border-radius: 0.5em;
+    background-image: url(images/icons.png);
+    background-size: 300% 300%;
+    border-radius: 3pt;
     display: inline-block;
-    height: 1.88em;
+    height: 2em;
     margin: 0.25em;
-    overflow: hidden; }
-  .social-menu .menu-item a:before {
-    background-color: rgba(255, 255, 255, 0.75);
-    border-radius: 0.25em;
-    content: '';
-    display: inline-block;
-    font-family: 'FontAwesome';
-    font-size: 2.25em;
-    line-height: 0.83em;
-    padding-top: 0.04em;
-    -webkit-transition: background-color 0.11s, color 0.11s;
-    -moz-transition: background-color 0.11s, color 0.11s;
-    transition: background-color 0.11s, color 0.11s;
-    width: 0.83em; }
+    opacity: 0.75;
+    overflow: hidden;
+    -webkit-transition: opacity 0.11s;
+    -moz-transition: opacity 0.11s;
+    transition: opacity 0.11s;
+    width: 2em;
+    /*
+    &:before
+    {
+    	background-color: rgba( white, 0.75 );
+    	border-radius: 0.25em;
+    	content: '';
+    	display: inline-block;
+    	font-family: 'FontAwesome';
+    	font-size: 2.25em;
+    	line-height: 0.83em;
+    	padding-top: 0.04em;
+    	@include transition( background-color 0.11s, color 0.11s );
+    	width: 0.83em;
+    }
+    */ }
   .social-menu .menu-item a:focus {
     border: 3pt solid rgba(255, 255, 255, 0.5);
     box-shadow: inset 0 0 1pt rgba(0, 0, 0, 0.5);
@@ -3758,84 +3853,28 @@ html.no-javascript, html.javascript {
     animation-iteration-count: infinite;
     -webkit-animation-name: pulse;
     animation-name: pulse; }
-  .social-menu .menu-item a:hover:before {
-    background-color: white; }
+  .social-menu .menu-item a:hover {
+    opacity: 1; }
   .social-menu .menu-item a .btn-label {
     display: none; }
   .social-menu .menu-item.facebook a {
-    color: #2b4170; }
-  .social-menu .menu-item.facebook a:before {
-    content: "";
-    width: 0.819em; }
-  .social-menu .menu-item.facebook a:hover:before {
-    color: #3B5998; }
-  .social-menu .menu-item.pinterest a:before {
-    width: 0.82em; }
-  .social-menu .menu-item.google-plus a {
-    color: #bd3221; }
-  .social-menu .menu-item.google-plus a:before {
-    content: ""; }
-  .social-menu .menu-item.google-plus a:hover:before {
-    color: #DD4B39; }
+    background-position: 0% 0%; }
   .social-menu .menu-item.instagram a {
-    color: #3e627e; }
-  .social-menu .menu-item.instagram a:before {
-    content: ""; }
-  .social-menu .menu-item.instagram a:hover:before {
-    color: #517FA4; }
-  .social-menu .menu-item.pinterest a {
-    color: #9b181e; }
-  .social-menu .menu-item.pinterest a:before {
-    content: ""; }
-  .social-menu .menu-item.pinterest a:hover:before {
-    color: #CB2027; }
+    background-position: 50% 0%; }
   .social-menu .menu-item.twitter a {
-    color: #0083b5; }
-  .social-menu .menu-item.twitter a:before {
-    content: ""; }
-  .social-menu .menu-item.twitter a:hover:before {
-    color: #00ACED; }
+    background-position: 100% 0%; }
+  .social-menu .menu-item.google-plus a {
+    background-position: 0 50%; }
+  .social-menu .menu-item.pinterest a {
+    background-position: 50% 50%; }
   .social-menu .menu-item.youtube a {
-    color: #830000; }
-  .social-menu .menu-item.youtube a:before {
-    content: ""; }
-  .social-menu .menu-item.youtube a:hover:before {
-    color: #BB0000; }
+    background-position: 100% 50%; }
   .social-menu .menu-item.untappd a {
-    color: #f1ba05; }
-  .social-menu .menu-item.untappd a:before {
-    background-color: #7E471C;
-    content: "\e900";
-    font-family: 'Urbanrest';
-    font-size: 2.0em;
-    width: 0.96em; }
-  .social-menu .menu-item.untappd a:hover:before {
-    color: #FBCC33; }
-  .social-menu .menu-item.search {
-    vertical-align: top; }
-  .social-menu .menu-item.search a {
-    border-color: transparent;
-    border-radius: 50%;
-    color: #0b562b;
-    margin-left: 0;
-    outline: none; }
-  .social-menu .menu-item.search a:before {
-    background-color: transparent; }
-  .social-menu .menu-item.search a:after {
-    color: rgba(255, 255, 255, 0.75);
-    content: "";
-    display: inline-block;
-    font-family: 'FontAwesome';
-    height: 1.9em;
-    line-height: 1.9em;
-    margin-left: -1.9em;
-    -webkit-transition: background-color 0.11s, color 0.11s;
-    -moz-transition: background-color 0.11s, color 0.11s;
-    transition: background-color 0.11s, color 0.11s;
-    vertical-align: top;
-    width: 1.9em; }
-  .social-menu .menu-item.search a:hover:after {
-    color: white; } }
+    background-position: 0% 100%; }
+  .social-menu .menu-item.ratebeer a {
+    background-position: 50% 100%; }
+  .social-menu .menu-item.beeradvocate a {
+    background-position: 100% 100%; } }
 @media only screen {
   .tooltip {
     background: rgba(0, 0, 0, 0.88);

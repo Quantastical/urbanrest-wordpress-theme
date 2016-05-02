@@ -261,9 +261,12 @@ jQuery( function( $ ) {
 		//Urb.$pageNavigation.find('.main-menu [href="#main-menu"]').replaceWith(Urb.$menuToggle);
 	};
 
-	var windowHeightMinusWPHeaderHeight = Urb.$window.height() - Urb.$pageNavigation.outerHeight() - wpAdminBarHeight;
+	Urb.setupNavigationSnap = function() {
+		Urb.windowHeightMinusWPHeaderHeight = Urb.$window.height() - Urb.$pageNavigation.outerHeight() - wpAdminBarHeight;
+	};
+
 	Urb.scrollPageNavigation = function() {
-		if(Urb.scrollPosition >= windowHeightMinusWPHeaderHeight) {
+		if(Urb.scrollPosition >= Urb.windowHeightMinusWPHeaderHeight) {
 			Urb.$siteNavigation.addClass('stuck-top');
 		} else {
 			Urb.$siteNavigation.removeClass('stuck-top');
@@ -309,6 +312,18 @@ jQuery( function( $ ) {
 			{
 				Urb.$window.scrollTop( $anchor.offset().top - navBarWithAdminBarHeight );
 			}
+		} else if( location.pathname && location.pathname.match(/^\/(beer|contact)\/?$/) ) {
+			var $anchor = $( location.pathname.replace(/\/$/, '').replace(/\/+/, '#') );
+			var anchorProximityThreshold = 5; // pixels
+
+			if(Urb.$window.scrollTop() == 0 && $anchor.length) {
+				//console.log(Urb.$window.scrollTop(),$anchor.offset().top, navBarWithAdminBarHeight );
+				//if( Urb.$window.scrollTop() > $anchor.offset().top - (navBarWithAdminBarHeight + anchorProximityThreshold)
+				// && Urb.$window.scrollTop() < $anchor.offset().top + anchorProximityThreshold )
+				//{
+				Urb.$window.scrollTop( $anchor.offset().top );
+				//}
+			}
 		}
 	};
 
@@ -317,6 +332,7 @@ jQuery( function( $ ) {
 		history.scrollRestoration = 'manual';
 	}
 
+	Urb.$window.on('load orientationchange resize', Urb.setupNavigationSnap);
 	Urb.$window.on('ajaxload load', Urb.setupExternalLinks);
 	Urb.$window.on('load', Urb.setupFragmentAnchors);
 	Urb.$window.on('ajaxload load', Urb.setupInternalLinks);

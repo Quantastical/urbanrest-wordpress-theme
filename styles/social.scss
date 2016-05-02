@@ -12,13 +12,19 @@
 
 			a
 			{
-				border: 3pt solid transparent;
-				border-radius: 0.5em;
+				background-image: url(images/icons.png);
+				background-size: 300% 300%;
+				//border: 3pt solid transparent;
+				border-radius: 3pt;
 				display: inline-block;
-				height: 1.88em;
+				height: 2em;//1.88em;
 				margin: 0.25em;
+				opacity: 0.75;
 				overflow: hidden;
+				@include transition( opacity 0.11s );
+				width: 2em;
 
+				/*
 				&:before
 				{
 					background-color: rgba( white, 0.75 );
@@ -32,6 +38,7 @@
 					@include transition( background-color 0.11s, color 0.11s );
 					width: 0.83em;
 				}
+				*/
 
 				&:focus
 				{
@@ -51,14 +58,25 @@
 					animation-name: pulse;
 				}
 
-				&:hover:before
+				&:hover
 				{
-					background-color: white;
+					opacity: 1;
 				}
 
 				.btn-label { display: none; }
 			}
 
+			&.facebook a { background-position: 0% 0%; }
+			&.instagram a { background-position: 50% 0%; }
+			&.twitter a { background-position: 100% 0%; }
+			&.google-plus a { background-position: 0 50%; }
+			&.pinterest a { background-position: 50% 50%; }
+			&.youtube a { background-position: 100% 50%; }
+			&.untappd a { background-position: 0% 100%; }
+			&.ratebeer a { background-position: 50% 100%; }
+			&.beeradvocate a { background-position: 100% 100%; }
+
+			/*
 			&.facebook a
 			{
 				color: darken( $facebook-blue, 11% );
@@ -142,6 +160,7 @@
 					}
 				}
 			}
+			*/
 		}
 	}
 }

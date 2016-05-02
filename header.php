@@ -115,7 +115,7 @@
 <?php elseif( get_bloginfo('description') ) : ?>
 		<meta property="og:description" content="<?php echo get_bloginfo('description'); ?>" />
 <?php endif; ?>
-<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array(1200,630) ); ?>
+<?php $image = ($post) ? wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array(1200,630) ) : false; ?>
 <?php if( $image & !is_home() ) : ?>
 	<meta property="og:image" content="<?php echo $image[0]; ?>" />
 <?php elseif( get_option('urbanrest_setting_facebook_opengraph_image') ) : ?>
@@ -144,7 +144,7 @@
 		<meta name="twitter:image" content="<?php echo get_option('urbanrest_setting_twitter_card_image'); ?>" />
 <?php endif; ?>
 
-		<link type="text/plain" rel="author" href="<?php echo get_site_url(); ?>/humans.txt" />
+<?php /*		<link type="text/plain" rel="author" href="<?php echo get_site_url(); ?>/humans.txt" />*/ ?>
 		<?php wp_head(); ?>
 	</head>
 

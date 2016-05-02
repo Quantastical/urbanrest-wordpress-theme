@@ -32,6 +32,15 @@ function urb_send_headers( )
 		include(TEMPLATEPATH . '/sitemap.php');
 		die();
 	}
+	else if( preg_match('/^\/(beer|contact)\/?$/', $_SERVER['REQUEST_URI'], $matches ) )
+	{
+		add_filter( 'body_class', function( $classes ) {
+			$classes[] = 'home';
+			return $classes;
+		} );
+		include(TEMPLATEPATH . '/home.php');
+		die();
+	}
 	else if( $bits[1] === 'humans.txt' )
 	{
 		include(TEMPLATEPATH . '/humans.php');

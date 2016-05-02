@@ -4,7 +4,6 @@ function urb_button_shortcode( $atts ) {
 	$button_attributes = shortcode_atts( array(
 		'class'    => '',
 		'id'       => '',
-		'label'    => '',
 		'name'     => '',
 		'type'     => 'button',
 		'value'    => ''
@@ -20,6 +19,7 @@ function urb_button_shortcode( $atts ) {
 
 	$button = '';
 	$label = ( isset($atts['label']) ) ? $atts['label'] : '';
+	
 	$button .= '<button' . urb_format_attributes($button_attributes) . '>' . $label . '</button>';
 	return $button;
 }

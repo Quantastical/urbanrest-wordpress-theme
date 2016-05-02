@@ -13,19 +13,6 @@
 
 		<div class="business-hours">
 			<h5>Taproom</h5>
-			<dl class="row">
-<?php foreach( array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') as $day ) : ?>
-<?php 	if( urb_get_business_hours($day) ) : ?>
-				<dt class="col-xs-6">
-					<span><?php echo $day; ?></span>
-				</dt>
-				<dd class="col-xs-6">
-					<meta itemprop="openingHours" content="<?php echo urb_get_business_hours($day, "schema.org"); ?>" />
-					<span><?php echo urb_get_business_hours($day); ?></span>
-				</dd>
-<?php 	endif; ?>
-<?php endforeach; ?>
-			</dl>
 			<p class="status">
 				Taproom is currently
 <?php
@@ -49,6 +36,19 @@ $endTime = DateTime::createFromFormat('H:i', $end ? $end : '23:59');
 <?php endif; ?>
 <?php date_default_timezone_set($default_timezone); ?>
 			</p>
+			<dl class="row">
+<?php foreach( array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') as $day ) : ?>
+<?php 	if( urb_get_business_hours($day) ) : ?>
+				<dt class="col-xs-6">
+					<span><?php echo $day; ?></span>
+				</dt>
+				<dd class="col-xs-6">
+					<meta itemprop="openingHours" content="<?php echo urb_get_business_hours($day, "schema.org"); ?>" />
+					<span><?php echo urb_get_business_hours($day); ?></span>
+				</dd>
+<?php 	endif; ?>
+<?php endforeach; ?>
+			</dl>
 		</div>
 
 <?php if( get_option('urbanrest_setting_phone_number') ) : ?>
@@ -61,9 +61,9 @@ $endTime = DateTime::createFromFormat('H:i', $end ? $end : '23:59');
 <?php endif; ?>
 
 		<p class="company-url">
-			<a class="btn" href="http://UrbanrestBrewing.com">
-				<span class="btn-label">Online, Anywhere, Anytime</span>
-				<span class="btn-text" itemprop="url">UrbanrestBrewing.com</span>
+			<a class="btn" href="http://urbanrest.com">
+				<span class="btn-label">Online: Anywhere, Anytime.</span>
+				<span class="btn-text" itemprop="url">Urbanrest.com</span>
 			</a>
 		</p>
 	</section>
@@ -88,9 +88,9 @@ wp_nav_menu(array(
 ));
 ?>
 <?php echo do_shortcode('[form post_id="11" class="row contact-form" title="Stay Connected"]'); ?>
-		<section class="legal">
+		<p class="legal">
 			<a href="<?php echo get_permalink( get_page_by_path( 'privacy' ) ); ?>">Learn about how we protect your privacy</a>
-		</section>
+		</p>
 <?php $test2 = '
 		<form action="/wp-content/themes/urbanrest-wordpress-theme/api/contact.php" class="row contact-form" method="post" target="_blank">
 			<h5 class="col-xs-12">Stay Connected</h5>
@@ -161,13 +161,13 @@ wp_nav_menu(array(
 	</section>
 
 <?php if( get_option('urbanrest_setting_latitude') && get_option('urbanrest_setting_longitude') ) : ?>
-	<section class="site-map col-xs-12" itemscope itemprop="hasMap" itemtype="http://schema.org/Map" data-latitude="<?php echo get_option('urbanrest_setting_latitude'); ?>" data-longitude="<?php echo get_option('urbanrest_setting_longitude'); ?>">
+	<section class="site-map col-xs-12" itemprop="hasMap" itemscope itemtype="http://schema.org/Map" data-latitude="<?php echo get_option('urbanrest_setting_latitude'); ?>" data-longitude="<?php echo get_option('urbanrest_setting_longitude'); ?>">
 		<div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
 			<meta itemprop="latitude" content="<?php echo get_option('urbanrest_setting_latitude'); ?>" />
 			<meta itemprop="longitude" content="<?php echo get_option('urbanrest_setting_longitude'); ?>" />
 		</div>
 		<h3><a class="map-link" href="http://www.google.com/maps">Locate On Map</a></h3>
-		<div class="map-container" itemprop="mapType" href="http://schema.org/VenueMap">
+		<div class="map-container" itemprop="mapType" itemscope itemtype="http://schema.org/VenueMap">
 <?php
 $menu_locations = get_nav_menu_locations();
 $menu = wp_get_nav_menu_object( $menu_locations['map'] );
