@@ -1,8 +1,10 @@
 var gulp = require('gulp'),
+	concat = require('gulp-concat'),
 	rename = require('gulp-rename'),
 	sass = require('gulp-sass'),
 	sourcemaps = require('gulp-sourcemaps'),
-	uglify = require('gulp-uglify');
+	uglify = require('gulp-uglify'),
+	scriptJSON = require('./script.json');
 
 gulp.task('default', function() {
 });
@@ -32,28 +34,28 @@ gulp.task('sass', function() {
 });
 
 gulp.task('uglify', function() {
+	gulp
+		.src(scriptJSON['script.js'])
+		.pipe(sourcemaps.init())
+		.pipe(concat('script.js'))
+		.pipe(uglify({
+			output: {
+				beautify: true
+			}
+		}))
+		.pipe(sourcemaps.write('./'))
+		.pipe(gulp.dest('./'));
+
 	return gulp
-		.src([
-		"scripts/plugins/jQuery.fn.sortElements.js",
-		"scripts/plugins/jquery.urbModal.js",
-		"scripts/reset.js",
-
-		"scripts/modal.js",
-		"scripts/navigation.js",
-		"scripts/search.js",
-		"scripts/tooltip.js",
-
-		"scripts/header.js",
-		"scripts/specials.js",
-		"scripts/community.js",
-		"scripts/company.js",
-
-		"scripts/beer.js",
-		"scripts/page.js",
-		"scripts/post.js",
-		"scripts/single.js",
-		"scripts/user.js",
-		"scripts/analytics.js"])
-		.pipe(uglify())
-		.pipe(gulp.dest('script.js'));
+		.src(scriptJSON['script.js'])
+		.pipe(sourcemaps.init())
+		.pipe(concat('script.min.js'))
+		.pipe(uglify({
+			mangle: true,
+			ouput: {
+				comments: false
+			}
+		}))
+		.pipe(sourcemaps.write('./'))
+		.pipe(gulp.dest('./'));
 });
