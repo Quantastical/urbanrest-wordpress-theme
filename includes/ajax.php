@@ -79,6 +79,10 @@ function getnext() {
 			$return['image_src'] = wp_get_attachment_image_src( get_post_thumbnail_id($previous_post->ID), array( 720,405 ), false, '' )[0];
 			$return['thumbnail'] = get_the_post_thumbnail($previous_post->ID);
 		}
+		if( substr_count( $_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip') )
+			ob_start('ob_gzhandler');
+		else
+			ob_start();
 		wp_send_json_success($return);
 	} else {
 		wp_send_json_error( 'No post found.' );
