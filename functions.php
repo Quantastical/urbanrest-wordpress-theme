@@ -221,11 +221,11 @@ if( !function_exists( 'urbanrest_enqueue_scripts' ) ) :
 		wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/style.min.css', false, '1.2' );
 
 		// Add scripts
-		wp_enqueue_script('jquery', '//code.jquery.com/jquery-1.11.3.min.js');
+		wp_enqueue_script('jquery', '//code.jquery.com/jquery-1.11.3.min.js', array(), false, true);
 		//wp_enqueue_script('hammer', get_stylesheet_directory_uri() . '/node_modules/hammerjs//hammer.min.js');
 		//wp_enqueue_script('hammer', 'http://hammerjs.github.io/dist/hammer.min.js');
 		//wp_enqueue_script('gmaps', 'http://maps.google.com/maps/api/js', false, '1.1', true);
-		wp_enqueue_script('site', get_stylesheet_directory_uri() . '/script.min.js', false, '1.2', true);
+		wp_enqueue_script('site', get_stylesheet_directory_uri() . '/script.min.js', array('jquery'), '1.2', true);
 		/*
 		wp_enqueue_script('modal', get_stylesheet_directory_uri() . '/scripts/plugins/jquery.urbanrestModal.js', false, '1.1', true);
 		wp_enqueue_script('main', get_stylesheet_directory_uri() . '/scripts/main.js', false, '1.1', true);
