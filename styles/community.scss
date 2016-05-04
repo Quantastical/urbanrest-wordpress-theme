@@ -8,8 +8,8 @@
 			background-attachment: fixed;
 			@include media('<=phone') { background-attachment: scroll; }
 			background-color: black;
-			background-image: url(images/background-neighborhood.jpg);
-			@include media( 'portrait' ) { background-image: url(images/background-neighborhood-portrait.jpg); }
+			background-image: url(images/background-neighborhood.min.jpg);
+			@include media( 'portrait' ) { background-image: url(images/background-neighborhood-portrait.min.jpg); }
 			background-position: center 0;
 			@include media('<=phone') { background-position: center 0 !important; }
 			background-repeat: no-repeat;
@@ -25,16 +25,6 @@
 			h2
 			{
 				display: none;
-				/*
-				color: white;
-				font-family: 'Witka';
-				font-size: 3em;
-				font-weight: 400;
-				margin: 0 0 1em 0;
-				text-decoration: none;
-				text-shadow: 0 0 0.33em black;
-				text-transform: uppercase;
-				*/
 			}
 
 			.site-blog

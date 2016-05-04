@@ -1,5 +1,9 @@
 var gulp = require('gulp'),
 	concat = require('gulp-concat'),
+	count = require('gulp-count'),
+	hash = require('gulp-hash-filename'),
+	imagemin = require('gulp-imagemin'),
+	//pngquant = require('imagemin-pngquant'),
 	rename = require('gulp-rename'),
 	sass = require('gulp-sass'),
 	sourcemaps = require('gulp-sourcemaps'),
@@ -7,9 +11,12 @@ var gulp = require('gulp'),
 	scriptJSON = require('./script.json');
 
 gulp.task('default', function() {
+	console.log('Which task do you want to perform?');
 });
 
-gulp.task('sass', function() {
+gulp.task('all', ['images', 'styles', 'scripts']);
+
+gulp.task('styles', function() {
 	/*
 	'style.css': 'style.scss',
 	//'editor-style.css': 'editor-style.scss'
@@ -33,7 +40,7 @@ gulp.task('sass', function() {
 		.pipe(gulp.dest('./'));
 });
 
-gulp.task('uglify', function() {
+gulp.task('scripts', function() {
 	gulp
 		.src(scriptJSON['script.js'])
 		.pipe(sourcemaps.init())
@@ -58,4 +65,21 @@ gulp.task('uglify', function() {
 		}))
 		.pipe(sourcemaps.write('./'))
 		.pipe(gulp.dest('./'));
+});
+
+gulp.task('images', function() {
+	gulp
+		.src(['./images/*', '!./images/*.min.*'])
+		.pipe(imagemin({
+			optimizationLevel: 7,
+			interlaced: true,
+            progressive: true,
+            //svgoPlugins: [
+            //    { removeViewBox: false },
+            //    { cleanupIDs: false }
+            //],
+            //use: [pngquant()]
+        }))
+        .pipe(hash({format: '{name}.min{ext}'}))
+        .pipe(gulp.dest('./images'));
 });

@@ -4,19 +4,16 @@
 	{
 		.site-specials
 		{
-			/*background-attachment: fixed;*/
-			background-image: url(images/background-chalkboard.jpg);
-			@include media( 'portrait' ) { background-image: url(images/background-chalkboard-portrait.jpg); }
+			background-image: url('images/background-chalkboard.min.jpg');
+			@include media( 'portrait' ) { background-image: url('images/background-chalkboard-portrait.min.jpg'); }
 			background-position: center 0;
 			@include media( '<=phone' ) { background-position: center 0 !important; }
 			background-repeat: no-repeat;
 			@include background-size( cover );
 			color: $chalk-white;
-			/*font-family: 'Colored Crayons';*/
 			font-family: 'Chalk It Up';
 			@include font-smoothing( antialiased );
 			-moz-osx-font-smoothing: grayscale;
-			/*min-height: 100vh;*/
 			padding: 7em 0;
 			position: relative;
 
@@ -30,17 +27,6 @@
 			h2
 			{
 				display: none;
-				/*
-				color: white;
-				font-family: 'Witka';
-				font-size: 3em;
-				font-weight: 400;
-				margin: 0 0 1em 0;
-				text-align: center;
-				text-decoration: none;
-				text-shadow: 0 0 0.33em black;
-				text-transform: uppercase;
-				*/
 			}
 
 			.beer-list
@@ -182,61 +168,6 @@
 					}
 				}
 			}
-/*
-			.upcoming-beer
-			{
-				h3
-				{
-					background-image: url(images/chalk-circle.png);
-					background-position: center;
-					background-repeat: no-repeat;
-					background-size: 100%;
-					box-sizing: border-box;
-					color: $chalk-green;
-					float: left;
-					font-size: 2.25em;
-					height: 2.5em;
-					line-height: 0.75em;
-					margin-left: -0.1em;
-					margin-right: 0.3em;
-					margin-top: 0.1em;
-					padding: 0.6em 0.4em 0.4em;
-					text-align: center;
-					width: 2.5em;
-
-					@include media('<=phone')
-					{
-						margin-bottom: -2.25em;
-						margin-left: 0.25em;
-					}
-				}
-
-				.decks
-				{
-					@include media('<=phone')
-					{
-						width: 100%;
-					}
-
-					thead
-					{
-						display: none;
-					}
-
-					.beer
-					{
-						.title, .style
-						{
-							@include media('<=phone')
-							{
-								padding-left: calc(0.25em + 33%);
-								width: 100% !important;
-							}
-						}
-					}
-				}
-			}
-*/
 		}
 	}
 }

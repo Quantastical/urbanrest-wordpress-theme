@@ -25,16 +25,6 @@
 			h2
 			{
 				display: none;
-				/*
-				color: white;
-				font-family: 'Witka';
-				font-size: 3em;
-				font-weight: 400;
-				margin: 0 0 1em 0;
-				text-decoration: none;
-				text-shadow: 0 0 0.33em black;
-				text-transform: uppercase;
-				*/
 			}
 
 			.shop-category
@@ -101,22 +91,6 @@
 				.shop-category-description
 				{
 					display: none;
-					/*
-					background-color: rgba(black, 0.5);
-					bottom: 0;
-					box-shadow: 0 0 3em black;
-					box-sizing: border-box;
-					color: white;
-					font-size: 1.1em;
-					font-weight: 100;
-					margin-left: -0.5rem;
-					opacity: 0;
-					padding: 0 1rem;
-					position: absolute;
-					text-align: left;
-					@include transition( opacity 0.33s, padding-bottom 0.5s, padding-top 0.5s );
-					width: 100%;
-					*/
 				}
 
 				.shop-category-link
@@ -155,14 +129,6 @@
 
 				&:hover
 				{
-					/*
-					.shop-category-description
-					{
-						opacity: 1;
-						padding: 0 1rem 1rem;
-					}
-					*/
-
 					.shop-category-link
 					{
 						opacity: 1;

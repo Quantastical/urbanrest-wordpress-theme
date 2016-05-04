@@ -15,7 +15,7 @@
 		.site-header
 		{
 			background-color: rgba(0,0,0,0.33);
-			background-image: url(/images/tile-diagonal-lines.png);
+			background-image: url(/images/tile-diagonal-lines.min.png);
 			background-repeat: repeat;
 			box-shadow: inset 0 0 15em black, inset 0 0 5em black;
 			min-height: 100%;
@@ -24,7 +24,7 @@
 
 		.site-logo
 		{
-			background-image: url(/images/logo-3-color-inverted-min.png);
+			background-image: url(/images/logo-3-color-inverted.min.png);
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: 80%;
@@ -40,14 +40,14 @@
 			@media (min-width: 500px),
 			       (min-width: 200px) and (-webkit-min-device-pixel-ratio: 2)
 			{
-				background-image: url(/images/logo-3-color-inverted-2x-min.png);
+				background-image: url(/images/logo-3-color-inverted-2x.min.png);
 				background-size: 70%;
 			}
 
 			@media (min-width: 1000px),
 			       (min-width: 600px) and (-webkit-min-device-pixel-ratio: 2)
 			{
-				background-image: url(/images/logo-3-color-inverted-4x-min.png);
+				background-image: url(/images/logo-3-color-inverted-4x.min.png);
 				background-size: 60%;
 			}
 
@@ -85,7 +85,7 @@
 
 					a
 					{
-						background-image: url(/images/social-media-icons-min.png);
+						background-image: url(/images/social-media-icons.min.png);
 						background-size: 700% 200%;
 						color: transparent;
 						display: block;

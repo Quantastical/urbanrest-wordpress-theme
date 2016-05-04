@@ -70,8 +70,6 @@
 
 					&.open
 					{
-						/*display: block;*/
-						
 						.main-menu
 						{
 							max-height: calc( 100% - 3.75em );
@@ -92,7 +90,7 @@
 					width: 100%;
 					z-index: $layer-main-navigation;
 
-					@include media("<=tablet")
+					@include media('<=tablet')
 					{
 						padding: 0;
 						text-align: right;
@@ -123,48 +121,16 @@
 							line-height: 2.3em;
 							vertical-align: middle;
 
-							@include media(">phone")
+							@include media('>phone')
 							{
 								margin: 0 0.5em;
-
-								/*
-								&:first-of-type { margin-left: 0; }
-								&:last-of-type { margin-right: 0; }
-								*/
 							}
 
 							@include media('<=tablet')
 							{
 								height: 100%;
 							}
-							/*
-							&.menu-item-logo
-							{
-								margin: 0;
 
-								a
-								{
-									border: none;
-									display: inline-block;
-									padding: 0;
-									@include transition( none );
-
-									&:hover
-									{
-										background-color: transparent;
-										border: none;
-									}
-								}
-
-								img
-								{
-									height: auto;
-									opacity: 0;
-									vertical-align: middle;
-									width: 0;
-								}
-							}
-							*/
 							&.home
 							{
 								float: left;
@@ -274,7 +240,6 @@
 										box-sizing: border-box;
 										display: block;
 										@include transition( 0.125s ease-in-out, background-color 0.33s ease-in-out );
-										/*transition: 0.25s ease-in-out;*/
 									}
 
 									&:hover
@@ -387,11 +352,8 @@
 									}
 								}
 								
-								/*&.menu-item-type-custom*/
 								&:not(.home)
 								{
-									/*height: 50%;*/
-
 									a
 									{
 										border-radius: 2px;
@@ -407,31 +369,7 @@
 										text-align: center;
 										text-overflow: ellipsis;
 										text-transform: uppercase;
-										white-space: nowrap;
-										/*width: 60px;*/
-
-										/*
-										&:before
-										{
-											display: block;
-											font-family: FontAwesome;
-											font-size: 20px;
-											margin: 3px auto 0;
-											text-align: center;
-											width: auto;
-										}
-
-										&[href="#coming-soon"]        { text-indent: 2em; }
-										&[href="#community"]:before   { content: $fa-var-newspaper-o; }
-										&[href="#company"]:before     { content: $fa-var-info-circle; }
-										&[href="#kickstarter"]:before { content: $fa-var-trophy; }
-										&[href="#specials"]:before    { content: $fa-var-beer; }
-										&[href="#shop"]:before        { content: $fa-var-shopping-cart; }
-										&[href~="/story/"]:before     { content: $fa-var-shopping-cart; }
-										&[href~="/taproom/"]:before   { content: $fa-var-shopping-cart; }
-										&[href~="/brewery/"]:before   { content: $fa-var-shopping-cart; }
-										*/
-									}
+										white-space: nowrap;									}
 
 									&.main-menu #menu-toggle
 									{
@@ -445,7 +383,7 @@
 								}
 							}
 
-							@include media(">tablet")
+							@include media('>tablet')
 							{
 								&:not(.home)
 								{
@@ -475,11 +413,6 @@
 					top: 0;
 					width: 100%;
 					z-index: $layer-social-navigation;
-
-					.social-menu
-					{
-						/* social.scss */
-					}
 				}
 
 				&.stuck-top

@@ -12,33 +12,16 @@
 
 			a
 			{
-				background-image: url(images/icons.png);
+				background-image: url('images/icons.min.png');
 				background-size: 300% 300%;
-				//border: 3pt solid transparent;
 				border-radius: 3pt;
 				display: inline-block;
-				height: 2em;//1.88em;
+				height: 2em; // 1.88em;
 				margin: 0.25em;
 				opacity: 0.75;
 				overflow: hidden;
 				@include transition( opacity 0.11s );
 				width: 2em;
-
-				/*
-				&:before
-				{
-					background-color: rgba( white, 0.75 );
-					border-radius: 0.25em;
-					content: '';
-					display: inline-block;
-					font-family: 'FontAwesome';
-					font-size: 2.25em;
-					line-height: 0.83em;
-					padding-top: 0.04em;
-					@include transition( background-color 0.11s, color 0.11s );
-					width: 0.83em;
-				}
-				*/
 
 				&:focus
 				{
@@ -75,92 +58,6 @@
 			&.untappd a { background-position: 0% 100%; }
 			&.ratebeer a { background-position: 50% 100%; }
 			&.beeradvocate a { background-position: 100% 100%; }
-
-			/*
-			&.facebook a
-			{
-				color: darken( $facebook-blue, 11% );
-
-				&:before
-				{
-					content: $fa-var-facebook-square;
-					width: 0.819em;
-				}
-
-				&:hover:before
-				{
-					color: $facebook-blue;
-				}
-			}
-
-			&.pinterest a
-			{
-				&:before
-				{
-					width: 0.82em;
-				}
-			}
-
-			&.google-plus a { color: darken( $google-red, 11% );     &:before { content: $fa-var-google-plus-square; } &:hover:before { color: $google-red;      } }
-			&.instagram a   { color: darken( $instagram-blue, 11% ); &:before { content: $fa-var-instagram;          } &:hover:before { color: $instagram-blue;  } }
-			&.pinterest a   { color: darken( $pinterest-red, 11% );  &:before { content: $fa-var-pinterest-square;   } &:hover:before { color: $pinterest-red;   } }
-			&.twitter a     { color: darken( $twitter-blue, 11% );   &:before { content: $fa-var-twitter-square;     } &:hover:before { color: $twitter-blue;    } }
-			&.youtube a     { color: darken( $youtube-red, 11% );    &:before { content: $fa-var-youtube-square;     } &:hover:before { color: $youtube-red;     } }
-
-			&.untappd a {
-				color: darken( $untappd-yellow, 11% );
-
-				&:before {
-					background-color: $untappd-brown;
-					content: "\e900";
-					font-family: 'Urbanrest';
-					font-size: 2.0em;
-					width: 0.96em;
-				}
-
-				&:hover:before {
-					color: $untappd-yellow;
-				}
-			}
-			
-			&.search
-			{
-				vertical-align: top;
-
-				a
-				{
-					border-color: transparent;
-					border-radius: 50%;
-					color: darken( $urbanrest-green, 11%);
-					margin-left: 0;
-					outline: none;
-
-					&:before
-					{
-						background-color: transparent;
-					}
-
-					&:after
-					{
-						color: rgba( white, 0.75 );
-						content: $fa-var-search;
-						display: inline-block;
-						font-family: 'FontAwesome';
-						height: 1.9em;
-						line-height: 1.9em;
-						margin-left: -1.9em;
-						@include transition( background-color 0.11s, color 0.11s );
-						vertical-align: top;
-						width: 1.9em;
-					}
-
-					&:hover:after
-					{
-						color: white;
-					}
-				}
-			}
-			*/
 		}
 	}
 }
