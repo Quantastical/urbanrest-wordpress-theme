@@ -3,9 +3,10 @@ jQuery(function($){
 	var navBarWithAdminBarHeight = Urb.$pageNavigation.outerHeight() + wpAdminBarHeight;
 
 	Urb.centerMap = function() {
-		if( Urb.$map.data('map') ) {
+		if( Urb.$map.hasClass('open') ) {
 			// TODO: figure out why this needs a setTimeout
 			setTimeout(function(){
+				//google.maps.event.trigger(Urb.$map.data('map'), 'resize');
 				Urb.$map.data('map').setCenter( Urb.$map.data('marker').getPosition() );
 				Urb.$map.data('map').panTo( Urb.$map.data('marker').getPosition() );
 			}, 250);
@@ -67,7 +68,7 @@ jQuery(function($){
 
 		var mapOptions = {
 			disableDefaultUI   : true,
-			draggable          : false,
+			draggable          : true,
 			mapTypeId          : google.maps.MapTypeId.ROADMAP,
 			mapTypeControl     : false,
 			//mapTypeControlOptions: {
@@ -127,9 +128,9 @@ jQuery(function($){
 		// Add title attribute to map icons
 		// Janky solution, but I don't have time to figure out a better way right now
 		// TODO: get this into PHP using a Walker
-		$('#menu-map-icons a').each(function() {
-			$(this).attr('title', this.textContent);
-		});
+		//$('#menu-map-icons a').each(function() {
+		//	$(this).attr('title', this.textContent);
+		//});
 	};
 
 	Urb.handleContactFormResponse = function(response) {
@@ -156,6 +157,25 @@ jQuery(function($){
 		}
 	};
 
+	Urb.resizeMap = function() {
+		if( Urb.$map.hasClass('open') ) {
+			Urb.$map.addClass('animating');
+			var canvasSize = (Urb.$window.outerHeight() - navBarWithAdminBarHeight - $('h3', Urb.$map).outerHeight()).toFixed(0);
+			$('.map-container, .map-canvas', Urb.$map).css('height', canvasSize + 'px');
+			
+			Urb.centerMap();
+
+			//Urb.$body.animate(
+			$('html,body').animate(
+				{ scrollTop: Urb.$window.scrollTop() + canvasSize },
+				666,
+				function() {
+					Urb.$map.removeClass('animating');
+				}
+			);
+		}
+	};
+
 	Urb.toggleMap = function(event) {
 		event.preventDefault();
 
@@ -166,17 +186,7 @@ jQuery(function($){
 		Urb.$map.toggleClass('open');
 		
 		if( Urb.$map.hasClass('open') ) {
-			Urb.$map.addClass('animating');
-			var canvasSize = (Urb.$window.outerHeight() - navBarWithAdminBarHeight - $('h3', Urb.$map).outerHeight()).toFixed(0);
-			$('.map-container, .map-canvas', Urb.$map).css('height', canvasSize + 'px');
-			//Urb.$body.animate(
-			$('html,body').animate(
-				{ scrollTop: Urb.$window.scrollTop() + canvasSize },
-				666,
-				function() {
-					Urb.$map.removeClass('animating');
-				}
-			);
+			Urb.resizeMap();
 		} else {
 			$('.map-container, .map-canvas', Urb.$map).removeAttr('style');
 		}
@@ -199,5 +209,6 @@ jQuery(function($){
 	//Urb.$window.on('load', Urb.setupMap);
 	Urb.$mapLink.on('click', Urb.toggleMap);
 	Urb.$window.on('load', Urb.setupContactForm);
-	Urb.$window.on('resize', Urb.centerMap);
+	Urb.$window.on('resize orientationchange', Urb.resizeMap);
+	//Urb.$window.on('resize orientationchange', Urb.centerMap);
 });

@@ -155,7 +155,7 @@
 
 		<header class="site-header row active" id="preliminaries">
 			<h1 class="site-title">
-				<img alt="<?php bloginfo('name'); ?>" class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-1-color.png" />
+				<img alt="<?php bloginfo('name'); ?>" class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-1-color-4x.min.png" />
 			</h1>
 <?php /*
 <?php $front_page = get_post(get_option('page_on_front')); ?>
@@ -239,7 +239,7 @@ wp_nav_menu(array(
 	'fallback_cb'     => 'wp_page_menu',
 	'before'          => '',
 	'after'           => '',
-	'link_before'     => '<span class="btn-label">',
+	'link_before'     => '<span class="menu-label">',
 	'link_after'      => '</span>',
 	'items_wrap'      => '<ul id="%1$s" class="%2$s">'
 	                   . '%3$s'

@@ -281,7 +281,7 @@ jQuery( function( $ ) {
 			Urb.$mainNavigation.addClass('stuck-top');
 		}
 		*/
-		Urb.highlightCurrentSection();
+		//Urb.highlightCurrentSection();
 	};
 
 	Urb.scrollSocialNavigation = function() {
@@ -325,6 +325,7 @@ jQuery( function( $ ) {
 				//}
 			}
 		}
+		Urb.scrollPageNavigation();
 	};
 
 	// Fix for scroll flicker on history navigation [http://stackoverflow.com/a/33004917/1028949]
@@ -341,4 +342,25 @@ jQuery( function( $ ) {
 	Urb.$window.on('load scroll', Urb.scrollSocialNavigation);
 	Urb.$window.on('load', function() { setTimeout(Urb.scrollToContent, 1); }); // TODO: figure out why setTimeout has to be used here
 	Urb.$window.on('popstate', Urb.performHistoryNavigation);
+
+
+	Urb.handleTouchEvents = function() {
+		if(Urb.touchEventsHandled) {
+			return;
+		}
+
+		// Fix :hover issues on mobile devices
+		$('a, button').each(function(){
+			var $link = $(this);
+
+			$link.on( 'mouseenter mouseover', function(e){ e.preventDefault(); } )
+				.on('touchend', function(e) {
+					$('body').trigger('touchstart');
+				} );
+		});
+
+		Urb.touchEventsHandled = true;
+	};
+
+	Urb.$window.on('touchstart', Urb.handleTouchEvents);
 } );

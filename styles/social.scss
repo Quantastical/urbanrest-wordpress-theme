@@ -9,55 +9,129 @@
 		.menu-item
 		{
 			display: inline-block;
-
-			a
-			{
-				background-image: url('images/icons.min.png');
-				background-size: 300% 300%;
-				border-radius: 3pt;
-				display: inline-block;
-				height: 2em; // 1.88em;
-				margin: 0.25em;
-				opacity: 0.75;
-				overflow: hidden;
-				@include transition( opacity 0.11s );
-				width: 2em;
-
-				&:focus
-				{
-					border: 3pt solid rgba( white, 0.5 );
-					box-shadow: inset 0 0 1pt rgba( black, 0.5 );
-					outline: none;
-
-					-webkit-animation-duration: 1s;
-					animation-duration: 1s;
-					-webkit-animation-fill-mode: both;
-					animation-fill-mode: both;
-
-					-webkit-animation-iteration-count: infinite;
-					animation-iteration-count: infinite;
-
-					-webkit-animation-name: pulse;
-					animation-name: pulse;
-				}
-
-				&:hover
-				{
-					opacity: 1;
-				}
-
-				.btn-label { display: none; }
-			}
-
-			&.facebook a { background-position: 0% 0%; }
-			&.instagram a { background-position: 50% 0%; }
-			&.twitter a { background-position: 100% 0%; }
-			&.google-plus a { background-position: 0 50%; }
-			&.pinterest a { background-position: 50% 50%; }
-			&.youtube a { background-position: 100% 50%; }
-			&.untappd a { background-position: 0% 100%; }
-			&.ratebeer a { background-position: 50% 100%; }
-			&.beeradvocate a { background-position: 100% 100%; }
 		}
+	}
+
+	.share-modal,
+	.checkin-modal
+	{
+		.message
+		{
+			color: white;
+			font-size: 3em;
+			font-family: 'Satisfy';
+			margin-bottom: 0.5em;
+		}
+
+		.shortlink
+		{
+			background: black;
+			border: dotted 1px white;
+			border-radius: 0.25em;
+			color: white;
+			font-size: 1.5em;
+			margin: 1em;
+			padding: 0.75em;
+			text-align: center;
+			width: 12em;
+
+			&:focus
+			{
+				outline: none;
+			}
+		}
+
+		.menu-title
+		{
+			color: white;
+			font-weight: 400;
+			font-size: 1em;
+			margin-bottom: 1em;
+		}
+
+		.menu
+		{
+			font-size: 2em;
+			list-style: none;
+			padding: 0;
+			text-align: center;
+
+			.menu-item
+			{
+				display: inline-block;
+			}
+		}
+	}
+
+
+	.icon,
+	.social-menu .menu-item a
+	{
+		background-image: url('images/icons.min.png');
+		background-size: 400% 400%;
+		border: none;
+		border-radius: 3pt;
+		display: inline-block;
+		height: 2em; // 1.88em;
+		margin: 0.25em;
+		opacity: 0.75;
+		overflow: hidden;
+		@include transition( opacity 0.11s );
+		width: 2em;
+
+		&:focus
+		{
+			border: 3pt solid rgba( white, 0.5 );
+			box-shadow: inset 0 0 1pt rgba( black, 0.5 );
+			outline: none;
+
+			-webkit-animation-duration: 1s;
+			animation-duration: 1s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+
+			-webkit-animation-iteration-count: infinite;
+			animation-iteration-count: infinite;
+
+			-webkit-animation-name: pulse;
+			animation-name: pulse;
+		}
+
+		&:hover
+		{
+			opacity: 1;
+		}
+	}
+
+	.icon
+	{
+		&.facebook     { background-position: calc(0 * 100% / 3) calc(0 * 100% / 3); }
+		&.instagram    { background-position: calc(1 * 100% / 3) calc(0 * 100% / 3); }
+		&.twitter      { background-position: calc(2 * 100% / 3) calc(0 * 100% / 3); }
+		&.email        { background-position: calc(3 * 100% / 3) calc(0 * 100% / 3); }
+		&.google-plus  { background-position: calc(0 * 100% / 3) calc(1 * 100% / 3); }
+		&.pinterest    { background-position: calc(1 * 100% / 3) calc(1 * 100% / 3); }
+		&.youtube      { background-position: calc(2 * 100% / 3) calc(1 * 100% / 3); }
+		&.untappd      { background-position: calc(0 * 100% / 3) calc(2 * 100% / 3); }
+		&.ratebeer     { background-position: calc(1 * 100% / 3) calc(2 * 100% / 3); }
+		&.beeradvocate { background-position: calc(2 * 100% / 3) calc(2 * 100% / 3); }
+
+		.icon-label { display: none; }
+	}
+
+	.social-menu .menu-item
+	{
+		&.facebook a     { background-position: calc(0 * 100% / 3) calc(0 * 100% / 3); }
+		&.instagram a    { background-position: calc(1 * 100% / 3) calc(0 * 100% / 3); }
+		&.twitter a      { background-position: calc(2 * 100% / 3) calc(0 * 100% / 3); }
+		&.email a        { background-position: calc(3 * 100% / 3) calc(0 * 100% / 3); }
+		&.google-plus a  { background-position: calc(0 * 100% / 3) calc(1 * 100% / 3); }
+		&.pinterest a    { background-position: calc(1 * 100% / 3) calc(1 * 100% / 3); }
+		&.youtube a      { background-position: calc(2 * 100% / 3) calc(1 * 100% / 3); }
+		&.untappd a      { background-position: calc(0 * 100% / 3) calc(2 * 100% / 3); }
+		&.ratebeer a     { background-position: calc(1 * 100% / 3) calc(2 * 100% / 3); }
+		&.beeradvocate a { background-position: calc(2 * 100% / 3) calc(2 * 100% / 3); }
+
+		.menu-label { display: none; }
 	}
 }

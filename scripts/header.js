@@ -108,6 +108,8 @@ jQuery( function( $ ) {
 		$('.site-posts .latest-posts .blog-post > a').on('dragstart', function() { return false; });
 
 		var element = document.getElementById('latest-posts');
+		
+		/*
 		var mc = new Hammer(element);
 		mc.on('swiperight', function() {
 			Urb.showPreviousPost();
@@ -117,7 +119,8 @@ jQuery( function( $ ) {
 			Urb.showNextPost();
 			Urb.stopAutomaticNavigation();
 		});
-
+		*/
+		
 		setTimeout(Urb.getNextPost, 500);
 	};
 

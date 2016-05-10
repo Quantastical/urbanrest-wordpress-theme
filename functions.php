@@ -4,6 +4,7 @@ require_once('includes/redirects.php');
 require_once('includes/3rd-parties.php');
 require_once('includes/admin-menu.php');
 require_once('includes/beer.php');
+require_once('includes/disable-emojis.php');
 //require_once('includes/event.php');
 require_once('includes/form.php');
 require_once('includes/shortlink.php');
@@ -217,36 +218,14 @@ endif;
 if( !function_exists( 'urbanrest_enqueue_scripts' ) ) :
 	function urbanrest_enqueue_scripts() {
 		// Add styles
-		//wp_enqueue_style( 'fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
 		wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/style.min.css', false, '1.2' );
 
 		// Add scripts
 		wp_enqueue_script('jquery', '//code.jquery.com/jquery-1.11.3.min.js', array(), false, true);
-		//wp_enqueue_script('hammer', get_stylesheet_directory_uri() . '/node_modules/hammerjs//hammer.min.js');
-		//wp_enqueue_script('hammer', 'http://hammerjs.github.io/dist/hammer.min.js');
-		//wp_enqueue_script('gmaps', 'http://maps.google.com/maps/api/js', false, '1.1', true);
 		wp_enqueue_script('site', get_stylesheet_directory_uri() . '/script.min.js', array('jquery'), '1.2', true);
-		/*
-		wp_enqueue_script('modal', get_stylesheet_directory_uri() . '/scripts/plugins/jquery.urbanrestModal.js', false, '1.1', true);
-		wp_enqueue_script('main', get_stylesheet_directory_uri() . '/scripts/main.js', false, '1.1', true);
-		wp_enqueue_script('modal', get_stylesheet_directory_uri() . '/scripts/modal.js', false, '1.1', true);
-		wp_enqueue_script('ga', get_stylesheet_directory_uri() . '/scripts/analytics.js', false, '1.1', true);
-		wp_enqueue_script('twitter', get_stylesheet_directory_uri() . '/scripts/twitter.js', false, '1.1', true);
 
-		// Template-specific Scripts
-		$template = pathinfo( get_page_template(), PATHINFO_FILENAME );
-		switch( $template ) {
-			case 'home':
-				wp_enqueue_script('home', get_stylesheet_directory_uri() . '/scripts/home.js', '1.1', true);
-			break;
-			case 'kickstarter':
-				wp_enqueue_script('kickstarter', get_stylesheet_directory_uri() . '/scripts/kickstarter.js', '1.1', true);
-			break;
-			case 'single':
-				wp_enqueue_script('single', get_stylesheet_directory_uri() . '/scripts/single.js', '1.0', true);
-			break;
-		}
-		*/
+		wp_enqueue_script( 'html5shiv', get_stylesheet_directory_uri() . '/node_modules/html5shiv/dist/html5shiv.min.js' );
+		wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
 
 		// Create rating variable for JS
 		wp_localize_script('site', '_URB', array(
@@ -265,15 +244,10 @@ add_action( 'wp_default_scripts', function( $scripts ) {
     }
 } );
 
-//require_once('includes/admin/user-profile.php');
-
 require_once('includes/content-editor.php');
-//require_once('includes/login.php');
 require_once('includes/footer.php');
-//require_once('includes/widgets.php');
 require_once('includes/menus.php');
 
-//require_once('includes/admin/user-roles.php');
 require_once('includes/admin/help.php');
 require_once('includes/admin/scripts.php');
 require_once('includes/admin/menu-bar.php');
@@ -282,9 +256,5 @@ require_once('includes/admin/dashboard.php');
 require_once('includes/admin/fields.php');
 require_once('includes/admin/artwork.php');
 require_once('includes/admin/company.php');
-//require_once('includes/admin/social-media.php');
 require_once('includes/admin/menu.php');
 require_once('includes/admin/home-page.php');
-//require_once('includes/admin/beer.php');
-//require_once('includes/admin/beer-statuses.php');
-//require_once('includes/admin/events.php');

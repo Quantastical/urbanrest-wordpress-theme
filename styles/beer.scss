@@ -15,10 +15,6 @@
 		padding-top: 5.5em;
 		width: 100%;
 
-		a, .hyperlink
-		{
-			@extend .hyperlink;
-		}
 
 		hr
 		{
@@ -185,10 +181,12 @@
 					@extend .share;
 				}
 
+				/*
 				.beer-sharing
 				{
 					@extend .sharing;
 				}
+				*/
 
 				.beer-checkin
 				{

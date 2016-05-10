@@ -4413,6 +4413,34 @@ Copyright (c) 2015 Daniel Eden
   font-style: normal; }
 
 @font-face {
+  font-family: "Roboto Slab";
+  src: url("fonts/Roboto_Slab/RobotoSlab-Thin.eot");
+  src: url("fonts/Roboto_Slab/RobotoSlab-Thin.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Slab/RobotoSlab-Thin.woff") format("woff"), url("fonts/Roboto_Slab/RobotoSlab-Thin.ttf") format("truetype"), url("fonts/Roboto_Slab/RobotoSlab-Thin.svg#") format("svg");
+  font-weight: 100;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("fonts/Roboto_Slab/RobotoSlab-Light.eot");
+  src: url("fonts/Roboto_Slab/RobotoSlab-Light.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Slab/RobotoSlab-Light.woff") format("woff"), url("fonts/Roboto_Slab/RobotoSlab-Light.ttf") format("truetype"), url("fonts/Roboto_Slab/RobotoSlab-Light.svg#") format("svg");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("fonts/Roboto_Slab/RobotoSlab-Regular.eot");
+  src: url("fonts/Roboto_Slab/RobotoSlab-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Slab/RobotoSlab-Regular.woff") format("woff"), url("fonts/Roboto_Slab/RobotoSlab-Regular.ttf") format("truetype"), url("fonts/Roboto_Slab/RobotoSlab-Regular.svg#") format("svg");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("fonts/Roboto_Slab/RobotoSlab-Bold.eot");
+  src: url("fonts/Roboto_Slab/RobotoSlab-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Slab/RobotoSlab-Bold.woff") format("woff"), url("fonts/Roboto_Slab/RobotoSlab-Bold.ttf") format("truetype"), url("fonts/Roboto_Slab/RobotoSlab-Bold.svg#") format("svg");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
   font-family: "Satisfy";
   src: url("fonts/Satisfy/Satisfy-Regular.eot");
   src: url("fonts/Satisfy/Satisfy-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/Satisfy/Satisfy-Regular.woff") format("woff"), url("fonts/Satisfy/Satisfy-Regular.ttf") format("truetype"), url("fonts/Satisfy/Satisfy-Regular.svg#") format("svg");
@@ -5264,7 +5292,7 @@ html.javascript {
   .btn .btn-content {
     display: none; }
 
-.hyperlink, .site main.beer a, .site main.beer .hyperlink, .site main.event a, .site main.event .hyperlink, .site main.page a, .site main.page .hyperlink, .site main.post a, .site main.post .hyperlink, .site main.posts a, .site main.posts .hyperlink, .site main.taxonomy a, .site main.taxonomy .hyperlink, .site main.user a, .site main.user .hyperlink {
+.hyperlink, .site main.event a, .site main.event .hyperlink, .site main.page .page-content a, .site main.post a, .site main.post .hyperlink, .site main.posts a, .site main.posts .hyperlink, .site main.taxonomy a, .site main.taxonomy .hyperlink, .site main.user a, .site main.user .hyperlink {
   border-bottom-width: 1pt;
   border-bottom-color: transparent;
   border-bottom-style: solid;
@@ -5276,16 +5304,16 @@ html.javascript {
   -webkit-transition: border-bottom 0.33s;
   -moz-transition: border-bottom 0.33s;
   transition: border-bottom 0.33s; }
-  .hyperlink:hover, .site main.beer a:hover, .site main.beer .hyperlink:hover, .site main.event a:hover, .site main.event .hyperlink:hover, .site main.page a:hover, .site main.page .hyperlink:hover, .site main.post a:hover, .site main.post .hyperlink:hover, .site main.posts a:hover, .site main.posts .hyperlink:hover, .site main.taxonomy a:hover, .site main.taxonomy .hyperlink:hover, .site main.user a:hover, .site main.user .hyperlink:hover {
+  .hyperlink:hover, .site main.event a:hover, .site main.event .hyperlink:hover, .site main.page .page-content a:hover, .site main.post a:hover, .site main.post .hyperlink:hover, .site main.posts a:hover, .site main.posts .hyperlink:hover, .site main.taxonomy a:hover, .site main.taxonomy .hyperlink:hover, .site main.user a:hover, .site main.user .hyperlink:hover {
     /*border-bottom-color: lighten( $urbanrest-green, 5% );*/
     color: #149f4f; }
-  .hyperlink:focus, .site main.beer a:focus, .site main.beer .hyperlink:focus, .site main.event a:focus, .site main.event .hyperlink:focus, .site main.page a:focus, .site main.page .hyperlink:focus, .site main.post a:focus, .site main.post .hyperlink:focus, .site main.posts a:focus, .site main.posts .hyperlink:focus, .site main.taxonomy a:focus, .site main.taxonomy .hyperlink:focus, .site main.user a:focus, .site main.user .hyperlink:focus {
+  .hyperlink:focus, .site main.event a:focus, .site main.event .hyperlink:focus, .site main.page .page-content a:focus, .site main.post a:focus, .site main.post .hyperlink:focus, .site main.posts a:focus, .site main.posts .hyperlink:focus, .site main.taxonomy a:focus, .site main.taxonomy .hyperlink:focus, .site main.user a:focus, .site main.user .hyperlink:focus {
     animation-duration: 3s;
     animation-name: flash;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
     outline: none; }
-  .hyperlink [rel="external"]:after, .site main.beer a [rel="external"]:after, .site main.beer .hyperlink [rel="external"]:after, .site main.event a [rel="external"]:after, .site main.event .hyperlink [rel="external"]:after, .site main.page a [rel="external"]:after, .site main.page .hyperlink [rel="external"]:after, .site main.post a [rel="external"]:after, .site main.post .hyperlink [rel="external"]:after, .site main.posts a [rel="external"]:after, .site main.posts .hyperlink [rel="external"]:after, .site main.taxonomy a [rel="external"]:after, .site main.taxonomy .hyperlink [rel="external"]:after, .site main.user a [rel="external"]:after, .site main.user .hyperlink [rel="external"]:after {
+  .hyperlink [rel="external"]:after, .site main.event a [rel="external"]:after, .site main.event .hyperlink [rel="external"]:after, .site main.page .page-content a [rel="external"]:after, .site main.post a [rel="external"]:after, .site main.post .hyperlink [rel="external"]:after, .site main.posts a [rel="external"]:after, .site main.posts .hyperlink [rel="external"]:after, .site main.taxonomy a [rel="external"]:after, .site main.taxonomy .hyperlink [rel="external"]:after, .site main.user a [rel="external"]:after, .site main.user .hyperlink [rel="external"]:after {
     background-color: transparent;
     border: none;
     border-radius: 0.18em;
@@ -5304,7 +5332,7 @@ html.javascript {
     -moz-transition: all 0.5s;
     transition: all 0.5s;
     width: 0; }
-  .hyperlink [rel="external"]:hover:after, .site main.beer a [rel="external"]:hover:after, .site main.event a [rel="external"]:hover:after, .site main.page a [rel="external"]:hover:after, .site main.post a [rel="external"]:hover:after, .site main.posts a [rel="external"]:hover:after, .site main.taxonomy a [rel="external"]:hover:after, .site main.user a [rel="external"]:hover:after {
+  .hyperlink [rel="external"]:hover:after, .site main.event a [rel="external"]:hover:after, .site main.page .page-content a [rel="external"]:hover:after, .site main.post a [rel="external"]:hover:after, .site main.posts a [rel="external"]:hover:after, .site main.taxonomy a [rel="external"]:hover:after, .site main.user a [rel="external"]:hover:after {
     background-color: white;
     height: 0.84em;
     opacity: 1;
@@ -5549,7 +5577,7 @@ html.javascript {
           position: absolute;
           top: 0; }
           .site .site-header .site-navigation .page-navigation .navbar .menu-item.home a {
-            background-image: url(images/logo-stacked-white.png);
+            background-image: url(images/logo-stacked-white.min.png);
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain;
@@ -5882,11 +5910,11 @@ html.javascript {
     .share .share-count:after, .site main.beer .beer-footer .beer-actions .beer-share .share-count:after {
       content: ')'; }
 
-.sharing, .site main.beer .beer-footer .beer-actions .beer-sharing {
+.sharing {
   list-style: none;
   padding: 0;
   text-align: center; }
-  .sharing a, .site main.beer .beer-footer .beer-actions .beer-sharing a {
+  .sharing a {
     background-color: gray;
     border: none;
     border-radius: 0.25em;
@@ -5901,37 +5929,37 @@ html.javascript {
     -moz-transition: background-color 0.33s, color 0.33s;
     transition: background-color 0.33s, color 0.33s;
     width: 15em; }
-    .sharing a:before, .site main.beer .beer-footer .beer-actions .beer-sharing a:before {
+    .sharing a:before {
       font-family: FontAwesome;
       margin-right: 0.5em; }
-    .sharing a:hover, .site main.beer .beer-footer .beer-actions .beer-sharing a:hover {
+    .sharing a:hover {
       background-color: #737373;
       color: #dcdfde;
       border: none;
       -webkit-transition: background-color 0.11s, color 0.11s;
       -moz-transition: background-color 0.11s, color 0.11s;
       transition: background-color 0.11s, color 0.11s; }
-    .sharing a.facebook, .site main.beer .beer-footer .beer-actions .beer-sharing a.facebook {
+    .sharing a.facebook {
       background-color: #3B5998; }
-      .sharing a.facebook:hover, .site main.beer .beer-footer .beer-actions .beer-sharing a.facebook:hover {
+      .sharing a.facebook:hover {
         background-color: #344e86; }
-    .sharing a.google, .site main.beer .beer-footer .beer-actions .beer-sharing a.google {
+    .sharing a.google {
       background-color: #DD4B39; }
-      .sharing a.google:hover, .site main.beer .beer-footer .beer-actions .beer-sharing a.google:hover {
+      .sharing a.google:hover {
         background-color: #d73925; }
-    .sharing a.twitter, .site main.beer .beer-footer .beer-actions .beer-sharing a.twitter {
+    .sharing a.twitter {
       background-color: #00ACED; }
-      .sharing a.twitter:hover, .site main.beer .beer-footer .beer-actions .beer-sharing a.twitter:hover {
+      .sharing a.twitter:hover {
         background-color: #0099d4; }
-  .sharing .email:before, .site main.beer .beer-footer .beer-actions .beer-sharing .email:before {
+  .sharing .email:before {
     content: ""; }
-  .sharing .facebook:before, .site main.beer .beer-footer .beer-actions .beer-sharing .facebook:before {
+  .sharing .facebook:before {
     content: ""; }
-  .sharing .google:before, .site main.beer .beer-footer .beer-actions .beer-sharing .google:before {
+  .sharing .google:before {
     content: ""; }
-  .sharing .twitter:before, .site main.beer .beer-footer .beer-actions .beer-sharing .twitter:before {
+  .sharing .twitter:before {
     content: ""; }
-  .sharing .shortlink, .site main.beer .beer-footer .beer-actions .beer-sharing .shortlink {
+  .sharing .shortlink {
     background: black;
     border: dotted 1px white;
     border-radius: 0.25em;
@@ -5941,7 +5969,7 @@ html.javascript {
     padding: 0.5em;
     text-align: center;
     width: 15em; }
-    .sharing .shortlink:focus, .site main.beer .beer-footer .beer-actions .beer-sharing .shortlink:focus {
+    .sharing .shortlink:focus {
       outline: none; }
 
 @media only screen {
@@ -5951,53 +5979,116 @@ html.javascript {
     padding: 0; }
     .social-menu .menu-item {
       display: inline-block; }
-      .social-menu .menu-item a {
-        background-image: url("images/icons.min.png");
-        background-size: 300% 300%;
-        border-radius: 3pt;
-        display: inline-block;
-        height: 2em;
-        margin: 0.25em;
-        opacity: 0.75;
-        overflow: hidden;
-        -webkit-transition: opacity 0.11s;
-        -moz-transition: opacity 0.11s;
-        transition: opacity 0.11s;
-        width: 2em; }
-        .social-menu .menu-item a:focus {
-          border: 3pt solid rgba(255, 255, 255, 0.5);
-          box-shadow: inset 0 0 1pt rgba(0, 0, 0, 0.5);
-          outline: none;
-          -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-          -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
-          -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-          -webkit-animation-name: pulse;
-          animation-name: pulse; }
-        .social-menu .menu-item a:hover {
-          opacity: 1; }
-        .social-menu .menu-item a .btn-label {
-          display: none; }
-      .social-menu .menu-item.facebook a {
-        background-position: 0% 0%; }
-      .social-menu .menu-item.instagram a {
-        background-position: 50% 0%; }
-      .social-menu .menu-item.twitter a {
-        background-position: 100% 0%; }
-      .social-menu .menu-item.google-plus a {
-        background-position: 0 50%; }
-      .social-menu .menu-item.pinterest a {
-        background-position: 50% 50%; }
-      .social-menu .menu-item.youtube a {
-        background-position: 100% 50%; }
-      .social-menu .menu-item.untappd a {
-        background-position: 0% 100%; }
-      .social-menu .menu-item.ratebeer a {
-        background-position: 50% 100%; }
-      .social-menu .menu-item.beeradvocate a {
-        background-position: 100% 100%; } }
+  .share-modal .message,
+  .checkin-modal .message {
+    color: white;
+    font-size: 3em;
+    font-family: 'Satisfy';
+    margin-bottom: 0.5em; }
+  .share-modal .shortlink,
+  .checkin-modal .shortlink {
+    background: black;
+    border: dotted 1px white;
+    border-radius: 0.25em;
+    color: white;
+    font-size: 1.5em;
+    margin: 1em;
+    padding: 0.75em;
+    text-align: center;
+    width: 12em; }
+    .share-modal .shortlink:focus,
+    .checkin-modal .shortlink:focus {
+      outline: none; }
+  .share-modal .menu-title,
+  .checkin-modal .menu-title {
+    color: white;
+    font-weight: 400;
+    font-size: 1em;
+    margin-bottom: 1em; }
+  .share-modal .menu,
+  .checkin-modal .menu {
+    font-size: 2em;
+    list-style: none;
+    padding: 0;
+    text-align: center; }
+    .share-modal .menu .menu-item,
+    .checkin-modal .menu .menu-item {
+      display: inline-block; }
+  .icon,
+  .social-menu .menu-item a {
+    background-image: url("images/icons.min.png");
+    background-size: 400% 400%;
+    border: none;
+    border-radius: 3pt;
+    display: inline-block;
+    height: 2em;
+    margin: 0.25em;
+    opacity: 0.75;
+    overflow: hidden;
+    -webkit-transition: opacity 0.11s;
+    -moz-transition: opacity 0.11s;
+    transition: opacity 0.11s;
+    width: 2em; }
+    .icon:focus,
+    .social-menu .menu-item a:focus {
+      border: 3pt solid rgba(255, 255, 255, 0.5);
+      box-shadow: inset 0 0 1pt rgba(0, 0, 0, 0.5);
+      outline: none;
+      -webkit-animation-duration: 1s;
+      animation-duration: 1s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-animation-iteration-count: infinite;
+      animation-iteration-count: infinite;
+      -webkit-animation-name: pulse;
+      animation-name: pulse; }
+    .icon:hover,
+    .social-menu .menu-item a:hover {
+      opacity: 1; }
+  .icon.facebook {
+    background-position: calc(0 * 100% / 3) calc(0 * 100% / 3); }
+  .icon.instagram {
+    background-position: calc(1 * 100% / 3) calc(0 * 100% / 3); }
+  .icon.twitter {
+    background-position: calc(2 * 100% / 3) calc(0 * 100% / 3); }
+  .icon.email {
+    background-position: calc(3 * 100% / 3) calc(0 * 100% / 3); }
+  .icon.google-plus {
+    background-position: calc(0 * 100% / 3) calc(1 * 100% / 3); }
+  .icon.pinterest {
+    background-position: calc(1 * 100% / 3) calc(1 * 100% / 3); }
+  .icon.youtube {
+    background-position: calc(2 * 100% / 3) calc(1 * 100% / 3); }
+  .icon.untappd {
+    background-position: calc(0 * 100% / 3) calc(2 * 100% / 3); }
+  .icon.ratebeer {
+    background-position: calc(1 * 100% / 3) calc(2 * 100% / 3); }
+  .icon.beeradvocate {
+    background-position: calc(2 * 100% / 3) calc(2 * 100% / 3); }
+  .icon .icon-label {
+    display: none; }
+  .social-menu .menu-item.facebook a {
+    background-position: calc(0 * 100% / 3) calc(0 * 100% / 3); }
+  .social-menu .menu-item.instagram a {
+    background-position: calc(1 * 100% / 3) calc(0 * 100% / 3); }
+  .social-menu .menu-item.twitter a {
+    background-position: calc(2 * 100% / 3) calc(0 * 100% / 3); }
+  .social-menu .menu-item.email a {
+    background-position: calc(3 * 100% / 3) calc(0 * 100% / 3); }
+  .social-menu .menu-item.google-plus a {
+    background-position: calc(0 * 100% / 3) calc(1 * 100% / 3); }
+  .social-menu .menu-item.pinterest a {
+    background-position: calc(1 * 100% / 3) calc(1 * 100% / 3); }
+  .social-menu .menu-item.youtube a {
+    background-position: calc(2 * 100% / 3) calc(1 * 100% / 3); }
+  .social-menu .menu-item.untappd a {
+    background-position: calc(0 * 100% / 3) calc(2 * 100% / 3); }
+  .social-menu .menu-item.ratebeer a {
+    background-position: calc(1 * 100% / 3) calc(2 * 100% / 3); }
+  .social-menu .menu-item.beeradvocate a {
+    background-position: calc(2 * 100% / 3) calc(2 * 100% / 3); }
+  .social-menu .menu-item .menu-label {
+    display: none; } }
 
 @media only screen {
   .tooltip {
@@ -6758,11 +6849,9 @@ html.javascript {
           .site .site-company .site-location .business-hours dl dd {
             text-align: right; }
         .site .site-company .site-location .business-hours .status {
-          bottom: -6.5em;
           color: rgba(255, 255, 255, 0.33);
           font-size: 0.7em;
           margin-bottom: 0;
-          position: absolute;
           text-transform: uppercase;
           width: 100%; }
           .site .site-company .site-location .business-hours .status em {
@@ -7006,47 +7095,54 @@ html.javascript {
         -webkit-transition: height 0.666s;
         -moz-transition: height 0.666s;
         transition: height 0.666s;
-        width: 100%; }
-        .site .site-company .site-map .map-container .map-menu {
-          bottom: 1.6em;
-          left: 0.6em;
-          opacity: 0;
-          padding: 0;
-          position: absolute;
-          -webkit-transition: opacity 0.33s 0s;
-          -moz-transition: opacity 0.33s 0s;
-          transition: opacity 0.33s 0s;
-          width: auto !important;
-          z-index: 1; }
-          .site .site-company .site-map .map-container .map-menu .menu-item {
-            display: inline-block;
-            margin-right: 0.25em; }
-            .site .site-company .site-map .map-container .map-menu .menu-item a {
-              background-repeat: no-repeat;
-              background-size: contain;
-              color: transparent;
-              display: inline-block;
-              font-size: 0;
-              height: 2.5rem;
-              opacity: 0.75;
-              overflow: hidden;
-              width: 2.5rem; }
-              .site .site-company .site-map .map-container .map-menu .menu-item a:hover {
-                opacity: 1; }
-            .site .site-company .site-map .map-container .map-menu .menu-item.google-maps a {
-              height: 2.9rem;
-              margin-bottom: -0.25rem;
-              width: 2.9rem; }
-            .site .site-company .site-map .map-container .map-menu .menu-item.apple-maps a {
-              background-image: url(images/icon-apple-maps.min.png); }
-            .site .site-company .site-map .map-container .map-menu .menu-item.foursquare a {
-              background-image: url(images/icon-foursquare.min.png); }
-            .site .site-company .site-map .map-container .map-menu .menu-item.google-maps a {
-              background-image: url(images/icon-google-maps.min.png); }
-            .site .site-company .site-map .map-container .map-menu .menu-item.mapquest a {
-              background-image: url(images/icon-mapquest.min.png); }
-            .site .site-company .site-map .map-container .map-menu .menu-item.yellow-pages a {
-              background-image: url(images/icon-yellow-pages.min.png); }
+        width: 100%;
+        /*
+					.map-menu
+					{
+						bottom: 1.6em;
+						left: 0.6em;
+						opacity: 0;
+						padding: 0;
+						position: absolute;
+						@include transition( opacity 0.33s 0s );
+						width: auto !important;
+						z-index: 1;
+
+						.menu-item
+						{
+							display: inline-block;
+							margin-right: 0.25em;
+
+							a
+							{
+								background-repeat: no-repeat;
+								background-size: contain;
+								color: transparent;
+								display: inline-block;
+								font-size: 0;
+								height: 2.5rem;
+								opacity: 0.75;
+								overflow: hidden;
+								width: 2.5rem;
+
+								&:hover { opacity: 1; }
+							}
+
+							&.google-maps a
+							{
+								height: 2.9rem;
+								margin-bottom: -0.25rem;
+								width: 2.9rem;
+							}
+							
+							&.apple-maps a   { background-image: url(images/icon-apple-maps.min.png);   }
+							&.foursquare a   { background-image: url(images/icon-foursquare.min.png);   }
+							&.google-maps a  { background-image: url(images/icon-google-maps.min.png);  }
+							&.mapquest a     { background-image: url(images/icon-mapquest.min.png);     }
+							&.yellow-pages a { background-image: url(images/icon-yellow-pages.min.png); }
+						}
+					}
+					*/ }
         .site .site-company .site-map .map-container .map-canvas {
           background: none !important;
           height: 525px;
@@ -7056,12 +7152,14 @@ html.javascript {
         -webkit-transform: rotate(90deg);
         transform: rotate(90deg); }
       .site .site-company .site-map.open .map-container {
-        height: 500px; }
-        .site .site-company .site-map.open .map-container .map-menu {
-          opacity: 1;
-          -webkit-transition: opacity 0.33s 0.5s;
-          -moz-transition: opacity 0.33s 0.5s;
-          transition: opacity 0.33s 0.5s; } }
+        height: 500px;
+        /*
+						.map-menu
+						{
+							opacity: 1;
+							@include transition( opacity 0.33s 0.5s );
+						}
+						*/ } }
 
 @media only screen {
   .site .site-shop {
@@ -7366,7 +7464,13 @@ html.javascript {
     .site main.beer .beer-footer .beer-sharing.modal:not(.modal-opened):not(.modal-closing) {
       display: none; }
     .site main.beer .beer-footer .beer-actions {
-      text-align: center; }
+      text-align: center;
+      /*
+				.beer-sharing
+				{
+					@extend .sharing;
+				}
+				*/ }
       .site main.beer .beer-footer .beer-actions .beer-checkin {
         display: none; }
         .site main.beer .beer-footer .beer-actions .beer-checkin.modal-opened, .site main.beer .beer-footer .beer-actions .beer-checkin.modal-closing {
@@ -7927,58 +8031,52 @@ html.javascript {
         .site main.page .page-footer .page-actions .page-commenting a,
         .site main.page .page-footer .page-actions .page-liking a,
         .site main.page .page-footer .page-actions .page-sharing a {
-          background-color: gray;
-          border: none;
-          border-radius: 0.25em;
-          color: rgba(220, 223, 222, 0.98);
-          display: inline-block;
-          font-weight: 400;
-          margin-bottom: 0.5em;
-          margin-right: 0.5em;
-          padding: 0.5em;
-          text-shadow: 0px 1px 0 rgba(0, 0, 0, 0.33);
-          -webkit-transition: background-color 0.33s, color 0.33s;
-          -moz-transition: background-color 0.33s, color 0.33s;
-          transition: background-color 0.33s, color 0.33s;
-          width: 15em; }
-          .site main.page .page-footer .page-actions .page-commenting a:before,
-          .site main.page .page-footer .page-actions .page-liking a:before,
-          .site main.page .page-footer .page-actions .page-sharing a:before {
-            font-family: FontAwesome;
-            margin-right: 0.5em; }
-          .site main.page .page-footer .page-actions .page-commenting a:hover,
-          .site main.page .page-footer .page-actions .page-liking a:hover,
-          .site main.page .page-footer .page-actions .page-sharing a:hover {
-            background-color: #737373;
-            color: #dcdfde;
-            border: none;
-            -webkit-transition: background-color 0.11s, color 0.11s;
-            -moz-transition: background-color 0.11s, color 0.11s;
-            transition: background-color 0.11s, color 0.11s; }
-          .site main.page .page-footer .page-actions .page-commenting a.facebook,
-          .site main.page .page-footer .page-actions .page-liking a.facebook,
-          .site main.page .page-footer .page-actions .page-sharing a.facebook {
-            background-color: #3B5998; }
-            .site main.page .page-footer .page-actions .page-commenting a.facebook:hover,
-            .site main.page .page-footer .page-actions .page-liking a.facebook:hover,
-            .site main.page .page-footer .page-actions .page-sharing a.facebook:hover {
-              background-color: #344e86; }
-          .site main.page .page-footer .page-actions .page-commenting a.google,
-          .site main.page .page-footer .page-actions .page-liking a.google,
-          .site main.page .page-footer .page-actions .page-sharing a.google {
-            background-color: #DD4B39; }
-            .site main.page .page-footer .page-actions .page-commenting a.google:hover,
-            .site main.page .page-footer .page-actions .page-liking a.google:hover,
-            .site main.page .page-footer .page-actions .page-sharing a.google:hover {
-              background-color: #d73925; }
-          .site main.page .page-footer .page-actions .page-commenting a.twitter,
-          .site main.page .page-footer .page-actions .page-liking a.twitter,
-          .site main.page .page-footer .page-actions .page-sharing a.twitter {
-            background-color: #00ACED; }
-            .site main.page .page-footer .page-actions .page-commenting a.twitter:hover,
-            .site main.page .page-footer .page-actions .page-liking a.twitter:hover,
-            .site main.page .page-footer .page-actions .page-sharing a.twitter:hover {
-              background-color: #0099d4; }
+          /*
+						background-color: lighten( $urbanrest-black, 50% );
+						border: none;
+						border-radius: 0.25em;
+						color: rgba( $urbanrest-white, 0.98 );
+						display: inline-block;
+						font-weight: 400;
+						margin-bottom: 0.5em;
+						margin-right: 0.5em;
+						padding: 0.5em;
+						text-shadow: 0px 1px 0 rgba( $urbanrest-black, 0.33 );
+						@include transition( background-color 0.33s, color 0.33s );
+						width: 15em;
+
+						&:before
+						{
+							font-family: FontAwesome;
+							margin-right: 0.5em;
+						}
+
+						&:hover
+						{
+							background-color: lighten( $urbanrest-black, 45% );
+							color: rgba( $urbanrest-white, 1.0 );
+							border: none;
+							@include transition( background-color 0.11s, color 0.11s );
+						}
+
+						&.facebook
+						{
+							background-color: $facebook-blue;
+							&:hover { background-color: darken( $facebook-blue, 5% ); }
+						}
+
+						&.google
+						{
+							background-color: $google-red;
+							&:hover { background-color: darken( $google-red, 5% ); }
+						}
+
+						&.twitter
+						{
+							background-color: $twitter-blue;
+							&:hover { background-color: darken( $twitter-blue, 5% ); }
+						}
+						*/ }
         .site main.page .page-footer .page-actions .page-commenting.page-liking a.facebook:before,
         .site main.page .page-footer .page-actions .page-liking.page-liking a.facebook:before,
         .site main.page .page-footer .page-actions .page-sharing.page-liking a.facebook:before {
@@ -8724,6 +8822,77 @@ html.javascript {
 @media (min-width: 783px) {
   .site.admin-bar #main-navigation {
     top: 32px; } }
+
+@media print {
+  body, main {
+    background: none !important;
+    font-family: 'Roboto Slab', serif !important; }
+  body {
+    box-sizing: border-box !important;
+    padding: 0 !important; }
+  .site-description,
+  .site-navigation,
+  .site-posts,
+  .site-specials,
+  .site-company,
+  .post-actions,
+  .site-footer {
+    display: none !important; }
+  main {
+    padding-bottom: 0 !important;
+    padding-top: 0 !important; }
+    main a:link:after,
+    main a:visited:after {
+      content: "[" attr(href) "]";
+      font-size: 0.6em;
+      font-style: italic;
+      font-weight: 300;
+      padding-left: 0.25em;
+      vertical-align: top; }
+    main a[href^='/']:after {
+      content: "[http://urbanrest.com" attr(href) "]"; }
+  .site-header {
+    text-align: center !important;
+    width: 100% !important; }
+  .site-title {
+    margin: 0 auto !important; }
+  .site-logo {
+    height: 1.33in !important; }
+  /*
+	.site-footer {
+		bottom: 0 !important;
+		font-size: 8pt !important;
+		position: fixed !important;
+		text-align: center !important;
+		width: 100% !important;
+
+		h2 {
+			display: none !important;
+		}
+
+		p {
+			display: inline !important;
+		}
+
+		address {
+			display: inline !important;
+			font-style: normal !important;
+
+			strong {
+				font-weight: 400 !important;
+			}
+
+			strong:after {
+				content: '' !important;
+				display: block !important;
+			}
+
+			span:not(:last-of-type):after {
+				content: ',' !important;
+			}
+		}
+	}
+	*/ }
 
 /*
 

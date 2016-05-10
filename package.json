@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "hammerjs": "^2.0.8",
+    "html5shiv": "^3.7.3",
+    "jquery-hammerjs": "^2.0.0",
     "jquery-simple-slider": "loopj/jquery-simple-slider"
   },
   "devDependencies": {

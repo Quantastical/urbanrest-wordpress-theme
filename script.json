@@ -1,6 +1,5 @@
 {
 	"script.js" : [
-		"node_modules/hammerjs/hammer.min.js",
 		"scripts/plugins/jQuery.fn.sortElements.js",
 		"scripts/plugins/jquery.urbModal.js",
 		"scripts/reset.js",

@@ -15,9 +15,12 @@
 		padding-top: 5.5em;
 		width: 100%;
 
-		a, .hyperlink
+		.page-content
 		{
-			@extend .hyperlink;
+			a
+			{
+				@extend .hyperlink;
+			}
 		}
 
 		hr
@@ -174,6 +177,7 @@
 
 					a
 					{
+						/*
 						background-color: lighten( $urbanrest-black, 50% );
 						border: none;
 						border-radius: 0.25em;
@@ -218,6 +222,7 @@
 							background-color: $twitter-blue;
 							&:hover { background-color: darken( $twitter-blue, 5% ); }
 						}
+						*/
 					}
 
 					&.page-liking a

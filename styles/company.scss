@@ -149,11 +149,9 @@
 
 					.status
 					{
-						bottom: -6.5em;
 						color: rgba( white, 0.33 );
 						font-size: 0.7em;
 						margin-bottom: 0;
-						position: absolute;
 						text-transform: uppercase;
 						width: 100%;
 
@@ -483,6 +481,7 @@
 					@include transition( height 0.666s );
 					width: 100%;
 
+					/*
 					.map-menu
 					{
 						bottom: 1.6em;
@@ -528,6 +527,7 @@
 							&.yellow-pages a { background-image: url(images/icon-yellow-pages.min.png); }
 						}
 					}
+					*/
 
 					.map-canvas
 					{
@@ -549,11 +549,13 @@
 					{
 						height: 500px;
 
+						/*
 						.map-menu
 						{
 							opacity: 1;
 							@include transition( opacity 0.33s 0.5s );
 						}
+						*/
 					}
 				}
 			}

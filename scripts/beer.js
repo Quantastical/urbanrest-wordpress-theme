@@ -34,7 +34,7 @@ jQuery(function($){
 
 	Urb.setupRatingPoll = function() {
 		Urb.$aggregateRating = $('[itemprop="aggregateRating"]');
-		Urb.$beerCheckinModal = $('.beer-checkin.modal');
+		Urb.$beerCheckinModal = $('.modal.checkin-modal');
 
 		var $ratingActions = $('<div class="rating-actions" />');
 		if( Number(Urb.$aggregateRating.data('user-rating')) > 0 ) {
@@ -160,22 +160,8 @@ jQuery(function($){
 		}
 
 		$message.text(message);
-		Urb.showModal( '.beer-checkin.modal' );
+		Urb.showModal( '.modal.checkin-modal' );
 	};
 
-	//if( Urb.$body.is('.single-beer') ) {
-		Urb.$window.on('ajaxload load', Urb.setupRatingPoll);
-		//Urb.$window.on('load', Urb.setupRatingsFrom3rdParties);
-	//}
-	/*
-	Urb.scrollToBeerContent = function() {
-		if(!Urb.$body.hasClass('home') && Urb.$window.scrollTop() == 0 && Urb.$body.hasClass('single-beer')) {
-			Urb.$window.scrollTop( $('.single-beer .beer-container').offset().top );
-		} else if( location.hash ) {
-			console.log('test');
-		}
-	};
-
-	Urb.$window.on('load', function() { setTimeout(Urb.scrollToBeerContent, 1); }); // TODO: figure out why setTimeout has to be used here
-	*/
+	Urb.$window.on('ajaxload load', Urb.setupRatingPoll);
 });
