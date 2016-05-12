@@ -7029,18 +7029,24 @@ html.javascript {
               font-weight: 200;
               text-decoration: line-through; }
               .site .site-company .site-contact .contact-form .option input + label:before {
+                border: solid 2px rgba(220, 223, 222, 0.25);
                 content: '\f05e';
+                display: inline-block;
                 float: left;
                 font-family: FontAwesome;
+                height: 1em;
+                line-height: 1em;
                 margin-right: 0.6em;
-                text-decoration: none; }
-              .site .site-company .site-contact .contact-form .option input + label:hover {
+                padding: 0.1em;
+                text-decoration: none;
+                width: 1em; }
+              .site .site-company .site-contact .contact-form .option input + label:hover:before {
                 color: #DD4B39; }
             .site .site-company .site-contact .contact-form .option input:checked + label {
               text-decoration: none; }
               .site .site-company .site-contact .contact-form .option input:checked + label:before {
                 content: ""; }
-              .site .site-company .site-contact .contact-form .option input:checked + label:hover {
+              .site .site-company .site-contact .contact-form .option input:checked + label:hover:before {
                 color: #118844; }
         .site .site-company .site-contact .contact-form .submit {
           font-size: 0.8em;

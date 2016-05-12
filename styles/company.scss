@@ -388,14 +388,20 @@
 
 								&:before
 								{
+									border: solid 2px rgba(220,223,222,0.25);
 									content: '\f05e';
+									display: inline-block;
 									float: left;
 									font-family: FontAwesome;
+									height: 1em;
+									line-height: 1em;
 									margin-right: 0.6em;
+									padding: 0.1em;
 									text-decoration: none;
+									width: 1em;
 								}
 
-								&:hover
+								&:hover:before
 								{
 									color: $google-red;
 								}
@@ -410,7 +416,7 @@
 									content: $fa-var-check;
 								}
 
-								&:hover
+								&:hover:before
 								{
 									color: $urbanrest-green;
 								}
