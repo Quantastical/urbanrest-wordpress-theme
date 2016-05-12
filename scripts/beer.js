@@ -24,10 +24,10 @@ jQuery(function($){
 				} else {
 					console.log(response);
 				}
-				
-				Urb.shareRating( $rateButton.val() );
 			}
 		});
+				
+		Urb.shareRating( $rateButton.val() );
 
 		return false;
 	};

@@ -28,6 +28,8 @@ jQuery( function( $ ) {
 	Urb.loadPage = function(slug) {
 		var $currentPage = $('main');
 		//var $nextPage = $('<main class="page loading row around-xs"><span class="loading text">Loading<span class="dot"></span><span class="dot"></span><span class="dot"></span></span></main>');
+
+		Urb.$body.removeClass('no-scroll');
 		
 		// Homepage
 		if(slug === '/' || slug === '') {

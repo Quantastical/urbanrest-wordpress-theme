@@ -5292,7 +5292,7 @@ html.javascript {
   .btn .btn-content {
     display: none; }
 
-.hyperlink, .site main.event a, .site main.event .hyperlink, .site main.page .page-content a, .site main.post a, .site main.post .hyperlink, .site main.posts a, .site main.posts .hyperlink, .site main.taxonomy a, .site main.taxonomy .hyperlink, .site main.user a, .site main.user .hyperlink {
+.hyperlink, .site main.event a, .site main.event .hyperlink, .site main.page .page-content a, .site main.posts a, .site main.posts .hyperlink, .site main.taxonomy a, .site main.taxonomy .hyperlink, .site main.user a, .site main.user .hyperlink {
   border-bottom-width: 1pt;
   border-bottom-color: transparent;
   border-bottom-style: solid;
@@ -5304,16 +5304,16 @@ html.javascript {
   -webkit-transition: border-bottom 0.33s;
   -moz-transition: border-bottom 0.33s;
   transition: border-bottom 0.33s; }
-  .hyperlink:hover, .site main.event a:hover, .site main.event .hyperlink:hover, .site main.page .page-content a:hover, .site main.post a:hover, .site main.post .hyperlink:hover, .site main.posts a:hover, .site main.posts .hyperlink:hover, .site main.taxonomy a:hover, .site main.taxonomy .hyperlink:hover, .site main.user a:hover, .site main.user .hyperlink:hover {
+  .hyperlink:hover, .site main.event a:hover, .site main.event .hyperlink:hover, .site main.page .page-content a:hover, .site main.posts a:hover, .site main.posts .hyperlink:hover, .site main.taxonomy a:hover, .site main.taxonomy .hyperlink:hover, .site main.user a:hover, .site main.user .hyperlink:hover {
     /*border-bottom-color: lighten( $urbanrest-green, 5% );*/
     color: #149f4f; }
-  .hyperlink:focus, .site main.event a:focus, .site main.event .hyperlink:focus, .site main.page .page-content a:focus, .site main.post a:focus, .site main.post .hyperlink:focus, .site main.posts a:focus, .site main.posts .hyperlink:focus, .site main.taxonomy a:focus, .site main.taxonomy .hyperlink:focus, .site main.user a:focus, .site main.user .hyperlink:focus {
+  .hyperlink:focus, .site main.event a:focus, .site main.event .hyperlink:focus, .site main.page .page-content a:focus, .site main.posts a:focus, .site main.posts .hyperlink:focus, .site main.taxonomy a:focus, .site main.taxonomy .hyperlink:focus, .site main.user a:focus, .site main.user .hyperlink:focus {
     animation-duration: 3s;
     animation-name: flash;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
     outline: none; }
-  .hyperlink [rel="external"]:after, .site main.event a [rel="external"]:after, .site main.event .hyperlink [rel="external"]:after, .site main.page .page-content a [rel="external"]:after, .site main.post a [rel="external"]:after, .site main.post .hyperlink [rel="external"]:after, .site main.posts a [rel="external"]:after, .site main.posts .hyperlink [rel="external"]:after, .site main.taxonomy a [rel="external"]:after, .site main.taxonomy .hyperlink [rel="external"]:after, .site main.user a [rel="external"]:after, .site main.user .hyperlink [rel="external"]:after {
+  .hyperlink [rel="external"]:after, .site main.event a [rel="external"]:after, .site main.event .hyperlink [rel="external"]:after, .site main.page .page-content a [rel="external"]:after, .site main.posts a [rel="external"]:after, .site main.posts .hyperlink [rel="external"]:after, .site main.taxonomy a [rel="external"]:after, .site main.taxonomy .hyperlink [rel="external"]:after, .site main.user a [rel="external"]:after, .site main.user .hyperlink [rel="external"]:after {
     background-color: transparent;
     border: none;
     border-radius: 0.18em;
@@ -5332,7 +5332,7 @@ html.javascript {
     -moz-transition: all 0.5s;
     transition: all 0.5s;
     width: 0; }
-  .hyperlink [rel="external"]:hover:after, .site main.event a [rel="external"]:hover:after, .site main.page .page-content a [rel="external"]:hover:after, .site main.post a [rel="external"]:hover:after, .site main.posts a [rel="external"]:hover:after, .site main.taxonomy a [rel="external"]:hover:after, .site main.user a [rel="external"]:hover:after {
+  .hyperlink [rel="external"]:hover:after, .site main.event a [rel="external"]:hover:after, .site main.page .page-content a [rel="external"]:hover:after, .site main.posts a [rel="external"]:hover:after, .site main.taxonomy a [rel="external"]:hover:after, .site main.user a [rel="external"]:hover:after {
     background-color: white;
     height: 0.84em;
     opacity: 1;
@@ -5886,7 +5886,7 @@ html.javascript {
     .page .search-submit .btn-label {
       display: none; } }
 
-.share, .site main.beer .beer-footer .beer-actions .beer-share {
+.share, .site main.beer .beer-footer .beer-actions .beer-share, .site main.page .page-footer .page-actions .page-share, .site main.post .post-footer .post-actions .post-share {
   background: none;
   border: none;
   display: inline-block;
@@ -5894,20 +5894,20 @@ html.javascript {
   font-weight: 400;
   margin-right: 1em;
   text-align: center; }
-  .share:before, .site main.beer .beer-footer .beer-actions .beer-share:before {
+  .share:before, .site main.beer .beer-footer .beer-actions .beer-share:before, .site main.page .page-footer .page-actions .page-share:before, .site main.post .post-footer .post-actions .post-share:before {
     font-family: FontAwesome;
     margin-right: 0.5em; }
-  .share.share:before, .site main.beer .beer-footer .beer-actions .beer-share:before {
+  .share.share:before, .site main.beer .beer-footer .beer-actions .beer-share:before, .site main.page .page-footer .page-actions .page-share:before, .site main.post .post-footer .post-actions .post-share:before {
     content: ""; }
-  .share:hover, .site main.beer .beer-footer .beer-actions .beer-share:hover {
+  .share:hover, .site main.beer .beer-footer .beer-actions .beer-share:hover, .site main.page .page-footer .page-actions .page-share:hover, .site main.post .post-footer .post-actions .post-share:hover {
     border: none; }
-  .share:last-of-type, .site main.beer .beer-footer .beer-actions .beer-share:last-of-type {
+  .share:last-of-type, .site main.beer .beer-footer .beer-actions .beer-share:last-of-type, .site main.page .page-footer .page-actions .page-share:last-of-type, .site main.post .post-footer .post-actions .post-share:last-of-type {
     margin-right: 0; }
-  .share .share-count, .site main.beer .beer-footer .beer-actions .beer-share .share-count {
+  .share .share-count, .site main.beer .beer-footer .beer-actions .beer-share .share-count, .site main.page .page-footer .page-actions .page-share .share-count, .site main.post .post-footer .post-actions .post-share .share-count {
     margin-left: 0.5em; }
-    .share .share-count:before, .site main.beer .beer-footer .beer-actions .beer-share .share-count:before {
+    .share .share-count:before, .site main.beer .beer-footer .beer-actions .beer-share .share-count:before, .site main.page .page-footer .page-actions .page-share .share-count:before, .site main.post .post-footer .post-actions .post-share .share-count:before {
       content: '('; }
-    .share .share-count:after, .site main.beer .beer-footer .beer-actions .beer-share .share-count:after {
+    .share .share-count:after, .site main.beer .beer-footer .beer-actions .beer-share .share-count:after, .site main.page .page-footer .page-actions .page-share .share-count:after, .site main.post .post-footer .post-actions .post-share .share-count:after {
       content: ')'; }
 
 .sharing {
@@ -7963,162 +7963,6 @@ html.javascript {
       display: none; }
     .site main.page .page-footer .page-actions {
       text-align: center; }
-      .site main.page .page-footer .page-actions .page-comments,
-      .site main.page .page-footer .page-actions .page-like,
-      .site main.page .page-footer .page-actions .page-share {
-        background: none;
-        border: none;
-        display: inline-block;
-        font-size: 1em;
-        font-weight: 400;
-        margin-right: 1em;
-        text-align: center; }
-        .site main.page .page-footer .page-actions .page-comments:before,
-        .site main.page .page-footer .page-actions .page-like:before,
-        .site main.page .page-footer .page-actions .page-share:before {
-          font-family: FontAwesome;
-          margin-right: 0.5em; }
-        .site main.page .page-footer .page-actions .page-comments.page-comments:before,
-        .site main.page .page-footer .page-actions .page-like.page-comments:before,
-        .site main.page .page-footer .page-actions .page-share.page-comments:before {
-          content: ""; }
-        .site main.page .page-footer .page-actions .page-comments.page-like:before,
-        .site main.page .page-footer .page-actions .page-like.page-like:before,
-        .site main.page .page-footer .page-actions .page-share.page-like:before {
-          content: ""; }
-        .site main.page .page-footer .page-actions .page-comments.page-share:before,
-        .site main.page .page-footer .page-actions .page-like.page-share:before,
-        .site main.page .page-footer .page-actions .page-share.page-share:before {
-          content: ""; }
-        .site main.page .page-footer .page-actions .page-comments:hover,
-        .site main.page .page-footer .page-actions .page-like:hover,
-        .site main.page .page-footer .page-actions .page-share:hover {
-          border: none; }
-        .site main.page .page-footer .page-actions .page-comments:last-of-type,
-        .site main.page .page-footer .page-actions .page-like:last-of-type,
-        .site main.page .page-footer .page-actions .page-share:last-of-type {
-          margin-right: 0; }
-        .site main.page .page-footer .page-actions .page-comments .comment-count,
-        .site main.page .page-footer .page-actions .page-comments .like-count,
-        .site main.page .page-footer .page-actions .page-comments .share-count,
-        .site main.page .page-footer .page-actions .page-like .comment-count,
-        .site main.page .page-footer .page-actions .page-like .like-count,
-        .site main.page .page-footer .page-actions .page-like .share-count,
-        .site main.page .page-footer .page-actions .page-share .comment-count,
-        .site main.page .page-footer .page-actions .page-share .like-count,
-        .site main.page .page-footer .page-actions .page-share .share-count {
-          margin-left: 0.5em; }
-          .site main.page .page-footer .page-actions .page-comments .comment-count:before,
-          .site main.page .page-footer .page-actions .page-comments .like-count:before,
-          .site main.page .page-footer .page-actions .page-comments .share-count:before,
-          .site main.page .page-footer .page-actions .page-like .comment-count:before,
-          .site main.page .page-footer .page-actions .page-like .like-count:before,
-          .site main.page .page-footer .page-actions .page-like .share-count:before,
-          .site main.page .page-footer .page-actions .page-share .comment-count:before,
-          .site main.page .page-footer .page-actions .page-share .like-count:before,
-          .site main.page .page-footer .page-actions .page-share .share-count:before {
-            content: '('; }
-          .site main.page .page-footer .page-actions .page-comments .comment-count:after,
-          .site main.page .page-footer .page-actions .page-comments .like-count:after,
-          .site main.page .page-footer .page-actions .page-comments .share-count:after,
-          .site main.page .page-footer .page-actions .page-like .comment-count:after,
-          .site main.page .page-footer .page-actions .page-like .like-count:after,
-          .site main.page .page-footer .page-actions .page-like .share-count:after,
-          .site main.page .page-footer .page-actions .page-share .comment-count:after,
-          .site main.page .page-footer .page-actions .page-share .like-count:after,
-          .site main.page .page-footer .page-actions .page-share .share-count:after {
-            content: ')'; }
-      .site main.page .page-footer .page-actions .page-commenting,
-      .site main.page .page-footer .page-actions .page-liking,
-      .site main.page .page-footer .page-actions .page-sharing {
-        list-style: none;
-        padding: 0;
-        text-align: center; }
-        .site main.page .page-footer .page-actions .page-commenting a,
-        .site main.page .page-footer .page-actions .page-liking a,
-        .site main.page .page-footer .page-actions .page-sharing a {
-          /*
-						background-color: lighten( $urbanrest-black, 50% );
-						border: none;
-						border-radius: 0.25em;
-						color: rgba( $urbanrest-white, 0.98 );
-						display: inline-block;
-						font-weight: 400;
-						margin-bottom: 0.5em;
-						margin-right: 0.5em;
-						padding: 0.5em;
-						text-shadow: 0px 1px 0 rgba( $urbanrest-black, 0.33 );
-						@include transition( background-color 0.33s, color 0.33s );
-						width: 15em;
-
-						&:before
-						{
-							font-family: FontAwesome;
-							margin-right: 0.5em;
-						}
-
-						&:hover
-						{
-							background-color: lighten( $urbanrest-black, 45% );
-							color: rgba( $urbanrest-white, 1.0 );
-							border: none;
-							@include transition( background-color 0.11s, color 0.11s );
-						}
-
-						&.facebook
-						{
-							background-color: $facebook-blue;
-							&:hover { background-color: darken( $facebook-blue, 5% ); }
-						}
-
-						&.google
-						{
-							background-color: $google-red;
-							&:hover { background-color: darken( $google-red, 5% ); }
-						}
-
-						&.twitter
-						{
-							background-color: $twitter-blue;
-							&:hover { background-color: darken( $twitter-blue, 5% ); }
-						}
-						*/ }
-        .site main.page .page-footer .page-actions .page-commenting.page-liking a.facebook:before,
-        .site main.page .page-footer .page-actions .page-liking.page-liking a.facebook:before,
-        .site main.page .page-footer .page-actions .page-sharing.page-liking a.facebook:before {
-          content: ""; }
-        .site main.page .page-footer .page-actions .page-commenting.page-liking a.twitter:before,
-        .site main.page .page-footer .page-actions .page-liking.page-liking a.twitter:before,
-        .site main.page .page-footer .page-actions .page-sharing.page-liking a.twitter:before {
-          content: ""; }
-        .site main.page .page-footer .page-actions .page-commenting.page-sharing a.email:before,
-        .site main.page .page-footer .page-actions .page-liking.page-sharing a.email:before,
-        .site main.page .page-footer .page-actions .page-sharing.page-sharing a.email:before {
-          content: ""; }
-        .site main.page .page-footer .page-actions .page-commenting.page-sharing a.facebook:before,
-        .site main.page .page-footer .page-actions .page-liking.page-sharing a.facebook:before,
-        .site main.page .page-footer .page-actions .page-sharing.page-sharing a.facebook:before {
-          content: ""; }
-        .site main.page .page-footer .page-actions .page-commenting.page-sharing a.google:before,
-        .site main.page .page-footer .page-actions .page-liking.page-sharing a.google:before,
-        .site main.page .page-footer .page-actions .page-sharing.page-sharing a.google:before {
-          content: ""; }
-        .site main.page .page-footer .page-actions .page-commenting.page-sharing a.twitter:before,
-        .site main.page .page-footer .page-actions .page-liking.page-sharing a.twitter:before,
-        .site main.page .page-footer .page-actions .page-sharing.page-sharing a.twitter:before {
-          content: ""; }
-      .site main.page .page-footer .page-actions .page-sharing .shortlink {
-        background: black;
-        border: dotted 1px white;
-        border-radius: 0.25em;
-        color: white;
-        font-size: 1em;
-        margin: 1em;
-        padding: 0.5em;
-        text-align: center;
-        width: 15em; }
-        .site main.page .page-footer .page-actions .page-sharing .shortlink:focus {
-          outline: none; }
     .site main.page .page-footer .page-tags {
       list-style: none;
       margin: 3em 0;
@@ -8306,168 +8150,6 @@ html.javascript {
       display: none; }
     .site main.post .post-footer .post-actions {
       text-align: center; }
-      .site main.post .post-footer .post-actions .post-comments,
-      .site main.post .post-footer .post-actions .post-like,
-      .site main.post .post-footer .post-actions .post-share {
-        background: none;
-        border: none;
-        display: inline-block;
-        font-size: 1em;
-        font-weight: 400;
-        margin-right: 1em;
-        text-align: center; }
-        .site main.post .post-footer .post-actions .post-comments:before,
-        .site main.post .post-footer .post-actions .post-like:before,
-        .site main.post .post-footer .post-actions .post-share:before {
-          font-family: FontAwesome;
-          margin-right: 0.5em; }
-        .site main.post .post-footer .post-actions .post-comments.post-comments:before,
-        .site main.post .post-footer .post-actions .post-like.post-comments:before,
-        .site main.post .post-footer .post-actions .post-share.post-comments:before {
-          content: ""; }
-        .site main.post .post-footer .post-actions .post-comments.post-like:before,
-        .site main.post .post-footer .post-actions .post-like.post-like:before,
-        .site main.post .post-footer .post-actions .post-share.post-like:before {
-          content: ""; }
-        .site main.post .post-footer .post-actions .post-comments.post-share:before,
-        .site main.post .post-footer .post-actions .post-like.post-share:before,
-        .site main.post .post-footer .post-actions .post-share.post-share:before {
-          content: ""; }
-        .site main.post .post-footer .post-actions .post-comments:hover,
-        .site main.post .post-footer .post-actions .post-like:hover,
-        .site main.post .post-footer .post-actions .post-share:hover {
-          border: none; }
-        .site main.post .post-footer .post-actions .post-comments:last-of-type,
-        .site main.post .post-footer .post-actions .post-like:last-of-type,
-        .site main.post .post-footer .post-actions .post-share:last-of-type {
-          margin-right: 0; }
-        .site main.post .post-footer .post-actions .post-comments .comment-count,
-        .site main.post .post-footer .post-actions .post-comments .like-count,
-        .site main.post .post-footer .post-actions .post-comments .share-count,
-        .site main.post .post-footer .post-actions .post-like .comment-count,
-        .site main.post .post-footer .post-actions .post-like .like-count,
-        .site main.post .post-footer .post-actions .post-like .share-count,
-        .site main.post .post-footer .post-actions .post-share .comment-count,
-        .site main.post .post-footer .post-actions .post-share .like-count,
-        .site main.post .post-footer .post-actions .post-share .share-count {
-          margin-left: 0.5em; }
-          .site main.post .post-footer .post-actions .post-comments .comment-count:before,
-          .site main.post .post-footer .post-actions .post-comments .like-count:before,
-          .site main.post .post-footer .post-actions .post-comments .share-count:before,
-          .site main.post .post-footer .post-actions .post-like .comment-count:before,
-          .site main.post .post-footer .post-actions .post-like .like-count:before,
-          .site main.post .post-footer .post-actions .post-like .share-count:before,
-          .site main.post .post-footer .post-actions .post-share .comment-count:before,
-          .site main.post .post-footer .post-actions .post-share .like-count:before,
-          .site main.post .post-footer .post-actions .post-share .share-count:before {
-            content: '('; }
-          .site main.post .post-footer .post-actions .post-comments .comment-count:after,
-          .site main.post .post-footer .post-actions .post-comments .like-count:after,
-          .site main.post .post-footer .post-actions .post-comments .share-count:after,
-          .site main.post .post-footer .post-actions .post-like .comment-count:after,
-          .site main.post .post-footer .post-actions .post-like .like-count:after,
-          .site main.post .post-footer .post-actions .post-like .share-count:after,
-          .site main.post .post-footer .post-actions .post-share .comment-count:after,
-          .site main.post .post-footer .post-actions .post-share .like-count:after,
-          .site main.post .post-footer .post-actions .post-share .share-count:after {
-            content: ')'; }
-      .site main.post .post-footer .post-actions .post-commenting,
-      .site main.post .post-footer .post-actions .post-liking,
-      .site main.post .post-footer .post-actions .post-sharing {
-        list-style: none;
-        padding: 0;
-        text-align: center; }
-        .site main.post .post-footer .post-actions .post-commenting a,
-        .site main.post .post-footer .post-actions .post-liking a,
-        .site main.post .post-footer .post-actions .post-sharing a {
-          background-color: gray;
-          border: none;
-          border-radius: 0.25em;
-          color: rgba(220, 223, 222, 0.98);
-          display: inline-block;
-          font-weight: 400;
-          margin-bottom: 0.5em;
-          margin-right: 0.5em;
-          padding: 0.5em;
-          text-shadow: 0px 1px 0 rgba(0, 0, 0, 0.33);
-          -webkit-transition: background-color 0.33s, color 0.33s;
-          -moz-transition: background-color 0.33s, color 0.33s;
-          transition: background-color 0.33s, color 0.33s;
-          width: 15em; }
-          .site main.post .post-footer .post-actions .post-commenting a:before,
-          .site main.post .post-footer .post-actions .post-liking a:before,
-          .site main.post .post-footer .post-actions .post-sharing a:before {
-            font-family: FontAwesome;
-            margin-right: 0.5em; }
-          .site main.post .post-footer .post-actions .post-commenting a:hover,
-          .site main.post .post-footer .post-actions .post-liking a:hover,
-          .site main.post .post-footer .post-actions .post-sharing a:hover {
-            background-color: #737373;
-            color: #dcdfde;
-            border: none;
-            -webkit-transition: background-color 0.11s, color 0.11s;
-            -moz-transition: background-color 0.11s, color 0.11s;
-            transition: background-color 0.11s, color 0.11s; }
-          .site main.post .post-footer .post-actions .post-commenting a.facebook,
-          .site main.post .post-footer .post-actions .post-liking a.facebook,
-          .site main.post .post-footer .post-actions .post-sharing a.facebook {
-            background-color: #3B5998; }
-            .site main.post .post-footer .post-actions .post-commenting a.facebook:hover,
-            .site main.post .post-footer .post-actions .post-liking a.facebook:hover,
-            .site main.post .post-footer .post-actions .post-sharing a.facebook:hover {
-              background-color: #344e86; }
-          .site main.post .post-footer .post-actions .post-commenting a.google,
-          .site main.post .post-footer .post-actions .post-liking a.google,
-          .site main.post .post-footer .post-actions .post-sharing a.google {
-            background-color: #DD4B39; }
-            .site main.post .post-footer .post-actions .post-commenting a.google:hover,
-            .site main.post .post-footer .post-actions .post-liking a.google:hover,
-            .site main.post .post-footer .post-actions .post-sharing a.google:hover {
-              background-color: #d73925; }
-          .site main.post .post-footer .post-actions .post-commenting a.twitter,
-          .site main.post .post-footer .post-actions .post-liking a.twitter,
-          .site main.post .post-footer .post-actions .post-sharing a.twitter {
-            background-color: #00ACED; }
-            .site main.post .post-footer .post-actions .post-commenting a.twitter:hover,
-            .site main.post .post-footer .post-actions .post-liking a.twitter:hover,
-            .site main.post .post-footer .post-actions .post-sharing a.twitter:hover {
-              background-color: #0099d4; }
-        .site main.post .post-footer .post-actions .post-commenting.post-liking a.facebook:before,
-        .site main.post .post-footer .post-actions .post-liking.post-liking a.facebook:before,
-        .site main.post .post-footer .post-actions .post-sharing.post-liking a.facebook:before {
-          content: ""; }
-        .site main.post .post-footer .post-actions .post-commenting.post-liking a.twitter:before,
-        .site main.post .post-footer .post-actions .post-liking.post-liking a.twitter:before,
-        .site main.post .post-footer .post-actions .post-sharing.post-liking a.twitter:before {
-          content: ""; }
-        .site main.post .post-footer .post-actions .post-commenting.post-sharing a.email:before,
-        .site main.post .post-footer .post-actions .post-liking.post-sharing a.email:before,
-        .site main.post .post-footer .post-actions .post-sharing.post-sharing a.email:before {
-          content: ""; }
-        .site main.post .post-footer .post-actions .post-commenting.post-sharing a.facebook:before,
-        .site main.post .post-footer .post-actions .post-liking.post-sharing a.facebook:before,
-        .site main.post .post-footer .post-actions .post-sharing.post-sharing a.facebook:before {
-          content: ""; }
-        .site main.post .post-footer .post-actions .post-commenting.post-sharing a.google:before,
-        .site main.post .post-footer .post-actions .post-liking.post-sharing a.google:before,
-        .site main.post .post-footer .post-actions .post-sharing.post-sharing a.google:before {
-          content: ""; }
-        .site main.post .post-footer .post-actions .post-commenting.post-sharing a.twitter:before,
-        .site main.post .post-footer .post-actions .post-liking.post-sharing a.twitter:before,
-        .site main.post .post-footer .post-actions .post-sharing.post-sharing a.twitter:before {
-          content: ""; }
-      .site main.post .post-footer .post-actions .post-sharing .shortlink {
-        background: black;
-        border: dotted 1px white;
-        border-radius: 0.25em;
-        color: white;
-        font-size: 1em;
-        margin: 1em;
-        padding: 0.5em;
-        text-align: center;
-        width: 15em; }
-        .site main.post .post-footer .post-actions .post-sharing .shortlink:focus {
-          outline: none; }
     .site main.post .post-footer .post-tags {
       list-style: none;
       margin: 3em 0;

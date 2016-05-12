@@ -105,7 +105,7 @@ jQuery.fn.sortElements = function() {
         }
     }, Urb.loadPage = function(a) {
         var o = t("main");
-        if ("/" === a || "" === a) {
+        if (Urb.$body.removeClass("no-scroll"), "/" === a || "" === a) {
             var r = 0, n = Math.round(500 * (Math.abs(Urb.$window.scrollTop() - r) / Urb.$window.height()));
             return t("html,body").animate({
                 scrollTop: r
@@ -515,10 +515,9 @@ jQuery.fn.sortElements = function() {
             },
             dataType: "json",
             success: function(t) {
-                t.success ? Urb.$aggregateRating.attr("data-user-rating", a.val()) : console.log(t), 
-                Urb.shareRating(a.val());
+                t.success ? Urb.$aggregateRating.attr("data-user-rating", a.val()) : console.log(t);
             }
-        }), !1;
+        }), Urb.shareRating(a.val()), !1;
     }, Urb.setupRatingPoll = function() {
         Urb.$aggregateRating = t('[itemprop="aggregateRating"]'), Urb.$beerCheckinModal = t(".modal.checkin-modal");
         var e = t('<div class="rating-actions" />');

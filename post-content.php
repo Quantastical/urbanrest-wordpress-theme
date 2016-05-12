@@ -1,4 +1,4 @@
-			<div class="post-content">
+			<div class="page-content post-content">
 				<?php
 					/* translators: %s: Name of current post */
 					the_content( sprintf(
