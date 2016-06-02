@@ -130,6 +130,7 @@ jQuery( function( $ ) {
 						}, timeout);
 						timeout += 213;
 					});
+					$('#qr-code').html('.page-footer:after {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=https://' + encodeURIComponent(window.location.host + slug) + ');}}');
 				} else {
 					console.log(response.data);
 				}

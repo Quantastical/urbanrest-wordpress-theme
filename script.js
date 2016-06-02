@@ -151,15 +151,15 @@ jQuery.fn.sortElements = function() {
             dataType: "json",
             success: function(e) {
                 if (e.success) {
-                    var a = t(e.data);
-                    o.replaceWith(a), Urb.$window.trigger("ajaxload");
-                    var r = 0;
-                    t(".page-header > *, .page-content > *, .page-footer > *, .post-header > *, .post-content > *, .post-footer > *", a).each(function() {
+                    var r = t(e.data);
+                    o.replaceWith(r), Urb.$window.trigger("ajaxload");
+                    var n = 0;
+                    t(".page-header > *, .page-content > *, .page-footer > *, .post-header > *, .post-content > *, .post-footer > *", r).each(function() {
                         var e = t(this);
                         e.hide(), setTimeout(function() {
                             e.fadeIn(250);
-                        }, r), r += 213;
-                    });
+                        }, n), n += 213;
+                    }), t("#qr-code").html(".page-footer:after {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=https://" + encodeURIComponent(window.location.host + a) + ");}}");
                 } else console.log(e.data);
             }
         });

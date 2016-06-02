@@ -41,6 +41,7 @@
 <?php echo urb_get_fonts_for_preloading(); ?>
 		</div>
 
+		<style id="qr-code" type="text/css" media="print">.page-footer:after {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=<?php urlencode(the_permalink()); ?>);}}</style>
 		<?php wp_footer(); ?>
 	</body>
 </html>

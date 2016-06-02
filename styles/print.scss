@@ -23,12 +23,13 @@
 		padding-top: 0 !important;
 
 		a:link:after,
-		a:visited:after { 
+		a:visited:after {
 			content: '[' attr(href) ']';
 			font-size: 0.6em;
 			font-style: italic;
 			font-weight: 300;
 			padding-left: 0.25em;
+			text-decoration: none;
 			vertical-align: top;
 		}
 
@@ -50,6 +51,20 @@
 
 	.site-logo {
 		height: 1.33in !important;
+	}
+
+	.page-footer {
+		.page-share {
+			display: none !important;
+		}
+	
+		&:after {
+			content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=https%3A%2F%2Furbanrest.com);
+			display: block;
+			height: 200px;
+			margin: 0 auto;
+			width: 200px;
+		}
 	}
 
 	/*

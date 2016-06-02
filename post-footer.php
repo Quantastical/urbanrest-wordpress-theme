@@ -12,7 +12,7 @@
 					</ul>
 					-->
 
-					<button class="post-share hyperlink" data-action="modal" data-target=".modal.share-modal" type="button">Share this page</button>
+					<button class="page-share post-share hyperlink" data-action="modal" data-target=".modal.share-modal" type="button">Share this page</button>
 					<div class="modal share-modal animated fadeIn">
 						<input class="shortlink" type="text" value="<?php echo wp_get_shortlink(); ?>" onfocus="this.select();" />
 						<h5 class="menu-title">Share this page on your favorite social network.</h5>
