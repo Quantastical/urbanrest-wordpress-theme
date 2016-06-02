@@ -5561,8 +5561,8 @@ html.javascript {
 @media only screen {
       .site .site-header .site-navigation .page-navigation .navbar .menu-item {
         display: inline-block;
-        line-height: 2.3em;
-        vertical-align: middle; } }
+        line-height: 90px;
+        vertical-align: top; } }
       @media only screen and (min-width: 501px) {
         .site .site-header .site-navigation .page-navigation .navbar .menu-item {
           margin: 0 0.5em; } }
@@ -5595,40 +5595,48 @@ html.javascript {
           display: block;
           font-size: 0;
           opacity: 0; }
-        .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a {
-          background-color: transparent;
-          border: none;
-          border-radius: 2pt;
-          color: white;
-          font-family: 'Roboto';
-          font-size: 1em;
-          font-weight: 300;
-          padding: 0.25em;
-          text-decoration: none;
-          text-transform: uppercase;
-          -webkit-transition: background-color 0.33s ease-in-out, color 0.33s ease-in-out;
-          -moz-transition: background-color 0.33s ease-in-out, color 0.33s ease-in-out;
-          transition: background-color 0.33s ease-in-out, color 0.33s ease-in-out;
-          vertical-align: middle; }
-          .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a:hover {
-            border: none; }
-          .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a:focus {
-            -webkit-animation: mainMenuItemFocus 3s infinite;
-            -moz-animation: mainMenuItemFocus 3s infinite;
-            animation: mainMenuItemFocus 3s infinite;
-            box-shadow: 0 0 0 3pt rgba(255, 255, 255, 0.5);
-            outline: none; }
-          .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a[href="#beer"] {
-            padding: 0.25em 1em; }
-          .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a[href="#coming-soon"] {
-            cursor: default;
-            opacity: 0.33; }
-          .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a:not([href="#coming-soon"]):focus, .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a:not([href="#coming-soon"]):hover, .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a:not([href="#coming-soon"]).active {
-            background-color: gold;
-            color: black;
-            -webkit-transition: background-color 0.11s ease-in-out, color 0.11s ease-in-out;
-            -moz-transition: background-color 0.11s ease-in-out, color 0.11s ease-in-out;
-            transition: background-color 0.11s ease-in-out, color 0.11s ease-in-out; }
+        .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) {
+          display: inline-block;
+          line-height: 90px;
+          vertical-align: top; }
+          .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a {
+            background-color: transparent;
+            border: none;
+            border-radius: 2pt;
+            box-sizing: border-box;
+            color: white;
+            display: inline-block;
+            font-family: 'Roboto';
+            font-size: 1em;
+            font-weight: 300;
+            height: 48px;
+            line-height: 48px;
+            padding: 0 15px;
+            text-decoration: none;
+            text-transform: uppercase;
+            -webkit-transition: background-color 0.33s ease-in-out, color 0.33s ease-in-out;
+            -moz-transition: background-color 0.33s ease-in-out, color 0.33s ease-in-out;
+            transition: background-color 0.33s ease-in-out, color 0.33s ease-in-out;
+            vertical-align: middle; }
+            .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a:hover {
+              border: none; }
+            .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a:focus {
+              -webkit-animation: mainMenuItemFocus 3s infinite;
+              -moz-animation: mainMenuItemFocus 3s infinite;
+              animation: mainMenuItemFocus 3s infinite;
+              box-shadow: 0 0 0 3pt rgba(255, 255, 255, 0.5);
+              outline: none; }
+            .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a[href="#beer"] {
+              padding: 0 35px; }
+            .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a[href="#coming-soon"] {
+              cursor: default;
+              opacity: 0.33; }
+            .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a:not([href="#coming-soon"]):focus, .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a:not([href="#coming-soon"]):hover, .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a:not([href="#coming-soon"]).active {
+              background-color: gold;
+              color: black;
+              -webkit-transition: background-color 0.11s ease-in-out, color 0.11s ease-in-out;
+              -moz-transition: background-color 0.11s ease-in-out, color 0.11s ease-in-out;
+              transition: background-color 0.11s ease-in-out, color 0.11s ease-in-out; }
         .site .site-header .site-navigation .page-navigation .navbar .menu-item.main-menu [href="#main-menu"] {
           display: none; }
         .site .site-header .site-navigation .page-navigation .navbar .menu-item.main-menu #menu-toggle {
@@ -5637,7 +5645,7 @@ html.javascript {
           box-sizing: border-box;
           cursor: pointer;
           height: 50px;
-          margin: 25px auto;
+          margin: 20px auto;
           overflow: hidden;
           position: relative;
           -webkit-transition: background-color 0.33s ease-in-out;
@@ -5719,22 +5727,21 @@ html.javascript {
           font-size: 16px;
           font-weight: 300;
           height: 50px;
-          line-height: 42px;
           margin: 20px auto;
-          padding: 5px;
+          padding: 0 5px;
           text-align: center;
           text-overflow: ellipsis;
           text-transform: uppercase;
           white-space: nowrap; }
+          .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a[href="#beer"] {
+            padding: 0 15px; }
         .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home).main-menu #menu-toggle {
           margin: 20px auto; }
         .site .site-header .site-navigation .page-navigation .navbar .menu-item.divider {
           height: 0; } }
       @media only screen and (min-width: 769px) {
-        .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) {
-          line-height: 5em; }
-          .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a {
-            font-size: 1.5em; }
+        .site .site-header .site-navigation .page-navigation .navbar .menu-item:not(.home) a {
+          font-size: 29px; }
         .site .site-header .site-navigation .page-navigation .navbar .menu-item.divider {
           display: none; } }
 
@@ -6973,8 +6980,10 @@ html.javascript {
               transition: color 0.33s ease-in-out; }
             .site .site-company .site-contact .contact-form .field input#contact_message,
             .site .site-company .site-contact .contact-form .field textarea#contact_message {
+              -ms-overflow-style: none;
               display: block;
               height: 5.65em;
+              overflow: auto;
               resize: none;
               -webkit-transition: height 0.25s;
               -moz-transition: height 0.25s;

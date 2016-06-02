@@ -314,8 +314,10 @@
 
 							&#contact_message
 							{
+								-ms-overflow-style: none;
 								display: block;
 								height: 5.65em;
+								overflow: auto;
 								resize: none;
 								@include transition( height 0.25s );
 

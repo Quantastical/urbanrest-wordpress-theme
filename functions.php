@@ -218,11 +218,11 @@ endif;
 if( !function_exists( 'urbanrest_enqueue_scripts' ) ) :
 	function urbanrest_enqueue_scripts() {
 		// Add styles
-		wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/style.min.css', false, '1.2' );
+		wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/style.min.css', false, false );
 
 		// Add scripts
 		wp_enqueue_script('jquery', '//code.jquery.com/jquery-1.11.3.min.js', array(), false, true);
-		wp_enqueue_script('site', get_stylesheet_directory_uri() . '/script.min.js', array('jquery'), '1.2', true);
+		wp_enqueue_script('site', get_stylesheet_directory_uri() . '/script.min.js', array('jquery'), false, true);
 
 		wp_enqueue_script( 'html5shiv', get_stylesheet_directory_uri() . '/node_modules/html5shiv/dist/html5shiv.min.js' );
 		wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
