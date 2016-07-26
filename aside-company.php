@@ -28,7 +28,7 @@ $currentTime = DateTime::createFromFormat('H:i', date('H:i'));
 $startTime = DateTime::createFromFormat('H:i', $start ? $start : '00:00');
 $endTime = DateTime::createFromFormat('H:i', $end ? $end : '23:59');
 ?>
-<?php 	if( $currentTime > $startTime  && $currentTime < $endTime ) : ?>
+<?php 	if( strlen($start) && strlen($end) && $currentTime > $startTime && $currentTime < $endTime ) : ?>
 				<em class="open">Open</em>
 <?php 	else : ?>
 				<em class="closed">Closed</em>

@@ -223,6 +223,11 @@
 							{
 								[href="#main-menu"] { display: none; }
 
+								@include media('<=phone')
+								{
+									margin-right: 0.5em;
+								}
+
 								#menu-toggle
 								{
 									background-color: transparent;
@@ -247,7 +252,7 @@
 										border-radius: 1px;
 										box-sizing: border-box;
 										display: block;
-										@include transition( 0.125s ease-in-out, background-color 0.33s ease-in-out );
+										@include transition( 0.06s ease-in-out, background-color 0.33s ease-in-out );
 									}
 
 									&:hover

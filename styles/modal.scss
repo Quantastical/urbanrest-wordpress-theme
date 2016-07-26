@@ -19,7 +19,7 @@
 		top: 0;
 		width: 100%;
 		z-index: $layer-modal;
-		@include prefixer(animation-duration, 0.5s, webkit moz spec);
+		@include prefixer(animation-duration, 0.25s, webkit moz spec);
 
 		&.modal-closing
 		{
@@ -73,6 +73,8 @@
 
 		.modal-content
 		{
+			@include prefixer(animation-duration, 0.5s, webkit moz spec);
+
 			@include media( '>=tablet' )
 			{
 				max-width: 50em;

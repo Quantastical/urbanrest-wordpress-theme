@@ -70,6 +70,11 @@
 			@include transition( background-color 0.11s, color 0.11s );
 		}
 
+		&.icon:focus
+		{
+			border: none;
+		}
+
 		&.facebook
 		{
 			background-color: $facebook-blue;
@@ -111,4 +116,8 @@
 			outline: none;
 		}
 	}
+}
+
+.share-modal .icon:focus {
+	border: none;
 }

@@ -37,7 +37,7 @@ if( !function_exists( 'urbanrest_admin_menu_remove_dashboard' ) ) :
 	function urbanrest_admin_menu_remove_dashboard( )
 	{
 		global $current_user, $menu, $submenu;
-		get_currentuserinfo();
+		$current_user = wp_get_current_user();
 
 		if( !current_user_can('administrator') )
 		{

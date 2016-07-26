@@ -158,7 +158,7 @@ jQuery.fn.sortElements = function() {
                         var e = t(this);
                         e.hide(), setTimeout(function() {
                             e.fadeIn(250);
-                        }, n), n += 213;
+                        }, n), n += 133;
                     }), t("#qr-code").html(".page-footer:after {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=https://" + encodeURIComponent(window.location.host + a) + ");}}");
                 } else console.log(e.data);
             }
@@ -607,7 +607,7 @@ jQuery.fn.sortElements = function() {
         a.text(o), Urb.showModal(".modal.checkin-modal");
     }, Urb.$window.on("ajaxload load", Urb.setupRatingPoll);
 }), jQuery(function(t) {}), jQuery(function(t) {}), jQuery(function(t) {}), jQuery(function(t) {}), 
-function(t, e, a, o, r, n, i) {
+jQuery(function(t) {}), function(t, e, a, o, r, n, i) {
     t.GoogleAnalyticsObject = r, t[r] = t[r] || function() {
         (t[r].q = t[r].q || []).push(arguments);
     }, t[r].l = 1 * new Date(), n = e.createElement(a), i = e.getElementsByTagName(a)[0], 

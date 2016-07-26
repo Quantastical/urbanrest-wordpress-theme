@@ -19,6 +19,7 @@
 		"scripts/post.js",
 		"scripts/single.js",
 		"scripts/user.js",
+		"scripts/gallery.js",
 		"scripts/analytics.js"
 	]
 }

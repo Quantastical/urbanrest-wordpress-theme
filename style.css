@@ -4357,6 +4357,34 @@ Copyright (c) 2015 Daniel Eden
   font-style: normal; }
 
 @font-face {
+  font-family: "Flux";
+  src: url("fonts/Flux/Flux Architect Regular.eot");
+  src: url("fonts/Flux/Flux Architect Regular.eot?#iefix") format("embedded-opentype"), url("fonts/Flux/Flux Architect Regular.woff") format("woff"), url("fonts/Flux/Flux Architect Regular.ttf") format("truetype"), url("fonts/Flux/Flux Architect Regular.svg#") format("svg");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Flux";
+  src: url("fonts/Flux/Flux Architect Bold.eot");
+  src: url("fonts/Flux/Flux Architect Bold.eot?#iefix") format("embedded-opentype"), url("fonts/Flux/Flux Architect Bold.woff") format("woff"), url("fonts/Flux/Flux Architect Bold.ttf") format("truetype"), url("fonts/Flux/Flux Architect Bold.svg#") format("svg");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Flux";
+  src: url("fonts/Flux/Flux Architect Italic.eot");
+  src: url("fonts/Flux/Flux Architect Italic.eot?#iefix") format("embedded-opentype"), url("fonts/Flux/Flux Architect Italic.woff") format("woff"), url("fonts/Flux/Flux Architect Italic.ttf") format("truetype"), url("fonts/Flux/Flux Architect Italic.svg#") format("svg");
+  font-weight: 400;
+  font-style: italic; }
+
+@font-face {
+  font-family: "Flux";
+  src: url("fonts/Flux/Flux Architect Bold Italic.eot");
+  src: url("fonts/Flux/Flux Architect Bold Italic.eot?#iefix") format("embedded-opentype"), url("fonts/Flux/Flux Architect Bold Italic.woff") format("woff"), url("fonts/Flux/Flux Architect Bold Italic.ttf") format("truetype"), url("fonts/Flux/Flux Architect Bold Italic.svg#") format("svg");
+  font-weight: 600;
+  font-style: italic; }
+
+@font-face {
   font-family: "Gotham";
   src: url("fonts/Gotham_Bold/ufonts.com_gotham-bold-webfont.eot");
   src: url("fonts/Gotham_Bold/ufonts.com_gotham-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/Gotham_Bold/ufonts.com_gotham-bold-webfont.woff") format("woff"), url("fonts/Gotham_Bold/ufonts.com_gotham-bold-webfont.ttf") format("truetype"), url("fonts/Gotham_Bold/ufonts.com_gotham-bold-webfont.svg#") format("svg");
@@ -5413,9 +5441,9 @@ html.javascript {
   top: 0;
   width: 100%;
   z-index: 1000;
-  -webkit-animation-duration: 0.5s;
-  -moz-animation-duration: 0.5s;
-  animation-duration: 0.5s; }
+  -webkit-animation-duration: 0.25s;
+  -moz-animation-duration: 0.25s;
+  animation-duration: 0.25s; }
   .javascript .modal-shade.modal-closing {
     display: -webkit-flex;
     display: -moz-flex;
@@ -5448,9 +5476,13 @@ html.javascript {
       -webkit-transition: color 0.666s;
       -moz-transition: color 0.666s;
       transition: color 0.666s; }
-  @media (min-width: 768px) {
-    .javascript .modal-shade .modal-content {
-      max-width: 50em; } }
+  .javascript .modal-shade .modal-content {
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+    animation-duration: 0.5s; }
+    @media (min-width: 768px) {
+      .javascript .modal-shade .modal-content {
+        max-width: 50em; } }
 
 @media (min-width: 601px) {
   .admin-bar .javascript .modal-shade .modal-close {
@@ -5638,7 +5670,12 @@ html.javascript {
               -moz-transition: background-color 0.11s ease-in-out, color 0.11s ease-in-out;
               transition: background-color 0.11s ease-in-out, color 0.11s ease-in-out; }
         .site .site-header .site-navigation .page-navigation .navbar .menu-item.main-menu [href="#main-menu"] {
-          display: none; }
+          display: none; } }
+      @media only screen and (max-width: 500px) {
+        .site .site-header .site-navigation .page-navigation .navbar .menu-item.main-menu {
+          margin-right: 0.5em; } }
+
+@media only screen {
         .site .site-header .site-navigation .page-navigation .navbar .menu-item.main-menu #menu-toggle {
           background-color: transparent;
           border-radius: 2px;
@@ -5659,9 +5696,9 @@ html.javascript {
             border-radius: 1px;
             box-sizing: border-box;
             display: block;
-            -webkit-transition: 0.125s ease-in-out, background-color 0.33s ease-in-out;
-            -moz-transition: 0.125s ease-in-out, background-color 0.33s ease-in-out;
-            transition: 0.125s ease-in-out, background-color 0.33s ease-in-out; }
+            -webkit-transition: 0.06s ease-in-out, background-color 0.33s ease-in-out;
+            -moz-transition: 0.06s ease-in-out, background-color 0.33s ease-in-out;
+            transition: 0.06s ease-in-out, background-color 0.33s ease-in-out; }
           .site .site-header .site-navigation .page-navigation .navbar .menu-item.main-menu #menu-toggle:hover span {
             background-color: #000000; }
           .site .site-header .site-navigation .page-navigation .navbar .menu-item.main-menu #menu-toggle #hamburger {
@@ -5946,6 +5983,8 @@ html.javascript {
       -webkit-transition: background-color 0.11s, color 0.11s;
       -moz-transition: background-color 0.11s, color 0.11s;
       transition: background-color 0.11s, color 0.11s; }
+    .sharing a.icon:focus {
+      border: none; }
     .sharing a.facebook {
       background-color: #3B5998; }
       .sharing a.facebook:hover {
@@ -5978,6 +6017,9 @@ html.javascript {
     width: 15em; }
     .sharing .shortlink:focus {
       outline: none; }
+
+.share-modal .icon:focus {
+  border: none; }
 
 @media only screen {
   .social-menu {
@@ -6951,6 +6993,7 @@ html.javascript {
           .site .site-company .site-contact .contact-form .field textarea {
             background-color: rgba(0, 0, 0, 0.22);
             border: solid 1px rgba(220, 223, 222, 0.25);
+            border-radius: 0;
             box-sizing: border-box;
             color: white;
             font-family: 'Roboto';
