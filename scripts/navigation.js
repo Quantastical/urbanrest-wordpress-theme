@@ -126,9 +126,9 @@ jQuery( function( $ ) {
 						var $this = $(this);
 						$this.hide();
 						setTimeout(function(){
-							$this.fadeIn(250);
+							$this.fadeIn(330);
 						}, timeout);
-						timeout += 133;
+						timeout += 88;
 					});
 					$('#qr-code').html('.page-footer:after {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=https://' + encodeURIComponent(window.location.host + slug) + ');}}');
 				} else {

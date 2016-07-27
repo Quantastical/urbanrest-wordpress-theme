@@ -6384,6 +6384,7 @@ html.javascript {
     -moz-font-smoothing: antialiased;
     font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    min-height: 100%;
     padding: 7em 0;
     position: relative; } }
   @media only screen and (orientation: portrait) {

@@ -3,16 +3,17 @@
 			<h2>Urbanrest Beer List</h2>
 		</header>
 
-		<section class="col-xs-12 beer-list">
-			<h3>Currently On Tap</h3>
-
-			<ol>
 <?php
 $menu_name = 'beer-list';
 $locations = get_nav_menu_locations();
 $tap_menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
 $tap_menu_items = wp_get_nav_menu_items( $tap_menu->term_id, array( 'order' => 'ASC' ) );
 ?>
+<?php if( count($tap_menu_items) > 0 ) : ?>
+		<section class="col-xs-12 beer-list">
+			<h3>Currently On Tap</h3>
+
+			<ol>
 <?php
 foreach( $tap_menu_items as $tap_menu_item ):
 	$beer = get_post(url_to_postid($tap_menu_item->url));
@@ -28,6 +29,7 @@ endforeach;
 ?>
 			</ol>
 		</section>
+<?php endif; ?>
 <?php
 $menu_name = 'growler-list';
 $locations = get_nav_menu_locations();
@@ -50,6 +52,11 @@ foreach( $growler_menu_items as $growler_menu_item ):
 endforeach;
 ?>
 			</ol>
+		</section>
+<?php endif; ?>
+<?php if( count($tap_menu_items) == 0 && count($growler_menu_items) == 0 ) : ?>
+		<section class="col-xs-12 beer-list">
+			<p style="text-align:center;">Beer List Coming Soon</p>
 		</section>
 <?php endif; ?>
 <?php
