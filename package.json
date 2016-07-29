@@ -11,7 +11,9 @@
     "html5shiv": "^3.7.3",
     "jquery-hammerjs": "^2.0.0",
     "jquery-simple-slider": "loopj/jquery-simple-slider",
-    "masonry-layout": "^4.1.0"
+    "magnific-popup": "^1.1.0",
+    "masonry-layout": "^4.1.0",
+    "owl.carousel": "^2.1.4"
   },
   "devDependencies": {
     "grunt": "~0.4.5",

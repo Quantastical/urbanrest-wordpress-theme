@@ -17,6 +17,7 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
 
 Copyright (c) 2015 Daniel Eden
 */
+@import url(node_modules/magnific-popup/dist/magnific-popup.css);
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -5320,6 +5321,36 @@ html.javascript {
   .btn .btn-content {
     display: none; }
 
+.gallery .gallery-item {
+  display: inline-block; }
+  .gallery .gallery-item .gallery-icon img {
+    vertical-align: bottom; }
+  .gallery .gallery-item figcaption {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 300;
+    line-height: 1em; }
+
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+  /* ideally, transition speed should match zoom duration */
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out; }
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+  opacity: 1; }
+
+.mfp-with-zoom.mfp-ready.mfp-bg {
+  opacity: 0.8; }
+
+.mfp-with-zoom.mfp-removing .mfp-container,
+.mfp-with-zoom.mfp-removing.mfp-bg {
+  opacity: 0; }
+
 .hyperlink, .site main.event a, .site main.event .hyperlink, .site main.page .page-content a, .site main.posts a, .site main.posts .hyperlink, .site main.taxonomy a, .site main.taxonomy .hyperlink, .site main.user a, .site main.user .hyperlink {
   border-bottom-width: 1pt;
   border-bottom-color: transparent;
@@ -5714,11 +5745,11 @@ html.javascript {
               top: 12px;
               width: 30px; }
               .site .site-header .site-navigation .page-navigation .navbar .menu-item.main-menu #menu-toggle #hamburger span:nth-child(1) {
-                transition-delay: 0.25s, 0s; }
+                transition-delay: 0.1s, 0s; }
               .site .site-header .site-navigation .page-navigation .navbar .menu-item.main-menu #menu-toggle #hamburger span:nth-child(2) {
-                transition-delay: 0.3125s, 0s; }
+                transition-delay: 0.125s, 0s; }
               .site .site-header .site-navigation .page-navigation .navbar .menu-item.main-menu #menu-toggle #hamburger span:nth-child(3) {
-                transition-delay: 0.3725s, 0s; }
+                transition-delay: 0.15s, 0s; }
           .site .site-header .site-navigation .page-navigation .navbar .menu-item.main-menu #menu-toggle #cross {
             box-sizing: border-box;
             height: 100%;
@@ -5737,21 +5768,21 @@ html.javascript {
               left: 10%;
               position: absolute;
               top: 24px;
-              transition-delay: 0.125s, 0s;
+              transition-delay: 0.05s, 0s;
               width: 0%; }
           .site .site-header .site-navigation .page-navigation .navbar .menu-item.main-menu #menu-toggle.open #hamburger span {
             width: 0%; }
             .site .site-header .site-navigation .page-navigation .navbar .menu-item.main-menu #menu-toggle.open #hamburger span:nth-child(1) {
               transition-delay: 0s, 0s; }
             .site .site-header .site-navigation .page-navigation .navbar .menu-item.main-menu #menu-toggle.open #hamburger span:nth-child(2) {
-              transition-delay: 0.0626s, 0s; }
+              transition-delay: 0.025s, 0s; }
             .site .site-header .site-navigation .page-navigation .navbar .menu-item.main-menu #menu-toggle.open #hamburger span:nth-child(3) {
-              transition-delay: 0.125s, 0s; }
+              transition-delay: 0.05s, 0s; }
           .site .site-header .site-navigation .page-navigation .navbar .menu-item.main-menu #menu-toggle.open #cross span:nth-child(1) {
             height: 80%;
-            transition-delay: 0.3125s, 0s; }
+            transition-delay: 0.125s, 0s; }
           .site .site-header .site-navigation .page-navigation .navbar .menu-item.main-menu #menu-toggle.open #cross span:nth-child(2) {
-            transition-delay: 0.1875s, 0s;
+            transition-delay: 0.075s, 0s;
             width: 80%; } }
       @media only screen and (max-width: 768px) {
         .site .site-header .site-navigation .page-navigation .navbar .menu-item.home a {
