@@ -29,6 +29,7 @@ jQuery(function($){
 		var $sampleShortlink = $('#sample-shortlink');
 		$sampleShortlink
 			.data('cancel', $sampleShortlink.html())
+			.data('originalValue', $sampleShortlink.text())
 			.html(_URB.shortlinkDomain + '<span id="editable-shortlink-slug"><input type="text" id="new-shortlink-slug" value="' + value + '" autocomplete="off"></span>')
 
 		var $editShortlinkButtons = $('#edit-shortlink-buttons');
@@ -40,34 +41,52 @@ jQuery(function($){
 
 	$editShortlinkBox.on('click', '#edit-shortlink-buttons .save', function() {
 		var $newShortlinkSlug = $('#new-shortlink-slug');
-		$.ajax({
-			type: 'POST',
-			url: _URB.url,
-			data: {
-				'action': 'saveshortlink',
-				'nonce': _URB.nonce,
-				'slug': $newShortlinkSlug.val(),
-				'post_id': $('#post_ID').val()
-			},
-			dataType: 'json',
-			success: function(response){
-				console.log(response);
-				if(response.success) {
-					var newSlug = response.data.slug;
-					var newUrl = _URB.shortlinkDomain + newSlug;
+		var $sampleShortlink = $('#sample-shortlink');
 
-					var $sampleShortlink = $('#sample-shortlink');
-					$sampleShortlink.html(
-						'<a href="' + newUrl + '">' + _URB.shortlinkDomain + '<span id="editable-shortlink-slug">' + newSlug + '</span></a>'
-					).removeData('cancel');
-					
-					var $editShortlinkButtons = $('#edit-shortlink-buttons');
-					$editShortlinkButtons.html($editShortlinkButtons.data('edit')).removeData('edit');
-				} else {
+		var slug = $newShortlinkSlug.val()
+			.replace(/\s+/g, '-')           // Replace spaces with -
+			.replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+			.replace(/\-\-+/g, '-')         // Replace multiple - with single -
+			.replace(/^-+/, '')             // Trim - from start of text
+			.replace(/-+$/, '');
+		
+		// Check to make sure it was changed before hitting the server
+		console.log(_URB.shortlinkDomain + slug, $sampleShortlink.data('originalValue').trim());
+		if((_URB.shortlinkDomain + slug).trim() !== $sampleShortlink.data('originalValue').trim()) {
+			$.ajax({
+				type: 'POST',
+				url: _URB.url,
+				data: {
+					'action': 'saveshortlink',
+					'nonce': _URB.nonce,
+					'slug': slug,
+					'post_id': $('#post_ID').val()
+				},
+				dataType: 'json',
+				success: function(response){
 					console.log(response);
+					if(response.success) {
+						var newSlug = response.data.slug;
+						var newUrl = _URB.shortlinkDomain + newSlug;
+
+						var $sampleShortlink = $('#sample-shortlink');
+						$sampleShortlink.html(
+							'<a href="' + newUrl + '">' + _URB.shortlinkDomain + '<span id="editable-shortlink-slug">' + newSlug + '</span></a>'
+						).removeData('cancel');
+						
+						var $editShortlinkButtons = $('#edit-shortlink-buttons');
+						$editShortlinkButtons.html($editShortlinkButtons.data('edit')).removeData('edit');
+					} else {
+						console.log(response);
+					}
 				}
-			}
-		});
+			});
+		} else {
+			$sampleShortlink.html($sampleShortlink.data('cancel')).removeData('cancel');
+
+			var $editShortlinkButtons = $('#edit-shortlink-buttons');
+			$editShortlinkButtons.html($editShortlinkButtons.data('edit')).removeData('edit');
+		}
 	});
 
 	$editShortlinkBox.on('click', '#edit-shortlink-buttons .cancel', function() {
