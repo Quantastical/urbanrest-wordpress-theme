@@ -4,7 +4,7 @@ Theme URI: UrbanrestBrewing.com
 Author: Quantastical.com
 Author URI: Quantastical.com
 Description: A WordPress theme designed for the Urbanrest Brewing Company in Ferndale, Michigan
-Version: 1.1
+Version: 1.2.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: urbanrest, brewing, beer, kombucha, organic, parallax
@@ -17,8 +17,8 @@ $layer-main-navigation: 500;
 $layer-social-navigation: 250;
 
 @import 'node_modules/animate.css/animate.min';
-@import 'node_modules/font-awesome/scss/font-awesome.scss';
-@import 'node_modules/magnific-popup/dist/magnific-popup.css';
+@import 'node_modules/font-awesome/scss/font-awesome';
+@import 'node_modules/magnific-popup/src/css/main';
 @import 'styles/colors';
 @import 'styles/mixins';
 @import 'styles/fonts';
