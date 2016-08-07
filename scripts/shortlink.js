@@ -43,6 +43,10 @@ jQuery(function($){
 		var $newShortlinkSlug = $('#new-shortlink-slug');
 		var $sampleShortlink = $('#sample-shortlink');
 
+		$saveButton = $(this);
+		$saveButton.text('Saving...').attr('disabled',true);
+		$saveButton.siblings('.cancel').hide();
+
 		var slug = $newShortlinkSlug.val()
 			.replace(/\s+/g, '-')           // Replace spaces with -
 			.replace(/[^\w\-]+/g, '')       // Remove all non-word chars
@@ -51,7 +55,6 @@ jQuery(function($){
 			.replace(/-+$/, '');
 		
 		// Check to make sure it was changed before hitting the server
-		console.log(_URB.shortlinkDomain + slug, $sampleShortlink.data('originalValue').trim());
 		if((_URB.shortlinkDomain + slug).trim() !== $sampleShortlink.data('originalValue').trim()) {
 			$.ajax({
 				type: 'POST',
@@ -64,7 +67,6 @@ jQuery(function($){
 				},
 				dataType: 'json',
 				success: function(response){
-					console.log(response);
 					if(response.success) {
 						var newSlug = response.data.slug;
 						var newUrl = _URB.shortlinkDomain + newSlug;
@@ -79,6 +81,9 @@ jQuery(function($){
 					} else {
 						console.log(response);
 					}
+
+					$saveButton.text('OK').attr('disabled',false);
+					$saveButton.siblings('.cancel').show();
 				}
 			});
 		} else {

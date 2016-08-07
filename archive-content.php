@@ -1,7 +1,7 @@
 			<div class="page-content">
 <?php foreach(array('Post', 'Page', 'Beer') as $section) : ?>
 				<section>
-					<h2><?php echo $section; ?></h2>
+					<h2><?php echo $section . 's'; ?></h2>
 					<ul class="page-grid">
 <?php
 $args = array(

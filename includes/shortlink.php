@@ -126,7 +126,7 @@ function saveshortlink() {
 	global $wpdb;
 
 	$post = get_post($_POST['post_id']);
-	$slug = (empty($_POST['slug'])) ? '?p=' . $post->ID : sanitize_meta( 'shortlink', $_POST['slug'], 'post' );
+	$slug = (empty($_POST['slug'])) ? '?p=' . $post->ID : urb_sanitize_post_meta_shortlink($_POST['slug']);//sanitize_meta( 'shortlink', $_POST['slug'], 'post' );
 	
 	if(!empty($post)) {
 		$post_id = $post->ID;
@@ -148,7 +148,7 @@ function saveshortlink() {
 	}
 }
 
-add_filter( 'sanitize_post_meta_shortlink', 'urb_sanitize_post_meta_shortlink' );
+//add_filter( 'sanitize_post_meta_shortlink', 'urb_sanitize_post_meta_shortlink' );
 add_filter( 'get_shortlink', 'urb_get_shortlink' );
 add_action( 'admin_init', 'urb_admin_init_shortlink_domain' );
 add_action( 'admin_enqueue_scripts', 'urb_admin_enqueue_scripts_shortlink' );
