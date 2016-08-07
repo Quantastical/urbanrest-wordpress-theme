@@ -14,6 +14,8 @@
 
 		<div class="business-hours">
 			<h5>Taproom</h5>
+<?php
+/*
 			<p class="status">
 				Taproom is currently
 <?php
@@ -40,6 +42,8 @@ if($startTime > $endTime) {
 <?php endif; ?>
 <?php date_default_timezone_set($default_timezone); ?>
 			</p>
+*/
+?>
 			<dl class="row">
 <?php foreach( array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') as $day ) : ?>
 <?php 	if( urb_get_business_hours($day) ) : ?>
