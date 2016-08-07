@@ -6666,10 +6666,8 @@ html.javascript {
         z-index: 1; }
         .site .site-header .featured-image img {
           display: none; }
-      .site .site-header .site-title .site-logo {
-        display: none; }
-      .site .site-header .site-description {
-        display: none; }
+      .site .site-header .site-title,
+      .site .site-header .site-description,
       .site .site-header .skip-link {
         display: none; }
     .site .site-posts {

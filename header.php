@@ -162,7 +162,8 @@
 
 		<header class="site-header row active" id="preliminaries">
 			<h1 class="site-title">
-				<img alt="<?php bloginfo('name'); ?>" class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-1-color-4x.min.png" />
+				<img alt="<?php bloginfo('name'); ?> Logo" class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-1-color-4x.min.png" />
+				<span class="site-name"><?php bloginfo('name'); ?></span>
 			</h1>
 <?php /*
 <?php $front_page = get_post(get_option('page_on_front')); ?>
