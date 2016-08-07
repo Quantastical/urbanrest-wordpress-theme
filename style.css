@@ -6311,21 +6311,47 @@ html.javascript {
 .share, .site main.beer .beer-footer .beer-actions .beer-share, .site main.page .page-footer .page-actions .page-share, .site main.post .post-footer .post-actions .post-share {
   background: none;
   border: none;
-  display: inline-block;
-  font-size: 1em;
+  bottom: 11pt;
+  display: block;
+  font-size: 0;
   font-weight: 400;
-  margin-right: 1em;
-  text-align: center; }
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  right: 11pt;
+  text-align: center;
+  z-index: 1; }
+  @media (min-width: 769px) {
+    .share, .site main.beer .beer-footer .beer-actions .beer-share, .site main.page .page-footer .page-actions .page-share, .site main.post .post-footer .post-actions .post-share {
+      bottom: 22pt;
+      right: 22pt; } }
   .share:before, .site main.beer .beer-footer .beer-actions .beer-share:before, .site main.page .page-footer .page-actions .page-share:before, .site main.post .post-footer .post-actions .post-share:before {
+    background: #4CAF50;
+    border-radius: 50%;
+    box-shadow: 0 1pt 3pt rgba(0, 0, 0, 0.26);
+    color: rgba(255, 255, 255, 0.75);
+    content: "\f086";
+    display: block;
     font-family: FontAwesome;
-    margin-right: 0.5em; }
-  .share.share:before, .site main.beer .beer-footer .beer-actions .beer-share:before, .site main.page .page-footer .page-actions .page-share:before, .site main.post .post-footer .post-actions .post-share:before {
-    content: ""; }
+    font-size: 22pt;
+    height: 44pt;
+    line-height: 44pt;
+    margin: 0;
+    text-align: center;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    -moz-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 44pt; }
   .share:hover, .site main.beer .beer-footer .beer-actions .beer-share:hover, .site main.page .page-footer .page-actions .page-share:hover, .site main.post .post-footer .post-actions .post-share:hover {
     border: none; }
-  .share:last-of-type, .site main.beer .beer-footer .beer-actions .beer-share:last-of-type, .site main.page .page-footer .page-actions .page-share:last-of-type, .site main.post .post-footer .post-actions .post-share:last-of-type {
-    margin-right: 0; }
+    .share:hover:before, .site main.beer .beer-footer .beer-actions .beer-share:hover:before, .site main.page .page-footer .page-actions .page-share:hover:before, .site main.post .post-footer .post-actions .post-share:hover:before {
+      color: rgba(255, 255, 255, 0.88); }
+  .share.visible:before, .site main.beer .beer-footer .beer-actions .visible.beer-share:before, .site main.page .page-footer .page-actions .visible.page-share:before, .site main.post .post-footer .post-actions .visible.post-share:before {
+    transform: scale(1); }
   .share .share-count, .site main.beer .beer-footer .beer-actions .beer-share .share-count, .site main.page .page-footer .page-actions .page-share .share-count, .site main.post .post-footer .post-actions .post-share .share-count {
+    display: none;
     margin-left: 0.5em; }
     .share .share-count:before, .site main.beer .beer-footer .beer-actions .beer-share .share-count:before, .site main.page .page-footer .page-actions .page-share .share-count:before, .site main.post .post-footer .post-actions .post-share .share-count:before {
       content: '('; }

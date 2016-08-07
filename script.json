@@ -19,6 +19,7 @@
 		"scripts/page.js",
 		"scripts/post.js",
 		"scripts/single.js",
+		"scripts/sharing.js",
 		"scripts/user.js",
 		"scripts/gallery.js",
 		"scripts/analytics.js"
