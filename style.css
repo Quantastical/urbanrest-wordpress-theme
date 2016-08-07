@@ -5669,27 +5669,33 @@ html.javascript {
     display: none; }
 
 .gallery {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  -moz-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-justify-content: space-around;
-  -moz-justify-content: space-around;
-  justify-content: space-around; }
+  display: block;
+  text-align: center; }
+  @media (min-width: 501px) {
+    .gallery {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      -moz-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-justify-content: space-around;
+      -moz-justify-content: space-around;
+      justify-content: space-around; } }
   .gallery .gallery-item {
     display: inline-block;
-    -webkit-flex: 1;
-    -moz-flex: 1;
-    flex: 1;
     margin: 0;
     text-align: center; }
+    @media (min-width: 501px) {
+      .gallery .gallery-item {
+        -webkit-flex: 1;
+        -moz-flex: 1;
+        flex: 1; } }
     .gallery .gallery-item .gallery-icon a {
       display: inline-block;
-      margin: 1em; }
+      margin: 0.5em; }
     .gallery .gallery-item .gallery-icon img {
       vertical-align: bottom; }
     .gallery .gallery-item figcaption {
@@ -6328,6 +6334,7 @@ html.javascript {
 .share, .site main.beer .beer-footer .beer-actions .beer-share, .site main.page .page-footer .page-actions .page-share, .site main.post .post-footer .post-actions .post-share {
   background: none;
   border: none;
+  border-radius: 50%;
   bottom: 11pt;
   display: block;
   font-size: 0;
@@ -6366,6 +6373,7 @@ html.javascript {
     .share:hover:before, .site main.beer .beer-footer .beer-actions .beer-share:hover:before, .site main.page .page-footer .page-actions .page-share:hover:before, .site main.post .post-footer .post-actions .post-share:hover:before {
       color: rgba(255, 255, 255, 0.88); }
   .share.visible:before, .site main.beer .beer-footer .beer-actions .visible.beer-share:before, .site main.page .page-footer .page-actions .visible.page-share:before, .site main.post .post-footer .post-actions .visible.post-share:before {
+    -webkit-transform: scale(1);
     transform: scale(1); }
   .share .share-count, .site main.beer .beer-footer .beer-actions .beer-share .share-count, .site main.page .page-footer .page-actions .page-share .share-count, .site main.post .post-footer .post-actions .post-share .share-count {
     display: none;
@@ -6431,10 +6439,13 @@ html.javascript {
     border: dotted 1px white;
     border-radius: 0.25em;
     color: white;
+    display: block;
     font-size: 1em;
     margin: 1em;
+    overflow: hidden;
     padding: 0.5em;
     text-align: center;
+    text-overflow: ellipsis;
     width: 15em; }
     .sharing .shortlink:focus {
       outline: none; }
@@ -6461,10 +6472,13 @@ html.javascript {
     border: dotted 1px white;
     border-radius: 0.25em;
     color: white;
+    display: block;
     font-size: 1.5em;
     margin: 1em;
+    overflow: hidden;
     padding: 0.75em;
     text-align: center;
+    text-overflow: ellipsis;
     width: 12em; }
     .share-modal .shortlink:focus,
     .checkin-modal .shortlink:focus {
@@ -7300,7 +7314,7 @@ html.javascript {
           margin-bottom: 0;
           text-align: center; }
         .site .site-company .site-location .business-hours dl {
-          line-height: 1.33em;
+          line-height: 1.9em;
           margin-bottom: 1em;
           width: 15em; }
           .site .site-company .site-location .business-hours dl dd, .site .site-company .site-location .business-hours dl dt {
@@ -7321,6 +7335,8 @@ html.javascript {
             text-align: right; }
         .site .site-company .site-location .business-hours .status {
           color: rgba(255, 255, 255, 0.33);
+          display: none;
+          /* TODO: figure out how to properly handle status */
           font-size: 0.7em;
           margin-bottom: 0;
           text-transform: uppercase;
@@ -7476,9 +7492,9 @@ html.javascript {
             .site .site-company .site-contact .contact-form .field.error textarea::-webkit-input-placeholder {
               color: rgba(255, 0, 0, 0.6); }
           .site .site-company .site-contact .contact-form .field.error:after {
-            -webkit-animation: fadeInRight 0.25s linear 1;
-            -moz-animation: fadeInRight 0.25s linear 1;
-            animation: fadeInRight 0.25s linear 1;
+            -webkit-animation: fadeInRight 0.125s linear 1;
+            -moz-animation: fadeInRight 0.125s linear 1;
+            animation: fadeInRight 0.125s linear 1;
             color: red;
             content: "";
             cursor: help;
@@ -8431,6 +8447,8 @@ html.javascript {
       margin-bottom: 0.25em; }
     .site main.page .page-content p {
       margin-bottom: 1em; }
+    .site main.page .page-content img {
+      border-radius: 2pt; }
     .site main.page .page-content .alignleft {
       float: left;
       margin-right: 1em;

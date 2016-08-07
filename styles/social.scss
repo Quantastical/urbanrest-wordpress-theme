@@ -29,10 +29,13 @@
 			border: dotted 1px white;
 			border-radius: 0.25em;
 			color: white;
+			display: block;
 			font-size: 1.5em;
 			margin: 1em;
+			overflow: hidden;
 			padding: 0.75em;
 			text-align: center;
+			text-overflow: ellipsis;
 			width: 12em;
 
 			&:focus

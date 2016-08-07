@@ -27,8 +27,11 @@ $end = get_option("urbanrest_setting_{$today}_end_time");
 $currentTime = DateTime::createFromFormat('H:i', date('H:i'));
 $startTime = DateTime::createFromFormat('H:i', $start ? $start : '00:00');
 $endTime = DateTime::createFromFormat('H:i', $end ? $end : '23:59');
+if($startTime > $endTime) {
+	$endTime->add(new DateInterval('P1D'));
+}
 ?>
-<?php 	if( strlen($start) && strlen($end) && $currentTime > $startTime && $currentTime < $endTime ) : ?>
+<?php 	if( $currentTime > $startTime && $currentTime < $endTime ) : ?>
 				<em class="open">Open</em>
 <?php 	else : ?>
 				<em class="closed">Closed</em>

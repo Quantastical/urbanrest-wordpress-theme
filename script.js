@@ -668,15 +668,22 @@
     var r = "urbModal", i = {};
     t.extend(n.prototype, {
         init: function() {
-            var e = t(this.element).addClass("modal-shade"), a = t('<div class="modal-content" />'), o = t('<button class="modal-close" type="button" />'), n = function(o) {
-                var n = t(o.target);
-                return n.is(".modal-content") || n.closest(".modal-content").length ? !0 : (a.removeClass("animated fadeInDown").addClass("animated fadeOutDown"), 
-                e.removeClass("modal-opened animated fadeIn").addClass("modal-closing animated fadeOut"), 
+            var a = t(this.element).addClass("modal-shade"), o = t('<div class="modal-content" />'), n = t('<button class="modal-close" type="button" />');
+            t("body").on("touchmove touchstart", function(a) {
+                a = a || e.event;
+                var o = t(a.target ? a.target : a.srcElement);
+                return o.hasClass("modal-shade") ? (a.returnValue = !1, a.cancelBubble = !0, a.preventDefault && (a.preventDefault(), 
+                a.stopPropagation()), !1) : void 0;
+            });
+            var r = function(e) {
+                var n = t(e.target);
+                return n.is(".modal-content") || n.closest(".modal-content").length ? !0 : (o.removeClass("animated fadeInDown").addClass("animated fadeOutDown"), 
+                a.removeClass("modal-opened animated fadeIn").addClass("modal-closing animated fadeOut"), 
                 void setTimeout(function() {
-                    t("body").removeClass("no-scroll"), e.removeClass("modal-closing animated fadeOut");
+                    t("body").removeClass("no-scroll"), a.removeClass("modal-closing animated fadeOut");
                 }, 500));
             };
-            e.on("click", n), e.wrapInner(a), e.append(o);
+            a.on("click", r), a.wrapInner(o), a.append(n);
         },
         show: function() {
             var e = t(this.element), a = t(".modal-content", e);

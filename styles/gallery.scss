@@ -1,21 +1,29 @@
 .gallery
 {
-	@include display( flex );
-	@include flex-wrap( wrap );
-	@include justify-content( space-around );
+	display: block;
+	text-align: center;
+	
+	@include media('>phone') {
+		@include display( flex );
+		@include flex-wrap( wrap );
+		@include justify-content( space-around );
+	}
 
 	.gallery-item
 	{
 		display: inline-block;
-		@include flex( 1 );
 		margin: 0;
 		text-align: center;
+
+		@include media('>phone') {
+			@include flex( 1 );
+		}
 
 		.gallery-icon
 		{
 			a {
 				display: inline-block;
-				margin: 1em;
+				margin: 0.5em;
 			}
 			img { vertical-align: bottom; }
 		}

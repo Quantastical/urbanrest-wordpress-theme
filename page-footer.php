@@ -25,7 +25,7 @@
 
 					<button class="page-share hyperlink" data-action="modal" data-target=".modal.share-modal" type="button">Share this page</button>
 					<div class="modal share-modal animated fadeIn">
-						<input class="shortlink" type="text" value="<?php echo wp_get_shortlink(); ?>" onfocus="this.select();" readonly />
+						<output class="shortlink" onfocus="this.select();"><?php echo wp_get_shortlink(); ?></output>
 						<h5 class="menu-title">Share this page on your favorite social network.</h5>
 						<ul class="menu">
 							<li class="menu-item">

@@ -20,6 +20,22 @@
 			var $modalContent = $('<div class="modal-content" />');
 			var $modalClose = $('<button class="modal-close" type="button" />');
 
+			// Prevent touch events on modal-shade to disable scrolling content behind the modal
+			$('body').on('touchmove touchstart', function(e) {
+				e = e || window.event;
+				var $target = e.target ? $(e.target) : $(e.srcElement);
+
+				if( $target.hasClass('modal-shade') ) {
+					e.returnValue = false;
+					e.cancelBubble = true;
+					if (e.preventDefault) {
+						e.preventDefault();
+						e.stopPropagation();
+					}
+					return false;
+				}
+			});
+
 			//var $modalContent = $(this.element).addClass('modal-content');
 			//var $modalShade = $('<div class="modal-shade" />');
 			//var $modalClose = $('<button class="modal-close" type="button" />');
@@ -49,7 +65,8 @@
 			var $modalContent = $('.modal-content',$modalShade);
 		 	$modalContent.removeClass('fadeOutDown').addClass('animated fadeInDown');
 		 	$modalShade.addClass('modal-opened animated fadeIn');
-			$('body').addClass('no-scroll');
+
+		 	$('body').addClass('no-scroll');
 		}
 	});
 

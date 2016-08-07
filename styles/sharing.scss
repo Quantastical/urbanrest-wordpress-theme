@@ -2,6 +2,7 @@
 {
 	background: none;
 	border: none;
+	border-radius: 50%;
 	bottom: 11pt;
 	display: block;
 	font-size: 0;
@@ -52,7 +53,7 @@
 
 	&.visible:before
 	{
-		transform: scale(1);
+		@include transform( scale(1) );
 	}
 
 	.share-count
@@ -135,10 +136,13 @@
 		border: dotted 1px white;
 		border-radius: 0.25em;
 		color: white;
+		display: block;
 		font-size: 1em;
 		margin: 1em;
+		overflow: hidden;
 		padding: 0.5em;
 		text-align: center;
+		text-overflow: ellipsis;
 		width: 15em;
 
 		&:focus

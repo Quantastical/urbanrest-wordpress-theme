@@ -120,7 +120,7 @@
 
 					dl
 					{
-						line-height: 1.33em;
+						line-height: 1.9em;
 						margin-bottom: 1em;
 						width: 15em;
 
@@ -150,6 +150,7 @@
 					.status
 					{
 						color: rgba( white, 0.33 );
+						display: none; /* TODO: figure out how to properly handle status */
 						font-size: 0.7em;
 						margin-bottom: 0;
 						text-transform: uppercase;
@@ -355,7 +356,7 @@
 
 							&:after
 							{
-								@include animation( fadeInRight 0.25s linear 1 );
+								@include animation( fadeInRight 0.125s linear 1 );
 								color: red;
 								content: $fa-var-exclamation-circle;
 								cursor: help;
