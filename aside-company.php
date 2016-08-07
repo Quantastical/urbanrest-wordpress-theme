@@ -7,7 +7,8 @@
 		<header>
 			<h3>Come By Our Brewery</h3>
 			<h4 itemprop="name">
-				<img itemprop="logo" alt="<?php echo bloginfo('name'); ?>" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-1-color-inverted.png" />
+				<img itemprop="logo" alt="<?php echo bloginfo('name'); ?> Logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-1-color-inverted.png" />
+				<?php echo bloginfo('name'); ?>
 			</h4>
 		</header>
 
