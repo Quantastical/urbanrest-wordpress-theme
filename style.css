@@ -5668,15 +5668,32 @@ html.javascript {
   .btn .btn-content {
     display: none; }
 
-.gallery .gallery-item {
-  display: inline-block; }
-  .gallery .gallery-item .gallery-icon img {
-    vertical-align: bottom; }
-  .gallery .gallery-item figcaption {
-    font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 300;
-    line-height: 1em; }
+.gallery {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -moz-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  justify-content: space-around; }
+  .gallery .gallery-item {
+    display: inline-block;
+    -webkit-flex: 1;
+    -moz-flex: 1;
+    flex: 1;
+    margin: 0;
+    text-align: center; }
+    .gallery .gallery-item .gallery-icon a {
+      display: inline-block;
+      margin: 1em; }
+    .gallery .gallery-item .gallery-icon img {
+      vertical-align: bottom; }
+    .gallery .gallery-item figcaption {
+      display: none; }
 
 .mfp-with-zoom .mfp-container,
 .mfp-with-zoom.mfp-bg {

@@ -138,6 +138,26 @@ jQuery( function( $ ) {
 		});
 	};
 
+	Urb.navigateInternally = function(e) {
+		if(window.history) {
+			e.preventDefault();
+		} else {
+			return;
+		}
+
+		Urb.$menuToggle.toggleClass('open', false);
+		Urb.$mainNavigation.toggleClass('open', false);
+
+		var $this = $(this);
+		var slug = $this.attr('href').replace(window.location.protocol + '//' + window.location.host, '');
+
+		window.history.pushState({}, $this.text(), slug);
+
+		Urb.loadPage(slug);
+
+		$('body').trigger('click');
+	};
+
 	Urb.performHistoryNavigation = function(e) {
 		e.preventDefault();
 		
@@ -162,25 +182,7 @@ jQuery( function( $ ) {
 					return;
 				}
 
-				$anchor.unbind('click').click(function(e) {
-					if(window.history) {
-						e.preventDefault();
-					} else {
-						return;
-					}
-
-					Urb.$menuToggle.toggleClass('open', false);
-					Urb.$mainNavigation.toggleClass('open', false);
-
-					var $this = $(this);
-					var slug = $this.attr('href').replace(window.location.protocol + '//' + window.location.host, '');
-
-					window.history.pushState({}, $this.text(), slug);
-		
-					Urb.loadPage(slug);
-
-					$('body').trigger('click');
-				});
+				$anchor.unbind('click').click(Urb.navigateInternally);
 			});
 	};
 

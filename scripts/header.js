@@ -76,9 +76,7 @@ jQuery( function( $ ) {
 				$firstPost.removeClass('previous next').addClass('active');
 			}
 
-			if(e.which != undefined && automaticInterval) {
-				clearInterval(automaticInterval);
-			}
+			Urb.stopAutomaticNavigation();
 		});
 
 		$previousButton.on('click', function(e) {
@@ -99,9 +97,7 @@ jQuery( function( $ ) {
 				$lastPost.removeClass('previous next').addClass('active');
 			}
 
-			if(e.which != undefined && automaticInterval) {
-				clearInterval(automaticInterval);
-			}
+			Urb.stopAutomaticNavigation();
 		});
 
 		$('.site-posts .latest-posts').after($nextButton).after($previousButton);
@@ -158,6 +154,7 @@ jQuery( function( $ ) {
 					var $nextPostLink = $('<a />');
 					$nextPostLink.attr('href', response.data.permalink);
 					$nextPostLink.on('dragstart', function() { return false; });
+					$nextPostLink.on('click', Urb.navigateInternally);
 					$nextPost.append($nextPostLink);
 
 					if(response.data.thumbnail) {
@@ -185,7 +182,7 @@ jQuery( function( $ ) {
 
 					$('.site-posts .latest-posts').append($nextPost);
 					$nextButton.addClass('active');
-					Urb.startAutomaticNavigation();
+					//Urb.startAutomaticNavigation();
 				}
 			}
 		});

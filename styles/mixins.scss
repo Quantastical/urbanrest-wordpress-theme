@@ -146,6 +146,14 @@ $prefix-for-spec:      true !default;
   @include prefixer(justify-content, $justify-content, webkit moz spec);
 }
 
+@mixin flex($flex) {
+  @include prefixer(flex, $flex, webkit moz spec);
+}
+
+@mixin flex-wrap($flex-wrap) {
+  @include prefixer(flex-wrap, $flex-wrap, webkit moz spec);
+}
+
 @mixin keyframes($name) {
   $original-prefix-for-webkit:    $prefix-for-webkit;
   $original-prefix-for-mozilla:   $prefix-for-mozilla;
