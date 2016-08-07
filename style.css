@@ -5715,7 +5715,7 @@ html.javascript {
 .mfp-with-zoom.mfp-removing.mfp-bg {
   opacity: 0; }
 
-.hyperlink, .site main.event a, .site main.event .hyperlink, .site main.page .page-content a, .site main.posts a, .site main.posts .hyperlink, .site main.taxonomy a, .site main.taxonomy .hyperlink, .site main.user a, .site main.user .hyperlink {
+.hyperlink, .site main.event a, .site main.event .hyperlink, .site main.page .page-content a, .site main.post .post-content a, .site main.posts a, .site main.posts .hyperlink, .site main.taxonomy a, .site main.taxonomy .hyperlink, .site main.user a, .site main.user .hyperlink {
   border-bottom-width: 1pt;
   border-bottom-color: transparent;
   border-bottom-style: solid;
@@ -5727,16 +5727,16 @@ html.javascript {
   -webkit-transition: border-bottom 0.33s;
   -moz-transition: border-bottom 0.33s;
   transition: border-bottom 0.33s; }
-  .hyperlink:hover, .site main.event a:hover, .site main.event .hyperlink:hover, .site main.page .page-content a:hover, .site main.posts a:hover, .site main.posts .hyperlink:hover, .site main.taxonomy a:hover, .site main.taxonomy .hyperlink:hover, .site main.user a:hover, .site main.user .hyperlink:hover {
+  .hyperlink:hover, .site main.event a:hover, .site main.event .hyperlink:hover, .site main.page .page-content a:hover, .site main.post .post-content a:hover, .site main.posts a:hover, .site main.posts .hyperlink:hover, .site main.taxonomy a:hover, .site main.taxonomy .hyperlink:hover, .site main.user a:hover, .site main.user .hyperlink:hover {
     /*border-bottom-color: lighten( $urbanrest-green, 5% );*/
     color: #149f4f; }
-  .hyperlink:focus, .site main.event a:focus, .site main.event .hyperlink:focus, .site main.page .page-content a:focus, .site main.posts a:focus, .site main.posts .hyperlink:focus, .site main.taxonomy a:focus, .site main.taxonomy .hyperlink:focus, .site main.user a:focus, .site main.user .hyperlink:focus {
+  .hyperlink:focus, .site main.event a:focus, .site main.event .hyperlink:focus, .site main.page .page-content a:focus, .site main.post .post-content a:focus, .site main.posts a:focus, .site main.posts .hyperlink:focus, .site main.taxonomy a:focus, .site main.taxonomy .hyperlink:focus, .site main.user a:focus, .site main.user .hyperlink:focus {
     animation-duration: 3s;
     animation-name: flash;
     animation-fill-mode: both;
     animation-iteration-count: infinite;
     outline: none; }
-  .hyperlink [rel="external"]:after, .site main.event a [rel="external"]:after, .site main.event .hyperlink [rel="external"]:after, .site main.page .page-content a [rel="external"]:after, .site main.posts a [rel="external"]:after, .site main.posts .hyperlink [rel="external"]:after, .site main.taxonomy a [rel="external"]:after, .site main.taxonomy .hyperlink [rel="external"]:after, .site main.user a [rel="external"]:after, .site main.user .hyperlink [rel="external"]:after {
+  .hyperlink [rel="external"]:after, .site main.event a [rel="external"]:after, .site main.event .hyperlink [rel="external"]:after, .site main.page .page-content a [rel="external"]:after, .site main.post .post-content a [rel="external"]:after, .site main.posts a [rel="external"]:after, .site main.posts .hyperlink [rel="external"]:after, .site main.taxonomy a [rel="external"]:after, .site main.taxonomy .hyperlink [rel="external"]:after, .site main.user a [rel="external"]:after, .site main.user .hyperlink [rel="external"]:after {
     background-color: transparent;
     border: none;
     border-radius: 0.18em;
@@ -5755,7 +5755,7 @@ html.javascript {
     -moz-transition: all 0.5s;
     transition: all 0.5s;
     width: 0; }
-  .hyperlink [rel="external"]:hover:after, .site main.event a [rel="external"]:hover:after, .site main.page .page-content a [rel="external"]:hover:after, .site main.posts a [rel="external"]:hover:after, .site main.taxonomy a [rel="external"]:hover:after, .site main.user a [rel="external"]:hover:after {
+  .hyperlink [rel="external"]:hover:after, .site main.event a [rel="external"]:hover:after, .site main.page .page-content a [rel="external"]:hover:after, .site main.post .post-content a [rel="external"]:hover:after, .site main.posts a [rel="external"]:hover:after, .site main.taxonomy a [rel="external"]:hover:after, .site main.user a [rel="external"]:hover:after {
     background-color: white;
     height: 0.84em;
     opacity: 1;
@@ -8431,6 +8431,23 @@ html.javascript {
       margin-bottom: 0.25em; }
     .site main.page .page-content p {
       margin-bottom: 1em; }
+    .site main.page .page-content .alignleft {
+      float: left;
+      margin-right: 1em;
+      margin-bottom: 1em; }
+    .site main.page .page-content .alignright {
+      float: right;
+      margin-left: 1em;
+      margin-bottom: 1em; }
+    .site main.page .page-content .aligncenter {
+      display: block;
+      float: none;
+      margin: 1em auto; }
+    @media (max-width: 500px) {
+      .site main.page .page-content .alignleft, .site main.page .page-content .alignright {
+        display: block;
+        float: none;
+        margin: 1em auto; } }
   .site main.page .page-footer {
     margin-top: 3em; }
     .site main.page .page-footer .page-sharing.modal:not(.modal-opened):not(.modal-closing) {

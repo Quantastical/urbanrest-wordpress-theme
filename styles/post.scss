@@ -168,6 +168,11 @@
 			{
 				margin-top: 1em;
 			}
+
+			a
+			{
+				@extend .hyperlink;
+			}
 		}
 
 		.post-tags

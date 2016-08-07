@@ -109,6 +109,36 @@
 			{
 				@extend .hyperlink;
 			}
+
+			img {
+				border-radius: 2pt;
+			}
+
+			.alignleft {
+				float: left;
+				margin-right: 1em;
+				margin-bottom: 1em;
+			}
+
+			.alignright {
+				float: right;
+				margin-left: 1em;
+				margin-bottom: 1em;
+			}
+
+			.aligncenter {
+				display: block;
+				float: none;
+				margin: 1em auto;
+			}
+
+			@include media('<=phone') {
+				.alignleft, .alignright {
+					display: block;
+					float: none;
+					margin: 1em auto;
+				}
+			}
 		}
 
 		.page-footer
