@@ -5826,6 +5826,9 @@ html.javascript {
   height: 100%;
   overflow: hidden; }
 
+.javascript .modal {
+  display: none; }
+
 .javascript .modal-shade {
   -webkit-align-items: center;
   -moz-align-items: center;
@@ -6452,6 +6455,22 @@ html.javascript {
 
 .share-modal .icon:focus {
   border: none; }
+
+.no-javascript .share-modal .shortlink {
+  background: none;
+  border: none;
+  color: #000000;
+  display: inline-block;
+  font-weight: 600;
+  margin: 0.25em auto;
+  overflow: visible;
+  width: auto; }
+
+.no-javascript .share-modal .menu-title {
+  color: #000000; }
+
+.no-javascript .share-modal .modal-close {
+  display: none; }
 
 @media only screen {
   .social-menu {
@@ -8381,6 +8400,22 @@ html.javascript {
             transition: background-color 0.11s; }
         .site main.event .event-footer .event-tags li:last-child a {
           margin-right: 0; }
+
+.site:not(.home) .site-header {
+  min-height: 0;
+  -webkit-transition: min-height 0.25s;
+  -moz-transition: min-height 0.25s;
+  transition: min-height 0.25s; }
+
+.site:not(.home) .page-navigation {
+  bottom: auto;
+  top: 0; }
+
+.site:not(.home) .social-navigation {
+  display: none; }
+
+.site:not(.home) .site-posts {
+  display: none; }
 
 .site main.page {
   background-color: #DCC1A7;

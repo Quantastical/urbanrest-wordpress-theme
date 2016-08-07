@@ -155,3 +155,18 @@
 .share-modal .icon:focus {
 	border: none;
 }
+
+.no-javascript .share-modal {
+	.shortlink {
+		background: none;
+		border: none;
+		color: $urbanrest-black;
+		display: inline-block;
+		font-weight: 600;
+		margin: 0.25em auto;
+		overflow: visible;
+		width: auto;
+	}
+	.menu-title { color: $urbanrest-black; }
+	.modal-close { display: none; }
+}

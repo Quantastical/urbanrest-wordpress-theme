@@ -6,6 +6,8 @@
 
 .javascript
 {
+	.modal { display: none; }
+
 	.modal-shade
 	{
 		@include prefixer(align-items, center, webkit moz spec);

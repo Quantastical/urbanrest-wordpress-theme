@@ -152,6 +152,13 @@
 		<!--[if lt IE 8]>
 		<p class="browser-upgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
+		<script>
+		var html = document.documentElement;
+		if(html && html.classList){
+			html.classList.remove('no-javascript');
+			html.classList.add('javascript');
+		}
+		</script>
 
 		<header class="site-header row active" id="preliminaries">
 			<h1 class="site-title">

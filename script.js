@@ -875,7 +875,7 @@
                 var o = t(location.pathname.replace(/\/$/, "").replace(/\/+/, "#")), n = 5;
                 0 == Urb.$window.scrollTop() && o.length && Urb.$window.scrollTop(o.offset().top);
             }
-        } else Urb.$window.scrollTop(t("main").offset().top - e);
+        } else Urb.$body.addClass("home"), Urb.$window.scrollTop(t("main").offset().top - e);
         Urb.scrollPageNavigation();
     }, "scrollRestoration" in history && (history.scrollRestoration = "manual"), Urb.$window.on("load orientationchange resize", Urb.setupNavigationSnap), 
     Urb.$window.on("ajaxload load", Urb.setupExternalLinks), Urb.$window.on("load", Urb.setupFragmentAnchors), 

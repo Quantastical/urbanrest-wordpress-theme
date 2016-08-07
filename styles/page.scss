@@ -1,5 +1,13 @@
 .site
 {
+	&:not(.home)
+	{
+		.site-header { min-height: 0; @include transition(min-height 0.25s); }
+		.page-navigation { bottom: auto; top: 0; }
+		.social-navigation { display: none; }
+		.site-posts { display: none; }
+	}
+
 	main.page
 	{
 		background-color: #DCC1A7;
