@@ -117,7 +117,7 @@
 <?php endif; ?>
 <?php $image = ($post) ? wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array(1200,630) ) : false; ?>
 <?php if( $image & !is_home() ) : ?>
-	<meta property="og:image" content="<?php echo $image[0]; ?>" />
+		<meta property="og:image" content="<?php echo $image[0]; ?>" />
 <?php elseif( get_option('urbanrest_setting_facebook_opengraph_image') ) : ?>
 		<meta property="og:image" content="<?php echo get_option('urbanrest_setting_facebook_opengraph_image'); ?>" />
 		<meta property="og:image:type" content="<?php echo get_option('urbanrest_setting_facebook_opengraph_image_mime'); ?>" />

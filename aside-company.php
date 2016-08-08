@@ -73,9 +73,9 @@ if($startTime > $endTime) {
 <?php endif; ?>
 
 		<p class="company-url">
-			<a class="btn" href="http://urbanrest.com">
+			<a class="btn" href="<?php echo get_bloginfo('wpurl'); ?>" itemprop="url">
 				<span class="btn-label">Online: Anywhere, Anytime.</span>
-				<a class="btn-text" href="<?php echo get_bloginfo('wpurl'); ?>" itemprop="url">Urbanrest.com</a>
+				<span class="btn-text" >Urbanrest.com</span>
 			</a>
 		</p>
 	</section>
