@@ -146,6 +146,7 @@
 
 <?php /*		<link type="text/plain" rel="author" href="<?php echo get_site_url(); ?>/humans.txt" />*/ ?>
 		<?php wp_head(); ?>
+		<style id="qr-code" type="text/css" media="print">.page-footer:after {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=<?php urlencode(the_permalink()); ?>);}}</style>
 	</head>
 
 	<body <?php body_class('site'); ?>>
@@ -157,6 +158,37 @@
 		if(html && html.classList){
 			html.classList.remove('no-javascript');
 			html.classList.add('javascript');
+		}
+		</script>
+
+		<script type="application/ld+json">
+		{
+			"@context" : "http://schema.org",
+			"@type" : "Organization",
+			"name" : "<?php bloginfo('name'); ?>",
+			"url" : "<?php echo get_bloginfo('wpurl'); ?>",
+			"sameAs" : [
+<?php
+$social = wp_nav_menu(array(
+	'theme_location'  => 'social',
+	'echo'            => false,
+));
+if (preg_match_all('#(<a [^<]+</a>)#', $social, $matches)) {
+	$hrefpat = '/href *= *(([\"\']?)([^\"\' ]+)\2)/';
+	$i = 0;
+	$length = count($matches[0]);
+	foreach ($matches[0] as $link) {
+		if (preg_match($hrefpat, $link, $hrefs)) {
+			$href = $hrefs[1];
+		}
+
+		echo "\t\t\t\t{$href}" . ($i == $length - 1 ? "\n" : ",\n");
+
+		$i++;
+	}
+}
+?>
+			]
 		}
 		</script>
 

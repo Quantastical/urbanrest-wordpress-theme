@@ -9060,6 +9060,7 @@ html.javascript {
   body {
     box-sizing: border-box !important;
     padding: 0 !important; }
+  .site-name,
   .site-description,
   .site-navigation,
   .site-posts,

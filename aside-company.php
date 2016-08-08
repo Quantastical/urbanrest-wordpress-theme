@@ -10,6 +10,10 @@
 				<img itemprop="logo" alt="<?php echo bloginfo('name'); ?> Logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-1-color-inverted.png" />
 				<?php echo bloginfo('name'); ?>
 			</h4>
+			<div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+				<meta itemprop="latitude" content="<?php echo get_option('urbanrest_setting_latitude'); ?>" />
+				<meta itemprop="longitude" content="<?php echo get_option('urbanrest_setting_longitude'); ?>" />
+			</div>
 		</header>
 
 		<div class="business-hours">
@@ -71,7 +75,7 @@ if($startTime > $endTime) {
 		<p class="company-url">
 			<a class="btn" href="http://urbanrest.com">
 				<span class="btn-label">Online: Anywhere, Anytime.</span>
-				<span class="btn-text" itemprop="url">Urbanrest.com</span>
+				<a class="btn-text" href="<?php echo get_bloginfo('wpurl'); ?>" itemprop="url">Urbanrest.com</a>
 			</a>
 		</p>
 	</section>
@@ -102,12 +106,8 @@ wp_nav_menu(array(
 
 <?php if( get_option('urbanrest_setting_latitude') && get_option('urbanrest_setting_longitude') ) : ?>
 	<section class="site-map col-xs-12" itemprop="hasMap" itemscope itemtype="http://schema.org/Map" data-latitude="<?php echo get_option('urbanrest_setting_latitude'); ?>" data-longitude="<?php echo get_option('urbanrest_setting_longitude'); ?>">
-		<div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
-			<meta itemprop="latitude" content="<?php echo get_option('urbanrest_setting_latitude'); ?>" />
-			<meta itemprop="longitude" content="<?php echo get_option('urbanrest_setting_longitude'); ?>" />
-		</div>
 		<h3><a class="map-link" href="#map">Locate On Map</a></h3>
-		<div class="map-container" id="map" itemprop="mapType" itemscope itemtype="http://schema.org/VenueMap">
+		<div class="map-container" id="map">
 <?php
 /*
 $menu_locations = get_nav_menu_locations();

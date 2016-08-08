@@ -56,6 +56,7 @@ endforeach;
 <?php endif; ?>
 <?php if( count($tap_menu_items) == 0 && count($growler_menu_items) == 0 ) : ?>
 		<section class="col-xs-12 beer-list">
+			<h3>Under Construction</h3>
 			<p style="text-align:center;">Beer List Coming Soon</p>
 		</section>
 <?php endif; ?>

@@ -17,8 +17,8 @@
 				Copyright &copy;
 				<time datetime="2015" itemprop="foundingDate"><?php echo (date('Y') > 2015) ? '2015 &ndash; ' . date('Y') : date('Y'); ?></time>
 			</p>
+				<strong itemprop="legalName"><?php bloginfo('name'); ?></strong>
 				<address class="site-address" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-					<strong itemprop="legalName"><?php bloginfo('name'); ?></strong>
 <?php if( get_option('urbanrest_setting_street_address') ) : ?>
 					<span itemprop="streetAddress"><?php echo get_option('urbanrest_setting_street_address'); ?></span>
 <?php endif; ?>
@@ -41,7 +41,6 @@
 <?php echo urb_get_fonts_for_preloading(); ?>
 		</div>
 
-		<style id="qr-code" type="text/css" media="print">.page-footer:after {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=<?php urlencode(the_permalink()); ?>);}}</style>
 		<?php wp_footer(); ?>
 	</body>
 </html>
