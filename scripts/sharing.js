@@ -18,7 +18,7 @@ jQuery(function($){
 			$('.page-share, .post-share', $main)
 				.addClass('visible')
 				.bind('click', function() {
-					$('.modal.share-modal .shortlink', $main).focus().select();
+					$('.modal.share-modal .shortlink', $main).focus();
 				});
 		}
 	}

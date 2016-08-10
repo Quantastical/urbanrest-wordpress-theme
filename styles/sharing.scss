@@ -22,7 +22,7 @@
 
 	&:before
 	{
-		background: #4CAF50;
+		background: $urbanrest-green;
 		border-radius: 50%;
 		box-shadow: 0 1pt 3pt rgba(black,0.26);
 		color: rgba(white,0.75);
@@ -132,18 +132,17 @@
 	
 	.shortlink
 	{
-		background: black;
-		border: dotted 1px white;
-		border-radius: 0.25em;
 		color: white;
 		display: block;
-		font-size: 1em;
-		margin: 1em;
-		overflow: hidden;
-		padding: 0.5em;
-		text-align: center;
-		text-overflow: ellipsis;
-		width: 15em;
+		font-size: 3em;
+		font-family: 'Satisfy';
+		margin-bottom: 0.5em;
+		text-decoration: none;
+
+		&:hover
+		{
+			color: $urbanrest-green;
+		}
 
 		&:focus
 		{

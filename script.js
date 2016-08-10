@@ -1268,7 +1268,7 @@
     }, Urb.setupSharing = function() {
         var e = t("main");
         e.length > 0 && t(".page-share, .post-share", e).addClass("visible").bind("click", function() {
-            t(".modal.share-modal .shortlink", e).focus().select();
+            t(".modal.share-modal .shortlink", e).focus();
         });
     }, Urb.$window.on("ajaxload load scroll", Urb.scrollSharing), Urb.$window.on("ajaxload load", function() {
         setTimeout(Urb.setupSharing, 500);
