@@ -503,3 +503,10 @@
 		}
 	}
 }
+
+/* dim menu toggle (hamburger/cross) when modals are open */
+.modal-active {
+	#menu-toggle {
+		opacity: 0.33;
+	}	
+}

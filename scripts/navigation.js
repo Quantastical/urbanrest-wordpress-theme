@@ -307,9 +307,11 @@ jQuery( function( $ ) {
 	};
 
 	Urb.scrollToContent = function() {
-		if( !Urb.$body.hasClass('home') && Urb.$window.scrollTop() == 0 ) {
+		if( !Urb.$body.hasClass('home') ) {
 			Urb.$body.addClass('home');
-			Urb.$window.scrollTop( $('main').offset().top - wpAdminBarHeight );
+			if( Urb.$window.scrollTop() == 0 ) {
+				Urb.$window.scrollTop( $('main').offset().top - wpAdminBarHeight );
+			}
 		} else if( location.hash ) {
 			var $anchor = $(location.hash);
 			var anchorProximityThreshold = 5; // pixels

@@ -5701,6 +5701,56 @@ html.javascript {
     .gallery .gallery-item figcaption {
       display: none; }
 
+.mfp-close,
+.mfp-image-holder .mfp-close,
+.mfp-iframe-holder .mfp-close {
+  background: none;
+  border: none;
+  box-sizing: border-box;
+  color: rgba(220, 223, 222, 0.5);
+  cursor: pointer;
+  font-size: 1.125em;
+  height: 5em;
+  margin: 0;
+  padding: 1em;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  -webkit-transition: color 0.33s;
+  -moz-transition: color 0.33s;
+  transition: color 0.33s;
+  width: 3.85em; }
+  .mfp-close:before,
+  .mfp-image-holder .mfp-close:before,
+  .mfp-iframe-holder .mfp-close:before {
+    content: "";
+    font-family: FontAwesome; }
+  .mfp-close:focus,
+  .mfp-image-holder .mfp-close:focus,
+  .mfp-iframe-holder .mfp-close:focus {
+    outline: none; }
+  .mfp-close:hover,
+  .mfp-image-holder .mfp-close:hover,
+  .mfp-iframe-holder .mfp-close:hover {
+    color: #dcdfde;
+    -webkit-transition: color 0.666s;
+    -moz-transition: color 0.666s;
+    transition: color 0.666s; }
+
+.admin-bar .mfp-close,
+.admin-bar .mfp-image-holder .mfp-close,
+.admin-bar .mfp-iframe-holder .mfp-close {
+  top: 32px; }
+  @media (max-width: 783px) {
+    .admin-bar .mfp-close,
+    .admin-bar .mfp-image-holder .mfp-close,
+    .admin-bar .mfp-iframe-holder .mfp-close {
+      top: 46px; } }
+
+.mfp-bg {
+  background-color: black; }
+
 .mfp-with-zoom .mfp-container,
 .mfp-with-zoom.mfp-bg {
   opacity: 0;
@@ -5719,6 +5769,36 @@ html.javascript {
 
 .mfp-with-zoom.mfp-removing .mfp-container,
 .mfp-with-zoom.mfp-removing.mfp-bg {
+  opacity: 0; }
+
+/* overlay at start */
+.mfp-fade.mfp-bg {
+  opacity: 0;
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out; }
+
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 0.88; }
+
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0; }
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out; }
+
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1; }
+
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
   opacity: 0; }
 
 .hyperlink, .site main.event a, .site main.event .hyperlink, .site main.page .page-content a, .site main.post .post-content a, .site main.posts a, .site main.posts .hyperlink, .site main.taxonomy a, .site main.taxonomy .hyperlink, .site main.user a, .site main.user .hyperlink {
@@ -5860,16 +5940,20 @@ html.javascript {
   .javascript .modal-shade .modal-close {
     background: none;
     border: none;
+    box-sizing: border-box;
     color: rgba(220, 223, 222, 0.5);
     cursor: pointer;
-    font-size: 1.5em;
+    font-size: 1.125em;
+    height: 5em;
+    margin: 0;
     padding: 1em;
     position: fixed;
     right: 0;
     top: 0;
     -webkit-transition: color 0.33s;
     -moz-transition: color 0.33s;
-    transition: color 0.33s; }
+    transition: color 0.33s;
+    width: 3.85em; }
     .javascript .modal-shade .modal-close:before {
       content: "";
       font-family: FontAwesome; }
@@ -5888,13 +5972,11 @@ html.javascript {
       .javascript .modal-shade .modal-content {
         max-width: 50em; } }
 
-@media (min-width: 601px) {
-  .admin-bar .javascript .modal-shade .modal-close {
-    top: 46px; } }
-
-@media (min-width: 783px) {
-  .admin-bar .javascript .modal-shade .modal-close {
-    top: 32px; } }
+.admin-bar .modal-shade .modal-close {
+  top: 32px; }
+  @media (max-width: 783px) {
+    .admin-bar .modal-shade .modal-close {
+      top: 46px; } }
 
 @-webkit-keyframes mainMenuItemFocus {
   from,
@@ -6224,6 +6306,10 @@ html.javascript {
 @media only screen and (min-width: 783px) {
   .site.admin-bar .site-navigation.stuck-top .page-navigation {
     top: 32px !important; } }
+
+/* dim menu toggle (hamburger/cross) when modals are open */
+.modal-active #menu-toggle {
+  opacity: 0.33; }
 
 @media only screen {
   .site .site-header .site-search {
@@ -7936,6 +8022,9 @@ html.javascript {
     .site main.beer .beer-content h2 {
       font-size: 1.3em;
       margin-bottom: 0.25em; }
+    .site main.beer .beer-content h4 {
+      margin-bottom: 0.25em;
+      margin-top: 0.5em; }
     .site main.beer .beer-content p {
       margin-bottom: 1em; }
     .site main.beer .beer-content section {
@@ -8478,6 +8567,9 @@ html.javascript {
     .site main.page .page-content h2 {
       font-size: 1.3em;
       margin-bottom: 0.25em; }
+    .site main.page .page-content h4 {
+      margin-bottom: 0.25em;
+      margin-top: 0.5em; }
     .site main.page .page-content p {
       margin-bottom: 1em; }
     .site main.page .page-content img {
@@ -8648,6 +8740,9 @@ html.javascript {
     .site main.post .post-content h2 {
       font-size: 1.3em;
       margin-bottom: 0.25em; }
+    .site main.post .post-content h4 {
+      margin-bottom: 0.25em;
+      margin-top: 0.5em; }
     .site main.post .post-content p {
       margin-bottom: 1em; }
     .site main.post .post-content ul {

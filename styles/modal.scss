@@ -46,14 +46,18 @@
 		{
 			background: none;
 			border: none;
+			box-sizing: border-box;
 			color: rgba( $urbanrest-white, 0.5 );
 			cursor: pointer;
-			font-size: 1.5em;
+			font-size: 1.125em;
+			height: 5em;
+			margin: 0;
 			padding: 1em;
 			position: fixed;
 			right: 0;
 			top: 0;
 			@include transition( color 0.33s );
+			width: 3.85em;
 
 			&:before
 			{
@@ -86,8 +90,14 @@
 }
 
 .admin-bar
-{
-	@include media( '>600px' ) { .javascript .modal-shade .modal-close { top: 46px; } }
-	@include media( '>782px' ) { .javascript .modal-shade .modal-close { top: 32px; } }
-	
+{		
+	.modal-shade .modal-close
+	{
+		top: 32px;
+
+		@include media( '<784px' )
+		{
+			top: 46px;
+		}
+	}
 }

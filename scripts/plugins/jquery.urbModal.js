@@ -45,8 +45,9 @@
 				if( $target.is('.modal-content') || $target.closest('.modal-content').length) {
 					return true;
 				}
-				$modalContent.removeClass('animated fadeInDown').addClass('animated fadeOutDown');
+				$modalContent.removeClass('animated fadeIn').addClass('animated fadeOut');
 				$modalShade.removeClass('modal-opened animated fadeIn').addClass('modal-closing animated fadeOut');
+				$('body').removeClass('modal-active');
 				setTimeout(function() {
 					$('body').removeClass('no-scroll');
 					$modalShade.removeClass('modal-closing animated fadeOut');
@@ -63,10 +64,10 @@
 		show: function() {
 			var $modalShade = $(this.element);
 			var $modalContent = $('.modal-content',$modalShade);
-		 	$modalContent.removeClass('fadeOutDown').addClass('animated fadeInDown');
+		 	$modalContent.removeClass('fadeOut').addClass('animated fadeIn');
 		 	$modalShade.addClass('modal-opened animated fadeIn');
 
-		 	$('body').addClass('no-scroll');
+		 	$('body').addClass('no-scroll modal-active');
 		}
 	});
 
