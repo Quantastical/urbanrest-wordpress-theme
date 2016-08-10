@@ -8031,6 +8031,11 @@ html.javascript {
             background-image: url("images/icon-untappd.min.png"); }
       .site main.beer .beer-footer .beer-actions .beer-rating h5 {
         display: none; }
+      .site main.beer .beer-footer .beer-actions .beer-rating h6 {
+        font-family: 'flux';
+        font-size: 1.5em;
+        font-weight: 400;
+        margin-bottom: 0.25em; }
       .site main.beer .beer-footer .beer-actions .beer-rating [itemprop="aggregateRating"] {
         display: none; }
       .site main.beer .beer-footer .beer-actions .beer-rating .rating-actions {

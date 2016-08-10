@@ -346,7 +346,7 @@
             }
         }
     });
-    var z, O = function(a) {
+    var z, B = function(a) {
         if (a.data && void 0 !== a.data.title) return a.data.title;
         var o = e.st.image.titleSrc;
         if (o) {
@@ -409,7 +409,7 @@
                     c = a.img[0], c.naturalWidth > 0 ? a.hasSize = !0 : c.width || (a.hasSize = !1);
                 }
                 return e._parseMarkup(o, {
-                    title: O(a),
+                    title: B(a),
                     img_replaceWith: a.img
                 }, a), e.resizeImage(), a.hasSize ? (z && clearInterval(z), a.loadError ? (o.addClass("mfp-loading"), 
                 e.updateStatus("error", s.tError.replace("%url%", a.src))) : (o.removeClass("mfp-loading"), 
@@ -418,9 +418,9 @@
             }
         }
     });
-    var B, A = function() {
-        return void 0 === B && (B = void 0 !== document.createElement("p").style.MozTransform), 
-        B;
+    var O, A = function() {
+        return void 0 === O && (O = void 0 !== document.createElement("p").style.MozTransform), 
+        O;
     };
     t.magnificPopup.registerModule("zoom", {
         options: {
@@ -1171,15 +1171,17 @@
         }), Urb.shareRating(a.val()), !1;
     }, Urb.setupRatingPoll = function() {
         Urb.$aggregateRating = t('[itemprop="aggregateRating"]'), Urb.$beerCheckinModal = t(".modal.checkin-modal");
-        var e = t('<div class="rating-actions" />');
-        Number(Urb.$aggregateRating.data("user-rating")) > 0 && e.addClass("rated");
-        for (var a = 1; 5 >= a; a++) {
-            var o = t('<button class="rate-button" />');
-            o.val(a), o.data("id", Urb.$aggregateRating.data("beer-id")), o.text(1 === a ? "1 Star" : a + " Stars"), 
-            o.toggleClass("rated", a <= Number(Urb.$aggregateRating.data("user-rating"))), e.append(o), 
-            o.on("click", Urb.rateBeer);
+        var e = t("<h6>Rate this Beer</h6>");
+        e.insertAfter(".beer-rating h5");
+        var a = t('<div class="rating-actions" />');
+        Number(Urb.$aggregateRating.data("user-rating")) > 0 && a.addClass("rated");
+        for (var o = 1; 5 >= o; o++) {
+            var n = t('<button class="rate-button" />');
+            n.val(o), n.data("id", Urb.$aggregateRating.data("beer-id")), n.text(1 === o ? "1 Star" : o + " Stars"), 
+            n.toggleClass("rated", o <= Number(Urb.$aggregateRating.data("user-rating"))), a.append(n), 
+            n.on("click", Urb.rateBeer);
         }
-        Urb.$aggregateRating.after(e);
+        Urb.$aggregateRating.after(a);
     }, Urb.setupRatingsFrom3rdParties = function() {
         t.ajaxSetup({
             beforeSend: function(t) {

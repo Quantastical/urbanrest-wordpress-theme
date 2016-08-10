@@ -36,6 +36,9 @@ jQuery(function($){
 		Urb.$aggregateRating = $('[itemprop="aggregateRating"]');
 		Urb.$beerCheckinModal = $('.modal.checkin-modal');
 
+		var $heading = $('<h6>Rate this Beer</h6>');
+		$heading.insertAfter('.beer-rating h5');
+
 		var $ratingActions = $('<div class="rating-actions" />');
 		if( Number(Urb.$aggregateRating.data('user-rating')) > 0 ) {
 			$ratingActions.addClass('rated');
