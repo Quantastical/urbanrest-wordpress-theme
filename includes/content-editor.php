@@ -1,9 +1,15 @@
 <?php
 
+function urb_mce_buttons_2( $buttons ) {
+	$buttons[] = 'superscript';
+	$buttons[] = 'subscript';
+
+	return $buttons;
+}
+
 function urb_mce_buttons_3( $buttons ) {
 	array_unshift( $buttons, 'fontselect' );
 	array_unshift( $buttons, 'fontsizeselect' );
-	//array_push( $buttons, 'styleselect' );
 
 	return $buttons;
 }
@@ -25,6 +31,7 @@ function urb_tiny_mce_before_init( $init ) {
 	return $init;
 }
 
+add_filter('mce_buttons_2', 'urb_mce_buttons_2');
 add_filter('mce_buttons_3', 'urb_mce_buttons_3');
 add_filter('tiny_mce_before_init', 'urb_tiny_mce_before_init');
 
