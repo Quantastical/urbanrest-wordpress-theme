@@ -6355,7 +6355,7 @@ html.javascript {
       color: #118833;
       cursor: pointer;
       display: inline-block;
-      font-size: 1em;
+      font-size: 0.9em;
       margin: 0.5em;
       outline: none;
       padding: 0.5em 0.25em;
@@ -6397,14 +6397,21 @@ html.javascript {
     font-size: 1em;
     margin: 0 0.25em;
     outline: none;
+    opacity: 0;
     padding: 0.5em 0.25em;
+    text-transform: uppercase;
+    -webkit-transition: opacity 0.125s;
+    -moz-transition: opacity 0.125s;
+    transition: opacity 0.125s;
     z-index: 3; }
     .page .search-submit:hover {
       color: #17ba46; }
     .page .search-submit:before {
       content: 'Search'; }
     .page .search-submit .btn-label {
-      display: none; } }
+      display: none; }
+  .page .search-input:focus + .search-submit {
+    opacity: 1; } }
 
 .share, .site main.beer .beer-footer .beer-actions .beer-share, .site main.page .page-footer .page-actions .page-share, .site main.post .post-footer .post-actions .post-share {
   background: none;

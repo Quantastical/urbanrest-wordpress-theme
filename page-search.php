@@ -10,7 +10,7 @@ Template Name: Search
 	<main class="page row around-xs">
 		<article id="page-<?php the_ID(); ?>" <?php post_class('col-xs-11 col-sm-9 col-md-7'); ?>>
 			<header class="page-header" role="banner">
-				<h2>Search Results</h2>
+				<h2 class="page-title">Search Results</h2>
 			</header>
 			<div class="page-content">
 				<p>

@@ -82,7 +82,7 @@
 					color: $urbanrest-green;
 					cursor: pointer;
 					display: inline-block;
-					font-size: 1em;
+					font-size: 0.9em;
 					margin: 0.5em;
 					outline: none;
 					padding: 0.5em 0.25em;
@@ -149,7 +149,10 @@
 			font-size: 1em;
 			margin: 0 0.25em;
 			outline: none;
+			opacity: 0;
 			padding: 0.5em 0.25em;
+			text-transform: uppercase;
+			@include transition(opacity 0.125s);
 			z-index: 3;
 
 			&:hover
@@ -166,6 +169,10 @@
 			{
 				display: none;
 			}
+		}
+
+		.search-input:focus + .search-submit {
+			opacity: 1;
 		}
 	}
 }
