@@ -87,6 +87,12 @@ $foursquare-blue:       #0072B1;
 	}
 }
 
+#edit-slug-box:empty + #edit-shortlink-box,
+#edit-slug-box:blank + #edit-shortlink-box,
+#edit-slug-box:-moz-only-whitespace + #edit-shortlink-box {
+	display: none;
+}
+
 #editable-shortlink-slug
 {
 	font-weight: 700;

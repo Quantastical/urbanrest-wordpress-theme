@@ -26,6 +26,16 @@ gulp.task('styles', function() {
 	'styles/xsl/xml-sitemap.css': 'styles/xsl/xml-sitemap.scss'
 	*/
 
+	gulp.src('./styles/admin/style.scss')
+		.pipe(sourcemaps.init())
+		.pipe(sass())
+		.pipe(sourcemaps.write('./', {
+			sourceMappingURL: function(file) {
+				return file.relative + '.map';
+			}
+		}))
+		.pipe(gulp.dest('./'));
+
 	gulp.src('style.scss')
 		.pipe(sourcemaps.init())
 		.pipe(sass())

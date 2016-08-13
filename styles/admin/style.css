@@ -1,247 +1,160 @@
 @font-face {
-  font-family: "Colored Crayons";
-  src: url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.eot");
-  src: url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.eot?#iefix") format("embedded-opentype"), url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.woff") format("woff"), url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.ttf") format("truetype"), url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.svg#") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-@font-face {
   font-family: "Chalk It Up";
   src: url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.eot");
   src: url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.eot?#iefix") format("embedded-opentype"), url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.woff") format("woff"), url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.ttf") format("truetype"), url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.svg#") format("svg");
   font-weight: normal;
   font-style: normal; }
-@font-face {
-  font-family: "Gotham";
-  src: url("fonts/Gotham_Bold/ufonts.com_gotham-bold-webfont.eot");
-  src: url("fonts/Gotham_Bold/ufonts.com_gotham-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/Gotham_Bold/ufonts.com_gotham-bold-webfont.woff") format("woff"), url("fonts/Gotham_Bold/ufonts.com_gotham-bold-webfont.ttf") format("truetype"), url("fonts/Gotham_Bold/ufonts.com_gotham-bold-webfont.svg#") format("svg");
-  font-weight: 600;
-  font-style: normal; }
-@font-face {
-  font-family: "Gotham";
-  src: url("fonts/Gotham_Black/ufonts.com_gotham-black-webfont.eot");
-  src: url("fonts/Gotham_Black/ufonts.com_gotham-black-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/Gotham_Black/ufonts.com_gotham-black-webfont.woff") format("woff"), url("fonts/Gotham_Black/ufonts.com_gotham-black-webfont.ttf") format("truetype"), url("fonts/Gotham_Black/ufonts.com_gotham-black-webfont.svg#") format("svg");
-  font-weight: 800;
-  font-style: normal; }
+
 @font-face {
   font-family: "Legend M54";
   src: url("fonts/Legend_M54/legend_m54-webfont.eot");
   src: url("fonts/Legend_M54/legend_m54-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/Legend_M54/legend_m54-webfont.woff") format("woff"), url("fonts/Legend_M54/legend_m54-webfont.ttf") format("truetype"), url("fonts/Legend_M54/legend_m54-webfont.svg#") format("svg");
   font-weight: normal;
   font-style: normal; }
+
+@font-face {
+  font-family: "RNS Baruta";
+  src: url("fonts/RNS_Baruta/RNSBaruta-Black.eot");
+  src: url("fonts/RNS_Baruta/RNSBaruta-Black.eot?#iefix") format("embedded-opentype"), url("fonts/RNS_Baruta/RNSBaruta-Black.woff") format("woff"), url("fonts/RNS_Baruta/RNSBaruta-Black.ttf") format("truetype"), url("fonts/RNS_Baruta/RNSBaruta-Black.svg#") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 @font-face {
   font-family: "Roboto";
   src: url("fonts/Roboto/Roboto-Thin.eot");
   src: url("fonts/Roboto/Roboto-Thin.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto/Roboto-Thin.woff") format("woff"), url("fonts/Roboto/Roboto-Thin.ttf") format("truetype"), url("fonts/Roboto/Roboto-Thin.svg#") format("svg");
   font-weight: 100;
   font-style: normal; }
+
 @font-face {
   font-family: "Roboto";
   src: url("fonts/Roboto/Roboto-Light.eot");
   src: url("fonts/Roboto/Roboto-Light.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto/Roboto-Light.woff") format("woff"), url("fonts/Roboto/Roboto-Light.ttf") format("truetype"), url("fonts/Roboto/Roboto-Light.svg#") format("svg");
   font-weight: 300;
   font-style: normal; }
+
 @font-face {
   font-family: "Roboto";
   src: url("fonts/Roboto/Roboto-Regular.eot");
   src: url("fonts/Roboto/Roboto-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto/Roboto-Regular.woff") format("woff"), url("fonts/Roboto/Roboto-Regular.ttf") format("truetype"), url("fonts/Roboto/Roboto-Regular.svg#") format("svg");
   font-weight: 400;
   font-style: normal; }
+
 @font-face {
   font-family: "Roboto";
   src: url("fonts/Roboto/Roboto-Bold.eot");
   src: url("fonts/Roboto/Roboto-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto/Roboto-Bold.woff") format("woff"), url("fonts/Roboto/Roboto-Bold.ttf") format("truetype"), url("fonts/Roboto/Roboto-Bold.svg#") format("svg");
   font-weight: 600;
   font-style: normal; }
+
 @font-face {
   font-family: "Roboto";
   src: url("fonts/Roboto/Roboto-Black.eot");
   src: url("fonts/Roboto/Roboto-Black.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto/Roboto-Black.woff") format("woff"), url("fonts/Roboto/Roboto-Black.ttf") format("truetype"), url("fonts/Roboto/Roboto-Black.svg#") format("svg");
   font-weight: 800;
   font-style: normal; }
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("fonts/Roboto_Mono/RobotoSlab-Thin.eot");
+  src: url("fonts/Roboto_Mono/RobotoSlab-Thin.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Mono/RobotoSlab-Thin.woff") format("woff"), url("fonts/Roboto_Mono/RobotoSlab-Thin.ttf") format("truetype"), url("fonts/Roboto_Mono/RobotoSlab-Thin.svg#") format("svg");
+  font-weight: 100;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("fonts/Roboto_Mono/RobotoSlab-Light.eot");
+  src: url("fonts/Roboto_Mono/RobotoSlab-Light.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Mono/RobotoSlab-Light.woff") format("woff"), url("fonts/Roboto_Mono/RobotoSlab-Light.ttf") format("truetype"), url("fonts/Roboto_Mono/RobotoSlab-Light.svg#") format("svg");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("fonts/Roboto_Mono/RobotoSlab-Regular.eot");
+  src: url("fonts/Roboto_Mono/RobotoSlab-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Mono/RobotoSlab-Regular.woff") format("woff"), url("fonts/Roboto_Mono/RobotoSlab-Regular.ttf") format("truetype"), url("fonts/Roboto_Mono/RobotoSlab-Regular.svg#") format("svg");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("fonts/Roboto_Mono/RobotoSlab-Medium.eot");
+  src: url("fonts/Roboto_Mono/RobotoSlab-Medium.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Mono/RobotoSlab-Medium.woff") format("woff"), url("fonts/Roboto_Mono/RobotoSlab-Medium.ttf") format("truetype"), url("fonts/Roboto_Mono/RobotoSlab-Medium.svg#") format("svg");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("fonts/Roboto_Mono/RobotoSlab-Bold.eot");
+  src: url("fonts/Roboto_Mono/RobotoSlab-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Mono/RobotoSlab-Bold.woff") format("woff"), url("fonts/Roboto_Mono/RobotoSlab-Bold.ttf") format("truetype"), url("fonts/Roboto_Mono/RobotoSlab-Bold.svg#") format("svg");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("fonts/Roboto_Slab/RobotoSlab-Thin.eot");
+  src: url("fonts/Roboto_Slab/RobotoSlab-Thin.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Slab/RobotoSlab-Thin.woff") format("woff"), url("fonts/Roboto_Slab/RobotoSlab-Thin.ttf") format("truetype"), url("fonts/Roboto_Slab/RobotoSlab-Thin.svg#") format("svg");
+  font-weight: 100;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("fonts/Roboto_Slab/RobotoSlab-Light.eot");
+  src: url("fonts/Roboto_Slab/RobotoSlab-Light.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Slab/RobotoSlab-Light.woff") format("woff"), url("fonts/Roboto_Slab/RobotoSlab-Light.ttf") format("truetype"), url("fonts/Roboto_Slab/RobotoSlab-Light.svg#") format("svg");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("fonts/Roboto_Slab/RobotoSlab-Regular.eot");
+  src: url("fonts/Roboto_Slab/RobotoSlab-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Slab/RobotoSlab-Regular.woff") format("woff"), url("fonts/Roboto_Slab/RobotoSlab-Regular.ttf") format("truetype"), url("fonts/Roboto_Slab/RobotoSlab-Regular.svg#") format("svg");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("fonts/Roboto_Slab/RobotoSlab-Bold.eot");
+  src: url("fonts/Roboto_Slab/RobotoSlab-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Slab/RobotoSlab-Bold.woff") format("woff"), url("fonts/Roboto_Slab/RobotoSlab-Bold.ttf") format("truetype"), url("fonts/Roboto_Slab/RobotoSlab-Bold.svg#") format("svg");
+  font-weight: 700;
+  font-style: normal; }
+
 @font-face {
   font-family: "Satisfy";
   src: url("fonts/Satisfy/Satisfy-Regular.eot");
   src: url("fonts/Satisfy/Satisfy-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/Satisfy/Satisfy-Regular.woff") format("woff"), url("fonts/Satisfy/Satisfy-Regular.ttf") format("truetype"), url("fonts/Satisfy/Satisfy-Regular.svg#") format("svg");
   font-weight: normal;
   font-style: normal; }
-@font-face {
-  font-family: "Urbanrest";
-  src: url("fonts/Urbanrest/Urbanrest.eot");
-  src: url("fonts/Urbanrest/Urbanrest.eot?#iefix") format("embedded-opentype"), url("fonts/Urbanrest/Urbanrest.woff") format("woff"), url("fonts/Urbanrest/Urbanrest.ttf") format("truetype"), url("fonts/Urbanrest/Urbanrest.svg#") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-/*
-@font-face {
-    font-family: 'Urbanrest';
-    src:    url(fonts/Urbanrest/Urbanrest.eot?9t6i3b);
-    src:    url(fonts/Urbanrest/Urbanrest.eot?9t6i3b#iefix) format('embedded-opentype'),
-        url(fonts/Urbanrest/Urbanrest.ttf?9t6i3b) format('truetype'),
-        url(fonts/Urbanrest/Urbanrest.woff?9t6i3b) format('woff'),
-        url(fonts/Urbanrest/Urbanrest.svg?9t6i3b#Urbanrest) format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-*/
-.fa-untappd-square, .fa-untappd {
-  font-family: 'Urbanrest' !important; }
 
-.fa-untappd-square:before {
-  content: "\e900"; }
-
-.fa-untappd:before {
-  content: "\e901"; }
-
-/*
-@font-face {
-	font-family: 'Bad Script';
-	font-style: normal;
-	font-weight: 400;
-	src: url(fonts/Bad_Script/BadScript-Regular.ttf) format('truetype');
-}
-
-@font-face {
-	font-family: 'Freckle Face';
-	font-style: normal;
-	font-weight: 400;
-	src: url(fonts/Freckle_Face/FreckleFace-Regular.ttf) format('truetype');
-}
-
-@font-face {
-	font-family: 'Griffy';
-	font-style: normal;
-	font-weight: 400;
-	src: url(fonts/Griffy/Griffy-Regular.ttf) format('truetype');
-}
-
-@font-face {
-	font-family: 'KG Tangled Up In You';
-	font-style: normal;
-	font-weight: 400;
-	src: url(fonts/KG_TangledUpInYou/KGTangledUpInYou.ttf) format('truetype');
-}
-@font-face {
-	font-family: 'KG Ten Thousand Reasons';
-	src: url(fonts/KG_TenThousandReasons/KGTenThousandReasonsAlt.ttf) format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face
-{
-	font-family: 'RNS Baruta';
-	src: url(fonts/RNS_Baruta/RNSBaruta-Black.ttf) format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'Roboto';
-	font-style: normal;
-	font-weight: 100;
-	src: local('Roboto Thin'),
-	     local('Roboto-Thin'),
-	     url(fonts/Roboto/Roboto-Thin.ttf) format('truetype');
-}
-
-@font-face {
-	font-family: 'Roboto';
-	font-style: normal;
-	font-weight: 300;
-	src: local('Roboto Light'),
-	     local('Roboto-Light'),
-	     url(fonts/Roboto/Roboto-Light.ttf) format('truetype');
-}
-
-@font-face {
-	font-family: 'Roboto';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Roboto'),
-	     local('Roboto-Regular'),
-	     url(fonts/Roboto/Roboto-Regular.ttf) format('truetype');
-}
-
-@font-face {
-	font-family: 'Roboto';
-	font-style: normal;
-	font-weight: 600;
-	src: local('Roboto'),
-	     local('Roboto-Bold'),
-	     url(fonts/Roboto/Roboto-Bold.ttf) format('truetype');
-}
-
-@font-face {
-	font-family: 'Roboto';
-	font-style: normal;
-	font-weight: 800;
-	src: local('Roboto'),
-	     local('Roboto-Black'),
-	     url(fonts/Roboto/Roboto-Black.ttf) format('truetype');
-}
-
-@font-face {
-	font-family: 'Satisfy';
-	font-style: normal;
-	font-weight: 400;
-	src: url(fonts/Satisfy/Satisfy-Regular.ttf) format('truetype');
-}
-
-@font-face {
-	font-family: 'Witka';
-	font-style: normal;
-	font-weight: 400;
-	src: local('Witka'),
-	     url(fonts/Witka/Witka.ttf) format('truetype');
-}
-*/
-html.no-javascript, html.javascript {
+html.no-javascript,
+html.javascript {
   height: 100%;
   margin: 0;
   width: 100%; }
 
 .site {
   background-color: #000;
-  /*
-  background-attachment: fixed;
-  @include media('<=phone') { background-attachment: scroll; }
-  background-color: black;
-  background-image: url(images/background-hops.jpg);
-  @include media( 'portrait' ) { background-image: url(images/background-hops-portrait.jpg); }
-  background-position: center 0;
-  @include media('<=phone') { background-position: center 0 !important; }
-  background-repeat: no-repeat;
-  @include background-size( cover );
-  */
   cursor: default;
   font-family: 'Roboto', Arial;
   font-size: 16px;
   height: 100%;
   margin: 0;
-  width: 100%;
-  /*
-  ol, ul
-  {
-  	list-style: none;
-  	padding: 0;
-  }
-  */ }
-.site h1, .site h2, .site h3, .site h4, .site h5, .site h6, .site p, .site ol, .site ul, .site dt, .site dd {
-  margin: 0; }
-.site em {
-  font-style: italic;
-  font-weight: 400; }
-.site hr {
-  border-style: dashed;
-  border-width: 1px 0 0 0;
-  border-color: black;
-  padding: 0;
-  margin: 2em 1em; }
-.site abbr {
-  text-decoration: none; }
-.site .hidden {
-  display: none; }
-.site > .row {
-  margin: 0 !important; }
+  width: 100%; }
+  .site h1, .site h2, .site h3, .site h4, .site h5, .site h6, .site p, .site ol, .site ul, .site dt, .site dd {
+    margin: 0; }
+  .site em {
+    font-style: italic;
+    font-weight: 400; }
+  .site hr {
+    border-style: dashed;
+    border-width: 1px 0 0 0;
+    border-color: black;
+    padding: 0;
+    margin: 2em 1em; }
+  .site abbr {
+    text-decoration: none; }
+  .site .hidden {
+    display: none; }
+  .site > .row {
+    margin: 0 !important; }
 
 .text-apple {
   color: #979797; }
@@ -299,9 +212,11 @@ html.no-javascript, html.javascript {
 #beer_profile p {
   display: inline-block;
   width: 27em; }
+
 #beer_profile .slider {
   margin-bottom: 2em;
   margin-top: 0.5em; }
+
 #beer_profile input[type="number"] {
   text-align: right;
   width: 5em; }
@@ -316,20 +231,23 @@ html.no-javascript, html.javascript {
   margin-top: 5px;
   padding: 0 10px;
   color: #666; }
-#edit-shortlink-box .cancel {
-  margin-right: 10px;
-  padding: 0;
-  font-size: 11px;
-  text-decoration: underline;
-  color: #0073aa; }
+  #edit-shortlink-box .cancel {
+    margin-right: 10px;
+    padding: 0;
+    font-size: 11px;
+    text-decoration: underline;
+    color: #0073aa; }
+
+#edit-slug-box:empty + #edit-shortlink-box {
+  display: none; }
 
 #editable-shortlink-slug {
   font-weight: 700; }
-#editable-shortlink-slug input {
-  font-size: 13px;
-  font-weight: 400;
-  height: 22px;
-  margin: 0;
-  width: 16em; }
+  #editable-shortlink-slug input {
+    font-size: 13px;
+    font-weight: 400;
+    height: 22px;
+    margin: 0;
+    width: 16em; }
 
 /*# sourceMappingURL=style.css.map */

@@ -2,7 +2,7 @@
 
 function urb_admin_enqueue_scripts_shortlink($hook)
 {
-	if( 'post.php' != $hook )
+	if( 'post.php' != $hook && 'post-new.php' != $hook )
 	{
 		return;
 	}
@@ -71,7 +71,6 @@ function urb_admin_init_shortlink_domain()
 
 function urb_shortlink_domain()
 {
-	
 	$option = 'shortlink_domain';
 	echo '<code>http://</code><input type="text" name="' . $option . '" id="' . $option . '" value="' . get_option( $option ) . '" class="regular-text ltr" />';
 }
