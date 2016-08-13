@@ -4691,13 +4691,6 @@ img.mfp-img {
     padding-right: 6px; } }
 
 @font-face {
-  font-family: "Colored Crayons";
-  src: url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.eot");
-  src: url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.eot?#iefix") format("embedded-opentype"), url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.woff") format("woff"), url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.ttf") format("truetype"), url("fonts/Jonathan-S-Harris_Colored-Crayons/Colored Crayons.svg#") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
   font-family: "Chalk It Up";
   src: url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.eot");
   src: url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.eot?#iefix") format("embedded-opentype"), url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.woff") format("woff"), url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.ttf") format("truetype"), url("fonts/DJB_Chalk_It_Up/DJB Chalk It Up.svg#") format("svg");
@@ -4705,51 +4698,16 @@ img.mfp-img {
   font-style: normal; }
 
 @font-face {
-  font-family: "Flux";
-  src: url("fonts/Flux/Flux Architect Regular.eot");
-  src: url("fonts/Flux/Flux Architect Regular.eot?#iefix") format("embedded-opentype"), url("fonts/Flux/Flux Architect Regular.woff") format("woff"), url("fonts/Flux/Flux Architect Regular.ttf") format("truetype"), url("fonts/Flux/Flux Architect Regular.svg#") format("svg");
-  font-weight: 400;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Flux";
-  src: url("fonts/Flux/Flux Architect Bold.eot");
-  src: url("fonts/Flux/Flux Architect Bold.eot?#iefix") format("embedded-opentype"), url("fonts/Flux/Flux Architect Bold.woff") format("woff"), url("fonts/Flux/Flux Architect Bold.ttf") format("truetype"), url("fonts/Flux/Flux Architect Bold.svg#") format("svg");
-  font-weight: 600;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Flux";
-  src: url("fonts/Flux/Flux Architect Italic.eot");
-  src: url("fonts/Flux/Flux Architect Italic.eot?#iefix") format("embedded-opentype"), url("fonts/Flux/Flux Architect Italic.woff") format("woff"), url("fonts/Flux/Flux Architect Italic.ttf") format("truetype"), url("fonts/Flux/Flux Architect Italic.svg#") format("svg");
-  font-weight: 400;
-  font-style: italic; }
-
-@font-face {
-  font-family: "Flux";
-  src: url("fonts/Flux/Flux Architect Bold Italic.eot");
-  src: url("fonts/Flux/Flux Architect Bold Italic.eot?#iefix") format("embedded-opentype"), url("fonts/Flux/Flux Architect Bold Italic.woff") format("woff"), url("fonts/Flux/Flux Architect Bold Italic.ttf") format("truetype"), url("fonts/Flux/Flux Architect Bold Italic.svg#") format("svg");
-  font-weight: 600;
-  font-style: italic; }
-
-@font-face {
-  font-family: "Gotham";
-  src: url("fonts/Gotham_Bold/ufonts.com_gotham-bold-webfont.eot");
-  src: url("fonts/Gotham_Bold/ufonts.com_gotham-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/Gotham_Bold/ufonts.com_gotham-bold-webfont.woff") format("woff"), url("fonts/Gotham_Bold/ufonts.com_gotham-bold-webfont.ttf") format("truetype"), url("fonts/Gotham_Bold/ufonts.com_gotham-bold-webfont.svg#") format("svg");
-  font-weight: 600;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Gotham";
-  src: url("fonts/Gotham_Black/ufonts.com_gotham-black-webfont.eot");
-  src: url("fonts/Gotham_Black/ufonts.com_gotham-black-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/Gotham_Black/ufonts.com_gotham-black-webfont.woff") format("woff"), url("fonts/Gotham_Black/ufonts.com_gotham-black-webfont.ttf") format("truetype"), url("fonts/Gotham_Black/ufonts.com_gotham-black-webfont.svg#") format("svg");
-  font-weight: 800;
-  font-style: normal; }
-
-@font-face {
   font-family: "Legend M54";
   src: url("fonts/Legend_M54/legend_m54-webfont.eot");
   src: url("fonts/Legend_M54/legend_m54-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/Legend_M54/legend_m54-webfont.woff") format("woff"), url("fonts/Legend_M54/legend_m54-webfont.ttf") format("truetype"), url("fonts/Legend_M54/legend_m54-webfont.svg#") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: "RNS Baruta";
+  src: url("fonts/RNS_Baruta/RNSBaruta-Black.eot");
+  src: url("fonts/RNS_Baruta/RNSBaruta-Black.eot?#iefix") format("embedded-opentype"), url("fonts/RNS_Baruta/RNSBaruta-Black.woff") format("woff"), url("fonts/RNS_Baruta/RNSBaruta-Black.ttf") format("truetype"), url("fonts/RNS_Baruta/RNSBaruta-Black.svg#") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -4789,6 +4747,41 @@ img.mfp-img {
   font-style: normal; }
 
 @font-face {
+  font-family: "Roboto Mono";
+  src: url("fonts/Roboto_Mono/RobotoSlab-Thin.eot");
+  src: url("fonts/Roboto_Mono/RobotoSlab-Thin.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Mono/RobotoSlab-Thin.woff") format("woff"), url("fonts/Roboto_Mono/RobotoSlab-Thin.ttf") format("truetype"), url("fonts/Roboto_Mono/RobotoSlab-Thin.svg#") format("svg");
+  font-weight: 100;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("fonts/Roboto_Mono/RobotoSlab-Light.eot");
+  src: url("fonts/Roboto_Mono/RobotoSlab-Light.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Mono/RobotoSlab-Light.woff") format("woff"), url("fonts/Roboto_Mono/RobotoSlab-Light.ttf") format("truetype"), url("fonts/Roboto_Mono/RobotoSlab-Light.svg#") format("svg");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("fonts/Roboto_Mono/RobotoSlab-Regular.eot");
+  src: url("fonts/Roboto_Mono/RobotoSlab-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Mono/RobotoSlab-Regular.woff") format("woff"), url("fonts/Roboto_Mono/RobotoSlab-Regular.ttf") format("truetype"), url("fonts/Roboto_Mono/RobotoSlab-Regular.svg#") format("svg");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("fonts/Roboto_Mono/RobotoSlab-Medium.eot");
+  src: url("fonts/Roboto_Mono/RobotoSlab-Medium.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Mono/RobotoSlab-Medium.woff") format("woff"), url("fonts/Roboto_Mono/RobotoSlab-Medium.ttf") format("truetype"), url("fonts/Roboto_Mono/RobotoSlab-Medium.svg#") format("svg");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("fonts/Roboto_Mono/RobotoSlab-Bold.eot");
+  src: url("fonts/Roboto_Mono/RobotoSlab-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Mono/RobotoSlab-Bold.woff") format("woff"), url("fonts/Roboto_Mono/RobotoSlab-Bold.ttf") format("truetype"), url("fonts/Roboto_Mono/RobotoSlab-Bold.svg#") format("svg");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
   font-family: "Roboto Slab";
   src: url("fonts/Roboto_Slab/RobotoSlab-Thin.eot");
   src: url("fonts/Roboto_Slab/RobotoSlab-Thin.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Slab/RobotoSlab-Thin.woff") format("woff"), url("fonts/Roboto_Slab/RobotoSlab-Thin.ttf") format("truetype"), url("fonts/Roboto_Slab/RobotoSlab-Thin.svg#") format("svg");
@@ -4820,13 +4813,6 @@ img.mfp-img {
   font-family: "Satisfy";
   src: url("fonts/Satisfy/Satisfy-Regular.eot");
   src: url("fonts/Satisfy/Satisfy-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/Satisfy/Satisfy-Regular.woff") format("woff"), url("fonts/Satisfy/Satisfy-Regular.ttf") format("truetype"), url("fonts/Satisfy/Satisfy-Regular.svg#") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: "Urbanrest";
-  src: url("fonts/Urbanrest/Urbanrest.eot");
-  src: url("fonts/Urbanrest/Urbanrest.eot?#iefix") format("embedded-opentype"), url("fonts/Urbanrest/Urbanrest.woff") format("woff"), url("fonts/Urbanrest/Urbanrest.ttf") format("truetype"), url("fonts/Urbanrest/Urbanrest.svg#") format("svg");
   font-weight: normal;
   font-style: normal; }
 
