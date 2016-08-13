@@ -34,7 +34,17 @@ gulp.task('styles', function() {
 				return file.relative + '.map';
 			}
 		}))
-		.pipe(gulp.dest('./'));
+		.pipe(gulp.dest('./styles/admin/'));
+
+	gulp.src('./styles/editor/style.scss')
+		.pipe(sourcemaps.init())
+		.pipe(sass())
+		.pipe(sourcemaps.write('./', {
+			sourceMappingURL: function(file) {
+				return file.relative + '.map';
+			}
+		}))
+		.pipe(gulp.dest('./styles/editor/'));
 
 	gulp.src('style.scss')
 		.pipe(sourcemaps.init())
