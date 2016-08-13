@@ -22,8 +22,16 @@ function getmaincontent() {
 		ob_start();
 		include( TEMPLATEPATH . '/ajax-main-content.php' );
 		$buffer = ob_get_clean();
+
+		$return = array(
+			'ID' => $post->ID,
+			'title' => $post->post_title,
+			'guid' => $post->guid,
+			'permalink' => get_permalink($post->ID),
+			'content' => $buffer
+		);
 		
-		wp_send_json_success($buffer);
+		wp_send_json_success($return);
 	} else {
 		wp_send_json_error( 'No content found.' );
 	}

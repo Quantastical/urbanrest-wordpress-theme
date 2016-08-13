@@ -106,6 +106,16 @@ jQuery( function( $ ) {
 			duration
 		);
 
+		var ellipsis = '...';
+		var loadingTimeout = setInterval(function() {
+			if(ellipsis.length == 3) {
+				ellipsis = '';
+			} else {
+				ellipsis += '.';
+			}
+			document.title = 'Loading' + ellipsis;
+		}, 250);
+
 		$.ajax({
 			type: 'POST',
 			url: _URB.url,
@@ -116,8 +126,10 @@ jQuery( function( $ ) {
 			},
 			dataType: 'json',
 			success: function(response){
+				clearInterval(loadingTimeout);
 				if(response.success) {
-					var $content = $(response.data);
+					document.title = response.data.title;
+					var $content = $(response.data.content);
 					//$nextPage.replaceWith($content);
 					$currentPage.replaceWith($content);
 					Urb.$window.trigger('ajaxload');
