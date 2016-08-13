@@ -171,6 +171,7 @@ jQuery( function( $ ) {
 		$('a').not('[href^="#"]')
 			.not(':not([href^="http://' + window.location.host + '"]):not([href^="https://' + window.location.host + '"])')
 			.not('[href$=".png"]').not('[href$=".jpg"]').not('[href$=".bmp"]').not('[href$=".gif"]').not('[href$=".jpeg"]')
+			.not('[href$=".pdf"]').not('[href$=".doc"]').not('[href$=".docx"]').not('[href$=".xls"]').not('[href$=".xlsx"]')
 			.each(function() {
 				var $anchor = $(this);
 				//if($anchor.closest('.menu-item').length == 1) {

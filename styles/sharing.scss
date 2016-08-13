@@ -22,16 +22,17 @@
 
 	&:before
 	{
-		background: $urbanrest-green;
+		background: #4CAF50;
 		border-radius: 50%;
 		box-shadow: 0 1pt 3pt rgba(black,0.26);
 		color: rgba(white,0.75);
-		content: "\f086";
+		content: "\f1e0";
 		display: block;
 		font-family: FontAwesome;
 		font-size: 22pt;
 		height: 44pt;
-		line-height: 44pt;
+		letter-spacing: 2pt;
+		line-height: 45pt;
 		margin: 0;
 		text-align: center;
 		@include transform( scale(0) );

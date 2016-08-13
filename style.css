@@ -5637,11 +5637,11 @@ html.javascript {
   .btn[disabled] {
     color: rgba(255, 255, 255, 0.5); }
   .btn.btn-primary {
-    background-color: #4CAF50; }
+    background-color: #118833; }
     .btn.btn-primary:hover {
-      background-color: #5cb860; }
+      background-color: #149f3c; }
     .btn.btn-primary[disabled] {
-      background-color: #7e7e7e; }
+      background-color: #376243; }
   .btn.loading, .btn.success, .btn.failure {
     position: relative; }
     .btn.loading:after, .btn.success:after, .btn.failure:after {
@@ -5657,7 +5657,7 @@ html.javascript {
       color: white; }
     .btn.loading.success:after, .btn.success.success:after, .btn.failure.success:after {
       content: "";
-      color: #4CAF50; }
+      color: #118833; }
     .btn.loading.failure:after, .btn.success.failure:after, .btn.failure.failure:after {
       content: "";
       color: #DD4B39; }
@@ -5805,7 +5805,7 @@ html.javascript {
   border-bottom-width: 1pt;
   border-bottom-color: transparent;
   border-bottom-style: solid;
-  color: #4CAF50;
+  color: #118833;
   cursor: pointer;
   font-weight: 400;
   position: relative;
@@ -5815,7 +5815,7 @@ html.javascript {
   transition: border-bottom 0.33s; }
   .hyperlink:hover, .site main.event a:hover, .site main.event .hyperlink:hover, .site main.page .page-content a:hover, .site main.post .post-content a:hover, .site main.posts a:hover, .site main.posts .hyperlink:hover, .site main.taxonomy a:hover, .site main.taxonomy .hyperlink:hover, .site main.user a:hover, .site main.user .hyperlink:hover {
     /*border-bottom-color: lighten( $urbanrest-green, 5% );*/
-    color: #5cb860; }
+    color: #149f3c; }
   .hyperlink:focus, .site main.event a:focus, .site main.event .hyperlink:focus, .site main.page .page-content a:focus, .site main.post .post-content a:focus, .site main.posts a:focus, .site main.posts .hyperlink:focus, .site main.taxonomy a:focus, .site main.taxonomy .hyperlink:focus, .site main.user a:focus, .site main.user .hyperlink:focus {
     animation-duration: 3s;
     animation-name: flash;
@@ -5866,7 +5866,7 @@ html.javascript {
     background: #FFFC00;
     color: #000000; }
   .label.label-safe {
-    background: #4CAF50;
+    background: #118833;
     color: #DCDFDE; }
   .label.label-light-yellow {
     background-color: #F8F753;
@@ -6366,7 +6366,7 @@ html.javascript {
     .site .site-header .site-search .search-submit {
       background: none;
       border: none;
-      color: #4CAF50;
+      color: #118833;
       cursor: pointer;
       display: inline-block;
       font-size: 1em;
@@ -6378,7 +6378,7 @@ html.javascript {
       top: 0;
       z-index: 3; }
       .site .site-header .site-search .search-submit:hover {
-        color: #72c275; }
+        color: #17ba46; }
       .site .site-header .site-search .search-submit:before {
         content: 'Search'; }
       .site .site-header .site-search .search-submit .btn-label {
@@ -6405,7 +6405,7 @@ html.javascript {
   .page .search-submit {
     background: none;
     border: none;
-    color: #4CAF50;
+    color: #118833;
     cursor: pointer;
     display: inline-block;
     font-size: 1em;
@@ -6414,7 +6414,7 @@ html.javascript {
     padding: 0.5em 0.25em;
     z-index: 3; }
     .page .search-submit:hover {
-      color: #72c275; }
+      color: #17ba46; }
     .page .search-submit:before {
       content: 'Search'; }
     .page .search-submit .btn-label {
@@ -6443,12 +6443,13 @@ html.javascript {
     border-radius: 50%;
     box-shadow: 0 1pt 3pt rgba(0, 0, 0, 0.26);
     color: rgba(255, 255, 255, 0.75);
-    content: "\f086";
+    content: "\f1e0";
     display: block;
     font-family: FontAwesome;
     font-size: 22pt;
     height: 44pt;
-    line-height: 44pt;
+    letter-spacing: 2pt;
+    line-height: 45pt;
     margin: 0;
     text-align: center;
     -webkit-transform: scale(0);
@@ -6532,7 +6533,7 @@ html.javascript {
     margin-bottom: 0.5em;
     text-decoration: none; }
     .sharing .shortlink:hover {
-      color: #4CAF50; }
+      color: #118833; }
     .sharing .shortlink:focus {
       outline: none; }
 
@@ -6579,7 +6580,7 @@ html.javascript {
     text-decoration: none; }
     .share-modal .shortlink:hover,
     .checkin-modal .shortlink:hover {
-      color: #4CAF50; }
+      color: #118833; }
     .share-modal .shortlink:focus,
     .checkin-modal .shortlink:focus {
       outline: none; }
@@ -7145,10 +7146,10 @@ html.javascript {
       margin-bottom: 4em;
       text-align: center; }
       .site .site-community .site-club h3 {
-        background: linear-gradient(#72c275, #4CAF50);
+        background: linear-gradient(#17ba46, #118833);
         border: dashed 1pt #CCAA88;
         border-radius: 3pt;
-        box-shadow: 0 0 0 3pt #4CAF50;
+        box-shadow: 0 0 0 3pt #118833;
         color: #DCDFDE;
         display: inline-block;
         font-family: 'Freckle Face';
@@ -7285,7 +7286,7 @@ html.javascript {
                 width: 100%; }
               .site .site-community .site-events .events .event .event-when .event-start .day {
                 bottom: 0;
-                color: #4CAF50;
+                color: #118833;
                 font-size: 0.8em;
                 font-weight: 500;
                 left: 0;
@@ -7294,10 +7295,10 @@ html.javascript {
                 width: 100%; }
               .site .site-community .site-events .events .event .event-when .event-start .month {
                 color: #e8d8c8;
-                background-color: #4CAF50;
+                background-color: #118833;
                 border-bottom: dashed rgba(0, 0, 0, 0.22) 1pt;
                 border-radius: 0.3em 0.3em 0 0;
-                box-shadow: 0 0.1em 0 #4CAF50, 0 0.2em 0 rgba(0, 0, 0, 0.2);
+                box-shadow: 0 0.1em 0 #118833, 0 0.2em 0 rgba(0, 0, 0, 0.2);
                 font-size: 0.8em;
                 font-weight: 500;
                 left: 0;
@@ -7445,7 +7446,7 @@ html.javascript {
             .site .site-company .site-location .business-hours .status em.closed {
               color: #DD4B39; }
             .site .site-company .site-location .business-hours .status em.open {
-              color: #4CAF50; } }
+              color: #118833; } }
     @media only screen and (max-width: 768px) {
       .site .site-company .site-location {
         padding-bottom: 6rem; } }
@@ -7502,7 +7503,7 @@ html.javascript {
           font-weight: 200;
           text-decoration: none; }
           .site .site-company .site-contact .legal a:hover {
-            color: #4CAF50; }
+            color: #118833; }
       .site .site-company .site-contact .contact-form {
         font-size: 1.25em;
         padding-left: 2em;
@@ -7635,7 +7636,7 @@ html.javascript {
               .site .site-company .site-contact .contact-form .option input:checked + label:before {
                 content: ""; }
               .site .site-company .site-contact .contact-form .option input:checked + label:hover:before {
-                color: #4CAF50; }
+                color: #118833; }
         .site .site-company .site-contact .contact-form .submit {
           font-size: 0.8em;
           text-align: center;
@@ -8048,8 +8049,8 @@ html.javascript {
           -moz-transition: background-color 0.33s;
           transition: background-color 0.33s; }
           .site main.beer .beer-content .beer-tags .beer-tag a:hover {
-            background-color: rgba(76, 175, 80, 0.3);
-            color: #4CAF50;
+            background-color: rgba(17, 136, 51, 0.3);
+            color: #118833;
             border: none;
             -webkit-transition: background-color 0.11s;
             -moz-transition: background-color 0.11s;
@@ -8297,8 +8298,8 @@ html.javascript {
           -moz-transition: background-color 0.33s;
           transition: background-color 0.33s; }
           .site main.event .event-content .event-tags .event-tag a:hover {
-            background-color: rgba(76, 175, 80, 0.3);
-            color: #4CAF50;
+            background-color: rgba(17, 136, 51, 0.3);
+            color: #118833;
             border: none;
             -webkit-transition: background-color 0.11s;
             -moz-transition: background-color 0.11s;
@@ -8479,8 +8480,8 @@ html.javascript {
           -moz-transition: background-color 0.33s;
           transition: background-color 0.33s; }
           .site main.event .event-footer .event-tags li a:hover {
-            background-color: rgba(76, 175, 80, 0.3);
-            color: #4CAF50;
+            background-color: rgba(17, 136, 51, 0.3);
+            color: #118833;
             border: none;
             -webkit-transition: background-color 0.11s;
             -moz-transition: background-color 0.11s;
@@ -8615,8 +8616,8 @@ html.javascript {
           -moz-transition: background-color 0.33s;
           transition: background-color 0.33s; }
           .site main.page .page-footer .page-tags .page-tag a:hover {
-            background-color: rgba(76, 175, 80, 0.3);
-            color: #4CAF50;
+            background-color: rgba(17, 136, 51, 0.3);
+            color: #118833;
             border: none;
             -webkit-transition: background-color 0.11s;
             -moz-transition: background-color 0.11s;
@@ -8773,8 +8774,8 @@ html.javascript {
         -moz-transition: background-color 0.33s;
         transition: background-color 0.33s; }
         .site main.post .post-tags .post-tag a:hover {
-          background-color: rgba(76, 175, 80, 0.3);
-          color: #4CAF50;
+          background-color: rgba(17, 136, 51, 0.3);
+          color: #118833;
           border: none;
           -webkit-transition: background-color 0.11s;
           -moz-transition: background-color 0.11s;
@@ -8805,8 +8806,8 @@ html.javascript {
           -moz-transition: background-color 0.33s;
           transition: background-color 0.33s; }
           .site main.post .post-footer .post-tags li a:hover {
-            background-color: rgba(76, 175, 80, 0.3);
-            color: #4CAF50;
+            background-color: rgba(17, 136, 51, 0.3);
+            color: #118833;
             border: none;
             -webkit-transition: background-color 0.11s;
             -moz-transition: background-color 0.11s;
@@ -9127,8 +9128,8 @@ html.javascript {
           -moz-transition: background-color 0.33s;
           transition: background-color 0.33s; }
           .site main.user .user-footer .user-tags .user-tag a:hover {
-            background-color: rgba(76, 175, 80, 0.3);
-            color: #4CAF50;
+            background-color: rgba(17, 136, 51, 0.3);
+            color: #118833;
             border: none;
             -webkit-transition: background-color 0.11s;
             -moz-transition: background-color 0.11s;
