@@ -1143,7 +1143,7 @@
             }), n.open(a, o);
         }));
     }, Urb.handleContactFormResponse = function(e) {
-        console.log(e), console.log(e.responseText), e && e.success && Urb.loading(t('button[type="submit"]', Urb.$contactForm), !0);
+        e && e.success && Urb.loading(t('button[type="submit"]', Urb.$contactForm), !0);
     }, Urb.submitContactForm = function(e) {
         e.preventDefault(), Urb.validateContactForm() && (Urb.loading(t('button[type="submit"]', Urb.$contactForm)), 
         t.ajax({
