@@ -8,6 +8,10 @@ $more = 1;
 <?php 	get_template_part( 'archive', 'header' ); ?>
 <?php 	get_template_part( 'archive', 'content' ); ?>
 <?php 	get_template_part( 'archive', 'footer' ); ?>
+<?php elseif('search.php' == get_page_template_slug( get_queried_object_id() )) : ?>
+<?php 	get_template_part( 'search', 'header' ); ?>
+<?php 	get_template_part( 'search', 'content' ); ?>
+<?php 	get_template_part( 'search', 'footer' ); ?>
 <?php else : ?>
 <?php 	get_template_part( $post->post_type, 'header' ); ?>
 <?php 	get_template_part( $post->post_type, 'content' ); ?>

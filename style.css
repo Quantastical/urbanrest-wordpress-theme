@@ -7564,7 +7564,7 @@ html.javascript {
             @media only screen and (max-width: 768px) {
               .site .site-company .site-contact .contact-form .field input#contact_message,
               .site .site-company .site-contact .contact-form .field textarea#contact_message {
-                height: 2.25em; }
+                height: 2.5em; }
                 .site .site-company .site-contact .contact-form .field input#contact_message:focus,
                 .site .site-company .site-contact .contact-form .field textarea#contact_message:focus {
                   height: 5.65em; } }
