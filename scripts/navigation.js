@@ -179,6 +179,27 @@ jQuery( function( $ ) {
 		Urb.loadPage(slug);
 	};
 
+	Urb.setupImageLinks = function() {
+		$('a').filter('[href$=".png"],[href$=".jpg"],[href$=".bmp"],[href$=".gif"],[href$=".jpeg"]')
+		.magnificPopup({
+			type:'image',
+			autoFocusLast: false,
+			mainClass: 'mfp-fade',
+			closeMarkup: '<button title="%title%" type="button" class="mfp-close"></button>',
+			image: {
+				cursor: null
+			},
+			callbacks: {
+				open: function() {
+		 			Urb.$body.addClass('modal-active');
+				},
+				beforeClose: function() {
+		 			Urb.$body.removeClass('modal-active');
+				}
+			}
+		})
+	};
+
 	Urb.setupInternalLinks = function() {
 		$('a').not('[href^="#"]')
 			.not(':not([href^="http://' + window.location.host + '"]):not([href^="https://' + window.location.host + '"])')
@@ -357,6 +378,7 @@ jQuery( function( $ ) {
 
 	Urb.$window.on('load orientationchange resize', Urb.setupNavigationSnap);
 	Urb.$window.on('ajaxload load', Urb.setupExternalLinks);
+	Urb.$window.on('ajaxload load', Urb.setupImageLinks);
 	Urb.$window.on('load', Urb.setupFragmentAnchors);
 	Urb.$window.on('ajaxload load', Urb.setupInternalLinks);
 	Urb.$window.on('load', Urb.setupPageNavigation);

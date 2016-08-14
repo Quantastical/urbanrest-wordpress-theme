@@ -11,6 +11,10 @@ $root: '' !default;
 }
 
 @include font('Chalk It Up', $root + 'fonts/DJB_Chalk_It_Up/DJB Chalk It Up', '');
+@include font('Flux',        $root + 'fonts/Flux/Flux Architect Regular',     '', 400);
+@include font('Flux',        $root + 'fonts/Flux/Flux Architect Bold',        '', 600);
+@include font('Flux',        $root + 'fonts/Flux/Flux Architect Italic',      '', 400, italic);
+@include font('Flux',        $root + 'fonts/Flux/Flux Architect Bold Italic', '', 600, italic);
 @include font('Legend M54',  $root + 'fonts/Legend_M54/legend_m54-webfont',   '');
 @include font('RNS Baruta',  $root + 'fonts/RNS_Baruta/RNSBaruta-Black',      '');
 @include font('Roboto',      $root + 'fonts/Roboto/Roboto-Thin',              '', 100);
@@ -40,10 +44,6 @@ $root: '' !default;
 //@include font('Eraser', $root+'fonts/David-Rakowski_Eraser/EraserRegular', '');
 //@include font('EraserDust', $root+'fonts/David-Rakowski_Eraser/EraserDust', '');
 //@include font('Freckle Face', $root+'fonts/Freckle_Face/FreckleFace-Regular', '');
-//@include font('Flux', $root+'fonts/Flux/Flux Architect Regular', '', 400);
-//@include font('Flux', $root+'fonts/Flux/Flux Architect Bold', '', 600);
-//@include font('Flux', $root+'fonts/Flux/Flux Architect Italic', '', 400, italic);
-//@include font('Flux', $root+'fonts/Flux/Flux Architect Bold Italic', '', 600, italic);
 //@include font('Gotham', $root+'fonts/Gotham_Bold/ufonts.com_gotham-bold-webfont', '', 600);
 //@include font('Gotham', $root+'fonts/Gotham_Black/ufonts.com_gotham-black-webfont', '', 800);
 //@include font('Griffy', $root+'fonts/Griffy/Griffy-Regular', '');

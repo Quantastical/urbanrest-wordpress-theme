@@ -2026,6 +2026,34 @@
   font-style: normal; }
 
 @font-face {
+  font-family: "Flux";
+  src: url("../../fonts/Flux/Flux Architect Regular.eot");
+  src: url("../../fonts/Flux/Flux Architect Regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/Flux/Flux Architect Regular.woff") format("woff"), url("../../fonts/Flux/Flux Architect Regular.ttf") format("truetype"), url("../../fonts/Flux/Flux Architect Regular.svg#") format("svg");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Flux";
+  src: url("../../fonts/Flux/Flux Architect Bold.eot");
+  src: url("../../fonts/Flux/Flux Architect Bold.eot?#iefix") format("embedded-opentype"), url("../../fonts/Flux/Flux Architect Bold.woff") format("woff"), url("../../fonts/Flux/Flux Architect Bold.ttf") format("truetype"), url("../../fonts/Flux/Flux Architect Bold.svg#") format("svg");
+  font-weight: 600;
+  font-style: normal; }
+
+@font-face {
+  font-family: "Flux";
+  src: url("../../fonts/Flux/Flux Architect Italic.eot");
+  src: url("../../fonts/Flux/Flux Architect Italic.eot?#iefix") format("embedded-opentype"), url("../../fonts/Flux/Flux Architect Italic.woff") format("woff"), url("../../fonts/Flux/Flux Architect Italic.ttf") format("truetype"), url("../../fonts/Flux/Flux Architect Italic.svg#") format("svg");
+  font-weight: 400;
+  font-style: italic; }
+
+@font-face {
+  font-family: "Flux";
+  src: url("../../fonts/Flux/Flux Architect Bold Italic.eot");
+  src: url("../../fonts/Flux/Flux Architect Bold Italic.eot?#iefix") format("embedded-opentype"), url("../../fonts/Flux/Flux Architect Bold Italic.woff") format("woff"), url("../../fonts/Flux/Flux Architect Bold Italic.ttf") format("truetype"), url("../../fonts/Flux/Flux Architect Bold Italic.svg#") format("svg");
+  font-weight: 600;
+  font-style: italic; }
+
+@font-face {
   font-family: "Legend M54";
   src: url("../../fonts/Legend_M54/legend_m54-webfont.eot");
   src: url("../../fonts/Legend_M54/legend_m54-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/Legend_M54/legend_m54-webfont.woff") format("woff"), url("../../fonts/Legend_M54/legend_m54-webfont.ttf") format("truetype"), url("../../fonts/Legend_M54/legend_m54-webfont.svg#") format("svg");

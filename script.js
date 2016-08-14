@@ -829,6 +829,24 @@
         t.preventDefault();
         var e = (t.state, document.location.pathname);
         Urb.loadPage(e);
+    }, Urb.setupImageLinks = function() {
+        t("a").filter('[href$=".png"],[href$=".jpg"],[href$=".bmp"],[href$=".gif"],[href$=".jpeg"]').magnificPopup({
+            type: "image",
+            autoFocusLast: !1,
+            mainClass: "mfp-fade",
+            closeMarkup: '<button title="%title%" type="button" class="mfp-close"></button>',
+            image: {
+                cursor: null
+            },
+            callbacks: {
+                open: function() {
+                    Urb.$body.addClass("modal-active");
+                },
+                beforeClose: function() {
+                    Urb.$body.removeClass("modal-active");
+                }
+            }
+        });
     }, Urb.setupInternalLinks = function() {
         t("a").not('[href^="#"]').not(':not([href^="http://' + window.location.host + '"]):not([href^="https://' + window.location.host + '"])').not('[href$=".png"]').not('[href$=".jpg"]').not('[href$=".bmp"]').not('[href$=".gif"]').not('[href$=".jpeg"]').not('[href$=".pdf"]').not('[href$=".doc"]').not('[href$=".docx"]').not('[href$=".xls"]').not('[href$=".xlsx"]').each(function() {
             var e = t(this);
@@ -883,10 +901,10 @@
         } else Urb.$body.addClass("home"), 0 == Urb.$window.scrollTop() && Urb.$window.scrollTop(t("main").offset().top - e);
         Urb.scrollPageNavigation();
     }, "scrollRestoration" in history && (history.scrollRestoration = "manual"), Urb.$window.on("load orientationchange resize", Urb.setupNavigationSnap), 
-    Urb.$window.on("ajaxload load", Urb.setupExternalLinks), Urb.$window.on("load", Urb.setupFragmentAnchors), 
-    Urb.$window.on("ajaxload load", Urb.setupInternalLinks), Urb.$window.on("load", Urb.setupPageNavigation), 
-    Urb.$window.on("load scroll", Urb.scrollPageNavigation), Urb.$window.on("load scroll", Urb.scrollSocialNavigation), 
-    Urb.$window.on("load", function() {
+    Urb.$window.on("ajaxload load", Urb.setupExternalLinks), Urb.$window.on("ajaxload load", Urb.setupImageLinks), 
+    Urb.$window.on("load", Urb.setupFragmentAnchors), Urb.$window.on("ajaxload load", Urb.setupInternalLinks), 
+    Urb.$window.on("load", Urb.setupPageNavigation), Urb.$window.on("load scroll", Urb.scrollPageNavigation), 
+    Urb.$window.on("load scroll", Urb.scrollSocialNavigation), Urb.$window.on("load", function() {
         setTimeout(Urb.scrollToContent, 1);
     }), Urb.$window.on("popstate", Urb.performHistoryNavigation), Urb.handleTouchEvents = function() {
         Urb.touchEventsHandled || (t("a, button").each(function() {

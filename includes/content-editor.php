@@ -25,6 +25,7 @@ function urb_tiny_mce_before_init( $init ) {
 	                      . "Serif='Roboto Slab',TimesNewRoman,'Times New Roman',Times,Baskerville,Georgia,serif;"
 	                      . "Monospace='Roboto Mono','Courier New',Courier,'Lucida Sans Typewriter','Lucida Typewriter',monospace;"
 	                      . "Urbanrest='Legend M54',Impact,Haettenschweiler,'Franklin Gothic Bold',Charcoal,'Helvetica Inserat','Bitstream Vera Sans Bold','Arial Black',sans-serif;"
+	                      . "Architect='Flux',Optima,Segoe,'Segoe UI',Candara,Calibri,Arial,sans-serif;"
 	                      . "Chalkboard='Chalk It Up',Papyrus,fantasy;"
 	                      . "Cursive='Satisfy','Brush Script MT',cursive;"
 	                      . "Kickstarter='RNS Baruta','Arial Rounded MT Bold','Helvetica Rounded',Arial,sans-serif;";
