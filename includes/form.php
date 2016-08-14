@@ -212,7 +212,8 @@ function urb_form_shortcode( $atts, $content = null ) {
 		'action'       => '',
 		'class'        => '',
 		'id'           => '',
-		'method'       => 'post'
+		'method'       => 'post',
+		'autocomplete' => 'off'
 	), $atts, 'form' );
 	
 	if( empty($form_attributes['action']) ) $form_attributes['action'] = get_permalink($form_post->ID);

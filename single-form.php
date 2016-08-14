@@ -29,9 +29,10 @@ if( empty($_POST) )
 
 	$post = array(
 		'post_author'   => $user_id,
-		'post_category' => $form_post->title,
+		// 'post_date'  => null,
+		'post_title'    => $form_post->title,
 		'post_content'  => $post_content,
-		'post_status'   => 'publish',
+		'post_status'   => 'private',
 		'post_type'     => 'response'
 	);
 	wp_insert_post( $post );

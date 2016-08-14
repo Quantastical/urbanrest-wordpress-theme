@@ -14,6 +14,7 @@ function urb_admin_init_3rd_parties( ) {
 		'google_plus_id',
 		'instagram_username',
 		'mailchimp_api_key',
+		'mailchimp_mailing_list_id',
 		'pinterest_username',
 		'twitter_username',
 		'untappd_api_client_id',
@@ -191,7 +192,8 @@ function urb_admin_section_mailchimp() {
 	$section = 'admin_section_mailchimp';
 
 	$fields = array(
-		'mailchimp_api_key' => 'MailChimp API Key'
+		'mailchimp_api_key'         => 'MailChimp API Key',
+		'mailchimp_mailing_list_id' => 'MailChimp Mailing List ID'
 	);
 
 	foreach( $fields as $setting_id => $setting_title ) {
@@ -204,6 +206,13 @@ function urb_admin_section_mailchimp() {
 function urb_mailchimp_api_key() {
 	$option = 'mailchimp_api_key';
 	echo '<input type="text" name="' . $option . '" id="' . $option . '" value="' . get_option( $option ) . '" class="regular-text ltr" />';
+	echo '<p class="description" id="' . $option . '_description">In MailChimp, under your user Account, choose <em>Extras</em>, <em>API Keys</em></p>';
+}
+
+function urb_mailchimp_mailing_list_id() {
+	$option = 'mailchimp_mailing_list_id';
+	echo '<input type="text" name="' . $option . '" id="' . $option . '" value="' . get_option( $option ) . '" class="regular-text ltr" />';
+	echo '<p class="description" id="' . $option . '_description">In MailChimp, select the List and choose <em>Settings</em>, <em>List Name and Defaults</em></p>';
 }
 
 # Pinterest

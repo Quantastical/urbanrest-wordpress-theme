@@ -18,36 +18,6 @@
 
 		<div class="business-hours">
 			<h5>Taproom</h5>
-<?php
-/*
-			<p class="status">
-				Taproom is currently
-<?php
-$default_timezone = date_default_timezone_get();
-date_default_timezone_set('America/Detroit');
-$today = date('l');
-$start = get_option("urbanrest_setting_{$today}_start_time");
-$end = get_option("urbanrest_setting_{$today}_end_time");
-?>
-<?php if( urb_get_business_hours($today) ) : ?>
-<?php
-$currentTime = DateTime::createFromFormat('H:i', date('H:i'));
-$startTime = DateTime::createFromFormat('H:i', $start ? $start : '00:00');
-$endTime = DateTime::createFromFormat('H:i', $end ? $end : '23:59');
-if($startTime > $endTime) {
-	$endTime->add(new DateInterval('P1D'));
-}
-?>
-<?php 	if( $currentTime > $startTime && $currentTime < $endTime ) : ?>
-				<em class="open">Open</em>
-<?php 	else : ?>
-				<em class="closed">Closed</em>
-<?php 	endif; ?>
-<?php endif; ?>
-<?php date_default_timezone_set($default_timezone); ?>
-			</p>
-*/
-?>
 			<dl class="row">
 <?php foreach( array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') as $day ) : ?>
 <?php 	if( urb_get_business_hours($day) ) : ?>
@@ -108,21 +78,6 @@ wp_nav_menu(array(
 	<section class="site-map col-xs-12" itemprop="hasMap" itemscope itemtype="http://schema.org/Map" data-latitude="<?php echo get_option('urbanrest_setting_latitude'); ?>" data-longitude="<?php echo get_option('urbanrest_setting_longitude'); ?>">
 		<h3><a class="map-link" href="#map">Locate On Map</a></h3>
 		<div class="map-container" id="map">
-<?php
-/*
-$menu_locations = get_nav_menu_locations();
-$menu = wp_get_nav_menu_object( $menu_locations['map'] );
-$menu_items = wp_get_nav_menu_items($menu->term_id);
-wp_nav_menu(array(
-	'theme_location' => 'map',
-	'container'      => '',
-	'menu_class'     => 'map-menu',
-	'link_before'    => '<span class="menu-label">',
-	'link_after'     => '</span>',
-	'items_wrap'     => '<ul id="%1$s" class="%2$s" style="width:' . ( 3 * ceil(count($menu_items) / 2) ) . 'em">%3$s</ul>',
-));
-*/
-?>
 		</div>
 	</section>
 <?php endif; ?>

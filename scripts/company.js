@@ -6,7 +6,6 @@ jQuery(function($){
 		if( Urb.$map.hasClass('open') ) {
 			// TODO: figure out why this needs a setTimeout
 			setTimeout(function(){
-				//google.maps.event.trigger(Urb.$map.data('map'), 'resize');
 				Urb.$map.data('map').setCenter( Urb.$map.data('marker').getPosition() );
 				Urb.$map.data('map').panTo( Urb.$map.data('marker').getPosition() );
 			}, 250);
@@ -28,7 +27,6 @@ jQuery(function($){
 			$mapScript.attr('src', "http://maps.google.com/maps/api/js?callback=Urb.setupMap");
 			Urb.$body.append($mapScript);
 			Urb.$map.data( 'map', true );
-			//Urb.setupMap();
 		}
 	};
 
@@ -71,10 +69,6 @@ jQuery(function($){
 			draggable          : true,
 			mapTypeId          : google.maps.MapTypeId.ROADMAP,
 			mapTypeControl     : false,
-			//mapTypeControlOptions: {
-			//	position: google.maps.ControlPosition.LEFT_BOTTOM,
-			//	style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR
-			//},
 			overviewMapControl : true,
 			rotateControl      : false,
 			scaleControl       : false,
@@ -124,18 +118,9 @@ jQuery(function($){
 				}
 			);
 		}
-
-		// Add title attribute to map icons
-		// Janky solution, but I don't have time to figure out a better way right now
-		// TODO: get this into PHP using a Walker
-		//$('#menu-map-icons a').each(function() {
-		//	$(this).attr('title', this.textContent);
-		//});
 	};
 
 	Urb.handleContactFormResponse = function(response) {
-		console.log(response);
-		console.log(response.responseText);
 		if(response && response.success) {
 			Urb.loading( $('button[type="submit"]', Urb.$contactForm), true );
 		}
@@ -206,9 +191,7 @@ jQuery(function($){
 
 	Urb.$window.on('scroll', Urb.scrollMap);
 	Urb.$window.on('load', Urb.setupBusinessHours);
-	//Urb.$window.on('load', Urb.setupMap);
 	Urb.$mapLink.on('click', Urb.toggleMap);
 	Urb.$window.on('load', Urb.setupContactForm);
 	Urb.$window.on('resize orientationchange', Urb.resizeMap);
-	//Urb.$window.on('resize orientationchange', Urb.centerMap);
 });

@@ -245,6 +245,23 @@
 						{
 							color: $urbanrest-green;
 						}
+
+						&:focus
+						{
+							color: $urbanrest-green;
+							outline: none;
+
+							-webkit-animation-duration: 3s;
+							animation-duration: 3s;
+							-webkit-animation-fill-mode: both;
+							animation-fill-mode: both;
+
+							-webkit-animation-iteration-count: infinite;
+							animation-iteration-count: infinite;
+
+							-webkit-animation-name: flash;
+							animation-name: flash;
+						}
 					}
 				}
 
@@ -479,6 +496,22 @@
 					{
 						background-color: rgba( $urbanrest-black, 0.33 );
 						@include transition( background-color 0.11s );
+					}
+
+					&:focus
+					{
+						outline: none;
+
+						-webkit-animation-duration: 3s;
+						animation-duration: 3s;
+						-webkit-animation-fill-mode: both;
+						animation-fill-mode: both;
+
+						-webkit-animation-iteration-count: infinite;
+						animation-iteration-count: infinite;
+
+						-webkit-animation-name: flash;
+						animation-name: flash;
 					}
 				}
 

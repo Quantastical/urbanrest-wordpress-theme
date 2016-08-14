@@ -11,7 +11,39 @@ function urb_profile_edit_show_user_profile( $user ) {
 function urb_profile_personal_options_update( $user_id ) {
 	if( !current_user_can( 'edit_user', $user_id ) ) { return false; }
 
-	update_user_meta( $user_id, 'urb_newsletter', isset( $_POST['urb_newsletter'] ) );
+	$newsletter = isset( $_POST['urb_newsletter'] );
+	$email_address = $_POST['email'];
+	$first_name = $_POST['first_name'];
+	$last_name = $_POST['last_name'];
+
+	update_user_meta( $user_id, 'urb_newsletter', $newsletter );
+
+	// Update MailChimp newsletter list
+	$mailchimp_api_key = get_option('mailchimp_api_key');
+	$mailchimp_list_id = get_option('mailchimp_mailing_list_id');
+
+	if( $mailchimp_api_key ) {
+		$subscription_status = (!$newsletter) ? 'unsubscribed' : 'subscribed';
+		$hashed_email_address = md5(strtolower($email_address));
+
+		$mailing_list_request = array(
+			'apikey' => $mailchimp_api_key,
+			'method' => 'PUT', // GET, PUT, POST, PATCH, DELETE
+			'path'   => "lists/{$mailchimp_list_id}/members/{$hashed_email_address}",
+			'data'   => array(
+			            	'status'        => $subscription_status,
+			            	'status_if_new' => $subscription_status,
+			            	'merge_fields'  => array(
+			            	                   	'FNAME' => $first_name,
+			            	                   	'LNAME' => $last_name
+			            	                   ),
+			            	'email_address' => $email_address,
+			            )
+		);
+		$mailing_list_response = urb_mailchimp_request($mailing_list_request);
+	} else {
+		// TODO: display WordPress error stating
+	}
 }
 
 function urb_profile_user_profile_update_errors( &$errors, $update, &$user ) {

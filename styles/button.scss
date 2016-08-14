@@ -69,9 +69,9 @@
 			right: -1.75em;
 		}
 
-		&.loading:after { @include animation( fa-spin 2s infinite linear ); content: $fa-var-circle-o-notch; color: white; }
 		&.success:after { content: $fa-var-check-circle; color: $urbanrest-green; }
 		&.failure:after { content: $fa-var-times-circle; color: $google-red; }
+		&.loading:after { @include animation( fa-spin 2s infinite linear ); content: $fa-var-circle-o-notch; color: white; font-size: 16pt; }
 	}
 
 	.btn-icon

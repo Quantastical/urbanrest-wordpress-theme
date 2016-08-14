@@ -8,6 +8,7 @@ require_once('includes/disable-emojis.php');
 //require_once('includes/event.php');
 require_once('includes/form.php');
 require_once('includes/image-rotation-repair.php');
+require_once('includes/mailchimp.php');
 require_once('includes/shortlink.php');
 require_once('includes/login.php');
 //require_once('includes/product.php');

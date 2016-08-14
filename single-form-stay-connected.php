@@ -3,10 +3,6 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/wp-load.php' );
 
 if( !empty($_POST) )
 {
-	$mailchimp_api_key = get_option('urbanrest_setting_mailchimp_api_key');
-	$mailchimp_datacenter_id = substr( strrchr($mailchimp_api_key, '-'), 1 );
-	$mailchimp_list_id = 'e5898a07c6';
-
 	header('Content-Type: application/json');
 
 	$email_address = sanitize_email($_POST['email_address']);
@@ -42,16 +38,16 @@ if( !empty($_POST) )
 	$post_content = json_encode($_POST);
 	$post = array(
 		'post_author'   => $user_id,
-		'post_category' => $form_post->title,
+		'post_title'    => $form_post->post_title,
 		'post_content'  => $post_content,
-		'post_status'   => 'publish',
+		'post_status'   => 'private',
 		'post_type'     => 'response'
 	);
 	wp_insert_post( $post );
 
 	// Send message to administrator
 	if( !empty($message) ) {
-		$to          = get_option('admin_email');
+		$to          = "jeff@quantastical.com"; //get_option('admin_email');
 		$subject     = "Stay Connected";
 		$attachments = null;
 		$headers     = array(
@@ -61,39 +57,34 @@ if( !empty($_POST) )
 		wp_mail( $to, $subject, $message, $headers, $attachments );
 	}
 
-	echo json_encode( array(
-		'success' => true
-	) );
-
-	die();
-
 	// Update MailChimp newsletter list
-	/*
-	if( $mailchimp_api_key ) {
-		$mailchimp_data = array(
-			'method'            => 'listSubscribe',
-			'apikey'            => $api_key,
-			'id'                => $mailchimp_list_id,
-			'email_address'     => $email_address,
-			'merge_vars[FNAME]' => $first_name,
-			'merge_vars[LNAME]' => $last_name,
-			'output'            => 'json'
-		);
+	$mailchimp_api_key = get_option('mailchimp_api_key');
+	$mailchimp_list_id = get_option('mailchimp_mailing_list_id');
 
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL, "http://{$mailchimp_datacenter_id}.api.mailchimp.com/1.3/?" . http_build_query($mailchimp_data));
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		echo curl_exec($ch);
-		curl_close($ch);
-	} else {
-		$message = array(
-			'error_message' => "No API Key has been provided.",
-			'results' => array(),
-			'status' => "REQUEST_DENIED"
+	if( $mailchimp_api_key ) {
+		$subscription_status = (!$newsletter) ? 'unsubscribed' : 'subscribed';
+		$hashed_email_address = md5(strtolower($email_address));
+
+		$mailing_list_request = array(
+			'apikey' => $mailchimp_api_key,
+			'method' => 'PUT', // GET, PUT, POST, PATCH, DELETE
+			'path'   => "lists/{$mailchimp_list_id}/members/{$hashed_email_address}",
+			'data'   => array(
+			            	'status'        => $subscription_status,
+			            	'status_if_new' => $subscription_status,
+			            	'merge_fields'  => array(
+			            	                   	'FNAME' => $first_name,
+			            	                   	'LNAME' => $last_name
+			            	                   ),
+			            	'email_address' => $email_address,
+			            )
 		);
-		echo json_encode($message);
+		$mailing_list_response = urb_mailchimp_request($mailing_list_request);
+		
+		die( json_encode( array('success' => ($mailing_list_response->status == $subscription_status) ? true : false ) ) );
+	} else {
+		die( json_encode( array('success' => true) ) );
 	}
-	*/
 }
 ?>
 <?php get_header(); ?>

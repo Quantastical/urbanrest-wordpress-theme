@@ -37,9 +37,9 @@ function urb_response_init() {
 	);
 
 	$supports = array(
-		//'title',
+		'title',
 		'editor',
-		//'author',
+		'author',
 		//'thumbnail',
 		//'excerpt',
 		//'trackbacks',
@@ -96,7 +96,7 @@ function urb_response_after_setup_theme() {
 	$capabilities = array(
 		'edit_post'          => "edit_{$capability_type[0]}",
 		'read_post'          => "read_{$capability_type[0]}",
-		'delete_posts'       => "delete_{$capability_type[1]}",
+		'delete_posts'       => "delete_{$capability_type[0]}",
 		'edit_posts'         => "edit_{$capability_type[1]}",
 		'edit_others_posts'  => "edit_others_{$capability_type[1]}",
 		'publish_posts'      => "publish_{$capability_type[1]}",
