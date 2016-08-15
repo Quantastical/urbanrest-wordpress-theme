@@ -132,7 +132,7 @@ jQuery( function( $ ) {
 					var $content = $(response.data.content);
 					//$nextPage.replaceWith($content);
 					$currentPage.replaceWith($content);
-					Urb.$window.trigger('ajaxload');
+					Urb.$window.trigger('ajaxloaded');
 					var timeout = 0;
 					$('.page-header > *, .page-content > *, .page-footer > *, .post-header > *, .post-content > *, .post-footer > *', $content).each(function() {
 						var $this = $(this);
@@ -378,10 +378,10 @@ jQuery( function( $ ) {
 	}
 
 	Urb.$window.on('load orientationchange resize', Urb.setupNavigationSnap);
-	Urb.$window.on('ajaxload load', Urb.setupExternalLinks);
-	Urb.$window.on('ajaxload load', Urb.setupImageLinks);
+	Urb.$window.on('ajaxloaded load', Urb.setupExternalLinks);
+	Urb.$window.on('ajaxloaded load', Urb.setupImageLinks);
 	Urb.$window.on('load', Urb.setupFragmentAnchors);
-	Urb.$window.on('ajaxload load', Urb.setupInternalLinks);
+	Urb.$window.on('ajaxloaded load', Urb.setupInternalLinks);
 	Urb.$window.on('load', Urb.setupPageNavigation);
 	Urb.$window.on('load scroll', Urb.scrollPageNavigation);
 	Urb.$window.on('load scroll', Urb.scrollSocialNavigation);

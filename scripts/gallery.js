@@ -34,5 +34,5 @@ jQuery(function($){
 		});
 	};
 
-	Urb.$window.on('ajaxload load', Urb.setupGallery);
+	Urb.$window.on('ajaxloaded load', Urb.setupGallery);
 });

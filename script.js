@@ -1,19 +1,19 @@
 !function(t) {
     "function" == typeof define && define.amd ? define([ "jquery" ], t) : t("object" == typeof exports ? require("jquery") : window.jQuery || window.Zepto);
 }(function(t) {
-    var e, a, o, n, r, i, s = "Close", l = "BeforeClose", c = "AfterClose", d = "BeforeAppend", p = "MarkupParse", u = "Open", m = "Change", g = "mfp", f = "." + g, b = "mfp-ready", h = "mfp-removing", v = "mfp-prevent-close", U = function() {}, w = !!window.jQuery, C = t(window), $ = function(t, a) {
-        e.ev.on(g + t + f, a);
+    var e, a, o, n, r, i, s = "Close", l = "BeforeClose", c = "AfterClose", d = "BeforeAppend", p = "MarkupParse", u = "Open", g = "Change", m = "mfp", f = "." + m, b = "mfp-ready", h = "mfp-removing", v = "mfp-prevent-close", U = function() {}, w = !!window.jQuery, C = t(window), $ = function(t, a) {
+        e.ev.on(m + t + f, a);
     }, y = function(e, a, o, n) {
         var r = document.createElement("div");
         return r.className = "mfp-" + e, o && (r.innerHTML = o), n ? a && a.appendChild(r) : (r = t(r), 
         a && r.appendTo(a)), r;
     }, x = function(a, o) {
-        e.ev.triggerHandler(g + a, o), e.st.callbacks && (a = a.charAt(0).toLowerCase() + a.slice(1), 
+        e.ev.triggerHandler(m + a, o), e.st.callbacks && (a = a.charAt(0).toLowerCase() + a.slice(1), 
         e.st.callbacks[a] && e.st.callbacks[a].apply(e, t.isArray(o) ? o : [ o ]));
-    }, T = function(a) {
+    }, k = function(a) {
         return a === i && e.currTemplate.closeBtn || (e.currTemplate.closeBtn = t(e.st.closeMarkup.replace("%title%", e.st.tClose)), 
         i = a), e.currTemplate.closeBtn;
-    }, k = function() {
+    }, T = function() {
         t.magnificPopup.instance || (e = new U(), e.init(), t.magnificPopup.instance = e);
     }, I = function() {
         var t = document.createElement("p").style, e = [ "ms", "O", "Moz", "Webkit" ];
@@ -55,8 +55,8 @@
                 c = c.charAt(0).toUpperCase() + c.slice(1), e["init" + c].call(e);
             }
             x("BeforeOpen"), e.st.showCloseBtn && (e.st.closeBtnInside ? ($(p, function(t, e, a, o) {
-                a.close_replaceWith = T(o.type);
-            }), r += " mfp-close-btn-in") : e.wrap.append(T())), e.st.alignTop && (r += " mfp-align-top"), 
+                a.close_replaceWith = k(o.type);
+            }), r += " mfp-close-btn-in") : e.wrap.append(k())), e.st.alignTop && (r += " mfp-align-top"), 
             e.fixedContentPos ? e.wrap.css({
                 overflow: e.st.overflowY,
                 overflowX: "hidden",
@@ -72,15 +72,15 @@
             }), C.on("resize" + f, function() {
                 e.updateSize();
             }), e.st.closeOnContentClick || (r += " mfp-auto-cursor"), r && e.wrap.addClass(r);
-            var d = e.wH = C.height(), m = {};
+            var d = e.wH = C.height(), g = {};
             if (e.fixedContentPos && e._hasScrollBar(d)) {
-                var g = e._getScrollbarSize();
-                g && (m.marginRight = g);
+                var m = e._getScrollbarSize();
+                m && (g.marginRight = m);
             }
-            e.fixedContentPos && (e.isIE7 ? t("body, html").css("overflow", "hidden") : m.overflow = "hidden");
+            e.fixedContentPos && (e.isIE7 ? t("body, html").css("overflow", "hidden") : g.overflow = "hidden");
             var h = e.st.mainClass;
             return e.isIE7 && (h += " mfp-ie7"), h && e._addClassToMFP(h), e.updateItemHTML(), 
-            x("BuildControls"), t("html").css(m), e.bgOverlay.add(e.wrap).prependTo(e.st.prependTo || t(document.body)), 
+            x("BuildControls"), t("html").css(g), e.bgOverlay.add(e.wrap).prependTo(e.st.prependTo || t(document.body)), 
             e._lastFocusedEl = document.activeElement, setTimeout(function() {
                 e.content ? (e._addClassToMFP(b), e._setFocus()) : e.bgOverlay.addClass(b), o.on("focusin" + f, e._onFocusIn);
             }, 16), e.isOpen = !0, e.updateSize(d), x(u), a;
@@ -125,11 +125,11 @@
             }
             n && n !== a.type && e.container.removeClass("mfp-" + n + "-holder");
             var i = e["get" + o.charAt(0).toUpperCase() + o.slice(1)](a, e.currTemplate[o]);
-            e.appendContent(i, o), a.preloaded = !0, x(m, a), n = a.type, e.container.prepend(e.contentContainer), 
+            e.appendContent(i, o), a.preloaded = !0, x(g, a), n = a.type, e.container.prepend(e.contentContainer), 
             x("AfterChange");
         },
         appendContent: function(t, a) {
-            e.content = t, t ? e.st.showCloseBtn && e.st.closeBtnInside && e.currTemplate[a] === !0 ? e.content.find(".mfp-close").length || e.content.append(T()) : e.content = t : e.content = "", 
+            e.content = t, t ? e.st.showCloseBtn && e.st.closeBtnInside && e.currTemplate[a] === !0 ? e.content.find(".mfp-close").length || e.content.append(k()) : e.content = t : e.content = "", 
             x(d), e.container.addClass("mfp-" + a + "-holder"), e.contentContainer.append(e.content);
         },
         parseEl: function(a) {
@@ -234,7 +234,7 @@
         proto: U.prototype,
         modules: [],
         open: function(e, a) {
-            return k(), e = e ? t.extend(!0, {}, e) : {}, e.isObj = !0, e.index = a || 0, this.instance.open(e);
+            return T(), e = e ? t.extend(!0, {}, e) : {}, e.isObj = !0, e.index = a || 0, this.instance.open(e);
         },
         close: function() {
             return t.magnificPopup.instance && t.magnificPopup.instance.close();
@@ -268,7 +268,7 @@
             autoFocusLast: !0
         }
     }, t.fn.magnificPopup = function(a) {
-        k();
+        T();
         var o = t(this);
         if ("string" == typeof a) if ("open" === a) {
             var n, r = w ? o.data("magnificPopup") : o[0].magnificPopup, i = parseInt(arguments[1], 10) || 0;
@@ -280,10 +280,10 @@
         w ? o.data("magnificPopup", a) : o[0].magnificPopup = a, e.addGroup(o, a);
         return o;
     };
-    var P, S, _, N = "inline", M = function() {
-        _ && (S.after(_.addClass(P)).detach(), _ = null);
+    var P, S, M, _ = "inline", N = function() {
+        M && (S.after(M.addClass(P)).detach(), M = null);
     };
-    t.magnificPopup.registerModule(N, {
+    t.magnificPopup.registerModule(_, {
         options: {
             hiddenClass: "hide",
             markup: "",
@@ -291,16 +291,16 @@
         },
         proto: {
             initInline: function() {
-                e.types.push(N), $(s + "." + N, function() {
-                    M();
+                e.types.push(_), $(s + "." + _, function() {
+                    N();
                 });
             },
             getInline: function(a, o) {
-                if (M(), a.src) {
+                if (N(), a.src) {
                     var n = e.st.inline, r = t(a.src);
                     if (r.length) {
                         var i = r[0].parentNode;
-                        i && i.tagName && (S || (P = n.hiddenClass, S = y(P), P = "mfp-" + P), _ = r.after(S).detach().removeClass(P)), 
+                        i && i.tagName && (S || (P = n.hiddenClass, S = y(P), P = "mfp-" + P), M = r.after(S).detach().removeClass(P)), 
                         e.updateStatus("ready");
                     } else e.updateStatus("error", n.tNotFound), r = t("<div>");
                     return a.inlineElement = r, r;
@@ -309,12 +309,12 @@
             }
         }
     });
-    var F, j = "ajax", E = function() {
-        F && t(document.body).removeClass(F);
+    var E, F = "ajax", j = function() {
+        E && t(document.body).removeClass(E);
     }, H = function() {
-        E(), e.req && e.req.abort();
+        j(), e.req && e.req.abort();
     };
-    t.magnificPopup.registerModule(j, {
+    t.magnificPopup.registerModule(F, {
         options: {
             settings: null,
             cursor: "mfp-ajax-cur",
@@ -322,10 +322,10 @@
         },
         proto: {
             initAjax: function() {
-                e.types.push(j), F = e.st.ajax.cursor, $(s + "." + j, H), $("BeforeChange." + j, H);
+                e.types.push(F), E = e.st.ajax.cursor, $(s + "." + F, H), $("BeforeChange." + F, H);
             },
             getAjax: function(a) {
-                F && t(document.body).addClass(F), e.updateStatus("loading");
+                E && t(document.body).addClass(E), e.updateStatus("loading");
                 var o = t.extend({
                     url: a.src,
                     success: function(o, n, r) {
@@ -333,13 +333,13 @@
                             data: o,
                             xhr: r
                         };
-                        x("ParseAjax", i), e.appendContent(t(i.data), j), a.finished = !0, E(), e._setFocus(), 
+                        x("ParseAjax", i), e.appendContent(t(i.data), F), a.finished = !0, j(), e._setFocus(), 
                         setTimeout(function() {
                             e.wrap.addClass(b);
                         }, 16), e.updateStatus("ready"), x("AjaxContentAdded");
                     },
                     error: function() {
-                        E(), a.finished = a.loadError = !0, e.updateStatus("error", e.st.ajax.tError.replace("%url%", a.src));
+                        j(), a.finished = a.loadError = !0, e.updateStatus("error", e.st.ajax.tError.replace("%url%", a.src));
                     }
                 }, e.st.ajax.settings);
                 return e.req = t.ajax(o), "";
@@ -582,7 +582,7 @@
                             e.next();
                         }), e.container.append(n.add(r));
                     }
-                }), $(m + n, function() {
+                }), $(g + n, function() {
                     e._preloadTimeout && clearTimeout(e._preloadTimeout), e._preloadTimeout = setTimeout(function() {
                         e.preloadNearbyImages(), e._preloadTimeout = null;
                     }, 16);
@@ -616,8 +616,8 @@
             }
         }
     });
-    var q = "retina";
-    t.magnificPopup.registerModule(q, {
+    var V = "retina";
+    t.magnificPopup.registerModule(V, {
         options: {
             replaceSrc: function(t) {
                 return t.src.replace(/\.\w+$/, function(t) {
@@ -630,18 +630,18 @@
             initRetina: function() {
                 if (window.devicePixelRatio > 1) {
                     var t = e.st.retina, a = t.ratio;
-                    a = isNaN(a) ? a() : a, a > 1 && ($("ImageHasSize." + q, function(t, e) {
+                    a = isNaN(a) ? a() : a, a > 1 && ($("ImageHasSize." + V, function(t, e) {
                         e.img.css({
                             "max-width": e.img[0].naturalWidth / a,
                             width: "100%"
                         });
-                    }), $("ElementParse." + q, function(e, o) {
+                    }), $("ElementParse." + V, function(e, o) {
                         o.src = t.replaceSrc(o, a);
                     }));
                 }
             }
         }
-    }), k();
+    }), T();
 }), jQuery.fn.sortElements = function() {
     var t = [].sort;
     return function(e, a) {
@@ -697,6 +697,7 @@
     };
 }(jQuery, window, document), jQuery(function(t) {
     window.Urb = {
+        enableLogging: !0,
         $document: t(document),
         $window: t(window),
         $body: t("body"),
@@ -727,6 +728,8 @@
             var o = t.data("loading");
             t.data("loading", t.text()).text(o), t.addClass("loading").attr("disabled", !0);
         }
+    }, Urb.log = function(t) {
+        Urb.enableLogging && console.log(t);
     }, Urb.setScrollPosition = function() {
         Urb.scrollPosition = Urb.$document.scrollTop();
     }, Urb.updateViewport = function() {
@@ -739,10 +742,11 @@
     Urb.$window.on("scroll", Urb.setScrollPosition);
 }), jQuery(function(t) {
     Urb.setupModal = function() {
-        t(".modal").urbModal(), t('[data-action="modal"]').on("click", Urb.showModal);
+        Urb.log("Urb.setupModal"), t(".modal").urbModal(), t('[data-action="modal"]').on("click", Urb.showModal);
     }, Urb.showModal = function(e) {
-        "string" != typeof e && (e = t(this).data("target")), t(e).data("urbModal").show();
-    }, Urb.$window.on("ajaxload load", Urb.setupModal);
+        Urb.log("Urb.showModal"), "string" != typeof e && (e = t(this).data("target")), 
+        t(e).data("urbModal").show();
+    }, Urb.$window.on("ajaxloaded load", Urb.setupModal);
 }), jQuery(function(t) {
     var e = Urb.$wpadminbar && Urb.$window.outerWidth() > 600 ? Urb.$wpadminbar.outerHeight() : 0, a = Urb.$pageNavigation.outerHeight() + e, o = t("main"), n = {
         "#contact": t("#contact"),
@@ -808,7 +812,7 @@
                 if (clearInterval(c), e.success) {
                     document.title = e.data.title;
                     var n = t(e.data.content);
-                    o.replaceWith(n), Urb.$window.trigger("ajaxload");
+                    o.replaceWith(n), Urb.$window.trigger("ajaxloaded");
                     var r = 0;
                     t(".page-header > *, .page-content > *, .page-footer > *, .post-header > *, .post-content > *, .post-footer > *", n).each(function() {
                         var e = t(this);
@@ -905,8 +909,8 @@
         }
         Urb.scrollPageNavigation();
     }, "scrollRestoration" in history && (history.scrollRestoration = "manual"), Urb.$window.on("load orientationchange resize", Urb.setupNavigationSnap), 
-    Urb.$window.on("ajaxload load", Urb.setupExternalLinks), Urb.$window.on("ajaxload load", Urb.setupImageLinks), 
-    Urb.$window.on("load", Urb.setupFragmentAnchors), Urb.$window.on("ajaxload load", Urb.setupInternalLinks), 
+    Urb.$window.on("ajaxloaded load", Urb.setupExternalLinks), Urb.$window.on("ajaxloaded load", Urb.setupImageLinks), 
+    Urb.$window.on("load", Urb.setupFragmentAnchors), Urb.$window.on("ajaxloaded load", Urb.setupInternalLinks), 
     Urb.$window.on("load", Urb.setupPageNavigation), Urb.$window.on("load scroll", Urb.scrollPageNavigation), 
     Urb.$window.on("load scroll", Urb.scrollSocialNavigation), Urb.$window.on("load", function() {
         setTimeout(Urb.scrollToContent, 1);
@@ -968,7 +972,7 @@
         e.data("tooltip", a), a.addClass("active"), e.attr("data-title", o), e.removeAttr("title")));
     }, Urb.setupTooltips = function() {
         Urb.$body.on("mouseleave", "[title], [data-title]", Urb.hideTooltip), Urb.$body.on("mouseenter", "[title], [data-title]", Urb.showTooltip);
-    }, Urb.$window.on("ajaxload load", Urb.setupTooltips);
+    }, Urb.$window.on("ajaxloaded load", Urb.setupTooltips);
 }), jQuery(function(t) {
     var e, a = Urb.$wpadminbar ? Urb.$wpadminbar.outerHeight() : 0, o = (Urb.$pageNavigation.outerHeight() + a, 
     t('<button class="next"><span class="fa fa-angle-right"></span></button>')), n = t('<button class="previous"><span class="fa fa-angle-left"></span></button>'), r = t(".site-posts .latest-posts .blog-post h4");
@@ -1085,7 +1089,7 @@
         if (Urb.$map.hasClass("open") && !Urb.$map.hasClass("animating") && Urb.$mapCanvas.offset().top > Urb.scrollPosition + Urb.$window.height() && (Urb.$map.removeClass("open"), 
         t(".map-container, .map-canvas", Urb.$map).removeAttr("style")), !Urb.$map.data("map") && Urb.$window.scrollTop() > t("#contact").offset().top) {
             var e = t("<script />");
-            e.attr("type", "text/javascript"), e.attr("async", !0), e.attr("src", "http://maps.google.com/maps/api/js?key=" + _URB.mapApiKey + "&callback=Urb.setupMap"), 
+            e.attr("type", "text/javascript"), e.attr("async", !0), e.attr("src", "http://maps.google.com/maps/api/js?key=" + _URB.googleBrowserMapApiKey + "&callback=Urb.setupMap"), 
             Urb.$body.append(e), Urb.$map.data("map", !0);
         }
     }, Urb.setupBusinessHours = function() {
@@ -1103,7 +1107,7 @@
             t.closest(".field").removeClass("error").removeAttr("title");
         });
     }, Urb.setupMap = function() {
-        google || t(".site-map").remove(), Urb.$mapCanvas.appendTo(Urb.$mapContainer);
+        Urb.log("Urb.setupMap"), google || t(".site-map").remove(), Urb.$mapCanvas.appendTo(Urb.$mapContainer);
         var e = {
             disableDefaultUI: !0,
             draggable: !0,
@@ -1147,9 +1151,9 @@
             }), n.open(a, o);
         }));
     }, Urb.handleContactFormResponse = function(e) {
-        e && e.success && Urb.loading(t('button[type="submit"]', Urb.$contactForm), !0);
+        Urb.trackEvent(window.location.pathname, "Contact", "Submit", 1), e && e.success && Urb.loading(t('button[type="submit"]', Urb.$contactForm), !0);
     }, Urb.submitContactForm = function(e) {
-        e.preventDefault(), Urb.validateContactForm() && (Urb.loading(t('button[type="submit"]', Urb.$contactForm)), 
+        Urb.log("Urb.submitContactForm"), e.preventDefault(), Urb.validateContactForm() && (Urb.loading(t('button[type="submit"]', Urb.$contactForm)), 
         t.ajax({
             url: Urb.$contactForm.attr("action"),
             data: Urb.$contactForm.serialize(),
@@ -1169,9 +1173,10 @@
             });
         }
     }, Urb.toggleMap = function(e) {
-        e.preventDefault(), Urb.$map.data("map") || Urb.setupMap(), Urb.$map.toggleClass("open"), 
-        Urb.$map.hasClass("open") ? Urb.resizeMap() : t(".map-container, .map-canvas", Urb.$map).removeAttr("style");
+        Urb.log("Urb.toggleMap"), e.preventDefault(), t(e.target).blur(), Urb.$map.data("map") || Urb.setupMap(), 
+        Urb.$map.toggleClass("open"), Urb.$map.hasClass("open") ? (Urb.resizeMap(), Urb.trackEvent(window.location.pathname, "Map", "Open", 1)) : t(".map-container, .map-canvas", Urb.$map).removeAttr("style");
     }, Urb.validateContactForm = function() {
+        Urb.log("Urb.validateContactForm");
         var t = Urb.$contactForm.data("email_address");
         return t.val().length < 3 || t.val().indexOf("@") < 0 ? (t.closest(".field").addClass("error").attr("title", "Valid email address required."), 
         !1) : !0;
@@ -1193,7 +1198,7 @@
             },
             dataType: "json",
             success: function(t) {
-                t.success ? Urb.$aggregateRating.attr("data-user-rating", a.val()) : console.log(t);
+                t.success ? Urb.$aggregateRating.attr("data-user-rating", a.val()) : Urb.log(t);
             }
         }), Urb.shareRating(a.val()), !1;
     }, Urb.setupRatingPoll = function() {
@@ -1285,7 +1290,7 @@
             o = "We can do better.";
         }
         a.text(o), Urb.showModal(".modal.checkin-modal");
-    }, Urb.$window.on("ajaxload load", Urb.setupRatingPoll);
+    }, Urb.$window.on("ajaxloaded load", Urb.setupRatingPoll);
 }), jQuery(function(t) {}), jQuery(function(t) {}), jQuery(function(t) {}), jQuery(function(t) {
     Urb.scrollSharing = function() {
         t("main").each(function() {
@@ -1293,11 +1298,12 @@
             Urb.scrollPosition + Urb.$window.height() > e.offset().top + 1.5 * Urb.$pageNavigation.outerHeight() && Urb.scrollPosition + Urb.$window.height() < e.offset().top + e.outerHeight() ? e.find(".page-share, .post-share").addClass("visible") : e.find(".page-share, .post-share").removeClass("visible");
         });
     }, Urb.setupSharing = function() {
+        Urb.log("Urb.setupSharing");
         var e = t("main");
         e.length > 0 && t(".page-share, .post-share", e).addClass("visible").bind("click", function() {
             t(".modal.share-modal .shortlink", e).focus();
         });
-    }, Urb.$window.on("ajaxload load scroll", Urb.scrollSharing), Urb.$window.on("ajaxload load", function() {
+    }, Urb.$window.on("ajaxloaded load scroll", Urb.scrollSharing), Urb.$window.on("ajaxloaded load", function() {
         setTimeout(Urb.setupSharing, 500);
     });
 }), jQuery(function(t) {}), jQuery(function(t) {
@@ -1319,13 +1325,43 @@
                 }
             }
         });
-    }, Urb.$window.on("ajaxload load", Urb.setupGallery);
-}), function(t, e, a, o, n, r, i) {
-    t.GoogleAnalyticsObject = n, t[n] = t[n] || function() {
-        (t[n].q = t[n].q || []).push(arguments);
-    }, t[n].l = 1 * new Date(), r = e.createElement(a), i = e.getElementsByTagName(a)[0], 
-    r.async = 1, r.src = o, i.parentNode.insertBefore(r, i);
-}(window, document, "script", "//www.google-analytics.com/analytics.js", "ga"), 
-ga("create", "UA-54926068-6", "auto"), ga("require", "linkid", "linkid.js"), ga("set", "anonymizeIp", !0), 
-ga("send", "pageview");
+    }, Urb.$window.on("ajaxloaded load", Urb.setupGallery);
+}), jQuery(function(t) {
+    Urb.setupAnalytics = function() {
+        Urb.log("Urb.setupAnalytics"), function(t, e, a, o, n, r, i) {
+            t.GoogleAnalyticsObject = n, t[n] = t[n] || function() {
+                (t[n].q = t[n].q || []).push(arguments);
+            }, t[n].l = 1 * new Date(), r = e.createElement(a), i = e.getElementsByTagName(a)[0], 
+            r.async = 1, r.src = o, i.parentNode.insertBefore(r, i);
+        }(window, document, "script", "//www.google-analytics.com/analytics.js", "ga"), 
+        ga("create", _URB.googleAnalyticsTrackingID, "auto"), ga("require", "linkid", "linkid.js"), 
+        ga("set", "anonymizeIp", !0), Urb.trackPageView();
+    }, Urb.setupEvents = function() {
+        Urb.log("Urb.setupEvents"), t("a").on("click", function(e) {
+            var a = t(e.target).closest("a");
+            if (1 == a.length && window.location.host != a[0].host && !a.attr("onclick")) {
+                e.preventDefault();
+                var o = a[0].href, n = function() {
+                    document.location = o;
+                };
+                a.data("event-action") ? Urb.trackEvent(window.location.pathname, a.data("event-action"), a.data("event-label"), 1, n) : Urb.trackEvent(window.location.pathname, "Outbound", o, 1, n), 
+                setTimeout(n, 666);
+            }
+        });
+    }, Urb.trackEvent = function(t, e, a, o, n) {
+        Urb.log("Urb.trackEvent"), ga("send", {
+            hitType: "event",
+            eventCategory: t,
+            eventAction: e,
+            eventLabel: a,
+            eventValue: o,
+            hitCallback: n
+        });
+    }, Urb.trackPageView = function() {
+        Urb.log("Urb.trackPageView"), setTimeout(function() {
+            ga("send", "pageview", window.location.pathname);
+        }, 666);
+    }, Urb.$window.on("load", Urb.setupAnalytics), Urb.$window.on("ajaxloaded load", Urb.setupEvents), 
+    Urb.$window.on("ajaxloaded", Urb.trackPageView);
+});
 //# sourceMappingURL=script.js.map

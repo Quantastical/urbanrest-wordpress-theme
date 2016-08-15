@@ -1,5 +1,7 @@
 jQuery(function($){
 	Urb.scrollSharing = function() {
+		//Urb.log('Urb.scrollSharing');
+
 		$('main').each(function() {
 			var $main = $(this);
 			if( Urb.scrollPosition + Urb.$window.height() > $main.offset().top + Urb.$pageNavigation.outerHeight() * 1.5
@@ -12,6 +14,8 @@ jQuery(function($){
 	};
 
 	Urb.setupSharing = function() {
+		Urb.log('Urb.setupSharing');
+		
 		var $main = $('main');
 
 		if($main.length > 0) {
@@ -23,6 +27,6 @@ jQuery(function($){
 		}
 	}
 
-	Urb.$window.on('ajaxload load scroll', Urb.scrollSharing);
-	Urb.$window.on('ajaxload load', function() { setTimeout(Urb.setupSharing, 500); });
+	Urb.$window.on('ajaxloaded load scroll', Urb.scrollSharing);
+	Urb.$window.on('ajaxloaded load', function() { setTimeout(Urb.setupSharing, 500); });
 });

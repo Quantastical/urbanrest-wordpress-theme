@@ -10,6 +10,7 @@ function urb_admin_init_3rd_parties( ) {
 		'apple_itunes_affiliate_id',
 		'facebook_app_id',
 		'facebook_username',
+		'google_analytics_tracking_id',
 		'google_browser_api_key',
 		'google_developers_api_key',
 		'google_plus_id',
@@ -99,8 +100,8 @@ function urb_apple_app_id() {
 
 function urb_apple_app_name() {
 	$option = 'apple_app_name';
-	echo '<input type="text" name="' . $option . '" id="' . $option . '" value="' . get_option( $option ) . '" aria-describedby="' . $option . '_description" class="regular-text ltr" />';
-	echo '<p class="description" id="' . $option . '_description">Homescreen icon name, less than 15 characters</p>';
+	echo '<input type="text" name="' . $option . '" id="' . $option . '" value="' . get_option( $option ) . '" aria-describedby="' . $option . '_description" class="regular-text ltr" maxlength="15" />';
+	echo '<p class="description" id="' . $option . '_description">Add to Homescreen icon name, less than 15 characters</p>';
 }
 
 function urb_apple_itunes_affiliate_id() {
@@ -143,9 +144,10 @@ function urb_admin_section_google() {
 	$section = 'admin_section_google';
 
 	$fields = array(
-		'google_browser_api_key'    => 'Google Browser API Key',
-		'google_developers_api_key' => 'Google Developers API Key',
-		'google_plus_id'            => 'Google+ Page ID'
+		'google_analytics_tracking_id' => 'Google Analytics Tracking ID',
+		'google_browser_api_key'       => 'Google Browser API Key',
+		'google_developers_api_key'    => 'Google Developers API Key',
+		'google_plus_id'               => 'Google+ Page ID'
 	);
 
 	foreach( $fields as $setting_id => $setting_title ) {
@@ -155,9 +157,16 @@ function urb_admin_section_google() {
 	}
 }
 
+function urb_google_analytics_tracking_id() {
+	$option = 'google_analytics_tracking_id';
+	echo '<input type="text" name="' . $option . '" id="' . $option . '" value="' . get_option( $option ) . '" class="regular-text ltr" />';
+	echo '<p class="description" id="' . $option . '_description">In <a href="http://analytics.google.com" target="_blank">Google Analytics</a>, under <em>Admin</em>, <em>Property Settings</em>, <em>Basic Settings</em></p>';
+}
+
 function urb_google_browser_api_key() {
 	$option = 'google_browser_api_key';
 	echo '<input type="text" name="' . $option . '" id="' . $option . '" value="' . get_option( $option ) . '" class="regular-text ltr" />';
+	echo '<p class="description" id="' . $option . '_description">In <a href="http://console.developers.google.com" target="_blank">Google Developers Console</a>, under <em>Credentials</em>, <em>API Keys</em></p>';
 }
 
 function urb_google_developers_api_key() {

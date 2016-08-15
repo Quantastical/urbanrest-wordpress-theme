@@ -3,7 +3,6 @@ jQuery(function($){
 		var $element = $(this);
 		var $tooltip = $element.data('tooltip');
 		
-
 		if($tooltip){
 			$tooltip.removeClass('active');
 			
@@ -67,12 +66,6 @@ jQuery(function($){
 			$tooltip.addClass('tooltip');
 			$tooltip.text($tip);
 			Urb.$body.append($tooltip);
-			/*
-			$tooltip.css({
-				left: $element.offset().left + $element.outerWidth() / 2 - $tooltip.outerWidth() / 2,
-				top: $element.offset().top - $tooltip.outerHeight() * 1.25,
-			});
-			*/
 			Urb.positionTooltip($tooltip, $element);
 			$element.data('tooltip', $tooltip);
 			$tooltip.addClass('active');
@@ -85,21 +78,9 @@ jQuery(function($){
 	};
 
 	Urb.setupTooltips = function() {
-		//$('[title]').hover(Urb.showTooltip, Urb.hideTooltip);
 		Urb.$body.on('mouseleave', '[title], [data-title]', Urb.hideTooltip);
 		Urb.$body.on('mouseenter', '[title], [data-title]', Urb.showTooltip);
-		/*
-		Urb.$body.on('mouseenter mouseleave', '[title], [data-title]', function(e) {
-			if(e.type === 'mouseenter'){
-				console.log('mouseenter');
-				Urb.showTooltip.call(this);
-			} else if(e.type === 'mouseleave') {
-				console.log('mouseleave');
-				Urb.hideTooltip.call(this);
-			}
-		});
-		*/
 	};
 
-	Urb.$window.on('ajaxload load', Urb.setupTooltips);
+	Urb.$window.on('ajaxloaded load', Urb.setupTooltips);
 });

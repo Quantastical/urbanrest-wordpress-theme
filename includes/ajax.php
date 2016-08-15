@@ -3,9 +3,10 @@ if( !function_exists( 'urbanrest_setup_ajax' ) ) :
 	function urbanrest_setup_ajax() {
 		// Create end-point for JS AJAX calls
 		wp_localize_script('site', '_URB', array(
-			'url'       => admin_url('admin-ajax.php'),
-			'nonce'     => wp_create_nonce('admin-ajax'),
-			'mapApiKey' => get_option('google_browser_api_key')
+			'url'                       => admin_url('admin-ajax.php'),
+			'nonce'                     => wp_create_nonce('admin-ajax'),
+			'googleAnalyticsTrackingID' => get_option('google_analytics_tracking_id'),
+			'googleBrowserMapApiKey'    => get_option('google_browser_api_key')
 		));
 	}
 endif;

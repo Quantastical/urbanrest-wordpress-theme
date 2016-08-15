@@ -76,7 +76,7 @@ wp_nav_menu(array(
 
 <?php if( get_option('urbanrest_setting_latitude') && get_option('urbanrest_setting_longitude') ) : ?>
 	<section class="site-map col-xs-12" itemprop="hasMap" itemscope itemtype="http://schema.org/Map" data-latitude="<?php echo get_option('urbanrest_setting_latitude'); ?>" data-longitude="<?php echo get_option('urbanrest_setting_longitude'); ?>">
-		<h3><a class="map-link" href="#map">Locate On Map</a></h3>
+		<h3><a class="map-link" href="#map" data-event-action="Map" data-event-label="Toggle">Locate On Map</a></h3>
 		<div class="map-container" id="map">
 		</div>
 	</section>

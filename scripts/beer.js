@@ -22,7 +22,7 @@ jQuery(function($){
 				if(response.success) {
 					Urb.$aggregateRating.attr('data-user-rating', $rateButton.val() );
 				} else {
-					console.log(response);
+					Urb.log(response);
 				}
 			}
 		});
@@ -166,5 +166,5 @@ jQuery(function($){
 		Urb.showModal( '.modal.checkin-modal' );
 	};
 
-	Urb.$window.on('ajaxload load', Urb.setupRatingPoll);
+	Urb.$window.on('ajaxloaded load', Urb.setupRatingPoll);
 });

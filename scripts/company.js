@@ -24,7 +24,7 @@ jQuery(function($){
 			var $mapScript = $('<script />');
 			$mapScript.attr('type', 'text/javascript');
 			$mapScript.attr('async', true);
-			$mapScript.attr('src', "http://maps.google.com/maps/api/js?key=" + _URB.mapApiKey + "&callback=Urb.setupMap");
+			$mapScript.attr('src', "http://maps.google.com/maps/api/js?key=" + _URB.googleBrowserMapApiKey + "&callback=Urb.setupMap");
 			Urb.$body.append($mapScript);
 			Urb.$map.data( 'map', true );
 		}
@@ -58,6 +58,8 @@ jQuery(function($){
 	};
 
 	Urb.setupMap = function() {
+		Urb.log('Urb.setupMap');
+
 		if( !google ) {
 			$('.site-map').remove();
 		}
@@ -121,12 +123,21 @@ jQuery(function($){
 	};
 
 	Urb.handleContactFormResponse = function(response) {
+		Urb.trackEvent(
+			window.location.pathname,
+			'Contact',
+			'Submit',
+			1
+		);
+
 		if(response && response.success) {
 			Urb.loading( $('button[type="submit"]', Urb.$contactForm), true );
 		}
 	};
 
 	Urb.submitContactForm = function(e) {
+		Urb.log('Urb.submitContactForm');
+
 		e.preventDefault();
 		
 		if( Urb.validateContactForm() ) {
@@ -161,8 +172,12 @@ jQuery(function($){
 		}
 	};
 
-	Urb.toggleMap = function(event) {
-		event.preventDefault();
+	Urb.toggleMap = function(e) {
+		Urb.log('Urb.toggleMap');
+
+		e.preventDefault();
+
+		$(e.target).blur();
 
 		if(!Urb.$map.data('map')) {
 			Urb.setupMap();
@@ -172,12 +187,21 @@ jQuery(function($){
 		
 		if( Urb.$map.hasClass('open') ) {
 			Urb.resizeMap();
+
+			Urb.trackEvent(
+				window.location.pathname,
+				'Map',
+				'Open',
+				1
+			);
 		} else {
 			$('.map-container, .map-canvas', Urb.$map).removeAttr('style');
 		}
 	};
 
 	Urb.validateContactForm = function() {
+		Urb.log('Urb.validateContactForm');
+
 		var $emailAddress = Urb.$contactForm.data('email_address');
 
 		if( $emailAddress.val().length < 3 || $emailAddress.val().indexOf('@') < 0)

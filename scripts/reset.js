@@ -1,5 +1,7 @@
 jQuery( function( $ ) {
 	window.Urb = {
+		enableLogging : true,
+
 		$document : $(document),
 		$window   : $(window),
 
@@ -36,6 +38,12 @@ jQuery( function( $ ) {
 			var loadingText = $element.data('loading');
 			$element.data( 'loading', $element.text() ).text( loadingText );
 			$element.addClass('loading').attr('disabled', true);
+		}
+	};
+
+	Urb.log = function(message) {
+		if(Urb.enableLogging) {
+			console.log(message);	
 		}
 	};
 
