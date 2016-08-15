@@ -475,12 +475,8 @@
 			{
 				.social-navigation
 				{
-					top: 32px;
-
-					@include media( '<784px' )
-					{
-						top: 46px;
-					}
+					@include media('>600px') { top: 46px !important; }
+					@include media('>782px') { top: 32px !important; }
 				}
 
 				&.stuck-top
@@ -489,29 +485,15 @@
 					{
 						.main-menu
 						{
-							@include media('>600px')
-							{
-								top: calc(46px + 3.75em) !important;
-							}
-
-							@include media('>782px')
-							{
-								top: calc(32px + 3.75em) !important;
-							}
+							@include media('>600px') { top: calc(46px + 3.75em) !important; }
+							@include media('>782px') { top: calc(32px + 3.75em) !important; }
 						}
 					}
 
 					.page-navigation
 					{
-						@include media( '>600px' )
-						{
-							top: 46px !important;
-						}
-
-						@include media('>782px')
-						{
-							top: 32px !important;
-						}
+						@include media('>600px') { top: 46px !important; }
+						@include media('>782px') { top: 32px !important; }
 					}
 				}
 			}

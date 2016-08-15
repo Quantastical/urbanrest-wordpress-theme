@@ -78,12 +78,8 @@
 	.mfp-image-holder .mfp-close,
 	.mfp-iframe-holder .mfp-close
 	{
-		top: 32px;
-
-		@include media( '<784px' )
-		{
-			top: 46px;
-		}
+		@include media('>600px') { top: 46px !important; }
+		@include media('>782px') { top: 32px !important; }
 	}
 }
 

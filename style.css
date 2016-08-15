@@ -5753,15 +5753,17 @@ html.javascript {
     -moz-transition: color 0.666s;
     transition: color 0.666s; }
 
-.admin-bar .mfp-close,
-.admin-bar .mfp-image-holder .mfp-close,
-.admin-bar .mfp-iframe-holder .mfp-close {
-  top: 32px; }
-  @media (max-width: 783px) {
-    .admin-bar .mfp-close,
-    .admin-bar .mfp-image-holder .mfp-close,
-    .admin-bar .mfp-iframe-holder .mfp-close {
-      top: 46px; } }
+@media (min-width: 601px) {
+  .admin-bar .mfp-close,
+  .admin-bar .mfp-image-holder .mfp-close,
+  .admin-bar .mfp-iframe-holder .mfp-close {
+    top: 46px !important; } }
+
+@media (min-width: 783px) {
+  .admin-bar .mfp-close,
+  .admin-bar .mfp-image-holder .mfp-close,
+  .admin-bar .mfp-iframe-holder .mfp-close {
+    top: 32px !important; } }
 
 .mfp-bg {
   background-color: black; }
@@ -5987,11 +5989,13 @@ html.javascript {
       .javascript .modal-shade .modal-content {
         max-width: 50em; } }
 
-.admin-bar .modal-shade .modal-close {
-  top: 32px; }
-  @media (max-width: 783px) {
-    .admin-bar .modal-shade .modal-close {
-      top: 46px; } }
+@media (min-width: 601px) {
+  .admin-bar .modal-shade .modal-close {
+    top: 46px !important; } }
+
+@media (min-width: 783px) {
+  .admin-bar .modal-shade .modal-close {
+    top: 32px !important; } }
 
 @-webkit-keyframes mainMenuItemFocus {
   from,
@@ -6309,12 +6313,15 @@ html.javascript {
   .site .site-header .site-navigation.stuck-top .page-navigation {
     bottom: auto !important;
     position: fixed;
-    top: 0 !important; }
+    top: 0 !important; } }
+
+@media only screen and (min-width: 601px) {
   .site.admin-bar .site-navigation .social-navigation {
-    top: 32px; } }
-  @media only screen and (max-width: 783px) {
-    .site.admin-bar .site-navigation .social-navigation {
-      top: 46px; } }
+    top: 46px !important; } }
+
+@media only screen and (min-width: 783px) {
+  .site.admin-bar .site-navigation .social-navigation {
+    top: 32px !important; } }
 
 @media only screen and (min-width: 601px) {
   .site.admin-bar .site-navigation.stuck-top .main-navigation .main-menu {
@@ -7997,6 +8004,7 @@ html.javascript {
     padding-top: 0; }
   100% {
     min-height: 100%;
+    min-height: 100vh;
     padding-bottom: 4em;
     padding-top: 5.5em; } }
 
