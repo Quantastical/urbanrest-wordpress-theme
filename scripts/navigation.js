@@ -343,8 +343,9 @@ jQuery( function( $ ) {
 	Urb.scrollToContent = function() {
 		if( !Urb.$body.hasClass('home') ) {
 			Urb.$body.addClass('home');
-			if( Urb.$window.scrollTop() == 0 ) {
-				Urb.$window.scrollTop( $('main').offset().top - wpAdminBarHeight );
+			var $main = $('main');
+			if( Urb.$window.scrollTop() == 0 && $main.length ) {
+				Urb.$window.scrollTop( $main.offset().top - wpAdminBarHeight );
 			}
 		} else if( location.hash ) {
 			var $anchor = $(location.hash);

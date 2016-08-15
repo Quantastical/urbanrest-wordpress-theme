@@ -10,6 +10,7 @@ function urb_admin_init_3rd_parties( ) {
 		'apple_itunes_affiliate_id',
 		'facebook_app_id',
 		'facebook_username',
+		'google_browser_api_key',
 		'google_developers_api_key',
 		'google_plus_id',
 		'instagram_username',
@@ -142,6 +143,7 @@ function urb_admin_section_google() {
 	$section = 'admin_section_google';
 
 	$fields = array(
+		'google_browser_api_key'    => 'Google Browser API Key',
 		'google_developers_api_key' => 'Google Developers API Key',
 		'google_plus_id'            => 'Google+ Page ID'
 	);
@@ -153,6 +155,11 @@ function urb_admin_section_google() {
 	}
 }
 
+function urb_google_browser_api_key() {
+	$option = 'google_browser_api_key';
+	echo '<input type="text" name="' . $option . '" id="' . $option . '" value="' . get_option( $option ) . '" class="regular-text ltr" />';
+}
+
 function urb_google_developers_api_key() {
 	$option = 'google_developers_api_key';
 	echo '<input type="text" name="' . $option . '" id="' . $option . '" value="' . get_option( $option ) . '" class="regular-text ltr" />';
@@ -160,7 +167,7 @@ function urb_google_developers_api_key() {
 
 function urb_google_plus_id() {
 	$option = 'google_plus_id';
-	echo '<input type="text" name="' . $option .  '" id="' . $option . '" value="' . get_option( $option ) . '" class="regular-text ltr" />';
+	echo '<input type="text" name="' . $option . '" id="' . $option . '" value="' . get_option( $option ) . '" class="regular-text ltr" />';
 }
 
 # Instagram

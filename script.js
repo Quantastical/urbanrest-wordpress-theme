@@ -898,7 +898,11 @@
                 var o = t(location.pathname.replace(/\/$/, "").replace(/\/+/, "#")), n = 5;
                 0 == Urb.$window.scrollTop() && o.length && Urb.$window.scrollTop(o.offset().top);
             }
-        } else Urb.$body.addClass("home"), 0 == Urb.$window.scrollTop() && Urb.$window.scrollTop(t("main").offset().top - e);
+        } else {
+            Urb.$body.addClass("home");
+            var r = t("main");
+            0 == Urb.$window.scrollTop() && r.length && Urb.$window.scrollTop(r.offset().top - e);
+        }
         Urb.scrollPageNavigation();
     }, "scrollRestoration" in history && (history.scrollRestoration = "manual"), Urb.$window.on("load orientationchange resize", Urb.setupNavigationSnap), 
     Urb.$window.on("ajaxload load", Urb.setupExternalLinks), Urb.$window.on("ajaxload load", Urb.setupImageLinks), 
@@ -1081,7 +1085,7 @@
         if (Urb.$map.hasClass("open") && !Urb.$map.hasClass("animating") && Urb.$mapCanvas.offset().top > Urb.scrollPosition + Urb.$window.height() && (Urb.$map.removeClass("open"), 
         t(".map-container, .map-canvas", Urb.$map).removeAttr("style")), !Urb.$map.data("map") && Urb.$window.scrollTop() > t("#contact").offset().top) {
             var e = t("<script />");
-            e.attr("type", "text/javascript"), e.attr("async", !0), e.attr("src", "http://maps.google.com/maps/api/js?callback=Urb.setupMap"), 
+            e.attr("type", "text/javascript"), e.attr("async", !0), e.attr("src", "http://maps.google.com/maps/api/js?key=" + _URB.mapApiKey + "&callback=Urb.setupMap"), 
             Urb.$body.append(e), Urb.$map.data("map", !0);
         }
     }, Urb.setupBusinessHours = function() {
