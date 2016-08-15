@@ -132,6 +132,7 @@ jQuery(function($){
 
 		if(response && response.success) {
 			Urb.loading( $('button[type="submit"]', Urb.$contactForm), true );
+			Urb.$contactForm[0].reset();
 		}
 	};
 

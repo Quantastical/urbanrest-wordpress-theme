@@ -309,12 +309,12 @@
             }
         }
     });
-    var E, F = "ajax", j = function() {
-        E && t(document.body).removeClass(E);
+    var F, E = "ajax", j = function() {
+        F && t(document.body).removeClass(F);
     }, H = function() {
         j(), e.req && e.req.abort();
     };
-    t.magnificPopup.registerModule(F, {
+    t.magnificPopup.registerModule(E, {
         options: {
             settings: null,
             cursor: "mfp-ajax-cur",
@@ -322,10 +322,10 @@
         },
         proto: {
             initAjax: function() {
-                e.types.push(F), E = e.st.ajax.cursor, $(s + "." + F, H), $("BeforeChange." + F, H);
+                e.types.push(E), F = e.st.ajax.cursor, $(s + "." + E, H), $("BeforeChange." + E, H);
             },
             getAjax: function(a) {
-                E && t(document.body).addClass(E), e.updateStatus("loading");
+                F && t(document.body).addClass(F), e.updateStatus("loading");
                 var o = t.extend({
                     url: a.src,
                     success: function(o, n, r) {
@@ -333,7 +333,7 @@
                             data: o,
                             xhr: r
                         };
-                        x("ParseAjax", i), e.appendContent(t(i.data), F), a.finished = !0, j(), e._setFocus(), 
+                        x("ParseAjax", i), e.appendContent(t(i.data), E), a.finished = !0, j(), e._setFocus(), 
                         setTimeout(function() {
                             e.wrap.addClass(b);
                         }, 16), e.updateStatus("ready"), x("AjaxContentAdded");
@@ -1151,7 +1151,8 @@
             }), n.open(a, o);
         }));
     }, Urb.handleContactFormResponse = function(e) {
-        Urb.trackEvent(window.location.pathname, "Contact", "Submit", 1), e && e.success && Urb.loading(t('button[type="submit"]', Urb.$contactForm), !0);
+        Urb.trackEvent(window.location.pathname, "Contact", "Submit", 1), e && e.success && (Urb.loading(t('button[type="submit"]', Urb.$contactForm), !0), 
+        Urb.$contactForm[0].reset());
     }, Urb.submitContactForm = function(e) {
         Urb.log("Urb.submitContactForm"), e.preventDefault(), Urb.validateContactForm() && (Urb.loading(t('button[type="submit"]', Urb.$contactForm)), 
         t.ajax({

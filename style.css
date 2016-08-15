@@ -7614,8 +7614,9 @@ html.javascript {
               .site .site-company .site-contact .contact-form .field input#contact_message,
               .site .site-company .site-contact .contact-form .field textarea#contact_message {
                 height: 2.5em; }
-                .site .site-company .site-contact .contact-form .field input#contact_message:focus,
-                .site .site-company .site-contact .contact-form .field textarea#contact_message:focus {
+                .site .site-company .site-contact .contact-form .field input#contact_message:focus, .site .site-company .site-contact .contact-form .field input#contact_message:not(:placeholder-shown),
+                .site .site-company .site-contact .contact-form .field textarea#contact_message:focus,
+                .site .site-company .site-contact .contact-form .field textarea#contact_message:not(:placeholder-shown) {
                   height: 5.65em; } }
 
 @media only screen {

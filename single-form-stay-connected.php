@@ -47,14 +47,14 @@ if( !empty($_POST) )
 
 	// Send message to administrator
 	if( !empty($message) ) {
-		$to          = "jeff@quantastical.com"; //get_option('admin_email');
+		$to          = get_option('admin_email');
 		$subject     = "Stay Connected";
 		$attachments = null;
 		$headers     = array(
 			"From: \"Urbanrest WordPress\" <wordpress@urbanrest.com>",
 			"Reply-To: \"$full_name\" <{$email_address}>"
 		);
-		wp_mail( $to, $subject, $message, $headers, $attachments );
+		wp_mail( $to, $subject, stripslashes($message), $headers, $attachments );
 	}
 
 	// Update MailChimp newsletter list

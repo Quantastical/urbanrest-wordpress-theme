@@ -344,7 +344,8 @@
 								{
 									height: 2.5em;
 
-									&:focus
+									&:focus,
+									&:not(:placeholder-shown)
 									{
 										height: 5.65em;
 									}
