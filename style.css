@@ -4776,36 +4776,36 @@ img.mfp-img {
 
 @font-face {
   font-family: "Roboto Mono";
-  src: url("fonts/Roboto_Mono/RobotoSlab-Thin.eot");
-  src: url("fonts/Roboto_Mono/RobotoSlab-Thin.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Mono/RobotoSlab-Thin.woff") format("woff"), url("fonts/Roboto_Mono/RobotoSlab-Thin.ttf") format("truetype"), url("fonts/Roboto_Mono/RobotoSlab-Thin.svg#") format("svg");
+  src: url("fonts/Roboto_Mono/RobotoMono-Thin.eot");
+  src: url("fonts/Roboto_Mono/RobotoMono-Thin.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Mono/RobotoMono-Thin.woff") format("woff"), url("fonts/Roboto_Mono/RobotoMono-Thin.ttf") format("truetype"), url("fonts/Roboto_Mono/RobotoMono-Thin.svg#") format("svg");
   font-weight: 100;
   font-style: normal; }
 
 @font-face {
   font-family: "Roboto Mono";
-  src: url("fonts/Roboto_Mono/RobotoSlab-Light.eot");
-  src: url("fonts/Roboto_Mono/RobotoSlab-Light.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Mono/RobotoSlab-Light.woff") format("woff"), url("fonts/Roboto_Mono/RobotoSlab-Light.ttf") format("truetype"), url("fonts/Roboto_Mono/RobotoSlab-Light.svg#") format("svg");
+  src: url("fonts/Roboto_Mono/RobotoMono-Light.eot");
+  src: url("fonts/Roboto_Mono/RobotoMono-Light.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Mono/RobotoMono-Light.woff") format("woff"), url("fonts/Roboto_Mono/RobotoMono-Light.ttf") format("truetype"), url("fonts/Roboto_Mono/RobotoMono-Light.svg#") format("svg");
   font-weight: 300;
   font-style: normal; }
 
 @font-face {
   font-family: "Roboto Mono";
-  src: url("fonts/Roboto_Mono/RobotoSlab-Regular.eot");
-  src: url("fonts/Roboto_Mono/RobotoSlab-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Mono/RobotoSlab-Regular.woff") format("woff"), url("fonts/Roboto_Mono/RobotoSlab-Regular.ttf") format("truetype"), url("fonts/Roboto_Mono/RobotoSlab-Regular.svg#") format("svg");
+  src: url("fonts/Roboto_Mono/RobotoMono-Regular.eot");
+  src: url("fonts/Roboto_Mono/RobotoMono-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Mono/RobotoMono-Regular.woff") format("woff"), url("fonts/Roboto_Mono/RobotoMono-Regular.ttf") format("truetype"), url("fonts/Roboto_Mono/RobotoMono-Regular.svg#") format("svg");
   font-weight: 400;
   font-style: normal; }
 
 @font-face {
   font-family: "Roboto Mono";
-  src: url("fonts/Roboto_Mono/RobotoSlab-Medium.eot");
-  src: url("fonts/Roboto_Mono/RobotoSlab-Medium.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Mono/RobotoSlab-Medium.woff") format("woff"), url("fonts/Roboto_Mono/RobotoSlab-Medium.ttf") format("truetype"), url("fonts/Roboto_Mono/RobotoSlab-Medium.svg#") format("svg");
+  src: url("fonts/Roboto_Mono/RobotoMono-Medium.eot");
+  src: url("fonts/Roboto_Mono/RobotoMono-Medium.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Mono/RobotoMono-Medium.woff") format("woff"), url("fonts/Roboto_Mono/RobotoMono-Medium.ttf") format("truetype"), url("fonts/Roboto_Mono/RobotoMono-Medium.svg#") format("svg");
   font-weight: 500;
   font-style: normal; }
 
 @font-face {
   font-family: "Roboto Mono";
-  src: url("fonts/Roboto_Mono/RobotoSlab-Bold.eot");
-  src: url("fonts/Roboto_Mono/RobotoSlab-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Mono/RobotoSlab-Bold.woff") format("woff"), url("fonts/Roboto_Mono/RobotoSlab-Bold.ttf") format("truetype"), url("fonts/Roboto_Mono/RobotoSlab-Bold.svg#") format("svg");
+  src: url("fonts/Roboto_Mono/RobotoMono-Bold.eot");
+  src: url("fonts/Roboto_Mono/RobotoMono-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/Roboto_Mono/RobotoMono-Bold.woff") format("woff"), url("fonts/Roboto_Mono/RobotoMono-Bold.ttf") format("truetype"), url("fonts/Roboto_Mono/RobotoMono-Bold.svg#") format("svg");
   font-weight: 700;
   font-style: normal; }
 
@@ -4860,7 +4860,7 @@ html.javascript {
   width: 100%; }
   .site h1, .site h2, .site h3, .site h4, .site h5, .site h6, .site p, .site ol, .site ul, .site dt, .site dd {
     margin: 0; }
-  .site em {
+  .site em, .site i {
     font-style: italic;
     font-weight: 400; }
   .site hr {
@@ -4869,6 +4869,8 @@ html.javascript {
     border-color: black;
     padding: 0;
     margin: 2em 1em; }
+  .site b, .site strong {
+    font-weight: 600; }
   .site abbr {
     text-decoration: none; }
   .site .hidden {
@@ -8087,7 +8089,7 @@ html.javascript {
     .site main.beer .beer-content h4 {
       margin-bottom: 0.25em;
       margin-top: 0.5em; }
-    .site main.beer .beer-content p {
+    .site main.beer .beer-content p, .site main.beer .beer-content table {
       margin-bottom: 1em; }
     .site main.beer .beer-content section {
       margin-top: 1em; }
@@ -8336,7 +8338,7 @@ html.javascript {
     .site main.event .event-content h2 {
       font-size: 1.3em;
       margin-bottom: 0.25em; }
-    .site main.event .event-content p {
+    .site main.event .event-content p, .site main.event .event-content table {
       margin-bottom: 1em; }
     .site main.event .event-content section {
       margin-top: 1em; }
@@ -8632,7 +8634,7 @@ html.javascript {
     .site main.page .page-content h4 {
       margin-bottom: 0.25em;
       margin-top: 0.5em; }
-    .site main.page .page-content p {
+    .site main.page .page-content p, .site main.page .page-content table {
       margin-bottom: 1em; }
     .site main.page .page-content img {
       border-radius: 2pt; }
@@ -8805,7 +8807,7 @@ html.javascript {
     .site main.post .post-content h4 {
       margin-bottom: 0.25em;
       margin-top: 0.5em; }
-    .site main.post .post-content p {
+    .site main.post .post-content p, .site main.post .post-content table {
       margin-bottom: 1em; }
     .site main.post .post-content ul {
       list-style: disc;
@@ -9213,7 +9215,8 @@ html.javascript {
 @media print {
   body, main {
     background: none !important;
-    font-family: 'Roboto Slab', serif !important; }
+    font-family: 'Roboto Slab', serif !important;
+    font-size: 11pt; }
   body {
     box-sizing: border-box !important;
     padding: 0 !important; }
@@ -9227,10 +9230,14 @@ html.javascript {
   .site-footer {
     display: none !important; }
   main {
+    min-height: auto !important;
     padding-bottom: 0 !important;
     padding-top: 0 !important; }
-    main a:link:after,
-    main a:visited:after {
+    main .hyperlink, .site main.event a, .site main.event .hyperlink, .site main.page .page-content a, .site main.post .post-content a, .site main.posts a, .site main.posts .hyperlink, .site main.taxonomy a, .site main.taxonomy .hyperlink, .site main.user a, .site main.user .hyperlink {
+      color: #111 !important; }
+    main a:not([href$='png']):not([href$='jpg']):not([href$='bmp']):not([href$='gif']):link:after,
+    main a:not([href$='png']):not([href$='jpg']):not([href$='bmp']):not([href$='gif']):visited:after {
+      color: #999 !important;
       content: "[" attr(href) "]";
       font-size: 0.6em;
       font-style: italic;
@@ -9241,20 +9248,45 @@ html.javascript {
     main a[href^='/']:after {
       content: "[http://urbanrest.com" attr(href) "]"; }
   .site-header {
+    position: relative !important;
     text-align: center !important;
     width: 100% !important; }
   .site-title {
     margin: 0 auto !important; }
   .site-logo {
-    height: 1.33in !important; }
-  .page-footer .page-share {
-    display: none !important; }
-  .page-footer:after {
-    content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=https%3A%2F%2Furbanrest.com);
-    display: block;
-    height: 200px;
-    margin: 0 auto;
-    width: 200px; }
+    height: 1in !important; }
+  .page-footer {
+    margin-top: 0 !important;
+    position: absolute;
+    right: 0;
+    top: 0;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: top right;
+    transform-origin: top right; }
+    .page-footer:before {
+      content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=https%3A%2F%2Furbanrest.com);
+      display: block;
+      height: 200px;
+      margin: 0 auto;
+      position: relative;
+      width: 200px;
+      z-index: 1; }
+    .page-footer:after {
+      background-image: url(images/QR%20Code%20Watermark.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      content: '' !important;
+      display: block;
+      height: 200px;
+      margin: -200px auto 0;
+      position: relative;
+      width: 200px;
+      z-index: 2; }
+    .page-footer .page-share,
+    .page-footer .beer-rating {
+      display: none !important; }
   /*
 	.site-footer {
 		bottom: 0 !important;

@@ -71,20 +71,13 @@ endif;
 
 function urb_get_fonts_for_preloading() {
 	$fonts = array(
-		//'Bad Script'              => array(400),
-		'Chalk It Up'             => array(400),
-		'Colored Crayons'         => array(400),
-		//'Freckle Face'            => array(400),
-		'Gotham'                  => array(600, 800),
-		//'Griffy'                  => array(400),
-		//'KG Tangled Up In You'    => array(400),
-		//'KG Ten Thousand Reasons' => array(400),
-		'Legend M54'              => array(400),
-		//'RNS Baruta'              => array(400),
-		'Roboto'                  => array(100, 300, 400, 600, 800),
-		'Satisfy'                 => array(400),
-		'Urbanrest'               => array(400)
-		//'Witka'                   => array(400)
+		'Chalk It Up' => array(400),
+		'Flux'        => array(400),
+		'Legend M54'  => array(400),
+		'RNS Baruta'  => array(400),
+		'Roboto'      => array(100,300,400,600,800),
+		'Roboto Slab' => array(100,300,400,700),
+		'Satisfy'     => array(400)
 	);
 
 	foreach( $fonts as $family => $weights ) {

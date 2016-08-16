@@ -4,6 +4,11 @@ if( !function_exists( 'urbanrest_admin_init_artwork' ) ) :
 		// Artwork
 		register_setting(
 			'urbanrest_admin_page_artwork', // $option_group
+			'urbanrest_setting_logo' // $option_name
+			// $sanitize_callback
+		);
+		register_setting(
+			'urbanrest_admin_page_artwork', // $option_group
 			'urbanrest_setting_apple_touch_icon' // $option_name
 			// $sanitize_callback
 		);
@@ -48,6 +53,14 @@ endif;
 if( !function_exists( 'urbanrest_admin_page_artwork' ) ) :
 	function urbanrest_admin_page_artwork() {
 		// Admin -> Settings -> Artwork
+		// Logos
+		add_settings_section(
+			'urbanrest_admin_section_logos', // $section_id
+			'Logos', // $title
+			'urbanrest_admin_section_logos', // $section_callback
+			'urbanrest_admin_page_artwork' // $page
+		);
+
 		// Icons
 		add_settings_section(
 			'urbanrest_admin_section_icons', // $section_id
@@ -115,5 +128,21 @@ if( !function_exists( 'urbanrest_admin_section_icons' ) ) :
 		);
 	}
 endif;
+
+if( !function_exists( 'urbanrest_admin_section_logos' ) ) :
+	function urbanrest_admin_section_logos() {
+		// Artwork -> Logos
+		// 1-Color Black on Transparent Logo
+		add_settings_field(
+			'urbanrest_setting_logo', // $setting_id
+			'Logo',
+			'urbanrest_setting_logo',
+			'urbanrest_admin_page_artwork',
+			'urbanrest_admin_section_logos',
+			array()
+		);
+	}
+endif;
+
 add_action('admin_init', 'urbanrest_admin_init_artwork');
 ?>

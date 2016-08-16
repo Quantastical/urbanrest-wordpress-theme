@@ -819,7 +819,7 @@
                         e.hide(), setTimeout(function() {
                             e.fadeIn(330);
                         }, r), r += 88;
-                    }), t("#qr-code").html(".page-footer:after {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=https://" + encodeURIComponent(window.location.host + a) + ");}}");
+                    }), t("#qr-code").html(".page-footer:before {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=https://" + encodeURIComponent(window.location.host + a) + ") !important;}}");
                 } else console.log(e.data);
             }
         });

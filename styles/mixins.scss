@@ -196,6 +196,12 @@ $prefix-for-spec:      true !default;
 	transform: $transformList;
 }
 
+@mixin transform-origin( $transformOrigin )
+{
+  -webkit-transform-origin: $transformOrigin;
+  transform-origin: $transformOrigin;
+}
+
 @mixin transition($properties...) {
   // Fix for vendor-prefix transform property
   $needs-prefixes: false;

@@ -48,7 +48,7 @@ iframe
 	max-width: 90%;
 }
 
-p
+p, table
 {
 	margin-bottom: 1em;
 }
@@ -59,10 +59,15 @@ h2
 	margin-bottom: 0.25em;
 }
 
-em
+em, i
 {
 	font-style: italic;
 	font-weight: 400;
+}
+
+b, strong
+{
+	font-weight: 600;
 }
 
 hr
@@ -77,4 +82,10 @@ hr
 abbr
 {
 	text-decoration: none;
+}
+
+.mce-item-table, .mce-item-table td, .mce-item-table th, .mce-item-table caption
+{
+	border: 1px dashed rgba(0, 0, 0, 0.33);
+	margin-bottom: 1em;
 }

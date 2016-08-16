@@ -21,7 +21,7 @@ html.javascript
 		margin: 0;
 	}
 
-	em
+	em, i
 	{
 		font-style: italic;
 		font-weight: 400;
@@ -34,6 +34,11 @@ html.javascript
 		border-color: black;
 		padding: 0;
 		margin: 2em 1em;
+	}
+
+	b, strong
+	{
+		font-weight: 600;
 	}
 
 	abbr

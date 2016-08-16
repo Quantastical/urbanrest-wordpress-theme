@@ -13,10 +13,10 @@
 		<meta name="viewport" content="width=400, maximum-scale=1.0, user-scalable=no" />
 
 <?php if( get_option('urbanrest_setting_favicon') ) : ?>
-		<link rel="icon" type="image/png" href="<?php echo get_option('urbanrest_setting_favicon'); ?>" />
+		<link rel="icon" type="image/x-icon" href="<?php echo get_option('urbanrest_setting_favicon'); ?>" />
 <?php endif; ?>
 <?php if( get_option('urbanrest_setting_apple_touch_icon') ) : ?>
-		<link rel="apple-touch-icon" href="<?php echo get_option('urbanrest_setting_apple_touch_icon'); ?>" />
+		<link rel="apple-touch-icon" type="image/png" href="<?php echo get_option('urbanrest_setting_apple_touch_icon'); ?>" />
 <?php endif; ?>
 <?php if( get_option('urbanrest_setting_apple_touch_startup_image') ) : ?>
 		<link rel="apple-touch-startup-image" href="<?php echo get_option('urbanrest_setting_apple_touch_startup_image'); ?>" />
@@ -74,40 +74,6 @@
 		<meta property="business:hours:end" content="<?php echo $endTime ? $endTime : '23:59'; ?>" />
 <?php 	endif; ?>
 <?php endfor;?>
-<?php
-/*
-<?php if( get_option('urbanrest_setting_tuesday_start_time') || get_option('urbanrest_setting_tuesday_end_time') ) : ?>
-		<meta property="business:hours:day" content="tuesday" />
-		<meta property="business:hours:start" content="<?php echo get_option('urbanrest_setting_tuesday_start_time'); ?>" />
-		<meta property="business:hours:end" content="<?php echo get_option('urbanrest_setting_tuesday_end_time'); ?>" />
-<?php endif; ?>
-<?php if( get_option('urbanrest_setting_wednesday_start_time') || get_option('urbanrest_setting_wednesday_end_time') ) : ?>
-		<meta property="business:hours:day" content="wednesday" />
-		<meta property="business:hours:start" content="<?php echo get_option('urbanrest_setting_wednesday_start_time'); ?>" />
-		<meta property="business:hours:end" content="<?php echo get_option('urbanrest_setting_wednesday_end_time'); ?>" />
-<?php endif; ?>
-<?php if( get_option('urbanrest_setting_thursday_start_time') || get_option('urbanrest_setting_thursday_end_time') ) : ?>
-		<meta property="business:hours:day" content="thursday" />
-		<meta property="business:hours:start" content="<?php echo get_option('urbanrest_setting_thursday_start_time'); ?>" />
-		<meta property="business:hours:end" content="<?php echo get_option('urbanrest_setting_thursday_end_time'); ?>" />
-<?php endif; ?>
-<?php if( get_option('urbanrest_setting_friday_start_time') && get_option('urbanrest_setting_friday_end_time') ) : ?>
-		<meta property="business:hours:day" content="friday" />
-		<meta property="business:hours:start" content="<?php echo get_option('urbanrest_setting_friday_start_time'); ?>" />
-		<meta property="business:hours:end" content="<?php echo get_option('urbanrest_setting_friday_end_time'); ?>" />
-<?php endif; ?>
-<?php if( get_option('urbanrest_setting_saturday_start_time') && get_option('urbanrest_setting_saturday_end_time') ) : ?>
-		<meta property="business:hours:day" content="saturday" />
-		<meta property="business:hours:start" content="<?php echo get_option('urbanrest_setting_saturday_start_time'); ?>" />
-		<meta property="business:hours:end" content="<?php echo get_option('urbanrest_setting_saturday_end_time'); ?>" />
-<?php endif; ?>
-<?php if( get_option('urbanrest_setting_sunday_start_time') && get_option('urbanrest_setting_sunday_end_time') ) : ?>
-		<meta property="business:hours:day" content="sunday" />
-		<meta property="business:hours:start" content="<?php echo get_option('urbanrest_setting_sunday_start_time'); ?>" />
-		<meta property="business:hours:end" content="<?php echo get_option('urbanrest_setting_sunday_end_time'); ?>" />
-<?php endif; ?>
-*/
-?>
 		<meta property="og:title" content="<?php echo urb_pre_get_document_title(); ?>" />
 <?php $excerpt = get_the_excerpt() ?> 
 <?php if( $excerpt ) : ?>
@@ -146,7 +112,7 @@
 
 <?php /*		<link type="text/plain" rel="author" href="<?php echo get_site_url(); ?>/humans.txt" />*/ ?>
 		<?php wp_head(); ?>
-		<style id="qr-code" type="text/css" media="print">.page-footer:after {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=<?php urlencode(the_permalink()); ?>);}}</style>
+		<style id="qr-code" type="text/css" media="print">.page-footer:before {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=<?php urlencode(the_permalink()); ?>);}}</style>
 	</head>
 
 	<body <?php body_class('site'); ?>>
@@ -194,31 +160,11 @@ if (preg_match_all('#(<a [^<]+</a>)#', $social, $matches)) {
 
 		<header class="site-header row active" id="preliminaries">
 			<h1 class="site-title">
-				<img alt="<?php bloginfo('name'); ?> Logo" class="site-logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-1-color-4x.min.png" />
+<?php if( get_option('urbanrest_setting_logo') ) : ?>
+				<img alt="<?php bloginfo('name'); ?> Logo" class="site-logo" src="<?php echo get_option('urbanrest_setting_logo'); ?>" />
+<?php endif; ?>
 				<span class="site-name"><?php bloginfo('name'); ?></span>
 			</h1>
-<?php /*
-<?php $front_page = get_post(get_option('page_on_front')); ?>
-<?php if ( has_post_thumbnail($front_page->ID) ) : ?>
-<?php 	$post_thumbnail_url = wp_get_attachment_image_src( get_post_thumbnail_id($front_page->ID), array( 420, 420 ), false, '' )[0];?>
-			<figure class="featured-image" style="background-image:url(<?php echo $post_thumbnail_url; ?>);">
-<?php 	echo get_the_post_thumbnail($front_page); $post_thumbnail = get_post(get_post_thumbnail_id($front_page->ID)); ?>
-<?php 	if( $post_thumbnail->post_title || $post_thumbnail->post_excerpt || $post_thumbnail->post_content ) : ?>
-				<figcaption class="hidden">
-<?php 		if( $post_thumbnail->post_title ) : ?>
-					<div class="featured-image-title"><?php echo $post_thumbnail->post_title; ?></div>
-<?php 				endif; ?>
-<?php 		if( $post_thumbnail->post_excerpt ) : ?>
-					<div class="featured-image-caption"><?php echo $post_thumbnail->post_excerpt; ?></div>
-<?php 				endif; ?>
-<?php 		if( $post_thumbnail->post_content ) : ?>
-					<div class="featured-image-description"><?php echo $post_thumbnail->post_content; ?></div>
-<?php 				endif; ?>
-				</figcaption>
-<?php 	endif; ?>
-			</figure>
-<?php endif; ?>
-*/ ?>
 
 <?php if( get_bloginfo( 'description', 'display' ) || is_customize_preview() ) : ?>
 			<p class="site-description"><?php echo get_bloginfo( 'description', 'display' ); ?></p>

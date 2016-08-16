@@ -3,6 +3,7 @@
 	body, main {
 		background: none !important;
 		font-family: 'Roboto Slab', serif !important;
+		font-size: 11pt;
 	}
 
 	body {
@@ -20,11 +21,17 @@
 	.site-footer { display: none !important; }
 
 	main {
+		min-height: auto !important;
 		padding-bottom: 0 !important;
 		padding-top: 0 !important;
 
-		a:link:after,
-		a:visited:after {
+		.hyperlink {
+			color: #111 !important;
+		}
+
+		a:not([href$='png']):not([href$='jpg']):not([href$='bmp']):not([href$='gif']):link:after,
+		a:not([href$='png']):not([href$='jpg']):not([href$='bmp']):not([href$='gif']):visited:after {
+			color: #999 !important;
 			content: '[' attr(href) ']';
 			font-size: 0.6em;
 			font-style: italic;
@@ -40,7 +47,7 @@
 	}
 
 	.site-header {
-		//position: fixed !important;
+		position: relative !important;
 		text-align: center !important;
 		//top: 0in !important;
 		width: 100% !important;
@@ -51,20 +58,44 @@
 	}
 
 	.site-logo {
-		height: 1.33in !important;
+		height: 1in !important;
 	}
 
 	.page-footer {
-		.page-share {
-			display: none !important;
-		}
-	
-		&:after {
+		margin-top: 0 !important;
+		position: absolute;
+		right: 0;
+		top: 0;
+		@include transform( scale(0.5) );
+    	@include transform-origin( top right );
+
+		&:before {
 			content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=https%3A%2F%2Furbanrest.com);
 			display: block;
 			height: 200px;
 			margin: 0 auto;
+			position: relative;
 			width: 200px;
+			z-index: 1;
+		}
+
+		&:after {
+			background-image: url(images/QR%20Code%20Watermark.png);
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			content: '' !important;
+			display: block;
+			height: 200px;
+			margin: -200px auto 0;
+			position: relative;
+			width: 200px;
+			z-index: 2;
+		}
+
+		.page-share,
+		.beer-rating {
+			display: none !important;
 		}
 	}
 

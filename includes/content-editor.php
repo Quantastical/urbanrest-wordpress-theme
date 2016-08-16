@@ -1,15 +1,17 @@
 <?php
 
 function urb_mce_buttons_2( $buttons ) {
-	$buttons[] = 'superscript';
-	$buttons[] = 'subscript';
+	//$buttons[] = 'superscript';
+	//$buttons[] = 'subscript';
 
 	return $buttons;
 }
 
 function urb_mce_buttons_3( $buttons ) {
-	array_unshift( $buttons, 'fontselect' );
-	array_unshift( $buttons, 'fontsizeselect' );
+	$buttons[] = 'fontselect';
+	$buttons[] = 'fontsizeselect';
+	$buttons[] = 'superscript';
+	$buttons[] = 'subscript';
 
 	return $buttons;
 }

@@ -16,6 +16,18 @@ function urbanrest_setting_apple_itunes_affiliate_id() {
 	echo '<input type="text" name="urbanrest_setting_apple_itunes_affiliate_id" id="urbanrest_setting_apple_itunes_affiliate_id" value="' . get_option( 'urbanrest_setting_apple_itunes_affiliate_id' ) . '" aria-describedby="urbanrest_setting_apple_itunes_affiliate_id_description" class="regular-text ltr" />';
 }
 */
+function urbanrest_setting_logo() {
+	// Artwork -> Icons -> Logo
+	echo '<input type="text" id="urbanrest_setting_logo" name="urbanrest_setting_logo" value="' . get_option( 'urbanrest_setting_logo' ) . '" />';
+	echo '<span class="wp-media-buttons">';
+	echo '	<a href="#urbanrest_setting_logo" class="button view_image">View Image</a>';
+	echo '	<a href="#urbanrest_setting_logo" class="button add_media" data-editor="content" title="Add Media">';
+	echo '		<span class="wp-media-buttons-icon"></span>';
+	echo '		Add Media';
+	echo '	</a>';
+	echo '</span>';
+	echo '<p class="description" id="urbanrest_setting_logo_description">1-Color Black on Transparent PNG</p>';
+}
 
 function urbanrest_setting_apple_touch_icon() {
 	// Artwork -> Icons -> Apple Touch Icon
@@ -141,7 +153,7 @@ function urbanrest_setting_favicon() {
 	echo '		Add Media';
 	echo '	</a>';
 	echo '</span>';
-	echo '<p class="description" id="urbanrest_setting_favicon_description">32 &times; 32px PNG</p>';
+	echo '<p class="description" id="urbanrest_setting_favicon_description">16&times;16 &ndash; 256&times;256 <a href="http://icoconvert.com" target="_blank">Multi-Size ICO</a></p>';
 }
 
 function urbanrest_setting_facebook_opengraph_image() {

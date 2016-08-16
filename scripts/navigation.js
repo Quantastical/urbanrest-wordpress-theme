@@ -27,7 +27,6 @@ jQuery( function( $ ) {
 
 	Urb.loadPage = function(slug) {
 		var $currentPage = $('main');
-		//var $nextPage = $('<main class="page loading row around-xs"><span class="loading text">Loading<span class="dot"></span><span class="dot"></span><span class="dot"></span></span></main>');
 
 		Urb.$body.removeClass('no-scroll');
 		
@@ -142,7 +141,7 @@ jQuery( function( $ ) {
 						}, timeout);
 						timeout += 88;
 					});
-					$('#qr-code').html('.page-footer:after {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=https://' + encodeURIComponent(window.location.host + slug) + ');}}');
+					$('#qr-code').html('.page-footer:before {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=https://' + encodeURIComponent(window.location.host + slug) + ') !important;}}');
 				} else {
 					console.log(response.data);
 				}
