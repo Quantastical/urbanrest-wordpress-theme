@@ -1,5 +1,9 @@
 			<footer class="page-footer beer-footer" role="contentinfo">
 				<section class="beer-actions">
+<?php
+$rating_enabled = get_post_meta($post->ID, 'rating_enabled');
+if($rating_enabled[0] != 'false') :
+?>
 					<div class="beer-rating">
 						<h5>
 							Overall Rating
@@ -12,6 +16,9 @@
 							based on <span itemprop="reviewCount"><?php echo count( urb_get_ratings($post->ID) ); ?></span> customer reviews
 						</div>
 					</div>
+<?php
+endif;
+?>
 
 					<div class="modal checkin-modal animated fadeIn">
 <?php
