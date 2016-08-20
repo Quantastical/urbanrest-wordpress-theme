@@ -1,3 +1,5 @@
+<?php global $ajax; ?>
+<?php if(!isset($ajax)) : ?>
 <!doctype html>
 <html class="no-javascript" <?php language_attributes(); ?>>
 	<head>
@@ -112,7 +114,7 @@
 
 <?php /*		<link type="text/plain" rel="author" href="<?php echo get_site_url(); ?>/humans.txt" />*/ ?>
 		<?php wp_head(); ?>
-		<style id="qr-code" type="text/css" media="print">.page-footer:before {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=<?php urlencode(the_permalink()); ?>);}}</style>
+		<style id="qr-code" type="text/css" media="print">.page-footer:before {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=<?php echo urlencode( str_ireplace('URB.beer', 'QR.URB.beer', wp_get_shortlink()) ); ?>);}}</style>
 	</head>
 
 	<body <?php body_class('site'); ?>>
@@ -130,10 +132,10 @@
 		<script type="application/ld+json">
 		{
 			"@context" : "http://schema.org",
-			"@type" : "Organization",
-			"name" : "<?php bloginfo('name'); ?>",
-			"url" : "<?php echo get_bloginfo('wpurl'); ?>",
-			"sameAs" : [
+			"@type"    : "Organization",
+			"name"     : "<?php bloginfo('name'); ?>",
+			"url"      : "<?php echo get_bloginfo('wpurl'); ?>",
+			"sameAs"   : [
 <?php
 $social = wp_nav_menu(array(
 	'theme_location'  => 'social',
@@ -170,16 +172,6 @@ if (preg_match_all('#(<a [^<]+</a>)#', $social, $matches)) {
 			<p class="site-description"><?php echo get_bloginfo( 'description', 'display' ); ?></p>
 <?php endif; ?>
 			<p><a class="skip-link screen-reader-text hidden" href="#main"><span>Skip to content</span></a>
-
-<?php
-/*
-			<form action="/search" autocomplete="off" class="site-search" id="search" method="get">
-				<label class="search-label" for="q">Search Urbanrest.com for&hellip;</label>
-				<input class="search-input" id="q" name="q" required="required" type="search" />
-				<button class="search-submit" type="submit"><span class="btn-label">Find Results</span></button>
-			</form>
-*/
-?>
 		
 			<nav class="site-navigation">
 <?php if( has_nav_menu('main-menu') ) : ?>
@@ -229,7 +221,6 @@ wp_nav_menu(array(
 	'link_after'      => '</span>',
 	'items_wrap'      => '<ul id="%1$s" class="%2$s">'
 	                   . '%3$s'
-//	                   . '<li class="search menu-item menu-item-type-custom menu-item-object-custom"><a title="Search Urbanrest.com" href="#search"><span class="btn-label">Search</span></a></li>'
 	                   . '</ul>',
 	'depth'           => 0,
 	'walker'          => ''
@@ -245,8 +236,8 @@ wp_nav_menu(array(
 <?php
 $latest_args = array(
 	'posts_per_page' => 1,
-	'orderby' => 'date',
-	'order', 'DESC'
+	'orderby'        => 'date',
+	'order'          => 'DESC'
 );
 $latest = get_posts( $latest_args );
 $first = true;
@@ -270,21 +261,5 @@ $first = true;
 <?php endforeach; ?>
 <?php wp_reset_postdata(); ?>
 			</ul>
-<?php
-/*
-			<script id="next-blog-post-template" type="text/html">
-				<li class="blog-post next" data-post-id="{ID}">
-					<a href="{permalink}">
-						<span class="blog-post-image" style="background-image:url('{image_src}');">
-							{thumbnail}
-						</span>
-						<h4>{title}</h4>
-					</a>
-					<div class="blog-post-intro">
-						{excerpt}
-					</div>
-				</li>
-			</script>
-*/
-?>
 		</section>
+<?php endif; ?>

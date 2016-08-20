@@ -26,11 +26,12 @@ function getmaincontent() {
 		$buffer = ob_get_clean();
 
 		$return = array(
-			'ID' => $post->ID,
-			'title' => $post->post_title,
-			'guid' => $post->guid,
+			'ID'        => $post->ID,
+			'title'     => $post->post_title,
+			'guid'      => $post->guid,
 			'permalink' => get_permalink($post->ID),
-			'content' => $buffer
+			'shortlink' => wp_get_shortlink($post->ID),
+			'content'   => $buffer
 		);
 		
 		wp_send_json_success($return);
@@ -99,31 +100,6 @@ function getnext() {
 	}
 
 	die();
-	/*
-	global $post;
-	$post_id = intval($_POST['id']);
-	$post = get_post( $post_id );
-	//setup_postdata($post);
-	
-	$in_same_term = false;
-	$excluded_categories = '';
-	$taxonomy = '';
-	$prevPost = get_previous_post($in_same_term, $excluded_categories, $taxonomy);
-
-	if(!empty($prevPost)) {
-		$return = array(
-			'ID' => $prevPost->ID,
-			'post_title' => $prevPost->post_title,
-			'guid' => $prevPost->guid,
-			'post_name' => $prevPost->post_name,
-			'permalink' => get_permalink($prevPost->ID)
-		);
-		wp_send_json_success($return);
-	} else {
-		wp_send_json_error( 'No post found.' );
-	}
-	die(); // this is required to return a proper result
-	*/
 }
 add_action( 'wp_ajax_getnext', 'getnext' );
 add_action( 'wp_ajax_nopriv_getnext', 'getnext');

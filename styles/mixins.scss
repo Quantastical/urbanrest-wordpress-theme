@@ -69,7 +69,7 @@ $prefix-for-spec:      true !default;
 }
 
 @mixin align-items($align-items) {
-  @include prefixer(align-items, $align-items, webkit moz spec);
+  @include prefixer(align-items, $align-items, webkit spec);
 }
 
 @mixin animation($animations...) {
@@ -115,7 +115,6 @@ $prefix-for-spec:      true !default;
 
 @mixin background-size( $size ) {
 	-webkit-background-size: $size;
-	-moz-background-size: $size;
 	-ms-background-size: $size;
 	-o-background-size: $size;
 	background-size: $size;
@@ -139,19 +138,23 @@ $prefix-for-spec:      true !default;
 }
 
 @mixin font-smoothing( $smoothing ) {
-  @include prefixer(font-smoothing, $smoothing, webkit moz spec);
+  @include prefixer(font-smoothing, $smoothing, webkit spec);
 }
 
 @mixin justify-content($justify-content) {
-  @include prefixer(justify-content, $justify-content, webkit moz spec);
+  @include prefixer(justify-content, $justify-content, webkit spec);
 }
 
 @mixin flex($flex) {
-  @include prefixer(flex, $flex, webkit moz spec);
+  @include prefixer(flex, $flex, webkit spec);
+}
+
+@mixin flex-basis($flex-basis) {
+  @include prefixer(flex-basis, $flex-basis, webkit moz spec);
 }
 
 @mixin flex-wrap($flex-wrap) {
-  @include prefixer(flex-wrap, $flex-wrap, webkit moz spec);
+  @include prefixer(flex-wrap, $flex-wrap, webkit spec);
 }
 
 @mixin keyframes($name) {
@@ -271,7 +274,7 @@ $prefix-for-spec:      true !default;
 
 @mixin user-select( $userSelection )
 {
-  @include prefixer(-webkit-user-select, $userSelection, webkit moz spec);
+  @include prefixer(user-select, $userSelection, webkit moz spec);
 }
 
 //     _            _           _                           _ _

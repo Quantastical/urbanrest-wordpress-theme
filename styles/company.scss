@@ -525,60 +525,22 @@
 					@include transition( height 0.666s );
 					width: 100%;
 
-					/*
-					.map-menu
-					{
-						bottom: 1.6em;
-						left: 0.6em;
-						opacity: 0;
-						padding: 0;
-						position: absolute;
-						@include transition( opacity 0.33s 0s );
-						width: auto !important;
-						z-index: 1;
-
-						.menu-item
-						{
-							display: inline-block;
-							margin-right: 0.25em;
-
-							a
-							{
-								background-repeat: no-repeat;
-								background-size: contain;
-								color: transparent;
-								display: inline-block;
-								font-size: 0;
-								height: 2.5rem;
-								opacity: 0.75;
-								overflow: hidden;
-								width: 2.5rem;
-
-								&:hover { opacity: 1; }
-							}
-
-							&.google-maps a
-							{
-								height: 2.9rem;
-								margin-bottom: -0.25rem;
-								width: 2.9rem;
-							}
-							
-							&.apple-maps a   { background-image: url(images/icon-apple-maps.min.png);   }
-							&.foursquare a   { background-image: url(images/icon-foursquare.min.png);   }
-							&.google-maps a  { background-image: url(images/icon-google-maps.min.png);  }
-							&.mapquest a     { background-image: url(images/icon-mapquest.min.png);     }
-							&.yellow-pages a { background-image: url(images/icon-yellow-pages.min.png); }
-						}
-					}
-					*/
-
 					.map-canvas
 					{
 						background: none !important;
 						height: 525px;
 						max-width: none !important;
 						width: 100%;
+					}
+
+					.map-external-link
+					{
+						color: $urbanrest-green;
+						text-decoration: none;
+
+						&:hover {
+							text-decoration: underline;
+						}
 					}
 				}
 

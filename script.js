@@ -311,7 +311,7 @@
     });
     var F, E = "ajax", j = function() {
         F && t(document.body).removeClass(F);
-    }, H = function() {
+    }, B = function() {
         j(), e.req && e.req.abort();
     };
     t.magnificPopup.registerModule(E, {
@@ -322,7 +322,7 @@
         },
         proto: {
             initAjax: function() {
-                e.types.push(E), F = e.st.ajax.cursor, $(s + "." + E, H), $("BeforeChange." + E, H);
+                e.types.push(E), F = e.st.ajax.cursor, $(s + "." + E, B), $("BeforeChange." + E, B);
             },
             getAjax: function(a) {
                 F && t(document.body).addClass(F), e.updateStatus("loading");
@@ -346,7 +346,7 @@
             }
         }
     });
-    var B, O = function(a) {
+    var H, A = function(a) {
         if (a.data && void 0 !== a.data.title) return a.data.title;
         var o = e.st.image.titleSrc;
         if (o) {
@@ -381,13 +381,13 @@
                 }
             },
             _onImageHasSize: function(t) {
-                t.img && (t.hasSize = !0, B && clearInterval(B), t.isCheckingImgSize = !1, x("ImageHasSize", t), 
+                t.img && (t.hasSize = !0, H && clearInterval(H), t.isCheckingImgSize = !1, x("ImageHasSize", t), 
                 t.imgHidden && (e.content && e.content.removeClass("mfp-loading"), t.imgHidden = !1));
             },
             findImageSize: function(t) {
                 var a = 0, o = t.img[0], n = function(r) {
-                    B && clearInterval(B), B = setInterval(function() {
-                        return o.naturalWidth > 0 ? void e._onImageHasSize(t) : (a > 200 && clearInterval(B), 
+                    H && clearInterval(H), H = setInterval(function() {
+                        return o.naturalWidth > 0 ? void e._onImageHasSize(t) : (a > 200 && clearInterval(H), 
                         a++, void (3 === a ? n(10) : 40 === a ? n(50) : 100 === a && n(500)));
                     }, r);
                 };
@@ -409,18 +409,18 @@
                     c = a.img[0], c.naturalWidth > 0 ? a.hasSize = !0 : c.width || (a.hasSize = !1);
                 }
                 return e._parseMarkup(o, {
-                    title: O(a),
+                    title: A(a),
                     img_replaceWith: a.img
-                }, a), e.resizeImage(), a.hasSize ? (B && clearInterval(B), a.loadError ? (o.addClass("mfp-loading"), 
+                }, a), e.resizeImage(), a.hasSize ? (H && clearInterval(H), a.loadError ? (o.addClass("mfp-loading"), 
                 e.updateStatus("error", s.tError.replace("%url%", a.src))) : (o.removeClass("mfp-loading"), 
                 e.updateStatus("ready")), o) : (e.updateStatus("loading"), a.loading = !0, a.hasSize || (a.imgHidden = !0, 
                 o.addClass("mfp-loading"), e.findImageSize(a)), o);
             }
         }
     });
-    var z, A = function() {
-        return void 0 === z && (z = void 0 !== document.createElement("p").style.MozTransform), 
-        z;
+    var O, z = function() {
+        return void 0 === O && (O = void 0 !== document.createElement("p").style.MozTransform), 
+        O;
     };
     t.magnificPopup.registerModule("zoom", {
         options: {
@@ -490,7 +490,7 @@
                     width: o.width(),
                     height: (w ? o.innerHeight() : o[0].offsetHeight) - i - r
                 };
-                return A() ? s["-moz-transform"] = s.transform = "translate(" + n.left + "px," + n.top + "px)" : (s.left = n.left, 
+                return z() ? s["-moz-transform"] = s.transform = "translate(" + n.left + "px," + n.top + "px)" : (s.left = n.left, 
                 s.top = n.top), s;
             }
         }
@@ -787,7 +787,7 @@
             }, r + 250);
         }
         var n = t(".site-posts").offset().top + t(".site-posts").outerHeight(), r = Math.round(500 * (Math.abs(Urb.$window.scrollTop() - n) / Urb.$window.height()));
-        o.length > 0 || (o = t('<main class="new page row around-xs" />'), t(".site-posts").after(o)), 
+        0 == o.length && (o = t('<main class="new page row around-xs" />'), t(".site-posts").after(o)), 
         o.append('<span class="loading-text"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span>').addClass("loading"), 
         setTimeout(function() {
             o.animate({
@@ -809,18 +809,21 @@
             },
             dataType: "json",
             success: function(e) {
-                if (clearInterval(c), e.success) {
+                if (Urb.log(e), e.success) {
                     document.title = e.data.title;
-                    var n = t(e.data.content);
-                    o.replaceWith(n), Urb.$window.trigger("ajaxloaded");
-                    var r = 0;
-                    t(".page-header > *, .page-content > *, .page-footer > *, .post-header > *, .post-content > *, .post-footer > *", n).each(function() {
+                    var a = t(e.data.content);
+                    o.replaceWith(a), Urb.$window.trigger("ajaxloaded");
+                    var n = 0;
+                    t(".page-header > *:not(.hidden), .page-content > *:not(.hidden), .page-footer > *:not(.hidden), .post-header > *:not(.hidden), .post-content > *:not(.hidden), .post-footer > *:not(.hidden)", a).each(function() {
                         var e = t(this);
                         e.hide(), setTimeout(function() {
                             e.fadeIn(330);
-                        }, r), r += 88;
-                    }), t("#qr-code").html(".page-footer:before {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=https://" + encodeURIComponent(window.location.host + a) + ") !important;}}");
-                } else console.log(e.data);
+                        }, n), n += 88;
+                    }), t("#qr-code").html(".page-footer:before {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=" + encodeURIComponent(e.data.shortlink.replace(/URB.beer/i, "QR.URB.beer")) + ") !important;}}");
+                } else Urb.log(e.data);
+            },
+            complete: function() {
+                console.log("clear Timeout"), clearInterval(c);
             }
         });
     }, Urb.navigateInternally = function(e) {
@@ -1142,13 +1145,15 @@
                 },
                 map: a,
                 position: e.center
-            }), n = new google.maps.InfoWindow({
-                content: Urb.$address.html()
+            }), n = "https://www.google.com/maps/dir//2615+Wolcott+Avenue,+Ferndale,+Michigan,+48220";
+            navigator.userAgent.match(/(Apple|Mac|iPhone|iPod|iPad)/i) && (n = "http://maps.apple.com/?daddr=2615+Wolcott+Avenue,+Ferndale,+Michigan,+48220");
+            var r = new google.maps.InfoWindow({
+                content: Urb.$address.html() + '<br /><a class="map-external-link" href="' + n + '">Get Directions</a>'
             });
-            Urb.$map.data("map", a), Urb.$map.data("marker", o), Urb.$map.data("infoWindow", n), 
+            Urb.$map.data("map", a), Urb.$map.data("marker", o), Urb.$map.data("infoWindow", r), 
             google.maps.event.addListener(o, "click", function() {
-                n.open(a, o);
-            }), n.open(a, o);
+                r.open(a, o);
+            }), r.open(a, o);
         }));
     }, Urb.handleContactFormResponse = function(e) {
         Urb.trackEvent(window.location.pathname, "Contact", "Submit", 1), e && e.success && (Urb.loading(t('button[type="submit"]', Urb.$contactForm), !0), 

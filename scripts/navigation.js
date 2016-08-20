@@ -72,33 +72,18 @@ jQuery( function( $ ) {
 		}
 		
 		var targetOffset = $('.site-posts').offset().top + $('.site-posts').outerHeight();
-		//var targetHasPadding = ($currentPage.innerHeight() - $currentPage.height()) > navBarWithAdminBarHeight;
 		var duration = Math.round( 500 * (Math.abs(Urb.$window.scrollTop() - targetOffset) / Urb.$window.height()) );
 		
-		if($currentPage.length > 0) {
-			//$currentPage.before($nextPage);
-		} else {
-			//$nextPage.insertAfter($('section'));
-			//$('.site-posts').after($nextPage);
+		if($currentPage.length == 0) {
 			$currentPage = $('<main class="new page row around-xs" />');
 			$('.site-posts').after($currentPage);
 		}
 
-		
-		//$('> *', $currentPage).fadeOut(duration, function() {
-			//$currentPage.prepend('<span class="loading">Loading</span>');
-		//});
-		//$nextPage.slideDown(duration);
+		$currentPage.append('<span class="loading-text"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span>').addClass('loading');
+		setTimeout(function(){
+			$currentPage.animate({height:0},500);
+		},duration);
 
-		//$currentPage.slideUp(duration, function() {
-		//	$currentPage.remove();
-			$currentPage.append('<span class="loading-text"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span>').addClass('loading');
-			setTimeout(function(){
-				$currentPage.animate({height:0},500);
-			},duration);
-		//});
-
-		//Urb.$window.scrollTop( $currentPage.offset().top );
 		//Urb.$body.animate(
 		$('html,body').animate(
 			{ scrollTop: targetOffset - wpAdminBarHeight },
@@ -125,15 +110,15 @@ jQuery( function( $ ) {
 			},
 			dataType: 'json',
 			success: function(response){
-				clearInterval(loadingTimeout);
+				Urb.log(response);
+
 				if(response.success) {
 					document.title = response.data.title;
 					var $content = $(response.data.content);
-					//$nextPage.replaceWith($content);
 					$currentPage.replaceWith($content);
 					Urb.$window.trigger('ajaxloaded');
 					var timeout = 0;
-					$('.page-header > *, .page-content > *, .page-footer > *, .post-header > *, .post-content > *, .post-footer > *', $content).each(function() {
+					$('.page-header > *:not(.hidden), .page-content > *:not(.hidden), .page-footer > *:not(.hidden), .post-header > *:not(.hidden), .post-content > *:not(.hidden), .post-footer > *:not(.hidden)', $content).each(function() {
 						var $this = $(this);
 						$this.hide();
 						setTimeout(function(){
@@ -141,10 +126,15 @@ jQuery( function( $ ) {
 						}, timeout);
 						timeout += 88;
 					});
-					$('#qr-code').html('.page-footer:before {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=https://' + encodeURIComponent(window.location.host + slug) + ') !important;}}');
+					$('#qr-code').html('.page-footer:before {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=' + encodeURIComponent(response.data.shortlink.replace(/URB.beer/i, 'QR.URB.beer')) + ') !important;}}');
 				} else {
-					console.log(response.data);
+					// TODO: Show an error or soemthing
+					Urb.log(response.data);
 				}
+			},
+			complete: function() {
+				console.log('clear Timeout');
+				clearInterval(loadingTimeout);
 			}
 		});
 	};

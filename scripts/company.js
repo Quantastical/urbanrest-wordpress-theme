@@ -109,7 +109,14 @@ jQuery(function($){
 						map: map,
 						position: mapOptions.center
 					});
-					var infoWindow = new google.maps.InfoWindow({ content: Urb.$address.html() });
+
+					// Default Google Maps
+					var externalMapLinkURL = 'https://www.google.com/maps/dir//2615+Wolcott+Avenue,+Ferndale,+Michigan,+48220';
+					
+					if(navigator.userAgent.match(/(Apple|Mac|iPhone|iPod|iPad)/i)) {
+						externalMapLinkURL = 'http://maps.apple.com/?daddr=2615+Wolcott+Avenue,+Ferndale,+Michigan,+48220';
+					}
+					var infoWindow = new google.maps.InfoWindow({ content: Urb.$address.html() + '<br /><a class="map-external-link" href="' + externalMapLinkURL + '">Get Directions</a>' });
 
 					Urb.$map.data( 'map', map );
 					Urb.$map.data( 'marker', marker );

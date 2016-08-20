@@ -188,25 +188,37 @@ endif;
 
 if( !function_exists('urb_get_community') ) :
 	function urb_get_community() {
-		//include_once('aside-community.php');
+		global $ajax;
+		if(!isset($ajax)){
+			//include_once('aside-community.php');	
+		}
 	}
 endif;
 
 if( !function_exists('urb_get_company') ) :
 	function urb_get_company() {
-		include_once('aside-company.php');
+		global $ajax;
+		if(!isset($ajax)) {
+			include_once('aside-company.php');
+		}
 	}
 endif;
 
 if( !function_exists('urb_get_shop') ) :
 	function urb_get_shop() {
-		//include_once('aside-shop.php');
+		global $ajax;
+		if(!isset($ajax)) {
+			//include_once('aside-shop.php');
+		}
 	}
 endif;
 
 if( !function_exists('urb_get_specials') ) :
 	function urb_get_specials() {
-		include_once('aside-specials.php');
+		global $ajax;
+		if(!isset($ajax)) {
+			include_once('aside-specials.php');
+		}
 	}
 endif;
 

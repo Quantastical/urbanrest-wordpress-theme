@@ -1,3 +1,5 @@
+<?php global $ajax; ?>
+<?php if(!isset($ajax)) : ?>
 		<footer class="site-footer" id="colophon" itemscope itemtype="http://schema.org/Brewery">
 			<h2><?php bloginfo('name'); ?></h2>
 <?php if( has_nav_menu( 'footer' ) ) : ?>
@@ -44,3 +46,4 @@
 		<?php wp_footer(); ?>
 	</body>
 </html>
+<?php endif; ?>

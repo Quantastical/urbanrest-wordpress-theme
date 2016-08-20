@@ -49,6 +49,18 @@
 				margin-bottom: 0.5em;
 				margin-top: 1em;
 			}
+
+			&.page-blank
+			{
+				font-size: 2em;
+				margin-bottom: 0.5em;
+				margin-top: 1em;
+				
+				.page-title
+				{
+					display: none;
+				}
+			}
 		}
 
 		.page-image

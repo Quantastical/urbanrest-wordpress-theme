@@ -1,26 +1,7 @@
 .site
 {
-	main.loading
+	main
 	{
-		min-height: 0%;
-		overflow: hidden;
-		padding-bottom: 0;
-		padding-top: 0;
-
-		&.new
-		{
-			animation-duration: 0.5s;
-			animation-fill-mode: forwards;
-			animation-iteration-count: 1;
-			animation-name: slideOpen;
-		}
-
-		> *
-		{
-			opacity: 0;
-			transition: opacity 0.5s;
-		}
-
 		.loading-text
 		{
 			animation-delay: 0.5s;
@@ -32,6 +13,7 @@
 			border-radius: 2rem;
 			content: '';
 			display: block;
+			@include flex-basis( 100% );
 			font-size: 0;
 			height: 1rem;
 			left: calc(50% - 2.25rem);
@@ -71,6 +53,28 @@
 					animation-delay: 1.0s;
 					left: calc(50% + 0.75rem);
 				}
+			}
+		}
+
+		&.loading
+		{
+			min-height: 0%;
+			overflow: hidden;
+			padding-bottom: 0;
+			padding-top: 0;
+
+			&.new
+			{
+				animation-duration: 0.5s;
+				animation-fill-mode: forwards;
+				animation-iteration-count: 1;
+				animation-name: slideOpen;
+			}
+
+			> *
+			{
+				opacity: 0;
+				transition: opacity 0.5s;
 			}
 		}
 	}

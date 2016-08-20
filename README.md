@@ -7,3 +7,19 @@ Note: If using FileZilla to upload the theme, make sure the local side is filter
 .git
 .git-ignore
 .sass-cache
+
+Migration Scripts
+
+UPDATE wordpress_options
+SET option_value = replace(option_value, 'local.urbanrest.com', 'test.urbanrest.com')
+WHERE option_name = 'home'
+OR option_name = 'siteurl';
+
+UPDATE wordpress_posts
+SET guid = replace(guid, 'local.urbanrest.com','test.urbanrest.com');
+
+UPDATE wordpress_posts
+SET post_content = replace(post_content, 'local.urbanrest.com', 'test.urbanrest.com');
+
+UPDATE wordpress_postmeta
+SET meta_value = replace(meta_value,'local.urbanrest.com','test.urbanrest.com');
