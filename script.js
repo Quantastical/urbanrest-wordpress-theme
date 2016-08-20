@@ -1,14 +1,14 @@
 !function(t) {
     "function" == typeof define && define.amd ? define([ "jquery" ], t) : t("object" == typeof exports ? require("jquery") : window.jQuery || window.Zepto);
 }(function(t) {
-    var e, a, o, n, r, i, s = "Close", l = "BeforeClose", c = "AfterClose", d = "BeforeAppend", p = "MarkupParse", u = "Open", m = "Change", g = "mfp", f = "." + g, b = "mfp-ready", h = "mfp-removing", v = "mfp-prevent-close", U = function() {}, w = !!window.jQuery, $ = t(window), C = function(t, a) {
-        e.ev.on(g + t + f, a);
+    var e, a, o, n, r, i, s = "Close", l = "BeforeClose", c = "AfterClose", d = "BeforeAppend", p = "MarkupParse", u = "Open", g = "Change", m = "mfp", f = "." + m, b = "mfp-ready", h = "mfp-removing", v = "mfp-prevent-close", U = function() {}, w = !!window.jQuery, $ = t(window), C = function(t, a) {
+        e.ev.on(m + t + f, a);
     }, y = function(e, a, o, n) {
         var r = document.createElement("div");
         return r.className = "mfp-" + e, o && (r.innerHTML = o), n ? a && a.appendChild(r) : (r = t(r), 
         a && r.appendTo(a)), r;
     }, x = function(a, o) {
-        e.ev.triggerHandler(g + a, o), e.st.callbacks && (a = a.charAt(0).toLowerCase() + a.slice(1), 
+        e.ev.triggerHandler(m + a, o), e.st.callbacks && (a = a.charAt(0).toLowerCase() + a.slice(1), 
         e.st.callbacks[a] && e.st.callbacks[a].apply(e, t.isArray(o) ? o : [ o ]));
     }, k = function(a) {
         return a === i && e.currTemplate.closeBtn || (e.currTemplate.closeBtn = t(e.st.closeMarkup.replace("%title%", e.st.tClose)), 
@@ -72,15 +72,15 @@
             }), $.on("resize" + f, function() {
                 e.updateSize();
             }), e.st.closeOnContentClick || (r += " mfp-auto-cursor"), r && e.wrap.addClass(r);
-            var d = e.wH = $.height(), m = {};
+            var d = e.wH = $.height(), g = {};
             if (e.fixedContentPos && e._hasScrollBar(d)) {
-                var g = e._getScrollbarSize();
-                g && (m.marginRight = g);
+                var m = e._getScrollbarSize();
+                m && (g.marginRight = m);
             }
-            e.fixedContentPos && (e.isIE7 ? t("body, html").css("overflow", "hidden") : m.overflow = "hidden");
+            e.fixedContentPos && (e.isIE7 ? t("body, html").css("overflow", "hidden") : g.overflow = "hidden");
             var h = e.st.mainClass;
             return e.isIE7 && (h += " mfp-ie7"), h && e._addClassToMFP(h), e.updateItemHTML(), 
-            x("BuildControls"), t("html").css(m), e.bgOverlay.add(e.wrap).prependTo(e.st.prependTo || t(document.body)), 
+            x("BuildControls"), t("html").css(g), e.bgOverlay.add(e.wrap).prependTo(e.st.prependTo || t(document.body)), 
             e._lastFocusedEl = document.activeElement, setTimeout(function() {
                 e.content ? (e._addClassToMFP(b), e._setFocus()) : e.bgOverlay.addClass(b), o.on("focusin" + f, e._onFocusIn);
             }, 16), e.isOpen = !0, e.updateSize(d), x(u), a;
@@ -125,7 +125,7 @@
             }
             n && n !== a.type && e.container.removeClass("mfp-" + n + "-holder");
             var i = e["get" + o.charAt(0).toUpperCase() + o.slice(1)](a, e.currTemplate[o]);
-            e.appendContent(i, o), a.preloaded = !0, x(m, a), n = a.type, e.container.prepend(e.contentContainer), 
+            e.appendContent(i, o), a.preloaded = !0, x(g, a), n = a.type, e.container.prepend(e.contentContainer), 
             x("AfterChange");
         },
         appendContent: function(t, a) {
@@ -582,7 +582,7 @@
                             e.next();
                         }), e.container.append(n.add(r));
                     }
-                }), C(m + n, function() {
+                }), C(g + n, function() {
                     e._preloadTimeout && clearTimeout(e._preloadTimeout), e._preloadTimeout = setTimeout(function() {
                         e.preloadNearbyImages(), e._preloadTimeout = null;
                     }, 16);
@@ -878,7 +878,7 @@
             var a = !1;
             Urb.scrollPosition > 0 && (Urb.scrollPosition < Urb.$window.height() / 2 ? a = 0 : Urb.scrollPosition < Urb.$window.height() && (a = Urb.$window.height()));
             var o = function() {
-                Urb.$menuToggle.toggleClass("open"), Urb.$mainNavigation.toggleClass("open"), Urb.$mainNavigation.hasClass("open") ? Urb.scrollPosition < Urb.$window.height() / 2 ? Urb.$mainNavigation.css("top", Urb.$mainMenu.offset().top) : Urb.$mainNavigation.css("bottom", Urb.$window.height() - Urb.$pageNavigation.outerHeight() - Urb.$mainMenu.outerHeight()) : Urb.$mainNavigation.removeAttr("style");
+                Urb.$menuToggle.toggleClass("open"), Urb.$mainNavigation.toggleClass("open"), Urb.$mainNavigation.hasClass("open") ? Urb.scrollPosition < Urb.$window.height() / 2 ? Urb.$mainNavigation.css("top", Urb.$window.height() - Urb.$pageNavigation.outerHeight() - Urb.$mainMenu.outerHeight()) : Urb.$mainNavigation.css("bottom", Urb.$window.height() - Urb.$pageNavigation.outerHeight() - Urb.$mainMenu.outerHeight()) : Urb.$mainNavigation.removeAttr("style");
             };
             a !== !1 ? t("html,body").animate({
                 scrollTop: a - e

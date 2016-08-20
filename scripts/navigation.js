@@ -278,7 +278,7 @@ jQuery( function( $ ) {
 				Urb.$mainNavigation.toggleClass('open');
 				if(Urb.$mainNavigation.hasClass('open')) {
 					if(Urb.scrollPosition < Urb.$window.height() / 2) {
-						Urb.$mainNavigation.css('top', Urb.$mainMenu.offset().top);
+						Urb.$mainNavigation.css('top', Urb.$window.height() - Urb.$pageNavigation.outerHeight() - Urb.$mainMenu.outerHeight());
 					} else {
 						Urb.$mainNavigation.css('bottom', Urb.$window.height() - Urb.$pageNavigation.outerHeight() - Urb.$mainMenu.outerHeight());
 					}

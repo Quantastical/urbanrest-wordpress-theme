@@ -6040,7 +6040,7 @@ html.javascript {
     -webkit-transition: bottom 0.5s, top 0.5s;
     -moz-transition: bottom 0.5s, top 0.5s;
     transition: bottom 0.5s, top 0.5s;
-    top: calc(100% - 3.74em);
+    top: 100%;
     right: 0;
     z-index: 500;
     width: 15em; }
@@ -6319,38 +6319,41 @@ html.javascript {
     top: 0; }
   .site .site-header .site-navigation.past-midpoint .main-navigation, .site .site-header .site-navigation.stuck-top .main-navigation {
     border-radius: 0 0 0 3pt;
-    bottom: calc(100% - 3.74em);
+    bottom: 100%;
     position: fixed;
     top: 3.74em; }
     .site .site-header .site-navigation.past-midpoint .main-navigation .main-menu, .site .site-header .site-navigation.stuck-top .main-navigation .main-menu {
       bottom: auto;
       top: 0; }
     .site .site-header .site-navigation.past-midpoint .main-navigation.open, .site .site-header .site-navigation.stuck-top .main-navigation.open {
-      bottom: 0; } }
-
-@media only screen and (min-width: 601px) {
-  .site.admin-bar .site-navigation .social-navigation {
-    top: 46px !important; } }
-
-@media only screen and (min-width: 783px) {
-  .site.admin-bar .site-navigation .social-navigation {
-    top: 32px !important; } }
-
-@media only screen and (min-width: 601px) {
-  .site.admin-bar .site-navigation.stuck-top .page-navigation {
-    top: 46px !important; } }
-
-@media only screen and (min-width: 783px) {
-  .site.admin-bar .site-navigation.stuck-top .page-navigation {
-    top: 32px !important; } }
-
-@media only screen and (min-width: 601px) {
-  .site.admin-bar .site-navigation.past-midpoint .main-navigation .main-menu, .site.admin-bar .site-navigation.stuck-top .main-navigation .main-menu {
-    top: calc(46px + 3.74em) !important; } }
-
-@media only screen and (min-width: 783px) {
-  .site.admin-bar .site-navigation.past-midpoint .main-navigation .main-menu, .site.admin-bar .site-navigation.stuck-top .main-navigation .main-menu {
-    top: calc(32px + 3.74em) !important; } }
+      bottom: 0; }
+  .site.admin-bar .site-navigation {
+    /*
+				&.past-midpoint,
+				&.stuck-top
+				{
+					.main-navigation
+					{
+						.main-menu
+						{
+							@include media('>600px') { top: calc(46px + 3.74em) !important; }
+							@include media('>782px') { top: calc(32px + 3.74em) !important; }
+						}
+					}
+				}
+				*/ } }
+  @media only screen and (min-width: 601px) {
+    .site.admin-bar .site-navigation .social-navigation {
+      top: 46px !important; } }
+  @media only screen and (min-width: 783px) {
+    .site.admin-bar .site-navigation .social-navigation {
+      top: 32px !important; } }
+  @media only screen and (min-width: 601px) {
+    .site.admin-bar .site-navigation.stuck-top .page-navigation {
+      top: 46px !important; } }
+  @media only screen and (min-width: 783px) {
+    .site.admin-bar .site-navigation.stuck-top .page-navigation {
+      top: 32px !important; } }
 
 /* dim menu toggle (hamburger/cross) when modals are open */
 .modal-active #menu-toggle {

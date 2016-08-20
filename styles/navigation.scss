@@ -37,7 +37,7 @@
 					position: absolute;
 					text-align: center;
 					@include transition( bottom 0.5s, top 0.5s );
-					top: calc(100% - 3.74em);
+					top: 100%;
 					right: 0;
 					z-index: $layer-main-navigation;
 					width: 15em;
@@ -468,7 +468,7 @@
 					.main-navigation
 					{
 						border-radius: 0 0 0 3pt;
-						bottom: calc(100% - 3.74em);
+						bottom: 100%;
 						position: fixed;
 						top: 3.74em;
 
@@ -505,6 +505,7 @@
 					}
 				}
 
+				/*
 				&.past-midpoint,
 				&.stuck-top
 				{
@@ -517,6 +518,7 @@
 						}
 					}
 				}
+				*/
 			}
 		}
 	}
