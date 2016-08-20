@@ -1,29 +1,26 @@
 .site
 {
-	main
+	#loading
 	{
-		.loading-text
-		{
-			animation-delay: 0.5s;
-			animation-duration: 0.5s;
-			animation-fill-mode: forwards;
-			animation-iteration-count: 1;
-			animation-name: fadeIn;
-			background: rgba($urbanrest-black, 0.22);
-			border-radius: 2rem;
-			content: '';
-			display: block;
-			@include flex-basis( 100% );
-			font-size: 0;
-			height: 1rem;
-			left: calc(50% - 2.25rem);
-			opacity: 0;
-			//margin-top: calc(50% + 50px + 0.5rem);
-			padding: 0.5rem;
-			position: fixed;
-			top: calc(50% - 0.5rem - 0.5rem);
-			width: 3.5rem;
-		}
+		animation-delay: 0.5s;
+		animation-duration: 0.5s;
+		animation-fill-mode: forwards;
+		animation-iteration-count: 1;
+		animation-name: fadeIn;
+		background: rgba($urbanrest-black, 0.22);
+		border-radius: 2rem;
+		content: '';
+		display: block;
+		@include flex-basis( 100% );
+		font-size: 0;
+		height: 1rem;
+		left: calc(50% - 2.25rem);
+		opacity: 0;
+		//margin-top: calc(50% + 50px + 0.5rem);
+		padding: 0.5rem;
+		position: fixed;
+		top: calc(50% - 0.5rem - 0.5rem);
+		width: 3.5rem;
 
 		.dot
 		{
@@ -55,27 +52,27 @@
 				}
 			}
 		}
+	}
 
-		&.loading
+	main.loading
+	{
+		min-height: 0%;
+		overflow: hidden;
+		padding-bottom: 0;
+		padding-top: 0;
+
+		&.new
 		{
-			min-height: 0%;
-			overflow: hidden;
-			padding-bottom: 0;
-			padding-top: 0;
+			animation-duration: 0.5s;
+			animation-fill-mode: forwards;
+			animation-iteration-count: 1;
+			animation-name: slideOpen;
+		}
 
-			&.new
-			{
-				animation-duration: 0.5s;
-				animation-fill-mode: forwards;
-				animation-iteration-count: 1;
-				animation-name: slideOpen;
-			}
-
-			> *
-			{
-				opacity: 0;
-				transition: opacity 0.5s;
-			}
+		> *
+		{
+			opacity: 0;
+			transition: opacity 0.5s;
 		}
 	}
 }

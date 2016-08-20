@@ -10,6 +10,8 @@ jQuery( function( $ ) {
 		contentAreas[$main.attr('id')] = $main;
 	}
 
+	Urb.$loading = $('<span class="loading-text" id="loading"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span>');
+
 	Urb.highlightCurrentSection = function() {
 		$('a.active', Urb.$pageNavigation).removeClass('active');
 
@@ -79,7 +81,8 @@ jQuery( function( $ ) {
 			$('.site-posts').after($currentPage);
 		}
 
-		$currentPage.append('<span class="loading-text"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span>').addClass('loading');
+		Urb.$body.append(Urb.$loading)
+		$currentPage.addClass('loading');
 		setTimeout(function(){
 			$currentPage.animate({height:0},500);
 		},duration);
@@ -116,6 +119,7 @@ jQuery( function( $ ) {
 					document.title = response.data.title;
 					var $content = $(response.data.content);
 					$currentPage.replaceWith($content);
+					Urb.$loading.remove();
 					Urb.$window.trigger('ajaxloaded');
 					var timeout = 0;
 					$('.page-header > *:not(.hidden), .page-content > *:not(.hidden), .page-footer > *:not(.hidden), .post-header > *:not(.hidden), .post-content > *:not(.hidden), .post-footer > *:not(.hidden)', $content).each(function() {
