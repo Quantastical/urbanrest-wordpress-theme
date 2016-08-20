@@ -261,6 +261,7 @@ jQuery( function( $ ) {
 		});
 
 		Urb.$menuToggle = $('#menu-toggle');//$('<div id="menu-toggle"><div id="hamburger"><span></span><span></span><span></span></div><div id="cross"><span></span><span></span></div></div>');
+		Urb.$mainMenu = $('#menu-main-menu');
 		Urb.$menuToggle.on('click', function() {
 			var targetPosition = false;
 
@@ -272,6 +273,20 @@ jQuery( function( $ ) {
 				}
 			}
 
+			var openMenu = function() {
+				Urb.$menuToggle.toggleClass('open');
+				Urb.$mainNavigation.toggleClass('open');
+				if(Urb.$mainNavigation.hasClass('open')) {
+					if(Urb.scrollPosition < Urb.$window.height() / 2) {
+						Urb.$mainNavigation.css('top', Urb.$mainMenu.offset().top);
+					} else {
+						Urb.$mainNavigation.css('bottom', Urb.$window.height() - Urb.$pageNavigation.outerHeight() - Urb.$mainMenu.outerHeight());
+					}
+				} else {
+					Urb.$mainNavigation.removeAttr('style');
+				}
+			};
+
 			if( targetPosition !== false ) {
 				$('html,body').animate(
 					{
@@ -282,13 +297,9 @@ jQuery( function( $ ) {
 						easing: 'swing'
 					}
 				).promise()
-				.done( function () {
-					Urb.$menuToggle.toggleClass('open');
-					Urb.$mainNavigation.toggleClass('open');
-				});
+				.done( openMenu );
 			} else {
-				Urb.$menuToggle.toggleClass('open');
-				Urb.$mainNavigation.toggleClass('open');
+				openMenu();
 			}
 		});
 		//Urb.$pageNavigation.find('.main-menu [href="#main-menu"]').replaceWith(Urb.$menuToggle);
@@ -300,9 +311,11 @@ jQuery( function( $ ) {
 
 	Urb.scrollPageNavigation = function() {
 		if(Urb.scrollPosition >= Urb.windowHeightMinusWPHeaderHeight) {
-			Urb.$siteNavigation.addClass('stuck-top');
-		} else {
-			Urb.$siteNavigation.removeClass('stuck-top');
+			Urb.$siteNavigation.addClass('stuck-top').removeClass('past-midpoint');
+		} else if(Urb.scrollPosition >= Urb.$window.height() / 2) {
+			Urb.$siteNavigation.addClass('past-midpoint').removeClass('stuck-top');
+		}else {
+			Urb.$siteNavigation.removeClass('past-midpoint').removeClass('stuck-top');
 		}
 		/*
 		if(Urb.scrollPosition < windowHeightMinusWPHeaderHeight) {

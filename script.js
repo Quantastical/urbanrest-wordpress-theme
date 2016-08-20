@@ -1,14 +1,14 @@
 !function(t) {
     "function" == typeof define && define.amd ? define([ "jquery" ], t) : t("object" == typeof exports ? require("jquery") : window.jQuery || window.Zepto);
 }(function(t) {
-    var e, a, o, n, r, i, s = "Close", l = "BeforeClose", c = "AfterClose", d = "BeforeAppend", p = "MarkupParse", u = "Open", g = "Change", m = "mfp", f = "." + m, b = "mfp-ready", h = "mfp-removing", v = "mfp-prevent-close", U = function() {}, w = !!window.jQuery, $ = t(window), C = function(t, a) {
-        e.ev.on(m + t + f, a);
+    var e, a, o, n, r, i, s = "Close", l = "BeforeClose", c = "AfterClose", d = "BeforeAppend", p = "MarkupParse", u = "Open", m = "Change", g = "mfp", f = "." + g, b = "mfp-ready", h = "mfp-removing", v = "mfp-prevent-close", U = function() {}, w = !!window.jQuery, $ = t(window), C = function(t, a) {
+        e.ev.on(g + t + f, a);
     }, y = function(e, a, o, n) {
         var r = document.createElement("div");
         return r.className = "mfp-" + e, o && (r.innerHTML = o), n ? a && a.appendChild(r) : (r = t(r), 
         a && r.appendTo(a)), r;
     }, x = function(a, o) {
-        e.ev.triggerHandler(m + a, o), e.st.callbacks && (a = a.charAt(0).toLowerCase() + a.slice(1), 
+        e.ev.triggerHandler(g + a, o), e.st.callbacks && (a = a.charAt(0).toLowerCase() + a.slice(1), 
         e.st.callbacks[a] && e.st.callbacks[a].apply(e, t.isArray(o) ? o : [ o ]));
     }, k = function(a) {
         return a === i && e.currTemplate.closeBtn || (e.currTemplate.closeBtn = t(e.st.closeMarkup.replace("%title%", e.st.tClose)), 
@@ -72,15 +72,15 @@
             }), $.on("resize" + f, function() {
                 e.updateSize();
             }), e.st.closeOnContentClick || (r += " mfp-auto-cursor"), r && e.wrap.addClass(r);
-            var d = e.wH = $.height(), g = {};
+            var d = e.wH = $.height(), m = {};
             if (e.fixedContentPos && e._hasScrollBar(d)) {
-                var m = e._getScrollbarSize();
-                m && (g.marginRight = m);
+                var g = e._getScrollbarSize();
+                g && (m.marginRight = g);
             }
-            e.fixedContentPos && (e.isIE7 ? t("body, html").css("overflow", "hidden") : g.overflow = "hidden");
+            e.fixedContentPos && (e.isIE7 ? t("body, html").css("overflow", "hidden") : m.overflow = "hidden");
             var h = e.st.mainClass;
             return e.isIE7 && (h += " mfp-ie7"), h && e._addClassToMFP(h), e.updateItemHTML(), 
-            x("BuildControls"), t("html").css(g), e.bgOverlay.add(e.wrap).prependTo(e.st.prependTo || t(document.body)), 
+            x("BuildControls"), t("html").css(m), e.bgOverlay.add(e.wrap).prependTo(e.st.prependTo || t(document.body)), 
             e._lastFocusedEl = document.activeElement, setTimeout(function() {
                 e.content ? (e._addClassToMFP(b), e._setFocus()) : e.bgOverlay.addClass(b), o.on("focusin" + f, e._onFocusIn);
             }, 16), e.isOpen = !0, e.updateSize(d), x(u), a;
@@ -125,7 +125,7 @@
             }
             n && n !== a.type && e.container.removeClass("mfp-" + n + "-holder");
             var i = e["get" + o.charAt(0).toUpperCase() + o.slice(1)](a, e.currTemplate[o]);
-            e.appendContent(i, o), a.preloaded = !0, x(g, a), n = a.type, e.container.prepend(e.contentContainer), 
+            e.appendContent(i, o), a.preloaded = !0, x(m, a), n = a.type, e.container.prepend(e.contentContainer), 
             x("AfterChange");
         },
         appendContent: function(t, a) {
@@ -280,10 +280,10 @@
         w ? o.data("magnificPopup", a) : o[0].magnificPopup = a, e.addGroup(o, a);
         return o;
     };
-    var P, S, M, _ = "inline", N = function() {
-        M && (S.after(M.addClass(P)).detach(), M = null);
+    var P, M, S, N = "inline", _ = function() {
+        S && (M.after(S.addClass(P)).detach(), S = null);
     };
-    t.magnificPopup.registerModule(_, {
+    t.magnificPopup.registerModule(N, {
         options: {
             hiddenClass: "hide",
             markup: "",
@@ -291,16 +291,16 @@
         },
         proto: {
             initInline: function() {
-                e.types.push(_), C(s + "." + _, function() {
-                    N();
+                e.types.push(N), C(s + "." + N, function() {
+                    _();
                 });
             },
             getInline: function(a, o) {
-                if (N(), a.src) {
+                if (_(), a.src) {
                     var n = e.st.inline, r = t(a.src);
                     if (r.length) {
                         var i = r[0].parentNode;
-                        i && i.tagName && (S || (P = n.hiddenClass, S = y(P), P = "mfp-" + P), M = r.after(S).detach().removeClass(P)), 
+                        i && i.tagName && (M || (P = n.hiddenClass, M = y(P), P = "mfp-" + P), S = r.after(M).detach().removeClass(P)), 
                         e.updateStatus("ready");
                     } else e.updateStatus("error", n.tNotFound), r = t("<div>");
                     return a.inlineElement = r, r;
@@ -311,7 +311,7 @@
     });
     var F, E = "ajax", j = function() {
         F && t(document.body).removeClass(F);
-    }, B = function() {
+    }, H = function() {
         j(), e.req && e.req.abort();
     };
     t.magnificPopup.registerModule(E, {
@@ -322,7 +322,7 @@
         },
         proto: {
             initAjax: function() {
-                e.types.push(E), F = e.st.ajax.cursor, C(s + "." + E, B), C("BeforeChange." + E, B);
+                e.types.push(E), F = e.st.ajax.cursor, C(s + "." + E, H), C("BeforeChange." + E, H);
             },
             getAjax: function(a) {
                 F && t(document.body).addClass(F), e.updateStatus("loading");
@@ -346,7 +346,7 @@
             }
         }
     });
-    var H, A = function(a) {
+    var B, A = function(a) {
         if (a.data && void 0 !== a.data.title) return a.data.title;
         var o = e.st.image.titleSrc;
         if (o) {
@@ -381,13 +381,13 @@
                 }
             },
             _onImageHasSize: function(t) {
-                t.img && (t.hasSize = !0, H && clearInterval(H), t.isCheckingImgSize = !1, x("ImageHasSize", t), 
+                t.img && (t.hasSize = !0, B && clearInterval(B), t.isCheckingImgSize = !1, x("ImageHasSize", t), 
                 t.imgHidden && (e.content && e.content.removeClass("mfp-loading"), t.imgHidden = !1));
             },
             findImageSize: function(t) {
                 var a = 0, o = t.img[0], n = function(r) {
-                    H && clearInterval(H), H = setInterval(function() {
-                        return o.naturalWidth > 0 ? void e._onImageHasSize(t) : (a > 200 && clearInterval(H), 
+                    B && clearInterval(B), B = setInterval(function() {
+                        return o.naturalWidth > 0 ? void e._onImageHasSize(t) : (a > 200 && clearInterval(B), 
                         a++, void (3 === a ? n(10) : 40 === a ? n(50) : 100 === a && n(500)));
                     }, r);
                 };
@@ -411,7 +411,7 @@
                 return e._parseMarkup(o, {
                     title: A(a),
                     img_replaceWith: a.img
-                }, a), e.resizeImage(), a.hasSize ? (H && clearInterval(H), a.loadError ? (o.addClass("mfp-loading"), 
+                }, a), e.resizeImage(), a.hasSize ? (B && clearInterval(B), a.loadError ? (o.addClass("mfp-loading"), 
                 e.updateStatus("error", s.tError.replace("%url%", a.src))) : (o.removeClass("mfp-loading"), 
                 e.updateStatus("ready")), o) : (e.updateStatus("loading"), a.loading = !0, a.hasSize || (a.imgHidden = !0, 
                 o.addClass("mfp-loading"), e.findImageSize(a)), o);
@@ -582,7 +582,7 @@
                             e.next();
                         }), e.container.append(n.add(r));
                     }
-                }), C(g + n, function() {
+                }), C(m + n, function() {
                     e._preloadTimeout && clearTimeout(e._preloadTimeout), e._preloadTimeout = setTimeout(function() {
                         e.preloadNearbyImages(), e._preloadTimeout = null;
                     }, 16);
@@ -874,22 +874,23 @@
         Urb.$pageNavigation.find(".menu-item a").click(function() {
             var e = t(this);
             e.blur();
-        }), Urb.$menuToggle = t("#menu-toggle"), Urb.$menuToggle.on("click", function() {
+        }), Urb.$menuToggle = t("#menu-toggle"), Urb.$mainMenu = t("#menu-main-menu"), Urb.$menuToggle.on("click", function() {
             var a = !1;
-            Urb.scrollPosition > 0 && (Urb.scrollPosition < Urb.$window.height() / 2 ? a = 0 : Urb.scrollPosition < Urb.$window.height() && (a = Urb.$window.height())), 
+            Urb.scrollPosition > 0 && (Urb.scrollPosition < Urb.$window.height() / 2 ? a = 0 : Urb.scrollPosition < Urb.$window.height() && (a = Urb.$window.height()));
+            var o = function() {
+                Urb.$menuToggle.toggleClass("open"), Urb.$mainNavigation.toggleClass("open"), Urb.$mainNavigation.hasClass("open") ? Urb.scrollPosition < Urb.$window.height() / 2 ? Urb.$mainNavigation.css("top", Urb.$mainMenu.offset().top) : Urb.$mainNavigation.css("bottom", Urb.$window.height() - Urb.$pageNavigation.outerHeight() - Urb.$mainMenu.outerHeight()) : Urb.$mainNavigation.removeAttr("style");
+            };
             a !== !1 ? t("html,body").animate({
                 scrollTop: a - e
             }, {
                 duration: 250,
                 easing: "swing"
-            }).promise().done(function() {
-                Urb.$menuToggle.toggleClass("open"), Urb.$mainNavigation.toggleClass("open");
-            }) : (Urb.$menuToggle.toggleClass("open"), Urb.$mainNavigation.toggleClass("open"));
+            }).promise().done(o) : o();
         });
     }, Urb.setupNavigationSnap = function() {
         Urb.windowHeightMinusWPHeaderHeight = Urb.$window.height() - Urb.$pageNavigation.outerHeight() - e;
     }, Urb.scrollPageNavigation = function() {
-        Urb.scrollPosition >= Urb.windowHeightMinusWPHeaderHeight ? Urb.$siteNavigation.addClass("stuck-top") : Urb.$siteNavigation.removeClass("stuck-top");
+        Urb.scrollPosition >= Urb.windowHeightMinusWPHeaderHeight ? Urb.$siteNavigation.addClass("stuck-top").removeClass("past-midpoint") : Urb.scrollPosition >= Urb.$window.height() / 2 ? Urb.$siteNavigation.addClass("past-midpoint").removeClass("stuck-top") : Urb.$siteNavigation.removeClass("past-midpoint").removeClass("stuck-top");
     }, Urb.scrollSocialNavigation = function() {
         Urb.$socialNavigation.is(":visible") ? Urb.scrollPosition > Urb.$window.height() ? Urb.$socialNavigation.addClass("hidden") : Urb.$socialNavigation.css({
             opacity: (1 - Urb.scrollPosition / (Urb.$window.height() / 15)).toFixed(2),

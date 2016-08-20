@@ -24,27 +24,35 @@
 
 				.main-navigation
 				{
+					background-color: rgba(black, 0.8);
+					bottom: 3.74em;
+					border-radius: 3pt 0 0 0;
 					display: block;
-
+					color: white;
+					font-family: 'Roboto';
+					font-size: 1.5em;
+					font-weight: 300;
+					max-height: calc(100% - 3.74em);
+					overflow: hidden;
+					position: absolute;
+					text-align: center;
+					@include transition( bottom 0.5s, top 0.5s );
+					top: calc(100% - 3.74em);
+					right: 0;
+					z-index: $layer-main-navigation;
+					width: 15em;
+					
 					.main-menu
 					{
-						background-color: rgba(black, 0.8);
-						bottom: 3.75em;
-						color: white;
-						font-family: 'Roboto';
-						font-size: 1.5em;
-						font-weight: 300;
+						bottom: 0;
+						display: block;
 						list-style: none;
-						max-height: 0;
 						overflow: hidden;
 						padding: 0;
 						position: absolute;
-						text-align: center;
-						@include transition( max-height 0.5s );
-						right: 0;
-						width: 15em;
-						z-index: $layer-main-navigation;
-
+						top: auto;
+						width: 100%;
+						
 						.menu-item
 						{
 							margin: 0.5em;
@@ -70,10 +78,8 @@
 
 					&.open
 					{
-						.main-menu
-						{
-							max-height: calc( 100% - 3.75em );
-						}
+						bottom: 3.74em;
+						top: 0;
 					}
 				}
 
@@ -449,21 +455,32 @@
 
 				&.stuck-top
 				{
+					.page-navigation
+					{
+						position: fixed;
+						top: 0;
+					}
+				}
+
+				&.past-midpoint,
+				&.stuck-top
+				{
 					.main-navigation
 					{
+						border-radius: 0 0 0 3pt;
+						bottom: calc(100% - 3.74em);
+						position: fixed;
+						top: 3.74em;
+
 						.main-menu
 						{
 							bottom: auto;
-							position: fixed;
-							top: 3.75em;
+							top: 0;
 						}
-					}
 
-					.page-navigation
-					{
-						bottom: auto !important;
-						position: fixed;
-						top: 0 !important;
+						&.open {
+							bottom: 0;
+						}
 					}
 				}
 			}
@@ -481,19 +498,23 @@
 
 				&.stuck-top
 				{
-					.main-navigation
-					{
-						.main-menu
-						{
-							@include media('>600px') { top: calc(46px + 3.75em) !important; }
-							@include media('>782px') { top: calc(32px + 3.75em) !important; }
-						}
-					}
-
 					.page-navigation
 					{
 						@include media('>600px') { top: 46px !important; }
 						@include media('>782px') { top: 32px !important; }
+					}
+				}
+
+				&.past-midpoint,
+				&.stuck-top
+				{
+					.main-navigation
+					{
+						.main-menu
+						{
+							@include media('>600px') { top: calc(46px + 3.74em) !important; }
+							@include media('>782px') { top: calc(32px + 3.74em) !important; }
+						}
 					}
 				}
 			}
