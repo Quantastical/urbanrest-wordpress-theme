@@ -151,7 +151,7 @@ jQuery( function( $ ) {
 		}
 
 		Urb.$menuToggle.toggleClass('open', false);
-		Urb.$mainNavigation.toggleClass('open', false);
+		Urb.$mainNavigation.toggleClass('open', false).removeAttr('style');
 
 		var $this = $(this);
 		var slug = $this.attr('href').replace(window.location.protocol + '//' + window.location.host, '');

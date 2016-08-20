@@ -828,7 +828,7 @@
         });
     }, Urb.navigateInternally = function(e) {
         if (window.history) {
-            e.preventDefault(), Urb.$menuToggle.toggleClass("open", !1), Urb.$mainNavigation.toggleClass("open", !1);
+            e.preventDefault(), Urb.$menuToggle.toggleClass("open", !1), Urb.$mainNavigation.toggleClass("open", !1).removeAttr("style");
             var a = t(this), o = a.attr("href").replace(window.location.protocol + "//" + window.location.host, "");
             window.history.pushState({}, a.text(), o), Urb.loadPage(o), t("body").trigger("click");
         }
