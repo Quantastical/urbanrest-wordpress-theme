@@ -280,10 +280,10 @@
         w ? o.data("magnificPopup", a) : o[0].magnificPopup = a, e.addGroup(o, a);
         return o;
     };
-    var P, M, S, N = "inline", _ = function() {
-        S && (M.after(S.addClass(P)).detach(), S = null);
+    var P, _, S, M = "inline", N = function() {
+        S && (_.after(S.addClass(P)).detach(), S = null);
     };
-    t.magnificPopup.registerModule(N, {
+    t.magnificPopup.registerModule(M, {
         options: {
             hiddenClass: "hide",
             markup: "",
@@ -291,16 +291,16 @@
         },
         proto: {
             initInline: function() {
-                e.types.push(N), C(s + "." + N, function() {
-                    _();
+                e.types.push(M), C(s + "." + M, function() {
+                    N();
                 });
             },
             getInline: function(a, o) {
-                if (_(), a.src) {
+                if (N(), a.src) {
                     var n = e.st.inline, r = t(a.src);
                     if (r.length) {
                         var i = r[0].parentNode;
-                        i && i.tagName && (M || (P = n.hiddenClass, M = y(P), P = "mfp-" + P), S = r.after(M).detach().removeClass(P)), 
+                        i && i.tagName && (_ || (P = n.hiddenClass, _ = y(P), P = "mfp-" + P), S = r.after(_).detach().removeClass(P)), 
                         e.updateStatus("ready");
                     } else e.updateStatus("error", n.tNotFound), r = t("<div>");
                     return a.inlineElement = r, r;
@@ -309,12 +309,12 @@
             }
         }
     });
-    var F, E = "ajax", j = function() {
-        F && t(document.body).removeClass(F);
-    }, H = function() {
+    var E, F = "ajax", j = function() {
+        E && t(document.body).removeClass(E);
+    }, B = function() {
         j(), e.req && e.req.abort();
     };
-    t.magnificPopup.registerModule(E, {
+    t.magnificPopup.registerModule(F, {
         options: {
             settings: null,
             cursor: "mfp-ajax-cur",
@@ -322,10 +322,10 @@
         },
         proto: {
             initAjax: function() {
-                e.types.push(E), F = e.st.ajax.cursor, C(s + "." + E, H), C("BeforeChange." + E, H);
+                e.types.push(F), E = e.st.ajax.cursor, C(s + "." + F, B), C("BeforeChange." + F, B);
             },
             getAjax: function(a) {
-                F && t(document.body).addClass(F), e.updateStatus("loading");
+                E && t(document.body).addClass(E), e.updateStatus("loading");
                 var o = t.extend({
                     url: a.src,
                     success: function(o, n, r) {
@@ -333,7 +333,7 @@
                             data: o,
                             xhr: r
                         };
-                        x("ParseAjax", i), e.appendContent(t(i.data), E), a.finished = !0, j(), e._setFocus(), 
+                        x("ParseAjax", i), e.appendContent(t(i.data), F), a.finished = !0, j(), e._setFocus(), 
                         setTimeout(function() {
                             e.wrap.addClass(b);
                         }, 16), e.updateStatus("ready"), x("AjaxContentAdded");
@@ -346,7 +346,7 @@
             }
         }
     });
-    var B, A = function(a) {
+    var H, O = function(a) {
         if (a.data && void 0 !== a.data.title) return a.data.title;
         var o = e.st.image.titleSrc;
         if (o) {
@@ -381,13 +381,13 @@
                 }
             },
             _onImageHasSize: function(t) {
-                t.img && (t.hasSize = !0, B && clearInterval(B), t.isCheckingImgSize = !1, x("ImageHasSize", t), 
+                t.img && (t.hasSize = !0, H && clearInterval(H), t.isCheckingImgSize = !1, x("ImageHasSize", t), 
                 t.imgHidden && (e.content && e.content.removeClass("mfp-loading"), t.imgHidden = !1));
             },
             findImageSize: function(t) {
                 var a = 0, o = t.img[0], n = function(r) {
-                    B && clearInterval(B), B = setInterval(function() {
-                        return o.naturalWidth > 0 ? void e._onImageHasSize(t) : (a > 200 && clearInterval(B), 
+                    H && clearInterval(H), H = setInterval(function() {
+                        return o.naturalWidth > 0 ? void e._onImageHasSize(t) : (a > 200 && clearInterval(H), 
                         a++, void (3 === a ? n(10) : 40 === a ? n(50) : 100 === a && n(500)));
                     }, r);
                 };
@@ -409,18 +409,18 @@
                     c = a.img[0], c.naturalWidth > 0 ? a.hasSize = !0 : c.width || (a.hasSize = !1);
                 }
                 return e._parseMarkup(o, {
-                    title: A(a),
+                    title: O(a),
                     img_replaceWith: a.img
-                }, a), e.resizeImage(), a.hasSize ? (B && clearInterval(B), a.loadError ? (o.addClass("mfp-loading"), 
+                }, a), e.resizeImage(), a.hasSize ? (H && clearInterval(H), a.loadError ? (o.addClass("mfp-loading"), 
                 e.updateStatus("error", s.tError.replace("%url%", a.src))) : (o.removeClass("mfp-loading"), 
                 e.updateStatus("ready")), o) : (e.updateStatus("loading"), a.loading = !0, a.hasSize || (a.imgHidden = !0, 
                 o.addClass("mfp-loading"), e.findImageSize(a)), o);
             }
         }
     });
-    var O, z = function() {
-        return void 0 === O && (O = void 0 !== document.createElement("p").style.MozTransform), 
-        O;
+    var R, A = function() {
+        return void 0 === R && (R = void 0 !== document.createElement("p").style.MozTransform), 
+        R;
     };
     t.magnificPopup.registerModule("zoom", {
         options: {
@@ -490,18 +490,18 @@
                     width: o.width(),
                     height: (w ? o.innerHeight() : o[0].offsetHeight) - i - r
                 };
-                return z() ? s["-moz-transform"] = s.transform = "translate(" + n.left + "px," + n.top + "px)" : (s.left = n.left, 
+                return A() ? s["-moz-transform"] = s.transform = "translate(" + n.left + "px," + n.top + "px)" : (s.left = n.left, 
                 s.top = n.top), s;
             }
         }
     });
-    var R = "iframe", L = "//about:blank", W = function(t) {
-        if (e.currTemplate[R]) {
-            var a = e.currTemplate[R].find("iframe");
+    var z = "iframe", L = "//about:blank", W = function(t) {
+        if (e.currTemplate[z]) {
+            var a = e.currTemplate[z].find("iframe");
             a.length && (t || (a[0].src = L), e.isIE8 && a.css("display", t ? "block" : "none"));
         }
     };
-    t.magnificPopup.registerModule(R, {
+    t.magnificPopup.registerModule(z, {
         options: {
             markup: '<div class="mfp-iframe-scaler"><div class="mfp-close"></div><iframe class="mfp-iframe" src="//about:blank" frameborder="0" allowfullscreen></iframe></div>',
             srcAction: "iframe_src",
@@ -524,9 +524,9 @@
         },
         proto: {
             initIframe: function() {
-                e.types.push(R), C("BeforeChange", function(t, e, a) {
-                    e !== a && (e === R ? W() : a === R && W(!0));
-                }), C(s + "." + R, function() {
+                e.types.push(z), C("BeforeChange", function(t, e, a) {
+                    e !== a && (e === z ? W() : a === z && W(!0));
+                }), C(s + "." + z, function() {
                     W();
                 });
             },
@@ -718,8 +718,7 @@
         $contactForm: t(".site .site-company .site-contact .contact-form"),
         $address: t(".site .site-footer .site-address"),
         $viewport: t('<div id="viewport" />'),
-        scrollPosition: document.body.scrollTop,
-        API: "http://testapi.urbanrest.com/"
+        scrollPosition: document.body.scrollTop
     }, Urb.loading = function(t, e) {
         if (void 0 !== e) {
             var a = t.data("loading");
@@ -811,16 +810,27 @@
             success: function(e) {
                 if (Urb.log(e), e.success) {
                     document.title = e.data.title;
-                    var a = t(e.data.content);
-                    o.replaceWith(a), Urb.$loading.remove(), Urb.$window.trigger("ajaxloaded");
-                    var n = 0;
-                    t(".page-header > *:not(.hidden), .page-content > *:not(.hidden), .page-footer > *:not(.hidden), .post-header > *:not(.hidden), .post-content > *:not(.hidden), .post-footer > *:not(.hidden)", a).each(function() {
+                    var n = t(e.data.content);
+                    o.replaceWith(n), Urb.$loading.remove(), Urb.$window.trigger("ajaxloaded");
+                    var r = 0;
+                    t(".page-header > *:not(.hidden), .page-content > *:not(.hidden), .page-footer > *:not(.hidden), .post-header > *:not(.hidden), .post-content > *:not(.hidden), .post-footer > *:not(.hidden)", n).each(function() {
                         var e = t(this);
                         e.hide(), setTimeout(function() {
                             e.fadeIn(330);
-                        }, n), n += 88;
+                        }, r), r += 88;
                     }), t("#qr-code").html(".page-footer:before {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=" + encodeURIComponent(e.data.shortlink.replace(/URB.beer/i, "QR.URB.beer")) + ") !important;}}");
-                } else Urb.log(e.data);
+                } else {
+                    document.title = "Server Error";
+                    var n = t('<main class="page row around-xs">	<article id="page-error" class="col-xs-11 col-sm-9 col-md-7 post-error post type-post">		<header class="page-header" role="banner">			<h2 class="page-title">Server Error</h2>		</header>		<div class="page-content">			<p>				There was a problem loading the requested page, <u>' + a + '</u>.				Either try again later or <a href="#contact">let us know</a> if you think something wrong.			</p>		</div>	</article></main>');
+                    o.replaceWith(n), Urb.$loading.remove(), Urb.$window.trigger("ajaxloaded");
+                    var r = 0;
+                    t(".page-header > *:not(.hidden), .page-content > *:not(.hidden), .page-footer > *:not(.hidden), .post-header > *:not(.hidden), .post-content > *:not(.hidden), .post-footer > *:not(.hidden)", n).each(function() {
+                        var e = t(this);
+                        e.hide(), setTimeout(function() {
+                            e.fadeIn(330);
+                        }, r), r += 88;
+                    }), t("#qr-code").html(".page-footer:before {content: '' !important;}}");
+                }
             },
             complete: function() {
                 console.log("clear Timeout"), clearInterval(c);
@@ -916,9 +926,8 @@
     Urb.$window.on("ajaxloaded load", Urb.setupExternalLinks), Urb.$window.on("ajaxloaded load", Urb.setupImageLinks), 
     Urb.$window.on("load", Urb.setupFragmentAnchors), Urb.$window.on("ajaxloaded load", Urb.setupInternalLinks), 
     Urb.$window.on("load", Urb.setupPageNavigation), Urb.$window.on("load scroll", Urb.scrollPageNavigation), 
-    Urb.$window.on("load scroll", Urb.scrollSocialNavigation), Urb.$window.on("load", function() {
-        setTimeout(Urb.scrollToContent, 1);
-    }), Urb.$window.on("popstate", Urb.performHistoryNavigation), Urb.handleTouchEvents = function() {
+    Urb.$window.on("load scroll", Urb.scrollSocialNavigation), Urb.$window.on("load", Urb.scrollToContent), 
+    Urb.$window.on("popstate", Urb.performHistoryNavigation), Urb.handleTouchEvents = function() {
         Urb.touchEventsHandled || (t("a, button").each(function() {
             var e = t(this);
             e.on("mouseenter mouseover", function(t) {
@@ -1086,9 +1095,8 @@
 }), jQuery(function(t) {
     var e = Urb.$wpadminbar ? Urb.$wpadminbar.outerHeight() : 0, a = Urb.$pageNavigation.outerHeight() + e;
     Urb.centerMap = function() {
-        Urb.$map.hasClass("open") && setTimeout(function() {
-            Urb.$map.data("map").setCenter(Urb.$map.data("marker").getPosition()), Urb.$map.data("map").panTo(Urb.$map.data("marker").getPosition());
-        }, 250);
+        Urb.$map.hasClass("open") && (Urb.$map.data("map").setCenter(Urb.$map.data("marker").getPosition()), 
+        Urb.$map.data("map").panTo(Urb.$map.data("marker").getPosition()));
     }, Urb.scrollMap = function() {
         if (Urb.$map.hasClass("open") && !Urb.$map.hasClass("animating") && Urb.$mapCanvas.offset().top > Urb.scrollPosition + Urb.$window.height() && (Urb.$map.removeClass("open"), 
         t(".map-container, .map-canvas", Urb.$map).removeAttr("style")), !Urb.$map.data("map") && Urb.$window.scrollTop() > t("#contact").offset().top) {
@@ -1228,8 +1236,11 @@
             }
         }), t.ajax({
             type: "get",
-            url: Urb.API + "untappd/beer/info/",
+            url: _URB.url,
             data: {
+                action: "getrating",
+                nonce: _URB.nonce,
+                rating_system: "untappd",
                 postId: t('[itemprop="aggregateRating"]').data("beer-id")
             },
             dataType: "json",
@@ -1243,8 +1254,11 @@
             }
         }), t.ajax({
             type: "get",
-            url: Urb.API + "ratebeer/beer/info/",
+            url: _URB.url,
             data: {
+                action: "getrating",
+                nonce: _URB.nonce,
+                rating_system: "ratebeer",
                 postId: t('[itemprop="aggregateRating"]').data("beer-id")
             },
             dataType: "json",
@@ -1258,8 +1272,11 @@
             }
         }), t.ajax({
             type: "get",
-            url: Urb.API + "beeradvocate/beer/info/",
+            url: _URB.url,
             data: {
+                action: "getrating",
+                nonce: _URB.nonce,
+                rating_system: "untappd",
                 postId: t('[itemprop="aggregateRating"]').data("beer-id")
             },
             dataType: "json",
@@ -1298,7 +1315,7 @@
         }
         a.text(o), Urb.showModal(".modal.checkin-modal");
     }, Urb.$window.on("ajaxloaded load", Urb.setupRatingPoll);
-}), jQuery(function(t) {}), jQuery(function(t) {}), jQuery(function(t) {}), jQuery(function(t) {
+}), jQuery(function(t) {}), jQuery(function(t) {
     Urb.scrollSharing = function() {
         t("main").each(function() {
             var e = t(this);

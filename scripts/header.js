@@ -10,14 +10,6 @@ jQuery( function( $ ) {
 
 	Urb.automaticNavigation = function() {
 		Urb.showNextPost();
-		/*
-		var $currentPost = $('.site-posts .latest-posts .blog-post.active');
-		var $nextPost = $currentPost.next('.next.blog-post');
-
-		if( Urb.scrollPosition === 0 && $nextPost.length ) {
-			$nextButton.trigger('click');
-		}
-		*/
 	};
 
 	Urb.showPreviousPost = function() {
@@ -45,7 +37,6 @@ jQuery( function( $ ) {
 			if($postHeading.parents('.blog-post').is('.active')) {
 				if( Urb.scrollPosition > 0 && Urb.scrollPosition < Urb.$window.height() ) {
 					$postHeading.css({
-						//'opacity'    : Math.max(0, (1 - Urb.scrollPosition / Urb.$window.height() * 4)).toFixed(2),
 						'height' : (100 - 25 * Urb.scrollPosition / Urb.$window.height()).toFixed(2) + '%',
 						'transform'  : 'scale(' + (1 - 0.15 * Urb.scrollPosition / Urb.$window.height()).toFixed(3) + ')'
 					});
@@ -105,18 +96,6 @@ jQuery( function( $ ) {
 
 		var element = document.getElementById('latest-posts');
 		
-		/*
-		var mc = new Hammer(element);
-		mc.on('swiperight', function() {
-			Urb.showPreviousPost();
-			Urb.stopAutomaticNavigation();
-		});
-		mc.on('swipeleft', function() {
-			Urb.showNextPost();
-			Urb.stopAutomaticNavigation();
-		});
-		*/
-		
 		setTimeout(Urb.getNextPost, 500);
 	};
 
@@ -135,8 +114,6 @@ jQuery( function( $ ) {
 	};
 
 	Urb.getNextPost = function() {
-		//$nextButton.addClass('active');
-		//$previousButton.addClass('active');
 		$.ajax({
 			'type': 'POST',
 			'url': _URB.url,
@@ -146,7 +123,6 @@ jQuery( function( $ ) {
 			},
 			'success': function(response){
 				if(response.success) {
-					// TODO: get HTML code out of here! use a template or something
 					var $nextPost = $('<li />');
 					$nextPost.addClass('blog-post next');
 					$nextPost.attr('data-post-id', response.data.ID);
@@ -182,50 +158,10 @@ jQuery( function( $ ) {
 
 					$('.site-posts .latest-posts').append($nextPost);
 					$nextButton.addClass('active');
-					//Urb.startAutomaticNavigation();
 				}
 			}
 		});
 	};
-
-	/*
-	var wpAdminBarHeight = (Urb.$wpadminbar) ? Urb.$wpadminbar.outerHeight() : 0;
-	var viewportHeight = Urb.$window.height() - wpAdminBarHeight - Urb.$mainNavigation.outerHeight();
-	var viewportHeightPercent = 0;
-	var logoScale = 50;
-
-	Urb.scrollLogos = function() {
-		if( Urb.scrollPosition < viewportHeight ) {
-			logoScale = (Urb.$viewport.is('.phone')) ? 60 : (Urb.$viewport.is('.tablet')) ? 45 : 35;
-			viewportHeightPercent = Math.min(Urb.scrollPosition / viewportHeight, 1);
-
-			Urb.$logo.css({
-				'background-size' : (logoScale - viewportHeightPercent * 30).toFixed(2) + '%',
-				'opacity'         : (1 - viewportHeightPercent).toFixed(2),
-				'top'             : (Urb.scrollPosition * 0.33).toFixed(2) + 'px',
-			});
-
-			Urb.$menuLogo.css({
-				'margin'  : (0.75 * viewportHeightPercent).toFixed(2) + 'em',
-				'opacity' : (viewportHeightPercent).toFixed(2),
-				'width'   : (6 * viewportHeightPercent).toFixed(2) + 'em',
-			})
-
-			Urb.$menuLogo.closest('a').attr('tabindex', '-1');
-		} else {
-			if(Urb.$menuLogo.css('opacity') !== 1) {
-				Urb.$menuLogo.css({
-					'width'   : '6em',
-					'margin'  : '0.75em',
-					'opacity' : 1,
-				})
-				Urb.$menuLogo.closest('a').removeAttr('tabindex');
-			}
-		}
-	};
-	
-	Urb.$window.on('load orientationchange resize scroll', Urb.scrollLogos);
-	*/
 
 	Urb.$window.on('scroll', Urb.stopAutomaticNavigation);
 	Urb.$window.on('load scroll', Urb.scrollHeader);

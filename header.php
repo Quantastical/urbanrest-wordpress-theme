@@ -14,6 +14,7 @@
 		<meta name="theme-color" content="#ff69b4" />
 		<meta name="viewport" content="width=400, maximum-scale=1.0, user-scalable=no" />
 
+		<link rel="author" href="humans.txt" />
 <?php if( get_option('urbanrest_setting_favicon') ) : ?>
 		<link rel="icon" type="image/x-icon" href="<?php echo get_option('urbanrest_setting_favicon'); ?>" />
 <?php endif; ?>
@@ -121,13 +122,6 @@
 		<!--[if lt IE 8]>
 		<p class="browser-upgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<script>
-		var html = document.documentElement;
-		if(html && html.classList){
-			html.classList.remove('no-javascript');
-			html.classList.add('javascript');
-		}
-		</script>
 
 		<script type="application/ld+json">
 		{
@@ -173,7 +167,7 @@ if (preg_match_all('#(<a [^<]+</a>)#', $social, $matches)) {
 <?php endif; ?>
 			<p><a class="skip-link screen-reader-text hidden" href="#main"><span>Skip to content</span></a>
 		
-			<nav class="site-navigation">
+			<nav class="site-navigation<?php echo (!is_home()) ? ' stuck-top' : ''; ?>">
 <?php if( has_nav_menu('main-menu') ) : ?>
 				<section class="main-navigation">
 					<h3>Site Links</h3>

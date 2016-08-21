@@ -15,6 +15,13 @@ if( !function_exists('urbanrest_admin_enqueue_scripts') ) :
 		wp_enqueue_script( 'reset', get_stylesheet_directory_uri() . '/scripts/reset.js' );
 		wp_enqueue_script( 'admin', get_stylesheet_directory_uri() . '/scripts/admin/script.js' );
 
+		wp_localize_script('admin', '_URB', array(
+			'url'                       => admin_url('admin-ajax.php'),
+			'nonce'                     => wp_create_nonce('admin-ajax'),
+			'googleAnalyticsTrackingID' => get_option('google_analytics_tracking_id'),
+			'googleBrowserMapApiKey'    => get_option('google_browser_api_key')
+		));
+
 		if ( 'settings_page_urbanrest_admin_page_artwork' == $screen->base ) {
 			wp_enqueue_style('media-editor');
 			wp_enqueue_media();

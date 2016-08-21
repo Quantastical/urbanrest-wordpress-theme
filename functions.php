@@ -234,7 +234,6 @@ if( !function_exists( 'urbanrest_enqueue_scripts' ) ) :
 		wp_enqueue_script( 'html5shiv', get_stylesheet_directory_uri() . '/node_modules/html5shiv/dist/html5shiv.min.js' );
 		wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
 
-		// Create rating variable for JS
 		wp_localize_script('site', '_URB', array(
 			'url'                       => admin_url('admin-ajax.php'),
 			'nonce'                     => wp_create_nonce('admin-ajax'),

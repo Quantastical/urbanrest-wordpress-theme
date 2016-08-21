@@ -26,7 +26,6 @@ jQuery( function( $ ) {
 		$viewport         : $('<div id="viewport" />'),
 
 		scrollPosition : document.body.scrollTop,
-		API : 'http://testapi.urbanrest.com/' // TODO: get rid of hardcoded URL
 	};
 
 	Urb.loading = function( $element, completionSuccess ) {

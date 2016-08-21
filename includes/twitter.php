@@ -1,5 +1,5 @@
 <?php
-require_once('TwitterAPIExchange.php');
+require_once('plugins/TwitterAPIExchange.php');
 $settings = array(
     'oauth_access_token' => "35701303-DKykBApLHuzX8upAeTrncxVrDObczkldO4bsubxWN",
     'oauth_access_token_secret' => "Njfx6UpIwbTLbX4YyMd1zpSMzVih5qbfOXiWcTBZ9xPo4",

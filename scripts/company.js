@@ -4,11 +4,8 @@ jQuery(function($){
 
 	Urb.centerMap = function() {
 		if( Urb.$map.hasClass('open') ) {
-			// TODO: figure out why this needs a setTimeout
-			setTimeout(function(){
-				Urb.$map.data('map').setCenter( Urb.$map.data('marker').getPosition() );
-				Urb.$map.data('map').panTo( Urb.$map.data('marker').getPosition() );
-			}, 250);
+			Urb.$map.data('map').setCenter( Urb.$map.data('marker').getPosition() );
+			Urb.$map.data('map').panTo( Urb.$map.data('marker').getPosition() );
 		}
 	};
 

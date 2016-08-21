@@ -43,6 +43,13 @@
 <?php echo urb_get_fonts_for_preloading(); ?>
 		</div>
 
+		<script>
+		var html = document.documentElement;
+		if(html && html.classList){
+			html.classList.remove('no-javascript');
+			html.classList.add('javascript');
+		}
+		</script>
 		<?php wp_footer(); ?>
 	</body>
 </html>

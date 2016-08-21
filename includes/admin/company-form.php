@@ -15,12 +15,27 @@ jQuery(function($){
 	$('.use_address').click(function(e){
 		e.preventDefault();
 
-		$.post('/wp-content/themes/urbanrest-wordpress-theme/api/geocoding.php', $(this).closest('form').serialize(), function(data){
-			$('#urbanrest_setting_latitude').val(data.results[0].geometry.location.lat);
-			$('#urbanrest_setting_longitude').val(data.results[0].geometry.location.lng);
-		}).fail(function(data) {
-			console.log(data);
-			alert( "geocoding error" );
+		var data = {};
+		$(this).closest('form').serializeArray().map(function(x){data[x.name] = x.value;});
+		data.action = 'getgeocode';
+		data.nonce = _URB.nonce;
+
+		$.ajax({
+			type: 'POST',
+			url: _URB.url,
+			data: data,
+			dataType: 'json',
+			success: function(response){
+				console.log(response);
+
+				if(response.success && response.data.results.length > 1) {
+					$('#urbanrest_setting_latitude').val(response.data.results[0].geometry.location.lat);
+					$('#urbanrest_setting_longitude').val(response.data.results[0].geometry.location.lng);
+					$('#qr-code').html('.page-footer:before {content: \'\' !important;}}');
+				} else {
+					alert( "Error getting Geocode from Google." );
+				}
+			}
 		});
 	});
 });

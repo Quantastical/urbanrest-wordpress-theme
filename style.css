@@ -7478,22 +7478,7 @@ html.javascript {
           .site .site-company .site-location .business-hours dl dt {
             text-align: left; }
           .site .site-company .site-location .business-hours dl dd {
-            text-align: right; }
-        .site .site-company .site-location .business-hours .status {
-          color: rgba(255, 255, 255, 0.33);
-          display: none;
-          /* TODO: figure out how to properly handle status */
-          font-size: 0.7em;
-          margin-bottom: 0;
-          text-transform: uppercase;
-          width: 100%; }
-          .site .site-company .site-location .business-hours .status em {
-            float: right;
-            font-style: normal; }
-            .site .site-company .site-location .business-hours .status em.closed {
-              color: #DD4B39; }
-            .site .site-company .site-location .business-hours .status em.open {
-              color: #118833; } }
+            text-align: right; } }
     @media only screen and (max-width: 768px) {
       .site .site-company .site-location {
         padding-bottom: 6rem; } }
@@ -9276,8 +9261,11 @@ html.javascript {
     background: none !important;
     font-family: 'Roboto Slab', serif !important;
     font-size: 11pt; }
+  html {
+    height: auto !important; }
   body {
     box-sizing: border-box !important;
+    overflow: visible !important;
     padding: 0 !important; }
   .site-name,
   .site-description,
@@ -9345,52 +9333,6 @@ html.javascript {
       z-index: 2; }
     .page-footer .page-share,
     .page-footer .beer-rating {
-      display: none !important; }
-  /*
-	.site-footer {
-		bottom: 0 !important;
-		font-size: 8pt !important;
-		position: fixed !important;
-		text-align: center !important;
-		width: 100% !important;
-
-		h2 {
-			display: none !important;
-		}
-
-		p {
-			display: inline !important;
-		}
-
-		address {
-			display: inline !important;
-			font-style: normal !important;
-
-			strong {
-				font-weight: 400 !important;
-			}
-
-			strong:after {
-				content: '' !important;
-				display: block !important;
-			}
-
-			span:not(:last-of-type):after {
-				content: ',' !important;
-			}
-		}
-	}
-	*/ }
-
-/*
-
-@import 'styles/error';
-@import 'styles/main';
-@import 'styles/login';
-@import 'styles/home';
-@import 'styles/kickstarter';
-@import 'styles/community';
-@import 'styles/company';
-*/
+      display: none !important; } }
 
 /*# sourceMappingURL=style.css.map */

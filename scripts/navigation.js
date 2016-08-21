@@ -132,8 +132,33 @@ jQuery( function( $ ) {
 					});
 					$('#qr-code').html('.page-footer:before {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=' + encodeURIComponent(response.data.shortlink.replace(/URB.beer/i, 'QR.URB.beer')) + ') !important;}}');
 				} else {
-					// TODO: Show an error or soemthing
-					Urb.log(response.data);
+					document.title = 'Server Error';
+					var $content = $('<main class="page row around-xs">'
+					                 + '	<article id="page-error" class="col-xs-11 col-sm-9 col-md-7 post-error post type-post">'
+					                 + '		<header class="page-header" role="banner">'
+					                 + '			<h2 class="page-title">Server Error</h2>'
+					                 + '		</header>'
+					                 + '		<div class="page-content">'
+					                 + '			<p>'
+					                 + '				There was a problem loading the requested page, <u>' + slug + '</u>.'
+					                 + '				Either try again later or <a href="#contact">let us know</a> if you think something wrong.'
+					                 + '			</p>'
+					                 + '		</div>'
+					                 + '	</article>'
+					                 + '</main>');
+					$currentPage.replaceWith($content);
+					Urb.$loading.remove();
+					Urb.$window.trigger('ajaxloaded');
+					var timeout = 0;
+					$('.page-header > *:not(.hidden), .page-content > *:not(.hidden), .page-footer > *:not(.hidden), .post-header > *:not(.hidden), .post-content > *:not(.hidden), .post-footer > *:not(.hidden)', $content).each(function() {
+						var $this = $(this);
+						$this.hide();
+						setTimeout(function(){
+							$this.fadeIn(330);
+						}, timeout);
+						timeout += 88;
+					});
+					$('#qr-code').html('.page-footer:before {content: \'\' !important;}}');
 				}
 			},
 			complete: function() {
@@ -200,9 +225,6 @@ jQuery( function( $ ) {
 			.not('[href$=".pdf"]').not('[href$=".doc"]').not('[href$=".docx"]').not('[href$=".xls"]').not('[href$=".xlsx"]')
 			.each(function() {
 				var $anchor = $(this);
-				//if($anchor.closest('.menu-item').length == 1) {
-				//	return;
-				//}
 
 				// Ignore WordPress navbar links
 				if($anchor.closest($('#wpadminbar')).length > 0) {
@@ -229,14 +251,8 @@ jQuery( function( $ ) {
 			} else {
 				fragmentIdentifier = '/';
 			}
-
-//			if(window.history){
-//				window.history.pushState({}, $(this).text(), fragmentIdentifier.replace('#','/'));
-//			}
-
-			//var targetHasPadding = ($fragment.innerHeight() - $fragment.height()) > navBarWithAdminBarHeight;
-
-			//Urb.$body.animate(
+			
+			// Need html,body instead of just body for Firefox
 			$('html,body').animate(
 				{ scrollTop: Math.ceil(targetOffset - wpAdminBarHeight/*(targetHasPadding ? 0 : navBarWithAdminBarHeight * 1.5)*/ ) },
 				Math.round( 500 * (Math.abs(Urb.$window.scrollTop() - targetOffset) / Urb.$window.height()) )
@@ -251,16 +267,9 @@ jQuery( function( $ ) {
 		Urb.$pageNavigation.find('.menu-item a').click(function() {
 			var $this = $(this);
 			$this.blur();
-			/*
-			if(window.history){
-				var slug = $this.attr('href').replace('#', '');
-				
-				window.history.pushState({}, $this.text(), slug);
-			}
-			*/
 		});
 
-		Urb.$menuToggle = $('#menu-toggle');//$('<div id="menu-toggle"><div id="hamburger"><span></span><span></span><span></span></div><div id="cross"><span></span><span></span></div></div>');
+		Urb.$menuToggle = $('#menu-toggle');
 		Urb.$mainMenu = $('#menu-main-menu');
 		Urb.$menuToggle.on('click', function() {
 			var targetPosition = false;
@@ -302,7 +311,6 @@ jQuery( function( $ ) {
 				openMenu();
 			}
 		});
-		//Urb.$pageNavigation.find('.main-menu [href="#main-menu"]').replaceWith(Urb.$menuToggle);
 	};
 
 	Urb.setupNavigationSnap = function() {
@@ -317,17 +325,6 @@ jQuery( function( $ ) {
 		}else {
 			Urb.$siteNavigation.removeClass('past-midpoint').removeClass('stuck-top');
 		}
-		/*
-		if(Urb.scrollPosition < windowHeightMinusWPHeaderHeight) {
-			Urb.$mainNavigation.removeClass('stuck-top').css({
-				'bottom': 'auto',
-				'top': (Urb.$window.height() - Urb.$mainNavigation.outerHeight() - Urb.scrollPosition).toFixed(2) + 'px',
-			});
-		} else {
-			Urb.$mainNavigation.addClass('stuck-top');
-		}
-		*/
-		//Urb.highlightCurrentSection();
 	};
 
 	Urb.scrollSocialNavigation = function() {
@@ -367,12 +364,7 @@ jQuery( function( $ ) {
 			var anchorProximityThreshold = 5; // pixels
 
 			if(Urb.$window.scrollTop() == 0 && $anchor.length) {
-				//console.log(Urb.$window.scrollTop(),$anchor.offset().top, navBarWithAdminBarHeight );
-				//if( Urb.$window.scrollTop() > $anchor.offset().top - (navBarWithAdminBarHeight + anchorProximityThreshold)
-				// && Urb.$window.scrollTop() < $anchor.offset().top + anchorProximityThreshold )
-				//{
 				Urb.$window.scrollTop( $anchor.offset().top );
-				//}
 			}
 		}
 		Urb.scrollPageNavigation();
@@ -391,7 +383,7 @@ jQuery( function( $ ) {
 	Urb.$window.on('load', Urb.setupPageNavigation);
 	Urb.$window.on('load scroll', Urb.scrollPageNavigation);
 	Urb.$window.on('load scroll', Urb.scrollSocialNavigation);
-	Urb.$window.on('load', function() { setTimeout(Urb.scrollToContent, 1); }); // TODO: figure out why setTimeout has to be used here
+	Urb.$window.on('load', Urb.scrollToContent);
 	Urb.$window.on('popstate', Urb.performHistoryNavigation);
 
 

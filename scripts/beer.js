@@ -66,8 +66,13 @@ jQuery(function($){
 		// Untappd
 		$.ajax({
 			type: 'get',
-			url: Urb.API + 'untappd/beer/info/',
-			data: { postId: $('[itemprop="aggregateRating"]').data('beer-id') },
+			url: _URB.url,
+			data: {
+				'action': 'getrating',
+				'nonce': _URB.nonce,
+				'rating_system': 'untappd',
+				'postId': $('[itemprop="aggregateRating"]').data('beer-id')
+			},
 			dataType: 'json',
 			success: function(data) {
 				var ratingValue = Number($('[itemprop="ratingValue"]', Urb.$aggregateRating).text());
@@ -93,8 +98,13 @@ jQuery(function($){
 		// RateBeer
 		$.ajax({
 			type: 'get',
-			url: Urb.API + 'ratebeer/beer/info/',
-			data: { postId: $('[itemprop="aggregateRating"]').data('beer-id') },
+			url: _URB.url,
+			data: {
+				'action': 'getrating',
+				'nonce': _URB.nonce,
+				'rating_system': 'ratebeer',
+				'postId': $('[itemprop="aggregateRating"]').data('beer-id')
+			},
 			dataType: 'json',
 			success: function(data) {
 				var ratingValue = Number($('[itemprop="ratingValue"]', Urb.$aggregateRating).text());
@@ -121,8 +131,13 @@ jQuery(function($){
 		// BeerAdvocate
 		$.ajax({
 			type: 'get',
-			url: Urb.API + 'beeradvocate/beer/info/',
-			data: { postId: $('[itemprop="aggregateRating"]').data('beer-id') },
+			url: _URB.url,
+			data: {
+				'action': 'getrating',
+				'nonce': _URB.nonce,
+				'rating_system': 'untappd',
+				'postId': $('[itemprop="aggregateRating"]').data('beer-id')
+			},
 			dataType: 'json',
 			success: function(data) {
 				var ratingValue = Number($('[itemprop="ratingValue"]', Urb.$aggregateRating).text());

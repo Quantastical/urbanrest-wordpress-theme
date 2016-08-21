@@ -1,22 +1,6 @@
 <?php
-function urb_load_textdomain() {
-	/*
-	// TODO: replace hard-coded domain with configurable option
-	if(in_array($_SERVER['HTTP_HOST'], array('api.urbanrest.com', 'testapi.urbanrest.com', 'localapi.urbanrest.com', 'devapi.urbanrest.com'))) {
-		include(TEMPLATEPATH . '/api/index.php');
-		die();
-	}
-	*/
-}
-
 function urb_send_headers( )
 {
-	// TODO: replace hard-coded domain with configurable option
-	if(in_array($_SERVER['HTTP_HOST'], array('api.urbanrest.com', 'testapi.urbanrest.com', 'localapi.urbanrest.com', 'devapi.urbanrest.com'))) {
-		include(TEMPLATEPATH . '/api/index.php');
-		die();
-	}
-
 	global $route, $wp_query, $window_title;
 	$bits = explode( "/", $_SERVER['REQUEST_URI'] );
 
@@ -29,7 +13,7 @@ function urb_send_headers( )
 			$sitemap_type = 'index';
 		}
 
-		include(TEMPLATEPATH . '/sitemap.php');
+		include(TEMPLATEPATH . '/sitemap.xml.php');
 		die();
 	}
 	else if( preg_match('/^\/(beer|contact)\/?$/', $_SERVER['REQUEST_URI'], $matches ) )
@@ -43,15 +27,14 @@ function urb_send_headers( )
 	}
 	else if( $bits[1] === 'humans.txt' )
 	{
-		include(TEMPLATEPATH . '/humans.php');
+		include(TEMPLATEPATH . '/humans.txt.php');
 		die();
 	} 
 	else if( $bits[1] === 'robots.txt' )
 	{
-		include(TEMPLATEPATH . '/robots.php');
+		include(TEMPLATEPATH . '/robots.txt.php');
 		die();
 	}
 }
-add_action( 'load_textdomain', 'urb_load_textdomain');
 add_action( 'send_headers', 'urb_send_headers');
 ?>

@@ -12,12 +12,41 @@ if( !function_exists( 'urbanrest_setup_ajax' ) ) :
 endif;
 add_action('wp_enqueue_scripts', 'urbanrest_setup_ajax');
 
+function getgeocode() {
+	$api_key = get_option('google_browser_api_key');
+
+	if( $api_key ) {
+		$street_address = $_POST['urbanrest_setting_street_address'];
+		$locality = $_POST['urbanrest_setting_locality'];
+		$region = $_POST['urbanrest_setting_region'];
+		$postal_code = $_POST['urbanrest_setting_postal_code'];
+		$country = $_POST['urbanrest_setting_country'];
+
+		$address = urlencode($street_address . ', ' . $locality . ', ' . $region . ', ' . $country . ', ' . $postal_code);
+
+		$ch = curl_init();
+	   curl_setopt($ch, CURLOPT_URL, "https://maps.googleapis.com/maps/api/geocode/json?address={$address}&key={$api_key}");
+	   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	   $response = json_decode(curl_exec($ch));
+	   curl_close($ch);
+
+	   wp_send_json_success($response);
+	} else {
+		wp_send_json_error( "No API Key has been provided." );
+	}
+
+	die();
+}
+add_action( 'wp_ajax_getgeocode', 'getgeocode' );
+add_action( 'wp_ajax_nopriv_getgeocode', 'getgeocode');
+
 function getmaincontent() {
 	global $post;
 
 	$post_id = url_to_postid($_POST['slug']);
 	
 	if($post_id > 0) {
+		$post_info = get_post($post_id);
 		$post = get_post($post_id);
 		setup_postdata( $post );
 
@@ -26,11 +55,11 @@ function getmaincontent() {
 		$buffer = ob_get_clean();
 
 		$return = array(
-			'ID'        => $post->ID,
-			'title'     => $post->post_title,
-			'guid'      => $post->guid,
-			'permalink' => get_permalink($post->ID),
-			'shortlink' => wp_get_shortlink($post->ID),
+			'ID'        => $post_id,
+			'title'     => $post_info->post_title,
+			'guid'      => $post_info->guid,
+			'permalink' => get_permalink($post_id),
+			'shortlink' => wp_get_shortlink($post_id),
 			'content'   => $buffer
 		);
 		
@@ -103,4 +132,30 @@ function getnext() {
 }
 add_action( 'wp_ajax_getnext', 'getnext' );
 add_action( 'wp_ajax_nopriv_getnext', 'getnext');
+
+function getrating() {
+	global $post;
+
+	$rating_system = $_POST['rating_system'];
+	$slug = $_POST['slug'];
+	
+	switch($rating_system) {
+		case 'beeradvocate':
+			$beeradvocate = new beeradvocate_beer();
+			$beeradvocate->info($slug);
+		break;
+		case 'ratebeer':
+			$ratebeer = new ratebeer_beer();
+			$ratebeer->info($slug);
+		break;
+		case 'untappd':
+			$untappd = new untappd_beer();
+			$untappd->info($slug);
+		break;
+	}
+
+	die();
+}
+add_action( 'wp_ajax_getrating', 'getrating' );
+add_action( 'wp_ajax_nopriv_getrating', 'getrating');
 ?>
