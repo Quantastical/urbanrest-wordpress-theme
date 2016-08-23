@@ -113,7 +113,7 @@
 		<meta name="twitter:image" content="<?php echo get_option('urbanrest_setting_twitter_card_image'); ?>" />
 <?php endif; ?>
 
-<?php /*		<link type="text/plain" rel="author" href="<?php echo get_site_url(); ?>/humans.txt" />*/ ?>
+		<link type="text/plain" rel="author" href="<?php echo get_site_url(); ?>/humans.txt" />
 		<?php wp_head(); ?>
 		<style id="qr-code" type="text/css" media="print">.page-footer:before {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=<?php echo urlencode( str_ireplace('URB.beer', 'QR.URB.beer', wp_get_shortlink()) ); ?>);}}</style>
 	</head>
@@ -226,23 +226,33 @@ wp_nav_menu(array(
 		</header>
 
 		<section class="site-posts col-xs-12">
-			<h3>Latest News &amp; Events</h3>
+			<h3>Featured News &amp; Events</h3>
 <?php
-$latest_args = array(
-	'posts_per_page' => 1,
-	'orderby'        => 'date',
-	'order'          => 'DESC'
-);
-$latest = get_posts( $latest_args );
+$locations = get_nav_menu_locations();
+$menu = get_term( $locations['featured'], 'nav_menu' );
+$featured = wp_get_nav_menu_items($menu->term_id);
+
+if( $featured == false || count($featured) == 0 ) {
+	$featured_args = array(
+		'posts_per_page' => 1,
+		'orderby'        => 'date',
+		'order'          => 'DESC'
+	);
+	$featured = get_posts( $featured_args );
+}
+
 $first = true;
 ?>
 			<ul class="latest-posts" id="latest-posts">
-<?php foreach ( $latest as $post ) : ?>
-<?php 	setup_postdata( $GLOBALS['post'] =& $post ); ?>
-				<li class="blog-post<?php echo ($first) ? ' active' : ' next'; $first = false; ?>" data-post-id="<?php echo $post->ID; ?>">
+<?php foreach ( $featured as $featured_post ) : ?>
+<?php 	if($featured_post->post_type == 'nav_menu_item') : ?>
+<?php 		$featured_post = get_post($featured_post->object_id); ?>
+<?php 	endif; ?>
+<?php 	setup_postdata( $GLOBALS['post'] =& $featured_post ); ?>
+				<li class="blog-post<?php echo ($first) ? ' active' : ' next'; $first = false; ?>" data-post-id="<?php echo $featured_post->ID; ?>">
 					<a href="<?php the_permalink(); ?>">
 <?php 	if ( has_post_thumbnail() ) : ?>
-						<span class="blog-post-image" style="background-image:url('<?php echo wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' )[0]; ?>');">
+						<span class="blog-post-image" style="background-image:url('<?php echo wp_get_attachment_image_src( get_post_thumbnail_id($featured_post->ID), array( 720,405 ), false, '' )[0]; ?>');">
 							<?php the_post_thumbnail(); ?>
 						</span>
 <?php 	endif; ?>

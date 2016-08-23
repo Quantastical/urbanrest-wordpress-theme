@@ -36,15 +36,12 @@ if ( !function_exists('urbanrest_setup') ) :
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
-			//'footer'      => 'Footer Menu',
-			'navbar' => 'navbar',
-			'main-menu'   => 'main-menu',
-			//'kickstarter' => 'Kickstarter Menu',
-			'map'         => 'map',
-			'social'      => 'social',
-			//'about-us'    => 'about-us',
-			'beer-list'   => 'beer-list',
-			'growler-list' => 'growler-list'
+			'featured'     => 'Featured Posts',
+			'navbar'       => 'Navigation Bar',
+			'main-menu'    => 'Main Menu',
+			'social'       => 'Social Media Icons',
+			'beer-list'    => 'On-Tap Beer List',
+			'growler-list' => 'Available in Growler List',
 		) );
 
 		// Use default core markup for search form, comment form, and comments

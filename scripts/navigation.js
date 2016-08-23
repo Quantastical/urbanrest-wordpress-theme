@@ -28,6 +28,8 @@ jQuery( function( $ ) {
 	};
 
 	Urb.loadPage = function(slug) {
+		Urb.log('Urb.loadPage');
+
 		var $currentPage = $('main');
 
 		Urb.$body.removeClass('no-scroll');
@@ -169,6 +171,8 @@ jQuery( function( $ ) {
 	};
 
 	Urb.navigateInternally = function(e) {
+		Urb.log('Urb.navigateInternally');
+		
 		if(window.history) {
 			e.preventDefault();
 		} else {
@@ -189,6 +193,8 @@ jQuery( function( $ ) {
 	};
 
 	Urb.performHistoryNavigation = function(e) {
+		Urb.log('Urb.performHistoryNavigation');
+
 		e.preventDefault();
 		
 		var state = e.state;
@@ -198,6 +204,8 @@ jQuery( function( $ ) {
 	};
 
 	Urb.setupImageLinks = function() {
+		Urb.log('Urb.setupImageLinks');
+
 		$('a').filter('[href$=".png"],[href$=".jpg"],[href$=".bmp"],[href$=".gif"],[href$=".jpeg"]')
 		.magnificPopup({
 			type:'image',
@@ -219,6 +227,8 @@ jQuery( function( $ ) {
 	};
 
 	Urb.setupInternalLinks = function() {
+		Urb.log('Urb.setupInternalLinks');
+
 		$('a').not('[href^="#"]')
 			.not(':not([href^="http://' + window.location.host + '"]):not([href^="https://' + window.location.host + '"])')
 			.not('[href$=".png"]').not('[href$=".jpg"]').not('[href$=".bmp"]').not('[href$=".gif"]').not('[href$=".jpeg"]')
@@ -236,10 +246,14 @@ jQuery( function( $ ) {
 	};
 
 	Urb.setupExternalLinks = function() {
+		Urb.log('Urb.setupExternalLinks');
+
 		$('a[href^="http"]:not([href*="' + window.location.host + '"])').attr('target', '_blank');
 	};
 
 	Urb.setupFragmentAnchors = function() {
+		Urb.log('Urb.setupFragmentAnchors');
+
 		Urb.$document.on('click', 'a[href^="#"]', function(e) {
 			e.preventDefault();
 
@@ -263,6 +277,8 @@ jQuery( function( $ ) {
 	};
 
 	Urb.setupPageNavigation = function() {
+		Urb.log('Urb.setupPageNavigation');
+
 		// After clicking a menu item, automatically lose :focus styles
 		Urb.$pageNavigation.find('.menu-item a').click(function() {
 			var $this = $(this);

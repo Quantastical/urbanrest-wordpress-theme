@@ -3,6 +3,8 @@ jQuery(function($){
 	var navBarWithAdminBarHeight = Urb.$pageNavigation.outerHeight() + wpAdminBarHeight;
 
 	Urb.centerMap = function() {
+		Urb.log('Urb.centerMap');
+
 		if( Urb.$map.hasClass('open') ) {
 			Urb.$map.data('map').setCenter( Urb.$map.data('marker').getPosition() );
 			Urb.$map.data('map').panTo( Urb.$map.data('marker').getPosition() );
@@ -28,6 +30,8 @@ jQuery(function($){
 	};
 
 	Urb.setupBusinessHours = function() {
+		Urb.log('Urb.setupBusinessHours');
+
 		var today = new Date();
 		var dayOfWeek = today.getDay() + 1;
 
@@ -43,6 +47,8 @@ jQuery(function($){
 	};
 
 	Urb.setupContactForm = function() {
+		Urb.log('Urb.setupContactForm');
+		
 		Urb.$contactForm.attr('novalidate', true);
 		Urb.$contactForm.on('submit', Urb.submitContactForm);
 

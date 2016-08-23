@@ -1,5 +1,7 @@
 jQuery(function($){
 	Urb.rateBeer = function() {
+		Urb.log('Urb.rateBeer');
+
 		var $ratingActions = $('.rating-actions');
 		var $rateButton = $(this);
 		
@@ -33,6 +35,8 @@ jQuery(function($){
 	};
 
 	Urb.setupRatingPoll = function() {
+		Urb.log('Urb.setupRatingPoll');
+
 		Urb.$aggregateRating = $('[itemprop="aggregateRating"]');
 		Urb.$beerCheckinModal = $('.modal.checkin-modal');
 
@@ -57,6 +61,8 @@ jQuery(function($){
 	};
 
 	Urb.setupRatingsFrom3rdParties = function() {
+		Urb.log('Urb.setupRatingsFrom3rdParties');
+
 		$.ajaxSetup({
 			beforeSend: function(xhr) {
 				xhr.setRequestHeader('Authorization', 'Basic ' + btoa('urbanrest:Greensleeves'));
@@ -162,6 +168,8 @@ jQuery(function($){
 	};
 
 	Urb.shareRating = function(ratedValue) {
+		Urb.log('Urb.shareRating');
+		
 		var $message = $('.message', Urb.$beerCheckinModal);
 		if($message.length == 0) {
 			$message = $('<div class="message" />');

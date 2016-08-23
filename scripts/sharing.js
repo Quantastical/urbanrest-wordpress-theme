@@ -1,7 +1,5 @@
 jQuery(function($){
 	Urb.scrollSharing = function() {
-		//Urb.log('Urb.scrollSharing');
-
 		$('main').each(function() {
 			var $main = $(this);
 			if( Urb.scrollPosition + Urb.$window.height() > $main.offset().top + Urb.$pageNavigation.outerHeight() * 1.5

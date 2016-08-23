@@ -12,7 +12,7 @@ jQuery(function($){
 		if('string' !== typeof target) {
 			target = $(this).data('target');
 		}
-		//console.log(target);
+		
 		$( target ).data('urbModal').show();
 	};
 

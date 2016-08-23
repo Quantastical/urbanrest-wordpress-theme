@@ -1,5 +1,7 @@
 jQuery(function($){
 	Urb.hideTooltip = function() {
+		Urb.log('Urb.hideTooltip');
+
 		var $element = $(this);
 		var $tooltip = $element.data('tooltip');
 		
@@ -53,6 +55,8 @@ jQuery(function($){
 	};
 
 	Urb.showTooltip = function() {
+		Urb.log('showTooltip');
+		
 		var $element = $(this);
 		var $tooltip = $element.data('tooltip');
 		var $tip = $element.attr('title');

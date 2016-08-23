@@ -13,6 +13,8 @@ jQuery( function( $ ) {
 	};
 
 	Urb.showPreviousPost = function() {
+		Urb.log('Urb.showPreviousPost');
+
 		var $currentPost = $('.site-posts .latest-posts .blog-post.active');
 		var $previousPost = $currentPost.prev('.previous.blog-post');
 
@@ -22,6 +24,8 @@ jQuery( function( $ ) {
 	};
 
 	Urb.showNextPost = function() {
+		Urb.log('Urb.showNextPost');
+
 		var $currentPost = $('.site-posts .latest-posts .blog-post.active');
 		var $nextPost = $currentPost.next('.next.blog-post');
 
@@ -48,6 +52,8 @@ jQuery( function( $ ) {
 	};
 
 	Urb.setupHeaderNavigation = function() {
+		Urb.log('Urb.setupHeaderNavigation');
+
 		$nextButton.on('click', function(e) {
 			var $currentPost = $('.site-posts .latest-posts .blog-post.active');
 			var $nextPost = $currentPost.next('.next.blog-post');
@@ -114,6 +120,8 @@ jQuery( function( $ ) {
 	};
 
 	Urb.getNextPost = function() {
+		Urb.log('Urb.getNextPost');
+
 		$.ajax({
 			'type': 'POST',
 			'url': _URB.url,
@@ -122,6 +130,8 @@ jQuery( function( $ ) {
 				'id': $('.site-posts .latest-posts .blog-post:last-child').data('post-id')
 			},
 			'success': function(response){
+				Urb.log(response);
+				
 				if(response.success) {
 					var $nextPost = $('<li />');
 					$nextPost.addClass('blog-post next');

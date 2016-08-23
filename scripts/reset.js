@@ -1,6 +1,6 @@
 jQuery( function( $ ) {
 	window.Urb = {
-		enableLogging : true,
+		logging : false,
 
 		$document : $(document),
 		$window   : $(window),
@@ -41,24 +41,17 @@ jQuery( function( $ ) {
 	};
 
 	Urb.log = function(message) {
-		if(Urb.enableLogging) {
-			console.log(message);	
+		if(Urb.logging) {
+			console.log(message);
 		}
 	};
-
-	/*
-	Urb.setupMenuLogo = function() {
-		var $menuLogoItem = $('<li class="menu-item menu-item-logo"></li>');
-		$('<a href="#"></a>').append(Urb.$menuLogo).appendTo($menuLogoItem);
-		$('.main-menu li:nth-child(1)', Urb.$mainNavigation).after($menuLogoItem);
-	};
-	*/
 
 	Urb.setScrollPosition = function() {
 		Urb.scrollPosition = Urb.$document.scrollTop();
 	};
 
 	Urb.updateViewport = function() {
+		Urb.log('Urb.updateViewport');
 		var viewportWidth = Urb.$window.outerWidth();
 		Urb.$viewport.toggleClass('phone', viewportWidth <= 768);
 		Urb.$viewport.toggleClass('tablet', viewportWidth > 768 && viewportWidth <= 1024);
@@ -70,31 +63,6 @@ jQuery( function( $ ) {
 		Urb.updateViewport();
 	};
 
-	/*
-	Urb.parseTemplate = function(template, data) {
-		var fn = new Function("obj",
-				"var p=[],print=function(){p.push.apply(p,arguments);};" +
-				
-				// Introduce the data as local variables using with(){}
-				"with(obj){p.push('" +
-				
-				// Convert the template into pure JavaScript
-				template
-					.replace(/[\r\t\n]/g, " ")
-					.split("<%").join("\t")
-					.replace(/((^|%>)[^\t]*)'/g, "$1\r")
-					.replace(/\t=(.*?)%>/g, "',$1,'")
-					.split("\t").join("');")
-					.split("%>").join("p.push('")
-					.split("\r").join("\\'")
-				+ "');}return p.join('');");
-
-		// Provide some basic currying to the user
-		return fn( data );
-	};
-	*/
-	
-	//Urb.$window.on('load', Urb.setupMenuLogo);
 	Urb.$window.on('load', Urb.setupViewport);
 	Urb.$window.on('resize orientationchange', Urb.updateViewport);
 	Urb.$window.on('scroll', Urb.setScrollPosition);
