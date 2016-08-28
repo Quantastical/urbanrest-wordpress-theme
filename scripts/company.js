@@ -52,11 +52,30 @@ jQuery(function($){
 		Urb.$contactForm.attr('novalidate', true);
 		Urb.$contactForm.on('submit', Urb.submitContactForm);
 
+		$('.field input, .field textarea', Urb.$contactForm).on('keyup', function() {
+			$(this).closest('.field').toggleClass('active', this.value.length > 0 || $(this).is(':focus'));
+		}).on('focus', function() {
+			$(this).closest('.field').addClass('active');
+		}).on('blur', function() {
+			if(this.value.length == 0) {
+				$(this).closest('.field').removeClass('active');
+			}
+		});
+
 		var $emailAddress = Urb.$contactForm.find('#contact_email_address');
 		Urb.$contactForm.data('email_address', $emailAddress);
 
 		$emailAddress.on('keyup',function(){
 			$emailAddress.closest('.field').removeClass('error').removeAttr('title');
+		});
+
+		var $message = Urb.$contactForm.find('#contact_message');
+		$message.on('focus keyup', function() {
+			if(this.clientHeight < this.scrollHeight) {
+				$(this).css('height', this.scrollHeight + 'px');
+			}
+		}).on('blur', function() {
+			$(this).removeAttr('style');
 		});
 	};
 

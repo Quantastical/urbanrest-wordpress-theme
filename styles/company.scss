@@ -4,10 +4,10 @@
 	{
 		.site-company
 		{
-			background-image: url(images/tile-oak-wood.min.png);
+			background-image: url('images/single-background.min.jpg');
 			background-position: top center;
 			background-repeat: repeat;
-			color: $text-white;
+			color: $text-black;
 			padding-top: 7em;
 
 			header
@@ -216,10 +216,10 @@
 
 					a
 					{
-						color: rgba($urbanrest-white, 0.5);
+						color: rgba($urbanrest-black, 0.75);
 						cursor: pointer;
 						display: inline-block;
-						font-weight: 200;
+						font-weight: 400;
 						text-decoration: none;
 
 						&:hover
@@ -264,39 +264,38 @@
 						padding: 0;
 						position: relative;
 
-						label
-						{
-							display: none;
-						}
 
-
-						border: solid rgba( $urbanrest-white, 0.25 );
-						&:nth-child(2) { border-width: 1px 0 0 1px; }
-						&:nth-child(3) { border-width: 1px 1px 0 0; }
+						border: solid rgba( $urbanrest-black, 0.25 );
+						&:nth-child(2) { border-radius: 4px 0 0 0; border-width: 1px 0 0 1px; }
+						&:nth-child(3) { border-radius: 0 4px 0 0; border-width: 1px 1px 0 0; }
 						&:nth-child(4) { border-width: 0 1px 0 1px; }
-						&:nth-child(5) { border-width: 0 1px 1px 1px; }
+						&:nth-child(5) { border-radius: 0 0 4px 4px; border-width: 0 1px 1px 1px; }
+
+						&:nth-child(2) input { border-radius: 4px 0 0 0; }
+						&:nth-child(3) input { border-radius: 0 4px 0 0; }
+						&:nth-child(5) textarea { border-radius: 0 0 4px 4px; }
 
 						input,
 						textarea
 						{
-							background-color: rgba( $urbanrest-black, 0.22 );
-							border: solid 1px rgba( $urbanrest-white, 0.25 );
+							background-color: rgba( $urbanrest-black, 0.11 );
+							border: solid 1px rgba( $urbanrest-black, 0.25 );
 							border-radius: 0;
 							box-sizing: border-box;
-							color: white;
+							color: $urbanrest-black;
 							font-family: 'Roboto';
 							font-size: 1em;
-							font-weight: 200;
+							font-weight: 400;
 							margin: 0;
 							outline: none;
-							padding: 0.5em;
+							padding: 1.25em 0.5em 0.5em;
 							@include transition( background-color 0.33s ease-in-out, border-color 0.33s ease-in-out, color 0.33s ease-in-out );
 							width: 100%;
 
 							&:focus
 							{
-								background: rgba( $urbanrest-black, 0.33 );
-								border-color: rgba( $urbanrest-white, 0.5 );
+								background: rgba( $urbanrest-black, 0.22 );
+								border-color: rgba( $urbanrest-black, 0.5 );
 							}
 
 							&:-webkit-autofill
@@ -308,7 +307,8 @@
 
 							&::-webkit-input-placeholder
 							{
-								color: rgba(white, 0.6);
+								color: rgba($urbanrest-black, 0.6);
+								font-weight: 300;
 								@include transition( color 0.33s ease-in-out );
 							}
 
@@ -323,13 +323,7 @@
 
 								@include media('<=tablet')
 								{
-									height: 2.5em;
-
-									&:focus,
-									&:not(:placeholder-shown)
-									{
-										height: 5.65em;
-									}
+									height: 3.25em;
 								}
 							}
 						}
@@ -340,7 +334,7 @@
 							textarea
 							{
 								background-color: rgba( red, 0.11 );
-								border-color: rgba( red, 0.25 );
+								border-color: rgba( red, 0.75 );
 								color: red;
 
 								&:focus
@@ -351,6 +345,12 @@
 								}
 
 								&::-webkit-input-placeholder { color: rgba(red, 0.6); }
+							}
+
+							label
+							{
+								color: rgba( red, 0.6 );
+								font-weight: 400;
 							}
 
 							&:after
@@ -365,7 +365,29 @@
 								padding: 0.2em 0.33em;
 								position: absolute;
 								right: 0;
-								top: 0;
+								top: 0.4em;
+							}
+						}
+						
+						label
+						{
+							color: rgba($urbanrest-black,0.5);
+							display: block;
+							font-size: 1em;
+							font-weight: 300;
+							left: 0.75em;
+							pointer-events: none;
+							position: absolute;
+							top: 0.9em;
+							@include transition( 0.11s ease all );
+						}
+
+						&.active
+						{
+							label
+							{
+								font-size: 0.75em;
+								top: 0.25em;
 							}
 						}
 					}
@@ -383,15 +405,17 @@
 
 							+ label
 							{
-								color: rgba($urbanrest-white, 0.5);
+								color: rgba($urbanrest-black, 0.75);
 								cursor: pointer;
 								display: inline-block;
-								font-weight: 200;
+								font-weight: 600;
 								text-decoration: line-through;
 
 								&:before
 								{
-									border: solid 2px rgba(220,223,222,0.25);
+									border: solid 2px $google-red;
+									border-radius: 3px;
+									color: $google-red;
 									content: '\f05e';
 									display: inline-block;
 									float: left;
@@ -403,11 +427,6 @@
 									text-decoration: none;
 									width: 1em;
 								}
-
-								&:hover:before
-								{
-									color: $google-red;
-								}
 							}
 
 							&:checked + label
@@ -416,12 +435,9 @@
 
 								&:before
 								{
-									content: $fa-var-check;
-								}
-
-								&:hover:before
-								{
+									border-color: $urbanrest-green;
 									color: $urbanrest-green;
+									content: $fa-var-check;
 								}
 							}
 						}
@@ -470,13 +486,13 @@
 						font-family: 'FontAwesome';
 						margin-left: 0.5em;
 						@include transform( rotate(0deg) );
-						@include transition( transform 0.33s );
+						@include transition( all 0.33s );
 						width: 1em;
 					}
 
 					&:hover
 					{
-						background-color: rgba( $urbanrest-black, 0.33 );
+						background-color: rgba( $urbanrest-black, 0.11 );
 						@include transition( background-color 0.11s );
 					}
 

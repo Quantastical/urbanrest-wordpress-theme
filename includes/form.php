@@ -37,10 +37,10 @@ function urb_field_generic( $atts ) {
 	), $atts, 'field' );
 
 	$input = '';
+	$input .= '<input' . urb_format_attributes($input_attributes) . ' />';
 	if( isset($atts['label']) ){
 		$input .= ( isset($input_attributes['id']) ) ? '<label for="' . $input_attributes['id'] . '">' . $atts['label'] . '</label>' : '<label>' . $atts['label'] . '</label>';
 	}
-	$input .= '<input' . urb_format_attributes($input_attributes) . ' />';
 	return $input;
 }
 
@@ -83,15 +83,15 @@ function urb_field_textarea( $atts ) {
 
 
 	$textarea = '';
-	if( isset($atts['label']) ){
-		$textarea .= ( isset($textarea_attributes['id']) ) ? '<label for="' . $textarea_attributes['id'] . '">' . $atts['label'] . '</label>' : '<label>' . $atts['label'] . '</label>';
-	}
 	$value = '';
 	if($textarea_attributes['value']) {
 		$value = $textarea_attributes['value'];
 		unset($textarea_attributes['value']);
 	}
 	$textarea .= '<textarea' . urb_format_attributes($textarea_attributes) . '>' . $value . '</textarea>';
+	if( isset($atts['label']) ){
+		$textarea .= ( isset($textarea_attributes['id']) ) ? '<label for="' . $textarea_attributes['id'] . '">' . $atts['label'] . '</label>' : '<label>' . $atts['label'] . '</label>';
+	}
 	return $textarea;
 }
 

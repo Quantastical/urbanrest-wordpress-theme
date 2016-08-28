@@ -280,8 +280,8 @@
         w ? a.data("magnificPopup", o) : a[0].magnificPopup = o, e.addGroup(a, o);
         return a;
     };
-    var I, S, _, M = "inline", N = function() {
-        _ && (S.after(_.addClass(I)).detach(), _ = null);
+    var I, _, S, M = "inline", N = function() {
+        S && (_.after(S.addClass(I)).detach(), S = null);
     };
     t.magnificPopup.registerModule(M, {
         options: {
@@ -300,7 +300,7 @@
                     var r = e.st.inline, n = t(o.src);
                     if (n.length) {
                         var i = n[0].parentNode;
-                        i && i.tagName && (S || (I = r.hiddenClass, S = y(I), I = "mfp-" + I), _ = n.after(S).detach().removeClass(I)), 
+                        i && i.tagName && (_ || (I = r.hiddenClass, _ = y(I), I = "mfp-" + I), S = n.after(_).detach().removeClass(I)), 
                         e.updateStatus("ready");
                     } else e.updateStatus("error", r.tNotFound), n = t("<div>");
                     return o.inlineElement = n, n;
@@ -309,10 +309,10 @@
             }
         }
     });
-    var F, E = "ajax", B = function() {
+    var F, E = "ajax", H = function() {
         F && t(document.body).removeClass(F);
-    }, j = function() {
-        B(), e.req && e.req.abort();
+    }, B = function() {
+        H(), e.req && e.req.abort();
     };
     t.magnificPopup.registerModule(E, {
         options: {
@@ -322,7 +322,7 @@
         },
         proto: {
             initAjax: function() {
-                e.types.push(E), F = e.st.ajax.cursor, C(s + "." + E, j), C("BeforeChange." + E, j);
+                e.types.push(E), F = e.st.ajax.cursor, C(s + "." + E, B), C("BeforeChange." + E, B);
             },
             getAjax: function(o) {
                 F && t(document.body).addClass(F), e.updateStatus("loading");
@@ -333,20 +333,20 @@
                             data: a,
                             xhr: n
                         };
-                        x("ParseAjax", i), e.appendContent(t(i.data), E), o.finished = !0, B(), e._setFocus(), 
+                        x("ParseAjax", i), e.appendContent(t(i.data), E), o.finished = !0, H(), e._setFocus(), 
                         setTimeout(function() {
                             e.wrap.addClass(f);
                         }, 16), e.updateStatus("ready"), x("AjaxContentAdded");
                     },
                     error: function() {
-                        B(), o.finished = o.loadError = !0, e.updateStatus("error", e.st.ajax.tError.replace("%url%", o.src));
+                        H(), o.finished = o.loadError = !0, e.updateStatus("error", e.st.ajax.tError.replace("%url%", o.src));
                     }
                 }, e.st.ajax.settings);
                 return e.req = t.ajax(a), "";
             }
         }
     });
-    var H, R = function(o) {
+    var j, R = function(o) {
         if (o.data && void 0 !== o.data.title) return o.data.title;
         var a = e.st.image.titleSrc;
         if (a) {
@@ -381,13 +381,13 @@
                 }
             },
             _onImageHasSize: function(t) {
-                t.img && (t.hasSize = !0, H && clearInterval(H), t.isCheckingImgSize = !1, x("ImageHasSize", t), 
+                t.img && (t.hasSize = !0, j && clearInterval(j), t.isCheckingImgSize = !1, x("ImageHasSize", t), 
                 t.imgHidden && (e.content && e.content.removeClass("mfp-loading"), t.imgHidden = !1));
             },
             findImageSize: function(t) {
                 var o = 0, a = t.img[0], r = function(n) {
-                    H && clearInterval(H), H = setInterval(function() {
-                        return a.naturalWidth > 0 ? void e._onImageHasSize(t) : (o > 200 && clearInterval(H), 
+                    j && clearInterval(j), j = setInterval(function() {
+                        return a.naturalWidth > 0 ? void e._onImageHasSize(t) : (o > 200 && clearInterval(j), 
                         o++, void (3 === o ? r(10) : 40 === o ? r(50) : 100 === o && r(500)));
                     }, n);
                 };
@@ -411,16 +411,16 @@
                 return e._parseMarkup(a, {
                     title: R(o),
                     img_replaceWith: o.img
-                }, o), e.resizeImage(), o.hasSize ? (H && clearInterval(H), o.loadError ? (a.addClass("mfp-loading"), 
+                }, o), e.resizeImage(), o.hasSize ? (j && clearInterval(j), o.loadError ? (a.addClass("mfp-loading"), 
                 e.updateStatus("error", s.tError.replace("%url%", o.src))) : (a.removeClass("mfp-loading"), 
                 e.updateStatus("ready")), a) : (e.updateStatus("loading"), o.loading = !0, o.hasSize || (o.imgHidden = !0, 
                 a.addClass("mfp-loading"), e.findImageSize(o)), a);
             }
         }
     });
-    var O, A = function() {
-        return void 0 === O && (O = void 0 !== document.createElement("p").style.MozTransform), 
-        O;
+    var A, O = function() {
+        return void 0 === A && (A = void 0 !== document.createElement("p").style.MozTransform), 
+        A;
     };
     t.magnificPopup.registerModule("zoom", {
         options: {
@@ -490,7 +490,7 @@
                     width: a.width(),
                     height: (w ? a.innerHeight() : a[0].offsetHeight) - i - n
                 };
-                return A() ? s["-moz-transform"] = s.transform = "translate(" + r.left + "px," + r.top + "px)" : (s.left = r.left, 
+                return O() ? s["-moz-transform"] = s.transform = "translate(" + r.left + "px," + r.top + "px)" : (s.left = r.left, 
                 s.top = r.top), s;
             }
         }
@@ -1121,10 +1121,23 @@
             t(this).toggleClass("hover").prev("dt").toggleClass("hover");
         });
     }, Urb.setupContactForm = function() {
-        Urb.log("Urb.setupContactForm"), Urb.$contactForm.attr("novalidate", !0), Urb.$contactForm.on("submit", Urb.submitContactForm);
-        var t = Urb.$contactForm.find("#contact_email_address");
-        Urb.$contactForm.data("email_address", t), t.on("keyup", function() {
-            t.closest(".field").removeClass("error").removeAttr("title");
+        Urb.log("Urb.setupContactForm"), Urb.$contactForm.attr("novalidate", !0), Urb.$contactForm.on("submit", Urb.submitContactForm), 
+        t(".field input, .field textarea", Urb.$contactForm).on("keyup", function() {
+            t(this).closest(".field").toggleClass("active", this.value.length > 0 || t(this).is(":focus"));
+        }).on("focus", function() {
+            t(this).closest(".field").addClass("active");
+        }).on("blur", function() {
+            0 == this.value.length && t(this).closest(".field").removeClass("active");
+        });
+        var e = Urb.$contactForm.find("#contact_email_address");
+        Urb.$contactForm.data("email_address", e), e.on("keyup", function() {
+            e.closest(".field").removeClass("error").removeAttr("title");
+        });
+        var o = Urb.$contactForm.find("#contact_message");
+        o.on("focus keyup", function() {
+            this.clientHeight < this.scrollHeight && t(this).css("height", this.scrollHeight + "px");
+        }).on("blur", function() {
+            t(this).removeAttr("style");
         });
     }, Urb.setupMap = function() {
         Urb.log("Urb.setupMap"), google || t(".site-map").remove(), Urb.$mapCanvas.appendTo(Urb.$mapContainer);
