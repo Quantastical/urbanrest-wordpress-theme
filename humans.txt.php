@@ -1,4 +1,7 @@
-<?php header('Content-Type: text/plain'); ?>
+<?php
+header("HTTP/1.1 200 OK");
+header('Content-Type: text/plain');
+?>
 URBANREST TEAM
 ==============
 

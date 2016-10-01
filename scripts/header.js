@@ -102,7 +102,7 @@ jQuery( function( $ ) {
 
 		var element = document.getElementById('latest-posts');
 		
-		setTimeout(Urb.getNextPost, 500);
+		Urb.getNextPost();
 	};
 
 	Urb.startAutomaticNavigation = function() {

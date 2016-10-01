@@ -164,7 +164,6 @@ jQuery( function( $ ) {
 				}
 			},
 			complete: function() {
-				console.log('clear Timeout');
 				clearInterval(loadingTimeout);
 			}
 		});

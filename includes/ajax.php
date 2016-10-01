@@ -76,6 +76,55 @@ add_action( 'wp_ajax_nopriv_getmaincontent', 'getmaincontent');
 function getnext() {
 	global $wpdb;
 
+	$locations = get_nav_menu_locations();
+	$menu = get_term( $locations['featured'], 'nav_menu' );
+	$featured = wp_get_nav_menu_items($menu->term_id);
+
+	if($featured == false || count($featured) == 0) {
+		getnext_post();
+	} else {
+		getnext_menu($featured);
+	}
+}
+
+function getnext_menu($featured) {
+	$result = null;
+	//var_dump($featured);
+	foreach( $featured as $key => $post ) {
+		if( $post->object_id == $_POST['id'] && $key < count($featured) - 1 ) {
+			$result = $featured[$key + 1];
+			break;
+		}
+	}
+	$previous_post = get_post( $result->object_id );
+
+	if(!empty($previous_post)) {
+		$return = array(
+			'ID' => $previous_post->ID,
+			'post_title' => $previous_post->post_title,
+			'guid' => $previous_post->guid,
+			'post_name' => $previous_post->post_name,
+			'permalink' => get_permalink($previous_post->ID)
+		);
+		if(has_post_thumbnail($previous_post->ID)){
+			$return['image_src'] = wp_get_attachment_image_src( get_post_thumbnail_id($previous_post->ID), array( 720,405 ), false, '' )[0];
+			$return['thumbnail'] = get_the_post_thumbnail($previous_post->ID);
+		}
+		if( substr_count( $_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip') )
+			ob_start('ob_gzhandler');
+		else
+			ob_start();
+		wp_send_json_success($return);
+	} else {
+		wp_send_json_error( 'No menu found.' );
+	}
+
+	die();
+}
+
+function getnext_post() {
+	global $wpdb;
+
 	$previous_post = false;
 	
 	$post = get_post($_POST['id']);

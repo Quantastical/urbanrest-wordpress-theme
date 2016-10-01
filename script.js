@@ -418,9 +418,9 @@
             }
         }
     });
-    var A, O = function() {
-        return void 0 === A && (A = void 0 !== document.createElement("p").style.MozTransform), 
-        A;
+    var O, A = function() {
+        return void 0 === O && (O = void 0 !== document.createElement("p").style.MozTransform), 
+        O;
     };
     t.magnificPopup.registerModule("zoom", {
         options: {
@@ -490,7 +490,7 @@
                     width: a.width(),
                     height: (w ? a.innerHeight() : a[0].offsetHeight) - i - n
                 };
-                return O() ? s["-moz-transform"] = s.transform = "translate(" + r.left + "px," + r.top + "px)" : (s.left = r.left, 
+                return A() ? s["-moz-transform"] = s.transform = "translate(" + r.left + "px," + r.top + "px)" : (s.left = r.left, 
                 s.top = r.top), s;
             }
         }
@@ -697,7 +697,7 @@
     };
 }(jQuery, window, document), jQuery(function(t) {
     window.Urb = {
-        logging: !1,
+        logging: location.search.indexOf("logging") >= 0,
         $document: t(document),
         $window: t(window),
         $body: t("body"),
@@ -835,7 +835,7 @@
                 }
             },
             complete: function() {
-                console.log("clear Timeout"), clearInterval(c);
+                clearInterval(c);
             }
         });
     }, Urb.navigateInternally = function(e) {
@@ -1027,7 +1027,7 @@
             return !1;
         });
         document.getElementById("latest-posts");
-        setTimeout(Urb.getNextPost, 500);
+        Urb.getNextPost();
     }, Urb.startAutomaticNavigation = function() {
         e && clearInterval(e), e = setTimeout(function() {
             Urb.automaticNavigation();
@@ -1108,7 +1108,7 @@
         if (Urb.$map.hasClass("open") && !Urb.$map.hasClass("animating") && Urb.$mapCanvas.offset().top > Urb.scrollPosition + Urb.$window.height() && (Urb.$map.removeClass("open"), 
         t(".map-container, .map-canvas", Urb.$map).removeAttr("style")), !Urb.$map.data("map") && Urb.$window.scrollTop() > t("#contact").offset().top) {
             var e = t("<script />");
-            e.attr("type", "text/javascript"), e.attr("async", !0), e.attr("src", "http://maps.google.com/maps/api/js?key=" + _URB.googleBrowserMapApiKey + "&callback=Urb.setupMap"), 
+            e.attr("type", "text/javascript"), e.attr("async", !0), e.attr("src", "https://maps.google.com/maps/api/js?key=" + _URB.googleBrowserMapApiKey + "&callback=Urb.setupMap"), 
             Urb.$body.append(e), Urb.$map.data("map", !0);
         }
     }, Urb.setupBusinessHours = function() {

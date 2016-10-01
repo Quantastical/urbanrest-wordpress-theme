@@ -39,7 +39,7 @@ function urbanrest_setting_apple_touch_icon() {
 	echo '		Add Media';
 	echo '	</a>';
 	echo '</span>';
-	echo '<p class="description" id="urbanrest_setting_apple_touch_icon_description">1024 &times; 1024px PNG</p>';
+	echo '<p class="description" id="urbanrest_setting_apple_touch_icon_description">1024&times;1024px</p>';
 }
 
 function urbanrest_setting_apple_touch_startup_image() {
@@ -52,7 +52,7 @@ function urbanrest_setting_apple_touch_startup_image() {
 	echo '		Add Media';
 	echo '	</a>';
 	echo '</span>';
-	echo '<p class="description" id="urbanrest_setting_apple_touch_startup_image_description">1242 &times; 2208px or 2208 &times; 1242px PNG</p>';
+	echo '<p class="description" id="urbanrest_setting_apple_touch_startup_image_description">1242&times;2208px or 2208&times;1242px PNG</p>';
 }
 
 function urbanrest_setting_coordinates() {
@@ -169,7 +169,7 @@ function urbanrest_setting_facebook_opengraph_image() {
 	echo '		Add Media';
 	echo '	</a>';
 	echo '</span>';
-	echo '<p class="description" id="urbanrest_setting_facebook_opengraph_image_description">1500 &times; 1500px 5MB PNG</p>';
+	echo '<p class="description" id="urbanrest_setting_facebook_opengraph_image_description">1500&times;1500px 5MB PNG</p>';
 }
 
 /*
@@ -244,7 +244,7 @@ function urbanrest_setting_twitter_card_image() {
 	echo '		Add Media';
 	echo '	</a>';
 	echo '</span>';
-	echo '<p class="description" id="urbanrest_setting_twitter_card_image_description">300 &times; 300px 1MB PNG</p>';
+	echo '<p class="description" id="urbanrest_setting_twitter_card_image_description">300&times;300px 1MB PNG</p>';
 }
 /*
 function urbanrest_setting_twitter_username() {

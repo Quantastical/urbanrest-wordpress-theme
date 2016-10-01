@@ -262,6 +262,7 @@ $first = true;
 						<?php the_excerpt(); ?>
 					</div>
 				</li>
+<?php break; ?>
 <?php endforeach; ?>
 <?php wp_reset_postdata(); ?>
 			</ul>

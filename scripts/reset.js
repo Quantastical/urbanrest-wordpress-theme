@@ -1,6 +1,6 @@
 jQuery( function( $ ) {
 	window.Urb = {
-		logging : false,
+		logging : location.search.indexOf('logging') >= 0,
 
 		$document : $(document),
 		$window   : $(window),
