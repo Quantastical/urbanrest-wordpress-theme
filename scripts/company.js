@@ -23,7 +23,7 @@ jQuery(function($){
 			var $mapScript = $('<script />');
 			$mapScript.attr('type', 'text/javascript');
 			$mapScript.attr('async', true);
-			$mapScript.attr('src', "https://maps.google.com/maps/api/js?key=" + _URB.googleBrowserMapApiKey + "&callback=Urb.setupMap");
+			$mapScript.attr('src', "http://maps.google.com/maps/api/js?key=" + _URB.googleBrowserMapApiKey + "&callback=Urb.setupMap");
 			Urb.$body.append($mapScript);
 			Urb.$map.data( 'map', true );
 		}
@@ -54,6 +54,8 @@ jQuery(function($){
 
 		$('.field input, .field textarea', Urb.$contactForm).on('keyup', function() {
 			$(this).closest('.field').toggleClass('active', this.value.length > 0 || $(this).is(':focus'));
+		}).on('focus', function() {
+			$(this).closest('.field').addClass('active');
 		}).on('blur', function() {
 			if(this.value.length == 0) {
 				$(this).closest('.field').removeClass('active');
