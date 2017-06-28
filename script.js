@@ -120,7 +120,7 @@
             var a = o.type;
             if (x("BeforeChange", [ e.currItem ? e.currItem.type : "", a ]), e.currItem = o, 
             !e.currTemplate[a]) {
-                var n = e.st[a] ? e.st[a].markup : !1;
+                var n = !!e.st[a] && e.st[a].markup;
                 x("FirstMarkupParse", n), n ? e.currTemplate[a] = t(n) : e.currTemplate[a] = !0;
             }
             r && r !== o.type && e.container.removeClass("mfp-" + r + "-holder");
@@ -205,8 +205,8 @@
             (e.st.focus ? e.content.find(e.st.focus).eq(0) : e.wrap).focus();
         },
         _onFocusIn: function(o) {
-            return o.target === e.wrap[0] || t.contains(e.wrap[0], o.target) ? void 0 : (e._setFocus(), 
-            !1);
+            if (o.target !== e.wrap[0] && !t.contains(e.wrap[0], o.target)) return e._setFocus(), 
+            !1;
         },
         _parseMarkup: function(e, o, a) {
             var r;
@@ -397,7 +397,7 @@
                 var r = 0, n = function() {
                     o && (o.img[0].complete ? (o.img.off(".mfploader"), o === e.currItem && (e._onImageHasSize(o), 
                     e.updateStatus("ready")), o.hasSize = !0, o.loaded = !0, x("ImageLoadComplete")) : (r++, 
-                    200 > r ? setTimeout(n, 100) : i()));
+                    r < 200 ? setTimeout(n, 100) : i()));
                 }, i = function() {
                     o && (o.img.off(".mfploader"), o === e.currItem && (e._onImageHasSize(o), e.updateStatus("error", s.tError.replace("%url%", o.src))), 
                     o.hasSize = !0, o.loaded = !0, o.loadError = !0);
@@ -479,7 +479,7 @@
                 return "image" === e.currItem.type;
             },
             _getItemToZoom: function() {
-                return e.currItem.hasSize ? e.currItem.img : !1;
+                return !!e.currItem.hasSize && e.currItem.img;
             },
             _getOffset: function(o) {
                 var a;
@@ -533,8 +533,8 @@
             getIframe: function(o, a) {
                 var r = o.src, n = e.st.iframe;
                 t.each(n.patterns, function() {
-                    return r.indexOf(this.index) > -1 ? (this.id && (r = "string" == typeof this.id ? r.substr(r.lastIndexOf(this.id) + this.id.length, r.length) : this.id.call(this, r)), 
-                    r = this.src.replace("%id%", r), !1) : void 0;
+                    if (r.indexOf(this.index) > -1) return this.id && (r = "string" == typeof this.id ? r.substr(r.lastIndexOf(this.id) + this.id.length, r.length) : this.id.call(this, r)), 
+                    r = this.src.replace("%id%", r), !1;
                 });
                 var i = {};
                 return n.srcAction && (i[n.srcAction] = r), e._parseMarkup(a, i, o), e.updateStatus("ready"), 
@@ -544,7 +544,7 @@
     });
     var D = function(t) {
         var o = e.items.length;
-        return t > o - 1 ? t - o : 0 > t ? o + t : t;
+        return t > o - 1 ? t - o : t < 0 ? o + t : t;
     }, V = function(t, e, o) {
         return t.replace(/%curr%/gi, e + 1).replace(/%total%/gi, o);
     };
@@ -562,9 +562,9 @@
         proto: {
             initGallery: function() {
                 var o = e.st.gallery, r = ".mfp-gallery";
-                return e.direction = !0, o && o.enabled ? (n += " mfp-gallery", C(u + r, function() {
+                return e.direction = !0, !(!o || !o.enabled) && (n += " mfp-gallery", C(u + r, function() {
                     o.navigateByImgClick && e.wrap.on("click" + r, ".mfp-img", function() {
-                        return e.items.length > 1 ? (e.next(), !1) : void 0;
+                        if (e.items.length > 1) return e.next(), !1;
                     }), a.on("keydown" + r, function(t) {
                         37 === t.keyCode ? e.prev() : 39 === t.keyCode && e.next();
                     });
@@ -588,7 +588,7 @@
                     }, 16);
                 }), void C(s + r, function() {
                     a.off(r), e.wrap.off("click" + r), e.arrowRight = e.arrowLeft = null;
-                })) : !1;
+                }));
             },
             next: function() {
                 e.direction = !0, e.index = D(e.index + 1), e.updateItemHTML();
@@ -672,12 +672,12 @@
             t("body").on("touchmove touchstart", function(o) {
                 o = o || e.event;
                 var a = t(o.target ? o.target : o.srcElement);
-                return a.hasClass("modal-shade") ? (o.returnValue = !1, o.cancelBubble = !0, o.preventDefault && (o.preventDefault(), 
-                o.stopPropagation()), !1) : void 0;
+                if (a.hasClass("modal-shade")) return o.returnValue = !1, o.cancelBubble = !0, o.preventDefault && (o.preventDefault(), 
+                o.stopPropagation()), !1;
             });
             var n = function(e) {
                 var r = t(e.target);
-                return r.is(".modal-content") || r.closest(".modal-content").length ? !0 : (a.removeClass("animated fadeIn").addClass("animated fadeOut"), 
+                return !(!r.is(".modal-content") && !r.closest(".modal-content").length) || (a.removeClass("animated fadeIn").addClass("animated fadeOut"), 
                 o.removeClass("modal-opened animated fadeIn").addClass("modal-closing animated fadeOut"), 
                 t("body").removeClass("modal-active"), void setTimeout(function() {
                     t("body").removeClass("no-scroll"), o.removeClass("modal-closing animated fadeOut");
@@ -734,7 +734,7 @@
     }, Urb.updateViewport = function() {
         Urb.log("Urb.updateViewport");
         var t = Urb.$window.outerWidth();
-        Urb.$viewport.toggleClass("phone", 768 >= t), Urb.$viewport.toggleClass("tablet", t > 768 && 1024 >= t), 
+        Urb.$viewport.toggleClass("phone", t <= 768), Urb.$viewport.toggleClass("tablet", t > 768 && t <= 1024), 
         Urb.$viewport.toggleClass("desktop", t > 1024);
     }, Urb.setupViewport = function() {
         Urb.$body.append(Urb.$viewport), Urb.updateViewport();
@@ -778,7 +778,7 @@
             i.push(t);
         });
         var s = o.replace("/", "#");
-        if (-1 !== t.inArray(s, i)) {
+        if (t.inArray(s, i) !== -1) {
             var r = t(o.replace("/", "#")).offset().top - e, n = Math.round(500 * (Math.abs(Urb.$window.scrollTop() - r) / Urb.$window.height()));
             return t("html,body").animate({
                 scrollTop: r
@@ -823,7 +823,7 @@
                     }), t("#qr-code").html(".page-footer:before {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=" + encodeURIComponent(e.data.shortlink.replace(/URB.beer/i, "QR.URB.beer")) + ") !important;}}");
                 } else {
                     document.title = "Server Error";
-                    var r = t('<main class="page row around-xs">	<article id="page-error" class="col-xs-11 col-sm-9 col-md-7 post-error post type-post">		<header class="page-header" role="banner">			<h2 class="page-title">Server Error</h2>		</header>		<div class="page-content">			<p>				There was a problem loading the requested page, <u>' + o + '</u>.				Either try again later or <a href="#contact">let us know</a> if you think something wrong.			</p>		</div>	</article></main>');
+                    var r = t('<main class="page row around-xs">\t<article id="page-error" class="col-xs-11 col-sm-9 col-md-7 post-error post type-post">\t\t<header class="page-header" role="banner">\t\t\t<h2 class="page-title">Server Error</h2>\t\t</header>\t\t<div class="page-content">\t\t\t<p>\t\t\t\tThere was a problem loading the requested page, <u>' + o + '</u>.\t\t\t\tEither try again later or <a href="#contact">let us know</a> if you think something wrong.\t\t\t</p>\t\t</div>\t</article></main>');
                     a.replaceWith(r), Urb.$loading.remove(), Urb.$window.trigger("ajaxloaded");
                     var n = 0;
                     t(".page-header > *:not(.hidden), .page-content > *:not(.hidden), .page-footer > *:not(.hidden), .post-header > *:not(.hidden), .post-content > *:not(.hidden), .post-footer > *:not(.hidden)", r).each(function() {
@@ -949,7 +949,7 @@
     }, Urb.changeSearch = function() {
         Urb.$searchLabel.toggleClass("visible", !Urb.$search.is(":valid"));
     }, Urb.search = function() {
-        return Urb.$search.is(":invalid") ? (event.preventDefault(), !1) : void 0;
+        if (Urb.$search.is(":invalid")) return event.preventDefault(), !1;
     }, Urb.setupSearch = function() {}, Urb.showSearchBox = function() {
         Urb.startSearching(), Urb.$search.focus();
     }, Urb.startSearching = function() {
@@ -977,7 +977,7 @@
         });
         var a = t.offset().left < 0, r = t.offset().left + t.outerWidth() > Urb.$window.width();
         t.toggleClass("left", a), t.toggleClass("right", r), a ? t.css({
-            left: e.offset().left + e.width() / 2 - t.outerWidth() / 2 + -1 * t.offset().left
+            left: e.offset().left + e.width() / 2 - t.outerWidth() / 2 + t.offset().left * -1
         }) : r && t.css({
             left: e.offset().left + e.width() / 2 - t.outerWidth() / 2 - (t.offset().left + t.outerWidth() - Urb.$window.width())
         });
@@ -1124,8 +1124,6 @@
         Urb.log("Urb.setupContactForm"), Urb.$contactForm.attr("novalidate", !0), Urb.$contactForm.on("submit", Urb.submitContactForm), 
         t(".field input, .field textarea", Urb.$contactForm).on("keyup", function() {
             t(this).closest(".field").toggleClass("active", this.value.length > 0 || t(this).is(":focus"));
-        }).on("focus", function() {
-            t(this).closest(".field").addClass("active");
         }).on("blur", function() {
             0 == this.value.length && t(this).closest(".field").removeClass("active");
         });
@@ -1214,8 +1212,8 @@
     }, Urb.validateContactForm = function() {
         Urb.log("Urb.validateContactForm");
         var t = Urb.$contactForm.data("email_address");
-        return t.val().length < 3 || t.val().indexOf("@") < 0 ? (t.closest(".field").addClass("error").attr("title", "Valid email address required."), 
-        !1) : !0;
+        return !(t.val().length < 3 || t.val().indexOf("@") < 0) || (t.closest(".field").addClass("error").attr("title", "Valid email address required."), 
+        !1);
     }, Urb.$window.on("scroll", Urb.scrollMap), Urb.$window.on("load", Urb.setupBusinessHours), 
     Urb.$mapLink.on("click", Urb.toggleMap), Urb.$window.on("load", Urb.setupContactForm), 
     Urb.$window.on("resize orientationchange", Urb.resizeMap);
@@ -1245,7 +1243,7 @@
         e.insertAfter(".beer-rating h5");
         var o = t('<div class="rating-actions" />');
         Number(Urb.$aggregateRating.data("user-rating")) > 0 && o.addClass("rated");
-        for (var a = 1; 5 >= a; a++) {
+        for (var a = 1; a <= 5; a++) {
             var r = t('<button class="rate-button" />');
             r.val(a), r.data("id", Urb.$aggregateRating.data("beer-id")), r.text(1 === a ? "1 Star" : a + " Stars"), 
             r.toggleClass("rated", a <= Number(Urb.$aggregateRating.data("user-rating"))), o.append(r), 

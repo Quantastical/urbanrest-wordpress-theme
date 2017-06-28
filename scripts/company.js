@@ -54,8 +54,6 @@ jQuery(function($){
 
 		$('.field input, .field textarea', Urb.$contactForm).on('keyup', function() {
 			$(this).closest('.field').toggleClass('active', this.value.length > 0 || $(this).is(':focus'));
-		}).on('focus', function() {
-			$(this).closest('.field').addClass('active');
 		}).on('blur', function() {
 			if(this.value.length == 0) {
 				$(this).closest('.field').removeClass('active');
