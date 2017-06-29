@@ -34,6 +34,13 @@
   font-style: italic; }
 
 @font-face {
+  font-family: "Gotham";
+  src: url("../../fonts/Gotham_Black/ufonts.com_gotham-black-webfont.eot");
+  src: url("../../fonts/Gotham_Black/ufonts.com_gotham-black-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/Gotham_Black/ufonts.com_gotham-black-webfont.woff") format("woff"), url("../../fonts/Gotham_Black/ufonts.com_gotham-black-webfont.ttf") format("truetype"), url("../../fonts/Gotham_Black/ufonts.com_gotham-black-webfont.svg#") format("svg");
+  font-weight: 800;
+  font-style: normal; }
+
+@font-face {
   font-family: "Legend M54";
   src: url("../../fonts/Legend_M54/legend_m54-webfont.eot");
   src: url("../../fonts/Legend_M54/legend_m54-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/Legend_M54/legend_m54-webfont.woff") format("woff"), url("../../fonts/Legend_M54/legend_m54-webfont.ttf") format("truetype"), url("../../fonts/Legend_M54/legend_m54-webfont.svg#") format("svg");

@@ -17,7 +17,7 @@
 						<h5 class="menu-title">Share this page on your favorite social&nbsp;network.</h5>
 						<ul class="menu">
 							<li class="menu-item">
-								<a class="icon facebook" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(); ?>" data-event-action="Share" data-event-label="Facebook"><span class="icon-label">Share this on Facebook</span></a>
+								<a class="icon facebook" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo get_permalink(); ?>" data-event-action="Share" data-event-label="Facebook"><span class="icon-label">Share this on Facebook</span></a>
 							</li>
 							<li class="menu-item">
 								<a class="icon twitter" href="https://twitter.com/intent/tweet?text=<?php echo (wp_get_shortlink()) ? wp_get_shortlink() : get_permalink(); ?>" data-event-action="Share" data-event-label="Twitter"><span class="icon-label">Share this on Twitter</span></a>

@@ -1,8 +1,8 @@
 !function(t) {
     "function" == typeof define && define.amd ? define([ "jquery" ], t) : t("object" == typeof exports ? require("jquery") : window.jQuery || window.Zepto);
 }(function(t) {
-    var e, o, a, r, n, i, s = "Close", l = "BeforeClose", c = "AfterClose", d = "BeforeAppend", p = "MarkupParse", u = "Open", g = "Change", m = "mfp", b = "." + m, f = "mfp-ready", h = "mfp-removing", v = "mfp-prevent-close", U = function() {}, w = !!window.jQuery, $ = t(window), C = function(t, o) {
-        e.ev.on(m + t + b, o);
+    var e, o, a, r, n, i, s = "Close", l = "BeforeClose", c = "AfterClose", d = "BeforeAppend", p = "MarkupParse", u = "Open", g = "Change", m = "mfp", f = "." + m, b = "mfp-ready", h = "mfp-removing", v = "mfp-prevent-close", U = function() {}, w = !!window.jQuery, $ = t(window), C = function(t, o) {
+        e.ev.on(m + t + f, o);
     }, y = function(e, o, a, r) {
         var n = document.createElement("div");
         return n.className = "mfp-" + e, a && (n.innerHTML = a), r ? o && o.appendChild(n) : (n = t(n), 
@@ -44,9 +44,9 @@
             o.key ? (e.popupsCache[o.key] || (e.popupsCache[o.key] = {}), e.currTemplate = e.popupsCache[o.key]) : e.currTemplate = {}, 
             e.st = t.extend(!0, {}, t.magnificPopup.defaults, o), e.fixedContentPos = "auto" === e.st.fixedContentPos ? !e.probablyMobile : e.st.fixedContentPos, 
             e.st.modal && (e.st.closeOnContentClick = !1, e.st.closeOnBgClick = !1, e.st.showCloseBtn = !1, 
-            e.st.enableEscapeKey = !1), e.bgOverlay || (e.bgOverlay = y("bg").on("click" + b, function() {
+            e.st.enableEscapeKey = !1), e.bgOverlay || (e.bgOverlay = y("bg").on("click" + f, function() {
                 e.close();
-            }), e.wrap = y("wrap").attr("tabindex", -1).on("click" + b, function(t) {
+            }), e.wrap = y("wrap").attr("tabindex", -1).on("click" + f, function(t) {
                 e._checkIfClose(t.target) && e.close();
             }), e.container = y("container", e.wrap)), e.contentContainer = y("content"), e.st.preloader && (e.preloader = y("preloader", e.container, e.st.tLoading));
             var l = t.magnificPopup.modules;
@@ -67,9 +67,9 @@
             }), (e.st.fixedBgPos === !1 || "auto" === e.st.fixedBgPos && !e.fixedContentPos) && e.bgOverlay.css({
                 height: a.height(),
                 position: "absolute"
-            }), e.st.enableEscapeKey && a.on("keyup" + b, function(t) {
+            }), e.st.enableEscapeKey && a.on("keyup" + f, function(t) {
                 27 === t.keyCode && e.close();
-            }), $.on("resize" + b, function() {
+            }), $.on("resize" + f, function() {
                 e.updateSize();
             }), e.st.closeOnContentClick || (n += " mfp-auto-cursor"), n && e.wrap.addClass(n);
             var d = e.wH = $.height(), g = {};
@@ -82,7 +82,7 @@
             return e.isIE7 && (h += " mfp-ie7"), h && e._addClassToMFP(h), e.updateItemHTML(), 
             x("BuildControls"), t("html").css(g), e.bgOverlay.add(e.wrap).prependTo(e.st.prependTo || t(document.body)), 
             e._lastFocusedEl = document.activeElement, setTimeout(function() {
-                e.content ? (e._addClassToMFP(f), e._setFocus()) : e.bgOverlay.addClass(f), a.on("focusin" + b, e._onFocusIn);
+                e.content ? (e._addClassToMFP(b), e._setFocus()) : e.bgOverlay.addClass(b), a.on("focusin" + f, e._onFocusIn);
             }, 16), e.isOpen = !0, e.updateSize(d), x(u), o;
         },
         close: function() {
@@ -93,7 +93,7 @@
         },
         _close: function() {
             x(s);
-            var o = h + " " + f + " ";
+            var o = h + " " + b + " ";
             if (e.bgOverlay.detach(), e.wrap.detach(), e.container.empty(), e.st.mainClass && (o += e.st.mainClass + " "), 
             e._removeClassFromMFP(o), e.fixedContentPos) {
                 var r = {
@@ -101,7 +101,7 @@
                 };
                 e.isIE7 ? t("body, html").css("overflow", "") : r.overflow = "", t("html").css(r);
             }
-            a.off("keyup" + b + " focusin" + b), e.ev.off(b), e.wrap.attr("class", "mfp-wrap").removeAttr("style"), 
+            a.off("keyup" + f + " focusin" + f), e.ev.off(f), e.wrap.attr("class", "mfp-wrap").removeAttr("style"), 
             e.bgOverlay.attr("class", "mfp-bg"), e.container.attr("class", "mfp-container"), 
             !e.st.showCloseBtn || e.st.closeBtnInside && e.currTemplate[e.currItem.type] !== !0 || e.currTemplate.closeBtn && e.currTemplate.closeBtn.detach(), 
             e.st.autoFocusLast && e._lastFocusedEl && t(e._lastFocusedEl).focus(), e.currItem = null, 
@@ -120,7 +120,7 @@
             var a = o.type;
             if (x("BeforeChange", [ e.currItem ? e.currItem.type : "", a ]), e.currItem = o, 
             !e.currTemplate[a]) {
-                var n = e.st[a] ? e.st[a].markup : !1;
+                var n = !!e.st[a] && e.st[a].markup;
                 x("FirstMarkupParse", n), n ? e.currTemplate[a] = t(n) : e.currTemplate[a] = !0;
             }
             r && r !== o.type && e.container.removeClass("mfp-" + r + "-holder");
@@ -205,20 +205,20 @@
             (e.st.focus ? e.content.find(e.st.focus).eq(0) : e.wrap).focus();
         },
         _onFocusIn: function(o) {
-            return o.target === e.wrap[0] || t.contains(e.wrap[0], o.target) ? void 0 : (e._setFocus(), 
-            !1);
+            if (o.target !== e.wrap[0] && !t.contains(e.wrap[0], o.target)) return e._setFocus(), 
+            !1;
         },
         _parseMarkup: function(e, o, a) {
             var r;
             a.data && (o = t.extend(a.data, o)), x(p, [ e, o, a ]), t.each(o, function(o, a) {
                 if (void 0 === a || a === !1) return !0;
                 if (r = o.split("_"), r.length > 1) {
-                    var n = e.find(b + "-" + r[0]);
+                    var n = e.find(f + "-" + r[0]);
                     if (n.length > 0) {
                         var i = r[1];
                         "replaceWith" === i ? n[0] !== a[0] && n.replaceWith(a) : "img" === i ? n.is("img") ? n.attr("src", a) : n.replaceWith(t("<img>").attr("src", a).attr("class", n.attr("class"))) : n.attr(r[1], a);
                     }
-                } else e.find(b + "-" + o).html(a);
+                } else e.find(f + "-" + o).html(a);
             });
         },
         _getScrollbarSize: function() {
@@ -335,7 +335,7 @@
                         };
                         x("ParseAjax", i), e.appendContent(t(i.data), E), o.finished = !0, H(), e._setFocus(), 
                         setTimeout(function() {
-                            e.wrap.addClass(f);
+                            e.wrap.addClass(b);
                         }, 16), e.updateStatus("ready"), x("AjaxContentAdded");
                     },
                     error: function() {
@@ -369,7 +369,7 @@
                 e.types.push("image"), C(u + a, function() {
                     "image" === e.currItem.type && o.cursor && t(document.body).addClass(o.cursor);
                 }), C(s + a, function() {
-                    o.cursor && t(document.body).removeClass(o.cursor), $.off("resize" + b);
+                    o.cursor && t(document.body).removeClass(o.cursor), $.off("resize" + f);
                 }), C("Resize" + a, e.resizeImage), e.isLowIE && C("AfterChange", e.resizeImage);
             },
             resizeImage: function() {
@@ -397,7 +397,7 @@
                 var r = 0, n = function() {
                     o && (o.img[0].complete ? (o.img.off(".mfploader"), o === e.currItem && (e._onImageHasSize(o), 
                     e.updateStatus("ready")), o.hasSize = !0, o.loaded = !0, x("ImageLoadComplete")) : (r++, 
-                    200 > r ? setTimeout(n, 100) : i()));
+                    r < 200 ? setTimeout(n, 100) : i()));
                 }, i = function() {
                     o && (o.img.off(".mfploader"), o === e.currItem && (e._onImageHasSize(o), e.updateStatus("error", s.tError.replace("%url%", o.src))), 
                     o.hasSize = !0, o.loaded = !0, o.loadError = !0);
@@ -479,7 +479,7 @@
                 return "image" === e.currItem.type;
             },
             _getItemToZoom: function() {
-                return e.currItem.hasSize ? e.currItem.img : !1;
+                return !!e.currItem.hasSize && e.currItem.img;
             },
             _getOffset: function(o) {
                 var a;
@@ -533,8 +533,8 @@
             getIframe: function(o, a) {
                 var r = o.src, n = e.st.iframe;
                 t.each(n.patterns, function() {
-                    return r.indexOf(this.index) > -1 ? (this.id && (r = "string" == typeof this.id ? r.substr(r.lastIndexOf(this.id) + this.id.length, r.length) : this.id.call(this, r)), 
-                    r = this.src.replace("%id%", r), !1) : void 0;
+                    if (r.indexOf(this.index) > -1) return this.id && (r = "string" == typeof this.id ? r.substr(r.lastIndexOf(this.id) + this.id.length, r.length) : this.id.call(this, r)), 
+                    r = this.src.replace("%id%", r), !1;
                 });
                 var i = {};
                 return n.srcAction && (i[n.srcAction] = r), e._parseMarkup(a, i, o), e.updateStatus("ready"), 
@@ -544,7 +544,7 @@
     });
     var D = function(t) {
         var o = e.items.length;
-        return t > o - 1 ? t - o : 0 > t ? o + t : t;
+        return t > o - 1 ? t - o : t < 0 ? o + t : t;
     }, V = function(t, e, o) {
         return t.replace(/%curr%/gi, e + 1).replace(/%total%/gi, o);
     };
@@ -562,9 +562,9 @@
         proto: {
             initGallery: function() {
                 var o = e.st.gallery, r = ".mfp-gallery";
-                return e.direction = !0, o && o.enabled ? (n += " mfp-gallery", C(u + r, function() {
+                return e.direction = !0, !(!o || !o.enabled) && (n += " mfp-gallery", C(u + r, function() {
                     o.navigateByImgClick && e.wrap.on("click" + r, ".mfp-img", function() {
-                        return e.items.length > 1 ? (e.next(), !1) : void 0;
+                        if (e.items.length > 1) return e.next(), !1;
                     }), a.on("keydown" + r, function(t) {
                         37 === t.keyCode ? e.prev() : 39 === t.keyCode && e.next();
                     });
@@ -588,7 +588,7 @@
                     }, 16);
                 }), void C(s + r, function() {
                     a.off(r), e.wrap.off("click" + r), e.arrowRight = e.arrowLeft = null;
-                })) : !1;
+                }));
             },
             next: function() {
                 e.direction = !0, e.index = D(e.index + 1), e.updateItemHTML();
@@ -672,12 +672,12 @@
             t("body").on("touchmove touchstart", function(o) {
                 o = o || e.event;
                 var a = t(o.target ? o.target : o.srcElement);
-                return a.hasClass("modal-shade") ? (o.returnValue = !1, o.cancelBubble = !0, o.preventDefault && (o.preventDefault(), 
-                o.stopPropagation()), !1) : void 0;
+                if (a.hasClass("modal-shade")) return o.returnValue = !1, o.cancelBubble = !0, o.preventDefault && (o.preventDefault(), 
+                o.stopPropagation()), !1;
             });
             var n = function(e) {
                 var r = t(e.target);
-                return r.is(".modal-content") || r.closest(".modal-content").length ? !0 : (a.removeClass("animated fadeIn").addClass("animated fadeOut"), 
+                return !(!r.is(".modal-content") && !r.closest(".modal-content").length) || (a.removeClass("animated fadeIn").addClass("animated fadeOut"), 
                 o.removeClass("modal-opened animated fadeIn").addClass("modal-closing animated fadeOut"), 
                 t("body").removeClass("modal-active"), void setTimeout(function() {
                     t("body").removeClass("no-scroll"), o.removeClass("modal-closing animated fadeOut");
@@ -734,7 +734,7 @@
     }, Urb.updateViewport = function() {
         Urb.log("Urb.updateViewport");
         var t = Urb.$window.outerWidth();
-        Urb.$viewport.toggleClass("phone", 768 >= t), Urb.$viewport.toggleClass("tablet", t > 768 && 1024 >= t), 
+        Urb.$viewport.toggleClass("phone", t <= 768), Urb.$viewport.toggleClass("tablet", t > 768 && t <= 1024), 
         Urb.$viewport.toggleClass("desktop", t > 1024);
     }, Urb.setupViewport = function() {
         Urb.$body.append(Urb.$viewport), Urb.updateViewport();
@@ -778,7 +778,7 @@
             i.push(t);
         });
         var s = o.replace("/", "#");
-        if (-1 !== t.inArray(s, i)) {
+        if (t.inArray(s, i) !== -1) {
             var r = t(o.replace("/", "#")).offset().top - e, n = Math.round(500 * (Math.abs(Urb.$window.scrollTop() - r) / Urb.$window.height()));
             return t("html,body").animate({
                 scrollTop: r
@@ -823,7 +823,7 @@
                     }), t("#qr-code").html(".page-footer:before {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=" + encodeURIComponent(e.data.shortlink.replace(/URB.beer/i, "QR.URB.beer")) + ") !important;}}");
                 } else {
                     document.title = "Server Error";
-                    var r = t('<main class="page row around-xs">	<article id="page-error" class="col-xs-11 col-sm-9 col-md-7 post-error post type-post">		<header class="page-header" role="banner">			<h2 class="page-title">Server Error</h2>		</header>		<div class="page-content">			<p>				There was a problem loading the requested page, <u>' + o + '</u>.				Either try again later or <a href="#contact">let us know</a> if you think something wrong.			</p>		</div>	</article></main>');
+                    var r = t('<main class="page row around-xs">\t<article id="page-error" class="col-xs-11 col-sm-9 col-md-7 post-error post type-post">\t\t<header class="page-header" role="banner">\t\t\t<h2 class="page-title">Server Error</h2>\t\t</header>\t\t<div class="page-content">\t\t\t<p>\t\t\t\tThere was a problem loading the requested page, <u>' + o + '</u>.\t\t\t\tEither try again later or <a href="#contact">let us know</a> if you think something wrong.\t\t\t</p>\t\t</div>\t</article></main>');
                     a.replaceWith(r), Urb.$loading.remove(), Urb.$window.trigger("ajaxloaded");
                     var n = 0;
                     t(".page-header > *:not(.hidden), .page-content > *:not(.hidden), .page-footer > *:not(.hidden), .post-header > *:not(.hidden), .post-content > *:not(.hidden), .post-footer > *:not(.hidden)", r).each(function() {
@@ -949,7 +949,7 @@
     }, Urb.changeSearch = function() {
         Urb.$searchLabel.toggleClass("visible", !Urb.$search.is(":valid"));
     }, Urb.search = function() {
-        return Urb.$search.is(":invalid") ? (event.preventDefault(), !1) : void 0;
+        if (Urb.$search.is(":invalid")) return event.preventDefault(), !1;
     }, Urb.setupSearch = function() {}, Urb.showSearchBox = function() {
         Urb.startSearching(), Urb.$search.focus();
     }, Urb.startSearching = function() {
@@ -977,7 +977,7 @@
         });
         var a = t.offset().left < 0, r = t.offset().left + t.outerWidth() > Urb.$window.width();
         t.toggleClass("left", a), t.toggleClass("right", r), a ? t.css({
-            left: e.offset().left + e.width() / 2 - t.outerWidth() / 2 + -1 * t.offset().left
+            left: e.offset().left + e.width() / 2 - t.outerWidth() / 2 + t.offset().left * -1
         }) : r && t.css({
             left: e.offset().left + e.width() / 2 - t.outerWidth() / 2 - (t.offset().left + t.outerWidth() - Urb.$window.width())
         });
@@ -1108,7 +1108,7 @@
         if (Urb.$map.hasClass("open") && !Urb.$map.hasClass("animating") && Urb.$mapCanvas.offset().top > Urb.scrollPosition + Urb.$window.height() && (Urb.$map.removeClass("open"), 
         t(".map-container, .map-canvas", Urb.$map).removeAttr("style")), !Urb.$map.data("map") && Urb.$window.scrollTop() > t("#contact").offset().top) {
             var e = t("<script />");
-            e.attr("type", "text/javascript"), e.attr("async", !0), e.attr("src", "http://maps.google.com/maps/api/js?key=" + _URB.googleBrowserMapApiKey + "&callback=Urb.setupMap"), 
+            e.attr("type", "text/javascript"), e.attr("async", !0), e.attr("src", "https://maps.google.com/maps/api/js?key=" + _URB.googleBrowserMapApiKey + "&callback=Urb.setupMap"), 
             Urb.$body.append(e), Urb.$map.data("map", !0);
         }
     }, Urb.setupBusinessHours = function() {
@@ -1166,7 +1166,7 @@
                         x: 30,
                         y: 19
                     },
-                    url: "http://maps.google.com/mapfiles/kml/paddle/grn-blank.png"
+                    url: "https://maps.google.com/mapfiles/kml/paddle/grn-blank.png"
                 },
                 label: {
                     fontFamily: "FontAwesome",
@@ -1214,8 +1214,8 @@
     }, Urb.validateContactForm = function() {
         Urb.log("Urb.validateContactForm");
         var t = Urb.$contactForm.data("email_address");
-        return t.val().length < 3 || t.val().indexOf("@") < 0 ? (t.closest(".field").addClass("error").attr("title", "Valid email address required."), 
-        !1) : !0;
+        return !(t.val().length < 3 || t.val().indexOf("@") < 0) || (t.closest(".field").addClass("error").attr("title", "Valid email address required."), 
+        !1);
     }, Urb.$window.on("scroll", Urb.scrollMap), Urb.$window.on("load", Urb.setupBusinessHours), 
     Urb.$mapLink.on("click", Urb.toggleMap), Urb.$window.on("load", Urb.setupContactForm), 
     Urb.$window.on("resize orientationchange", Urb.resizeMap);
@@ -1245,7 +1245,7 @@
         e.insertAfter(".beer-rating h5");
         var o = t('<div class="rating-actions" />');
         Number(Urb.$aggregateRating.data("user-rating")) > 0 && o.addClass("rated");
-        for (var a = 1; 5 >= a; a++) {
+        for (var a = 1; a <= 5; a++) {
             var r = t('<button class="rate-button" />');
             r.val(a), r.data("id", Urb.$aggregateRating.data("beer-id")), r.text(1 === a ? "1 Star" : a + " Stars"), 
             r.toggleClass("rated", a <= Number(Urb.$aggregateRating.data("user-rating"))), o.append(r), 

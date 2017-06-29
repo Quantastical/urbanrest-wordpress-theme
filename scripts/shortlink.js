@@ -12,7 +12,7 @@ jQuery(function($){
 		} else {
 			$editSlugBox = $('#edit-slug-box');
 		}
-	}, 2000);
+	}, 1000);
 
 	function setupShortlinkBox() {
 		var $editShortlinkBox = $(
@@ -32,7 +32,7 @@ jQuery(function($){
 		var $shortlink = $('#shortlink');
 
 		if($shortlink.length > 0) {
-			$('+ a', $shortlink)
+			$('+ button', $shortlink)
 				.addClass('edit')
 				.detach()
 				.appendTo( $('#edit-shortlink-buttons', $editShortlinkBox) )

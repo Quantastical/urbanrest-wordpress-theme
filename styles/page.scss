@@ -155,7 +155,9 @@
 			.aligncenter {
 				display: block;
 				float: none;
+				height: auto;
 				margin: 1em auto;
+				max-width: 100%;
 			}
 
 			@include media('<=phone') {

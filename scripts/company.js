@@ -23,7 +23,7 @@ jQuery(function($){
 			var $mapScript = $('<script />');
 			$mapScript.attr('type', 'text/javascript');
 			$mapScript.attr('async', true);
-			$mapScript.attr('src', "http://maps.google.com/maps/api/js?key=" + _URB.googleBrowserMapApiKey + "&callback=Urb.setupMap");
+			$mapScript.attr('src', "https://maps.google.com/maps/api/js?key=" + _URB.googleBrowserMapApiKey + "&callback=Urb.setupMap");
 			Urb.$body.append($mapScript);
 			Urb.$map.data( 'map', true );
 		}
@@ -121,7 +121,7 @@ jQuery(function($){
 								x: 30,
 								y: 19
 							},
-							url: 'http://maps.google.com/mapfiles/kml/paddle/grn-blank.png'
+							url: 'https://maps.google.com/mapfiles/kml/paddle/grn-blank.png'
 						},
 						label: {
 							fontFamily: 'FontAwesome',

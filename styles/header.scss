@@ -116,9 +116,9 @@
 							box-sizing: border-box;
 							color: white;
 							@include display( flex );
-							font-family: 'Legend M54';
+							font-family: 'Gotham';
 							font-size: 3em;
-							font-weight: 300;
+							font-weight: 800;
 							height: 100%;
 							@include justify-content( center );
 							left: 0;
@@ -132,6 +132,10 @@
 							@include transition( opacity 0.1s linear 0s );
 							width: 100%;
 							z-index: 1;
+
+							@media (max-width: 767px) {
+								font-size: 2.5em;
+							}
 						}
 					}
 
