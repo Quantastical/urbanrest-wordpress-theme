@@ -17,43 +17,5 @@
 	</section>
 <?php 		endif; ?>
 <?php 	endforeach; ?>
-<!--
-	<section class="shop-apparel col-sm-6">
-		<h3>For Wearing</h3>
-		<h4>Urbanrest Apparel &ndash; Designed and Made in Michigan</h4>
-		<p>
-			We've been designing apparel since <abbr title="The Year 2000">Y2K</abbr>.
-			Join our army of followers and show up to your next gathering with Urbanrest clothing and accessories.
-			There's something for everyone and every season.
-		</p>
-	</section>
-
-	<section class="shop-drinkware col-sm-6">
-		<h3>For Drinking</h3>
-		<h4>Pick Up a Couple of Glasses, a Growler and Share a Drink. Cheers!</h4>
-		<p>
-			The shapes of beer glasses aren't just for looks and, for some reason, beer just tastes better wearing its brewery's logo on the glass.
-			We've also got some of the handiest hand-made, hand-blown handhelds made right here in Michigan.
-		</p>
-	</section>
-
-	<section class="shop-brewing col-sm-6">
-		<h3>For Brewing</h3>
-		<h4>The #URBshop Has What You Need to Brew Your Own Beer</h4>
-		<p>
-			The #URBshop is our way of supporting the craft and community we've come to know and love.
-			We got started just like you: drinking and having fun with our friends, appreciating the flavors and craftsmanship, and wanting to learn more abou the beer we love.
-		</p>
-	</section>
-
-	<section class="shop-miscellaneous col-sm-6">
-		<h3>For Everything</h3>
-		<h4>Check Out All the Cool Stuff We Have to Offer</h4>
-		<p>
-			We've got even more goodies that are all made in your local neighborhoods and nearby.
-			Support your community and your neighborhood brewery.
-		</p>
-	</section>
--->
 </aside>
 <?php endif; ?>

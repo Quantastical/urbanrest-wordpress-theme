@@ -147,11 +147,11 @@ function saveshortlink() {
 	}
 }
 
-//add_filter( 'sanitize_post_meta_shortlink', 'urb_sanitize_post_meta_shortlink' );
+// add_filter( 'sanitize_post_meta_shortlink', 'urb_sanitize_post_meta_shortlink' );
 add_filter( 'get_shortlink', 'urb_get_shortlink' );
 add_action( 'admin_init', 'urb_admin_init_shortlink_domain' );
 add_action( 'admin_enqueue_scripts', 'urb_admin_enqueue_scripts_shortlink' );
 
 add_action( 'wp_ajax_saveshortlink', 'saveshortlink' );
-//add_action( 'wp_ajax_nopriv_saveshortlink', 'saveshortlink');
+// add_action( 'wp_ajax_nopriv_saveshortlink', 'saveshortlink');
 ?>

@@ -59,12 +59,14 @@ function urb_admin_menu() {
 }
 
 function urb_custom_menu_page(){
-    echo 'Redirecting...<script>window.location="/wp-admin/nav-menus.php";</script>';
-    //include(ABSPATH . 'wp-admin/nav-menus.php');
-    //$location = '/wp-admin/nav-menus.php';
-    //$status = null;
-    //wp_redirect( $location, $status );
-	//exit;
+  echo 'Redirecting...<script>window.location="/wp-admin/nav-menus.php";</script>';
+  // TOOD: figure out how to embed the page without requiring a redirect
+  //       for some reason this wasn't working
+  // include(ABSPATH . 'wp-admin/nav-menus.php');
+  // $location = '/wp-admin/nav-menus.php';
+  // $status = null;
+  // wp_redirect( $location, $status );
+	// exit;
 }
 
 add_action('admin_menu', 'urb_admin_menu');

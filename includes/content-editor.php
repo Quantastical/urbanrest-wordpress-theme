@@ -1,8 +1,8 @@
 <?php
 
 function urb_mce_buttons_2( $buttons ) {
-	//$buttons[] = 'superscript';
-	//$buttons[] = 'subscript';
+	// $buttons[] = 'superscript';
+	// $buttons[] = 'subscript';
 
 	return $buttons;
 }

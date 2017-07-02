@@ -40,14 +40,14 @@ function urb_response_init() {
 		'title',
 		'editor',
 		'author',
-		//'thumbnail',
-		//'excerpt',
-		//'trackbacks',
-		//'custom-fields',
-		//'comments',
-		//'revisions',
-		//'page-attributes'
-		//'post-formats'
+		// 'thumbnail',
+		// 'excerpt',
+		// 'trackbacks',
+		// 'custom-fields',
+		// 'comments',
+		// 'revisions',
+		// 'page-attributes'
+		// 'post-formats'
 	);
 
 	$taxonomies = array();

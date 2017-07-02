@@ -1,7 +1,4 @@
 jQuery(function($){
-	//$('.wp-toolbar').removeClass('wp-toolbar');
-	//$('#wpadminbar').remove();
-
 	Urb.countDecimalPlaces = function decimalPlaces(num) {
 		// http://stackoverflow.com/a/10454560/1028949
 		var match = (''+num).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);

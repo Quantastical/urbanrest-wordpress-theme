@@ -17,12 +17,13 @@ die('kickstarter.php');
 			<?php endif; ?>
 		</nav>
 <?php
-//$url = 'https://www.kickstarter.com/projects/197980077/urbanrest-brewing-company';
-//$html = file_get_contents($url);
-//$xmlDom = new DOMDocument('1.0', 'utf-8');
-//@$xmlDom->loadHTML($html);
-//$scraped = $xmlDom->getElementById('pledged')->textContent;
-//$pledged = (int)ereg_replace("[^0-9]", "", $scraped);
+// Original code for scraping the completition percentage off of Kickstarter.com
+// $url = 'https://www.kickstarter.com/projects/197980077/urbanrest-brewing-company';
+// $html = file_get_contents($url);
+// $xmlDom = new DOMDocument('1.0', 'utf-8');
+// @$xmlDom->loadHTML($html);
+// $scraped = $xmlDom->getElementById('pledged')->textContent;
+// $pledged = (int)ereg_replace("[^0-9]", "", $scraped);
 $pledged = 29379;
 $completion = min(100, number_format($pledged / 25000 * 100, 2));
 ?>

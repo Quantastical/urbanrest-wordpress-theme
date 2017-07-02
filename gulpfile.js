@@ -17,15 +17,6 @@ gulp.task('default', function() {
 gulp.task('all', ['images', 'styles', 'scripts']);
 
 gulp.task('styles', function() {
-	/*
-	'style.css': 'style.scss',
-	//'editor-style.css': 'editor-style.scss'
-	'styles/admin/style.css': 'styles/admin/style.scss',
-	'styles/editor/style.css': 'styles/editor/style.scss',
-	'styles/login/style.css': 'styles/login/style.scss',
-	'styles/xsl/xml-sitemap.css': 'styles/xsl/xml-sitemap.scss'
-	*/
-
 	gulp.src('./styles/admin/style.scss')
 		.pipe(sourcemaps.init())
 		.pipe(sass())
@@ -93,12 +84,7 @@ gulp.task('images', function() {
 		.pipe(imagemin({
 			optimizationLevel: 7,
 			interlaced: true,
-            progressive: true,
-            //svgoPlugins: [
-            //    { removeViewBox: false },
-            //    { cleanupIDs: false }
-            //],
-            //use: [pngquant()]
+            progressive: true
         }))
         .pipe(hash({format: '{name}.min{ext}'}))
         .pipe(gulp.dest('./images'));

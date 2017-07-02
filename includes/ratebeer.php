@@ -16,7 +16,7 @@ class ratebeer_beer {
 			return;
 		}
 
-		//$ratebeer_beer_id = 'founders-kbs-kentucky-breakfast-stout/40544/';
+		// $ratebeer_beer_id = 'founders-kbs-kentucky-breakfast-stout/40544/';
 		$endpoint = '/beer/';
 
 		$remote_html = file_get_contents($ratebeer_beer_url);

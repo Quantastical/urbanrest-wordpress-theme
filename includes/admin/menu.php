@@ -18,17 +18,6 @@ if( !function_exists( 'urbanrest_admin_menu_custom_menus' ) ) :
 			'urbanrest_admin_page_company', // $menu_slug
 			'urbanrest_admin_page_company' // $page_callback
 		);
-
-		/*
-		// Admin -> Settings -> Social Media
-		add_options_page(
-			'Social Media', // $page_title
-			'Social Media', // $menu_title
-			'manage_options', // $capability
-			'urbanrest_admin_page_social_media', // $menu_slug
-			'urbanrest_admin_page_social_media' // $page_callback
-		);
-		*/
 	}
 endif;
 add_action('admin_menu', 'urbanrest_admin_menu_custom_menus');

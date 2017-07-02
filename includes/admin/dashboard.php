@@ -7,7 +7,7 @@ function urbanrest_wp_dashboard_setup() {
 	remove_meta_box('dashboard_right_now', 'dashboard', 'normal');
 
 	// Quick Draft
-	//remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
+	// remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
 
 	// WordPress News
 	remove_meta_box('dashboard_primary', 'dashboard', 'side');

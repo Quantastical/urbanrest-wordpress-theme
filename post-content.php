@@ -16,20 +16,3 @@
 					) );
 				?>
 			</div>
-<?php
-/*
-<?php $tags = wp_get_post_tags( $post->ID ); ?>
-<?php if( count($tags) > 0 ) : ?>
-			<div class="post-tags">
-				<h5>Tags related to this post</h5>
-				<ul>
-<?php 	foreach( $tags as $tag ) : ?>
-					<li class="post-tag">
-						<a href="<?php echo get_term_link( $tag ); ?>"><?php echo $tag->name; ?></a>
-					</li>
-<?php 	endforeach; ?>
-				</ul>
-			</div>
-<?php endif; ?>
-*/
-?>

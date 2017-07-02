@@ -12,7 +12,7 @@
 <?php
 $args = array(
 	'post_type'      => 'beer',
-	'beer_style'       => 'belgian-quadrupel',
+	'beer_style'     => 'belgian-quadrupel',
 	'posts_per_page' => -1
 );
 $query = new WP_Query($args);

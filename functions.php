@@ -3,21 +3,32 @@ require_once('includes/ajax.php');
 require_once('includes/redirects.php');
 require_once('includes/3rd-parties.php');
 require_once('includes/admin-menu.php');
-require_once('includes/beer.php');
+require_once('includes/content-editor.php');
 require_once('includes/disable-emojis.php');
-//require_once('includes/event.php');
+require_once('includes/footer.php');
 require_once('includes/form.php');
 require_once('includes/image-ssl-fix.php');
 require_once('includes/image-rotation-repair.php');
 require_once('includes/mailchimp.php');
+require_once('includes/menus.php');
 require_once('includes/shortlink.php');
 require_once('includes/login.php');
-//require_once('includes/product.php');
 require_once('includes/profile.php');
 require_once('includes/rating.php');
 require_once('includes/response.php');
 require_once('includes/role.php');
 require_once('includes/title.php');
+
+require_once('includes/admin/help.php');
+require_once('includes/admin/scripts.php');
+require_once('includes/admin/menu-bar.php');
+require_once('includes/admin/footer.php');
+require_once('includes/admin/dashboard.php');
+require_once('includes/admin/fields.php');
+require_once('includes/admin/artwork.php');
+require_once('includes/admin/company.php');
+require_once('includes/admin/menu.php');
+require_once('includes/admin/home-page.php');
 
 if ( !function_exists('urbanrest_setup') ) :
 	function urbanrest_setup() {
@@ -239,6 +250,8 @@ if( !function_exists( 'urbanrest_enqueue_scripts' ) ) :
 		}
 
 		// Add critical styles
+		// TODO: critical styles are currently coded in header.php
+		//       would be better if they were coded here, but this doesn't work for some reason
 		// $critical_styles = "html { background: black; } body { opacity: 0; }";
 		// wp_add_inline_style( 'custom-style', $critical_styles );
 		// wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/style.min.css', false, false );
@@ -260,26 +273,9 @@ endif;
 add_action('wp_enqueue_scripts', 'urbanrest_enqueue_scripts');
 
 // remove JQMIGRATE console log. could break old plugins relying on old jQuery
-/*
 add_action( 'wp_default_scripts', function( $scripts ) {
     if ( ! empty( $scripts->registered['jquery'] ) ) {
         $jquery_dependencies = $scripts->registered['jquery']->deps;
         $scripts->registered['jquery']->deps = array_diff( $jquery_dependencies, array( 'jquery-migrate' ) );
     }
 } );
-*/
-
-require_once('includes/content-editor.php');
-require_once('includes/footer.php');
-require_once('includes/menus.php');
-
-require_once('includes/admin/help.php');
-require_once('includes/admin/scripts.php');
-require_once('includes/admin/menu-bar.php');
-require_once('includes/admin/footer.php');
-require_once('includes/admin/dashboard.php');
-require_once('includes/admin/fields.php');
-require_once('includes/admin/artwork.php');
-require_once('includes/admin/company.php');
-require_once('includes/admin/menu.php');
-require_once('includes/admin/home-page.php');

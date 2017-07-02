@@ -11,7 +11,7 @@
 <?php
 $post_args = array(
 	'post_type'      => 'product',
-	//'product_category'     => $category->slug,
+	// 'product_category'     => $category->slug,
 	'posts_per_page' => -1,
 	'tax_query' => array(
 		'relation' => 'AND',

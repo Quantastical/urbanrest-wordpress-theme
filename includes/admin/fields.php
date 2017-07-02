@@ -1,21 +1,4 @@
 <?php
-/*
-function urbanrest_setting_apple_app_id() {
-	// Social Media -> Apple -> Apple App ID
-	echo '<input type="text" name="urbanrest_setting_apple_app_id" id="urbanrest_setting_apple_app_id" value="' . get_option( 'urbanrest_setting_apple_app_id' ) . '" aria-describedby="urbanrest_setting_apple_app_id_description" class="regular-text ltr" />';
-}
-
-function urbanrest_setting_apple_app_name() {
-	// Social Media -> Apple -> Apple App ID
-	echo '<input type="text" name="urbanrest_setting_apple_app_name" id="urbanrest_setting_apple_app_name" value="' . get_option( 'urbanrest_setting_apple_app_name' ) . '" aria-describedby="urbanrest_setting_apple_app_inamedescription" class="regular-text ltr" />';
-	echo '<p class="description" id="urbanrest_setting_apple_app_name_description">Homescreen icon name, less than 15 characters</p>';
-}
-
-function urbanrest_setting_apple_itunes_affiliate_id() {
-	// Social Media -> Apple -> Apple iTunes Affiliate ID
-	echo '<input type="text" name="urbanrest_setting_apple_itunes_affiliate_id" id="urbanrest_setting_apple_itunes_affiliate_id" value="' . get_option( 'urbanrest_setting_apple_itunes_affiliate_id' ) . '" aria-describedby="urbanrest_setting_apple_itunes_affiliate_id_description" class="regular-text ltr" />';
-}
-*/
 function urbanrest_setting_logo() {
 	// Artwork -> Icons -> Logo
 	echo '<input type="text" id="urbanrest_setting_logo" name="urbanrest_setting_logo" value="' . get_option( 'urbanrest_setting_logo' ) . '" />';
@@ -68,13 +51,6 @@ function urbanrest_setting_country() {
 	// Company -> Location -> Country
 	echo '<input type="text" name="urbanrest_setting_country" id="urbanrest_setting_country" value="' . get_option( 'urbanrest_setting_country' ) . '" class="regular-text ltr" />';
 }
-
-/*
-function urbanrest_setting_facebook_app_id() {
-	// Social Media -> Apple -> Apple App ID
-	echo '<input type="text" name="urbanrest_setting_facebook_app_id" id="urbanrest_setting_facebook_app_id" value="' . get_option( 'urbanrest_setting_facebook_app_id' ) . '" aria-describedby="urbanrest_setting_facebook_app_id_description" class="regular-text ltr" />';
-}
-*/
 
 function urbanrest_setting_hours_of_operation() {
 	// Company -> Contact -> Hours of Operation
@@ -172,57 +148,20 @@ function urbanrest_setting_facebook_opengraph_image() {
 	echo '<p class="description" id="urbanrest_setting_facebook_opengraph_image_description">1500&times;1500px 5MB PNG</p>';
 }
 
-/*
-function urbanrest_setting_facebook_username() {
-	// Social Media -> Facebook -> Facebook Username
-	echo '<input type="text" name="urbanrest_setting_facebook_username" id="urbanrest_setting_facebook_username" value="' . get_option( 'urbanrest_setting_facebook_username' ) . '" class="regular-text ltr" />';
-}
-*/
-
 function urbanrest_setting_fax_number() {
 	// Company -> Contact -> Fax Number
 	echo '<input type="text" name="urbanrest_setting_fax_number" id="urbanrest_setting_fax_number" value="' . get_option( 'urbanrest_setting_fax_number' ) . '" class="regular-text ltr" data-input-mask="(999) 999-9999" />';
 }
 
-/*
-function urbanrest_setting_google_developers_api_key() {
-	// Social Media -> Google -> Google Developers API Key
-	echo '<input type="text" name="urbanrest_setting_google_developers_api_key" id="urbanrest_setting_google_developers_api_key" value="' . get_option( 'urbanrest_setting_google_developers_api_key' ) . '" class="regular-text ltr" />';
-}
-
-function urbanrest_setting_google_plus_id() {
-	// Social Media -> Google -> Google+ ID
-	echo '<input type="text" name="urbanrest_setting_google_plus_id" id="urbanrest_setting_google_plus_id" value="' . get_option( 'urbanrest_setting_google_plus_id' ) . '" class="regular-text ltr" />';
-}
-*/
-/*
-function urbanrest_setting_instagram_username() {
-	// Social Media -> Instagram -> Instagram Username
-	echo '<input type="text" name="urbanrest_setting_instagram_username" id="urbanrest_setting_instagram_username" value="' . get_option( 'urbanrest_setting_instagram_username' ) . '" class="regular-text ltr" />';
-}
-*/
-
 function urbanrest_setting_locality() {
 	// Company -> Location -> Locality
 	echo '<input type="text" name="urbanrest_setting_locality" id="urbanrest_setting_locality" value="' . get_option( 'urbanrest_setting_locality' ) . '" class="regular-text ltr" />';
 }
-/*
-function urbanrest_setting_mailchimp_api_key() {
-	// Social Media -> MailChimp -> MailChimp API Key
-	echo '<input type="text" name="urbanrest_setting_mailchimp_api_key" id="urbanrest_setting_mailchimp_api_key" value="' . get_option( 'urbanrest_setting_mailchimp_api_key' ) . '" class="regular-text ltr" />';
-}
-*/
 
 function urbanrest_setting_phone_number() {
 	// Company -> Contact -> Phone Number
 	echo '<input type="text" name="urbanrest_setting_phone_number" id="urbanrest_setting_phone_number" value="' . get_option( 'urbanrest_setting_phone_number' ) . '" class="regular-text ltr" data-input-mask="(999) 999-9999" />';
 }
-/*
-function urbanrest_setting_pinterest_username() {
-	// Social Media -> Pinterest -> Pinterest Username
-	echo '<input type="text" name="urbanrest_setting_pinterest_username" id="urbanrest_setting_pinterest_username" value="' . get_option( 'urbanrest_setting_pinterest_username' ) . '" class="regular-text ltr" />';
-}
-*/
 
 function urbanrest_setting_postal_code() {
 	// Company -> Location -> Postal Code
@@ -246,16 +185,4 @@ function urbanrest_setting_twitter_card_image() {
 	echo '</span>';
 	echo '<p class="description" id="urbanrest_setting_twitter_card_image_description">300&times;300px 1MB PNG</p>';
 }
-/*
-function urbanrest_setting_twitter_username() {
-	// Social Media -> Twitter -> Twitter Username
-	echo '<input type="text" name="urbanrest_setting_twitter_username" id="urbanrest_setting_twitter_username" value="' . get_option( 'urbanrest_setting_twitter_username' ) . '" class="regular-text ltr" />';
-}
-*/
-/*
-function urbanrest_setting_youtube_channel_id() {
-	// Social Media -> YouTube -> YouTube Channel ID
-	echo '<input type="text" name="urbanrest_setting_youtube_channel_id" id="urbanrest_setting_youtube_channel_id" value="' . get_option( 'urbanrest_setting_youtube_channel_id' ) . '" class="regular-text ltr" />';
-}
-*/
 ?>
