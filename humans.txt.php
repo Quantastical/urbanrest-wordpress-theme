@@ -27,7 +27,7 @@ Quality Assurance: John Duda (RationalGaze.com)
 SITE RESOURCES
 ==============
 
-Last Updated:   2015-08-21
+Last Updated:   2017-07-01
 Languages:      English
 Compliance:     CSS Level 3
                 ECMAScript, 5th Edition
