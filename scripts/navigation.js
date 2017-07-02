@@ -302,9 +302,9 @@ jQuery( function( $ ) {
 				Urb.$mainNavigation.toggleClass('open');
 				if(Urb.$mainNavigation.hasClass('open')) {
 					if(Urb.scrollPosition < Urb.$window.height() / 2) {
-						Urb.$mainNavigation.css('top', Urb.$window.height() - Urb.$pageNavigation.outerHeight() - Urb.$mainMenu.outerHeight());
+						Urb.$mainNavigation.css('top', Urb.windowHeightMinusWPHeaderHeight - Urb.$mainMenu.outerHeight());
 					} else {
-						Urb.$mainNavigation.css('bottom', Urb.$window.height() - Urb.$pageNavigation.outerHeight() - Urb.$mainMenu.outerHeight());
+						Urb.$mainNavigation.css('bottom', Urb.windowHeightMinusWPHeaderHeight - Urb.$mainMenu.outerHeight());
 					}
 				} else {
 					Urb.$mainNavigation.removeAttr('style');
@@ -329,6 +329,8 @@ jQuery( function( $ ) {
 	};
 
 	Urb.setupNavigationSnap = function() {
+		var wpAdminBarHeight = (Urb.$wpadminbar && Urb.$window.outerWidth() > 600) ? Urb.$wpadminbar.outerHeight() : 0;
+		
 		Urb.windowHeightMinusWPHeaderHeight = Urb.$window.height() - Urb.$pageNavigation.outerHeight() - wpAdminBarHeight;
 	};
 
@@ -337,8 +339,18 @@ jQuery( function( $ ) {
 			Urb.$siteNavigation.addClass('stuck-top').removeClass('past-midpoint');
 		} else if(Urb.scrollPosition >= Urb.$window.height() / 2) {
 			Urb.$siteNavigation.addClass('past-midpoint').removeClass('stuck-top');
-		}else {
+
+			if(Urb.$mainNavigation.hasClass('open')) {
+				Urb.$menuToggle.toggleClass('open', false);
+				Urb.$mainNavigation.toggleClass('open', false).removeAttr('style');;
+			}
+		} else {
 			Urb.$siteNavigation.removeClass('past-midpoint').removeClass('stuck-top');
+
+			if(Urb.$mainNavigation.hasClass('open')) {
+				Urb.$menuToggle.toggleClass('open', false);
+				Urb.$mainNavigation.toggleClass('open', false).removeAttr('style');
+			}
 		}
 	};
 

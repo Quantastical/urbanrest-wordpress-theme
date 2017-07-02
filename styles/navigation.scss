@@ -156,6 +156,7 @@
 									height: 5rem;
 									left: 0;
 									margin: 0.25em 1em;
+									overflow: hidden;
 									padding: 0;
 									position: absolute;
 									top: 0;
@@ -503,22 +504,13 @@
 						@include media('>600px') { top: 46px !important; }
 						@include media('>782px') { top: 32px !important; }
 					}
-				}
 
-				/*
-				&.past-midpoint,
-				&.stuck-top
-				{
 					.main-navigation
 					{
-						.main-menu
-						{
-							@include media('>600px') { top: calc(46px + 3.74em) !important; }
-							@include media('>782px') { top: calc(32px + 3.74em) !important; }
-						}
+						@include media('>600px') { top: calc(46px + 3.74em) !important; }
+						@include media('>782px') { top: calc(32px + 3.74em) !important; }
 					}
 				}
-				*/
 			}
 		}
 	}

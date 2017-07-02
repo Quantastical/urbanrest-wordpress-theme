@@ -115,6 +115,7 @@
 
 		<link type="text/plain" rel="author" href="<?php echo get_site_url(); ?>/humans.txt" />
 		<?php wp_head(); ?>
+		<style id="critical-styles" type="text/css" media="screen">html { background: black; } body { opacity: 0; }</style>
 		<style id="qr-code" type="text/css" media="print">.page-footer:before {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=<?php echo urlencode( str_ireplace('URB.beer', 'QR.URB.beer', wp_get_shortlink()) ); ?>);}}</style>
 	</head>
 

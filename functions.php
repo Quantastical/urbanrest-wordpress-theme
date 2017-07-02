@@ -219,14 +219,31 @@ if( !function_exists('urb_get_specials') ) :
 	}
 endif;
 
+if( !function_exists('urb_get_version') ) :
+	function urb_get_version() {
+		// TODO: Figure out why this is not able to read version from package.json
+		// $package = json_decode( file_get_contents(get_stylesheet_directory_uri() . 'package.json') );
+		// return $package['version'];
+		return "1.3.3";
+	}
+endif;
+
 if( !function_exists( 'urbanrest_enqueue_scripts' ) ) :
 	function urbanrest_enqueue_scripts() {
-		// Add styles
-		wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/style.min.css', false, false );
+		// Remove WordPress's jQuery reference from the public site
+		// for speed considerations. It's embedded in the minified script.js.
+		if( !is_admin() ) {
+			wp_deregister_script( 'jquery' );
+			wp_register_script( 'jquery', "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", false, null );
+		}
+
+		// Add critical styles
+		// $critical_styles = "html { background: black; } body { opacity: 0; }";
+		// wp_add_inline_style( 'custom-style', $critical_styles );
+		// wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/style.min.css', false, false );
 
 		// Add scripts
-		wp_enqueue_script('jquery', '//code.jquery.com/jquery-1.11.3.min.js', array(), false, true);
-		wp_enqueue_script('site', get_stylesheet_directory_uri() . '/script.min.js', array('jquery'), false, true);
+    wp_enqueue_script('site', get_stylesheet_directory_uri() . '/script.min.js', false, true );
 
 		wp_enqueue_script( 'html5shiv', get_stylesheet_directory_uri() . '/node_modules/html5shiv/dist/html5shiv.min.js' );
 		wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
@@ -242,12 +259,14 @@ endif;
 add_action('wp_enqueue_scripts', 'urbanrest_enqueue_scripts');
 
 // remove JQMIGRATE console log. could break old plugins relying on old jQuery
+/*
 add_action( 'wp_default_scripts', function( $scripts ) {
     if ( ! empty( $scripts->registered['jquery'] ) ) {
         $jquery_dependencies = $scripts->registered['jquery']->deps;
         $scripts->registered['jquery']->deps = array_diff( $jquery_dependencies, array( 'jquery-migrate' ) );
     }
 } );
+*/
 
 require_once('includes/content-editor.php');
 require_once('includes/footer.php');

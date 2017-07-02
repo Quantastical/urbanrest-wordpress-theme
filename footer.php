@@ -43,12 +43,26 @@
 <?php echo urb_get_fonts_for_preloading(); ?>
 		</div>
 
+		<noscript id="deferred-styles">
+			<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() . '/style.min.css?' . urb_get_version(); ?>" />
+		</noscript>
 		<script>
-		var html = document.documentElement;
-		if(html && html.classList){
-			html.classList.remove('no-javascript');
-			html.classList.add('javascript');
-		}
+			var loadDeferredStyles = function() {
+				var addStylesNode = document.getElementById('deferred-styles');
+				var replacement = document.createElement('div');
+				replacement.innerHTML = addStylesNode.textContent;
+				document.body.appendChild(replacement)
+				addStylesNode.parentElement.removeChild(addStylesNode);
+			};
+			var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
+      if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+      else window.addEventListener('load', loadDeferredStyles);
+    
+	    var html = document.documentElement;
+			if(html && html.classList){
+				html.classList.remove('no-javascript');
+				html.classList.add('javascript');
+			}
 		</script>
 		<?php wp_footer(); ?>
 	</body>

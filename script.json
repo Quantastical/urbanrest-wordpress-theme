@@ -1,5 +1,6 @@
 {
 	"script.js" : [
+		"node_modules/jquery/dist/jquery.min.js",
 		"node_modules/magnific-popup/dist/jquery.magnific-popup.js",
 		"scripts/plugins/jQuery.fn.sortElements.js",
 		"scripts/plugins/jquery.urbModal.js",

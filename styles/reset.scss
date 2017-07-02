@@ -6,6 +6,12 @@ html.javascript
 	width: 100%;
 }
 
+body
+{
+	opacity: 1;
+	transition: opacity 0.33s;
+}
+
 .site
 {
 	background-color: #000;
