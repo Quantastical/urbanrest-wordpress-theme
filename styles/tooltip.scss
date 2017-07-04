@@ -12,7 +12,7 @@
 		max-width: 15em;
 		opacity: 0;
 		padding: 0.75em;
-		pointer-events: none;
+		/* pointer-events: none; /* TODO: implement when w3c validates against CSS 4 */
 		position: absolute;
 		text-align: left;
 		text-shadow: 1px 1px 1px rgba(black, 0.1);

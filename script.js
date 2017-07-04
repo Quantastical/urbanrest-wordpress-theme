@@ -73,7 +73,7 @@
         return e.type = (null !== e.getAttribute("type")) + "/" + e.type, e;
     }
     function h(e) {
-        var t = He.exec(e.type);
+        var t = De.exec(e.type);
         return t ? e.type = t[1] : e.removeAttribute("type"), e;
     }
     function g(e, t) {
@@ -257,7 +257,7 @@
             (e[r] = e[r] || []).unshift(n)) : (e[r] = e[r] || []).push(n);
         };
     }
-    function H(e, t, n, r) {
+    function D(e, t, n, r) {
         function o(s) {
             var l;
             return i[s] = !0, J.each(e[s] || [], function(e, s) {
@@ -269,7 +269,7 @@
         var i = {}, a = e === yt;
         return o(t.dataTypes[0]) || !i["*"] && o("*");
     }
-    function D(e, t) {
+    function H(e, t) {
         var n, r, o = J.ajaxSettings.flatOptions || {};
         for (n in t) void 0 !== t[n] && ((o[n] ? e : r || (r = {}))[n] = t[n]);
         return r && J.extend(!0, e, r), e;
@@ -641,7 +641,7 @@
             };
             return o ? r(a) : a;
         }
-        var w, x, U, C, T, k, $, S, N, E, j, P, A, _, I, L, H, D, O, M = "sizzle" + 1 * new Date(), F = e.document, R = 0, q = 0, B = n(), z = n(), W = n(), V = function(e, t) {
+        var w, x, U, C, T, k, $, S, N, E, j, P, A, _, I, L, D, H, O, M = "sizzle" + 1 * new Date(), F = e.document, R = 0, q = 0, B = n(), z = n(), W = n(), V = function(e, t) {
             return e === t && (j = !0), 0;
         }, G = 1 << 31, X = {}.hasOwnProperty, Q = [], Y = Q.pop, K = Q.push, Z = Q.push, J = Q.slice, ee = function(e, t) {
             for (var n = 0, r = e.length; r > n; n++) if (e[n] === t) return n;
@@ -713,7 +713,7 @@
                 return i;
             }, U.find.CLASS = x.getElementsByClassName && function(e, t) {
                 return I ? t.getElementsByClassName(e) : void 0;
-            }, H = [], L = [], (x.qsa = ve.test(r.querySelectorAll)) && (o(function(e) {
+            }, D = [], L = [], (x.qsa = ve.test(r.querySelectorAll)) && (o(function(e) {
                 _.appendChild(e).innerHTML = "<a id='" + M + "'></a><select id='" + M + "-\f]' msallowcapture=''><option selected=''></option></select>", 
                 e.querySelectorAll("[msallowcapture^='']").length && L.push("[*^$]=" + ne + "*(?:''|\"\")"), 
                 e.querySelectorAll("[selected]").length || L.push("\\[" + ne + "*(?:value|" + te + ")"), 
@@ -724,9 +724,9 @@
                 t.setAttribute("type", "hidden"), e.appendChild(t).setAttribute("name", "D"), e.querySelectorAll("[name=d]").length && L.push("name" + ne + "*[*^$|!~]?="), 
                 e.querySelectorAll(":enabled").length || L.push(":enabled", ":disabled"), e.querySelectorAll("*,:x"), 
                 L.push(",.*:");
-            })), (x.matchesSelector = ve.test(D = _.matches || _.webkitMatchesSelector || _.mozMatchesSelector || _.oMatchesSelector || _.msMatchesSelector)) && o(function(e) {
-                x.disconnectedMatch = D.call(e, "div"), D.call(e, "[s!='']:x"), H.push("!=", ae);
-            }), L = L.length && new RegExp(L.join("|")), H = H.length && new RegExp(H.join("|")), 
+            })), (x.matchesSelector = ve.test(H = _.matches || _.webkitMatchesSelector || _.mozMatchesSelector || _.oMatchesSelector || _.msMatchesSelector)) && o(function(e) {
+                x.disconnectedMatch = H.call(e, "div"), H.call(e, "[s!='']:x"), D.push("!=", ae);
+            }), L = L.length && new RegExp(L.join("|")), D = D.length && new RegExp(D.join("|")), 
             t = ve.test(_.compareDocumentPosition), O = t || ve.test(_.contains) ? function(e, t) {
                 var n = 9 === e.nodeType ? e.documentElement : e, r = t && t.parentNode;
                 return e === r || !(!r || 1 !== r.nodeType || !(n.contains ? n.contains(r) : e.compareDocumentPosition && 16 & e.compareDocumentPosition(r)));
@@ -751,8 +751,8 @@
         }, t.matches = function(e, n) {
             return t(e, null, null, n);
         }, t.matchesSelector = function(e, n) {
-            if ((e.ownerDocument || e) !== A && P(e), n = n.replace(de, "='$1']"), !(!x.matchesSelector || !I || H && H.test(n) || L && L.test(n))) try {
-                var r = D.call(e, n);
+            if ((e.ownerDocument || e) !== A && P(e), n = n.replace(de, "='$1']"), !(!x.matchesSelector || !I || D && D.test(n) || L && L.test(n))) try {
+                var r = H.call(e, n);
                 if (r || x.disconnectedMatch || e.document && 11 !== e.document.nodeType) return r;
             } catch (o) {}
             return t(n, A, null, [ e ]).length > 0;
@@ -1702,7 +1702,7 @@
             return n ? J.event.trigger(e, t, n, !0) : void 0;
         }
     });
-    var je = /<(?!area|br|col|embed|hr|img|input|link|meta|param)(([\w:]+)[^>]*)\/>/gi, Pe = /<([\w:]+)/, Ae = /<|&#?\w+;/, _e = /<(?:script|style|link)/i, Ie = /checked\s*(?:[^=]|=\s*.checked.)/i, Le = /^$|\/(?:java|ecma)script/i, He = /^true\/(.*)/, De = /^\s*<!(?:\[CDATA\[|--)|(?:\]\]|--)>\s*$/g, Oe = {
+    var je = /<(?!area|br|col|embed|hr|img|input|link|meta|param)(([\w:]+)[^>]*)\/>/gi, Pe = /<([\w:]+)/, Ae = /<|&#?\w+;/, _e = /<(?:script|style|link)/i, Ie = /checked\s*(?:[^=]|=\s*.checked.)/i, Le = /^$|\/(?:java|ecma)script/i, De = /^true\/(.*)/, He = /^\s*<!(?:\[CDATA\[|--)|(?:\]\]|--)>\s*$/g, Oe = {
         option: [ 1, "<select multiple='multiple'>", "</select>" ],
         thead: [ 1, "<table>", "</table>" ],
         col: [ 2, "<table><colgroup>", "</colgroup></table>" ],
@@ -1825,7 +1825,7 @@
                 for (o = J.map(v(n, "script"), f), i = o.length; c > l; l++) a = n, l !== d && (a = J.clone(a, !0, !0), 
                 i && J.merge(o, v(a, "script"))), t.call(this[l], a, l);
                 if (i) for (s = o[o.length - 1].ownerDocument, J.map(o, h), l = 0; i > l; l++) a = o[l], 
-                Le.test(a.type || "") && !ve.access(a, "globalEval") && J.contains(s, a) && (a.src ? J._evalUrl && J._evalUrl(a.src) : J.globalEval(a.textContent.replace(De, "")));
+                Le.test(a.type || "") && !ve.access(a, "globalEval") && J.contains(s, a) && (a.src ? J._evalUrl && J._evalUrl(a.src) : J.globalEval(a.textContent.replace(He, "")));
             }
             return this;
         }
@@ -2372,7 +2372,7 @@
             }
         },
         ajaxSetup: function(e, t) {
-            return t ? D(D(e, J.ajaxSettings), t) : D(J.ajaxSettings, e);
+            return t ? H(H(e, J.ajaxSettings), t) : H(J.ajaxSettings, e);
         },
         ajaxPrefilter: L(bt),
         ajaxTransport: L(yt),
@@ -2423,7 +2423,7 @@
             d.type = t.method || t.type || d.method || d.type, d.dataTypes = J.trim(d.dataType || "*").toLowerCase().match(fe) || [ "" ], 
             null == d.crossDomain && (l = vt.exec(d.url.toLowerCase()), d.crossDomain = !(!l || l[1] === Ut[1] && l[2] === Ut[2] && (l[3] || ("http:" === l[1] ? "80" : "443")) === (Ut[3] || ("http:" === Ut[1] ? "80" : "443")))), 
             d.data && d.processData && "string" != typeof d.data && (d.data = J.param(d.data, d.traditional)), 
-            H(bt, d, t, x), 2 === y) return x;
+            D(bt, d, t, x), 2 === y) return x;
             c = J.event && d.global, c && 0 === J.active++ && J.event.trigger("ajaxStart"), 
             d.type = d.type.toUpperCase(), d.hasContent = !gt.test(d.type), o = d.url, d.hasContent || (d.data && (o = d.url += (ut.test(o) ? "&" : "?") + d.data, 
             delete d.data), d.cache === !1 && (d.url = pt.test(o) ? o.replace(pt, "$1_=" + ct++) : o + (ut.test(o) ? "&" : "?") + "_=" + ct++)), 
@@ -2438,7 +2438,7 @@
                 error: 1,
                 complete: 1
             }) x[u](d[u]);
-            if (r = H(yt, d, t, x)) {
+            if (r = D(yt, d, t, x)) {
                 x.readyState = 1, c && f.trigger("ajaxSend", [ x, d ]), d.async && d.timeout > 0 && (s = setTimeout(function() {
                     x.abort("timeout");
                 }, d.timeout));
@@ -2746,9 +2746,9 @@
     }, J.fn.andSelf = J.fn.addBack, "function" == typeof define && define.amd && define("jquery", [], function() {
         return J;
     });
-    var Ht = e.jQuery, Dt = e.$;
+    var Dt = e.jQuery, Ht = e.$;
     return J.noConflict = function(t) {
-        return e.$ === J && (e.$ = Dt), t && e.jQuery === J && (e.jQuery = Ht), J;
+        return e.$ === J && (e.$ = Ht), t && e.jQuery === J && (e.jQuery = Dt), J;
     }, typeof t === ke && (e.jQuery = e.$ = J), J;
 }), function(e) {
     "function" == typeof define && define.amd ? define([ "jquery" ], e) : e("object" == typeof exports ? require("jquery") : window.jQuery || window.Zepto);
@@ -3063,7 +3063,7 @@
     });
     var _, I = "ajax", L = function() {
         _ && e(document.body).removeClass(_);
-    }, H = function() {
+    }, D = function() {
         L(), t.req && t.req.abort();
     };
     e.magnificPopup.registerModule(I, {
@@ -3074,7 +3074,7 @@
         },
         proto: {
             initAjax: function() {
-                t.types.push(I), _ = t.st.ajax.cursor, U(s + "." + I, H), U("BeforeChange." + I, H);
+                t.types.push(I), _ = t.st.ajax.cursor, U(s + "." + I, D), U("BeforeChange." + I, D);
             },
             getAjax: function(n) {
                 _ && e(document.body).addClass(_), t.updateStatus("loading");
@@ -3098,7 +3098,7 @@
             }
         }
     });
-    var D, O = function(n) {
+    var H, O = function(n) {
         if (n.data && void 0 !== n.data.title) return n.data.title;
         var r = t.st.image.titleSrc;
         if (r) {
@@ -3133,13 +3133,13 @@
                 }
             },
             _onImageHasSize: function(e) {
-                e.img && (e.hasSize = !0, D && clearInterval(D), e.isCheckingImgSize = !1, T("ImageHasSize", e), 
+                e.img && (e.hasSize = !0, H && clearInterval(H), e.isCheckingImgSize = !1, T("ImageHasSize", e), 
                 e.imgHidden && (t.content && t.content.removeClass("mfp-loading"), e.imgHidden = !1));
             },
             findImageSize: function(e) {
                 var n = 0, r = e.img[0], o = function(i) {
-                    D && clearInterval(D), D = setInterval(function() {
-                        return r.naturalWidth > 0 ? void t._onImageHasSize(e) : (n > 200 && clearInterval(D), 
+                    H && clearInterval(H), H = setInterval(function() {
+                        return r.naturalWidth > 0 ? void t._onImageHasSize(e) : (n > 200 && clearInterval(H), 
                         n++, void (3 === n ? o(10) : 40 === n ? o(50) : 100 === n && o(500)));
                     }, i);
                 };
@@ -3163,7 +3163,7 @@
                 return t._parseMarkup(r, {
                     title: O(n),
                     img_replaceWith: n.img
-                }, n), t.resizeImage(), n.hasSize ? (D && clearInterval(D), n.loadError ? (r.addClass("mfp-loading"), 
+                }, n), t.resizeImage(), n.hasSize ? (H && clearInterval(H), n.loadError ? (r.addClass("mfp-loading"), 
                 t.updateStatus("error", s.tError.replace("%url%", n.src))) : (r.removeClass("mfp-loading"), 
                 t.updateStatus("ready")), r) : (t.updateStatus("loading"), n.loading = !0, n.hasSize || (n.imgHidden = !0, 
                 r.addClass("mfp-loading"), t.findImageSize(n)), r);
@@ -3632,8 +3632,8 @@
         } catch (i) {
             e(27);
         }
-    }, H = /^[\w\-:\/.?=&%!]+$/, D = function(e, t, n, r) {
-        e && (n ? (r = "", t && H.test(t) && (r = ' id="' + t + '"'), H.test(e) && W.write("<script" + r + ' src="' + e + '"></script>')) : (n = W.createElement("script"), 
+    }, D = /^[\w\-:\/.?=&%!]+$/, H = function(e, t, n, r) {
+        e && (n ? (r = "", t && D.test(t) && (r = ' id="' + t + '"'), D.test(e) && W.write("<script" + r + ' src="' + e + '"></script>')) : (n = W.createElement("script"), 
         n.type = "text/javascript", n.async = !0, n.src = e, r && (n.onload = r), t && (n.id = t), 
         e = W.getElementsByTagName("script")[0], e.parentNode.insertBefore(n, e)));
     }, O = function() {
@@ -3813,9 +3813,9 @@
     ye("sessionControl", "sc", ""), ye("sessionGroup", "sg"), ye("queueTime", "qt");
     var _e = ye("_s", "_s");
     ye("screenName", "cd");
-    var Ie = ye("location", "dl", ""), Le = ye("referrer", "dr"), He = ye("page", "dp", "");
+    var Ie = ye("location", "dl", ""), Le = ye("referrer", "dr"), De = ye("page", "dp", "");
     ye("hostname", "dh");
-    var De = ye("language", "ul"), Oe = ye("encoding", "de");
+    var He = ye("language", "ul"), Oe = ye("encoding", "de");
     ye("title", "dt", function() {
         return W.title || void 0;
     }), we("contentGroup([0-9]+)", function(e) {
@@ -3848,7 +3848,7 @@
             e.set(n, r, o);
         }, t.F = void 0), t;
     });
-    var Ut = xe("_oot"), Ct = ye("previewTask"), Tt = ye("checkProtocolTask"), kt = ye("validationTask"), $t = ye("checkStorageTask"), St = ye("historyImportTask"), Nt = ye("samplerTask"), Et = ye("_rlt"), jt = ye("buildHitTask"), Pt = ye("sendHitTask"), At = ye("ceTask"), _t = ye("devIdTask"), It = ye("timingTask"), Lt = ye("displayFeaturesTask"), Ht = ye("customTask"), Dt = xe("name"), Ot = xe("clientId", "cid"), Mt = xe("clientIdTime"), Ft = ye("userId", "uid"), Rt = xe("trackingId", "tid"), qt = xe("cookieName", void 0, "_ga"), Bt = xe("cookieDomain"), zt = xe("cookiePath", void 0, "/"), Wt = xe("cookieExpires", void 0, 63072e3), Vt = xe("legacyCookieDomain"), Gt = xe("legacyHistoryImport", void 0, !0), Xt = xe("storage", void 0, "cookie"), Qt = xe("allowLinker", void 0, !1), Yt = xe("allowAnchor", void 0, !0), Kt = xe("sampleRate", "sf", 100), Zt = xe("siteSpeedSampleRate", void 0, 1), Jt = xe("alwaysSendReferrer", void 0, !1), en = xe("_gid", "_gid"), tn = xe("_ge"), nn = xe("_gcn"), rn = ye("transportUrl"), on = ye("_r", "_r"), an = function(e, t, n) {
+    var Ut = xe("_oot"), Ct = ye("previewTask"), Tt = ye("checkProtocolTask"), kt = ye("validationTask"), $t = ye("checkStorageTask"), St = ye("historyImportTask"), Nt = ye("samplerTask"), Et = ye("_rlt"), jt = ye("buildHitTask"), Pt = ye("sendHitTask"), At = ye("ceTask"), _t = ye("devIdTask"), It = ye("timingTask"), Lt = ye("displayFeaturesTask"), Dt = ye("customTask"), Ht = xe("name"), Ot = xe("clientId", "cid"), Mt = xe("clientIdTime"), Ft = ye("userId", "uid"), Rt = xe("trackingId", "tid"), qt = xe("cookieName", void 0, "_ga"), Bt = xe("cookieDomain"), zt = xe("cookiePath", void 0, "/"), Wt = xe("cookieExpires", void 0, 63072e3), Vt = xe("legacyCookieDomain"), Gt = xe("legacyHistoryImport", void 0, !0), Xt = xe("storage", void 0, "cookie"), Qt = xe("allowLinker", void 0, !1), Yt = xe("allowAnchor", void 0, !0), Kt = xe("sampleRate", "sf", 100), Zt = xe("siteSpeedSampleRate", void 0, 1), Jt = xe("alwaysSendReferrer", void 0, !1), en = xe("_gid", "_gid"), tn = xe("_ge"), nn = xe("_gcn"), rn = ye("transportUrl"), on = ye("_r", "_r"), an = function(e, t, n) {
         this.V = e, this.fa = t, this.$ = !1, this.oa = n, this.ea = 1;
     }, sn = function(e, t, n) {
         if (e.fa && e.$) return 0;
@@ -4027,10 +4027,10 @@
         return "dataLayer" != e.B && t("l", e.B), t("t", e.target), t("cid", e.clientId), 
         t("cidt", e.ka), t("gac", e.la), t("aip", e.ia), e.sync && t("m", "sync"), t("cycle", e.G), 
         e.qa && t("gclid", e.qa), In.test(W.referrer) && t("cb", String(le())), n;
-    }, Hn = function(e, t, n) {
-        this.U = wt, this.aa = t, (t = n) || (t = (t = fe(e, Dt)) && "t0" != t ? Rn.test(t) ? "_gat_" + Y(fe(e, Rt)) : "_gat_" + Y(t) : "_gat"), 
+    }, Dn = function(e, t, n) {
+        this.U = wt, this.aa = t, (t = n) || (t = (t = fe(e, Ht)) && "t0" != t ? Rn.test(t) ? "_gat_" + Y(fe(e, Rt)) : "_gat_" + Y(t) : "_gat"), 
         this.Y = t;
-    }, Dn = function(e, t) {
+    }, Hn = function(e, t) {
         var n = t.get(jt);
         t.set(jt, function(t) {
             On(e, t, e.U), On(e, t, xt);
@@ -4061,13 +4061,13 @@
         if (e = e.b, !e.get("dcLoaded")) {
             C(e, 29), t = t || {};
             var n;
-            t[qt] && (n = Y(t[qt])), t = new Hn(e, "https://stats.g.doubleclick.net/r/collect?t=dc&aip=1&_r=3&", n), 
-            Dn(t, e), e.set("dcLoaded", !0);
+            t[qt] && (n = Y(t[qt])), t = new Dn(e, "https://stats.g.doubleclick.net/r/collect?t=dc&aip=1&_r=3&", n), 
+            Hn(t, e), e.set("dcLoaded", !0);
         }
     }, Bn = function(e) {
         if (!e.get("dcLoaded") && "cookie" == e.get(Xt)) {
             C(e, 51);
-            var t = new Hn(e);
+            var t = new Dn(e);
             On(t, e, t.U), On(t, e, xt), Mn(t, e), e.get(t.U) && (e.set(on, 1, !0), e.set(rn, J() + "/r/collect", !0));
         }
     }, zn = function() {
@@ -4078,7 +4078,7 @@
             var r = W.location.hash, o = z.name, i = /^#?gaso=([^&]*)/;
             (o = (r = (r = r && r.match(i) || o && o.match(i)) ? r[1] : X("GASO")[0] || "") && r.match(/^(?:!([-0-9a-z.]{1,40})!)?([-.\w]{10,1200})$/i)) && (Q("GASO", "" + r, n, t, e, 0), 
             window._udo || (window._udo = t), window._utcp || (window._utcp = n), e = o[1], 
-            D("https://www.google.com/analytics/web/inpage/pub/inpage.js?" + (e ? "prefix=" + e + "&" : "") + le(), "_gasojs")), 
+            H("https://www.google.com/analytics/web/inpage/pub/inpage.js?" + (e ? "prefix=" + e + "&" : "") + le(), "_gasojs")), 
             jn = !0;
         }
     }, Vn = function(e) {
@@ -4088,7 +4088,7 @@
         if (n && n.getEntriesByName) {
             e(35);
             var r = "https://www.google-analytics.com/analytics.js?wpid=" + t;
-            D(r, void 0, void 0, function() {
+            H(r, void 0, void 0, function() {
                 try {
                     var o = 1, i = n.getEntriesByName("https://www.google-analytics.com/analytics.js");
                     i && 0 != i.length || (i = n.getEntriesByName("http://www.google-analytics.com/analytics.js"), 
@@ -4123,10 +4123,10 @@
             d(e, t), f.filters.add(e);
         }
         var f = this;
-        this.b = new ue(), this.filters = new se(), d(Dt, e[Dt]), d(Rt, j(e[Rt])), d(qt, e[qt]), 
+        this.b = new ue(), this.filters = new se(), d(Ht, e[Ht]), d(Rt, j(e[Rt])), d(qt, e[qt]), 
         d(Bt, e[Bt] || F()), d(zt, e[zt]), d(Wt, e[Wt]), d(Vt, e[Vt]), d(Gt, e[Gt]), d(Qt, e[Qt]), 
         d(Yt, e[Yt]), d(Kt, e[Kt]), d(Zt, e[Zt]), d(Jt, e[Jt]), d(Xt, e[Xt]), d(Ft, e[Ft]), 
-        d(Mt, e[Mt]), d(tn, e[tn]), d(ke, 1), d($e, "j56"), p(Ut, n), p(Ht, _), p(Ct, s), 
+        d(Mt, e[Mt]), d(tn, e[tn]), d(ke, 1), d($e, "j56"), p(Ut, n), p(Dt, _), p(Ct, s), 
         p(Tt, r), p(kt, c), p($t, vn), p(St, bn), p(Nt, t), p(Et, u), p(At, a), p(_t, l), 
         p(Lt, Bn), p(jt, o), p(Pt, i), p(It, fn(this)), Yn(this.b, e[Ot]), Kn(this.b), this.b.set(Se, zn()), 
         Wn(this.b.get(Rt), this.b.get(Bt), this.b.get(zt)), this.ra = new an(1e4, (!0), "gaexp10");
@@ -4178,7 +4178,7 @@
         var r = W.documentElement, a = (i = W.body) && i.clientWidth && i.clientHeight, s = [];
         if (r && r.clientWidth && r.clientHeight && ("CSS1Compat" === W.compatMode || !a) ? s = [ r.clientWidth, r.clientHeight ] : a && (s = [ i.clientWidth, i.clientHeight ]), 
         r = 0 >= s[0] || 0 >= s[1] ? "" : s.join("x"), t.set(Re, r), t.set(Be, p()), t.set(Oe, W.characterSet || W.charset), 
-        t.set(qe, n && "function" == typeof n.javaEnabled && n.javaEnabled() || !1), t.set(De, (n && (n.language || n.browserLanguage) || "").toLowerCase()), 
+        t.set(qe, n && "function" == typeof n.javaEnabled && n.javaEnabled() || !1), t.set(He, (n && (n.language || n.browserLanguage) || "").toLowerCase()), 
         o && t.get(Yt) && (n = W.location.hash)) {
             for (n = n.split(/[?&#]+/), o = [], r = 0; r < n.length; ++r) (E(n[r], "utm_id") || E(n[r], "utm_campaign") || E(n[r], "utm_source") || E(n[r], "utm_medium") || E(n[r], "utm_term") || E(n[r], "utm_content") || E(n[r], "gclid") || E(n[r], "dclid") || E(n[r], "gclsrc")) && o.push(n[r]);
             0 < o.length && (n = "#" + o.join("&"), t.set(Ie, t.get(Ie) + n));
@@ -4190,7 +4190,7 @@
         this.b.set(e, t);
     };
     var Zn = {
-        pageview: [ He ],
+        pageview: [ De ],
         event: [ ze, We, Ve, Ge ],
         social: [ Xe, Qe, Ye ],
         timing: [ it, at, lt, st ]
@@ -4206,7 +4206,7 @@
         var n = this;
         sr(e, n, t) || (cr(e, function() {
             sr(e, n, t);
-        }), lr(String(n.get(Dt)), e, void 0, t, !0));
+        }), lr(String(n.get(Ht)), e, void 0, t, !0));
     };
     var Jn, er, tr, nr, rr = function(e) {
         return "prerender" != W.visibilityState && (e(), !0);
@@ -4242,7 +4242,7 @@
         linkid: 47
     };
     var sr = function(e, t, n) {
-        t == hr || t.get(Dt);
+        t == hr || t.get(Ht);
         var r = Jn.get(e);
         return !!$(r) && (t.plugins_ = t.plugins_ || new B(), !!t.plugins_.get(e) || (t.plugins_.set(e, new r(t, n || {})), 
         !0));
@@ -4266,7 +4266,7 @@
                 }, i || (r.event = "gtm.js"), z[t].push(r), r = Ln(o);
             }
             !r && er.hasOwnProperty(n) ? (e(39), r = n + ".js") : e(43), r && (r && 0 <= r.indexOf("/") || (r = (Te || O() ? "https:" : "http:") + "//www.google-analytics.com/plugins/ua/" + r), 
-            o = pr(r), t = o.protocol, r = W.location.protocol, ("https:" == t || t == r || ("http:" != t ? 0 : "http:" == r)) && dr(o) && (D(o.url, void 0, i), 
+            o = pr(r), t = o.protocol, r = W.location.protocol, ("https:" == t || t == r || ("http:" != t ? 0 : "http:" == r)) && dr(o) && (H(o.url, void 0, i), 
             tr.set(n, !0)));
         }
     }, cr = function(e, t) {
@@ -4329,14 +4329,14 @@
         e(1), fr.D.apply(fr, [ arguments ]);
     };
     hr.h = {}, hr.P = [], hr.L = 0, hr.answer = 42;
-    var gr = [ Rt, Bt, Dt ];
+    var gr = [ Rt, Bt, Ht ];
     hr.create = function(e) {
         var t = q(gr, [].slice.call(arguments));
-        t[Dt] || (t[Dt] = "t0");
-        var n = "" + t[Dt];
+        t[Ht] || (t[Ht] = "t0");
+        var n = "" + t[Ht];
         return hr.h[n] ? hr.h[n] : (t = new Qn(t), hr.h[n] = t, hr.P.push(t), t);
     }, hr.remove = function(e) {
-        for (var t = 0; t < hr.P.length; t++) if (hr.P[t].get(Dt) == e) {
+        for (var t = 0; t < hr.P.length; t++) if (hr.P[t].get(Ht) == e) {
             hr.P.splice(t, 1), hr.h[e] = null;
             break;
         }
@@ -4371,7 +4371,7 @@
             ur("displayfeatures", qn), ur("adfeatures", qn), t = t && t.q, S(t) ? fr.D.apply(hr, t) : e(50);
         }
     }, hr.da = function() {
-        for (var e = hr.getAll(), t = 0; t < e.length; t++) e[t].get(Dt);
+        for (var e = hr.getAll(), t = 0; t < e.length; t++) e[t].get(Ht);
     };
     var mr = hr.N, vr = z[Ce];
     vr && vr.r ? mr() : or(mr), or(function() {
@@ -4635,8 +4635,7 @@
             }).promise().done(r) : r();
         });
     }, Urb.setupNavigationSnap = function() {
-        var e = Urb.$wpadminbar && Urb.$window.outerWidth() > 600 ? Urb.$wpadminbar.outerHeight() : 0;
-        Urb.windowHeightMinusWPHeaderHeight = Urb.$window.height() - Urb.$pageNavigation.outerHeight() - e;
+        Urb.windowHeightMinusWPHeaderHeight = Urb.$window.height() - Urb.$pageNavigation.outerHeight() - t;
     }, Urb.scrollPageNavigation = function() {
         Urb.scrollPosition >= Urb.windowHeightMinusWPHeaderHeight ? Urb.$siteNavigation.addClass("stuck-top").removeClass("past-midpoint") : Urb.scrollPosition >= Urb.$window.height() / 2 ? (Urb.$siteNavigation.addClass("past-midpoint").removeClass("stuck-top"), 
         Urb.$mainNavigation.hasClass("open") && (Urb.$menuToggle.toggleClass("open", !1), 
@@ -4644,11 +4643,7 @@
         Urb.$mainNavigation.hasClass("open") && (Urb.$menuToggle.toggleClass("open", !1), 
         Urb.$mainNavigation.toggleClass("open", !1).removeAttr("style")));
     }, Urb.scrollSocialNavigation = function() {
-        Urb.$socialNavigation.is(":visible") ? Urb.scrollPosition > Urb.$window.height() ? Urb.$socialNavigation.addClass("hidden") : Urb.$socialNavigation.css({
-            opacity: (1 - Urb.scrollPosition / (Urb.$window.height() / 15)).toFixed(2),
-            "margin-top": (-1 * Urb.scrollPosition / 5).toFixed() + "px",
-            transform: "scale(" + (1 - .2 * Urb.scrollPosition / (Urb.$window.height() / 5)).toFixed(2) + ")"
-        }) : Urb.scrollPosition < Urb.$window.height() && Urb.$socialNavigation.removeClass("hidden");
+        Urb.$socialNavigation.is(":visible") ? Urb.scrollPosition > 10 ? e(".social-menu", Urb.$socialNavigation).removeClass("active") : e(".social-menu", Urb.$socialNavigation).addClass("active") : Urb.scrollPosition < Urb.$window.height() && Urb.$socialNavigation.removeClass("hidden");
     }, Urb.scrollToContent = function() {
         if (Urb.$body.hasClass("home")) {
             if (location.hash) {
@@ -4687,9 +4682,10 @@
             Urb.$searchForm.toggleClass("searching", !1);
         }, 250);
     }, Urb.changeSearch = function() {
-        Urb.$searchLabel.toggleClass("visible", !Urb.$search.is(":valid"));
+        Urb.$search.toggleClass("valid", Urb.$search.length), Urb.$search.toggleClass("invalid", !Urb.$search.length), 
+        Urb.$searchLabel.toggleClass("visible", !Urb.$search.is(".valid"));
     }, Urb.search = function() {
-        if (Urb.$search.is(":invalid")) return event.preventDefault(), !1;
+        if (Urb.$search.is(".invalid")) return event.preventDefault(), !1;
     }, Urb.setupSearch = function() {}, Urb.showSearchBox = function() {
         Urb.startSearching(), Urb.$search.focus();
     }, Urb.startSearching = function() {

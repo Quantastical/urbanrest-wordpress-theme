@@ -11,19 +11,19 @@ $prefix-for-spec:      true !default;
     @if $prefix-property == property {
       @if $prefix == webkit {
         @if $prefix-for-webkit {
-          -webkit-#{$property}: $value;
+//          -webkit-#{$property}: $value;
         }
       } @else if $prefix == moz {
         @if $prefix-for-mozilla {
-          -moz-#{$property}: $value;
+//          -moz-#{$property}: $value;
         }
       } @else if $prefix == ms {
         @if $prefix-for-microsoft {
-          -ms-#{$property}: $value;
+//          -ms-#{$property}: $value;
         }
       } @else if $prefix == o {
         @if $prefix-for-opera {
-          -o-#{$property}: $value;
+//          -o-#{$property}: $value;
         }
       } @else if $prefix == spec {
         @if $prefix-for-spec {
@@ -35,19 +35,19 @@ $prefix-for-spec:      true !default;
     } @else {
       @if $prefix == webkit {
         @if $prefix-for-webkit {
-          #{$property}: -webkit-#{$value};
+//          #{$property}: -webkit-#{$value};
         }
       } @else if $prefix == moz {
         @if $prefix-for-mozilla {
-          #{$property}: -moz-#{$value};
+//          #{$property}: -moz-#{$value};
         }
       } @else if $prefix == ms {
         @if $prefix-for-microsoft {
-          #{$property}: -ms-#{$value};
+//          #{$property}: -ms-#{$value};
         }
       } @else if $prefix == o {
         @if $prefix-for-opera {
-          #{$property}: -o-#{$value};
+//          #{$property}: -o-#{$value};
         }
       } @else if $prefix == spec {
         @if $prefix-for-spec {
@@ -69,63 +69,56 @@ $prefix-for-spec:      true !default;
 }
 
 @mixin align-items($align-items) {
-  @include prefixer(align-items, $align-items, webkit spec);
+  @include prefixer(align-items, $align-items, spec);
 }
 
 @mixin animation($animations...) {
-  @include prefixer(animation, $animations, webkit moz spec);
+  @include prefixer(animation, $animations, spec);
 }
 
 @mixin animation-name($names...) {
-  @include prefixer(animation-name, $names, webkit moz spec);
+  @include prefixer(animation-name, $names, spec);
 }
 
 @mixin animation-duration($times...) {
-  @include prefixer(animation-duration, $times, webkit moz spec);
+  @include prefixer(animation-duration, $times, spec);
 }
 
 @mixin animation-timing-function($motions...) {
   // ease | linear | ease-in | ease-out | ease-in-out
-  @include prefixer(animation-timing-function, $motions, webkit moz spec);
+  @include prefixer(animation-timing-function, $motions, spec);
 }
 
 @mixin animation-iteration-count($values...) {
   // infinite | <number>
-  @include prefixer(animation-iteration-count, $values, webkit moz spec);
+  @include prefixer(animation-iteration-count, $values, spec);
 }
 
 @mixin animation-direction($directions...) {
   // normal | alternate
-  @include prefixer(animation-direction, $directions, webkit moz spec);
+  @include prefixer(animation-direction, $directions, spec);
 }
 
 @mixin animation-play-state($states...) {
   // running | paused
-  @include prefixer(animation-play-state, $states, webkit moz spec);
+  @include prefixer(animation-play-state, $states, spec);
 }
 
 @mixin animation-delay($times...) {
-  @include prefixer(animation-delay, $times, webkit moz spec);
+  @include prefixer(animation-delay, $times, spec);
 }
 
 @mixin animation-fill-mode($modes...) {
   // none | forwards | backwards | both
-  @include prefixer(animation-fill-mode, $modes, webkit moz spec);
+  @include prefixer(animation-fill-mode, $modes, spec);
 }
 
 @mixin background-size( $size ) {
-	-webkit-background-size: $size;
-	-ms-background-size: $size;
-	-o-background-size: $size;
 	background-size: $size;
 }
 
 @mixin display( $display ) {
   @if $display == 'flex' {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flexbox;
     display: flex;
   } @else {
     display: $display;
@@ -133,28 +126,27 @@ $prefix-for-spec:      true !default;
 }
 
 @mixin filter( $filterList ) {
-  -webkit-filter: $filterList;
   filter: $filterList;
 }
 
 @mixin font-smoothing( $smoothing ) {
-  @include prefixer(font-smoothing, $smoothing, webkit spec);
+  // @include prefixer(font-smoothing, $smoothing, spec);
 }
 
 @mixin justify-content($justify-content) {
-  @include prefixer(justify-content, $justify-content, webkit spec);
+  @include prefixer(justify-content, $justify-content, spec);
 }
 
 @mixin flex($flex) {
-  @include prefixer(flex, $flex, webkit spec);
+  @include prefixer(flex, $flex, spec);
 }
 
 @mixin flex-basis($flex-basis) {
-  @include prefixer(flex-basis, $flex-basis, webkit moz spec);
+  @include prefixer(flex-basis, $flex-basis, spec);
 }
 
 @mixin flex-wrap($flex-wrap) {
-  @include prefixer(flex-wrap, $flex-wrap, webkit spec);
+  @include prefixer(flex-wrap, $flex-wrap, spec);
 }
 
 @mixin keyframes($name) {
@@ -163,22 +155,6 @@ $prefix-for-spec:      true !default;
   $original-prefix-for-microsoft: $prefix-for-microsoft;
   $original-prefix-for-opera:     $prefix-for-opera;
   $original-prefix-for-spec:      $prefix-for-spec;
-
-  @if $original-prefix-for-webkit {
-    @include disable-prefix-for-all();
-    $prefix-for-webkit: true !global;
-    @-webkit-keyframes #{$name} {
-      @content;
-    }
-  }
-
-  @if $original-prefix-for-mozilla {
-    @include disable-prefix-for-all();
-    $prefix-for-mozilla: true !global;
-    @-moz-keyframes #{$name} {
-      @content;
-    }
-  }
 
   $prefix-for-webkit:    $original-prefix-for-webkit    !global;
   $prefix-for-mozilla:   $original-prefix-for-mozilla   !global;
@@ -195,13 +171,11 @@ $prefix-for-spec:      true !default;
 
 @mixin transform( $transformList )
 {
-	-webkit-transform: $transformList;
 	transform: $transformList;
 }
 
 @mixin transform-origin( $transformOrigin )
 {
-  -webkit-transform-origin: $transformOrigin;
   transform-origin: $transformOrigin;
 }
 
@@ -229,52 +203,48 @@ $prefix-for-spec:      true !default;
         }
       }
 
-      $webkit: append($webkit, $list1);
-      $moz:    append($moz,    $list2);
+      /*$webkit: append($webkit, $list1);*/
+      /*$moz:    append($moz,    $list2);*/
       $spec:   append($spec,   $list3);
     } @else {
-      $webkit: append($webkit, $list, comma);
-      $moz:    append($moz,    $list, comma);
+      /*$webkit: append($webkit, $list, comma);*/
+      /*$moz:    append($moz,    $list, comma);*/
       $spec:   append($spec,   $list, comma);
     }
   }
 
   @if $needs-prefixes {
-    -webkit-transition: $webkit;
-       -moz-transition: $moz;
             transition: $spec;
   } @else {
     @if length($properties) >= 1 {
-      @include prefixer(transition, $properties, webkit moz spec);
+      @include prefixer(transition, $properties, spec);
     } @else {
       $properties: all 0.15s ease-out 0s;
-      @include prefixer(transition, $properties, webkit moz spec);
+      @include prefixer(transition, $properties, spec);
     }
   }
 }
 
 @mixin transition-property($properties...) {
-  -webkit-transition-property: transition-property-names($properties, "webkit");
-     -moz-transition-property: transition-property-names($properties, "moz");
           transition-property: transition-property-names($properties, false);
 }
 
 @mixin transition-duration($times...) {
-  @include prefixer(transition-duration, $times, webkit moz spec);
+  @include prefixer(transition-duration, $times, spec);
 }
 
 @mixin transition-timing-function($motions...) {
   // ease | linear | ease-in | ease-out | ease-in-out | cubic-bezier()
-  @include prefixer(transition-timing-function, $motions, webkit moz spec);
+  @include prefixer(transition-timing-function, $motions, spec);
 }
 
 @mixin transition-delay($times...) {
-  @include prefixer(transition-delay, $times, webkit moz spec);
+  @include prefixer(transition-delay, $times, spec);
 }
 
 @mixin user-select( $userSelection )
 {
-  @include prefixer(user-select, $userSelection, webkit moz spec);
+  @include prefixer(user-select, $userSelection, webkit moz);
 }
 
 //     _            _           _                           _ _

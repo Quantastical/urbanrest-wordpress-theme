@@ -162,8 +162,6 @@
 				width: 100%;
 
 				@include media('<=tablet') {
-					-webkit-order: -1;
-					-ms-flex-order: -1;
 					order: -1;
 					padding-bottom: 4em;
 				}
@@ -232,15 +230,9 @@
 							color: $urbanrest-green;
 							outline: none;
 
-							-webkit-animation-duration: 3s;
 							animation-duration: 3s;
-							-webkit-animation-fill-mode: both;
 							animation-fill-mode: both;
-
-							-webkit-animation-iteration-count: infinite;
 							animation-iteration-count: infinite;
-
-							-webkit-animation-name: flash;
 							animation-name: flash;
 						}
 					}
@@ -298,23 +290,8 @@
 								border-color: rgba( $urbanrest-black, 0.5 );
 							}
 
-							&:-webkit-autofill
-							{
-								background-color: inherit;
-								background-image: inherit;
-								color: inherit;
-							}
-
-							&::-webkit-input-placeholder
-							{
-								color: rgba($urbanrest-black, 0.6);
-								font-weight: 300;
-								@include transition( color 0.33s ease-in-out );
-							}
-
 							&#contact_message
 							{
-								-ms-overflow-style: none;
 								display: block;
 								height: 5.65em;
 								overflow: auto;
@@ -343,8 +320,6 @@
 									border-color: rgba( red, 0.5 );
 									color: red;
 								}
-
-								&::-webkit-input-placeholder { color: rgba(red, 0.6); }
 							}
 
 							label
@@ -376,7 +351,7 @@
 							font-size: 1em;
 							font-weight: 300;
 							left: 0.75em;
-							pointer-events: none;
+							/* pointer-events: none; /* TODO: implement when w3c validates against CSS 4 */
 							position: absolute;
 							top: 0.9em;
 							@include transition( 0.11s ease all );
@@ -498,18 +473,11 @@
 
 					&:focus
 					{
-						outline: none;
-
-						-webkit-animation-duration: 3s;
 						animation-duration: 3s;
-						-webkit-animation-fill-mode: both;
 						animation-fill-mode: both;
-
-						-webkit-animation-iteration-count: infinite;
 						animation-iteration-count: infinite;
-
-						-webkit-animation-name: flash;
 						animation-name: flash;
+						outline: none;
 					}
 				}
 

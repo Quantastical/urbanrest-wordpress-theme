@@ -12,7 +12,7 @@
 		<meta name="robots" content="NOODP,NOYDIR" />
 		<meta name="format-detection" content="telephone=no" />
 		<meta name="theme-color" content="#ff69b4" />
-		<meta name="viewport" content="width=400, maximum-scale=1.0, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<link rel="author" href="humans.txt" />
 <?php if( get_option('urbanrest_setting_favicon') ) : ?>
@@ -116,7 +116,7 @@
 		<link type="text/plain" rel="author" href="<?php echo get_site_url(); ?>/humans.txt" />
 		<?php wp_head(); ?>
 		<style id="critical-styles" type="text/css" media="screen">html { background: black; } body { opacity: 0; }</style>
-		<style id="qr-code" type="text/css" media="print">.page-footer:before {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=<?php echo urlencode( str_ireplace('URB.beer', 'QR.URB.beer', wp_get_shortlink()) ); ?>);}}</style>
+		<style id="qr-code" type="text/css" media="print">.page-footer:before {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=<?php echo urlencode( str_ireplace('URB.beer', 'QR.URB.beer', wp_get_shortlink()) ); ?>);}</style>
 	</head>
 
 	<body <?php body_class('site'); ?>>

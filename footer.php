@@ -63,7 +63,15 @@
 				html.classList.remove('no-javascript');
 				html.classList.add('javascript');
 			}
+
+			window._URB = {
+				'url' : '<?php echo str_replace( "'", "\'", admin_url('admin-ajax.php') ); ?>',
+				'nonce' : '<?php echo str_replace( "'", "\'", wp_create_nonce('admin-ajax') ); ?>',
+				'googleAnalyticsTrackingID' : '<?php echo str_replace( "'", "\'", get_option('google_analytics_tracking_id') ); ?>',
+				'googleBrowserMapApiKey' : '<?php echo str_replace( "'", "\'", get_option('google_browser_api_key') ); ?>'
+			};
 		</script>
+		<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() . '/script.min.js'; ?>"></script>
 		<?php wp_footer(); ?>
 	</body>
 </html>

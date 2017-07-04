@@ -13,11 +13,13 @@ jQuery( function( $ ) {
 	};
 
 	Urb.changeSearch = function() {
-		Urb.$searchLabel.toggleClass('visible', !Urb.$search.is(':valid'));
+		Urb.$search.toggleClass('valid', Urb.$search.length);
+		Urb.$search.toggleClass('invalid', !Urb.$search.length);
+		Urb.$searchLabel.toggleClass('visible', !Urb.$search.is('.valid'));
 	};
 
 	Urb.search = function() {
-		if(Urb.$search.is(':invalid')) {
+		if(Urb.$search.is('.invalid')) {
 			event.preventDefault();
 			return false;
 		}
@@ -40,7 +42,7 @@ jQuery( function( $ ) {
 	Urb.$searchButton.on('click', Urb.showSearchBox);
 	Urb.$searchSubmit.on('click', function() { Urb.$searchForm.submit(); } );
 	Urb.$searchForm.on('submit', Urb.search);
-	//Urb.$search.on('focus', Urb.startSearching);
+	// Urb.$search.on('focus', Urb.startSearching);
 	Urb.$search.on('blur', Urb.cancelSearching);
 	Urb.$search.on('input', Urb.changeSearch);
 	Urb.$window.on('load', Urb.setupSearch);

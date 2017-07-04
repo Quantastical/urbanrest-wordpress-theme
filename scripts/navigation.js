@@ -329,7 +329,7 @@ jQuery( function( $ ) {
 	};
 
 	Urb.setupNavigationSnap = function() {
-		var wpAdminBarHeight = (Urb.$wpadminbar && Urb.$window.outerWidth() > 600) ? Urb.$wpadminbar.outerHeight() : 0;
+		// var wpAdminBarHeight = (Urb.$wpadminbar && Urb.$window.outerWidth() > 600) ? Urb.$wpadminbar.outerHeight() : 0;
 		
 		Urb.windowHeightMinusWPHeaderHeight = Urb.$window.height() - Urb.$pageNavigation.outerHeight() - wpAdminBarHeight;
 	};
@@ -356,6 +356,12 @@ jQuery( function( $ ) {
 
 	Urb.scrollSocialNavigation = function() {
 		if(Urb.$socialNavigation.is(':visible')) {
+			if( Urb.scrollPosition > 10) {
+				$('.social-menu', Urb.$socialNavigation).removeClass('active');
+			} else {
+				$('.social-menu', Urb.$socialNavigation).addClass('active');
+			}
+			/*
 			if( Urb.scrollPosition > Urb.$window.height() ) {
 				Urb.$socialNavigation.addClass('hidden');
 			} else {
@@ -365,6 +371,7 @@ jQuery( function( $ ) {
 					'transform'  : 'scale(' + (1 - 0.2 * Urb.scrollPosition / (Urb.$window.height() / 5)).toFixed(2) + ')'
 				});
 			}
+			*/
 		} else if( Urb.scrollPosition < Urb.$window.height() ) {
 			Urb.$socialNavigation.removeClass('hidden');
 		}

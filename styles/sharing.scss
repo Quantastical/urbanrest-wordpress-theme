@@ -34,9 +34,10 @@
 		letter-spacing: 2pt;
 		line-height: 45pt;
 		margin: 0;
+		opacity: 0;
 		text-align: center;
 		@include transform( scale(0) );
-		@include transition( all 0.2s cubic-bezier(0.4, 0, 0.2, 1) );
+		@include transition( all 0.2s cubic-bezier(0.64, 0.57, 0.77, 1.53) );
 		width: 44pt;
 	}
 
@@ -50,10 +51,9 @@
 		}
 	}
 
-
-
 	&.visible:before
 	{
+		opacity: 1;
 		@include transform( scale(1) );
 	}
 

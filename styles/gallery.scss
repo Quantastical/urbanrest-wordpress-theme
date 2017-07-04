@@ -90,11 +90,7 @@
 .mfp-with-zoom .mfp-container,
 .mfp-with-zoom.mfp-bg {
 	opacity: 0;
-	-webkit-backface-visibility: hidden;
 	/* ideally, transition speed should match zoom duration */
-	-webkit-transition: all 0.2s ease-out;
-	-moz-transition: all 0.2s ease-out;
-	-o-transition: all 0.2s ease-out;
 	transition: all 0.2s ease-out;
 }
 
@@ -113,9 +109,6 @@
 /* overlay at start */
 .mfp-fade.mfp-bg {
   opacity: 0;
-
-  -webkit-transition: all 0.15s ease-out;
-  -moz-transition: all 0.15s ease-out;
   transition: all 0.15s ease-out;
 }
 /* overlay animate in */
@@ -130,9 +123,6 @@
 /* content at start */
 .mfp-fade.mfp-wrap .mfp-content {
   opacity: 0;
-
-  -webkit-transition: all 0.15s ease-out;
-  -moz-transition: all 0.15s ease-out;
   transition: all 0.15s ease-out;
 }
 /* content animate it */

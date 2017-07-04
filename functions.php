@@ -3,6 +3,7 @@ require_once('includes/ajax.php');
 require_once('includes/redirects.php');
 require_once('includes/3rd-parties.php');
 require_once('includes/admin-menu.php');
+require_once('includes/beer.php');
 require_once('includes/content-editor.php');
 require_once('includes/disable-emojis.php');
 require_once('includes/footer.php');
@@ -257,17 +258,16 @@ if( !function_exists( 'urbanrest_enqueue_scripts' ) ) :
 		// wp_enqueue_style( 'main', get_stylesheet_directory_uri() . '/style.min.css', false, false );
 
 		// Add scripts
-    wp_enqueue_script('site', get_stylesheet_directory_uri() . '/script.min.js', false, urb_get_version() );
+    // wp_enqueue_script('site', get_stylesheet_directory_uri() . '/script.min.js', false, urb_get_version() );
+		// wp_localize_script('site', '_URB', array(
+		// 	'url'                       => admin_url('admin-ajax.php'),
+		// 	'nonce'                     => wp_create_nonce('admin-ajax'),
+		// 	'googleAnalyticsTrackingID' => get_option('google_analytics_tracking_id'),
+		// 	'googleBrowserMapApiKey'    => get_option('google_browser_api_key')
+		// ));
 
 		wp_enqueue_script( 'html5shiv', get_stylesheet_directory_uri() . '/node_modules/html5shiv/dist/html5shiv.min.js' );
 		wp_script_add_data( 'html5shiv', 'conditional', 'lt IE 9' );
-
-		wp_localize_script('site', '_URB', array(
-			'url'                       => admin_url('admin-ajax.php'),
-			'nonce'                     => wp_create_nonce('admin-ajax'),
-			'googleAnalyticsTrackingID' => get_option('google_analytics_tracking_id'),
-			'googleBrowserMapApiKey'    => get_option('google_browser_api_key')
-		));
 	}
 endif;
 add_action('wp_enqueue_scripts', 'urbanrest_enqueue_scripts');

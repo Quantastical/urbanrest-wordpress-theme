@@ -18,8 +18,9 @@ $layer-social-navigation: 250;
 $fa-font-path: "./node_modules/font-awesome/fonts" !default;
 
 
-@import 'node_modules/animate.css/animate.min';
-@import 'node_modules/font-awesome/scss/font-awesome';
+@import 'node_modules/animate.css/animate';
+// @import 'node_modules/font-awesome/scss/font-awesome';
+@import 'node_modules/font-awesome/scss/font-awesome.scss';
 @import 'node_modules/magnific-popup/src/css/main';
 @import 'styles/colors';
 @import 'styles/mixins';
