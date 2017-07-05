@@ -44,7 +44,7 @@
 		</div>
 
 		<noscript id="deferred-styles">
-			<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() . '/style.min.css?' . urb_get_version(); ?>" />
+			<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() . '/style.min.css'; ?>" />
 		</noscript>
 		<script>
 			var loadDeferredStyles = function() {

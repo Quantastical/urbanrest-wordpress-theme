@@ -279,3 +279,16 @@ add_action( 'wp_default_scripts', function( $scripts ) {
         $scripts->registered['jquery']->deps = array_diff( $jquery_dependencies, array( 'jquery-migrate' ) );
     }
 } );
+
+
+
+
+function my_deregister_scripts(){
+  wp_deregister_script( 'wp-embed' );
+}
+add_action( 'wp_footer', 'my_deregister_scripts' );
+
+function stop_heartbeat() {
+	wp_deregister_script('heartbeat');
+}
+add_action( 'init', 'stop_heartbeat', 1 );
