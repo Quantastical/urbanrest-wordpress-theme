@@ -27,7 +27,7 @@ Quality Assurance: John Duda (RationalGaze.com)
 SITE RESOURCES
 ==============
 
-Last Updated:   2017-07-01
+Last Updated:   2017-07-04
 Languages:      English
 Compliance:     CSS Level 3
                 ECMAScript, 5th Edition
@@ -55,8 +55,8 @@ Services:       Basecamp
                 LinkedIn
                 MailChimp
                 MapQuest
+                Pingdom
                 Pinterest
-                RateBeer
                 StackOverflow
                 TinyPNG
                 Trello
@@ -68,6 +68,7 @@ Services:       Basecamp
                 WooRank
                 Yellow Pages
                 YouTube
+                W3C (World Wide Web Consortium)
 Software:       Adobe Illustrator
                 Adobe Photoshop
                 Android
