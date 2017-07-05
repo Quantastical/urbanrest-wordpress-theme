@@ -13,11 +13,11 @@
 			position: relative;
 			top: -1em;
 			@include transform( scale(0.5) );
-			@include transition( all 0.2s cubic-bezier(0.64, 0.57, 0.77, 1.53) );
+			@include transition( all 0.1s cubic-bezier(0.64, 0.57, 0.77, 1.53) );
 
 			@for $i from 1 through 33 {
 				&:nth-child(#{$i}) {
-					@include transition-delay(#{$i * 0.03}s); 
+					@include transition-delay(#{$i * 0.02}s); 
 				}
 			}
 		}
@@ -29,6 +29,13 @@
 				opacity: 1;
 				top: 0;
 				@include transform( scale(1) );
+				@include transition( all 0.2s cubic-bezier(0.64, 0.57, 0.77, 1.53) );
+
+				@for $i from 1 through 33 {
+					&:nth-child(#{$i}) {
+						@include transition-delay(#{$i * 0.03}s); 
+					}
+				}
 			}
 		}
 	}

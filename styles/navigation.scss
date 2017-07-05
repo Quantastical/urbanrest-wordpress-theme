@@ -161,6 +161,10 @@
 									top: 0;
 									width: 10em;
 
+									@media (max-width: 400px) {
+										width: 7em;
+									}
+
 									&:focus {
 										animation-duration: 3s;
 										animation-fill-mode: both;

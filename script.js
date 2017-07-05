@@ -4663,8 +4663,12 @@
     Urb.$window.on("ajaxloaded load", Urb.setupExternalLinks), Urb.$window.on("ajaxloaded load", Urb.setupImageLinks), 
     Urb.$window.on("load", Urb.setupFragmentAnchors), Urb.$window.on("ajaxloaded load", Urb.setupInternalLinks), 
     Urb.$window.on("load", Urb.setupPageNavigation), Urb.$window.on("load scroll", Urb.scrollPageNavigation), 
-    Urb.$window.on("load scroll", Urb.scrollSocialNavigation), Urb.$window.on("load", Urb.scrollToContent), 
-    Urb.$window.on("popstate", Urb.performHistoryNavigation), Urb.handleTouchEvents = function() {
+    Urb.$window.on("scroll", Urb.scrollSocialNavigation), Urb.$window.on("popstate", Urb.performHistoryNavigation), 
+    Urb.$window.on("load", function() {
+        setTimeout(function() {
+            Urb.scrollToContent(), Urb.scrollSocialNavigation();
+        }, 100);
+    }), Urb.handleTouchEvents = function() {
         Urb.touchEventsHandled || (e("a, button").each(function() {
             var t = e(this);
             t.on("mouseenter mouseover", function(e) {
