@@ -170,7 +170,7 @@ if( !function_exists('urb_get_business_hours') ) :
 		}
 		else
 		{
-			return 'Closed';
+			return false;
 		}
 	}
 endif;

@@ -19,7 +19,7 @@
 		<div class="business-hours">
 			<h5>Taproom</h5>
 			<dl class="row">
-<?php foreach( array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday') as $day ) : ?>
+<?php foreach( array('Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday') as $day ) : ?>
 <?php 	if( urb_get_business_hours($day) ) : ?>
 				<dt class="col-xs-6">
 					<span><?php echo $day; ?></span>

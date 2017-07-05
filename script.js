@@ -4576,7 +4576,7 @@
     }, Urb.navigateInternally = function(t) {
         if (Urb.log("Urb.navigateInternally"), window.history) {
             t.preventDefault(), Urb.$menuToggle.toggleClass("open", !1), Urb.$mainNavigation.toggleClass("open", !1).removeAttr("style");
-            var n = e(this), r = n.attr("href").replace(window.location.protocol + "//" + window.location.host, "");
+            var n = e(this), r = n.attr("href").replace(new RegExp("https?://" + window.location.host), "");
             window.history.pushState({}, n.text(), r), Urb.loadPage(r), e("body").trigger("click");
         }
     }, Urb.performHistoryNavigation = function(e) {
