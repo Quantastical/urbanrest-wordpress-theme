@@ -409,7 +409,7 @@ jQuery( function( $ ) {
 		history.scrollRestoration = 'manual';
 	}
 
-	Urb.$window.on('load orientationchange resize', Urb.setupNavigationSnap);
+	Urb.$window.on('ajaxloaded load orientationchange resize', Urb.setupNavigationSnap);
 	Urb.$window.on('ajaxloaded load', Urb.setupExternalLinks);
 	Urb.$window.on('ajaxloaded load', Urb.setupImageLinks);
 	Urb.$window.on('load', Urb.setupFragmentAnchors);

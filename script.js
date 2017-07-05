@@ -4659,7 +4659,7 @@
             0 == Urb.$window.scrollTop() && i.length && Urb.$window.scrollTop(i.offset().top - t);
         }
         Urb.scrollPageNavigation();
-    }, "scrollRestoration" in history && (history.scrollRestoration = "manual"), Urb.$window.on("load orientationchange resize", Urb.setupNavigationSnap), 
+    }, "scrollRestoration" in history && (history.scrollRestoration = "manual"), Urb.$window.on("ajaxloaded load orientationchange resize", Urb.setupNavigationSnap), 
     Urb.$window.on("ajaxloaded load", Urb.setupExternalLinks), Urb.$window.on("ajaxloaded load", Urb.setupImageLinks), 
     Urb.$window.on("load", Urb.setupFragmentAnchors), Urb.$window.on("ajaxloaded load", Urb.setupInternalLinks), 
     Urb.$window.on("load", Urb.setupPageNavigation), Urb.$window.on("load scroll", Urb.scrollPageNavigation), 
