@@ -4658,10 +4658,14 @@ body {
   display: none; }
 
 .javascript .modal-shade {
+  -webkit-align-items: center;
+  -moz-align-items: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.88);
   display: none;
   height: 100%;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
   justify-content: center;
   left: 0;
   opacity: 0;
@@ -4669,10 +4673,16 @@ body {
   top: 0;
   width: 100%;
   z-index: 1000;
+  -webkit-animation-duration: 0.25s;
+  -moz-animation-duration: 0.25s;
   animation-duration: 0.25s; }
   .javascript .modal-shade.modal-closing {
+    display: -webkit-flex;
+    display: -moz-flex;
     display: flex; }
   .javascript .modal-shade.modal-opened {
+    display: -webkit-flex;
+    display: -moz-flex;
     display: flex;
     opacity: 1; }
   .javascript .modal-shade .modal-close {
@@ -4703,6 +4713,8 @@ body {
       /*$moz:    append($moz,    $list, comma);*/
       transition: color 0.666s; }
   .javascript .modal-shade .modal-content {
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
     animation-duration: 0.5s; }
     @media (min-width: 768px) {
       .javascript .modal-shade .modal-content {
@@ -4803,7 +4815,9 @@ body {
       list-style: none;
       height: 100%;
       margin: 0;
-      padding: 0; } }
+      padding: 0;
+      -webkit-user-select: none;
+      -moz-user-select: none; } }
     @media only screen and (min-width: 769px) {
       .site .site-header .site-navigation .page-navigation .navbar {
         text-align: right; } }
@@ -4904,7 +4918,7 @@ body {
         .site .site-header .site-navigation .page-navigation .navbar .menu-item.main-menu [href="#main-menu"] {
           display: none; } }
       @media only screen and (max-width: 500px) {
-        .site .site-header .site-navigation .page-navigation .navbar .menu-item.main-menu {
+        .site .site-header .site-navigation .page-navigation .navbar .menu-item.main-menu#menu-toggle-item {
           margin-right: 0.5em; } }
 
 @media only screen {
@@ -5803,6 +5817,7 @@ body {
     background-size: cover;
     color: #E0DBD1;
     font-family: 'Chalk It Up';
+    -webkit-font-smoothing: antialiased;
     min-height: 100%;
     padding: 7em 0;
     position: relative; } }
@@ -6885,6 +6900,8 @@ body {
       .site main.beer .beer-footer .beer-actions .beer-checkin {
         display: none; }
         .site main.beer .beer-footer .beer-actions .beer-checkin.modal-opened, .site main.beer .beer-footer .beer-actions .beer-checkin.modal-closing {
+          display: -webkit-flex;
+          display: -moz-flex;
           display: flex; }
         .site main.beer .beer-footer .beer-actions .beer-checkin h5 {
           color: white;

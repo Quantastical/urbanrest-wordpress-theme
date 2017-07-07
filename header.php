@@ -116,6 +116,7 @@
 		<link type="text/plain" rel="author" href="<?php echo get_site_url(); ?>/humans.txt" />
 		<?php wp_head(); ?>
 		<style id="critical-styles" type="text/css" media="screen">html { background: black; } body { opacity: 0; }</style>
+		<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() . '/style.min.css'; ?>" />
 		<style id="qr-code" type="text/css" media="print">.page-footer:before {content: url(http://chart.googleapis.com/chart?cht=qr&chs=200x200&choe=UTF-8&chld=H&chl=<?php echo urlencode( str_ireplace('URB.beer', 'QR.URB.beer', wp_get_shortlink()) ); ?>);}</style>
 	</head>
 
@@ -189,7 +190,7 @@ wp_nav_menu( array(
 wp_nav_menu( array(
 	'theme_location' => 'navbar',
 	'container'      => '',
-	'items_wrap'     => '<ul class="navbar" id="menu-navbar">%3$s<li class="main-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-294"><div id="menu-toggle"><div id="hamburger"><span></span><span></span><span></span></div><div id="cross"><span></span><span></span></div></div></li></ul>',
+	'items_wrap'     => '<ul class="navbar" id="menu-navbar">%3$s<li id="menu-toggle-item" class="main-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-294"><div id="menu-toggle"><div id="hamburger"><span></span><span></span><span></span></div><div id="cross"><span></span><span></span></div></div></li></ul>',
 	'menu_class'     => 'navbar',
 ) );
 ?>

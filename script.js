@@ -4503,9 +4503,9 @@
                 scrollTop: o
             }, i), r.animate({
                 height: 0
-            }, i), void setTimeout(function() {
+            }, i), setTimeout(function() {
                 r.remove();
-            }, i + 250);
+            }, i + 250), void console.log("a", o);
         }
         var a = [];
         e('a[href^="#"]').each(function() {
@@ -4519,9 +4519,9 @@
                 scrollTop: o
             }, i), r.animate({
                 height: 0
-            }, i), void setTimeout(function() {
+            }, i), setTimeout(function() {
                 r.remove();
-            }, i + 250);
+            }, i + 250), void console.log("b", o);
         }
         var o = e(".site-posts").offset().top + e(".site-posts").outerHeight(), i = Math.round(500 * (Math.abs(Urb.$window.scrollTop() - o) / Urb.$window.height()));
         0 == r.length && (r = e('<main class="new page row around-xs" />'), e(".site-posts").after(r)), 
@@ -4531,7 +4531,7 @@
             }, 500);
         }, i), e("html,body").animate({
             scrollTop: o - t
-        }, i);
+        }, i), console.log("c", o, t);
         var l = "...", c = setInterval(function() {
             3 == l.length ? l = "" : l += ".", document.title = "Loading" + l;
         }, 250);

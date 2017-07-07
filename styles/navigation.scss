@@ -243,7 +243,7 @@
 
 								@include media('<=phone')
 								{
-									margin-right: 0.5em;
+									&#menu-toggle-item { margin-right: 0.5em; }
 								}
 
 								#menu-toggle

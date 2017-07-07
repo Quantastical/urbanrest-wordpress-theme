@@ -44,9 +44,10 @@
 		</div>
 
 		<noscript id="deferred-styles">
-			<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() . '/style.min.css'; ?>" />
+			<!--<link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() . '/style.min.css'; ?>" />-->
 		</noscript>
 		<script>
+		/*
 			var loadDeferredStyles = function() {
 				var addStylesNode = document.getElementById('deferred-styles');
 				var replacement = document.createElement('div');
@@ -57,6 +58,7 @@
 			var raf = requestAnimationFrame || mozRequestAnimationFrame || webkitRequestAnimationFrame || msRequestAnimationFrame;
       if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
       else window.addEventListener('load', loadDeferredStyles);
+		*/
     
 	    var html = document.documentElement;
 			if(html && html.classList){
