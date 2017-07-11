@@ -33,9 +33,10 @@ jQuery(function($){
 		Urb.log('Urb.setupBusinessHours');
 
 		var today = new Date();
-		var dayOfWeek = today.getDay() + 1;
-
-		$('dt:nth-of-type(' + dayOfWeek + '), dd:nth-of-type(' + dayOfWeek + ')', Urb.$businesHours).addClass('today');
+		var days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+		var dayOfWeek = days[today.getDay()];
+		
+		$('dt.' + dayOfWeek + ', dd.' + dayOfWeek, Urb.$businesHours).addClass('today');
 
 		$('dt', Urb.$businessHours).hover(function(){
 			$(this).toggleClass('hover').next('dd').toggleClass('hover');

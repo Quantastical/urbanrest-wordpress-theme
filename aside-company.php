@@ -21,10 +21,10 @@
 			<dl class="row">
 <?php foreach( array('Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday') as $day ) : ?>
 <?php 	if( urb_get_business_hours($day) ) : ?>
-				<dt class="col-xs-6">
+				<dt class="col-xs-6 <?php echo strtolower($day); ?>">
 					<span><?php echo $day; ?></span>
 				</dt>
-				<dd class="col-xs-6">
+				<dd class="col-xs-6 <?php echo strtolower($day); ?>">
 					<meta itemprop="openingHours" content="<?php echo urb_get_business_hours($day, "schema.org"); ?>" />
 					<span><?php echo urb_get_business_hours($day); ?></span>
 				</dd>

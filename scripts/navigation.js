@@ -86,14 +86,16 @@ jQuery( function( $ ) {
 		Urb.$body.append(Urb.$loading)
 		$currentPage.addClass('loading');
 		setTimeout(function(){
-			$currentPage.animate({height:0},500);
+			$currentPage.animate({height:0},300);
 		},duration);
 
 		//Urb.$body.animate(
-		$('html,body').animate(
-			{ scrollTop: targetOffset - wpAdminBarHeight },
-			duration
-		);
+		setTimeout(function() {
+			$('html,body').animate(
+				{ scrollTop: targetOffset - wpAdminBarHeight },
+				duration
+			);
+		}, 100);
 
 		var ellipsis = '...';
 		var loadingTimeout = setInterval(function() {
