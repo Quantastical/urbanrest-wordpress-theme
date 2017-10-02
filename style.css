@@ -5860,6 +5860,9 @@ body {
           text-align: right;
           vertical-align: top;
           width: 3em; }
+        .site .site-specials .beer-list .beer .containers {
+          font-size: 0.4em;
+          opacity: 0.5; }
         .site .site-specials .beer-list .beer p {
           font-size: 0.5em;
           line-height: 1.5em;

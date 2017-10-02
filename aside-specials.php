@@ -3,61 +3,66 @@
 			<h2>Urbanrest Beer List</h2>
 		</header>
 
-<?php
-$menu_name = 'beer-list';
-$locations = get_nav_menu_locations();
-$tap_menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
-$tap_menu_items = wp_get_nav_menu_items( $tap_menu->term_id, array( 'order' => 'ASC' ) );
-?>
-<?php if( count($tap_menu_items) > 0 ) : ?>
 		<section class="col-xs-12 beer-list">
 			<h3>Currently On Tap</h3>
 
 			<ol>
 <?php
-foreach( $tap_menu_items as $tap_menu_item ):
-	$beer = get_post(url_to_postid($tap_menu_item->url));
-	$alcohol = get_post_meta( $beer->ID, 'alcohol', true );
-?>
-				<li class="beer">
-					<a class="title" href="<?php the_permalink($beer->ID); ?>"><?php echo $beer->post_title; ?></a>
-					<span class="abv"><?php echo ($alcohol > 0) ? $alcohol . '%' : '--'; ?></span>
-					<p><?php echo $beer->post_excerpt; ?></p>
-				</li>
-<?php
-endforeach;
-?>
-			</ol>
-		</section>
-<?php endif; ?>
-<?php
-$menu_name = 'growler-list';
-$locations = get_nav_menu_locations();
-$growler_menu = wp_get_nav_menu_object( $locations[ $menu_name ] );
-$growler_menu_items = wp_get_nav_menu_items( $growler_menu->term_id, array( 'order' => 'ASC' ) );
-?>
-<?php if( count($growler_menu_items) > 0 ) : ?>
-		<section class="col-xs-12 growler-list">
-			<h3>Available in Growlers</h3>
+if (get_option('untappd_for_business_api_username')
+ && get_option('untappd_for_business_api_readonly_key')
+ && get_option('untappd_for_business_api_readwrite_key')
+ && get_option('untappd_for_business_api_taplist_section_id')) :
+	$email = get_option('untappd_for_business_api_username');
+	$readonly_key = get_option('untappd_for_business_api_readonly_key');
+	$readwrite_key = get_option('untappd_for_business_api_readwrite_key');
+	$section_id = get_option('untappd_for_business_api_taplist_section_id');
 
-			<ol>
-<?php
-foreach( $growler_menu_items as $growler_menu_item ):
-	$beer = get_post(url_to_postid($growler_menu_item->url));
+	$auth_token = base64_encode($email . ':' . $readwrite_key);
+	$endpoint = "https://business.untappd.com/api/v1/sections/{$section_id}/items";
+	$context = stream_context_create(array(
+	    'http' => array(
+	        'header' => "Authorization: Basic " . $auth_token,
+	    )
+	));
+	$section_response = file_get_contents($endpoint, false, $context);
+
+	if ($section_response) :
+		$section_items = json_decode($section_response);
+
+		foreach( $section_items->items as $key => $beer ) :
 ?>
 				<li class="beer">
-					<a class="title" href="<?php the_permalink($beer->ID); ?>"><?php echo $beer->post_title; ?></a>
+					<span class="title"><?php echo $beer->name ? $beer->name : $beer->original_name; ?></a>
+					<span class="abv"><?php echo $beer->abv ? $beer->abv . '%' : $beer->original_abv . '%'; ?></span>
+					<p class="containers">
+<?php 
+			$endpoint = "https://business.untappd.com/api/v1/items/{$beer->id}/containers";
+			$context = stream_context_create(array(
+			    'http' => array(
+			        'header' => "Authorization: Basic " . $auth_token,
+			    )
+			));
+			$container_response = file_get_contents($endpoint, false, $context);
+			if ($container_response) :
+				$item_containers = json_decode($container_response);
+
+				$containers = array_map(function ($container) {
+					return $container->container_size->name;
+				}, $item_containers->containers);
+				echo join(" / ", $containers);
+			endif;
+?>
+					</p>
+					<p><?php echo $beer->description ? $beer->description : $beer->original_description; ?></p>
 				</li>
 <?php
-endforeach;
+		endforeach;
+	endif;
+endif;
 ?>
 			</ol>
+			<p style="text-align:center;font-size:0.5em;">
+				* all organic ingredients
+			</p>
 		</section>
-<?php endif; ?>
-<?php if( count($tap_menu_items) == 0 && count($growler_menu_items) == 0 ) : ?>
-		<section class="col-xs-12 beer-list">
-			<h3>Under Construction</h3>
-			<p style="text-align:center;">Beer&nbsp;List Coming&nbsp;Soon</p>
-		</section>
-<?php endif; ?>
 	</aside>

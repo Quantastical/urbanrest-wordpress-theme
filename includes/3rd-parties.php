@@ -21,6 +21,10 @@ function urb_admin_init_3rd_parties( ) {
 		'twitter_username',
 		'untappd_api_client_id',
 		'untappd_api_client_secret',
+		'untappd_for_business_api_username',
+		'untappd_for_business_api_readonly_key',
+		'untappd_for_business_api_readwrite_key',
+		'untappd_for_business_api_taplist_section_id',
 		'youtube_channel_id'
 	);
 
@@ -283,23 +287,22 @@ function urb_admin_section_untappd() {
 
 	$fields = array(
 		'untappd_api_client_id'     => 'Untappd Client ID',
-		'untappd_api_client_secret' => 'Untappd Client Secret'
+		'untappd_api_client_secret' => 'Untappd Client Secret',
+		'untappd_for_business_api_username' => 'Untappd for Business Username',
+		'untappd_for_business_api_readonly_key' => 'Untappd for Business Read-Only Key',
+		'untappd_for_business_api_readwrite_key' => 'Untappd for Business Read/Write Key',
+		'untappd_for_business_api_taplist_section_id' => 'Untappd for Business Taplist Section ID'
 	);
 
 	foreach( $fields as $setting_id => $setting_title ) {
-		$setting_callback = 'urb_' . $setting_id;
-		$args = array();
+		$setting_callback = 'urb_untappd_generic';
+		$args = array('option' => $setting_id);
 		add_settings_field( $setting_id, $setting_title, $setting_callback, $page, $section, $args );
 	}
 }
 
-function urb_untappd_api_client_id() {
-	$option = 'untappd_api_client_id';
-	echo '<input type="text" name="' . $option . '" id="' . $option . '" value="' . get_option( $option ) . '" class="regular-text ltr" />';
-}
-
-function urb_untappd_api_client_secret() {
-	$option = 'untappd_api_client_secret';
+function urb_untappd_generic($options) {
+	$option = $options['option'];
 	echo '<input type="text" name="' . $option . '" id="' . $option . '" value="' . get_option( $option ) . '" class="regular-text ltr" />';
 }
 
