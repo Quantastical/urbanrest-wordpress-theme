@@ -24,7 +24,8 @@ function urb_admin_init_3rd_parties( ) {
 		'untappd_for_business_api_username',
 		'untappd_for_business_api_readonly_key',
 		'untappd_for_business_api_readwrite_key',
-		'untappd_for_business_api_taplist_section_id',
+		'untappd_for_business_api_beer_section_id',
+		'untappd_for_business_api_kombucha_section_id',
 		'youtube_channel_id'
 	);
 
@@ -291,7 +292,8 @@ function urb_admin_section_untappd() {
 		'untappd_for_business_api_username' => 'Untappd for Business Username',
 		'untappd_for_business_api_readonly_key' => 'Untappd for Business Read-Only Key',
 		'untappd_for_business_api_readwrite_key' => 'Untappd for Business Read/Write Key',
-		'untappd_for_business_api_taplist_section_id' => 'Untappd for Business Taplist Section ID'
+		'untappd_for_business_api_beer_section_id' => 'Untappd for Business Beer Section ID',
+		'untappd_for_business_api_kombucha_section_id' => 'Untappd for Business Kombucha Section ID'
 	);
 
 	foreach( $fields as $setting_id => $setting_title ) {

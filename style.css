@@ -5848,6 +5848,16 @@ body {
         padding: 0; }
       .site .site-specials .beer-list h3 {
         display: none; }
+      .site .site-specials .beer-list h4 {
+        font-size: 1em;
+        font-weight: normal;
+        margin-bottom: 0.5em;
+        text-align: center; } }
+    @media only screen and (min-width: 769px) {
+      .site .site-specials .beer-list h4 {
+        font-size: 1.25em; } }
+
+@media only screen {
       .site .site-specials .beer-list .beer {
         line-height: 0.8em;
         margin-bottom: 0.5em; }
@@ -6358,6 +6368,9 @@ body {
           margin-bottom: 2em; } }
 
 @media only screen {
+        .site .site-company .site-contact .social-menu .menu-item {
+          opacity: 1;
+          transform: none; }
       .site .site-company .site-contact .legal {
         font-size: 0.8em;
         margin-top: 2em;
