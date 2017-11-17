@@ -19,6 +19,7 @@ require_once('includes/rating.php');
 require_once('includes/response.php');
 require_once('includes/role.php');
 require_once('includes/title.php');
+require_once('includes/wp-totalcache-scheduled-flush.php');
 
 require_once('includes/admin/help.php');
 require_once('includes/admin/scripts.php');
