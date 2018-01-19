@@ -309,29 +309,28 @@ if( $featured == false || count($featured) == 0 ) {
 <?php
 if (count($events) > 0) :
 	$first = false;
-	$today->setTime(0,0);
-	$next_event = $events[0]['start_time'];
-	$interval = $today->diff($next_event);
+	$next_event = $events[0];
+	$event_today = ($today->format('Y-m-d') == $next_event['start_time']->format('Y-m-d')) ? true : false;
 ?>
 				<li class="blog-post event active next">
-					<a href="#community">
-						<span class="blog-post-image" style="background-image:url(<?php echo $events[0]['cover']; ?>)">
-							<img width="960" height="720" src="<?php echo $events[0]['cover']; ?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="">
+					<a href="#events">
+						<span class="blog-post-image" style="background-image:url(<?php echo $next_event['cover']; ?>)">
+							<img width="960" height="720" src="<?php echo $next_event['cover']; ?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="">
 						</span>
 						<h4>
-							<span><?php echo ($interval->days == 0) ? 'Event Today' : 'Next Event'; ?></span>
+							<span><?php echo ($event_today) ? 'Event Today' : 'Next Event'; ?></span>
 							<time>
-								<?php echo $events[0]['start_time']->format('l,&\n\b\s\p;F&\n\b\s\p;jS'); ?><br />
-								<?php echo ($events[0]['start_time']->format('i') == '00') ? $events[0]['start_time']->format('g A') : $events[0]['start_time']->format('g:i A'); ?>
-								<?php echo (isset($events[0]['start_time']) && isset($events[0]['end_time'])) ? '&ndash;' : ''; ?>
-								<?php echo ($events[0]['end_time']->format('i') == '00') ? $events[0]['end_time']->format('g A') : $events[0]['end_time']->format('g:i A'); ?>
+								<?php echo $next_event['start_time']->format('l,&\n\b\s\p;F&\n\b\s\p;jS'); ?><br />
+								<?php echo ($next_event['start_time']->format('i') == '00') ? $next_event['start_time']->format('g A') : $next_event['start_time']->format('g:i A'); ?>
+								<?php echo (isset($next_event['start_time']) && isset($next_event['end_time'])) ? '&ndash;' : ''; ?>
+								<?php echo ($next_event['end_time']->format('i') == '00') ? $next_event['end_time']->format('g A') : $next_event['end_time']->format('g:i A'); ?>
 							</time>
-							<span><?php echo $events[0]['name']; ?></span>
+							<span><?php echo $next_event['name']; ?></span>
 							<span>View Upcoming Events</span>
 						</h4>
 					</a>
 					<div class="blog-post-intro">
-						<?php echo $events[0]['description']; ?>
+						<?php echo $next_event['description']; ?>
 					</div>
 				</li>
 <?php endif; ?>

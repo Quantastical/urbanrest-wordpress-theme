@@ -1,4 +1,4 @@
-<aside class="site-community row hidden" id="community">
+<aside class="site-community row" id="events">
 	<header class="col-xs-12">
 		<h2>Latest News &amp; Events</h2>
 	</header>

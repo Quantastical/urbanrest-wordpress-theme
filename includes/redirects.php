@@ -16,7 +16,7 @@ function urb_send_headers( )
 		include(TEMPLATEPATH . '/sitemap.xml.php');
 		die();
 	}
-	else if( preg_match('/^\/(beer|contact)\/?$/', $_SERVER['REQUEST_URI'], $matches ) )
+	else if( preg_match('/^\/(beer|contact|events)\/?$/', $_SERVER['REQUEST_URI'], $matches ) )
 	{
 		add_filter( 'body_class', function( $classes ) {
 			$classes[] = 'home';

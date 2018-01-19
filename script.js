@@ -4485,7 +4485,8 @@
 }), jQuery(function(e) {
     var t = Urb.$wpadminbar && Urb.$window.outerWidth() > 600 ? Urb.$wpadminbar.outerHeight() : 0, n = Urb.$pageNavigation.outerHeight() + t, r = e("main"), o = {
         "#contact": e("#contact"),
-        "#beer": e("#beer")
+        "#beer": e("#beer"),
+        "#events": e("#events")
     };
     r.length && (o[r.attr("id")] = r), Urb.$loading = e('<span class="loading-text" id="loading"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span>'), 
     Urb.highlightCurrentSection = function() {
@@ -4614,7 +4615,7 @@
         Urb.log("Urb.setupFragmentAnchors"), Urb.$document.on("click", 'a[href^="#"]', function(n) {
             n.preventDefault();
             var r = e.attr(this, "href"), o = 0, i = e(r);
-            return "#community" == r && e("#community").is(".hidden") && e("#community").removeClass("hidden"), 
+            return "#events" == r && e("#events").is(".hidden") && e("#events").removeClass("hidden"), 
             "#" !== r && 0 !== i.length ? o = i.offset().top : r = "/", e("html,body").animate({
                 scrollTop: Math.ceil(o - t)
             }, Math.round(250 * (Math.abs(Urb.$window.scrollTop() - o) / Urb.$window.height()))), 
@@ -4651,10 +4652,10 @@
         if (Urb.$body.hasClass("home")) {
             if (location.hash) {
                 var r = e(location.hash), o = 5;
-                Urb.$window.scrollTop() > r.offset().top - (n + o) && Urb.$window.scrollTop() < r.offset().top + o && Urb.$window.scrollTop(r.offset().top - n);
-            } else if (location.pathname && location.pathname.match(/^\/(beer|contact)\/?$/)) {
+                r.length && !r.is(".hidden") && r.removeClass("hidden"), Urb.$window.scrollTop() > r.offset().top - (n + o) && Urb.$window.scrollTop() < r.offset().top + o && Urb.$window.scrollTop(r.offset().top - n);
+            } else if (location.pathname && location.pathname.match(/^\/(beer|contact|events)\/?$/)) {
                 var r = e(location.pathname.replace(/\/$/, "").replace(/\/+/, "#")), o = 5;
-                0 == Urb.$window.scrollTop() && r.length && Urb.$window.scrollTop(r.offset().top);
+                r.length && !r.is(".hidden") && r.removeClass("hidden"), 0 == Urb.$window.scrollTop() && r.length && Urb.$window.scrollTop(r.offset().top);
             }
         } else {
             Urb.$body.addClass("home");

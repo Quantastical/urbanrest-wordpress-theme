@@ -4,7 +4,8 @@ jQuery( function( $ ) {
 	var $main = $('main');
 	var contentAreas = {
 		'#contact' : $('#contact'),
-		'#beer' : $('#beer')
+		'#beer' : $('#beer'),
+		'#events' : $('#events')
 	};
 	if($main.length){
 		contentAreas[$main.attr('id')] = $main;
@@ -261,8 +262,8 @@ jQuery( function( $ ) {
 			var fragmentIdentifier = $.attr(this, 'href');
 			var targetOffset = 0;
 			var $fragment = $(fragmentIdentifier);
-			if(fragmentIdentifier == '#community' && $('#community').is('.hidden')) {
-				$('#community').removeClass('hidden');
+			if(fragmentIdentifier == '#events' && $('#events').is('.hidden')) {
+				$('#events').removeClass('hidden');
 			}
 
 			if(fragmentIdentifier !== '#' && $fragment.length !== 0) {
@@ -394,14 +395,22 @@ jQuery( function( $ ) {
 			var $anchor = $(location.hash);
 			var anchorProximityThreshold = 5; // pixels
 
+			if ($anchor.length && !$anchor.is('.hidden')) {
+				$anchor.removeClass('hidden');
+			}
+
 			if( Urb.$window.scrollTop() > $anchor.offset().top - (navBarWithAdminBarHeight + anchorProximityThreshold)
 			 && Urb.$window.scrollTop() < $anchor.offset().top + anchorProximityThreshold )
 			{
 				Urb.$window.scrollTop( $anchor.offset().top - navBarWithAdminBarHeight );
 			}
-		} else if( location.pathname && location.pathname.match(/^\/(beer|contact)\/?$/) ) {
+		} else if( location.pathname && location.pathname.match(/^\/(beer|contact|events)\/?$/) ) {
 			var $anchor = $( location.pathname.replace(/\/$/, '').replace(/\/+/, '#') );
 			var anchorProximityThreshold = 5; // pixels
+
+			if ($anchor.length && !$anchor.is('.hidden')) {
+				$anchor.removeClass('hidden');
+			}
 
 			if(Urb.$window.scrollTop() == 0 && $anchor.length) {
 				Urb.$window.scrollTop( $anchor.offset().top );
