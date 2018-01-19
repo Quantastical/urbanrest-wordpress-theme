@@ -4498,7 +4498,7 @@
         Urb.log("Urb.loadPage");
         var r = e("main");
         if (Urb.$body.removeClass("no-scroll"), "/" === n || "" === n) {
-            var o = 0, i = Math.round(500 * (Math.abs(Urb.$window.scrollTop() - o) / Urb.$window.height()));
+            var o = 0, i = 250;
             return e("html,body").animate({
                 scrollTop: o
             }, i), r.animate({
@@ -4514,7 +4514,7 @@
         });
         var s = n.replace("/", "#");
         if (e.inArray(s, a) !== -1) {
-            var o = e(n.replace("/", "#")).offset().top - t, i = Math.round(500 * (Math.abs(Urb.$window.scrollTop() - o) / Urb.$window.height()));
+            var o = e(n.replace("/", "#")).offset().top - t, i = 250;
             return e("html,body").animate({
                 scrollTop: o
             }, i), r.animate({
@@ -4614,9 +4614,10 @@
         Urb.log("Urb.setupFragmentAnchors"), Urb.$document.on("click", 'a[href^="#"]', function(n) {
             n.preventDefault();
             var r = e.attr(this, "href"), o = 0, i = e(r);
-            return "#" !== r && 0 !== i.length ? o = i.offset().top : r = "/", e("html,body").animate({
+            return "#community" == r && e("#community").is(".hidden") && e("#community").removeClass("hidden"), 
+            "#" !== r && 0 !== i.length ? o = i.offset().top : r = "/", e("html,body").animate({
                 scrollTop: Math.ceil(o - t)
-            }, Math.round(500 * (Math.abs(Urb.$window.scrollTop() - o) / Urb.$window.height()))), 
+            }, Math.round(250 * (Math.abs(Urb.$window.scrollTop() - o) / Urb.$window.height()))), 
             !1;
         });
     }, Urb.setupPageNavigation = function() {

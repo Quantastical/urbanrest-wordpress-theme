@@ -1,9 +1,9 @@
-<aside class="site-community row" id="community">
+<aside class="site-community row hidden" id="community">
 	<header class="col-xs-12">
 		<h2>Latest News &amp; Events</h2>
 	</header>
 
-	<section class="site-events col-sm-6">
+	<section class="site-events">
 		<h3>
 			<!-- TODO: make this source less 'neut' -->
 			<span class="word">Upcoming</span>
@@ -15,89 +15,86 @@
 			<span class="letter">s</span>
 		</h3>
 <?php
-$event_args = array(
-	'order'          => 'ASC',
-	'orderby'        => 'date',
-	'posts_per_page' => -1, // no pagination
-	'post_type'      => 'event',
-	'post_status'    => 'publish'
-);
-$events = get_posts($event_args);
+require_once('includes/plugins/Facebook/autoload.php');
+$app_id = get_option('facebook_app_id'); //'1692973204325474';
+$app_secret = get_option('facebook_app_secret'); //'714136f769a765d1157086a1dae680e5';
+
+$page_id = get_option('facebook_page_id'); //'urbanrestbeer';
+
+$access_token = "https://graph.facebook.com/oauth/access_token?client_id=$app_id&client_secret=$app_secret&grant_type=client_credentials";
+$access_token = file_get_contents($access_token); // returns 'accesstoken=APP_TOKEN|APP_SECRET'
+$access_token = json_decode($access_token);
+$access_token = $access_token->access_token;
+
+$fb = new \Facebook\Facebook([
+  'app_id' => $app_id,
+  'app_secret' => $app_secret,
+  'default_graph_version' => 'v2.10',
+]);
+
+$response = $fb->get('/' . $page_id . '/events?time_filter=upcoming', $access_token);
+$graphEdge = $response->getGraphEdge();
+
+$today = new DateTime();
+$events = array();
+foreach ($graphEdge as $item) {
+	$event = $item->asArray();
+	
+	if(!isset($event['event_times'])) {
+		if($event['end_time'] < $today) {
+			continue;
+		}
+
+		array_push($events, $event);
+	} else {
+		foreach($event['event_times'] as $event_time) {
+			if($event_time['end_time'] < $today) {
+				continue;
+			}
+
+			$recurring_event = $event;
+			$recurring_event['id'] = $event_time['id'];
+			$recurring_event['start_time'] = $event_time['start_time'];
+			$recurring_event['end_time'] = $event_time['end_time'];
+			array_push($events, $recurring_event);
+		}
+	}
+}
+
+usort($events, function($a,$b){
+    if ($a['start_time'] == $b['start_time']) {
+        return 0;
+    }
+    return ($a['start_time'] < $b['start_time']) ? -1 : 1;
+});
 ?>
 		<ul class="events">
-<?php foreach( $events as $post ) : ?>
-<?php 	setup_postdata( $GLOBALS['post'] =& $post ); ?>
-			<li class="event" itemscope itemtype="http://schema.org/MusicEvent">
+<?php foreach( $events as $event ) : ?>
+			<li class="event" itemscope itemtype="http://schema.org/Event">
 				<div class="event-when">
-					<time class="event-start" itemprop="startDate" datetime="<?php urb_the_datetime('start_datetime'); ?>">
-						<span class="day"><?php urb_the_datetime('start_datetime', 'l'); ?></span>
-						<span class="month"><?php urb_the_datetime('start_datetime', 'F'); ?></span>
-						<span class="date"><?php urb_the_datetime('start_datetime', 'j'); ?></span>
-						<span class="year"><?php urb_the_datetime('start_datetime', 'Y'); ?></span>
-						<span class="time"><?php urb_the_datetime('start_datetime', 'h:i A'); ?></span>
+					<time class="event-start" itemprop="startDate" datetime="<?php echo $event['start_time']->format('Y-m-d H:i'); ?>">
+						<span class="day"><?php echo $event['start_time']->format('l'); ?></span>
+						<span class="month"><?php echo $event['start_time']->format('F'); ?></span>
+						<span class="date"><?php echo $event['start_time']->format('j'); ?></span>
+						<span class="year"><?php echo $event['start_time']->format('Y'); ?></span>
+						<span class="time"><?php echo ($event['start_time']->format('i') == '00') ? $event['start_time']->format('g A') : $event['start_time']->format('g:i A'); ?></span>
 					</time>
-					<time class="event-end" itemprop="endDate" datetime="<?php urb_the_datetime('end_datetime'); ?>">
-						<span class="day"><?php urb_the_datetime('end_datetime', 'l'); ?></span>
-						<span class="month"><?php urb_the_datetime('end_datetime', 'F'); ?></span>
-						<span class="date"><?php urb_the_datetime('end_datetime', 'j'); ?></span>
-						<span class="year"><?php urb_the_datetime('end_datetime', 'Y'); ?></span>
-						<span class="time"><?php urb_the_datetime('end_datetime', 'h:i A'); ?></span>
+					<time class="event-end" itemprop="endDate" datetime="<?php echo $event['end_time']->format('Y-m-d H:i'); ?>">
+						<span class="day"><?php echo $event['end_time']->format('l'); ?></span>
+						<span class="month"><?php echo $event['end_time']->format('F'); ?></span>
+						<span class="date"><?php echo $event['end_time']->format('j'); ?></span>
+						<span class="year"><?php echo $event['end_time']->format('Y'); ?></span>
+						<span class="time"><?php echo ($event['end_time']->format('i') == '00') ? $event['end_time']->format('g A') : $event['end_time']->format('g:i A'); ?></span>
 					</time>
 				</div>
-				<a class="event-what" itemprop="url" href="<?php the_permalink(); ?>">
-					<span itemprop="name"><?php the_title(); ?></span>
+				<a class="event-what" itemprop="url" href="https://www.facebook.com/events/<?php echo $event['id']; ?>/">
+					<span itemprop="name"><?php echo $event['name']; ?></span>
 				</a>
 				<div class="event-why" itemprop="description">
-					<?php the_content(); ?>
+					<?php echo nl2br(trim($event['description'])); ?>
 				</div>
 			</li>
 <?php endforeach; ?>
-<?php wp_reset_postdata(' / '); ?>
-		</ul>
-	</section>
-
-	<section class="site-club col-sm-6">
-		<h3><abbr class="hashtag" title="hashtag">#</abbr>URBcrew</h3>
-		<p>Join the #URBcrew to earn savings, discounts, and get rewarded for your continued support.</p>
-		<ul>
-			<li>20-ounce pours instead of pints</li>
-			<li>Exclusive #URBcrew shirt</li>
-			<li>Early access to limited releases</li>
-		</ul>
-		<a class="btn btn-primary" href="/URBclub">
-			<span class="btn-label">Join Now</span>
-			<span class="btn-content">$100</span>
-		</a>
-	</section>
-
-	<section class="site-blog col-xs-12">
-		<h3>Latest Posts</h3>
-<?php
-$latest_args = array(
-	'posts_per_page' => 5,
-	'orderby' => 'date',
-	'order', 'DESC'
-);
-$latest = get_posts( $latest_args );
-?>
-		<ul class="latest-posts row around-xs around-sm around-md around-lg center-md" style="width: calc(<?php echo count($latest) * 100; ?>% + <?php echo count($latest) * 0.5; ?>rem);">
-<?php foreach ( $latest as $post ) : ?>
-<?php 	setup_postdata( $GLOBALS['post'] =& $post ); ?>
-			<li class="blog-post col-sm-5 col-md-5 col-lg-4" style="width: <?php echo 1 / count($latest) * 100; ?>%;">
-				<a href="<?php the_permalink(); ?>">
-<?php 	if ( has_post_thumbnail() ) : ?>
-					<span class="blog-post-image" style="background-image:url('<?php echo wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), array( 720,405 ), false, '' )[0]; ?>');">
-						<?php the_post_thumbnail(); ?>
-					</span>
-<?php 	endif; ?>
-					<h4><?php the_title(); ?></h4>
-				</a>
-				<div class="blog-post-intro">
-					<?php the_content(); ?>
-				</div>
-			</li>
-<?php endforeach; ?>
-<?php wp_reset_postdata(); ?>
 		</ul>
 	</section>
 </aside>

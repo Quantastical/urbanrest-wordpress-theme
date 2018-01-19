@@ -37,7 +37,7 @@ jQuery( function( $ ) {
 		// Homepage
 		if(slug === '/' || slug === '') {
 			var targetOffset = 0;
-			var duration = Math.round( 500 * (Math.abs(Urb.$window.scrollTop() - targetOffset) / Urb.$window.height()) );
+			var duration = 250; // Math.round( 500 * (Math.abs(Urb.$window.scrollTop() - targetOffset) / Urb.$window.height()) );
 			
 			//Urb.$body.animate(
 			$('html,body').animate(
@@ -61,7 +61,7 @@ jQuery( function( $ ) {
 		var fragmented = slug.replace('/','#');
 		if($.inArray(fragmented, fragmentAnchors) !== -1){
 			var targetOffset = $( slug.replace('/','#') ).offset().top - wpAdminBarHeight;
-			var duration = Math.round( 500 * (Math.abs(Urb.$window.scrollTop() - targetOffset) / Urb.$window.height()) );
+			var duration = 250; // Math.round( 500 * (Math.abs(Urb.$window.scrollTop() - targetOffset) / Urb.$window.height()) );
 			
 			//Urb.$body.animate(
 			$('html,body').animate(
@@ -261,6 +261,10 @@ jQuery( function( $ ) {
 			var fragmentIdentifier = $.attr(this, 'href');
 			var targetOffset = 0;
 			var $fragment = $(fragmentIdentifier);
+			if(fragmentIdentifier == '#community' && $('#community').is('.hidden')) {
+				$('#community').removeClass('hidden');
+			}
+
 			if(fragmentIdentifier !== '#' && $fragment.length !== 0) {
 				targetOffset = $fragment.offset().top;
 			} else {
@@ -270,7 +274,7 @@ jQuery( function( $ ) {
 			// Need html,body instead of just body for Firefox
 			$('html,body').animate(
 				{ scrollTop: Math.ceil(targetOffset - wpAdminBarHeight/*(targetHasPadding ? 0 : navBarWithAdminBarHeight * 1.5)*/ ) },
-				Math.round( 500 * (Math.abs(Urb.$window.scrollTop() - targetOffset) / Urb.$window.height()) )
+				Math.round( 250 * (Math.abs(Urb.$window.scrollTop() - targetOffset) / Urb.$window.height()) )
 			);
 
 			return false;

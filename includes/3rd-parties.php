@@ -9,6 +9,8 @@ function urb_admin_init_3rd_parties( ) {
 		'apple_app_name',
 		'apple_itunes_affiliate_id',
 		'facebook_app_id',
+		'facebook_app_secret',
+		'facebook_page_id',
 		'facebook_username',
 		'google_analytics_tracking_id',
 		'google_browser_api_key',
@@ -121,8 +123,10 @@ function urb_admin_section_facebook() {
 	$section = 'admin_section_facebook';
 
 	$fields = array(
-		'facebook_app_id'   => 'Facebook App ID',
-		'facebook_username' => 'Facebook Username'
+		'facebook_app_id'     => 'Facebook App ID',
+		'facebook_app_secret' => 'Facebook App Secret',
+		'facebook_page_id'    => 'Facebook Page ID',
+		'facebook_username'   => 'Facebook Username'
 	);
 
 	foreach( $fields as $setting_id => $setting_title ) {
@@ -134,6 +138,16 @@ function urb_admin_section_facebook() {
 
 function urb_facebook_app_id() {
 	$option = 'facebook_app_id';
+	echo '<input type="text" name="' . $option . '" id="' . $option . '" value="' . get_option( $option ) . '" class="regular-text ltr" />';
+}
+
+function urb_facebook_app_secret() {
+	$option = 'facebook_app_secret';
+	echo '<input type="text" name="' . $option . '" id="' . $option . '" value="' . get_option( $option ) . '" class="regular-text ltr" />';
+}
+
+function urb_facebook_page_id() {
+	$option = 'facebook_page_id';
 	echo '<input type="text" name="' . $option . '" id="' . $option . '" value="' . get_option( $option ) . '" class="regular-text ltr" />';
 }
 

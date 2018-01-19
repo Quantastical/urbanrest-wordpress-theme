@@ -226,6 +226,12 @@
 										opacity: 0.33;
 									}
 
+									@include media('<=phone') {
+										&[href="#community"] {
+											display: none;
+										}
+									}
+
 									&:not([href="#coming-soon"]):focus,
 									&:not([href="#coming-soon"]):hover,
 									&:not([href="#coming-soon"]).active

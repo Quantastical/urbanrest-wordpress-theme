@@ -201,7 +201,7 @@ if( !function_exists('urb_get_community') ) :
 	function urb_get_community() {
 		global $ajax;
 		if(!isset($ajax)){
-			//include_once('aside-community.php');	
+			include_once('aside-community.php');	
 		}
 	}
 endif;

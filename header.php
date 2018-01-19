@@ -230,6 +230,67 @@ wp_nav_menu(array(
 		<section class="site-posts col-xs-12">
 			<h3>Featured News &amp; Events</h3>
 <?php
+require_once('includes/plugins/Facebook/autoload.php');
+$app_id = get_option('facebook_app_id'); //'1692973204325474';
+$app_secret = get_option('facebook_app_secret'); //'714136f769a765d1157086a1dae680e5';
+
+$page_id = get_option('facebook_page_id'); //'urbanrestbeer';
+
+$access_token = "https://graph.facebook.com/oauth/access_token?client_id=$app_id&client_secret=$app_secret&grant_type=client_credentials";
+$access_token = file_get_contents($access_token); // returns 'accesstoken=APP_TOKEN|APP_SECRET'
+$access_token = json_decode($access_token);
+$access_token = $access_token->access_token;
+
+$fb = new \Facebook\Facebook([
+  'app_id' => $app_id,
+  'app_secret' => $app_secret,
+  'default_graph_version' => 'v2.10',
+]);
+
+$response = $fb->get('/' . $page_id . '/events?time_filter=upcoming', $access_token);
+$graphEdge = $response->getGraphEdge();
+
+$today = new DateTime();
+$events = array();
+foreach ($graphEdge as $item) {
+	$event = $item->asArray();
+	
+	if(!isset($event['event_times'])) {
+		if($event['end_time'] < $today) {
+			continue;
+		}
+
+		array_push($events, $event);
+	} else {
+		foreach($event['event_times'] as $event_time) {
+			if($event_time['end_time'] < $today) {
+				continue;
+			}
+
+			$recurring_event = $event;
+			$recurring_event['id'] = $event_time['id'];
+			$recurring_event['start_time'] = $event_time['start_time'];
+			$recurring_event['end_time'] = $event_time['end_time'];
+			array_push($events, $recurring_event);
+		}
+	}
+}
+
+usort($events, function($a,$b){
+    if ($a['start_time'] == $b['start_time']) {
+        return 0;
+    }
+    return ($a['start_time'] < $b['start_time']) ? -1 : 1;
+});
+
+if (count($events) > 0) {
+	$event_response = $fb->get('/' . $events[0]['id'] . '?fields=cover', $access_token);
+	$next_event = $event_response->getGraphObject();
+	$events[0]['cover'] = $next_event->getProperty('cover')->getProperty('source');
+}
+
+// ----------------------
+
 $locations = get_nav_menu_locations();
 $menu = get_term( $locations['featured'], 'nav_menu' );
 $featured = wp_get_nav_menu_items($menu->term_id);
@@ -243,9 +304,37 @@ if( $featured == false || count($featured) == 0 ) {
 	$featured = get_posts( $featured_args );
 }
 
-$first = true;
 ?>
 			<ul class="latest-posts" id="latest-posts">
+<?php
+if (count($events) > 0) :
+	$first = false;
+	$today->setTime(0,0);
+	$next_event = $events[0]['start_time'];
+	$interval = $today->diff($next_event);
+?>
+				<li class="blog-post event active next">
+					<a href="#community">
+						<span class="blog-post-image" style="background-image:url(<?php echo $events[0]['cover']; ?>)">
+							<img width="960" height="720" src="<?php echo $events[0]['cover']; ?>" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="">
+						</span>
+						<h4>
+							<span><?php echo ($interval->days == 0) ? 'Event Today' : 'Next Event'; ?></span>
+							<time>
+								<?php echo $events[0]['start_time']->format('l,&\n\b\s\p;F&\n\b\s\p;jS'); ?><br />
+								<?php echo ($events[0]['start_time']->format('i') == '00') ? $events[0]['start_time']->format('g A') : $events[0]['start_time']->format('g:i A'); ?>
+								<?php echo (isset($events[0]['start_time']) && isset($events[0]['end_time'])) ? '&ndash;' : ''; ?>
+								<?php echo ($events[0]['end_time']->format('i') == '00') ? $events[0]['end_time']->format('g A') : $events[0]['end_time']->format('g:i A'); ?>
+							</time>
+							<span><?php echo $events[0]['name']; ?></span>
+							<span>View Upcoming Events</span>
+						</h4>
+					</a>
+					<div class="blog-post-intro">
+						<?php echo $events[0]['description']; ?>
+					</div>
+				</li>
+<?php endif; ?>
 <?php foreach ( $featured as $featured_post ) : ?>
 <?php 	if($featured_post->post_type == 'nav_menu_item') : ?>
 <?php 		$featured_post = get_post($featured_post->object_id); ?>
