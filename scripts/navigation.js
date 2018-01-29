@@ -264,6 +264,8 @@ jQuery( function( $ ) {
 			var $fragment = $(fragmentIdentifier);
 			if(fragmentIdentifier == '#events' && $('#events').is('.hidden')) {
 				$('#events').removeClass('hidden');
+				Urb.$menuToggle.toggleClass('open', false);
+				Urb.$mainNavigation.toggleClass('open', false).removeAttr('style');
 			}
 
 			if(fragmentIdentifier !== '#' && $fragment.length !== 0) {
@@ -408,7 +410,7 @@ jQuery( function( $ ) {
 			var $anchor = $( location.pathname.replace(/\/$/, '').replace(/\/+/, '#') );
 			var anchorProximityThreshold = 5; // pixels
 
-			if ($anchor.length && !$anchor.is('.hidden')) {
+			if ($anchor.length && $anchor.is('.hidden')) {
 				$anchor.removeClass('hidden');
 			}
 

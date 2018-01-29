@@ -250,20 +250,34 @@ $fb = new \Facebook\Facebook([
 $response = $fb->get('/' . $page_id . '/events?time_filter=upcoming', $access_token);
 $graphEdge = $response->getGraphEdge();
 
+$now = new DateTime();
+$now->setTimeZone(new DateTimeZone('America/Detroit'));
+
 $today = new DateTime();
+$today->setTime(0,0);
+$today->setTimeZone(new DateTimeZone('America/Detroit'));
+
+$endOfToday = new DateTime();
+$endOfToday->setTime(0,0);
+$endOfToday->setTimeZone(new DateTimeZone('America/Detroit'));
+
 $events = array();
 foreach ($graphEdge as $item) {
 	$event = $item->asArray();
 	
 	if(!isset($event['event_times'])) {
-		if($event['end_time'] < $today) {
+		if (isset($event['end_time']) && $event['end_time'] < $now) {
+			continue;
+		} else if (!isset($event['end_time']) && $event['start_time'] < $endOfToday) {
 			continue;
 		}
 
 		array_push($events, $event);
 	} else {
 		foreach($event['event_times'] as $event_time) {
-			if($event_time['end_time'] < $today) {
+			if (isset($event['end_time']) && $event_time['end_time'] < $now) {
+				continue;
+			} else if (!isset($event['end_time']) && $event['start_time'] < $endOfToday) {
 				continue;
 			}
 
@@ -310,6 +324,8 @@ if( $featured == false || count($featured) == 0 ) {
 if (count($events) > 0) :
 	$first = false;
 	$next_event = $events[0];
+
+	var_dump($today);
 	$event_today = ($today->format('Y-m-d') == $next_event['start_time']->format('Y-m-d')) ? true : false;
 ?>
 				<li class="blog-post event active next">
@@ -322,8 +338,10 @@ if (count($events) > 0) :
 							<time>
 								<?php echo $next_event['start_time']->format('l,&\n\b\s\p;F&\n\b\s\p;jS'); ?><br />
 								<?php echo ($next_event['start_time']->format('i') == '00') ? $next_event['start_time']->format('g A') : $next_event['start_time']->format('g:i A'); ?>
+	<?php if (isset($next_event['end_time'])) : ?>
 								<?php echo (isset($next_event['start_time']) && isset($next_event['end_time'])) ? '&ndash;' : ''; ?>
 								<?php echo ($next_event['end_time']->format('i') == '00') ? $next_event['end_time']->format('g A') : $next_event['end_time']->format('g:i A'); ?>
+	<?php endif; ?>
 							</time>
 							<span><?php echo $next_event['name']; ?></span>
 							<span>View Upcoming Events</span>

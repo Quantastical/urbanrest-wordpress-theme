@@ -1,4 +1,4 @@
-<aside class="site-community row" id="events">
+<aside class="site-community row hidden" id="events">
 	<header class="col-xs-12">
 		<h2>Latest News &amp; Events</h2>
 	</header>
@@ -35,20 +35,34 @@ $fb = new \Facebook\Facebook([
 $response = $fb->get('/' . $page_id . '/events?time_filter=upcoming', $access_token);
 $graphEdge = $response->getGraphEdge();
 
+$now = new DateTime();
+$now->setTimeZone(new DateTimeZone('America/Detroit'));
+
 $today = new DateTime();
+$today->setTime(0,0);
+$today->setTimeZone(new DateTimeZone('America/Detroit'));
+
+$endOfToday = new DateTime();
+$endOfToday->setTime(0,0);
+$endOfToday->setTimeZone(new DateTimeZone('America/Detroit'));
+
 $events = array();
 foreach ($graphEdge as $item) {
 	$event = $item->asArray();
 	
 	if(!isset($event['event_times'])) {
-		if($event['end_time'] < $today) {
+		if (isset($event['end_time']) && $event['end_time'] < $now) {
+			continue;
+		} else if (!isset($event['end_time']) && $event['start_time'] < $endOfToday) {
 			continue;
 		}
 
 		array_push($events, $event);
 	} else {
 		foreach($event['event_times'] as $event_time) {
-			if($event_time['end_time'] < $today) {
+			if (isset($event['end_time']) && $event_time['end_time'] < $now) {
+				continue;
+			} else if (!isset($event['end_time']) && $event['start_time'] < $endOfToday) {
 				continue;
 			}
 
@@ -67,6 +81,19 @@ usort($events, function($a,$b){
     }
     return ($a['start_time'] < $b['start_time']) ? -1 : 1;
 });
+
+$rexProtocol = '(https?://)?';
+$rexDomain   = '((?:[-a-zA-Z0-9]{1,63}\.)+[-a-zA-Z0-9]{2,63}|(?:[0-9]{1,3}\.){3}[0-9]{1,3})';
+$rexPort     = '(:[0-9]{1,5})?';
+$rexPath     = '(/[!$-/0-9:;=@_\':;!a-zA-Z\x7f-\xff]*?)?';
+$rexQuery    = '(\?[!$-/0-9:;=@_\':;!a-zA-Z\x7f-\xff]+?)?';
+$rexFragment = '(#[!$-/0-9:;=@_\':;!a-zA-Z\x7f-\xff]+?)?';
+					
+function descriptionCallback($match)
+{
+	$completeUrl = $match[1] ? $match[0] : "http://{$match[0]}";
+	return '<a href="' . $completeUrl . '">' . $match[2] . $match[3] . $match[4] . '</a>';
+}
 ?>
 		<ul class="events">
 <?php foreach( $events as $event ) : ?>
@@ -79,6 +106,7 @@ usort($events, function($a,$b){
 						<span class="year"><?php echo $event['start_time']->format('Y'); ?></span>
 						<span class="time"><?php echo ($event['start_time']->format('i') == '00') ? $event['start_time']->format('g A') : $event['start_time']->format('g:i A'); ?></span>
 					</time>
+	<?php if (isset($event['end_time'])) : ?>
 					<time class="event-end" itemprop="endDate" datetime="<?php echo $event['end_time']->format('Y-m-d H:i'); ?>">
 						<span class="day"><?php echo $event['end_time']->format('l'); ?></span>
 						<span class="month"><?php echo $event['end_time']->format('F'); ?></span>
@@ -86,12 +114,16 @@ usort($events, function($a,$b){
 						<span class="year"><?php echo $event['end_time']->format('Y'); ?></span>
 						<span class="time"><?php echo ($event['end_time']->format('i') == '00') ? $event['end_time']->format('g A') : $event['end_time']->format('g:i A'); ?></span>
 					</time>
+	<?php endif; ?>
 				</div>
 				<a class="event-what" itemprop="url" href="https://www.facebook.com/events/<?php echo $event['id']; ?>/">
 					<span itemprop="name"><?php echo $event['name']; ?></span>
 				</a>
 				<div class="event-why" itemprop="description">
-					<?php echo nl2br(trim($event['description'])); ?>
+					<?php
+					echo nl2br(trim(preg_replace_callback("&\\b$rexProtocol$rexDomain$rexPort$rexPath$rexQuery$rexFragment(?=[?.!,;:\"]?(\s|$))&",
+    'descriptionCallback', htmlspecialchars($event['description']))));
+					?>
 				</div>
 			</li>
 <?php endforeach; ?>

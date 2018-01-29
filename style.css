@@ -6189,7 +6189,7 @@ body {
             text-overflow: ellipsis; }
             .site .site-community .site-events .events .event .event-what:after {
               content: 'View on Facebook';
-              color: green;
+              color: #118833;
               display: block;
               font-size: 0.7em;
               margin: 0 0 0.5em;
@@ -6271,12 +6271,14 @@ body {
             padding-left: 1em;
             text-align: left;
             text-overflow: ellipsis; }
+            .site .site-community .site-events .events .event .event-why a {
+              color: #118833; }
           .site .site-community .site-events .events .event:hover {
             background-color: rgba(0, 0, 0, 0.1);
             /*$webkit: append($webkit, $list, comma);*/
             /*$moz:    append($moz,    $list, comma);*/
             transition: background-color 0.666s; }
-  .javascript .site .site-community .site-events .events .event {
+  .javascript .site .site-community .site-events .events .event-what {
     cursor: pointer; } }
 
 @media only screen {

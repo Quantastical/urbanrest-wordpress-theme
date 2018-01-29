@@ -2,7 +2,7 @@ jQuery(function($) {
 	Urb.setupEventLinks = function() {
 		$('.event', Urb.$communityEvents).each(function() {
 			var $event = $(this);
-			$event.on('click', function(e) {
+			$('.event-what', $event).on('click', function(e) {
 				location.href = $(this).children('.event-what').attr('href');
 			});
 		});

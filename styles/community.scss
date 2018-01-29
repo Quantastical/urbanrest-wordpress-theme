@@ -308,7 +308,7 @@
 
 							&:after {
 								content: 'View on Facebook';
-								color: green;
+								color: $urbanrest-green;
 								display: block;
 								font-size: 0.7em;
 								margin: 0 0 0.5em;
@@ -428,6 +428,10 @@
 							padding-left: 1em;
 							text-align: left;
 							text-overflow: ellipsis;
+
+							a {
+								color: $urbanrest-green;
+							}
 						}
 
 						&:hover
@@ -460,7 +464,7 @@
 				{
 					.events
 					{
-						.event
+						.event-what
 						{
 							cursor: pointer;
 						}
