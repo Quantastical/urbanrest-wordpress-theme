@@ -4840,7 +4840,7 @@
         e(".event", Urb.$communityEvents).each(function() {
             var t = e(this);
             e(".event-what", t).on("click", function(t) {
-                location.href = e(this).children(".event-what").attr("href");
+                location.href = e(this).attr("href");
             });
         });
     }, Urb.$window.on("load", Urb.setupEventLinks);

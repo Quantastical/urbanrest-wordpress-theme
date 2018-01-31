@@ -3,7 +3,7 @@ jQuery(function($) {
 		$('.event', Urb.$communityEvents).each(function() {
 			var $event = $(this);
 			$('.event-what', $event).on('click', function(e) {
-				location.href = $(this).children('.event-what').attr('href');
+        location.href = $(this).attr('href');
 			});
 		});
 
